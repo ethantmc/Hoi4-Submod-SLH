@@ -1,0 +1,103 @@
+﻿division_template = {
+	name = "Lost Hills Bunker Detachment"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+units = {
+    ##Northern Diablo Range
+	division = {
+		name = "Bunker Detachment"
+		location = 6668
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Bunker Detachment"
+		location = 5049
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+    ##Northern Lucia
+   
+   	division = {
+		name = "Bunker Detachment"
+		location = 4608
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bunker Detachment"
+		location = 5044
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+    ##Southern Diablo
+	division = {
+		name = "Bunker Detachment"
+		location = 4605
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bunker Detachment"
+		location = 2271
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	##Southern Lucia
+	division = {
+		name = "Bunker Detachment"
+		location = 4601
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bunker Detachment"
+		location = 4723
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	##Blackwell
+	division = {
+		name = "Bunker Detachment"
+		location = 4718
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bunker Detachment"
+		location = 1604
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	##Alpaugh
+	division = {
+		name = "Bunker Detachment"
+		location = 2459
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}	
+	division = {
+		name = "Bunker Detachment"
+		location = 4722
+		division_template = "Lost Hills Bunker Detachment"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}

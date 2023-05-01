@@ -1,0 +1,65 @@
+﻿capital = 245
+
+set_stability = 0.4
+set_war_support = 0.1
+set_research_slots = 4
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 100
+	elites = 0
+	intellectuals = 0
+	ruler = 0
+}
+set_technology = {
+	stripped_pa_tech = 1
+	weight_support_frame_pa_tech_1 = 1
+	weight_support_frame_pa_tech_2 = 1
+	wasteland_pa_tech = 1
+}
+add_ideas = {
+	#until_dismissal_conscription
+	ncr_sphere
+	#officer_law_military_academy
+	#training_law_military_academy
+	#paladins
+}
+recruit_character = SRG_llwyd
+recruit_character = SRG_advisor_contest_1
+recruit_character = SRG_advisor_contest_2
+recruit_character = SRG_advisor_contest_3
+recruit_character = SRG_advisor_contest_4
+recruit_character = SRG_advisor_contest_5
+recruit_character = SRG_advisor_contest_6
+recruit_character = SRG_advisor_contest_7
+recruit_character = SRG_advisor_contest_8
+recruit_character = SRG_advisor_contest_9
+recruit_character = SRG_advisor_contest_10
+recruit_character = SRG_advisor_contest_11
+recruit_character = SRG_advisor_contest_12
+recruit_character = SRG_advisor_contest_13
+recruit_character = SRG_advisor_contest_14
+recruit_character = SRG_advisor_contest_15
+recruit_character = SRG_advisor_contest_16
+recruit_character = SRG_advisor_contest_17
+recruit_character = SRG_advisor_contest_18
+recruit_character = SRG_advisor_contest_19
+recruit_character = SRG_advisor_contest_20
+recruit_character = SRG_advisor_contest_21
+recruit_character = SRG_advisor_contest_22
+recruit_character = SRG_advisor_contest_23
+recruit_character = SRG_advisor_contest_24
+recruit_character = SRG_advisor_contest_25
+recruit_character = SRG_advisor_contest_26
+recruit_character = SRG_advisor_contest_27
+recruit_character = SRG_advisor_contest_28
+
+set_country_flag = is_settler_nation
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_advisor
+set_country_flag = is_california_nation

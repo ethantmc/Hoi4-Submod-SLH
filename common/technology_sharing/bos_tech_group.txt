@@ -1,0 +1,13 @@
+technology_sharing_group = {
+    id = lost_hills_research
+    name = lost_hills_research
+    desc = lost_hills_research_desc
+    picture = GFX_autonomy_initiate_chapter_icon
+
+    research_sharing_per_country_bonus = 0.08
+    is_faction_sharing = yes
+
+    available = {
+        is_in_faction = yes
+    }
+}

@@ -1,0 +1,127 @@
+#	Example:
+#
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+bos_lost_hills_logistics = {
+	icon = GFX_idea_generic_BOS_idea_bunker_thought
+	#The following modifiers are ridiculously overtuned, but made so that the country can work as it did when it was introduced. If the behavior behind volunteer supply changes for land locked countries feel free to change this.
+	custom_modifier_tooltip = hoi4_devs_broke_this_tt
+	out_of_supply_factor = bos_slh_volunterr_func_negative
+	supply_consumption_factor = bos_slh_volunterr_func_negative
+	supply_factor = bos_slh_volunteer_func_positive
+	unit_upkeep_attrition_factor = bos_slh_volunterr_func_negative				  
+	#Nerfs the -air damage they get, in relation to other chapters.
+	industry_air_damage_factor = -0.25
+	foreign_subversive_activites = -0.25
+	max_fuel_factor = 1
+	exodus_assimilation_proportion = 0.15
+	exodus_national_appeal = -1
+	diplomacy_distance = 100000
+	special_forces_cap = 0.1 ##this fixes BoS Wage Laws not giving special forces cap. Without this, BoS maxes out at 6 (!!!!)% special forces cap, and it's 4% for 75% of the game!
+	request_lease_tension = -1
+	send_volunteers_tension = -1
+	send_volunteer_size = BOS_expeditionary_departments
+	send_volunteer_divisions_required = -0.9
+	bos_can_only_lend_lease_or_send_volunteers_to_brotherhood_countries = 1
+	people_drift = BOS_drift_people
+	ruler_drift = BOS_drift_ruler
+	intellectuals_drift = BOS_drift_intellectuals
+	elites_drift = BOS_drift_elites
+	cant_leave_faction = 1
+
+	BOS_underground_administrative_capacity = BOS_underground_building_administration_centers_mod
+	modifier_army_sub_unit_paladin_unit_attack_factor = BOS_underground_building_training_bonus
+	modifier_army_sub_unit_paladin_unit_defence_factor = BOS_underground_building_training_bonus
+	research_speed_factor = BOS_underground_building_lab_mod
+
+	custom_modifier_tooltip = intelligence_defense_boost_dlc_weak_tt
+	hidden_modifier = {
+		intelligence_agency_defense = 2
+		crypto_strength = 1
+	}
+}
+
+bos_tension_dynamic_modifier = {
+	icon = GFX_idea_MOJ_idea_the_future
+	bos_tension_display = bos_tension
+	production_speed_buildings_factor = bos_tension_mod
+	industrial_capacity_factory = bos_tension_mod
+	political_power_factor = bos_tension_mod
+	cant_justify_on_countries = 1
+	cant_be_justified_on = 1
+	remove_trigger = {
+		OR = {
+			NOT = { country_exists = NCR }
+			is_in_faction_with = NCR
+		}
+	}
+}
+
+bos_ncr_tension_dynamic_modifier = {
+	icon = GFX_idea_MOJ_idea_the_future
+	bos_tension_display = bos_tension
+	production_speed_buildings_factor = bos_tension_mod
+	caps_expense_modifier = bos_tension_mod_inverse
+	political_power_factor = bos_tension_mod_political_power
+	mobilization_speed = bos_tension_mod_inverse
+	industrial_capacity_factory = bos_tension_mod_factory_output
+	caps_income_modifier = bos_tension_mod_caps_income
+	stability_factor = bos_tension_mod_stability										 
+	remove_trigger = {
+		OR = {
+			NOT = { country_exists = BOS }
+			is_in_faction_with = BOS
+		}
+	}
+}
+
+bos_state_influence = {
+	enable = { always = yes }
+	icon = GFX_idea_generic_BOS_crate
+
+	resistance_growth = -0.03
+	resistance_target = -0.1
+	resistance_decay = 0.1
+	state_resources_factor = -0.15
+	custom_modifier_tooltip = bos_state_influence_effect_tt
+}
+
+bos_lost_hills_logistics_state = {
+	enable = { always = yes }
+	icon = GFX_idea_generic_BOS_idea_bunker_thought
+	supply_factor = 1.5
+	recruitable_population_factor = 0.3
+	recruitable_population = 0.03						  
+	state_production_speed_buildings_factor = BOS_condensed_civilian_workshop_modifier
+}
+
+bos_balanced_council = {
+	icon = scribe_council
+	enable = { always = yes }
+	intel_network_gain  = bos_ruler_pop
+	command_power_gain = bos_elites_pop
+	weekly_manpower = bos_people_pop
+	subjects_autonomy_gain = bos_intellectuals_pop
+}

@@ -1,0 +1,6832 @@
+﻿add_namespace = nf_brotherhood
+add_namespace = nf_brotherhood_communications
+add_namespace = nf_brotherhood_foreign_elder
+add_namespace = nf_brotherhood_council_reforms
+add_namespace = nf_brotherhood_history
+add_namespace = nf_brotherhood_arthur_maxson
+add_namespace = nf_brotherhood_off_map_chapter_logic
+add_namespace = nf_brotherhood_council_politics
+add_namespace = nf_brotherhood_steel_rangers
+add_namespace = nf_brotherhood_integrate_guardians
+add_namespace = nf_brotherhood_bunkered_divisions
+add_namespace = nf_brotherhood_expeditions
+add_namespace = nf_brotherhood_elh_events
+add_namespace = nf_brotherhood_foreign_assistance
+# Delivering Justice
+country_event = {
+	id = nf_brotherhood_history.1
+	title = nf_brotherhood_history.1.t
+	desc = nf_brotherhood_history.1.d
+	picture = GFX_event_sub_generic_ghouls
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.1.a
+		set_technology = { military_heritage_unlock_tech = 1 }
+		custom_effect_tooltip = military_heritage_unlock_tech_tt												  
+	}
+}
+# Exodus
+country_event = {
+	id = nf_brotherhood_history.2
+	title = nf_brotherhood_history.2.t
+	desc = nf_brotherhood_history.2.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.2.a
+		add_ideas = bos_platners_resolve_idea
+	}
+}
+# Words have Power
+country_event = {
+	id = nf_brotherhood_history.3
+	title = nf_brotherhood_history.3.t
+	desc = nf_brotherhood_history.3.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.3.a
+		add_ideas = bos_shining_knights_of_the_future_idea
+	}
+}
+# Chains that Bind, Hirachy
+country_event = {
+	id = nf_brotherhood_history.4
+	title = nf_brotherhood_history.4.t
+	desc = nf_brotherhood_history.4.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.4.a
+		add_ideas = bos_bound_by_code_idea
+	}
+}
+# NCR war
+country_event = {
+	id = nf_brotherhood_history.5
+	title = nf_brotherhood_history.5.t
+	desc = nf_brotherhood_history.5.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.5.a
+		country_event = nf_brotherhood_history.6
+		set_variable = {
+			var = BOS_underground_administrative_capacity
+			value = 2
+		}
+		hidden_effect = {
+			remove_ideas = {
+				bos_bound_by_code_idea
+				bos_shining_knights_of_the_future_idea
+				bos_platners_resolve_idea
+			}
+			add_ideas = {
+				bos_brotherhood_of_steel_idea
+			}
+		}
+		custom_effect_tooltip = consolidate_bos_starting_ideas_tt
+	}
+}
+
+# Administrative capacity and underground construction tutorial
+country_event = {
+	id = nf_brotherhood_history.6
+	title = nf_brotherhood_history.6.t
+	desc = nf_brotherhood_history.6.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.6.a
+		#set_country_flag = bos_administrative_decisions_enabled
+		custom_effect_tooltip = add_4_underground_slots_tt
+		add_to_variable = {
+			var = BOS_underground_construction_slots
+			value = 4
+		}
+	}
+}
+
+
+
+# Paladins tutorial
+country_event = {
+	id = nf_brotherhood_history.7
+	title = nf_brotherhood_history.7.t
+	desc = nf_brotherhood_history.7.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.7.a
+
+	}
+}
+
+# Knights tutorial
+country_event = {
+	id = nf_brotherhood_history.8
+	title = nf_brotherhood_history.8.t
+	desc = nf_brotherhood_history.8.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.8.a
+		add_ideas = scribecouncil
+		set_technology = { knights_unlock_tech = 1 }
+	}
+}
+
+# Scribes tutorial
+country_event = {
+	id = nf_brotherhood_history.9
+	title = nf_brotherhood_history.9.t
+	desc = nf_brotherhood_history.9.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_history.9.a
+		set_technology = { scribes_unlock_tech = 1 }
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.1
+	title = nf_brotherhood_off_map_chapter_logic.1.t
+	desc = nf_brotherhood_off_map_chapter_logic.1.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.1.a
+		BLS = {
+			set_country_flag = bls_shephard
+			set_country_flag = bos_offmap_chapter_died
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_shephards_conquest
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.2
+	title = nf_brotherhood_off_map_chapter_logic.2.t
+	desc = nf_brotherhood_off_map_chapter_logic.2.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.2.a
+		BLS = {
+			set_country_flag = bls_enclave
+			set_country_flag = bos_offmap_chapter_died
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_edens_victory
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.3
+	title = nf_brotherhood_off_map_chapter_logic.3.t
+	desc = nf_brotherhood_off_map_chapter_logic.3.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.3.a
+		BLS = {
+			set_country_flag = bls_project_purity
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_dominion_over_dc
+		custom_effect_tooltip = bos_nf_bls_the_anchorage_simulation
+		custom_effect_tooltip = bos_nf_bls_lyons_libery_prime_archives
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.4
+	title = nf_brotherhood_off_map_chapter_logic.4.t
+	desc = nf_brotherhood_off_map_chapter_logic.4.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.4.a
+		trigger = {
+			BLS = {
+				NOT = { has_character = bls_sarah_leader }
+			}
+		}
+		BLS = {
+			set_country_flag = bls_mended_outcasts
+			set_country_flag = bls_sarah_leader
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_sarahs_rise
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.4.b
+		trigger = {
+			BLS = {
+				has_character = BOS_arthur_maxson
+			}
+		}
+		BLS = {
+			set_country_flag = bls_mended_outcasts
+			set_country_flag = bls_arthur_leader
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_the_hero_of_man
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.5
+	title = nf_brotherhood_off_map_chapter_logic.5.t
+	desc = nf_brotherhood_off_map_chapter_logic.5.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.5.a
+		BLS = {
+			set_country_flag = bls_boston
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_victory_in_the_commonwealth
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.6
+	title = nf_brotherhood_off_map_chapter_logic.6.t
+	desc = nf_brotherhood_off_map_chapter_logic.6.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.6.a
+		BLS = {
+			set_country_flag = bos_offmap_chapter_died
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_mankind_redefined
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.7
+	title = nf_brotherhood_off_map_chapter_logic.7.t
+	desc = nf_brotherhood_off_map_chapter_logic.7.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.7.a
+		BLS = {
+			set_country_flag = bls_outcasts
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bls_outcasts_triumphant
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.8
+	title = nf_brotherhood_off_map_chapter_logic.8.t
+	desc = nf_brotherhood_off_map_chapter_logic.8.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.8.a
+		BMW = {
+			set_country_flag = bos_offmap_chapter_died
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_ending_the_dream
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.9
+	title = nf_brotherhood_off_map_chapter_logic.9.t
+	desc = nf_brotherhood_off_map_chapter_logic.9.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.9.a
+		BMW = {
+			set_country_flag = bmw_won
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_chicagos_reclaimation
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.10
+	title = nf_brotherhood_off_map_chapter_logic.10.t
+	desc = nf_brotherhood_off_map_chapter_logic.10.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.10.a
+		BGF = {
+			set_country_flag = bgf_won
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bgf_dominion_over_the_peninsula
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_off_map_chapter_logic.11
+	title = nf_brotherhood_off_map_chapter_logic.11.t
+	desc = nf_brotherhood_off_map_chapter_logic.11.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_off_map_chapter_logic.11.a
+		BGF = {
+			set_country_flag = bos_offmap_chapter_died
+		}
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus
+		custom_effect_tooltip = bos_nf_bgf_run_down
+		custom_effect_tooltip = nf_brotherhood_off_map_chapter_logic.can_do_focus_closer
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_arthur_maxson.1
+	title = nf_brotherhood_arthur_maxson.1.t
+	desc = nf_brotherhood_arthur_maxson.1.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_arthur_maxson.1.a
+		custom_effect_tooltip = nf_brotherhood_arthur_maxson.1.a.tt
+		set_country_flag = kept_arthur_here
+	}
+	option = {
+		name = nf_brotherhood_arthur_maxson.1.b
+		BOS_arthur_maxson = {
+			set_nationality = BLS
+		}
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_arthur_maxson.2
+	title = nf_brotherhood_arthur_maxson.2.t
+	desc = nf_brotherhood_arthur_maxson.2.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 60
+	}
+	trigger = {
+		original_tag = BOS
+		NOT = { has_country_flag = kept_arthur_here }
+		date > 2277.01.01
+		has_character = BOS_arthur_maxson
+		NOT = {
+			BLS = {
+				has_country_flag = bos_offmap_chapter_died
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_arthur_maxson.2.a
+		BOS_arthur_maxson = {
+			set_nationality = BLS
+		}
+		unlock_national_focus = bos_nf_the_line_of_succession
+	}
+}
+country_event = {
+	id = nf_brotherhood_arthur_maxson.3
+	title = nf_brotherhood_arthur_maxson.3.t
+	desc = nf_brotherhood_arthur_maxson.3.d
+	picture = GFX_event_sub_generic_computer_scav
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 180
+	}
+	trigger = {
+		has_character = BOS_arthur_maxson
+		date > 2285.01.01
+	}
+	option = {
+		name = nf_brotherhood_arthur_maxson.3.a
+		BOS_arthur_maxson = {
+			add_corps_commander_role = {
+				traits={ perceptive_trait intelligent_trait }
+				skill = 4
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 5
+			}
+		}
+	}
+}
+
+#Waste of time to do major arthur coding from BLS side for 4.0.
+
+# A foreign elder - essentially appointing a foreign leader high elder instead of one of your own.
+country_event = {
+	id = nf_brotherhood_foreign_elder.1
+	title = nf_brotherhood_foreign_elder.1.t
+	desc = nf_brotherhood_foreign_elder.1.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_foreign_elder.1.a
+		#Foreign Elder path - use lost hills tree - we annex into lost hills
+		custom_effect_tooltip = nf_brotherhood_foreign_elder.1.a.tt
+		PREV = {
+			every_character = {
+				set_nationality = BOS
+			}
+			every_unit_leader = {
+				set_nationality = BOS
+			}
+			every_navy_leader = {
+				set_nationality = BOS
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			add_country_leader_trait = bos_absolute_brotherhood_high_elder
+		}
+		if = {
+			limit = {
+				THIS = { is_ai = no }
+			}
+			BOS = { change_tag_from = PREV }
+		}
+		BOS = {
+			country_event = {
+				id = nf_brotherhood_foreign_elder.2
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_elder.1.b
+		ai_chance = {
+			base = 0
+		}
+		custom_effect_tooltip = nf_brotherhood_foreign_elder.1.b.tt
+		#Foreign Elder path - use old tree - Lost Hills annexes into them
+		ROOT = {
+			every_character = {
+				set_nationality = PREV.PREV
+			}
+			every_unit_leader = {
+				set_nationality = PREV.PREV
+			}
+			every_navy_leader = {
+				set_nationality = PREV.PREV
+			}
+		}
+		add_country_leader_trait = bos_absolute_brotherhood_high_elder
+		annex_country = {
+			target = BOS
+			transfer_troops = yes
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_elder.1.c
+		ai_chance = {
+			base = 0
+		}
+		#No thanks
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_foreign_elder.2
+	title = nf_brotherhood_foreign_elder.2.t
+	desc = nf_brotherhood_foreign_elder.2.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_foreign_elder.2.a
+		log = "[GetDateText]: [This.GetName] WARNING: ENTERING DANGEROUS CODE from 'nf_brotherhood_foreign_elder.2'"
+		#God I wish clauswitz would add switch statements I feel like yanderedev coding these
+		if = {
+			limit = {
+				FROM = { has_government = elites }
+			}
+			set_politics = {
+				ruling_party = elites
+				elections_allowed = no
+			}
+			set_popularities = {
+				elites = 100
+				ruler = 0
+				intellectuals = 0
+				people = 0
+			}
+			set_temp_variable = { temp_BOS_drift_add = 1 }
+			bos_set_elites_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_ruler_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_intellectuals_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_people_drift = yes
+			retire_country_leader = yes				  
+		}
+		else_if = {
+			limit = {
+				FROM = { has_government = ruler }
+			}
+			set_politics = {
+				ruling_party = ruler
+				elections_allowed = no
+			}
+			set_popularities = {
+				elites = 0
+				ruler = 100
+				intellectuals = 0
+				people = 0
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_elites_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 1 }
+			bos_set_ruler_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_intellectuals_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_people_drift = yes
+			retire_country_leader = yes				  
+		}
+		else_if = {
+			limit = {
+				FROM = { has_government = intellectuals }
+			}
+			set_politics = {
+				ruling_party = intellectuals
+				elections_allowed = no
+			}
+			set_popularities = {
+				elites = 0
+				ruler = 0
+				intellectuals = 100
+				people = 0
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_elites_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_ruler_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 1 }
+			bos_set_intellectuals_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_people_drift = yes
+			retire_country_leader = yes				  
+		}
+		else_if = {
+			limit = {
+				FROM = { has_government = people }
+			}
+			set_politics = {
+				ruling_party = people
+				elections_allowed = no
+			}
+			set_popularities = {
+				elites = 0
+				ruler = 0
+				intellectuals = 0
+				people = 100
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_elites_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_ruler_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 0 }
+			bos_set_intellectuals_drift = yes
+			set_temp_variable = { temp_BOS_drift_add = 1 }
+			bos_set_people_drift = yes
+			retire_country_leader = yes
+		}
+		BOS = {
+			FROM = {
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+
+					#The dangerous part
+					#
+					# DANGER ZONE
+					#
+					#The dangerous part
+
+					set_nationality = ROOT
+
+					#The dangerous Part
+					#
+					# Leaving the DANGER ZONE
+					#
+					#The dangerous part
+
+					if = {
+						limit = {
+							PREV = { has_government = elites }
+						}
+						add_country_leader_role = {
+							country_leader = {
+								ideology=militarist_technocracy
+								traits = {
+									bos_absolute_brotherhood_high_elder
+								}
+								expire="3000.01.01.01"
+							}
+							promote_leader = yes
+						}
+					}
+					else_if = {
+						limit = {
+							PREV = { has_government = ruler }
+						}
+						add_country_leader_role = {
+							country_leader = {
+								ideology=military_government
+								traits = {
+									bos_absolute_brotherhood_high_elder
+								}
+								expire="3000.01.01.01"
+							}
+							promote_leader = yes
+						}
+					}
+					else_if = {
+						limit = {
+							PREV = { has_government = intellectuals }
+						}
+						add_country_leader_role = {
+							country_leader = {
+								ideology=technocracy
+								traits = {
+									bos_absolute_brotherhood_high_elder
+								}
+								expire="3000.01.01.01"
+							}
+							promote_leader = yes
+						}
+					}
+					else_if = {
+						limit = {
+							PREV = { has_government = people }
+						}
+						add_country_leader_role = {
+							country_leader = {
+								ideology=commune
+								traits = {
+									bos_absolute_brotherhood_high_elder
+								}
+								expire="3000.01.01.01"
+							}
+							promote_leader = yes
+						}
+					}
+				}
+			}
+		}
+		BOS = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+		}
+		log = "[GetDateText]: [This.GetName] 'nf_brotherhood_foreign_elder.2' Succesfully Resolved"
+	}
+}
+
+
+country_event = {
+	id = nf_brotherhood_communications.1
+	title = nf_brotherhood_communications.1.t
+	desc = {
+		text = nf_brotherhood_communications.1.d
+		trigger = {
+			NOT = { original_tag = GRD }
+			if = {
+				limit = {
+					original_tag = SHI
+				}
+				NOT = { has_country_flag = san_francisco_chapter_established }
+			}
+		}
+	}
+	desc = {
+		text = nf_brotherhood_communications.1.d.grd
+		trigger = {
+			original_tag = GRD
+		}
+	}
+	desc = {
+		text = nf_brotherhood_communications.1.d.shi
+		trigger = {
+			tag = SHI
+			NOT = { has_country_flag = san_francisco_chapter_established }
+		}
+	}
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.1.a
+		add_political_power = 75
+		add_stability = 0.01
+		add_opinion_modifier = {
+			target = BOS
+			modifier = bos_chapter_assisted
+		}
+		BOS = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = bos_chapter_assisted
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_communications.2
+	title = nf_brotherhood_communications.2.t
+	desc = nf_brotherhood_communications.2.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.2.a
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 250
+				producer = USA
+				}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3
+				amount = 500
+				producer = USA
+				}			
+			if = {
+				limit = {
+				is_ai = yes
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_4
+					amount = 250
+					producer = USA
+					}
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = 500
+					producer = USA
+					}		
+			}
+			ai_chance = {
+				base = 1
+			}
+	}
+	option = {
+		name = nf_brotherhood_communications.2.a
+			add_tech_bonus = {
+				name = bos_nf_powerarmourdevelop
+				bonus = 0.25
+				uses = 2
+				category = power_armor_tech_category
+			}
+			add_tech_bonus = {
+				name = bos_nf_powerarmourdevelop
+				bonus = 0.25
+				uses = 1
+				category = energy_weaponry_tech_category
+			}
+			ai_chance = {
+				base = 1
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+			}
+	}
+}
+country_event = {
+	id = nf_brotherhood_communications.3
+	title = nf_brotherhood_communications.3.t
+	desc = nf_brotherhood_communications.3.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.3.a
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment_4
+			amount = 75
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = energy_equipment_3
+			amount = 75
+			producer = USA
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_communications.4
+	title = nf_brotherhood_communications.4.t
+	desc = nf_brotherhood_communications.4.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.4.a
+		285 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		set_temp_variable = { caps_to_add = -5 }
+		add_caps = yes
+	}
+}
+
+#notify San Francisco You're getting free XP
+country_event = {
+	id = nf_brotherhood_communications.5
+	title = nf_brotherhood_communications.5.t
+	desc = nf_brotherhood_communications.5.d
+	picture = GFX_event_SHI_shitown
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.5.a
+		SHI = {
+			air_experience = +25
+		}
+	}
+	option = {
+		name = nf_brotherhood_communications.5.b
+		SHI = {
+			army_experience = +10
+		}
+	}
+	option = {
+		name = nf_brotherhood_communications.5.c
+		SHI = {
+			add_political_power = +25
+		}
+	}
+}
+
+#notify GRD the brotherhood's takin thar guns!
+country_event = {
+	id = nf_brotherhood_communications.6
+	title = nf_brotherhood_communications.6.t
+	desc = nf_brotherhood_communications.6.d
+	picture = GFX_event_sub_generic_war_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.6.a
+		GRD = {
+		set_temp_variable = { caps_to_add = 30 }
+		add_caps = yes
+		}
+	}
+	option = {
+		name = nf_brotherhood_communications.6.b
+		GRD = {
+		army_experience = +10
+		}
+	}
+	option = {
+		name = nf_brotherhood_communications.6.c
+		GRD = {
+		add_political_power = +25
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_communications.7
+	title = nf_brotherhood_communications.7.t
+	desc = nf_brotherhood_communications.7.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.7.a
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment_3
+			amount = 250
+			producer = USA
+			}
+		add_equipment_to_stockpile = {
+			type = energy_equipment_2
+			amount = 500
+			producer = USA
+			}			
+		if = {
+			limit = {
+			is_ai = yes
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_3
+				amount = 250
+				producer = USA
+				}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 500
+				producer = USA
+				}		
+		}
+		custom_effect_tooltip = bos_brotherhood_investment_received_tt
+		set_country_flag = bos_supported_us
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_communications.8 ##triggered via a decision for targeting
+	title = nf_brotherhood_communications.8.t
+	desc = nf_brotherhood_communications.8.d
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	option = {
+		name = nf_brotherhood_communications.8.a
+		var:bos_consider_target = {
+			country_event = nf_brotherhood_communications.7
+		}
+		add_political_power = -100
+		add_stability = -0.02
+		effect_tooltip = {
+			var:bos_consider_target = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_3
+					amount = 250
+					producer = USA
+					}
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 500
+					producer = USA
+					}			
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					custom_effect_tooltip = bos_brotherhood_ai_doubled_tt
+					add_equipment_to_stockpile = {
+						type = power_armor_equipment_3
+						amount = 250
+						producer = USA
+						}
+					add_equipment_to_stockpile = {
+						type = energy_equipment_2
+						amount = 500
+						producer = USA
+						}		
+				}
+				set_country_flag = bos_supported_us
+			}
+		}
+		custom_effect_tooltip = bos_brotherhood_investment_sent_tt
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_brotherhood_communications.8.b
+		var:bos_consider_target = {
+			country_event = nf_brotherhood_communications.9
+		}
+		add_political_power = -60
+		add_stability = -0.02
+		set_temp_variable = { caps_to_add = -40 }
+		add_caps = yes
+		custom_effect_tooltip = bos_merc_details
+		hidden_effect = {load_oob = BOS_Brotherhood_Mercs}
+		effect_tooltip = {
+			if = {
+				limit = {
+				is_ai = yes
+				}
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 500
+					producer = USA
+					}		
+			}
+			set_country_flag = bos_supported_us
+		}
+		custom_effect_tooltip = bos_brotherhood_investment_sent_tt
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = { #table this for now
+		name = nf_brotherhood_communications.8.c
+		hidden_effect = {
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_communications.9
+	title = nf_brotherhood_communications.9.t
+	desc = nf_brotherhood_communications.9.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.9.a
+			set_technology = {
+				heavy_infantry_tech_1 = 1
+			}
+			load_oob = BOS_Brotherhood_Mercs
+			custom_effect_tooltip = bos_merc_details
+			if = {
+				limit = {
+				is_ai = yes
+				}
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 500
+					producer = USA
+					}		
+			}
+			custom_effect_tooltip = bos_brotherhood_investment_received_tt
+			set_country_flag = bos_supported_us
+			ai_chance = {
+				base = 1
+			}
+	}
+}
+country_event = { #Negotiating with the NCR for greater assistance with the Legion.
+	id = nf_brotherhood_communications.10
+	title = nf_brotherhood_communications.9.t
+	desc = nf_brotherhood_communications.9.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_communications.9.a
+			set_technology = {
+				heavy_infantry_tech_1 = 1
+			}
+			load_oob = BOS_Brotherhood_Mercs
+			custom_effect_tooltip = bos_merc_details
+			if = {
+				limit = {
+				is_ai = yes
+				}
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 500
+					producer = USA
+					}		
+			}
+			custom_effect_tooltip = bos_brotherhood_investment_received_tt
+			set_country_flag = bos_supported_us
+			ai_chance = {
+				base = 1
+			}
+	}
+}
+#Have to use meta effects here, because "set_politics" requires you set a ruling party.
+country_event = {
+	id = nf_brotherhood_council_reforms.1
+	title = bos_nf_head_elder_duty_duration
+	desc = bos_nf_head_elder_duty_duration_desc
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_council_reforms.1.a
+		set_temp_variable = { BOS_election_months_tt = 48 }
+		custom_effect_tooltip = nf_brotherhood_council_reforms.1.tt
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [PARTY]
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+				PARTY = "[BOS.GetRulingParty]"
+			}
+		}
+		set_variable = { BOS_election_months = 48 }
+	}
+	option = {
+		name = nf_brotherhood_council_reforms.1.b
+		set_temp_variable = { BOS_election_months_tt = 6 }
+		custom_effect_tooltip = nf_brotherhood_council_reforms.1.tt
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [PARTY]
+						elections_allowed = yes
+						election_frequency = 6
+					}
+				}
+				PARTY = "[BOS.GetRulingParty]"
+			}
+		}
+		set_variable = { BOS_election_months = 6 }
+	}
+	option = {
+		name = nf_brotherhood_council_reforms.1.c
+		set_temp_variable = { BOS_election_months_tt = 12 }
+		custom_effect_tooltip = nf_brotherhood_council_reforms.1.tt
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [PARTY]
+						elections_allowed = yes
+						election_frequency = 12
+					}
+				}
+				PARTY = "[BOS.GetRulingParty]"
+			}
+		}
+		set_variable = { BOS_election_months = 12 }
+	}
+}
+#Delivering Justice
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.1" }
+	id = nf_brotherhood.1
+	title = nf_brotherhood.1.t
+	desc = nf_brotherhood.1.d
+	picture = GFX_event_BOS_super_mutant
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.1.a
+
+		add_ideas = scribecouncil
+
+		set_country_flag = enclave_science_pil1
+	}
+
+	option = {
+		name = nf_brotherhood.1.b
+
+		add_ideas = paladincouncil
+	}
+}
+#Expedition into the Glowing Sea
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.2" }
+	id = nf_brotherhood.2
+	title = nf_brotherhood.2.t
+	desc = nf_brotherhood.2.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.2.a
+
+		add_ideas = discoveryknights
+
+		set_country_flag = enclave_science_pil2
+	}
+
+	option = {
+		name = nf_brotherhood.2.b
+
+		add_ideas = certaintyknights
+	}
+}
+#Vipers
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.3" }
+	id = nf_brotherhood.3
+	title = nf_brotherhood.3.t
+	desc = nf_brotherhood.3.d
+	picture = GFX_event_BOS_settler_defense
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.3.a
+
+		add_ideas = bosspineless
+	}
+
+	option = {
+		name = nf_brotherhood.3.b
+
+		add_ideas = bosvengeful
+	}
+
+}
+#Battle of Navarro
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.4" }
+	id = nf_brotherhood.4
+	title = nf_brotherhood.4.t
+	desc = nf_brotherhood.4.d
+	picture = GFX_event_ENC_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.4.a
+
+		add_ideas = steelconquerors
+	}
+
+	option = {
+		name = nf_brotherhood.4.b
+
+		add_ideas = maxsonsbulwark
+		country_event = { id = nf_brotherhood.34 }
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.5 Umbra Expansion" }
+	id = nf_brotherhood.5 #Umbra Expansion
+	title = nf_brotherhood.5.t
+	desc = nf_brotherhood.5.d
+	picture = GFX_event_CES_whitelegs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.5.b
+
+		UMB = {
+			country_event = { id = nf_brotherhood.28 }
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.6 Arroyo Invitation" }
+	id = nf_brotherhood.6 #Arroyo Invitation
+	title = nf_brotherhood.6.t
+	desc = nf_brotherhood.6.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.6.a
+
+		ARR = {
+			join_from_faction = yes
+			#set_politics = {
+			#	ruling_party = intellectuals
+			#	elections_allowed = no
+			#}
+			#set_popularities = {
+			#	ruler = 0
+			#	elites = 0
+			#	people = 50
+			#	intellectuals = 50
+			#}
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.6.b
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.7 Shi Tensions" }
+	id = nf_brotherhood.7 #Shi Tensions
+	title = nf_brotherhood.7.t
+	desc = nf_brotherhood.7.d
+	picture = GFX_event_SHI_shitown
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.7.a
+		BOS = {
+			country_event = { id = nf_brotherhood.35 }
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.7.b
+		BOS = {
+			country_event = { id = nf_brotherhood.36 }
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.7.c
+		BOS = {
+			country_event = { id = nf_brotherhood.37 }
+		}
+	}
+}
+
+#Sillicone Valley Expedition
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.8" }
+	id = nf_brotherhood.8
+	title = nf_brotherhood.8.t
+	desc = nf_brotherhood.8.d
+	picture = GFX_event_generic_ruins_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.8.a
+
+		add_ideas = siliconvalley
+	}
+
+	option = {
+		name = nf_brotherhood.8.b
+
+		104 = {
+			add_resource = {
+				type = metal
+				amount = 16
+			}
+		}
+	}
+}
+
+#Curbing Raider Aggression
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.9 Aftermath" }
+	id = nf_brotherhood.9 #Aftermath#
+	title = nf_brotherhood.9.t
+	desc = nf_brotherhood.9.d
+	picture = GFX_event_generic_ruins_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.9.a
+		custom_effect_tooltip = sanfranmobsters_tt
+		hidden_effect = {
+			load_oob = sanfranmobsters
+		}
+		add_war_support = -0.05
+	}
+
+	option = {
+		name = nf_brotherhood.9.b
+
+		104 = {
+			add_resource = {
+				type = metal
+				amount = 8
+			}
+		}
+		add_war_support = 0.05
+	}
+}
+
+#Shi Invitation
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.10" }
+	id = nf_brotherhood.10
+	title = nf_brotherhood.10.t
+	desc = nf_brotherhood.10.d
+	picture = GFX_event_SHI_shitown
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.10.a
+
+		SHI = {
+			join_from_faction = yes
+			set_cosmetic_tag = SHI_BOS
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.10.b
+	}
+}
+
+#Offer from the Brotherhood
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.13" }
+	id = nf_brotherhood.13
+	title = nf_brotherhood.13.t
+	desc = nf_brotherhood.13.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.13.a
+
+		add_ideas = brotherhoodtacticslexicon
+		BOS = {
+			country_event = { id = nf_brotherhood.14 }
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.13.b
+
+		BOS = {
+			country_event = { id = nf_brotherhood.15 }
+		}
+	}
+}
+
+#NCR Accepts Trade
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.14" }
+	id = nf_brotherhood.14
+	title = nf_brotherhood.14.t
+	desc = nf_brotherhood.14.d
+	picture = GFX_event_generic_ruins_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.14.a
+
+		add_ideas = bosprewarindustry
+	}
+}
+#NCR Refuses Trade
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.15" }
+	id = nf_brotherhood.15
+	title = nf_brotherhood.15.t
+	desc = nf_brotherhood.15.d
+	picture = GFX_event_generic_ruins_4
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.15.a
+
+		add_ideas = bossalvagedindustry
+	}
+}
+
+#Expedition into Vandenberg
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.16" }
+	id = nf_brotherhood.16
+	title = nf_brotherhood.16.t
+	desc = nf_brotherhood.16.d
+	picture = GFX_event_generic_ruins_5
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.16.a
+		64 = {
+			add_resource = {
+				type = advanced
+				amount = 16
+			}
+			add_resource = {
+				type = circuitry
+				amount = 8
+			}
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.16.b
+		64 = {
+			add_resource = {
+				type = composites
+				amount = 16
+			}
+			add_resource = {
+				type = metal
+				amount = 24
+			}
+		}
+	}
+
+	option = {
+		name = nf_brotherhood.16.c
+
+		add_timed_idea = {
+			idea = vandenbergidea
+			days = 365
+		}
+
+		64 = {
+			add_building_construction = {
+				type = anti_air_building
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = radar_station
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = {
+					all_provinces = yes
+				}
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Surplus of Lasers
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.17" }
+	id = nf_brotherhood.17
+	title = nf_brotherhood.17.t
+	desc = nf_brotherhood.17.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.17.a
+
+		add_manpower = -1600
+		country_event = { id = nf_brotherhood.18 }
+	}
+
+	option = {
+		name = nf_brotherhood.17.b
+
+		BOS = {
+			country_event = { id = nf_brotherhood.19 }
+		}
+	}
+}
+
+#Lasers Arrive
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.18" }
+	id = nf_brotherhood.18
+	title = nf_brotherhood.18.t
+	desc = nf_brotherhood.18.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.18.a
+		DES = {
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 1000 producer = BOS }
+		}
+
+		BOS = {
+			country_event = { id = nf_brotherhood.20 }
+		}
+	}
+}
+
+#Refused Shipments
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.19" }
+	id = nf_brotherhood.19
+	title = nf_brotherhood.19.t
+	desc = nf_brotherhood.19.d
+	picture = GFX_event_BOS_bunker_door
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.19.a
+	}
+}
+
+#Rangers Arrive
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.20" }
+	id = nf_brotherhood.20
+	title = nf_brotherhood.20.t
+	desc = nf_brotherhood.20.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.20.a
+		custom_effect_tooltip = sponsoredarms_tt
+		hidden_effect = {
+			load_oob = sponsoredarms
+		}
+	}
+}
+
+#Demand The Bay
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.22" }
+	id = nf_brotherhood.22
+	title = nf_brotherhood.22.t
+	desc = nf_brotherhood.22.d
+	picture = GFX_event_NCR_night
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.22.a
+
+		NCR = { country_event = { id = nf_brotherhood.23 } }
+	}
+}
+
+#BOS Demands Point Green (given to NCR)
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.23" }
+	id = nf_brotherhood.23
+	title = nf_brotherhood.23.t
+	desc = nf_brotherhood.23.d
+	picture = GFX_event_BOS_settler_defense
+
+	is_triggered_only = yes
+
+	option = {#Give the BOS the bay
+		name = nf_brotherhood.23.a
+
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 216
+					state = 474
+					state = 511
+					state = 441
+				}
+			}
+			BOS = {
+				transfer_state = PREV
+			}
+			NCR = {
+				remove_state_claim = PREV
+			}
+			remove_core_of = NCR
+			add_core_of = BOS
+		}
+
+		BOS = {
+			country_event = { id = nf_brotherhood.38 }
+		}
+	}
+
+	option = {#Refuse
+		name = nf_brotherhood.23.b
+		add_stability = -0.3
+		BOS = { country_event = { id = nf_brotherhood.24 } }
+	}
+}
+
+#NCR Refuses
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.24" }
+	id = nf_brotherhood.24
+	title = nf_brotherhood.24.t
+	desc = nf_brotherhood.24.d
+	picture = GFX_event_NCR_camp
+
+	is_triggered_only = yes
+
+	option = {#NCR Refused giving the Bay
+		name = nf_brotherhood.24.a
+		NCR = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+		BOS = { add_opinion_modifier = { target = NCR modifier = brotherhoodassault } }
+	}
+}
+
+#Victory or Death
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.26" }
+	id = nf_brotherhood.26
+	title = nf_brotherhood.26.t
+	desc = nf_brotherhood.26.d
+	picture = GFX_event_BOS_settler_defense
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.26.a
+
+		add_ideas = bosdigin
+		#set_technology = { bos_bosdigin = 1 }
+	}
+
+	option = {
+		name = nf_brotherhood.26.b
+
+		set_country_flag = unearthingmonsters
+	}
+}
+
+country_event = { #Player Umbra choice
+
+	id = nf_brotherhood.28
+	title = nf_brotherhood.28.t
+	desc = nf_brotherhood.28.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.28.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				set_temp_variable = { bos_battalions = BOS.num_battalions }
+				set_temp_variable = { umb_battalions = UMB.num_battalions }
+				set_temp_variable = { ratio = bos_battalions }
+				divide_temp_variable = { ratio = umb_battalions?1 }
+				factor = ratio
+			}
+			modifier = {
+				factor = 0.1
+				has_global_flag = NCR_status_broken_global_flag
+			}
+		}
+
+		BOS = {
+			annex_country = {
+				target = UMB
+				transfer_troops = yes
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = UMB
+				}
+				add_compliance = 80
+			}
+		}
+	}
+
+	option = {#No thx
+		name = nf_brotherhood.28.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				set_temp_variable = { umb_battalions = UMB.num_battalions }
+				set_temp_variable = { bos_battalions = BOS.num_battalions }
+				set_temp_variable = { ratio = umb_battalions }
+				divide_temp_variable = { ratio = bos_battalions?1 }
+				factor = ratio
+			}
+			modifier = {
+				factor = 10
+				has_global_flag = NCR_status_broken_global_flag
+			}
+		}
+		BOS = {
+			country_event = { id = nf_brotherhood.39 }
+		}
+	}
+}
+
+#Player Mojave Choice
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.30" }
+	id = nf_brotherhood.30
+	title = nf_brotherhood.30.t
+	desc = nf_brotherhood.30.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {#Players get to join the faction so they dont game over
+		name = nf_brotherhood.30.a
+
+		MOJ = { join_from_faction = yes }
+	}
+
+	option = {#No
+		name = nf_brotherhood.30.b
+	}
+}
+
+#Maxson Loyalty
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.34" }
+	id = nf_brotherhood.34
+	title = nf_brotherhood.34.t
+	desc = nf_brotherhood.34.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.34.a
+		custom_effect_tooltip = maxsongarrison_tt
+		hidden_effect = {
+			load_oob = maxsongarrison
+		}
+		add_corps_commander_role = {
+			character = BOS_lietenant_smith
+			traits = {
+				agile_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+}
+
+#The Vagrants pledge their support
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.35" }
+	id = nf_brotherhood.35
+	title = nf_brotherhood.35.t
+	desc = nf_brotherhood.35.d
+	picture = GFX_event_SHI_shitown
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.35.a
+		add_corps_commander_role = {
+			character = BOS_a_ron_meyers
+			traits = {
+				intelligent_trait
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		custom_effect_tooltip = thevagrants_tt
+		hidden_effect = {
+			load_oob = thevagrants
+		}
+
+		SHI = { add_opinion_modifier = { target = BOS modifier = shislightlydislikesbos } }
+	}
+}
+
+#Unfortunate Accident
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.36" }
+	id = nf_brotherhood.36
+	title = nf_brotherhood.36.t
+	desc = nf_brotherhood.36.d
+	picture = GFX_event_SHI_shitown
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.36.a
+
+		army_experience = 25
+
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+
+		SHI = { add_opinion_modifier = { target = BOS modifier = shislightlydislikesbos } }
+	}
+}
+
+#Shi Close the doors forever
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.37" }
+	id = nf_brotherhood.37
+	title = nf_brotherhood.37.t
+	desc = nf_brotherhood.37.d
+	picture = GFX_event_SHI_shitown
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.37.a
+
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+
+		add_ideas = shiclosethedoors
+
+		104 = {
+			add_resource = {
+				type = advanced
+				amount = 8
+			}
+		}
+
+		SHI = { add_opinion_modifier = { target = BOS modifier = shihatesbos } }
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.38" }
+	id = nf_brotherhood.38
+	title = nf_brotherhood.38.t
+	desc = nf_brotherhood.38.d
+	picture = GFX_event_NCR_settlers
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.38.a #NCR gave us the Bay
+
+		BOS = { add_opinion_modifier = { target = NCR modifier = ncrassault } }
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.39" }
+	id = nf_brotherhood.39
+	title = nf_brotherhood.39.t
+	desc = nf_brotherhood.39.d
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.39.a # Umbra rejected us, now we're mad.
+
+		UMB = {
+			BOS = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.40" }
+	id = nf_brotherhood.40
+	title = nf_brotherhood.40.title
+	desc = nf_brotherhood.40.desc
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.40.a
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 100
+				producer = USA
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.41" }
+	id = nf_brotherhood.41
+	title = nf_brotherhood.41.title
+	desc = nf_brotherhood.41.desc
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.41.a
+		d_join_western_brotherhood_of_steel = yes
+		declare_war_on = {
+			target = NCR
+			type = annex_everything
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.410" }
+	id = nf_brotherhood.410
+	title = nf_brotherhood.410.title
+	desc = nf_brotherhood.41.desc
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.41.a
+		add_timed_idea = {
+			idea = bos_lost_hills_volunteers
+			days = 720
+		}
+	}
+	option = {
+		name = nf_brotherhood.410.b
+	}
+	# option = {
+		# name = nf_brotherhood.410.c
+		# add_political_power = -100
+		# add_war_support = 0.10
+		# send_attache = BOS ##not a real effect. You can only recall :(
+	# }
+}
+
+country_event = {
+	id = nf_brotherhood_council_politics.1
+	title = nf_brotherhood_council_politics.1.t
+	desc = nf_brotherhood_council_politics.1.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_council_politics.1.1
+		trigger = {
+			has_country_flag = bos_ruler_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.1 }
+				bos_boost_ruler_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.2 }
+				bos_boost_ruler_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.3 }
+				bos_boost_ruler_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.1.2
+		trigger = {
+			has_country_flag = bos_elites_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.1 }
+				bos_boost_elites_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.2 }
+				bos_boost_elites_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.3 }
+				bos_boost_elites_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.1.3
+		trigger = {
+			has_country_flag = bos_intellectuals_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.1 }
+				bos_boost_intellectuals_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.2 }
+				bos_boost_intellectuals_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.3 }
+				bos_boost_intellectuals_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.1.4
+		trigger = {
+			has_country_flag = bos_people_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.1 }
+				bos_boost_people_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.2 }
+				bos_boost_people_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = -0.3 }
+				bos_boost_people_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.status_quo
+		add_political_power = -40
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_council_politics.2
+	title = nf_brotherhood_council_politics.2.t
+	desc = nf_brotherhood_council_politics.2.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_council_politics.2.1
+		trigger = {
+			has_country_flag = bos_ruler_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.1 }
+				bos_boost_ruler_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_ruler_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.3 }
+				bos_boost_ruler_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.2.2
+		trigger = {
+			has_country_flag = bos_elites_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.1 }
+				bos_boost_elites_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_elites_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.3 }
+				bos_boost_elites_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.2.3
+		trigger = {
+			has_country_flag = bos_intellectuals_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.1 }
+				bos_boost_intellectuals_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_intellectuals_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.3 }
+				bos_boost_intellectuals_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.2.4
+		trigger = {
+			has_country_flag = bos_people_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.1 }
+				bos_boost_people_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_people_drift = yes
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.3 }
+				bos_boost_people_drift = yes
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.status_quo
+		add_political_power = -40
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_council_politics.3
+	title = nf_brotherhood_council_politics.3.t
+	desc = nf_brotherhood_council_politics.3.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_council_politics.3.1
+		random_list = {
+			25 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_ruler_drift = yes
+				modifier = {
+					factor = 0
+					NOT = { has_country_flag = bos_ruler_allowed }
+				}
+			}
+			25 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_elites_drift = yes
+				modifier = {
+					factor = 0
+					NOT = { has_country_flag = bos_elites_allowed }
+				}
+			}
+			25 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_intellectuals_drift = yes
+				modifier = {
+					factor = 0
+					NOT = { has_country_flag = bos_intellectuals_allowed }
+				}
+			}
+			25 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_people_drift = yes
+				modifier = {
+					factor = 0
+					NOT = { has_country_flag = bos_people_allowed }
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.status_quo
+		add_political_power = -40
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_council_politics.4
+	title = nf_brotherhood_council_politics.4.t
+	desc = nf_brotherhood_council_politics.4.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_council_politics.4.1
+		trigger = {
+			has_country_flag = bos_ruler_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_ruler_drift = yes
+				add_popularity = {
+					ideology = ruler
+					popularity = 0.01
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.4 }
+				bos_boost_ruler_drift = yes
+				add_popularity = {
+					ideology = ruler
+					popularity = 0.02
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.6 }
+				bos_boost_ruler_drift = yes
+				add_popularity = {
+					ideology = ruler
+					popularity = 0.03
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.4.2
+		trigger = {
+			has_country_flag = bos_elites_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_elites_drift = yes
+				add_popularity = {
+					ideology = elites
+					popularity = 0.01
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.4 }
+				bos_boost_elites_drift = yes
+				add_popularity = {
+					ideology = elites
+					popularity = 0.02
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.6 }
+				bos_boost_elites_drift = yes
+				add_popularity = {
+					ideology = elites
+					popularity = 0.03
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.4.3
+		trigger = {
+			has_country_flag = bos_intellectuals_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_intellectuals_drift = yes
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.01
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.4 }
+				bos_boost_intellectuals_drift = yes
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.02
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.6 }
+				bos_boost_intellectuals_drift = yes
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.03
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.4.4
+		trigger = {
+			has_country_flag = bos_people_allowed
+		}
+		random_list = {
+			34 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.2 }
+				bos_boost_people_drift = yes
+				add_popularity = {
+					ideology = people
+					popularity = 0.01
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.4 }
+				bos_boost_people_drift = yes
+				add_popularity = {
+					ideology = people
+					popularity = 0.02
+				}
+			}
+			33 = {
+				set_temp_variable = { temp_BOS_drift_add = 0.6 }
+				bos_boost_people_drift = yes
+				add_popularity = {
+					ideology = people
+					popularity = 0.03
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.status_quo
+		add_political_power = -40
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_council_politics.5
+	title = nf_brotherhood_council_politics.5.t
+	desc = nf_brotherhood_council_politics.5.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	trigger = {
+		original_tag = BOS
+	}
+
+	immediate = {
+		set_variable = {
+			temp_bos_ruler = BOS.party_popularity_100@ruler
+		}
+		set_variable = {
+			temp_bos_elites = BOS.party_popularity_100@elites
+		}
+		set_variable = {
+			temp_bos_intellectuals = BOS.party_popularity_100@intellectuals
+		}
+		set_variable = {
+			temp_bos_people = BOS.party_popularity_100@people
+		}
+	}
+
+	option = {
+		name = nf_brotherhood_council_politics.5.1
+		trigger = {
+			check_variable = {
+				var = temp_bos_ruler
+				value = temp_bos_elites
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_ruler
+				value = temp_bos_intellectuals
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_ruler
+				value = temp_bos_people
+				compare = greater_than_or_equals
+			}
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = [PARTY]
+					elections_allowed = yes
+					election_frequency = [TIME]
+				}
+			}
+			TIME = "[?BOS.BOS_election_months]"
+			PARTY = "ruler"
+		}
+	}
+
+	option = {
+		name = nf_brotherhood_council_politics.5.2
+		trigger = {
+			check_variable = {
+				var = temp_bos_elites
+				value = temp_bos_ruler
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_elites
+				value = temp_bos_intellectuals
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_elites
+				value = temp_bos_people
+				compare = greater_than_or_equals
+			}
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = [PARTY]
+					elections_allowed = yes
+					election_frequency = [TIME]
+				}
+			}
+			TIME = "[?BOS.BOS_election_months]"
+			PARTY = "elites"
+		}
+	}
+
+	option = {
+		name = nf_brotherhood_council_politics.5.3
+		trigger = {
+			check_variable = {
+				var = temp_bos_intellectuals
+				value = temp_bos_ruler
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_intellectuals
+				value = temp_bos_elites
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_intellectuals
+				value = temp_bos_people
+				compare = greater_than_or_equals
+			}
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = [PARTY]
+					elections_allowed = yes
+					election_frequency = [TIME]
+				}
+			}
+			TIME = "[?BOS.BOS_election_months]"
+			PARTY = "intellectuals"
+		}
+	}
+
+	option = {
+		name = nf_brotherhood_council_politics.5.4
+		trigger = {
+			check_variable = {
+				var = temp_bos_people
+				value = temp_bos_ruler
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_people
+				value = temp_bos_elites
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = temp_bos_people
+				value = temp_bos_intellectuals
+				compare = greater_than_or_equals
+			}
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = [PARTY]
+					elections_allowed = yes
+					election_frequency = [TIME]
+				}
+			}
+			TIME = "[?BOS.BOS_election_months]"
+			PARTY = "people"
+		}
+	}
+}
+
+#Should we accept Llwyd's offer? ( NCR PoV )
+country_event = {
+	id = nf_brotherhood_steel_rangers.1
+	title = nf_brotherhood_steel_rangers.1.t
+	desc = nf_brotherhood_steel_rangers.1.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.1.1
+		BOS = {
+			country_event = nf_brotherhood_steel_rangers.2
+		}
+	}
+	option = {
+		name = nf_brotherhood_council_politics.1.2
+		ai_chance = {
+			base = 0
+		}
+		activate_decision = ncr_attack_bos_hard
+	}
+	option = {
+		name = nf_brotherhood_council_politics.1.3
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#Start SRG Transition! ( BoS PoV )
+country_event = {
+	id = nf_brotherhood_steel_rangers.2
+	title = nf_brotherhood_steel_rangers.2.t
+	desc = nf_brotherhood_steel_rangers.2.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.2.1
+		NCR = {
+			every_owned_state = {
+				limit = {
+					region = 51
+				}
+				add_core_of = SRG
+				SRG = { transfer_state = PREV }
+			}
+		}
+		SRG = {
+			inherit_technology = NCR
+			country_event = { id = nf_brotherhood_steel_rangers.3 hours = 2 }
+		}
+		NCR = {
+			transfer_units_fraction= {
+				target = SRG
+				size = 0.25
+				stockpile_ratio = 0.25
+				army_ratio = 0.25
+				navy_ratio = 0.25
+				air_ratio = 0.25
+				keep_unit_leaders_trigger = {
+					always = yes
+				}
+			}
+		}
+		SRG = {
+			change_tag_from = BOS
+		}
+	}
+}
+
+#Annex Lost Hills ( SRG PoV )
+country_event = {
+	id = nf_brotherhood_steel_rangers.3
+	title = nf_brotherhood_steel_rangers.3.t
+	desc = nf_brotherhood_steel_rangers.3.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.3.1
+		BOS = {
+			every_owned_state = {
+				add_core_of = SRG
+				SRG = { transfer_state = PREV }
+				remove_core_of = BOS		
+			}
+		}
+		create_or_join_new_california = yes							 
+		news_event = nf_brotherhood_steel_rangers.4
+		hidden_effect = { ##it's overidden from the history file sadly, so secretly fixed here.
+			set_technology = {
+			stripped_pa_tech = 1
+			weight_support_frame_pa_tech_1 = 1
+			weight_support_frame_pa_tech_2 = 1
+			wasteland_pa_tech = 1
+			}
+		}
+	}
+}
+
+#News Event - Steel Rangers formed! ( World PoV )
+news_event = {
+	id = nf_brotherhood_steel_rangers.4
+	title = nf_brotherhood_steel_rangers.4.t
+	desc = nf_brotherhood_steel_rangers.4.d
+	picture = GFX_event_ncr_bos_relations
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.4.1
+		trigger = {
+			is_in_array = {
+				array = global.bos_ledger_members
+				value = THIS
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_steel_rangers.4.2
+		trigger = {
+			NOT = {
+				is_in_array = {
+					array = global.bos_ledger_members
+					value = THIS
+				}
+			}
+			NOT = { original_tag = NCR }
+			NOT = { original_tag = SRG }
+		}
+	}
+	option = {
+		name = nf_brotherhood_steel_rangers.4.3
+		trigger = {
+			NOT = {
+				is_in_array = {
+					array = global.bos_ledger_members
+					value = THIS
+				}
+			}
+			original_tag = NCR
+		}
+	}
+	option = {
+		name = nf_brotherhood_steel_rangers.4.4
+		trigger = {
+			NOT = {
+				is_in_array = {
+					array = global.bos_ledger_members
+					value = THIS
+				}
+			}
+			original_tag = SRG
+		}
+	}
+}
+
+#Steel Rangers - Transition is complete ( SRG PoV )
+country_event = {
+	id = nf_brotherhood_steel_rangers.5
+	title = nf_brotherhood_steel_rangers.5.t
+	desc = nf_brotherhood_steel_rangers.5.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.5.1
+		add_stability = 0.2
+		custom_effect_tooltip = srg_advisers_return_tt
+	}
+}
+
+#Steel Rangers - California Tech Sharing Initiative ( NCR Pov )
+country_event = {
+	id = nf_brotherhood_steel_rangers.6
+	title = nf_brotherhood_steel_rangers.6.t
+	desc = nf_brotherhood_steel_rangers.7.d ##not a mistake .7.d is intentional
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.6.1
+		set_technology = { military_heritage_unlock_tech = 1 }
+		custom_effect_tooltip = military_heritage_unlock_tech_tt												  
+	}
+}
+
+#Steel Rangers - California Tech Sharing Initiative ( SRG Pov )
+country_event = {
+	id = nf_brotherhood_steel_rangers.7
+	title = nf_brotherhood_steel_rangers.6.t
+	desc = nf_brotherhood_steel_rangers.7.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.7.1
+		set_technology = { military_heritage_unlock_tech = 1 }
+	}
+}
+#Steel Rangers - The Field Scribe
+country_event = {
+	id = nf_brotherhood_steel_rangers.8
+	title = nf_brotherhood_steel_rangers.8.t
+	desc = nf_brotherhood_steel_rangers.8.d
+	picture = GFX_event_ncr_bos_relations
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.8.1
+		set_technology = {agriculture_industry_tech_7 = 1}
+		set_technology = {exploitation_tech_level_scientific = 1}
+		add_ideas = {srg_seeds_of_tomorrow}
+	}
+	option = {
+		name = nf_brotherhood_steel_rangers.8.2
+		set_temp_variable = { caps_to_add = 300 }
+		add_caps = yes
+		add_ideas = {srg_appease_the_barons}
+	}
+}
+#Steel Rangers - Maxson State University
+country_event = {
+	id = nf_brotherhood_steel_rangers.9
+	title = srg_ncr_puppet_light_of_civilisation
+	desc = nf_brotherhood_steel_rangers.9.d
+	picture = GFX_event_NCR_settlers
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.9.a
+		effect_tooltip = {
+			add_research_slot = 1
+			set_province_name = { id = 3418 name = "Maxson State University" }
+		}
+	}
+}
+#Guardians invitation back into the Brotherhood.
+country_event = {
+	id = nf_brotherhood_integrate_guardians.1
+	title = nf_brotherhood_integrate_guardians.1.t
+	desc = nf_brotherhood_integrate_guardians.1.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_integrate_guardians.1.1
+		set_cosmetic_tag = GRD_brotherhood
+		BOS = {
+			country_event = nf_brotherhood_integrate_guardians.2
+		}
+	}
+	option = {
+		name = nf_brotherhood_integrate_guardians.1.2
+		ai_chance = {
+			base = 0
+		}
+		bos_remove_from_ledger = yes
+		BOS = {
+			country_event = nf_brotherhood_integrate_guardians.3
+		}
+	}
+}
+
+#Guardians accepted
+country_event = {
+	id = nf_brotherhood_integrate_guardians.2
+	title = nf_brotherhood_integrate_guardians.2.t
+	desc = nf_brotherhood_integrate_guardians.2.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_integrate_guardians.2.1
+		GRD = {
+			effect_tooltip = {
+				set_cosmetic_tag = GRD_brotherhood
+			}
+		}
+	}
+}
+
+#Guardians Declined
+country_event = {
+	id = nf_brotherhood_integrate_guardians.3
+	title = nf_brotherhood_integrate_guardians.3.t
+	desc = nf_brotherhood_integrate_guardians.3.d
+	picture = GFX_event_ach_hood_turrets
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood_steel_rangers.3.1
+		GRD = {
+			effect_tooltip = {
+				bos_remove_from_ledger = yes
+			}
+		}
+	}
+}
+#Deploy Bunkered Divisions
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_bunkered_divisions.1" }
+	id = nf_brotherhood_bunkered_divisions.1
+	title = nf_brotherhood_bunkered_divisions.1.t 
+	desc = nf_brotherhood_bunkered_divisions.1.desc
+	picture = GFX_event_BOS_desert_patrol
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_bunkered_divisions.1.a
+		BOS = {
+			load_oob=BOS_Brotherhood_Presence
+		}
+		set_variable = {
+			bos_slh_volunterr_func_negative = 0
+		}
+		set_variable = {
+			bos_slh_volunterr_func_positive = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_bunkered_divisions.1.b
+		declare_war_on = {
+			target = NCR
+			type = take_claimed_state
+		}
+		BOS = {
+			load_oob=BOS_Brotherhood_Presence
+		}
+		set_variable = {
+			bos_slh_volunterr_func_negative = 0
+		}
+		set_variable = {
+			bos_slh_volunterr_func_positive = 0
+		}
+	}
+}
+## Foreign Assistance Events start here. This is an umbrella for "interact with others" whereas ELH events is internal.
+ ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event,
+					## so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
+country_event = {
+	id = nf_brotherhood_foreign_assistance.1
+	title = nf_brotherhood_foreign_assistance.1.t  ##Lost Hills Expands Operations.
+	desc = nf_brotherhood_foreign_assistance.1.d ##Describe the news - surprise, you got a military base! Also, here's a ceremony you're holding to thank Lost Hills!
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.1.a ##they built away from the capital
+		set_temp_variable = { caps_to_add = -100 }
+		add_caps = yes
+		random_owned_state  = {
+			# prioritize = {THIS.capital}##try to do this in the capital
+			##this probably doesn't work.
+			if = {
+				limit = {
+					air_base < 2
+				}
+				set_building_level = { # ~2.5K IC
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					radar_station < 3
+				}
+				set_building_level = { # ~10k IC
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					anti_air_building < 2
+				}
+				set_building_level = { # ~5k IC
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					infrastructure < 4
+				}
+				set_building_level = { #failsafe for terrible AI
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -100 }
+				add_caps = yes
+			}
+			BOS = {
+				add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		BOS = {
+			country_event = nf_brotherhood_foreign_assistance.101
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.1.b
+		capital_scope = {
+			# prioritize = {THIS.capital}##try to do this in the capital
+			if = {
+				limit = {
+					air_base < 2
+				}
+				set_building_level = { # ~2.5K IC
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					radar_station < 3
+				}
+				set_building_level = { # ~10k IC
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					anti_air_building < 2
+				}
+				set_building_level = { # ~5k IC
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					infrastructure < 4
+				}
+				set_building_level = { #failsafe for terrible AI
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -100 }
+				add_caps = yes
+			}
+			BOS = {
+				add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		BOS = {
+			country_event = nf_brotherhood_foreign_assistance.101
+		}
+	
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.1.c ##collect letters for the return flight (stability)
+		add_political_power = -25
+		add_stability = 0.02
+		capital_scope = {
+			# prioritize = {THIS.capital}##try to do this in the capital
+			if = {
+				limit = {
+					air_base < 2
+				}
+				set_building_level = { # ~2.5K IC
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					radar_station < 3
+				}
+				set_building_level = { # ~10k IC
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					anti_air_building < 2
+				}
+				set_building_level = { # ~5k IC
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					infrastructure < 4
+				}
+				set_building_level = { #failsafe for terrible AI
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -100 }
+				add_caps = yes
+			}
+			BOS = {
+				add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		BOS = {
+			country_event = nf_brotherhood_foreign_assistance.101
+		}
+	
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.1.e ##Hold a military parade! (war support)
+		add_political_power = -40
+		add_war_support = 0.05
+		capital_scope = {
+			# prioritize = {THIS.capital}##try to do this in the capital
+			if = {
+				limit = {
+					air_base < 2
+				}
+				set_building_level = { # ~2.5K IC
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					radar_station < 3
+				}
+				set_building_level = { # ~10k IC
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					anti_air_building < 2
+				}
+				set_building_level = { # ~5k IC
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					infrastructure < 4
+				}
+				set_building_level = { #failsafe for terrible AI
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -100 }
+				add_caps = yes
+			}
+			BOS = {
+				add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		BOS = {
+			country_event = nf_brotherhood_foreign_assistance.101
+		}
+	
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.101
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.101" }
+	title = nf_brotherhood_foreign_assistance.101.t  ##Lost Hills Expands Operations. - Lost Hills view
+	desc = nf_brotherhood_foreign_assistance.101.d ##Describe Lost Hills elder stepping off vertibird with gaggles of Scribes.
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.101.a ##Disparate no longer.
+
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -100 }
+				add_caps = yes
+			}
+			BOS = {
+				add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.2
+	immediate = {	
+		hidden_effect = {
+			BOS = { 
+				country_event = nf_brotherhood_foreign_assistance.201 
+			}
+		} 
+		 log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.2"
+	}
+	title = nf_brotherhood_foreign_assistance.2.t  ##Treasures for the new Elder
+	desc = nf_brotherhood_foreign_assistance.2.d ##Describe the news - The Troika want this nation's elder to ascend and embrace the Troika Apocrypha, by allowing their Scribes to install implants that will "reveal the Lie-World"
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.2.a ##Accept the assistance, and go under the Troika's knife.
+		custom_effect_tooltip = troika_unlock_augment_system_tt
+		custom_effect_tooltip = fallout_add_augment
+		bos_troika_install_augment_in_elder = yes
+		add_political_power = -100
+		BOS = {
+			country_event = nf_brotherhood_foreign_assistance.202
+		}
+	}
+	# option = {
+		# name = nf_brotherhood_foreign_assistance.2.mid ##Reject this insanity. Stand against this, with the Midwest.
+		# BOS = {
+			# country_event = nf_brotherhood_foreign_assiatnce.203 ##The Chapter Leaves for the Midwest.
+		# }
+	# }
+	option = {
+		name = nf_brotherhood_foreign_assistance.2.b ##Reject this insanity, and Lost Hills. 
+		if = {
+			limit = {
+				is_in_faction_with = BOS
+			}
+			leave_faction = yes
+		}
+		BOS = {
+			end_puppet = ROOT
+		}
+		bos_remove_from_ledger = yes
+		add_political_power = 200
+		add_war_support = 0.05
+		add_stability = 0.1
+		bos_exodus_manpower_modifier_micro = yes
+		add_opinion_modifier = { target = BOS modifier = tca_twisted_legacy }
+		BOS = {
+			add_opinion_modifier = { target = FROM modifier = tca_pathetic_exiles }
+			country_event = nf_brotherhood_foreign_assistance.204
+		}
+		bos_troika_upgrade_bos_experience_law = yes
+	}
+}
+country_event = {	
+	id = nf_brotherhood_foreign_assistance.201
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.201" }
+	title = nf_brotherhood_foreign_assistance.201.t  ##Treasures for the New Elder. - Lost Hills view
+	desc = nf_brotherhood_foreign_assistance.201.d ##Describe the Troika visiting this chapter leader.
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.201.a ##An offer made.
+		add_political_power = 25
+	}
+}
+country_event = {	
+	id = nf_brotherhood_foreign_assistance.202
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.202" }
+	title = nf_brotherhood_foreign_assistance.202.t  ##Treasures for the New Elder. - Lost Hills view, Offer Accepted.
+	desc = nf_brotherhood_foreign_assistance.202.d ##They accepted, let's get on with our great ritual soon!
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.202.a ##An offer accepted.
+		add_political_power = 100
+		add_stability = 0.01
+		add_war_support = 0.01
+		add_manpower = 1000
+	}
+}
+##203 for the midwest will go here.
+country_event = {	
+	id = nf_brotherhood_foreign_assistance.204
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.204" }
+	title = nf_brotherhood_foreign_assistance.204.t  ##Treasures for the New Elder. - Lost Hills view, Offer Rejected.
+	desc = nf_brotherhood_foreign_assistance.204.d ##They accepted, let's get on with our great ritual soon!
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.204.a ##An offer accepted.
+		effect_tooltip = {
+			FROM = {
+				if = {
+					limit = {
+						is_in_faction_with = BOS
+					}
+					leave_faction = yes
+				}
+				BOS = {
+					end_puppet = ROOT
+				}
+				bos_remove_from_ledger = yes
+				add_political_power = 200
+				add_war_support = 0.05
+				add_stability = 0.1
+				bos_exodus_manpower_modifier_micro = yes
+				add_opinion_modifier = { target = BOS modifier = tca_twisted_legacy }
+				BOS = {
+					add_opinion_modifier = { target = FROM modifier = tca_pathetic_exiles }
+				}
+				bos_troika_upgrade_bos_experience_law = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.3
+	title = nf_brotherhood_foreign_assistance.3.t  ##Lost Hills Expands Operations.
+	desc = nf_brotherhood_foreign_assistance.3.d ##Describe the news - surprise, you got a military base! Also, here's a ceremony you're holding to thank Lost Hills!
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	  # nf_brotherhood_foreign_assistance.3.a: "Increasing our military production is critical."
+	  # nf_brotherhood_foreign_assistance.3.b: "We need better power infrastructure."
+	  # nf_brotherhood_foreign_assistance.3.c: "Maybe they can take a look at our logistics?"
+	  # nf_brotherhood_foreign_assistance.3.e: "Border defenses would be appreciated the most." ##this one not enabled, too hard to figure out rn
+	  # nf_brotherhood_foreign_assistance.3.f: "Getting a new electronics fab is vital."
+	  # nf_brotherhood_foreign_assistance.3.g: "We need their research advice."
+	immediate = {
+		hidden_effect = {
+			BOS = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = no_more_notifications_foreign_301}
+					}
+					BOS = {
+						country_event = nf_brotherhood_foreign_assiatnce.301
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.3.h #"Nothing for us"
+		BOS = {
+			set_temp_variable = { caps_to_add = 20 }
+			add_caps = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.3.b #"We need better power infrastructure."
+		trigger = {
+			BOS = {
+				NOT = {has_active_mission = bos_lost_hills_diplomacy_building_power}
+			}
+		}
+		set_temp_variable = { caps_to_add = -20 }
+		add_caps = yes
+		random_core_state  = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+			}
+			add_building_construction = {
+				type = electricity_generator
+				level = 2
+				instant_build = yes
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -20 }
+				add_caps = yes
+			}
+		}
+		BOS = {
+			activate_mission = bos_lost_hills_diplomacy_building_power
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				fuel_ratio < 0.4
+				add = 19
+			}
+			modifier = {
+				fuel_ratio > 0.9
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.3.c #"Maybe they can take a look at our logistics?"
+		trigger = {
+			BOS = {
+				NOT = {has_active_mission = bos_lost_hills_diplomacy_building_logistics}
+			}
+		}
+		set_temp_variable = { caps_to_add = -25 }
+		add_caps = yes
+		random_owned_state  = {
+			limit = {
+				infrastructure < 7
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -20 }
+				add_caps = yes
+			}
+		}
+		BOS = {
+			activate_mission = bos_lost_hills_diplomacy_building_logistics
+		}
+	}
+	# option = {
+		# name = nf_brotherhood_foreign_assistance.3.e #"Border defenses would be appreciated the most."
+		# trigger = {
+			# BOS = {
+				# NOT = {has_active_mission = bos_lost_hills_diplomacy_building_factory}
+			# }
+		# }
+		# set_temp_variable = { caps_to_add = -25 }
+		# add_caps = yes
+		# random_owned_state  = {
+			# limit = {
+				# is_valid_state_for_arms_factory = yes
+			# }
+			# add_building_construction = {
+				# type = arms_factory
+				# level = 1
+				# instant_build = yes
+			# }
+		# }
+		# effect_tooltip = {
+			# BOS = {
+				# set_temp_variable = { caps_to_add = -20 }
+				# add_caps = yes
+			# }
+		# }
+		# BOS = {
+			# activate_mission = bos_lost_hills_diplomacy_building_factory
+		# }
+	# }
+	option = {
+		name = nf_brotherhood_foreign_assistance.3.f #"Getting a new electronics fab is vital."
+		trigger = {
+			BOS = {
+				NOT = {has_active_mission = bos_lost_hills_diplomacy_building_electronics_fab}
+			}
+		}
+		set_temp_variable = { caps_to_add = -30 }
+		add_caps = yes
+		random_core_state  = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+				circuitry_generator < 2
+			}
+			add_building_construction = {
+				type = circuitry_generator
+				level = 2
+				instant_build = yes
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -20 }
+				add_caps = yes
+			}
+		}
+		BOS = {
+			activate_mission = bos_lost_hills_diplomacy_building_electronics_fab
+		}
+		ai_chance = {
+			base = 1
+			# modifier = {
+				# has_resources_amount = {
+					# resource = circuitry
+					# amount < 6
+					# delivered = yes
+				# }
+				# add = 19
+			# }
+			# modifier = { ##has_resources_amount is not allowed in ai_chance for some reason
+				# has_resources_amount = {
+					# resource = circuitry
+					# amount > 16
+					# delivered = yes
+				# }
+				# factor = 0
+			# }
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.3.g #"We need their research advice."
+		trigger = {
+			BOS = {
+				NOT = {has_active_mission = bos_lost_hills_diplomacy_building_advising_research}
+			}
+		}
+		set_temp_variable = { caps_to_add = -20 }
+		add_caps = yes
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -20 }
+				add_caps = yes
+			}
+		}
+		add_tech_bonus = {
+			bonus = 0.25
+			ahead_reduction = 1.5
+			uses = 1
+			category = infantry_tech_category 
+			category = support_tech_category 
+			category = industry 
+			category = electronics 
+			category = med_tech 
+			category = education_tech 
+			category = agriculture_tech
+		}
+		BOS = {
+			activate_mission = bos_lost_hills_diplomacy_building_advising_research
+		}
+		
+		ai_chance = {
+			base = 1
+			modifier = {
+				num_researched_technologies < 110
+				add = 19
+			}
+			modifier = {
+				num_researched_technologies > 190
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.3.a #"Increasing our military production is critical."
+		trigger = {
+			BOS = {
+				NOT = {has_active_mission = bos_lost_hills_diplomacy_building_factory}
+			}
+		}
+		set_temp_variable = { caps_to_add = -35 }
+		add_caps = yes
+		random_core_state  = {
+			limit = {
+				is_valid_state_for_arms_factory = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		effect_tooltip = {
+			BOS = {
+				set_temp_variable = { caps_to_add = -20 }
+				add_caps = yes
+			}
+		}
+		BOS = {
+			activate_mission = bos_lost_hills_diplomacy_building_factory
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				stockpile_ratio = {
+					archetype = infantry_equipment
+					ratio < 0.5
+				}
+				add = 19
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.301
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.301" }
+	title = nf_brotherhood_foreign_assistance.301.t  ##Lost Hills Expands Operations. - Lost Hills view
+	desc = nf_brotherhood_foreign_assistance.301.d ##Describe Lost Hills elder stepping off vertibird with gaggles of Scribes.
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	trigger = {
+
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.301.a ##Let's see here...
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.301.b ##Don't bother me with this again.
+		BOS = {
+			set_country_flag = no_more_notifications_foreign_301
+		}
+	}
+}
+##EXPANDED LOST HILLS OTHER  - should be primarily INTERNAL stuff. ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event, so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
+##Thanks to Phlogiston for permission to steal their plan!
+country_event = {
+	id = nf_brotherhood_elh_events.1
+	title = nf_brotherhood_elh_events.1.t #The Price of Victory
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.1" }
+	desc = nf_brotherhood_elh_events.1.d #The people of the NCR have not forgotten us. A patrol of promising young Knights and their apprentices were pelted with tin cans, rocks, and rotten food on their way through a town. The Reformer patrol leader, Senior Knight Sanders, did not give her squad permission to fire upon or otherwise disperse the townsfolk, and was assasinated by a Ranger hiding in the town. The Rhombian patrol that visited next brought a portable generator and a Scribe to establish peaceable relations with the townsfolk, and the very next day the town over was massacred by a Maxsonian led squad for refusal to surrender their militia's Wattz laser pistols, the only defense they had against the radscorpions commonplace around there. We must put forward a plan for our occupation of the NCR - and soon.
+	picture = GFX_event_canada_fallout_purge
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+	set_variable = { popularity_ruler = party_popularity_100@ruler }
+	set_variable = { popularity_intellectuals = party_popularity_100@intellectuals}
+	subtract_from_variable = {
+		var = popularity_intellectuals
+		val = 20
+	}
+	clamp_variable = {
+		var = popularity_intellectuals
+		min = 0
+		max = 100
+	}
+	set_variable = { popularity_elites = party_popularity_100@elites }
+	set_variable = { popularity_people = party_popularity_100@people }
+	##party_popularity_100@[group] is a game-calculated read only dynamic variable. It's being used here as a weight for the random list
+	}
+	option = {
+		name = nf_brotherhood_elh_events.1.a #Debate drags on in the Council
+		add_political_power = 50
+		every_controlled_state = { ##Continued inconsistency has repercussions
+			add_resistance = 25
+		}
+		custom_effect_tooltip=chances_popularity_tt
+		random_list = { 
+			popularity_ruler  = {
+				add_ideas = bos_rhombian_occupation
+			}
+			popularity_intellectuals = {
+				add_ideas = bos_troikan_occupation
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = implant_tech
+				}
+				modifier = {	
+					factor = 0
+					check_variable = {
+						popularity_intellectuals < 20
+					}
+				}
+				country_event = {
+					id = nf_brotherhood_elh_events.102
+					days = 60 
+				}
+			}
+			popularity_elites = {
+				add_ideas = bos_maxsonian_occupation
+			}
+			popularity_people = {
+				add_ideas = bos_reformer_occupation
+			}
+		}
+		ai_chance = {
+			base = 33
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.1.maxsonians #Fear will keep the towns in line.
+		trigger = {has_government = elites}
+		add_ideas = bos_maxsonian_occupation
+		ai_chance = {
+			base = 64
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.1.rhombians #We were not kind, before. We will be this time.
+		trigger = {has_government = ruler}
+		add_ideas = bos_rhombian_occupation
+		ai_chance = {
+			base = 64
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.1.reformers #Begin reconstruction efforts immediately - they'll learn we mean well.
+		trigger = {has_government = people}
+		set_temp_variable = { caps_to_add = -100 }
+		add_caps = yes
+		add_ideas = bos_reformer_occupation
+		ai_chance = {
+			base = 64
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.1.troika #They will be dust in the Great Storm.
+		trigger = {has_government = intellectuals}
+		add_ideas = bos_troikan_occupation
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = implant_tech
+		}
+		country_event = nf_brotherhood_elh_events.103
+		ai_chance = {
+			base = 64
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.102
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.102" }
+	title = nf_brotherhood_elh_events.102.t #Will of Rhiannon
+	desc = nf_brotherhood_elh_events.102.d #event describing the callous process of bending the NCR to their bloody business.
+	picture = GFX_event_sub_generic_war_room #Probably replace this
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+	set_variable = { popularity_ruler = party_popularity_100@ruler }
+	set_variable = { popularity_intellectuals = party_popularity_100@intellectuals }
+	set_variable = { popularity_elites = party_popularity_100@elites }
+	set_variable = { popularity_people = party_popularity_100@people }
+	##party_popularity_100@[group] is a game-calculated read only dynamic variable. It's being used here as a weight for the random list
+	}
+	option = {
+		name = nf_brotherhood_elh_events.102.a #Absolutely unacceptable! Rhiannon must be stopped, NOW!
+		add_political_power = -200
+		every_controlled_state = { ##Continued inconsistency has repercussions
+			add_resistance = 25
+		}
+		custom_effect_tooltip=chances_popularity_tt
+		random_list = { 
+			popularity_ruler  = {
+				add_ideas = bos_rhombian_occupation
+			}
+			popularity_elites = {
+				add_ideas = bos_maxsonian_occupation
+			}
+			popularity_people = {
+				add_ideas = bos_reformer_occupation
+			}
+		}
+		remove_ideas = bos_troikan_occupation
+		activate_decision = BOS_ban_intellectuals
+		ai_chance = {
+			base = 33
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.102.b #There is no other way.
+		set_politics = {
+			ruling_party = intellectuals
+			}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.3
+		}
+		ai_chance = {
+			base = 64
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.103
+	title = nf_brotherhood_elh_events.103.t #Will of Rhiannon
+	desc = nf_brotherhood_elh_events.103.d #basically the same event as 102 with slightly different loc to explain How We Got Here
+	picture = GFX_event_sub_generic_war_room #Probably replace this
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+	set_variable = { popularity_ruler = party_popularity_100@ruler }
+	set_variable = { popularity_intellectuals = party_popularity_100@intellectuals }
+	set_variable = { popularity_elites = party_popularity_100@elites }
+	set_variable = { popularity_people = party_popularity_100@people }
+	##party_popularity_100@[group] is a game-calculated read only dynamic variable. It's being used here as a weight for the random list
+	}
+	option = {
+		name = nf_brotherhood_elh_events.103.a #Absolutely unacceptable! Rhiannon must be stopped, NOW!
+		add_political_power = -200
+		every_controlled_state = { ##Continued inconsistency has repercussions
+			add_resistance = 25
+		}
+		custom_effect_tooltip=chances_popularity_tt
+		random_list = { 
+			popularity_ruler  = {
+				add_ideas = bos_rhombian_occupation
+			}
+			popularity_elites = {
+				add_ideas = bos_maxsonian_occupation
+			}
+			popularity_people = {
+				add_ideas = bos_reformer_occupation
+			}
+		}
+		remove_ideas = bos_troikan_occupation
+		activate_decision = BOS_ban_intellectuals
+		ai_chance = {
+			base = 33
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.103.b #There is no other way.
+		set_politics = {
+			ruling_party = intellectuals
+			}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.3
+		}
+		ai_chance = {
+			base = 64
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.201
+	title = nf_brotherhood_elh_events.201.t #Cleaning up our Image
+	desc = nf_brotherhood_elh_events.201.d #event describing Radio propaganda of good deeds by the Brotherhood, efforts in reconstruction
+	picture = GFX_event_NCR_ice_cream #I love this picture, but it might be controversial.
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+	set_variable = { popularity_ruler = party_popularity_100@ruler }
+	set_variable = { popularity_intellectuals = party_popularity_100@intellectuals }
+	set_variable = { popularity_elites = party_popularity_100@elites }
+	set_variable = { popularity_people = party_popularity_100@people }
+	##party_popularity_100@[group] is a game-calculated read only dynamic variable. It's being used here as a weight for the random list
+	}
+	option = {
+		name = nf_brotherhood_elh_events.201.a #We mean it.
+		add_political_power = 100
+		add_timed_idea = {
+		idea = bos_propaganda_1
+		days = 720
+		}
+		ai_chance = {
+			base = 33
+			modifier = {
+			has_government = ruler
+			factor = 0
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.201.b #We'll relocate some.
+		add_timed_idea = {
+		idea = bos_propaganda_2
+		days = 720
+		}
+		ai_chance = {
+			base = 64
+			modifier = {
+			has_government = people
+			factor = 0
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.201.c #No need to follow through.
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.202
+	title = nf_brotherhood_elh_events.202.t #Rule through Fear
+	desc = nf_brotherhood_elh_events.202.d #event describing Radio propaganda of threats and coercion from the Brotherhood. Authoritarianism.
+	picture = GFX_event_camp_alpha
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.202.a #A brutal campaign
+		every_controlled_state = { ##Fear is worth something.
+			add_compliance = 5
+		}
+		add_timed_idea = {
+		idea = bos_propaganda_3
+		days = 720
+		}
+		ai_chance = {
+			base = 13
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.202.b #A wave of fear.
+		every_controlled_state = { ##Fear is worth something.
+			add_compliance = 5
+		}
+		add_timed_idea = {
+		idea = bos_propaganda_4
+		days = 720
+		}
+		ai_chance = {
+			base = 67
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.201.c #No need to follow through.
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.203 
+	title = nf_brotherhood_elh_events.203.t #The New Paradigm
+	desc = nf_brotherhood_elh_events.203.d #event describing taking over the political appartus of the NCR
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.203.a #News Media
+		every_controlled_state = {
+			add_compliance = 10
+		}
+		ai_chance = {
+			base = 13
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.203.b #Engineers
+		add_timed_idea = {
+		idea = bos_civil_engineers
+		days = 720
+		}
+		ai_chance = {
+			base = 67
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.203.c #Police
+		add_timed_idea = {
+		idea = bos_the_police
+		days = 720
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.3 
+	title = nf_brotherhood_elh_events.3.t
+	desc = nf_brotherhood_elh_events.3.d
+	picture = GFX_event_followers_medicine
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.3.a #The followers return.
+		every_controlled_state = {
+			add_compliance = 10
+		}
+		add_ideas = followers_established_idea
+		set_country_flag = followers_established
+		ai_chance = {
+			base = 13
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.4 
+	title = nf_brotherhood_elh_events.4.t #Reorganizing Our Economy
+	desc = nf_brotherhood_elh_events.4.d
+	picture = GFX_event_shady_sands
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.4.a #The followers return.
+		add_ideas = low_economic_mobilisation
+		ai_chance = {
+			base = 13
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.5
+	title = nf_brotherhood_elh_events.5.t #The Mutant Question
+	desc = nf_brotherhood_elh_events.5.d
+	picture = GFX_event_shady_sands
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.5.a #Recruit All Mutants
+		add_ideas = mutant_law_both
+		custom_effect_tooltip = bos_law_category_unlocked_tt
+		clr_country_flag = no_mutants_allowed
+		add_political_power = -50
+		ai_chance = {
+			base = 13
+			modifier = {
+				has_government = people
+				add = 74
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.5.b #Recruit Ghouls
+		add_ideas = mutant_law_ghoul
+		custom_effect_tooltip = bos_law_category_unlocked_tt
+		clr_country_flag = no_mutants_allowed
+		add_political_power = -25
+		ai_chance = {
+			base = 13
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.5.c #We'll leave the option open.
+		custom_effect_tooltip = bos_law_category_unlocked_tt
+		clr_country_flag = no_mutants_allowed
+		add_political_power = 50
+		ai_chance = {
+			base = 13
+			modifier = {
+				has_government = people
+				factor = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_elh_events.6
+	title = nf_brotherhood_elh_events.6.t #Rounding up Criminals
+	desc = nf_brotherhood_elh_events.6.d
+	picture = GFX_event_shady_sands
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.6.a #local leaders handle it
+		add_political_power = 50
+		add_stability = -0.02
+		every_controlled_state = {
+			add_compliance = -1
+		}
+		ai_chance = {
+			base = 20
+			modifier = { has_government = ruler factor = 2}
+			modifier = { has_government = people factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.6.b #Rehouse Citizens
+		add_political_power = -20
+		set_temp_variable = { caps_to_add = -40 }
+		add_caps = yes
+		add_stability = 0.03
+		every_controlled_state = {
+			add_resistance = -5
+		}
+		ai_chance = {
+			base = 10
+			modifier = { has_government = elites factor = 0}
+			modifier = { has_government = intellectuals factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.6.maxsonians #Execute the worst offenders
+		trigger = {has_government = elites}
+		add_political_power = -100
+		add_stability = -0.02
+		add_war_support = 0.05
+		every_controlled_state = {
+			add_compliance = 5
+		}
+		ai_chance = {
+			base = 80 #can only be done by Maxsonians...
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.6.rhombians #Some criminals join the force
+		trigger = {has_government = ruler}
+		add_ideas = undesirables_law_homicidal
+		add_political_power = -50
+		add_manpower = 1500
+		add_war_support = -0.03
+		every_controlled_state = {
+			add_resistance = 5
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.6.reformers #Pardon all Petty Offenders, Crime is a failure of the state.
+		trigger = {has_government = people}
+		add_ideas = undesirables_law_petty
+		add_political_power = -50
+		add_manpower = 1000
+		add_stability = 0.01
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.6.troika #There are other uses for so many prisoners...
+		trigger = {has_government = intellectuals}
+		add_stability = 0.03
+		if = {
+			limit = {
+				NOT = {
+					has_variable = bos_troika_crowns
+				}
+			}
+			set_variable = { bos_troika_crowns = 0 }
+		}
+		add_to_variable = {
+			var = bos_troika_crowns
+			val = +1
+			tooltip = bos_crowns_math_tt
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+##EXPEDITIONS ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event, so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
+#The Village
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1" }
+	id = nf_brotherhood_expeditions.1
+	title = nf_brotherhood_expeditions.1.t
+	desc = nf_brotherhood_expeditions.1.d
+	picture = GFX_event_generic_settlement_1
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1.a #Eliminate Molerats
+		army_experience = 20
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1.b #Investigate Further
+		activate_mission = bos_delayed_expedition_small	#delay effect- add 30 days to the return time of the Expedition.
+		country_event = {
+		id=nf_brotherhood_expeditions.101
+		days = 30 #small delay time
+		}
+		ai_chance = {
+			base = 30
+			modifier = { NOT = { has_government = elites} factor = 3}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1.c #Negotiate Support for Future Expeditions ##Outpost construction speed?
+		bos_upgrade_expeditionary_outposts = yes
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+#The Village followup event
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.101" }
+	id = nf_brotherhood_expeditions.101
+	title = nf_brotherhood_expeditions.101.t
+	desc = nf_brotherhood_expeditions.101.d
+	picture = GFX_event_sub_generic_ghouls
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.101.a #Seize the device ##+1 Knowledge?
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		set_temp_variable = { temp_BOS_drift_add = -0.05 }
+		bos_boost_elites_drift = yes
+		ai_chance = {
+			base = 20
+			modifier = { has_government = elites factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.101.b #Integrate the ghoul into the town
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_war_support = -0.02
+		add_stability = -0.01
+		set_temp_variable = { temp_BOS_drift_add = +0.1 }
+		bos_boost_ruler_drift = yes
+		bos_upgrade_expeditionary_outposts = yes
+		ai_chance = {
+			base = 20
+			modifier = { has_government = ruler factor = 1.5}
+			modifier = { has_government = people factor = 3}
+			modifier = { has_government = elites factor = 0}
+		}
+
+	}
+	option = {
+		name = nf_brotherhood_expeditions.101.c #Execute the Ghoul
+		add_political_power = 15
+		add_war_support = 0.02
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		set_temp_variable = { temp_BOS_drift_add = +0.1 }
+		bos_boost_elites_drift = yes
+		ai_chance = {
+			base = 20
+			modifier = { has_government = elites factor = 5}
+			modifier = { has_government = people factor = 0}
+		}
+	}
+	
+}
+#The Glow
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.2" }
+	id = nf_brotherhood_expeditions.2
+	title = nf_brotherhood_expeditions.2.t
+	desc = nf_brotherhood_expeditions.2.d
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.2.a #send our best Paladins
+		activate_mission = bos_expedition_to_the_glow_paladins
+		custom_effect_tooltip = nf_brotherhood_expeditions_70_chance
+		trigger = { NOT = { has_government = intellectuals}} # The Troika will always go on a pilgrimage.
+		ai_chance = {
+			base = 20
+			modifier = { has_government = ruler factor = 2}
+			modifier = { has_government = people factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.2.b #the risk is too great
+		add_political_power = 20
+		add_stability = 0.03
+		trigger = { NOT = { has_government = intellectuals}}
+		ai_chance = {
+			base = 10
+			modifier = { has_government = elites factor = 0}
+			modifier = { has_government = people factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.2.maxsonians #Promotions if you live
+		trigger = {has_government = elites}
+		activate_mission = bos_expedition_to_the_glow_knights
+		custom_effect_tooltip = nf_brotherhood_expeditions.2.maxsonians_tt
+		custom_effect_tooltip = nf_brotherhood_expeditions_30_chance
+		ai_chance = {
+			base = 80 #can only be done by Maxsonians...
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.2.rhombians #Pay for Outsiders
+		trigger = {has_government = ruler}
+		country_event = {
+			id=nf_brotherhood_expeditions.203
+			days = 120 #Outsiders aren't fast.
+		}
+		custom_effect_tooltip = nf_brotherhood_expeditions_100_chance
+		set_temp_variable = { caps_to_add = -100 }
+		add_caps = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.2.reformers #Send Ghouls
+		trigger = {has_government = people}
+		custom_effect_tooltip = nf_brotherhood_expeditions_100_chance
+		activate_mission = bos_expedition_to_the_glow_ghoul_paladins
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.2.troika #Pilgrimage!
+		trigger = {has_government = intellectuals}
+		country_event = {
+			id=nf_brotherhood_expeditions.204
+			days = 30 #small delay time
+		}
+		ai_chance = {
+			base = 100 #It's their only option anyways, so this is redundant.
+		}
+	}
+}
+#The Glow - Paladins Successful
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.201" }
+	id = nf_brotherhood_expeditions.201
+	title = nf_brotherhood_expeditions.201.t
+	desc = nf_brotherhood_expeditions.201.d
+	picture = GFX_event_generic_zax
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.201.a #Learn about Mutants
+		bos_upgrade_mutant_experience_law = yes
+		army_experience = 10
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.201.b #Conversation with the ZAX
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 100 ##Both of the other options are only of interest to players.
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.201.c #Bring home the prototypes
+		add_tech_bonus = {
+		bonus = 0.2
+		ahead_reduction = 3.0
+		uses = 2
+		category = plasma_weaponry_tech_category
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+#The Glow - Expedition Failed #Maxsonians sent Paladins
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.202" }
+	id = nf_brotherhood_expeditions.202
+	title = nf_brotherhood_expeditions.202.t
+	desc = nf_brotherhood_expeditions.202.d
+	picture = GFX_event_MOJ_contact_the_west
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.202.a #We'll never know what happened.
+		trigger = { NOT = {has_government = people}}
+		ai_chance = {
+			base = 50
+			modifier = { has_government = elites factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.202.maxsonians #They will receive full honors.
+		trigger = {has_government = elites}
+		set_temp_variable = { temp_BOS_drift_add = +0.15 }
+		bos_boost_elites_drift = yes
+		add_stability = 0.01
+		add_political_power = 25
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.202.rhombians #We were foolish. Never again.
+		trigger = {has_government = ruler}
+		set_temp_variable = { temp_BOS_drift_add = +0.3 }
+		bos_boost_ruler_drift = yes
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.202.reformers #We should've sent Ghouls.
+		trigger = {has_government = people}
+		add_stability = -0.03
+		add_war_support = -0.02
+		add_political_power = -25
+		ai_chance = {
+			base = 100 ##redundant. At some point I will stop adding these little comments to tell you, dear reader. I'm just including ai_chance for readability.
+		}
+	}
+	#troika not possible
+	
+}
+#The Glow - Outsiders Successful
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.203" }
+	id = nf_brotherhood_expeditions.203
+	title = nf_brotherhood_expeditions.201.t
+	desc = nf_brotherhood_expeditions.203.d
+	picture = GFX_event_generic_zax
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.201.a #Learn about Mutants
+		bos_upgrade_mutant_experience_law = yes
+		army_experience = 10
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.201.b #Conversation with the ZAX
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.201.c #Bring home the prototypes
+		add_tech_bonus = {
+		bonus = 0.2
+		ahead_reduction = 3.0
+		uses = 2
+		category = plasma_weaponry_tech_category
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#The Glow - Troika Pilgrimage
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.204" }
+	id = nf_brotherhood_expeditions.204
+	title = nf_brotherhood_expeditions.204.t
+	desc = nf_brotherhood_expeditions.204.d
+	picture = GFX_event_sub_generic_post_war_construction_site
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.204.a
+		add_tech_bonus = {
+		bonus = 0.4
+		ahead_reduction = 2.0
+		uses = 2
+		category = implant_tech
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.204.b
+		add_tech_bonus = {
+		bonus = 0.2
+		ahead_reduction = 3.0
+		uses = 2
+		category = plasma_weaponry_tech_category
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+#The Glow - Ghoulified Paladins Successful
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.205" }
+	id = nf_brotherhood_expeditions.205
+	title = nf_brotherhood_expeditions.201.t
+	desc = nf_brotherhood_expeditions.205.d
+	picture = GFX_event_generic_zax
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.201.a #Learn about Mutants
+		bos_upgrade_mutant_experience_law = yes
+		army_experience = 10
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.201.b #Conversation with the ZAX
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.201.c #Bring home the prototypes
+		add_tech_bonus = {
+		bonus = 0.2
+		ahead_reduction = 3.0
+		uses = 2
+		category = plasma_weaponry_tech_category
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+#The Glow - Knights Died
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.206" }
+	id = nf_brotherhood_expeditions.206
+	title = nf_brotherhood_expeditions.206.t
+	desc = nf_brotherhood_expeditions.206.d
+	picture = GFX_event_MOJ_contact_the_west
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.206.a #Others run the council now.
+		trigger = {NOT = {has_government = elites}}
+		set_temp_variable = { temp_BOS_drift_add = -1.0 }
+		bos_boost_elites_drift = yes
+		
+	}
+	option = {
+		name = nf_brotherhood_expeditions.206.b #We knew this might happen.
+		trigger = {has_government = elites}
+		add_political_power = -50
+		set_temp_variable = { temp_BOS_drift_add = -0.6 }
+		bos_boost_elites_drift = yes
+	}
+}
+#Vault 17
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.3" }
+	id = nf_brotherhood_expeditions.3
+	title = nf_brotherhood_expeditions.3.t
+	desc = nf_brotherhood_expeditions.3.d #Vault 17 was just a control vault. 
+	picture = GFX_event_sub_generic_wasteland_5
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.3.a #unsurprisingly, it had a faulty water chip.
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_tech_bonus = {
+			ahead_reduction = 1.0
+			uses = 2
+			category = purification_station_tech_category
+		}
+		ai_chance = {
+			base = 80
+			modifier = { has_government = elites factor = 0.5}
+			modifier = { has_government = people factor = 2}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.3.b #We analyzed the remains of the battle.
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		army_experience = 5
+		ai_chance = {
+			base = 20
+			modifier = { has_government = elites factor = 5}
+			modifier = { has_government = people factor = 0.5}
+		}
+	}
+	
+}
+#The Ghost Farm
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.4" }
+	id = nf_brotherhood_expeditions.4
+	title = nf_brotherhood_expeditions.4.t
+	desc = nf_brotherhood_expeditions.4.d
+	picture = GFX_event_generic_settlement_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.4.a #exchanged ideas
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_stability = 0.01
+		SLA = {
+			country_event = nf_brotherhood_expeditions.402
+		}
+		ai_chance = {
+			base = 20
+			modifier = { has_government = elites factor = 0}
+			modifier = { has_government = people factor = 0.5}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.4.b  #spent more time in modoc
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_political_power = 25
+		ai_chance = {
+			base = 20
+			modifier = { has_government = elites factor = 1}
+			modifier = { has_government = people factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.4.maxsonians #Seized supplies
+		trigger = {has_government = elites}
+		add_timed_idea = {
+			idea = bos_brotherhood_looting
+			days = 180
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = 500
+			producer = USA
+		}
+		SLA = {
+			country_event = nf_brotherhood_expeditions.404
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.4.rhombians #Negotiated future support
+		trigger = {has_government = ruler}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		bos_upgrade_expeditionary_outposts = yes
+		ai_chance = {
+			base = 60
+		}
+	}	
+	option = {
+		name = nf_brotherhood_expeditions.4.reformers #Taught eachother
+		trigger = {has_government = people}
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = agriculture_tech
+		}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_small
+		SLA = {
+			country_event = nf_brotherhood_expeditions.401
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+#The Ghost Farm - The Brotherhood Teaches ##For Slags - Reformers
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.401" }
+	id = nf_brotherhood_expeditions.401
+	title = nf_brotherhood_expeditions.401.t
+	desc = nf_brotherhood_expeditions.401.d
+	picture = GFX_event_generic_settlement_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.401.a
+		add_tech_bonus = {
+			ahead_reduction = 1.0
+			bonus = 0.2
+			uses = 1
+			category = agriculture_tech
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.401.b
+		add_tech_bonus = {
+			ahead_reduction = 1.0
+			bonus = 0.2
+			uses = 1
+			category = infantry_tech_category
+		}
+		ai_chance = {
+			base = 50
+			modifier = {has_government = people factor = 0}
+		}
+	}
+}
+#The Ghost Farm - Exchange of Ideas -For Slags, Default 
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.402" }
+	id = nf_brotherhood_expeditions.402
+	title = nf_brotherhood_expeditions.402.t
+	desc = nf_brotherhood_expeditions.402.d
+	picture = GFX_event_generic_settlement_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.402.a
+		add_political_power = 25
+	}
+
+}
+#The Ghost Farm - Long Term Support -For Slags, Rhombians.
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.403" }
+	id = nf_brotherhood_expeditions.403
+	title = nf_brotherhood_expeditions.403.t
+	desc = nf_brotherhood_expeditions.403.d
+	picture = GFX_event_generic_settlement_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.403.a
+		add_political_power = 75
+	}
+
+}
+#The Ghost Farm - Raided -For Slags, Rhombians.
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.404" }
+	id = nf_brotherhood_expeditions.404
+	title = nf_brotherhood_expeditions.404.t
+	desc = nf_brotherhood_expeditions.404.d
+	picture = GFX_event_generic_settlement_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.404.a #We couldn't stop them. It may be time for a change.
+		add_stability = -0.03
+		add_war_support = 0.06
+	}
+
+}
+#Ruins of Broken Hills
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.5" }
+	id = nf_brotherhood_expeditions.5
+	title = nf_brotherhood_expeditions.5.t
+	desc = nf_brotherhood_expeditions.5.d
+	picture = GFX_event_sub_generic_ruins_1
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.5.a
+		bos_upgrade_expeditionary_outposts = yes #we could build an outpost here.
+		ai_chance = {
+			base = 10
+			modifier = {has_government = ruler factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.5.b #Air Purifier? How does it compare to ours?
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 50
+			modifier = {has_government = ruler factor = 0}
+			modifier = {has_government = people factor = 0}
+		}
+		##I considered HEPA Cartridge Filter as a possible reward, but this place doesn't feel worthy.
+	}
+	option = {
+		name = nf_brotherhood_expeditions.5.maxsonians #Strip the place for parts
+		trigger = {has_government = elites}
+		capital_scope = {
+			add_resource = { type = metal amount = 4 }
+			add_resource = { type = circuitry amount = 2 }
+			add_resource = { type = advanced amount = 1 }
+		}
+		activate_mission = bos_delayed_expedition_small
+		add_political_power = 25
+		ai_chance = {
+			base = 40
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.5.rhombians #Let's do both.
+		trigger = {has_government = ruler}
+		bos_upgrade_expeditionary_outposts = yes
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_small
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.5.reformers #Waste not, want not (extra effort to bring stuff back whole)
+		trigger = {has_government = people}
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_medium
+		ai_chance = {
+			base = 90 
+
+		}
+	}
+}
+#Irvine
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.6" }
+	id = nf_brotherhood_expeditions.6
+	title = nf_brotherhood_expeditions.6.t
+	desc = nf_brotherhood_expeditions.6.d
+	picture = GFX_event_sub_generic_ruins_2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.6.a #What happened here?
+		country_event = { id = nf_brotherhood_expeditions.601 days=30}
+		activate_mission = bos_delayed_expedition2_small
+		activate_mission = bos_delayed_scribes_small
+		if = {
+			limit = {
+				has_country_flag = bos_ruler_allowed
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0.2 }
+			bos_boost_ruler_drift = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = bos_people_allowed
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0.4 }
+			bos_boost_people_drift = yes
+		}
+		ai_chance = {
+			base = 90
+			modifier = {has_government = elites factor = 0.05} #this gives the elites a 31% chance to pick it. (90*0.05) = 4.5, 4.5/(4.5+10)=0.31
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.6.b #We should study the city, not it's history.
+		add_tech_bonus = {
+			bonus = 0.2
+			uses = 1
+			category = support_robot_tech_category
+		}
+		add_tech_bonus = {
+			bonus = 0.2
+			uses = 1
+			category = computing_tech
+		}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 10 
+			modifier = {has_government = ruler factor = 0}
+			modifier = {has_government = people factor = 0}
+		}
+		
+	}
+}
+#Irvine - The Records of Utopia
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.601" }
+	id = nf_brotherhood_expeditions.601
+	title = nf_brotherhood_expeditions.601.t
+	desc = nf_brotherhood_expeditions.601.d
+	picture = GFX_event_sub_generic_ruins_2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.601.a #The computing is quite advanced.
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_tech_bonus = {
+			bonus = 0.2
+			uses = 2
+			category = computing_tech
+		}
+		ai_chance = {
+		base = 50
+		modifier = {has_government = elites factor = 0.2}#10%
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.601.maxsonians # Let's salvage them, Robots may ease the occupation of the NCR.
+		trigger = {has_government = elites}
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = support_robot_tech_category
+		}
+		add_equipment_to_stockpile = {
+			type = support_robot_thruster_equipment_1
+			amount = 800
+			producer = USA
+		}
+		activate_mission = bos_delayed_expedition_small #intentionally allows one unit of paladins to return.
+		activate_mission = bos_delayed_scribes_small
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+		base = 90
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.601.rhombians #Not a utopia, after all.
+		trigger = {has_government = ruler}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		set_temp_variable = { temp_BOS_drift_add = 0.4 }
+		bos_boost_ruler_drift = yes
+		add_tech_bonus = {
+			bonus = 0.2
+			uses = 1
+			category = support_robot_tech_category
+		}
+		ai_chance = {
+		base = 50
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.601.reformers #Another cautionary tale. We must choose our candidate wisely.
+		trigger = {has_government = people}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_stability = 0.03
+		set_temp_variable = { temp_BOS_drift_add = 0.2 }
+		bos_boost_people_drift = yes
+		ai_chance = {
+		base = 50
+		}
+	}
+}
+#Golgotha
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.7" }
+	id = nf_brotherhood_expeditions.7
+	title = nf_brotherhood_expeditions.7.t
+	desc = nf_brotherhood_expeditions.7.d
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.7.a #There's no difference.
+		ai_chance = {
+		base = 90
+		modifier = {has_government = people factor = 0}
+		}
+		country_event = nf_brotherhood_expeditions.701
+	}
+	option = {
+		name = nf_brotherhood_expeditions.7.b #We didn't go
+		add_stability = 0.02
+		trigger = {NOT = {has_government = people}}
+		ai_chance = {
+		base = 10
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.7.reformers #focus on soft sciences instead
+		trigger = {has_government = people}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+		base = 100
+		}
+	}
+}
+#Golgotha -Expedition Sent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.701" }
+	id = nf_brotherhood_expeditions.701
+	title = nf_brotherhood_expeditions.701.t
+	desc = nf_brotherhood_expeditions.701.d
+	picture = GFX_event_BOS_our_founding
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.701.a #Check at random.
+		random_list = {
+			5 = {
+				add_ideas = bos_golgotha_mirroredshades
+			}
+			45 = {
+				add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 150
+				producer = USA
+			}
+			}
+			
+			45 = {
+				add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 150
+				producer = USA
+			}
+			}
+			
+			5 = {
+				set_temp_variable = { caps_to_add = 10 }
+				add_caps = yes
+			}
+		}
+		activate_mission = bos_delayed_expedition_small
+		ai_chance = {
+		base = 1
+		modifier = {has_government = ruler factor = 0}
+		modifier = {has_government = elites factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.701.b #This is a bad idea. Let's gamble in Reno.
+		random_list = {
+			5 = {
+				set_temp_variable = { caps_to_add = -50 }
+				add_caps = yes
+			}
+			20 = {
+				set_temp_variable = { caps_to_add = -20 }
+				add_caps = yes
+			}
+			25 = {
+				set_temp_variable = { caps_to_add = -5 }
+				add_caps = yes
+			}
+			45 = {
+				set_temp_variable = { caps_to_add = 20 }
+				add_caps = yes
+			}
+			5 = {
+				set_temp_variable = { caps_to_add = 150 }
+				add_caps = yes
+			}
+		}
+		if = {
+			limit = {
+				has_government = elites
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0.3}
+			bos_boost_elites_drift = yes
+		}
+		else_if = {
+			limit = {
+				has_government = ruler
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0.1 }
+			bos_boost_ruler_drift = yes
+		}
+		else_if = {
+			limit = {
+				has_government = intellectuals
+			}
+			set_temp_variable = { temp_BOS_drift_add = 0.2 }
+			bos_boost_intellectuals_drift = yes
+		}
+		else_if = {
+			limit = {
+				has_government = people
+			}
+			set_temp_variable = { temp_BOS_drift_add = -0.2 }
+			bos_boost_people_drift = yes
+		}
+		ai_chance = {
+		base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.701.maxsonians#Check every grave and post.
+		trigger = {has_government = elites}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 200
+				producer = USA
+			}
+		set_temp_variable = { caps_to_add = 10 }
+		add_caps = yes
+		add_ideas = bos_golgotha_mirroredshades
+		activate_mission = bos_delayed_expedition_medium
+		ai_chance = {
+		base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.701.rhombians #We inquried about famous graves.
+		trigger = {has_government = ruler}
+		add_ideas = bos_golgotha_mirroredshades
+		ai_chance = {
+		base = 100
+		}
+	}
+}
+#Toxic Caves
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.8" }
+	id = nf_brotherhood_expeditions.8
+	title = nf_brotherhood_expeditions.8.t
+	desc = nf_brotherhood_expeditions.8.d
+	picture = GFX_event_sub_generic_reactor_1
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.8.a #Scrap some suits to fix this, get some paladins with 2 extra toes.
+		country_event = nf_brotherhood_expeditions.801
+		add_timed_idea = {
+			idea = bos_extra_toes
+			days = 270
+		}
+		ai_chance = {
+		base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.8.b #Buy some spare parts in Klamath.
+		country_event = nf_brotherhood_expeditions.801
+		activate_mission = bos_delayed_expedition_small
+		set_temp_variable = { caps_to_add = -30 }
+		add_caps = yes
+		ai_chance = {
+			base = 0
+		}
+	}
+
+}
+#Toxic Caves - followup
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.801" }
+	id = nf_brotherhood_expeditions.801
+	title = nf_brotherhood_expeditions.801.t
+	desc = nf_brotherhood_expeditions.801.d
+	picture = GFX_event_sub_generic_computer_scav
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.801.a #we took everything we can
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 280
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 200
+				producer = USA
+			}
+		ai_chance = {
+			base = 100 ##tl;dr take party choice if ai, unless you're Troika. The ai_chance of all the other events is 1 since they're not listed there, 1 == 100% here.
+			modifier =  { NOT = {has_government = intellectuals} factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.801.maxsonians #make an outpost and don't tell Klamath
+		trigger = {has_government = elites}
+		bos_upgrade_expeditionary_outposts = yes
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_small
+		country_event = { id = nf_brotherhood_expeditions.802 days = 30}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 280
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 200
+				producer = USA
+			}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.801.rhombians #make an outpost and compensate Klamath with the loot
+		trigger = {has_government = ruler}
+		bos_upgrade_expeditionary_outposts = yes
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_small
+		add_equipment_to_stockpile = {
+			type = energy_equipment_2
+			amount = 200
+			producer = USA
+		}
+		KLA = {
+			add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 280
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = 200
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+					type = ballistic_equipment_1
+					amount = 200
+					producer = USA
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.801.reformers #Make an outpost and bargain with Klamath for fair payment.
+		trigger = {has_government = people}
+		bos_upgrade_expeditionary_outposts = yes
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_medium
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 280
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = 200
+				producer = USA
+			}
+		KLA = {
+			add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 200
+					producer = USA
+				}
+			add_equipment_to_stockpile = {
+					type = ballistic_equipment_1
+					amount = 200
+					producer = USA
+				}
+			set_temp_variable = { caps_to_add = 55 }
+			add_caps = yes
+		}
+		set_temp_variable = { caps_to_add = -55 }
+		add_caps = yes
+	}
+}
+#Toxic Caves - Klamath Upset.
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.802" }
+	id = nf_brotherhood_expeditions.802
+	title = nf_brotherhood_expeditions.802.t
+	desc = nf_brotherhood_expeditions.802.d
+	picture = GFX_event_BOS_settler_defense
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_expeditions.802.a #Defend it with deadly force.
+		KLA = {country_event = nf_brotherhood_expeditions.803}
+		ai_chance = {
+			base = 33
+		}
+
+	}
+	option = {
+		name = nf_brotherhood_expeditions.802.b #Strike first. Dead men tell no tales.
+		KLA = {country_event = nf_brotherhood_expeditions.804}
+		activate_mission = bos_delayed_expedition_small
+		ai_chance = {
+			base = 57
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.802.c #Compensate them.
+		KLA = {country_event = nf_brotherhood_expeditions.805}
+		set_temp_variable = { caps_to_add = -55 }
+		add_caps = yes
+		KLA = {
+			set_temp_variable = { caps_to_add = 55 }
+			add_caps = yes
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+#Toxic Caves - Klamath: Brotherhood Moves into Toxic Caves.
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.803" }
+	id = nf_brotherhood_expeditions.803
+	title = nf_brotherhood_expeditions.803.t
+	desc = nf_brotherhood_expeditions.803.d
+	picture = GFX_event_sub_generic_wasteland_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.803.a #Chase them out.
+		country_event = nf_brotherhood_expeditions.806 #oopsie, wrote these in the wrong order
+		ai_chance = {
+			base = 35
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.803.b #Demand what they found. 
+		country_event = nf_brotherhood_expeditions.807
+		ai_chance = {
+			base = 60
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.803.c #Let them stay.
+		country_event = nf_brotherhood_expeditions.805
+		KLA = {add_war_support = -0.03}
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+#Toxic Caves - Klamath: Razing of Trapper Town
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.804" }
+	id = nf_brotherhood_expeditions.804
+	title = nf_brotherhood_expeditions.804.t
+	desc = nf_brotherhood_expeditions.804.d
+	picture = GFX_event_KHA_bitter_springs_massacre
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_expeditions.804.a #My town?! Prepare to fight!
+		KLA = {add_war_support = 0.06}
+		ai_chance = {
+			base = 5
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.804.b #Abandon the area.
+		KLA = {add_stability = 0.04}
+		ai_chance = {
+			base = 5
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.804.c #Energy weapons? Vault City did this!
+		KLA = {
+			add_war_support = 0.10
+			add_opinion_modifier = {
+				target = VLT
+				modifier = toc_genocidal_maniacs
+			}
+		}
+		ai_chance = {
+			base = 90## it's not like it'll come to this often, and it's highly unlikely BoS will notice.
+		}
+	}
+	immediate = { 
+		251 = {
+			set_temp_variable = { pop_add = -373}
+			add_state_population = yes
+		}
+	}
+}
+#Toxic Caves - Klamath: Let them stay.
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.805" }
+	id = nf_brotherhood_expeditions.805
+	title = nf_brotherhood_expeditions.805.t
+	desc = nf_brotherhood_expeditions.805.d
+	picture = GFX_event_sub_generic_wasteland_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.805.a #Well, good.
+		add_political_power = 10
+	}
+}
+#Toxic Caves - Klamath: Demand What They Found
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.806" }
+	id = nf_brotherhood_expeditions.806
+	title = nf_brotherhood_expeditions.806.t
+	desc = nf_brotherhood_expeditions.806.d
+	picture = GFX_event_sub_generic_wasteland_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.806.a #We accept this demand.
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = -280
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = -200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = -200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = -200
+				producer = USA
+			}
+		KLA = {country_event = nf_brotherhood_expeditions.807}	
+		ai_chance = {
+			base = 34
+		}
+		
+	}
+	option = {
+		name = nf_brotherhood_expeditions.806.b #We tried to be reasonable...
+		KLA = { country_event = nf_brotherhood_expeditions.804}
+		activate_mission = bos_delayed_expedition_small
+		ai_chance = {
+			base = 66
+		}
+	}
+}
+#Toxic Caves - Klamath: Demand What They Found - Success!
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.807" }
+	id = nf_brotherhood_expeditions.807
+	title = nf_brotherhood_expeditions.807.t
+	desc = nf_brotherhood_expeditions.807.d
+	picture = GFX_event_sub_generic_wasteland_4
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.807.a #Now, we'll be ready.
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 280
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 200
+				producer = USA
+			}	
+	}
+}
+#Vault 11
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.9" }
+	id = nf_brotherhood_expeditions.9
+	title = nf_brotherhood_expeditions.9.t
+	desc = nf_brotherhood_expeditions.9.d
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #It was simple but not quick.
+		name = nf_brotherhood_expeditions.9.a
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+		activate_mission = bos_delayed_expedition_small
+	}
+
+}
+#The Port of Honolulu
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.10" }
+	id = nf_brotherhood_expeditions.10
+	title = nf_brotherhood_expeditions.10.t
+	desc = nf_brotherhood_expeditions.10.d
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.10.a #Peaceful Explorers
+		country_event = nf_brotherhood_expeditions.1004
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.10.b #Warlike
+		country_event = nf_brotherhood_expeditions.1002
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+#"The Port of Honolulu: Peaceful Explorers" ##this event doesn't exist, it was cut and instead we just go directly to 1004. 
+
+#"The Port of Honolulu: Battle?"
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1002" }
+	id = nf_brotherhood_expeditions.1002 
+	title = nf_brotherhood_expeditions.1002.t 
+	desc = nf_brotherhood_expeditions.1002.d
+	picture = GFX_event_sub_generic_coast
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1002.a #Study their tech, not if they were pirates.
+		country_event = nf_brotherhood_expeditions.1006
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1002.maxsonians #All three: Learn they weren't pirates.
+		trigger = {has_government = elites}
+		country_event = nf_brotherhood_expeditions.1003
+		add_war_support = 0.01
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1002.rhombians
+		trigger = {has_government = ruler}
+		country_event = nf_brotherhood_expeditions.1003
+		add_stability = -0.02
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1002.reformers
+		trigger = {has_government = people}
+		country_event = nf_brotherhood_expeditions.1003
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+#"The Port of Honolulu: Pirates?"
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1003" }
+	id = nf_brotherhood_expeditions.1003
+	title = nf_brotherhood_expeditions.1003.t #"The Port of Honolulu: Pirates?"
+	desc = nf_brotherhood_expeditions.1003.d
+	picture = GFX_event_sub_generic_coast
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1003.a #"Interesting. We could grow plenty of food in California."
+	}
+}
+#The Port of Honolulu: Mission of Peace
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1004" }
+	id = nf_brotherhood_expeditions.1004
+	title = nf_brotherhood_expeditions.1004.t #"The Port of Honolulu: Mission of Peace"
+	desc = nf_brotherhood_expeditions.1004.d
+	picture = GFX_event_sub_generic_coast
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1004.a #"Tell them we wish to establish trade, let's go to Hawai'i together."
+		country_event = {
+		id = nf_brotherhood_expeditions.1005
+		days = 15
+		}
+	}
+}
+#"The Port of Honolulu: The Peaceful Islands of Hawai'i."
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1005" }
+	id = nf_brotherhood_expeditions.1005
+	title = nf_brotherhood_expeditions.1005.t
+	desc = nf_brotherhood_expeditions.1005.d
+	picture = GFX_event_sub_generic_coast
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1005.a #"This is an excellent deal."
+		bos_upgrade_expeditionary_outposts = yes
+		add_ideas = bos_trade_with_hawaii
+		ai_chance = {
+			base = 40
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1005.b #"Sign for one year if they let us explore."
+		add_timed_idea = {
+		idea = bos_trade_with_hawaii
+		days = 365
+		}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 60
+		}
+	}
+	
+}
+#"The Port of Honolulu: The Dangerous Islands of Hawai'i."
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1006" }
+	id = nf_brotherhood_expeditions.1006
+	title = nf_brotherhood_expeditions.1006.t
+	desc = nf_brotherhood_expeditions.1006.d
+	picture = GFX_event_sub_generic_coast
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1006.a #That went better than we could've hoped
+		bos_upgrade_expeditionary_outposts = yes
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_ideas = bos_hawaii_protectorate
+	}
+}
+#Anchorage: America's Hope
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.11" }
+	id = nf_brotherhood_expeditions.11
+	title = nf_brotherhood_expeditions.11.t
+	desc = nf_brotherhood_expeditions.11.d
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.11.a #Set out on our own, no matter the risk.
+		country_event = {
+			id = nf_brotherhood_expeditions.1101 
+			days = 45
+		}
+		activate_mission = bos_expedition_to_anchorage_alone
+		custom_effect_tooltip = nf_brotherhood_expeditions_80_chance
+		ai_chance = {
+		base = 1
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.11.b #Audience with The Immortal
+		trigger = { 
+			AND = {
+				country_exists = WBH
+				NOT = { 
+					OR = {
+						has_government = elites
+						has_government = people
+					}
+				}
+			}
+		}##Maxsonians and Reformers each have reasons to never rely on the WBH
+		country_event = {id = nf_brotherhood_expeditions.1103 days = 15}
+		activate_mission = bos_delayed_scribes_small
+		activate_mission = bos_delayed_expedition2_small
+		ai_chance = {
+		base = 94
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.11.c #Audience with TCA
+		trigger = {country_exists = TCA} ##Anyone would work with TCA.
+		country_event = {id = nf_brotherhood_expeditions.1104 days = 15}
+		activate_mission = bos_delayed_scribes_small
+		activate_mission = bos_delayed_expedition2_small
+		ai_chance = {
+		base = 94
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.11.e #Cancel the expedition. There is work to do.
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+		base = 5 ##under most circumstances should be quite unlikely. If both TCA and WBH are dead, it's 16% chance to go and 83% chance to stay, roughly.
+		}
+	}
+}
+#Anchorage: On Our Own
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1101" }
+	id = nf_brotherhood_expeditions.1101
+	title = nf_brotherhood_expeditions.1101.t
+	desc = nf_brotherhood_expeditions.1101.d
+	picture = GFX_event_WBH_alaska_expedition
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1101.a
+		country_event = {id = nf_brotherhood_expeditions.1102 days = 60}  ##45 days in, with this next one 105/180
+	}
+}
+#Anchorage: On Our Own - Almost There!
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1102" }
+	id = nf_brotherhood_expeditions.1102
+	title = nf_brotherhood_expeditions.1102.t
+	desc = nf_brotherhood_expeditions.1102.d
+	picture = GFX_event_WBH_alaska_expedition
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1102.a
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_ideas = bos_alaskan_winterization
+	}
+	##The mission activated at the start handles firing this (80% of the time):country_event = nf_brotherhood_expeditions.1105
+}
+#Anchorage: Audience with The Immortal
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1103" }
+	id = nf_brotherhood_expeditions.1103
+	title = nf_brotherhood_expeditions.1103.t
+	desc = nf_brotherhood_expeditions.1103.d
+	picture = GFX_event_WBH_invitation
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1103.a #this is abhorrent
+		country_event = {id = nf_brotherhood_expeditions.1101 days = 30}
+		activate_mission = bos_expedition_to_anchorage_alone
+		custom_effect_tooltip = nf_brotherhood_expeditions_80_chance
+		ai_chance = {
+			base = 100 #catches Maxsonians/Reformers being promoted into power between events.
+			modifier = { has_government = intellectuals factor = 0}
+			modifier = { has_government = ruler factor = 0.2} #15% chance for Rhombians to do this, 85% chance to demand transition.
+		}
+		
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1103.b #with time, we could soften their evil.
+		unlock_national_focus = bos_nf_integrating_wbh
+		add_political_power = -50
+		country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
+		activate_mission = bos_delayed_expedition2_large
+		activate_mission = bos_delayed_scribes_large
+		ai_chance = {
+			base = 100 #AI Troika talking to AI WBH.
+			modifier = { WBH = { is_ai = no } factor = 0}
+			modifier = { WBH = { is_ai = yes } factor = 1}
+			modifier = { NOT = {has_government = intellectuals} factor = 0}
+
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1103.troika #The Immortal can rewrite their pascalbytes.
+		trigger = {has_government = intellectuals}
+		WBH = {
+			country_event = nf_brotherhood_expeditions.11010
+		}
+		unlock_national_focus = bos_nf_integrating_wbh
+		country_event = {
+			id = nf_brotherhood_expeditions.1105 
+			days = 60 ##75 days in after this.
+		} 
+		activate_mission = bos_delayed_expedition2_large
+		activate_mission = bos_delayed_scribes_large
+		ai_chance = {
+			base = 100 #only done if WBH is not an AI.
+			modifier = { WBH = { is_ai = no } factor = 1}
+			modifier = { WBH = { is_ai = yes } factor = 0}
+
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1103.rhombians #demand transition but offer support
+		trigger = {has_government = ruler}
+		ai_chance = {
+			base = 100 #85% chance to demand transition when you do the math.
+		}
+		WBH = {
+		country_event = nf_brotherhood_expeditions.1109
+		}
+
+		effect_tooltip = { ##Note that there's some kind of bug in this option that prevents others after it from being read. It's not a bracket. 
+			random_list = {
+				40 = {
+					unlock_national_focus = bos_nf_integrating_wbh
+					country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
+					activate_mission = bos_delayed_expedition2_large
+					activate_mission = bos_delayed_scribes_large
+					add_political_power = 25
+				}
+				
+				60 = {
+					country_event = {id = nf_brotherhood_expeditions.1101 days = 30}
+					activate_mission = bos_expedition_to_anchorage_alone
+					custom_effect_tooltip = nf_brotherhood_expeditions_80_chance
+				}
+			}
+		}
+	}
+}
+#Anchorage: Audience with the Northwestern Brotherhood
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1104" }
+	id = nf_brotherhood_expeditions.1104
+	title = nf_brotherhood_expeditions.1104.t
+	desc = nf_brotherhood_expeditions.1104.d
+	picture = GFX_event_generic_snow_city
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1104.a
+		country_event = {id = nf_brotherhood_expeditions.1105 days = 60}
+		unlock_national_focus = bos_nf_integrating_wbh
+		activate_mission = bos_delayed_expedition2_large
+		activate_mission = bos_delayed_scribes_large
+	}
+}
+#Anchorage: We Made It
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1105" }
+	id = nf_brotherhood_expeditions.1105
+	title = nf_brotherhood_expeditions.1105.t
+	desc = nf_brotherhood_expeditions.1105.d
+	picture = GFX_event_generic_snow_city
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1105.a
+		country_event = { id = nf_brotherhood_expeditions.1106 days = 3}
+	}
+
+}
+#Anchorage: Treasures of a Bygone Era
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1106" }
+	id = nf_brotherhood_expeditions.1106
+	title = nf_brotherhood_expeditions.1106.t
+	desc = nf_brotherhood_expeditions.1106.d
+	picture = GFX_event_generic_snow_city
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1106.a #Power Armour 
+		add_equipment_to_stockpile = { #20 to make a division. This is the "worst" option, but it's still a bunch of end-game power armour.
+			type = power_armor_equipment_4
+			amount = 1000
+			producer = USA
+		}
+		ai_chance = {
+			base = 100 ##ai probably won't use the other two correctly.
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1106.b #The Tanks
+		add_equipment_to_stockpile = { #20 to make a division. The IC advantage is massive here but that's to encourage using vehicles. (4-5x the IC of the Power Armour option.)
+			type = tank_equipment_4
+			amount = 1000
+			producer = USA
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1106.c #Assaultrons
+		add_equipment_to_stockpile = { #25 to make a division. The IC advantage is miniscule, 17IC PA vs 21.
+			type = support_robot_two_legs_equipment_4
+			amount = 1200
+			producer = USA
+		}
+	}
+}
+#Anchorage: Our Casualties
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1107" }
+	id = nf_brotherhood_expeditions.1107
+	title = nf_brotherhood_expeditions.1107.t
+	desc = nf_brotherhood_expeditions.1107.d
+	picture = GFX_event_tanker
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1107.a #We will honor them.
+		add_war_support = 0.03
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1107.b #Strike this deed from the Scribe's own Scrolls. They've failed us.
+		add_political_power = 55
+		activate_mission = bos_delayed_scribes_small
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1107.c #Search everywhere for worthy Knights!
+		add_political_power = -250 #2.5x regular paladin price.
+		activate_mission = bos_delayed_scribes_large #180 days delay
+		bos_train_paladins = yes #You may ask, reader, why I let them get back either all they lost or half of what they lost going to Alaska. The answer is because it's possible TCA and WBH are dead. This is an expensive out, but might allow them to continue doing Expeditions.
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+#Anchorage: Audience with The Immortal - WBH - Softened Evil
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1108" }
+	id = nf_brotherhood_expeditions.1108
+	title = nf_brotherhood_expeditions.1108.t
+	desc = nf_brotherhood_expeditions.1108.d
+	picture = GFX_event_WBH_invitation
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_expeditions.1108.a #A triumph. We are the Brotherhood of Steel.
+		add_political_power = 150
+		add_war_support = 0.05
+		add_stability = 0.05
+	}
+}
+#Anchorage: Audience with The Immortal - WBH - They Demand Reform
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1109" }
+	id = nf_brotherhood_expeditions.1109
+	title = nf_brotherhood_expeditions.1109.t
+	desc = nf_brotherhood_expeditions.1109.d
+	picture = GFX_event_WBH_invitation
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_expeditions.1109.a #We will make some token gestures.
+		add_ideas = bos_wbh_token_reforms
+		BOS = {
+			unlock_national_focus = bos_nf_integrating_wbh
+			country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
+			activate_mission = bos_delayed_expedition2_large
+			activate_mission = bos_delayed_scribes_large
+			add_political_power = 25
+		}
+		ai_chance = {
+		base = 40
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1109.b #They hold too tightly to the morals of today. Reject them.
+		add_political_power = -10
+		BOS = {
+			country_event = {id = nf_brotherhood_expeditions.1101 days = 30}
+			activate_mission = bos_expedition_to_anchorage_alone
+			custom_effect_tooltip = nf_brotherhood_expeditions_80_chance
+		}
+		ai_chance = {
+		base = 60
+		}
+	}
+}
+#Anchorage: Audience with The Immortal - WBH - Pascalbytes
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.11010" }
+	id = nf_brotherhood_expeditions.11010
+	title = nf_brotherhood_expeditions.11010.t
+	desc = nf_brotherhood_expeditions.11010.d
+	picture = GFX_event_WBH_immortal
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_expeditions.11010.a #The Immortal Changed.
+		add_political_power = 150
+		effect_tooltip = {
+			add_country_leader_trait = fallout_augment_21
+			}
+		hidden_effect = {
+		add_country_leader_trait = fallout_augment_21
+		}
+	}
+}
+#Land of The Rising Sun
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.12" }
+	id = nf_brotherhood_expeditions.12
+	title = nf_brotherhood_expeditions.12.t
+	desc = nf_brotherhood_expeditions.12.d
+	picture = GFX_event_tanker
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.12.a #we await tomorrow's findings
+		country_event = nf_brotherhood_expeditions.1201
+	}
+}
+#Land of The Rising Sun: the Struggle
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1201" }
+	id = nf_brotherhood_expeditions.1201
+	title = nf_brotherhood_expeditions.1201.t
+	desc = nf_brotherhood_expeditions.1201.d
+	picture = GFX_event_sub_generic_battle
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1201.a #We approached after the battle ended.
+		country_event = nf_brotherhood_expeditions.1202
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1201.b #We assisted them.
+		country_event = nf_brotherhood_expeditions.1203
+		army_experience = 5
+		add_manpower = -15
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1201.c #We wiped out both forces.
+		country_event = nf_brotherhood_expeditions.1204
+		army_experience = 15
+		add_manpower = -55
+	}
+}
+#Land of The Rising Sun: A Shaky Meeting 
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1202" }
+	id = nf_brotherhood_expeditions.1202
+	title = nf_brotherhood_expeditions.1202.t
+	desc = nf_brotherhood_expeditions.1202.d
+	picture = GFX_event_sub_generic_ruins_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1202.a #Find tech
+		country_event = {
+			id = nf_brotherhood_expeditions.1206
+			days = 30 
+		}
+		ai_chance = {
+			base = 20
+		}
+		activate_mission = bos_delayed_expedition2_small
+		activate_mission = bos_delayed_scribes_small
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1202.b #Learn about China
+		country_event = { 
+			id = nf_brotherhood_expeditions.1207 
+			days = 30
+		}
+		ai_chance = {
+			base = 20
+		}
+		activate_mission = bos_delayed_expedition2_small
+		activate_mission = bos_delayed_scribes_small
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1202.c #Make new allies
+		trigger = {
+			OR = {
+				has_government = ruler
+				has_government = people
+			}
+		}
+		country_event = {
+			id = nf_brotherhood_expeditions.1205
+			days = 30
+		}
+		ai_chance = {
+			base = 60
+		}
+		activate_mission = bos_delayed_expedition2_medium
+		activate_mission = bos_delayed_scribes_medium
+	}
+}
+#Land of The Rising Sun: A Friendly Drink
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1203" }
+	id = nf_brotherhood_expeditions.1203
+	title = nf_brotherhood_expeditions.1203.t
+	desc = nf_brotherhood_expeditions.1203.d
+	picture = GFX_event_sub_generic_ruins_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1203.a #We accepted, of course.
+		country_event = {
+			id = nf_brotherhood_expeditions.1205
+			days = 30
+		}
+		activate_mission = bos_delayed_expedition2_medium
+		activate_mission = bos_delayed_scribes_medium
+	}
+}
+#Land of The Rising Sun: A Quick End
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1204" }
+	id = nf_brotherhood_expeditions.1204
+	title = nf_brotherhood_expeditions.1204.t
+	desc = nf_brotherhood_expeditions.1204.d
+	picture = GFX_event_sub_generic_ruins_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	##AI cannot take this event path.
+	option = {
+		name = nf_brotherhood_expeditions.1204.a #End the expedition. Study them
+		activate_mission = bos_delayed_expedition2_small
+		activate_mission = bos_delayed_scribes_small
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1204.b #Find pre-war ruins.
+		country_event = { 
+			id = nf_brotherhood_expeditions.1208
+			days = 30 
+		}
+		activate_mission = bos_delayed_expedition2_medium
+		activate_mission = bos_delayed_scribes_medium
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+	}
+}
+#Land of The Rising Sun: The Calm Exclusionary Zone
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1205" }
+	id = nf_brotherhood_expeditions.1205
+	title = nf_brotherhood_expeditions.1205.t
+	desc = nf_brotherhood_expeditions.1205.d
+	picture = GFX_event_china_poster
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1205.a #Troubling. We should make a pact, to help them resist.
+		add_ideas = bos_japanese_resistance_pact
+		bos_upgrade_expeditionary_outposts = yes
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 0 ##this is a bad deal for the AI.
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1205.b #This mission is about technology, let's exchange it and do no more.
+		set_temp_variable = {BOS_knowledge_gain = 3} ##Highest knowledge gain path anywhere, equal to Yangtze.
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 20 #1/6 chance for non-troika
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1205.maxsonians ##Arrange to send knights here to train.
+		trigger = {has_government = elites}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_ideas = bos_japanese_distant_battles
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1205.rhombians #Distant threats. Where can we find ruins worth exploring?
+		trigger = {has_government = ruler}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		country_event = {
+			id = nf_brotherhood_expeditions.1206
+			days = 20
+		}
+		ai_chance = {
+			base = 100
+		}		
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1205.reformers #Offer to broker peace between humans and mutants
+		trigger = {has_government = people}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		add_ideas = bos_japanese_brokering_peace
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+#Land of The Rising Sun: Distant Ruins
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1206" }
+	id = nf_brotherhood_expeditions.1206
+	title = nf_brotherhood_expeditions.1206.t
+	desc = nf_brotherhood_expeditions.1206.d
+	picture = GFX_event_sub_generic_ruins_5
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1206.a #Investigate the power grid
+		add_ideas = bos_japanese_power_grid
+		modify_building_resources = {
+			building = electricity_generator
+			resource = energy
+			amount = 1
+		}
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1206.b #Robotics
+		add_ideas = bos_japanese_robotics
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+#Land of The Rising Sun: The Happenings in China
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1207" }
+	id = nf_brotherhood_expeditions.1207
+	title = nf_brotherhood_expeditions.1207.t
+	desc = nf_brotherhood_expeditions.1207.d
+	picture = GFX_event_china_poster
+	is_triggered_only = yes
+	fire_only_once = yes
+	##note that every path here awards at least 1 knowledge, so option A is not as bad as it looks.
+	option = {
+		name = nf_brotherhood_expeditions.1207.a #Offer to help Japan resist China.
+		add_ideas = bos_japanese_resistance_pact
+		bos_upgrade_expeditionary_outposts = yes
+		ai_chance = {
+			base = 0 ##still a bad deal for the AI.
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1207.b #We'll need better ships.
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+
+}
+#Land of The Rising Sun: Distant Ruins (Bad End edition)
+country_event = {	
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1208" }
+	id = nf_brotherhood_expeditions.1208
+	title = nf_brotherhood_expeditions.1206.t
+	desc = nf_brotherhood_expeditions.1206.d
+	picture = GFX_event_sub_generic_ruins_5
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1206.b #Can only investigate robotics area bc you're a murderer!
+		add_ideas = bos_japanese_robotics
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+	}
+}
+#Sailing the Yangtze
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.13" }
+	id = nf_brotherhood_expeditions.13
+	title = nf_brotherhood_expeditions.13.t
+	desc = nf_brotherhood_expeditions.13.d
+	picture = GFX_event_china_poster
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.13.a #don't pay
+		activate_mission = bos_delayed_expedition2_large
+		activate_mission = bos_delayed_scribes_large
+		country_event = {
+			id = nf_brotherhood_expeditions.1301
+			days = 30
+		}
+		ai_chance = {
+			base = 100 ##tl;dr 50/50 for ints, 5/6 elites, 1/6 other two.
+			modifier = { has_government = people factor = 0.2}
+			modifier = { has_government = ruler factor = 0.2}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.13.b #pay
+		activate_mission = bos_delayed_expedition2_large
+		activate_mission = bos_delayed_scribes_large
+		add_ideas = bos_china_payments
+		country_event = {
+			id = nf_brotherhood_expeditions.1303
+			days = 30
+		}
+		ai_chance = {
+			base = 100 ##inverse of above comment
+			modifier = { has_government = elites factor = 0.2}
+		}
+	}
+}
+#Sailing the Yangtze: Fire on the River
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1301" }
+	id = nf_brotherhood_expeditions.1301
+	title = nf_brotherhood_expeditions.1301.t
+	desc = nf_brotherhood_expeditions.1301.d
+	picture = GFX_event_BRK_wasteland_boat_militia
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1301.a #try to save every ship
+		random_list = {
+			34 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -200
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -200
+				}
+				add_manpower = -200
+				add_ideas = bos_chinese_stealth_suits
+				country_event = nf_brotherhood_expeditions.1304 ##success event
+			}
+			66 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -400
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -400
+				}
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+				add_manpower = -400
+				add_ideas = bos_chinese_stealth_suits
+				country_event = nf_brotherhood_expeditions.1302 ## fail event
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1301.b
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -200
+		}
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment
+			amount = -200
+		}
+		add_manpower = -200
+		add_ideas = bos_chinese_stealth_suits
+		country_event = nf_brotherhood_expeditions.1302 ##intentionally the fail event - all four parties get a third option. No risk of lost Paladins.
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1301.maxsonians #fire indiscriminately
+		trigger = {has_government = elites}
+		random_list = {
+			10 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -300
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -300
+				}
+				add_manpower = -300
+				add_ideas = bos_chinese_stealth_suits
+				country_event = nf_brotherhood_expeditions.1302
+			}
+			90 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -500
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -500
+				}
+				add_manpower = -500
+				add_ideas = bos_chinese_stealth_suits
+				country_event = nf_brotherhood_expeditions.1304
+			}
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1301.rhombians #save lives not paladins!!
+		trigger = {has_government = ruler}
+		random_list = {
+			80 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -200
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -200
+				}
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+				add_manpower = -200
+				add_ideas = bos_chinese_stealth_suits
+				country_event = nf_brotherhood_expeditions.1304
+			}
+			20 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -400
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -400
+				}
+				add_manpower = -400
+				add_ideas = bos_chinese_stealth_suits
+				country_event = nf_brotherhood_expeditions.1302
+			}
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1301.troika ##troika shows them wrath ##tl;dr implant flexing
+		trigger = {has_government = intellectuals}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -250
+		}
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment
+			amount = -250
+		}
+		add_manpower = -250
+		add_ideas = bos_chinese_stealth_suits
+		country_event = nf_brotherhood_expeditions.1304
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1301.reformers
+		trigger = {has_government = people}
+		add_ideas = bos_china_payments
+		country_event = 
+		{ 
+			id = nf_brotherhood_expeditions.1303
+			days = 30
+		} ##splice into the peaceful path.
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+#Sailing the Yangtze: Cutting Our Losses
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1302" }
+	id = nf_brotherhood_expeditions.1302
+	title = nf_brotherhood_expeditions.1302.t
+	desc = nf_brotherhood_expeditions.1302.d
+	picture = GFX_event_tanker
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1302.a ##Didn't return empty handed
+		set_temp_variable = {BOS_knowledge_gain = 1}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1302.b #Scrolls will reflect their bravery
+		add_political_power = 20
+		add_war_support = 0.05
+		add_stability = 0.05
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+#Sailing the Yangtze: Paying to Pass
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1303" }
+	id = nf_brotherhood_expeditions.1303
+	title = nf_brotherhood_expeditions.1303.t
+	desc = nf_brotherhood_expeditions.1303.d
+	picture = GFX_event_BRK_wasteland_boat_militia
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1303.a #that went well
+		country_event = {id = nf_brotherhood_expeditions.1304 days = 30}
+	}
+
+}
+#Sailing the Yangtze: Up River
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1304" }
+	id = nf_brotherhood_expeditions.1304
+	title = nf_brotherhood_expeditions.1304.t
+	desc = nf_brotherhood_expeditions.1304.d
+	picture = GFX_event_sub_generic_factory
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1304.a #mountains
+		country_event = {
+			id = nf_brotherhood_expeditions.1305
+			days = 30
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1304.b #military base
+		country_event = {
+			id = nf_brotherhood_expeditions.1307
+			days = 30
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+#Sailing the Yangtze: Mountain Bunker
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1305" }
+	id = nf_brotherhood_expeditions.1305
+	title = nf_brotherhood_expeditions.1305.t
+	desc = nf_brotherhood_expeditions.1305.d
+	picture = GFX_event_sub_generic_tunnel
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1305.a #there was space for a million
+		country_event = {
+			id = nf_brotherhood_expeditions.1306
+			days = 30
+		}
+	}
+
+}
+#Sailing the Yangtze: Space for a Million
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1306" }
+	id = nf_brotherhood_expeditions.1306
+	title = nf_brotherhood_expeditions.1306.t
+	desc = nf_brotherhood_expeditions.1306.d
+	picture = GFX_event_vault_city
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.1306.a #what can we apply to our bunker?
+		set_technology = { underground_hydroponics_tech = 1 }
+		set_technology = { underground_ventilation_tech = 1 }
+		set_technology = { underground_security_tech = 1 }
+		set_technology = { agriculture_industry_tech_6 = 1}
+		set_technology = { agriculture_industry_tech_7 = 1}
+		ai_chance = {
+			base = 10
+			modifier = {has_government = elites factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1306.b ##We took as many books as we could.
+		set_temp_variable = {BOS_knowledge_gain = 3}
+		bos_add_knowledge = yes
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1306.c ##We focused on how it was built.
+		add_ideas = {bos_chinese_old_world_construction}
+		set_temp_variable = {
+			BOS_maximum_space_to_change = 15
+		}
+		bos_change_maximum_space = yes
+		ai_chance = {
+			base = 10
+			modifier = {has_government = elites factor = 0}
+		}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.1306.e ##We ensured the Emperor would never get it ##rhombians/maxsonians
+		trigger = {
+			OR = { 
+				has_government = elites
+				has_government = ruler
+			}
+		}
+		set_temp_variable = {BOS_knowledge_gain = 2}
+		bos_add_knowledge = yes
+		set_technology = { underground_security_tech = 1 }
+		add_ideas = bos_china_guarding_tomorrow
+		ai_chance = {
+			base = 60
+		}
+	}
+}
+#Sailing the Yangtze: Prepared for Occupation
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.1307" }
+	id = nf_brotherhood_expeditions.1307
+	title = nf_brotherhood_expeditions.1307.t
+	desc = nf_brotherhood_expeditions.1307.d
+	picture = GFX_event_robots_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #the aircraft
+		name = nf_brotherhood_expeditions.1307.a
+		add_equipment_to_stockpile = {
+			type = vb_gunship_equipment 
+			amount = 125
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = vb_transport_plane_equipment
+			amount = 25
+			producer = USA
+		}
+		ai_chance = {
+			base = 33
+		}
+		##Total IC = 240*25, 125*200 = 31k IC
+	}
+	option = { #the supplies for policing
+		name = nf_brotherhood_expeditions.1307.b
+		add_equipment_to_stockpile = {
+			type = heavy_infantry_equipment_2
+			amount = 5000
+			producer = USA
+		}
+		##Total IC = 32.5K
+		ai_chance = {
+			base = 33
+		}
+	}
+	option = { #Whatever was destined for the front
+		name = nf_brotherhood_expeditions.1307.c
+		add_equipment_to_stockpile = {
+			type = energy_equipment_3 ##7K IC
+			amount = 1000
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = tank_equipment_4
+			amount = 150
+			producer = USA
+		}
+		add_equipment_to_stockpile = { #25 to make a division. The IC advantage is miniscule, 17IC PA vs 21.
+			type = support_robot_two_legs_equipment_4 #8.4K IC
+			amount = 400
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment_4 #11.9K IC
+			amount = 700
+			producer = USA
+		}
+		ai_chance = {
+			base = 33
+		}
+		##27.3K IC not including tanks (assumption: Not all of these will be used by everyone.)
+		##40.0K IC including tanks.
+	}
+}
+# vim: set ft=pdx tw=79 :6

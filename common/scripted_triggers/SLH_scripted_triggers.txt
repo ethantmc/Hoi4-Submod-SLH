@@ -1,0 +1,50 @@
+bos_has_scribe_teams = {
+	custom_trigger_tooltip = {
+		tooltip = bos_scribes
+		BOS = {
+			check_variable = {
+				var = bos_scribes_ready
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+bos_has_troika_crowns = {
+	custom_trigger_tooltip = {
+		tooltip = bos_crowns
+		BOS = {
+			check_variable = {
+				var = bos_troika_crowns
+				val = 1
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+##the below is like this because of BOS_has_1_available_paladins
+BOS_has_2_available_paladins = { 
+	custom_trigger_tooltip = {
+		tooltip = bos_2_paladins
+		BOS = {
+			check_variable = {
+				var = BOS_paladins_ready
+				value = 2
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+bos_has_x_knowledge = {
+	custom_trigger_tooltip = {
+		tooltip = bos_scribes_x_knowledge
+		BOS = {
+			check_variable = {
+				var = bos_scribes_knowledge
+				value = BOS_need_knowledge_num
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+bos_ch

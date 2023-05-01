@@ -1,0 +1,117 @@
+Adds major content like Expeditions to the brotherhood, as well as edits to make coop more enjoyable. This will not make Lost Hills OP, but it should make them significantly more enjoyable up through the NCR-Brotherhood war.
+
+
+LOST HILLS FOCUS TREE CHANGES:
+
+NCR-BROTHERHOOD WAR:
+You now have to wait only 3 extra years as Rhombians rather than 5 to end the Ceasefire with the NCR (2283)
+
+The Bunker side of preparing for the NCR-Brotherhood War now also requires infantry equipment. This will spawn divisions in those states rather than simply eating ~1500 Manpower once the war breaks out. This is subject to change should it turn out to be unpopular.
+The resistance changes to owned states from "Propaganda Campaigns" and "Rounding up Criminals" now lowers Resistance Target so it has some effect. You're still gonna need Resistance Eradication.
+
+INDUSTRY:
+The Knights awards one Infrastructure in Lost Hills.
+The Scribes completion time was raised to match The Knights, and now awards one Infrastructure in Lost Hills.
+
+The Brotherhood gets 3 Civillian Workshops in Lost Hills from the New Reforms path.
+The Our Right tree now only requires you to take scrap metal, power, or electronics. In addition, Our Right awards 1 Infrastructure instead of another tech credit, and the scrap metal option is now 6 instead of 4,
+The Bunker foci has some of their civs changed to Arms Factories, as there was just too many in the end.
+
+Other Changes:
+Weaponry research in brotherhood R&D awards one Infantry Technology credit, two Fireteam Weaponry credits, and one Energy Weaponry credit, instead of four ballistics credits.
+Caps now gives you +10% Resources to Market. Maybe someone will import from you! Enjoy, multiplayer fellows!
+Council Reforms has been rebalanced, for total savings of 500pp and slightly stricter ordering. The costs to actually use the decisions remains unchanged.
+
+Contacting Chapters:
+"Lost Hills Supply Package" has been buffed substantially to make up for how late it comes for almost every Chapter.
+For some chapters, they receive their "Lost Hills Supply Package" sooner, giving parity between Chapters.
+
+The San Francisco chapter is Invited to the Brotherhood with "The Emperor's Blessing". Because of this, a bypass has been added to the Ceasefire in case you end up at war early with the NCR, and though you must complete "Ending the Ceasefire", it will work early if you're already at war. Note that as of June 9th 2022, there's an event in the base game that will call Shi, Mojave BoS, and the Guardians to war with the NCR.
+A new focus, "Vertibirds at Dusk", has been added. For a significant 45 day investment, 25 air xp and meeting certain requirements, a small number of vertibirds can be yours before you've researched them! Watch out for the Bear Force ;)
+
+Integrating Chapters: 
+"Integrating San Francisco" (mutually exclusive with "Avenging The Fallen") now rewards the Brotherhood with Vertibird Schematics.
+A new focus, "Avenging the Fallen", has been added under Integrating The Chapters (post NCR war). If Shi decided the brotherhood sucks actually, you can still get your schematics as you avenge the brutal end to the San Francisco chapter.
+A new focus for integrating the Texan Brotherhood has been added, just in case the Texan Brotherhood takes "Old World Blues". If they haven't done it, you can't integrate them! (You don't need them for "Ad Victoriam")
+
+Decisions: 
+-Paladins can be sent to Scavenge, completing the scavenging foci.
+-Paladin expeditions to the Guardians, and BSF allow Lost Hills to arm more effectively for the NCR-Brotherhood War (With Plasma Weapons and Vertibirds, in exchange for XP)
+
+DESCRIPTION:
+
+This intends to make the Brotherhood more enjoyable, especially in coop.
+
+It doesn't go as far as it could - clearly purposeful decisions like Superior Firepower's hit to factory output, or advisor balancing are left alone. However, my work has improved the Lost Hills experience by adding new content and increasing interactivity. The special forces capacity oversight is patched.
+
+MAXSON UPDATE:
+-New interactions with Maxson Chapter to help turn the tide of their northern wars. 
+-Event rewrites as part of a move to more stories for the chapter.
+-Additional events relating to war with and occupation of the NCR.
+-New foci relating to adopting the Lyons model for the Brotherhood
+-Bugfixes for a couple foci and decisions
+
+NCR-Brotherhood War:
+-Earlier, more multiplayer friendly NCR-Brotherhood war.
+-More sensible bunker capturing: Those bunkers you gave garrisons will now move out when war begins!
+-Purity Is Worthwhile: Commiting to purity is no longer strictly worse. Strict adherence to the Codex has its benefits!
+-More events relating the story of occupation, with choices on how you treat the people of the NCR.
+
+Expeditions:
+-Direct the paladins in Expeditions for knowledge across North America and the Pacific! Learn secrets of the Old World and direct the Scribe Council in its new Research and Development!
+-Paladins can also be sent on several special missions for requisitioning equipment from other Chapters, helping them in the process.
+-The scavenging foci can now be completed by sending your Paladins out into the Wasteland, after completing the "Advanced Scavenging" focus.
+
+Industry:
+-With the August buffs, only small further changes to make the early years more enjoyable.
+
+Politics:
+-Cheaper reforms and sensible progression of them.
+-New foci dedicated to the other factions in Lost Hills, the Reformers and the Troika.
+-Decisions allowing the Council to open and close the Brotherhood to traders, if they worked to reform the economy.
+
+Contacting Chapters:
+-"Lost Hills Supply Package" has been buffed substantially, being much stronger for everyone and arriving sooner for some chapters. Your fellow brotherhood nations will crave it.
+-New decisions to tip the balance of Operation Sunburst, and Maxson's northern wars, if you're willing to take the risk...
+-More interactions with other chapters, like adopting Lyon's Lancer model, and building airbases across the Wasteland!
+
+San Francisco Reworked:
+-The San Francisco chapter is Invited to the Brotherhood with "The Emperor's Blessing". If they end up at war with the NCR, you will do so early and unprepared...
+-New focus "Vertibirds at Dusk" gives Lost Hills some vertibirds to play with in preparation for access to vertibird schematics!
+-A repeatable expedition to San Francisco to trade air experience for flights of Vertibirds, while they still stand...
+
+Integrating Chapters:
+-Several new and reworked foci, allowing you to liberate or conquer San Francisco for Vertibirds or invite the revived Texan Brotherhood!
+
+Other Changes:
+-Research credits throughout the tree replaced with other rewards, or changed to be useful (No more ballistics!)
+-Currency reform changes makes Gold Bullion an option, not a requirement. Enjoy, multiplayer fellows!
+-An additional 10% Special Forces Capacity added as part of the starting national spirit, to address an oversight with Lost Hills.
+
+DRAFT 3 DESCRIPTION:
+This intends to make the Brotherhood more enjoyable, especially in coop with many additional ways to invest and defend other chapters, and a dozen smaller touches to smooth over rough edges.
+
+The goal of the mod is to add content, increase interactivity, and make multiplayer interesting. 
+
+TROIKA AND RECONSTRUCTION UPDATE:
+-The troika finally have their own path in Lost Hills! Flirt with their power for a quicker way to be rid of your rivals... or embrace it and rewrite every chapter leader's pascalbytes.
+-New foci deal with what kind of Brotherhood you are. Will the other chapters be annexed? Or will you build them up to fight alongside you?
+-Reconstruction is in full swing! Finally put the inefficiencies of a Chapter's economy behind you, and wrestle with the inefficiencies of the Bear! Maybe give them a free press while you're at it? And the followers back... please?
+-Circle of Steel: New focuses expand the role of the Circle of Steel, giving your intelligence agency a leg up against the NCR, and more information on what your Chapters are getting up to.
+
+First thing - The special forces capacity oversight is patched. No longer will you have the least Special Forces of any chapter.
+
+Major highlights include: 
+A massively expanded focus tree for the Steel Rangers, 
+A heavy focus on more interactions with other chapters, including investing in overseas airbases, intervening in their conflicts at great risk, or the overhaul to BoS-Shi relations. 
+After-War content by shaping California post-NCR and enacting the vision of your High Elder, with reforms such as changing economy and trade laws, accepting mutants, or inviting the Followers to reopen their bases! Llwyd may want a market economy, but Rhiannon would much prefer to never see a trader again!
+
+The mod also adds a huge number of new decisions, using the limited resources of Paladins and Scribes to turn boring filler foci into interesting choices, or put them to work building in foreign lands.
+
+Explore the world! Manage your paladins carefully as you interact with sprawling event trees and their leader-specific options to bring home rare artifacts, caches of equipment, or knowledge for Brotherhood R&D.
+
+Many other aspects of the vanilla tree are retouched - such as industry, trade, politics, and the NCR-Brotherhood War, which is now easier to start and resilient to multiplayer shenanigans among a plethora of other changes.
+
+
+PATCHNOTES:
+-Fix for tiny error introduced into The Village event.

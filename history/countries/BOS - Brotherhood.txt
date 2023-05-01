@@ -1,0 +1,393 @@
+﻿#File Constants
+
+#Starting Maximum Space
+@BOS_LOST_HILLS_MAX_SPACE = 100
+
+#Starting Construction Slots
+@BOS_LOST_HILLS_STARTING_CONSTRUCTION_SLOTS = 0
+
+#Maximum amount of Condensed Workshops
+@BOS_LOST_HILLS_MAX_CONDENSED_WORKSHOPS = 20
+
+#Maximum amount of Administration Centers
+@BOS_LOST_HILLS_MAX_ADMIN_CENTERS = 3
+
+#Maximum amount of Laboratories
+@BOS_LOST_HILLS_MAX_LABS = 5
+
+#Maximum amount of Training Facilities
+@BOS_LOST_HILLS_MAX_TRAINING_FACILITIES = 5
+
+#Maximum ( Starting ) amount of Expeditionary Departments
+@BOS_LOST_HILLS_STARTING_MAX_EXPEDITIONARY_DEPARTMENTS = 8
+
+#Starting BoS Tension
+@BOS_STARTING_TENSION = 10
+
+#Starting NCR Tension
+@BOS_NCR_STARTING_TENSION = 5
+
+#Starting Ruler Drift
+@BOS_POLITICS_DRIFT_RULER = 0.4
+
+#Starting People Drift
+@BOS_POLITICS_DRIFT_PEOPLE = 0
+
+#Starting Elites Drift
+@BOS_POLITICS_DRIFT_ELITES = 0.4
+
+#Starting Intellectuals Drift
+@BOS_POLITICS_DRIFT_INTELLECTUALS = 0
+
+#Free Starting Paladins
+@BOS_FREE_PALADINS_AT_GAMESTART = 1
+
+#Free Starting Administration Capacity - If below 0, you need to add an additional source of admin capacity somewhere.
+@BOS_LOST_HILLS_STARTING_FREE_ADMINISTRATION_CAPACITY = 1
+
+#Free Starting Manpower
+@BOS_FREE_MANPOWER_AT_GAMESTART = 200
+
+#Bonuses to make Volunteers work. Later, when the BoS actually has a war, these bonuses can be removed.
+set_variable = {
+	bos_slh_volunterr_func_negative = -1
+}
+set_variable = {
+	bos_slh_volunterr_func_positive = 1
+}
+capital = 157
+oob = "BOS_2275"
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_intelligence_agency = {
+		name = "Circle of Steel"
+		icon = "GFX_intelligence_agency_logo_bos"
+	}
+	upgrade_intelligence_agency = upgrade_army_department
+	upgrade_intelligence_agency = upgrade_passive_defense
+	upgrade_intelligence_agency = upgrade_interrogation_techniques
+	upgrade_intelligence_agency = upgrade_form_department
+	set_political_power = 0 # Fixes weird interaction: Agency Upgrades in history incur their caps cost, but as PP due to the caps system being enabled later in gamestart
+}
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	#air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	#naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+
+	tribal_civilization = 1
+	settled_civilization = 1
+	scientific_civilization = 1
+
+	support_weaponry = 1
+	fireteam_weaponry_tech = 1
+	demolitions_weaponry_tech = 1
+	anti_tank_equipment_tech_1 = 1
+	med_company_tech_1 = 1
+	recon_company_tech_1 = 1
+	logistics_company_tech_1 = 1
+	maintenance_company_tech_1 = 1
+
+	elite_army = 1
+	special_forces_perk_tech_1 = 1
+	special_forces_perk_tech_2 = 1
+
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+
+	energy_weaponry_tech_1 = 1
+
+	spec_ops_equipment_tech_1 = 1
+
+	stripped_pa_tech = 1
+	weight_support_frame_pa_tech_1 = 1
+	weight_support_frame_pa_tech_2 = 1
+	wasteland_pa_tech = 1
+
+	underground_industry_tech = 1
+	electronic_engineering = 1
+	heavy_infantry_tech_1 = 1
+
+	implant_tech_visibility_tech = 1
+}
+
+set_fuel_ratio = 0.75
+set_stability = 0.6
+set_war_support = 0.4
+
+set_research_slots = 3 #They get 3 from their tree
+
+set_country_flag = is_brotherhood_nation
+set_country_flag = is_brotherhood_nation_proper
+set_country_flag = is_followers_black_listed_nation
+set_country_flag = do_not_spread_followers_from_this_tag
+set_country_flag = do_not_spread_followers_to_this_tag
+set_country_flag = generic_decisions_disabled
+set_country_flag = scavenging_disabled
+set_country_flag = no_mutants_allowed
+set_country_flag = bans_drugs
+set_country_flag = has_unique_outsider_laws # This flag is currently disabled and has no effect to save on CPU costs @Tran
+set_country_flag = has_unique_trade_laws
+set_country_flag = has_unique_press_laws # This flag is currently disabled and has no effect to save on CPU costs @Tran
+set_country_flag = has_unique_economic_laws
+set_country_flag = manpower_laws_hidden
+set_country_flag = army_wages_disabled
+set_country_flag = is_california_nation
+
+set_country_flag = elite_doctrine_ai
+set_country_flag = power_armor_doctrine_ai
+set_country_flag = infantry_energy_ai
+
+set_country_flag = bos_administrative_decisions_enabled
+set_country_flag = bos_paladin_decisions_enabled
+
+set_country_flag = bos_elites_allowed
+set_country_flag = bos_ruler_allowed
+#set_country_flag = bos_intellectuals_allowed
+#set_country_flag = bos_people_allowed
+
+#Populartiy stuff
+
+set_politics = {
+	ruling_party = elites
+	last_election = "2274.12.30"
+	election_frequency = 12
+	elections_allowed = yes
+}
+
+set_variable = { BOS_election_months = 12 } #Should always equal election duration
+
+set_popularities = {
+	people = 0
+	elites = 45
+	intellectuals = 6
+	ruler = 49
+}
+
+
+#Variable stuff
+
+set_variable = { BOS_drift_people = @BOS_POLITICS_DRIFT_PEOPLE }
+set_variable = { BOS_drift_ruler = @BOS_POLITICS_DRIFT_RULER }
+set_variable = { BOS_drift_intellectuals = @BOS_POLITICS_DRIFT_INTELLECTUALS }
+set_variable = { BOS_drift_elites = @BOS_POLITICS_DRIFT_ELITES }
+
+set_variable = { BOS_space = @BOS_LOST_HILLS_MAX_SPACE }
+set_variable = { BOS_space_usage = 0 }
+
+set_variable = { BOS_underground_construction_slots = @BOS_LOST_HILLS_STARTING_CONSTRUCTION_SLOTS }
+
+set_variable = { BOS_maximum_condensed_workshops_allowed = @BOS_LOST_HILLS_MAX_CONDENSED_WORKSHOPS }
+set_variable = { BOS_maximum_admin_centers_allowed = @BOS_LOST_HILLS_MAX_ADMIN_CENTERS }
+set_variable = { BOS_maximum_safety_departments_allowed = 1 } #Hardcoded, its not a scaling one
+set_variable = { BOS_maximum_labs_allowed = @BOS_LOST_HILLS_MAX_LABS }
+set_variable = { BOS_maximum_training_facilities_allowed = @BOS_LOST_HILLS_MAX_TRAINING_FACILITIES }
+set_variable = { BOS_maximum_expeditionary_departments_allowed = @BOS_LOST_HILLS_STARTING_MAX_EXPEDITIONARY_DEPARTMENTS }
+
+set_variable = { BOS_paladins_ready = @BOS_FREE_PALADINS_AT_GAMESTART }
+set_variable = { BOS_underground_building_administration_centers_mod = @BOS_LOST_HILLS_STARTING_FREE_ADMINISTRATION_CAPACITY }
+set_variable = { bos_tension = @BOS_STARTING_TENSION }
+
+set_variable = {
+	bos_lost_hills_self_destruct_device = 1
+}
+
+add_manpower = @BOS_FREE_MANPOWER_AT_GAMESTART
+
+set_temp_variable = { BOS_tension_to_add = @BOS_STARTING_TENSION }
+bos_change_tension = yes
+
+NCR = {
+	add_dynamic_modifier = {
+		modifier = bos_ncr_tension_dynamic_modifier
+	}
+	set_temp_variable = { BOS_tension_to_add = @BOS_NCR_STARTING_TENSION }
+	bos_change_tension = yes
+}
+
+add_dynamic_modifier = {
+	modifier = bos_lost_hills_logistics
+}
+
+add_dynamic_modifier = {
+	modifier = bos_tension_dynamic_modifier
+}
+
+157 = {
+	add_dynamic_modifier = {
+		modifier = bos_lost_hills_logistics_state
+	}
+}
+
+#Volunteers
+set_rule = { can_send_volunteers = no }
+
+add_ideas = {
+	paladins
+	lost_hills_pensions
+	selective_outsider_recruitment_law
+	officer_law_military_academy
+	training_law_military_academy
+	gaben_economy_law
+	isolationist_trade_law
+	military_indoctrination_press
+	slavery_outlawed
+	#ncr_bos_idea_allgood_truce
+	bos_underground_hangars
+	bos_army_confusion_4
+	bos_civilian_distrust
+	knighlty_armaments
+}
+
+#Diplomacy stuff
+create_or_join_western_brotherhood_of_steel = yes
+
+#To do - NCR/BOS faction mechanics
+
+add_opinion_modifier = { target = MLT modifier = boshatesmutants }
+add_opinion_modifier = { target = DIS modifier = boshatesmutants }
+
+add_to_array = { bos_offmap_country = BMW.id } #Midwest
+add_to_array = { bos_offmap_country = BGF.id } #Gulf
+add_to_array = { bos_offmap_country = BLS.id } #Lyons
+add_to_array = { bos_offmap_country = BAP.id } #Appalachian
+add_to_array = { bos_offmap_country = BSF.id } #San Francisco
+
+#In order of distance from lost hills
+add_to_array = { global.bos_ledger_members = BOS.id } #Lost Hills
+add_to_array = { global.bos_ledger_members = BSF.id } #San Francisco
+add_to_array = { global.bos_ledger_members = MOJ.id } #Mojave
+add_to_array = { global.bos_ledger_members = GRD.id } #Guardians
+add_to_array = { global.bos_ledger_members = WBH.id } #Washington
+add_to_array = { global.bos_ledger_members = TCA.id } #The Cause
+add_to_array = { global.bos_ledger_members = MXC.id } #Maxson
+add_to_array = { global.bos_ledger_members = MNC.id } #Montana
+add_to_array = { global.bos_ledger_members = TBH.id } #Texan
+add_to_array = { global.bos_ledger_members = BMW.id } #Midwest
+add_to_array = { global.bos_ledger_members = BAP.id } #Appalachian Expedition
+add_to_array = { global.bos_ledger_members = BGF.id } #Gulf
+add_to_array = { global.bos_ledger_members = BLS.id } #Lyons'
+
+
+
+#Characters
+
+recruit_character = BOS_jonathan_maxson
+recruit_character = BOS_arthur_maxson
+recruit_character = BOS_angharad
+recruit_character = BOS_manawyddan
+recruit_character = BOS_rhiannon
+recruit_character = BOS_pryderi
+recruit_character = BOS_llwyd
+recruit_character = BOS_mari_torni
+
+recruit_character = BOS_paladin_stone
+
+recruit_character = BOS_advisor_contest_1
+recruit_character = BOS_advisor_contest_2
+recruit_character = BOS_advisor_contest_3
+recruit_character = BOS_advisor_contest_4
+recruit_character = BOS_advisor_contest_5
+recruit_character = BOS_advisor_contest_6
+recruit_character = BOS_advisor_contest_7
+recruit_character = BOS_advisor_contest_8
+recruit_character = BOS_advisor_contest_9
+recruit_character = BOS_advisor_contest_10
+recruit_character = BOS_advisor_contest_11
+recruit_character = BOS_advisor_contest_12
+recruit_character = BOS_advisor_contest_13
+recruit_character = BOS_advisor_contest_14
+recruit_character = BOS_advisor_contest_15
+recruit_character = BOS_advisor_contest_16
+recruit_character = BOS_advisor_contest_17
+recruit_character = BOS_advisor_contest_18
+recruit_character = BOS_advisor_contest_19
+recruit_character = BOS_advisor_contest_20
+recruit_character = BOS_advisor_contest_21
+recruit_character = BOS_advisor_contest_22
+recruit_character = BOS_advisor_contest_23
+recruit_character = BOS_advisor_contest_24
+recruit_character = BOS_advisor_contest_25
+recruit_character = BOS_advisor_contest_26
+recruit_character = BOS_advisor_contest_27
+recruit_character = BOS_advisor_contest_28
+
+# BOS lacks the necessary factories to assign one to every equipment their divisions will need at first. This helps give a slight buffer to them.
+add_equipment_to_stockpile = {
+	type = energy_equipment_1
+	amount = 500
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = power_armor_equipment_1
+	amount = 20
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = anti_tank_equipment_1
+	amount = 50
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = fireteam_equipment_1
+	amount = 50
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = demolitions_equipment_1
+	amount = 50
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 50
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = spec_ops_equipment_1
+	amount = 50
+	producer = BOS
+}
+add_equipment_to_stockpile = {
+	type = supply_equipment_1
+	amount = 5
+	producer = BOS
+}

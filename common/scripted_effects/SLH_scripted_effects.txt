@@ -1,0 +1,360 @@
+bos_add_knowledge = {
+		custom_effect_tooltip = bos_scribes_x_knowledge_gained
+		add_to_variable = {
+			bos_scribes_knowledge = BOS_knowledge_gain
+		}
+}
+bos_upgrade_expeditionary_outposts = {
+	if = {
+		limit = {
+			OR = {
+				has_idea = bos_expeditionary_outposts_5
+				has_idea = bos_expeditionary_outposts_6
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_expeditionary_outposts_5
+			add_idea = bos_expeditionary_outposts_6
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_expeditionary_outposts_4
+		}
+		swap_ideas = {
+			remove_idea = bos_expeditionary_outposts_4
+			add_idea = bos_expeditionary_outposts_5
+		}
+	} 
+	else_if = {
+		limit = {
+			has_idea = bos_expeditionary_outposts_3
+		}
+		swap_ideas = {
+			remove_idea = bos_expeditionary_outposts_3
+			add_idea = bos_expeditionary_outposts_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_expeditionary_outposts_2
+		}
+		swap_ideas = {
+			remove_idea = bos_expeditionary_outposts_2
+			add_idea = bos_expeditionary_outposts_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_expeditionary_outposts_1
+		}
+		swap_ideas = {
+			remove_idea = bos_expeditionary_outposts_1
+			add_idea = bos_expeditionary_outposts_2
+		}
+	}
+	else = {
+		add_ideas = bos_expeditionary_outposts_1
+	}
+}
+bos_upgrade_foreign_airbases = {
+	if = {
+		limit = {
+			OR = {
+				has_idea = bos_foreign_airbases_9
+				has_idea = bos_foreign_airbases_10
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_9
+			add_idea = bos_foreign_airbases_10
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_idea = bos_foreign_airbases_8
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_8
+			add_idea = bos_foreign_airbases_9
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_idea = bos_foreign_airbases_7
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_7
+			add_idea = bos_foreign_airbases_8
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_idea = bos_foreign_airbases_6
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_6
+			add_idea = bos_foreign_airbases_7
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_idea = bos_foreign_airbases_5
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_5
+			add_idea = bos_foreign_airbases_6
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_foreign_airbases_4
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_4
+			add_idea = bos_foreign_airbases_5
+		}
+	} 
+	else_if = {
+		limit = {
+			has_idea = bos_foreign_airbases_3
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_3
+			add_idea = bos_foreign_airbases_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_foreign_airbases_2
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_2
+			add_idea = bos_foreign_airbases_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_foreign_airbases_1
+		}
+		swap_ideas = {
+			remove_idea = bos_foreign_airbases_1
+			add_idea = bos_foreign_airbases_2
+		}
+	}
+	else = {
+		add_ideas = bos_foreign_airbases_1
+	}
+}
+bos_srg_upgrade_army_corps = {	
+	if = {
+		limit = {
+			has_idea = srg_steel_rangers_armed_corps_4
+		}
+		swap_ideas = {
+			remove_idea = srg_steel_rangers_armed_corps_4
+			add_idea = srg_steel_rangers_armed_corps_5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = srg_steel_rangers_armed_corps_3
+		}
+		swap_ideas = {
+			remove_idea = srg_steel_rangers_armed_corps_3
+			add_idea = srg_steel_rangers_armed_corps_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = srg_steel_rangers_armed_corps_2
+		}
+		swap_ideas = {
+			remove_idea = srg_steel_rangers_armed_corps_2
+			add_idea = srg_steel_rangers_armed_corps_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = srg_steel_rangers_armed_corps_1
+		}
+		swap_ideas = {
+			remove_idea = srg_steel_rangers_armed_corps_1
+			add_idea = srg_steel_rangers_armed_corps_2
+		}
+	}
+	else = {
+		add_ideas = srg_steel_rangers_armed_corps_1
+	}
+}
+bos_troika_install_augment_in_elder = {
+	random_list = {
+		1 = {
+			custom_effect_tooltip = fallout_augment_21
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_21
+			}
+		}
+		1 = {
+			custom_effect_tooltip = fallout_augment_20
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_20
+			}
+		}
+		1 = {
+			custom_effect_tooltip = fallout_augment_19
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_19
+			}
+		}
+		1 = {
+			custom_effect_tooltip = fallout_augment_18
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_18
+			}
+			# if = { 
+				# limit = { 
+					# THIS.GetLeader = {##however you refer to a country leader? Can't find this anywhere, if it's possible.
+						# is_army_leader = no 
+					# }
+				# }
+				add_field_marshal_role = {
+				  character = THIS.GetLeader
+				  skill = 3
+				  attack_skill = 2
+				  defense_skill = 3
+				  planning_skill = 3
+				  logistics_skill = 3
+				}
+			# }
+		}
+		1 = {
+			custom_effect_tooltip = fallout_augment_17
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_17
+			}
+		}
+		1 = {
+			custom_effect_tooltip = fallout_augment_9
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_9
+			}
+		}
+		1 = {
+			custom_effect_tooltip = fallout_augment_7
+			hidden_effect = {
+			add_country_leader_trait = fallout_augment_7
+			}
+		}
+	}
+}
+bos_troika_upgrade_bos_experience_law = {
+	if = {
+		limit = {
+			has_idea = bos_bos_fighting_experience_1
+		}
+		##do nothing
+	}
+	else = {
+		add_ideas = bos_bos_fighting_experience_1
+	}
+}
+bos_disallow_all_but_troika_and_ruling = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = bos_intellectuals_allowed
+			}
+		}
+		custom_effect_tooltip = bos_set_codex_law
+		custom_effect_tooltip = bos_intellectuals_allowed
+		set_country_flag = bos_intellectuals_allowed
+	}
+	if = {
+		limit = {
+			AND = {
+			has_country_flag = bos_people_allowed
+				NOT = {
+					has_government = people
+				}
+			}
+		}
+		custom_effect_tooltip = bos_remove_codex_law
+		custom_effect_tooltip = bos_people_allowed
+		clr_country_flag = bos_people_allowed
+	}
+	if = {
+		limit = {
+			AND = {
+			has_country_flag = bos_elites__allowed
+				NOT = {
+					has_government = elites
+				}
+			}
+		}
+		custom_effect_tooltip = bos_remove_codex_law
+		custom_effect_tooltip = bos_elites_allowed
+		clr_country_flag = bos_elites_allowed
+	}
+	if = {
+		limit = {
+			AND = {
+			has_country_flag = bos_ruler_allowed
+				NOT = {
+					has_government = ruler
+				}
+			}
+		}
+		custom_effect_tooltip = bos_remove_codex_law
+		custom_effect_tooltip = bos_ruler_allowed
+		clr_country_flag = bos_ruler_allowed
+	}
+}
+bos_liberate_all_bos_members = {
+	release = BSF
+	release = MOJ
+	release = GRD
+	release = WBH 
+	release = TCA
+	release = MXC
+	release = MNC
+	release = TBH
+	release = BMW
+	release = BAP 
+	release = BGF
+	release = BLS 
+	release = ACH
+	# for_each_scope_loop = {
+		# array = global.bos_ledger_members
+		# if = {
+			# limit = {
+				# NOT = { tag = ROOT }
+				# NOT = { country_exists = PREV}
+			# }
+			# release = PREV
+		# }
+	# }
+	# for_each_scope_loop = {
+		# array = global.bos_ledger_members
+		# if = {
+			# limit = {
+				# NOT = { tag = ROOT }
+			# }
+			# every_owned_state = {
+				# limit = {
+					# is_core_of = PREV.PREV
+				# }						 	
+				# transfer_state = THIS
+			# }
+		# }
+	# }
+#BOS BSF MOJ GRD WBH TCA MXC MNC TBH BMW BAP BGF BLS 
+}

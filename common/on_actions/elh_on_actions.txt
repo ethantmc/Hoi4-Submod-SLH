@@ -1,0 +1,44 @@
+on_actions = {
+
+	on_weekly = {
+		effect = {
+			set_variable = {
+				bos_ruler_pop = BOS.party_popularity_100@ruler
+			}
+			clamp_variable = { ##clamping so the effect can be ready (possibly) directly. Plus, no effect if pop > 33%.
+				var = bos_ruler_pop 
+				max = 33
+				min = 0
+			}
+			set_variable = {
+				bos_elites_pop = BOS.party_popularity_100@elites
+			}
+			clamp_variable = { ##clamping so the effect can be ready (possibly) directly. Plus, no effect if pop > 33%.
+				var = bos_elites_pop 
+				max = 33
+				min = 0
+			}
+			set_variable = {
+				bos_intellectuals_pop = BOS.party_popularity_100@intellectuals
+			}
+			clamp_variable = { ##clamping so the effect can be ready (possibly) directly. Plus, no effect if pop > 33%.
+				var = bos_intellectuals_pop
+				max = 33
+				min = 0
+			}
+			set_variable = {
+				bos_people_pop = BOS.party_popularity_100@people
+			}
+			divide_variable = {bos_intellectuals_pop = 50}
+			clamp_variable = { ##clamping so the effect can be ready (possibly) directly. Plus, no effect if pop > 33%.
+				var = bos_people_pop
+				max = 33
+				min = 0
+			}
+			divide_variable = {bos_elites_pop = 100} ##stability and war support need a decimal value
+			divide_variable = {bos_ruler_pop = 100}
+			divide_variable = {bos_people_pop = 2}	##33 weekly manpower is too much	
+		}
+	}
+
+}

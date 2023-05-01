@@ -1,0 +1,7 @@
+﻿l_english:
+    RULE_SLH: "Expanded Lost Hills Game Rules"
+    RULE_SLH_MULTIPLAYER: "Chapter Conflict Decisions"
+    RULE_SLH_MULTIPLAYER_DEFAULT: "Not Allowed if Player In War"
+    RULE_SLH_MULTIPLAYER_DEFAULT_DESC: "If a player controls any party in a Chapter Conflict, decisions supporting that chapter are disabled."
+    RULE_SLH_MULTIPLAYER_YES: "Allowed Always"
+    RULE_SLH_MULTIPLAYER_YES_DESC: "If a player is involved in a Chapter Conflict (As the chapter or its foe), decisions may still be taken. This is not going to be fair, but generally beating the supported chapter will permanently harm Lost Hills."

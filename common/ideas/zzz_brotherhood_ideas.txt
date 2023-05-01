@@ -1,0 +1,2566 @@
+ideas = {
+	hidden_ideas = {
+		bos_nf_weaponry_research = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				infantry_weapons_tech_category = 0.05
+			}
+		}
+		bos_nf_SIG_sauer_weaponry = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				infantry_weapons_tech_category = 0.075
+			}
+		}
+		bos_nf_heckler_and_koch_weaponry = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				infantry_weapons_tech_category = 0.075
+			}
+		}
+		bos_nf_wattz_weaponry = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				infantry_weapons_tech_category = 0.1
+			}
+		}
+		bos_nf_vehicle_research = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				vehicle_tech_category = 0.05
+			}
+		}
+		bos_nf_takoma_motors = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				vehicle_tech_category = 0.075
+			}
+		}
+		bos_nf_n_h_and_m_vehicles = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				vehicle_tech_category = 0.075
+			}
+		}
+		bos_nf_chryslus_vehicles = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				vehicle_tech_category = 0.1
+			}
+		}
+		bos_nf_industry_research = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				industry = 0.05
+			}
+		}
+		bos_nf_dunwich_borers = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				industry = 0.075
+			}
+		}
+		bos_nf_hornwright_industrial_mining_company = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				industry = 0.075
+			}
+		}
+		bos_nf_red_rocket = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+		bos_nf_air_research = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				air_tech_category = 0.05
+			}
+		}
+		bos_nf_lockreed = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				air_tech_category = 0.075
+			}
+		}
+		bos_nf_ball_aerospace = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				air_tech_category = 0.075
+			}
+		}
+		bos_nf_repconn = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				air_tech_category = 0.1
+			}
+		}
+		bos_nf_robotics_research = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				robotics_tech_category = 0.05
+			}
+		}
+		bos_nf_cerulean_robotics = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				robotics_tech_category = 0.075
+			}
+		}
+		bos_nf_robco = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				robotics_tech_category = 0.075
+			}
+		}
+		bos_nf_acme = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				robotics_tech_category = 0.1
+			}
+		}
+		bos_nf_theoretical_research = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.01
+			}
+		}
+		bos_nf_future_tec = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.02
+			}
+		}
+		bos_nf_greenway_hydroponics = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.02
+			}
+		}
+		bos_nf_virtual_strategic_solutions = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.03
+			}
+		}
+		bos_trade_modifier_to_lost_hills = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = { tag = BOS trade_cost_for_target_factor = -0.075 }
+		}
+		bos_nf_currency_reform_ncr_dollar = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = { tag = NCR trade_cost_for_target_factor = -0.075 }
+		}
+		bos_nf_currency_reform_scrip = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			targeted_modifier = { tag = BMW trade_cost_for_target_factor = -0.075 }
+		}
+		bos_nf_currency_reform_gold_bullion = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		bos_nf_currency_reform_caps = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				min_export = 0.1
+				trade_opinion_factor = 0.05
+			}
+		}
+		bos_nf_paladins_given_some_sway = {
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				drift_defence_factor = -0.3
+				political_power_factor = 0.1
+			}
+		}
+	}
+	country = {
+		brotherhood_elder_conflicts = {
+			picture = vengeful
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				cant_sent_volunteers_to_this_country = 1
+			}
+		}
+		brotherhood_chaotic_conflicts = {
+			picture = vengeful
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				cant_sent_volunteers_to_this_country = 1
+			}
+		}
+		bos_army_confusion_4 = {
+			picture = vengeful
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.36
+				industrial_capacity_factory = -0.16
+				war_support_factor = -0.3
+			}
+		}
+		bos_army_confusion_3 = {
+			picture = vengeful
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.24
+				industrial_capacity_factory = -0.12
+				war_support_factor = -0.22
+			}
+		}
+		bos_army_confusion_2 = {
+			picture = vengeful
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.16
+				industrial_capacity_factory = -0.08
+				war_support_factor = -0.16
+			}
+		}
+		bos_army_confusion_1 = {
+			picture = vengeful
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.08
+				industrial_capacity_factory = -0.04
+				war_support_factor = -0.08
+			}
+		}
+		bunkerblues = {
+
+			picture = bunker_blues
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industry_air_damage_factor = -0.6
+				trade_opinion_factor = -0.5
+				foreign_subversive_activites = -0.75
+				resistance_damage_to_garrison = -0.3
+				max_fuel_factor = 0.5
+				fuel_gain_factor = 0.1
+				special_forces_min = 60
+				custom_modifier_tooltip = intelligence_defense_boost_dlc_weak_tt
+				hidden_modifier = {
+					intelligence_agency_defense = 2
+					crypto_strength = 1
+				}
+			}
+		}
+		bos_brotherhood_exodus = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.1
+				weekly_manpower = 25
+			}
+			#More later
+		}
+		bos_brotherhood_looting = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				consumer_goods_factor = -0.10
+			}
+			#More later
+		}
+		bos_our_advantage = {
+			picture = knights_of_certainty
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_leader_start_level = 1
+				special_forces_cap = 0.04
+			}
+		}
+		bos_lost_hills_volunteers = {
+			picture = knights_of_discovery
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				send_volunteer_size = 5
+				send_volunteers_tension = -1
+				diplomacy_distance = 100000
+				bos_can_only_lend_lease_or_send_volunteers_to_brotherhood_countries = 1
+			}
+		}
+		bos_robotic_occupation = {
+			picture = GFX_goal_generic_assaultron
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				support_robot_equipment = {
+					build_cost_ic = -0.12
+					suppression_factor = 0.1
+					instant = yes
+				}
+			}
+		}
+		bos_extra_toes = {
+			picture = generic_welding_goggles
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_paladin_unit_speed_factor = -0.20
+			}
+		}
+		bos_golgotha_mirroredshades = {
+			picture = generic_welding_goggles
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.10
+				control_trade_mission_factor = 0.75
+			}
+		}
+		bos_trade_with_hawaii = {
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = { #It's a lot of stuff, but half of it is negative.
+				country_resource_water = -12
+				country_resource_metal = -12
+				weekly_manpower = -4
+				civilian_factory_use = 1
+				experience_gain_navy = 0.05
+				country_resource_circuitry = 8
+				country_resource_advanced = 12
+				country_resource_composites = 30
+			}
+			research_bonus = {
+				naval_tech_category = 0.15
+			}
+		}
+		bos_hawaii_protectorate = { 				##Literally just a weaker version of Trade With Hawaii. 
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = { #It's a lot of stuff, but half of it is negative.
+				country_resource_water = -4
+				country_resource_metal = -6
+				weekly_manpower = -2
+				civilian_factory_use = 1
+				experience_gain_navy = 0.02
+				country_resource_circuitry = 4
+				country_resource_advanced = 6
+				country_resource_composites = 8
+			}
+			research_bonus = {
+				naval_tech_category = 0.07
+			}
+		}
+		bos_alaskan_winterization = {
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.5
+				winter_attrition = -0.5
+			}
+		}
+		bos_support_for_washington = { ##for Lost Hills costs. They also lost 50pp.
+			picture = generic_welding_goggles
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				civilian_factory_use = 1
+				war_support_factor = -0.08
+				stability_factor = -0.05
+			}
+		}
+		bos_wbh_token_reforms = { ##Kind of unhappy with this whole spirit, but it's very hard to represent the benefits of Rhombian support. In case reworking this is ever desired: Considering replacing fuel with Energy (add the amount to the Costs spirit as well), scrapping all the garrison stuff, and adding some kind of technology sharing. If slaves were enabled, I would've done something radically different.
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				base_fuel_gain = 60
+				compliance_growth = 0.1
+				required_garrison_factor = -0.1
+				conscription = -0.005
+
+			}
+		}
+		bos_japanese_brokering_peace = {
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.1
+				exodus_national_appeal = 0.1
+				
+			}
+		}
+		bos_japanese_distant_battles = { ##the event that rewards this also upgrades the Mutant Experience Law, but the cap is intentionally not increased to account for this.
+			picture = generic_welding_goggles
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.05
+				experience_gain_navy = 0.01
+				army_leader_start_level = 1
+				weekly_manpower = -4
+				training_time_army_factor = 0.1
+				special_forces_training_time_factor = 0.3
+
+			}
+		}
+		bos_japanese_resistance_pact = {
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.01
+				experience_gain_navy = 0.01
+				country_resource_circuitry = -6
+				country_resource_metal = -8
+				weekly_manpower = -2
+				civilian_factory_use = 1
+			}
+			research_bonus = {
+				infantry_weapons_tech_category = 0.05
+			}
+		}
+		bos_japanese_power_grid = {
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			##+1 Energy from all generators, applied during the event.
+		}
+		bos_japanese_robotics = {
+			picture = generic_welding_goggles		
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+			}
+			research_bonus = {
+				robotics_tech_category = 0.1
+			}
+		}
+		bos_china_payments = {
+			picture = generic_welding_goggles
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				civilian_factory_use = 3 ##for 180 days
+			}
+		}
+		bos_chinese_stealth_suits = {
+			picture = generic_welding_goggles			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				land_night_attack = 0.15 ##This was going to be 10% but then I realized the BoS can't get Thermal Vision Devices. 	
+			}
+		}
+		bos_chinese_old_world_construction = {
+			picture = generic_welding_goggles		
+			allowed = {
+			}
+			removal_cost = -1
+			research_bonus = {
+				industry = 0.15
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		bos_china_guarding_tomorrow = {
+			picture = generic_welding_goggles	
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.3
+				drift_defence_factor = 0.3
+				army_org_factor = 0.08
+			}
+		}
+		bos_expeditionary_outposts_1 = {
+			picture = generic_BOS_idea_surface_outposts
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 2
+				production_speed_bunker_factor = 0.1
+			}
+			#Scaling National Spirit
+		}
+		bos_expeditionary_outposts_2 = {
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 4
+				production_speed_bunker_factor = 0.2
+				country_resource_water = 4 #reminder these are not increased by infra so unlike 4 metal from the tree which is closer to 14 metal ((3x)*(1.2x) resource multipliers in capital)
+											#this is ACTUALLY just four water. It's flavor.
+			}
+			#Scaling National Spirit
+		}
+		bos_expeditionary_outposts_3 = {
+			picture = generic_BOS_idea_surface_outposts
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 6
+				production_speed_bunker_factor = 0.3
+				country_resource_water = 8
+			}
+			#Scaling National Spirit
+		}
+		bos_expeditionary_outposts_4 = {
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 10
+				production_speed_bunker_factor = 0.3
+				production_speed_bunker2_factor = 0.10
+				country_resource_water = 12
+				country_resource_metal = 8
+			}
+			#Scaling National Spirit
+		}
+		bos_expeditionary_outposts_5 = { #Past 4, you'd have to be DOGGED to pursure every chance to upgrade. Accordingly, the effects are larger as you're likely giving up high-impact tech credits, national spirits, or caches of equipment.
+			picture = generic_BOS_idea_surface_outposts
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 15
+				production_speed_bunker_factor = 0.33 #not going higher than this
+				production_speed_bunker2_factor = 0.20
+				production_speed_air_base_factor = 0.05
+				country_resource_water = 12
+				country_resource_metal = 12
+			}
+			#Scaling National Spirit
+		}
+		bos_expeditionary_outposts_6 = { #Past 4, you'd have to be DOGGED to pursure every chance to upgrade. Accordingly, the effects are larger as you're likely giving up high-impact tech credits, national spirits, or caches of equipment.
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 20
+				production_speed_bunker_factor = 0.33 #not going higher than this
+				production_speed_bunker2_factor = 0.25
+				production_speed_air_base_factor = 0.15
+				country_resource_water = 12
+				country_resource_metal = 12
+				country_resource_circuitry = 8
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_1 = {
+			picture = generic_BOS_idea_surface_outposts
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 5
+				send_volunteer_size = 1
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_2 = {
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 10
+				send_volunteer_size = 1
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_3 = {
+			picture = generic_BOS_idea_surface_outposts
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 15
+				send_volunteer_size = 2
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_4 = {
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 20
+				send_volunteer_size = 2
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_5 = {
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 25
+				send_volunteer_size = 3
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_6 = { 
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 30
+				send_volunteer_size = 3
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_7 = { 
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 35
+				send_volunteer_size = 4
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_8 = { 
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 40
+				send_volunteer_size = 4
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_9 = { 
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 45
+				send_volunteer_size = 5
+			}
+			#Scaling National Spirit
+		}
+		bos_foreign_airbases_10 = { 
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				air_volunteer_cap = 50
+				send_volunteer_size = 5
+			}
+			#Scaling National Spirit
+		}
+		bos_troikan_occupation = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = -0.2
+				resistance_growth = 1
+				compliance_growth = -0.15
+				monthly_population = -0.4
+			}
+			research_bonus = {
+				implant_tech = 0.2
+			}
+		}
+		bos_rhombian_occupation = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = -0.1
+				resistance_growth = -0.35
+				compliance_growth = 0.35
+				required_garrison_factor = 0.25
+				consumer_goods_factor = 0.02
+			}
+		}
+		bos_reformer_occupation = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = -0.25
+				resistance_growth = -0.4
+				compliance_growth = 0.5
+				required_garrison_factor = 0.4
+				consumer_goods_factor = 0.15
+			}
+		}
+		bos_maxsonian_occupation = {
+			picture = generic_BOS_idea_steel_legions
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = -0.1
+				resistance_growth = 0.3
+				compliance_growth = 0.1
+				required_garrison_factor = -0.1
+			}
+		}
+		bos_propaganda_1 = {
+			picture = generic_BOS_idea_steel_legions
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 8
+				monthly_population = 0.1
+				compliance_growth = 0.15
+				consumer_goods_factor = 0.05
+				fuel_gain_factor = -0.5
+			}
+		}
+		bos_propaganda_2 = {
+			picture = generic_BOS_idea_steel_legions
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = 0.04
+				resistance_growth = 0.1
+				required_garrison_factor = -0.15
+				fuel_gain_factor = -0.3
+			}
+		}
+		bos_propaganda_3 = {
+			picture = generic_BOS_idea_steel_legions
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				compliance_growth = 0.10
+				resistance_target = 0.05
+				consumer_goods_factor = -0.03
+				weekly_manpower = -5
+			}
+		}
+		bos_propaganda_4 = {
+			picture = generic_BOS_idea_steel_legions
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = 0.04
+				resistance_growth = 0.1
+				required_garrison_factor = -0.15
+			}
+		}
+		bos_civil_engineers = {
+			picture = pre-war_industry
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.04
+				industry_free_repair_factor = 1
+			}
+		}
+		bos_the_police = {
+			picture = pre-war_industry
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				starting_compliance = 0.3
+				resistance_damage_to_garrison = -0.07
+			}
+		}
+		bos_civilian_distrust = {
+			picture = generic_BOS_idea_steel_legions
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = 0.5
+				resistance_growth = 1
+				compliance_growth = -0.5
+				required_garrison_factor = 0.5
+			}
+			#More later
+		}
+		bos_civilian_distrust_2 = {
+				picture = generic_BOS_idea_steel_legions
+
+				allowed = {
+				}
+				removal_cost = -1
+				modifier = {
+					resistance_target = 0.4
+					resistance_growth = 1
+					compliance_growth = -0.5
+					required_garrison_factor = 0.5
+				}
+				#More later
+			}
+		bos_civilian_distrust_3 = {
+				picture = generic_BOS_idea_steel_legions
+
+				allowed = {
+				}
+				removal_cost = -1
+				modifier = {
+					resistance_target = 0.35
+					resistance_growth = 1
+					compliance_growth = -0.5
+					required_garrison_factor = 0.5
+				}
+				#More later
+			}
+		bos_legion_fighting_experience_1 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = CES attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = WHT attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = LAC attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = TWO attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = NAV attack_bonus_against = 0.025 }
+			#More later
+		}
+		bos_legion_fighting_experience_2 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = CES attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = WHT attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = LAC attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = TWO attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = NAV attack_bonus_against = 0.05 }
+			#More later
+		}
+		#Modifier for lots of stuff
+		bos_mutant_fighting_experience_1 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = TRL attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = SHA attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = IMO attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = UOA attack_bonus_against = 0.025 }
+			targeted_modifier = { tag = JCT attack_bonus_against = 0.025 }
+			#More later
+
+		}
+		bos_mutant_fighting_experience_2 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = TRL attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = SHA attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = IMO attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = UOA attack_bonus_against = 0.05 }
+			targeted_modifier = { tag = JCT attack_bonus_against = 0.05 }
+			#More later
+		}
+		bos_mutant_fighting_experience_3 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = TRL attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = SHA attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = IMO attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = UOA attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = JCT attack_bonus_against = 0.075 }
+			#More later
+		}
+		bos_enclave_tactical_experience_1 = {
+			picture = enclave_helmet
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = MCA attack_bonus_against = 0.025 }
+			#More later
+
+		}
+		bos_enclave_tactical_experience_2 = {
+			picture = enclave_helmet
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = MCA attack_bonus_against = 0.05 }
+			#More later
+		}
+		bos_enclave_tactical_experience_3 = {
+			picture = enclave_helmet
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = MCA attack_bonus_against = 0.075 }
+			#More later
+		}
+		bos_bos_fighting_experience_1 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = BOS attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = BSF attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = MOJ attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = GRD attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = WBH attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = TCA attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = MXC attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = MNC attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = TBH attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = BMW attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = BAP attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = BGF attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = BLS attack_bonus_against = 0.075 }
+
+		}
+		bos_circle_of_steel = {
+			picture = generic_BOS_idea_steel_legions
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				agency_upgrade_time = -0.2
+			}
+		}
+		bos_circle_of_steel_surveillance_bunkers = {
+			picture = generic_BOS_idea_surface_outposts
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		srg_california_tech_sharing_initiative = {
+			picture = ncr_trade_idea
+			allowed = {
+			}
+			removal_cost = -1
+			research_bonus = {
+				air_tech_category = 0.15
+				infantry_weapons_tech_category = 0.15
+				vehicle_tech_category = 0.15
+			}
+		}
+		srg_bureaucratic_chaos = {
+			picture = warband_without_a_home
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.25
+			}
+		}
+		srg_steel_rangers_armed_corps_1 = {
+			picture = MOJ_idea_aggressive_policy
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.02
+				global_building_slots_factor = 0.03
+				industrial_capacity_factory = 0.03
+				modifier_army_sub_unit_power_armour_attack_factor = 0.03
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.03
+			}
+		}
+		srg_steel_rangers_armed_corps_2 = {
+			picture = MOJ_idea_aggressive_policy
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.04
+				global_building_slots_factor = 0.06
+				industrial_capacity_factory = 0.06
+				modifier_army_sub_unit_power_armour_attack_factor = 0.06
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.06
+			}
+		}
+		srg_steel_rangers_armed_corps_3 = {
+			picture = MOJ_idea_aggressive_policy
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.06
+				global_building_slots_factor = 0.09
+				industrial_capacity_factory = 0.09
+				modifier_army_sub_unit_power_armour_attack_factor = 0.09
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.09
+			}
+		}
+		srg_steel_rangers_armed_corps_4 = {
+			picture = MOJ_idea_aggressive_policy
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.8
+				global_building_slots_factor = 0.12
+				industrial_capacity_factory = 0.12
+				modifier_army_sub_unit_power_armour_attack_factor = 0.12
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.12
+			}
+		}
+		srg_steel_rangers_armed_corps_5 = {
+			picture = MOJ_idea_aggressive_policy
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.10
+				global_building_slots_factor = 0.15
+				industrial_capacity_factory = 0.15
+				modifier_army_sub_unit_power_armour_attack_factor = 0.15
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.15
+			}
+		}
+		srg_widespread_retirement = {
+			picture = steeldeal
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_min = -100
+				special_forces_cap = -0.025
+			}
+		}
+		srg_new_special_forces = {
+			picture = steeldeal
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 100
+				special_forces_cap = 0.025
+			}
+		}
+		srg_paladin_patrols_idea = {
+			picture = pre-war_industry
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				starting_compliance = 0.3
+				resistance_damage_to_garrison = -0.07
+				required_garrison_factor = 0.1
+				compliance_growth = 0.15
+			}
+		}
+		srg_superior_enforcers = {
+			picture = steeldeal
+
+			allowed = {
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				heavy_infantry_equipment = {
+					armor_value = 0.34
+					hardness = 0.05
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+		}
+		srg_a_big_army = {
+			picture = steeldeal
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		srg_the_scribe = {
+			picture = scribe_council
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		srg_the_field_scribes_corps = {
+			picture = scribe_council
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = -0.03
+			}
+		}
+		srg_seeds_of_tomorrow = {
+			picture = generic_sickle
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = -0.2
+				mobilization_speed = -0.5
+				production_speed_infrastructure_factor = -0.1
+			}
+			research_bonus = {
+				industry = 0.25
+			}
+		}
+		srg_improving_the_calorie_surplus = {
+		
+		}
+		srg_appease_the_barons = {
+			picture = generic_brahmin
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.25
+				stability_weekly = 0.001
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		bos_mxc_advice = {
+			picture = generic_BOS_idea_steel_legions
+			
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				river_crossing_factor = -0.5
+			}
+		}
+		bosdigin = {
+
+			picture = FRA_fortification_focus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				max_dig_in = 2.0
+				max_planning = 0.05
+			}
+		}
+		bos_underground_hangars = {
+
+			picture = FRA_fortification_focus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+			research_bonus = {
+				air_tech_category = -0.4
+			}
+
+			modifier = {
+				air_ace_generation_chance_factor = 0.05
+				production_speed_air_base_factor = -0.8
+			}
+		}
+
+		bos_bound_by_code_idea = {
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				experience_gain_army_factor = 0.05						  
+			}
+		}
+		bos_shining_knights_of_the_future_idea = {
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				experience_gain_army_factor = 0.05
+			}
+		}
+		bos_platners_resolve_idea = {
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				experience_gain_army_factor = 0.05
+			}
+		}
+		bos_brotherhood_of_steel_idea = {
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				stability_factor = 0.1
+				war_stability_factor = 0.2
+				experience_gain_army_factor = 0.15						  
+			}
+		}
+
+		roomtogrow = {
+
+			picture = room_to_grow
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.01
+			}
+		}
+
+		scribecouncil = {
+
+			picture = scribe_council
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				max_planning = 0.10
+				planning_speed = -0.25
+			}
+		}
+
+		paladincouncil = {
+
+			picture = paladin_council
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				max_planning = -0.08
+				planning_speed = 0.25
+			}
+		}
+
+		discoveryknights = {
+
+			picture = knights_of_discovery
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_speed_factor = 0.05
+			}
+
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+		}
+
+		certaintyknights = {
+
+			picture = knights_of_certainty
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				max_planning = 0.05
+				political_power_gain = -0.2
+			}
+		}
+
+		bosspineless = {
+
+			picture = spineless
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_factor = -0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		bosvengeful = {
+
+			picture = vengeful
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_speed_factor = 0.05
+			}
+		}
+
+		steelconquerors = {
+
+			picture = steel_conquerors
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = -0.005
+			}
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+			}
+		}
+
+		maxsonsbulwark = {
+
+			picture = maxson's_bulwark
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.1
+				max_dig_in = 0.1
+			}
+		}
+
+		bosdevelopedslums = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.05
+			}
+		}
+
+		elijahgenius = {
+
+			picture = elijahs_genius
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor =0.05
+			}
+		}
+
+		hardintactics = {
+
+			picture = paladin_council
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+		}
+
+		bosmojaveequip = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				heat_attrition_factor = -0.10
+				army_morale_factor = 0.10
+			}
+		}
+
+		boslogistictech = {
+
+			picture = brotherhood_logistics
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				heat_attrition_factor = -0.10
+				army_morale_factor = 0.10
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		losthillsdatabase = {
+
+			picture = generic_research_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.3
+			}
+		}
+
+		laserfocusfoundry = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+
+		bosoldworldfocuses = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.025
+					reliability = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		bossimpledesigns = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		cellsinone = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.30
+					instant = yes
+				}
+			}
+		}
+
+		powermanagement = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				support_robot_equipment = {
+					reliability = 0.10
+					instant = yes
+				}
+				combat_robot_equipment = {
+					reliability = 0.10
+					instant = yes
+				}
+			}
+		}
+
+		maintenanceroutines = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+
+		superioralloys = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.10
+					reliability = 0.10
+					instant = yes
+				}
+			}
+		}
+
+		armingmaxson = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		supplyingmaxson = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		maxsonrecruitmentdrive = {
+
+			picture = maxson_volunteers
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.02
+			}
+		}
+
+		brotherhoodtacticslexicon = {
+
+			picture = brotherhood_tactics_lexicon
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				cat_land_doctrine = 0.05
+			}
+		}
+
+		bosprewarindustry = {
+
+			picture = pre-war_industry
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		bossalvagedindustry = {
+
+			picture = salvaged_military_industry
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		vandenbergidea = {
+
+			picture = free_trade
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		navarroscribes = {
+
+			picture = navarro_scribes
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor =0.05
+			}
+		}
+
+		navarrosecrets = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				cas_equipment = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+				cargo_plane_equipment = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+			}
+		}
+
+		shisecrets = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		vertibirdrepairs = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				cas_equipment = {
+					reliability = 0.1
+					instant = yes
+				}
+				cargo_plane_equipment = {
+					reliability = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		vertibirdequip = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				cas_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				cargo_plane_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+
+		powerarmourdevelopment = {
+
+			picture = free_trade
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		zeppelinfoundry = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				blimp_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+
+		forbiddensecrets = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		forbiddenweapons = {
+
+			picture = plasma_development_trials
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+
+		shi_secrets = {
+
+			picture = free_trade
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		armyknowledge = {
+
+			picture = us_army_knowledge
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.20
+					instant = yes
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		bosdrillsergeants = {
+
+			picture = brotherhood_drill_sergeants
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+		}
+
+		siliconvalley = {
+
+			picture = silicon_valley_mainframe
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor =0.05
+			}
+		}
+
+		scribecontractors = {
+
+			picture = scribe_council
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				power_armor_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+
+		foodforservice = {
+
+			picture = food_for_service
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				research_speed_factor =0.05
+			}
+		}
+
+		drawnsword = {
+
+			picture = maxson_volunteers
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
+		navarroornothing = {
+
+			picture = steel_conquerors
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		steelcitadel = {
+
+			picture = brotherhood_drill_sergeants
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		newsteel = {
+
+			picture = brotherhood_logistics
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+			}
+		}
+
+		ghoulrecruitment = {
+
+			picture = ghoul_recruitment
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.015
+				war_support_factor = -0.05
+				stability_factor = -0.03
+			}
+		}
+
+		arizonanweapons = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		bosncrdrive = {
+
+			picture = wartime_recruits
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
+		brotherhoodlogistics = {
+
+			picture = brotherhood_logistics
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		advancedcommunications = {
+
+			picture = generic_intel_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				encryption_factor = 0.2
+			}
+		}
+
+		securitronsoftware = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+			modifier = {
+				conscription = 0.01
+				research_speed_factor =0.05
+			}
+			equipment_bonus = {
+				support_robot_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					instant = yes
+				}
+				combat_robot_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		securitronhardware = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+			modifier = {
+				conscription = 0.01
+				research_speed_factor =0.05
+			}
+			equipment_bonus = {
+				support_robot_equipment = {
+					defense = 0.05
+					instant = yes
+				}
+				combat_robot_equipment = {
+					defense = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		repconnencryption = {
+
+			picture = generic_intel_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor =0.03
+			}
+		}
+
+		robcoprototypes = {
+
+			picture = generic_intel_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor =0.03
+			}
+		}
+
+		robcorockets = {
+			picture = pre-war_industry
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		robcodesign = {
+
+			picture = robco_design_philosophy
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				support_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				combat_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		plasmatrials = {
+
+			picture = plasma_development_trials
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				plasma_weaponry_tech_category = 0.03
+			}
+		}
+
+		robotsalvage = {
+
+			picture = robot_salvaging_expertise
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				support_robot_equipment = {
+					reliability = 0.15
+					instant = yes
+				}
+				combat_robot_equipment = {
+					reliability = 0.15
+					instant = yes
+				}
+			}
+		}
+
+		scraprefinement = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		industrialservos = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+		}
+
+		alloyconstruct	= {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				support_robot_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				combat_robot_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		losthillsrefurb = {
+
+			picture = salvaged_military_industry
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		shiclosethedoors = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {}
+		}
+		steelcivilians = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.015
+			}
+		}
+		steelmilitia = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.015
+			}
+		}
+	}
+}

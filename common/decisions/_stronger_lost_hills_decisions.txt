@@ -1,0 +1,3970 @@
+bos_underground_construction_decisions = {
+	bos_underground_training_boost_decision = {
+			icon = GFX_decision_army_helmet
+			fire_only_once = no
+			days_remove = 100
+			custom_cost_trigger = {
+				command_power > 24
+			}
+			custom_cost_text = command_power_more_than_25
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 0 ##temporary
+			}
+			available = {
+				has_completed_focus = bos_nf_filled_with_purpose
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+				BOS_has_1_available_paladins = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+				training_time_army_factor = -0.2
+				minimum_training_level = 0.1
+			}
+			complete_effect = {
+				hidden_effect = {
+					add_command_power = -25
+					add_to_variable = {
+						var = bos_paladins_ready
+						value = -1
+						tooltip = paladin_math_tooltip
+					}
+				}
+				add_manpower = -100
+
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+				}
+			}
+		}
+}
+stronger_lost_hills_decisions = {
+	bos_create_paladins = {
+		icon = GFX_decision_t51
+		fire_only_once = no
+		days_remove = 5
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 0
+			modifier = {
+				BOS = {
+					check_variable = {
+						var = BOS_paladins_ready
+						value = 3
+						compare = greater_than_or_equals
+					}
+				} 
+				factor = 1
+				add = 500
+			}
+		}
+		available = {
+			has_manpower > 200
+			BOS_has_1_available_paladins = yes
+		}
+		complete_effect = {
+			add_manpower = -200
+		}
+		modifier = {
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -1
+			}
+			add_to_variable = {
+				var = BOS_paladins_deployed
+				value = 1
+			}
+			IF = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = Paladin_unit
+					}
+				}
+				division_template = {
+					name = "Brotherhood Paladins"					#CW Tools - False positive? Wiki says that "name" is correct here and not "division name"
+					is_locked = yes
+					division_names_group = BOS_DIV_1
+					priority = 2
+					template_counter = 0
+					regiments = {
+						Paladin_unit = {
+							x = 0
+							y = 0
+						}
+						Paladin_unit = {
+							x = 0
+							y = 1
+						}
+						Paladin_unit = {
+							x = 1
+							y = 0
+						}
+						Paladin_unit = {
+							x = 1
+							y = 1
+						}
+						Paladin_demo_unit = {
+							x = 2
+							y = 0
+						}
+						Paladin_fireteam_unit = {
+							x = 2
+							y = 1
+						}
+						Paladin_demo_unit = {
+							x = 0
+							y = 2
+						}
+						Paladin_fireteam_unit = {
+							x = 1
+							y = 2
+						}
+					}
+					support = {
+						knight_support_unit = {
+							x = 0
+							y = 0
+						}
+						knight_support_unit = {
+							x = 1
+							y = 0
+						}
+						scribe_support_unit = {
+							x = 2
+							y = 0
+						}
+						scribe_support_unit = {
+							x = 3
+							y = 0
+						}
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					#CW Tools - False positive? "name = \"Infantry Division\" is the correct format given by the wiki.
+					division = "division_template = \"Brotherhood Paladins\" start_experience_factor = 0.75 start_equipment_factor = 0"
+					owner = BOS
+				}
+			}
+		}
+	}
+	bos_return_paladins = {
+			icon = GFX_decision_t51
+			fire_only_once = no
+			days_remove = 5
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				has_template_containing_unit = Paladin_unit
+				has_war = no
+				custom_trigger_tooltip = {
+					tooltip = bos_sent_volunteers_check
+					NOT = {
+						any_of_scopes = {
+							array = global.bos_ledger_members
+							
+							has_volunteers_amount_from = {
+							tag = BOS
+							count > 0
+							}
+						}
+					}
+				}
+			
+				
+			}
+			visible = {
+				has_template_containing_unit = Paladin_unit
+			}
+			complete_effect = {
+			}
+
+			modifier = {
+			}
+			remove_effect = {
+				if = {
+					limit = {
+						has_global_flag = debug_logs
+					}
+					log = "[GetDateText]: [Root.GetName] bos_underground_build_civilian_workshop_decision (decision) remove entered"
+				}
+				set_temp_variable = {
+					tempready = num_battalions_with_type@paladin_unit
+				}
+				divide_temp_variable = {
+					tempready = 4
+				}
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = tempready
+				}
+				delete_unit_template_and_units = {
+					division_template = "Brotherhood Paladins"
+					disband = no				#will not refund equipment and manpower
+				}
+				set_temp_variable = {
+					tempdeplo = BOS_paladins_deployed
+				}
+				set_temp_variable = {
+					tempactual = num_battalions_with_type@Paladin_unit
+				}
+				divide_temp_variable = {
+					tempactual = 4
+				}
+				subtract_from_temp_variable = {
+					tempdelpo = tempactual
+				}
+				add_to_variable = {
+					var = BOS_paladins_casulties
+					value = tempdelpo
+				}
+				set_variable = {
+					var = BOS_paladins_deployed
+					value = 0
+				}
+				if = {
+					limit = {
+						has_global_flag = debug_logs
+					}
+					log = "[GetDateText]: [Root.GetName] bos_underground_build_civilian_workshop_decision (decision) remove exited"
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	bos_open_the_market = {
+			icon = GFX_decision_single_cap
+			fire_only_once = no
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {	
+				BOS = { has_completed_focus = bos_nf_currency_reform
+				num_of_controlled_states > 1}
+			}
+			visible = {
+				NOT = {
+					OR = {
+						has_completed_focus = bos_nf_high_elder_torni_economic_plan
+						has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+					}
+				}
+			}
+			modifier = {
+				min_export = 0.1
+				caps_country_trade_modifier = 0.1
+			}	
+			complete_effect = {
+			}
+			cancel_trigger = {
+				BOS = {
+				has_decision = bos_close_the_market
+				}
+				OR = {
+					has_completed_focus = bos_nf_high_elder_torni_economic_plan
+					has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+				}
+			}
+			modifier = {
+			}
+			remove_effect = {
+
+			}
+			ai_will_do = {
+				base = 0 #ai won't do this
+			}
+		}
+	bos_open_the_market_2 = {
+			icon = GFX_decision_caf_trade_profits
+			fire_only_once = no
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {	
+				BOS = { has_completed_focus = bos_nf_currency_reform_caps
+				num_of_controlled_states > 1}
+			}
+			visible = {
+				NOT = {
+					OR = {
+						has_completed_focus = bos_nf_high_elder_torni_economic_plan
+						has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+					}
+				}
+			}
+			modifier = {
+				min_export = 0.25
+				caps_country_trade_modifier = 0.20
+			}	
+			complete_effect = {
+			}
+			cancel_trigger = {
+				BOS = {
+				has_decision = bos_close_the_market
+				}
+				OR = {
+					has_completed_focus = bos_nf_high_elder_torni_economic_plan
+					has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+				}
+			}
+			modifier = {
+			}
+			remove_effect = {
+
+			}
+			ai_will_do = {
+				base = 5 #ai can do this one
+			}
+	}
+	bos_close_the_market = {
+		fire_only_once = no
+		days_remove = 2
+		# days_re_enable = 5
+		allowed = {
+			tag = BOS
+		}
+		available = {	
+			BOS = { has_completed_focus = bos_nf_currency_reform }
+			OR = {
+				has_decision = bos_open_the_market
+				has_decision = bos_open_the_market_2
+			}
+			
+		}
+		visible = {
+			NOT = { 
+				OR = {
+					has_completed_focus = bos_nf_high_elder_torni_economic_plan
+					has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+				}
+			}
+		}
+		ai_will_do = {
+		factor = 0.8
+		}
+	}
+}
+	bos_new_tension_system = {
+
+		BOS_forge_production_reports = { #Repeatable decision to reduce Paranoia
+			priority = 310
+
+			#icon = GFX_decision_eng_trade_unions_support
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					check_variable = { bos_tension > 35 }
+				}
+				modifier = {
+					add = 100
+					check_variable = { bos_tension > 75 }
+				}
+				modifier = {
+					factor = 2
+					#SOV_is_opposition = yes ##not sure what this did yet
+				}
+			}
+
+			allowed = {
+				original_tag = BOS
+			}
+
+			available = {
+			}
+
+			visible = {
+			}
+
+			cost = bos_tension_decision_cost
+
+			days_re_enable = bos_calm_down_ncr_re_enable_days
+
+			days_remove = 90
+
+			modifier = {
+				political_power_factor = -0.2
+			}
+
+			complete_effect = {
+				SOV_paranoia_medium_decrease_effect = yes
+
+				custom_effect_tooltip = SOV_paranoia_calm_down_stalin_cd_tt
+			}
+		}
+	}
+	##Expeditions ##note that all mission-based Expeditions don't actually check you have Paladins on hand - The focus should ensure that.
+	bos_new_expeditions = {
+
+		bos_delayed_expedition_small = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 30
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {		
+				always = no
+			}
+			visible = {
+			
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		bos_delayed_expedition_medium = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 90
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		bos_delayed_expedition_large = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 180
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		bos_delayed_expedition2_small = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 30
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {		
+				always = no
+			}
+			visible = {
+			
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -2
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		bos_delayed_expedition2_medium = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 90
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -2
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		bos_delayed_expedition2_large = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 180
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -2
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		bos_delayed_scribes_small = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 30
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {		
+				always = no
+			}
+			visible = {
+			
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		bos_delayed_scribes_medium = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 90
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		bos_delayed_scribes_large = {
+			fire_only_once = no
+			days_mission_timeout = 0 ##immediately transition to timed out
+			days_remove = 180
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		bos_expedition_to_the_glow_paladins = {
+			fire_only_once = no
+			days_mission_timeout = 0
+			days_remove = 30
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				random_list = {
+					70 = {
+						add_to_variable = {
+							var = bos_paladins_ready
+							value = +1
+							tooltip = paladin_math_tooltip
+						}
+						country_event = nf_brotherhood_expeditions.201
+					}
+					30 = {
+						add_to_variable = {
+							var = bos_paladins_ready
+							value = +0
+							tooltip = paladin_math_tooltip
+						}
+						country_event = nf_brotherhood_expeditions.202
+					}
+				}
+			}
+		}
+		bos_expedition_to_the_glow_ghoul_paladins = {
+			fire_only_once = no
+			days_mission_timeout = 0
+			days_remove = 30
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				random_list = {
+					100 = {
+						add_to_variable = {
+							var = bos_paladins_ready
+							value = +1
+							tooltip = paladin_math_tooltip
+						}
+						country_event = nf_brotherhood_expeditions.205
+					}
+				}
+			}
+		}
+		bos_expedition_to_the_glow_knights = {
+			fire_only_once = no
+			days_mission_timeout = 0
+			days_remove = 30
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_manpower = -300
+			}
+			remove_effect = {
+				random_list = {
+					30 = {
+						country_event = nf_brotherhood_expeditions.201
+						set_temp_variable = { BOS_train_paladins_num = 1 }
+						bos_train_paladins = yes
+						add_manpower = 300
+						
+					}
+					70 = {
+						country_event = nf_brotherhood_expeditions.206
+					}
+				}
+			}
+		}
+		bos_buy_ships_from_hawaii = {
+			fire_only_once = yes
+			days_remove = 45
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			has_navy_experience > 49
+			}
+			custom_cost_text = naval_xp_more_than_50
+			available = {	
+				has_idea = bos_trade_with_hawaii
+			}
+			visible = {
+				has_idea = bos_trade_with_hawaii
+			}
+			complete_effect = {
+				hidden_effect = {
+					navy_experience = -50
+				}
+				set_temp_variable = { caps_to_add = -155 }
+				add_caps = yes
+			}
+			remove_effect = {
+				custom_effect_tooltip = bos_12_ships_hawaii_tt
+				hidden_effect = {
+				BOS = {
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+					create_ship = {
+						type = ship_hull_light_3
+						creator = USA
+					}
+				}
+				}
+			}
+		}
+		bos_expedition_to_anchorage_alone = {
+			fire_only_once = no
+			days_mission_timeout = 0
+			days_remove = 180
+			# days_re_enable = 5
+			allowed = {
+				always = no #performance for this, is triggered by focus only.
+			}
+
+			available = {	
+				always = no
+			}
+			visible = {
+			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_paladins_ready
+					value = -2
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+			}
+			remove_effect = {
+				random_list = {
+					15 = {
+						add_to_variable = {
+							var = bos_paladins_ready
+							value = +2
+							tooltip = paladin_math_tooltip
+						}
+						add_to_variable = {
+							var = bos_scribes_ready
+							value = +1
+							tooltip = scribe_math_tooltip
+						}
+						country_event = nf_brotherhood_expeditions.1105
+					}
+					65 = {
+						add_to_variable = {
+							var = bos_paladins_ready
+							value = +1
+							tooltip = paladin_math_tooltip
+						}
+						add_to_variable = {
+							var = bos_scribes_ready
+							value = +1
+							tooltip = scribe_math_tooltip
+						}
+						country_event = nf_brotherhood_expeditions.1105
+						country_event = {id = nf_brotherhood_expeditions.1107 days = 12}
+					}
+					20 = {
+						add_to_variable = {
+							var = bos_paladins_ready
+							value = +0
+							tooltip = paladin_math_tooltip
+						}
+						add_to_variable = {
+							var = bos_scribes_ready
+							value = +1
+							tooltip = scribe_math_tooltip
+						}
+						country_event = nf_brotherhood_expeditions.1107
+					}
+				}
+			}
+		}
+	bos_get_more_vertibirds = {
+			icon=GFX_decision_vertibird
+			targets = {SHI}
+			fire_only_once = no
+			days_remove = 60
+			custom_cost_trigger = {
+			has_air_experience > 24
+			}
+			
+			custom_cost_text = air_xp_more_than_25
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes		
+				OR = {
+					BOS = {has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing}
+					BOS = { is_in_faction_with = SHI}
+				}
+				date < 2285.06.01
+				BOS = { has_manpower > 90}
+				custom_trigger_tooltip = {
+					tooltip = bos_bsf_exists
+					country_exists = SHI
+				}
+			}
+			visible = {
+				always = yes
+			}
+			complete_effect = {
+				hidden_effect = {
+				air_experience = -25
+				}
+				
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+				add_manpower = -90
+			}
+
+			modifier = {
+			
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				BOS = {
+					add_equipment_to_stockpile = {
+						type = vb_gunship_equipment 
+						amount = 20
+						producer = USA
+					}
+					add_equipment_to_stockpile = {
+						type = vb_transport_plane_equipment
+						amount = 5
+						producer = USA
+					}
+					add_manpower = 90
+				}
+				SHI = {
+					country_event = {
+					id = nf_brotherhood_communications.5
+					days = 1
+					}
+				}
+				
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+	bos_get_plasma_rifles = {
+			icon = GFX_decision_t51_vb_armor
+			fire_only_once = no
+			days_remove = 120
+			targets = {GRD}
+			custom_cost_trigger = {
+			has_army_experience > 10 #army XP is more valuable, this is worth 62.5 air xp imho
+			}
+			custom_cost_text = army_xp_more_than_10 #this should exist in owb loc
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes		
+				GRD = {has_completed_focus = grd_guardians_of_the_world_hole}
+				BOS = {has_completed_focus = bos_nf_grd_reach_out_to_the_guardians}		
+				custom_trigger_tooltip = {
+					tooltip = bos_grd_is_in_ledger
+					is_in_array = {
+						array = global.bos_ledger_members
+						value = GRD
+					}
+				}
+				date < 2285.06.01 #Get your own plasma weapons if it's late!
+				country_exists = NCR #If the NCR is dead you don't need them that badly!
+				BOS = { has_manpower > 300}
+			
+			}
+			visible = {
+				always = yes
+			}
+			complete_effect = {
+				hidden_effect = {
+				army_experience = -10
+				}
+				
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+				add_manpower = -300
+			}
+
+			modifier = {
+			
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				BOS = {
+					add_equipment_to_stockpile = {
+						type = plasma_equipment_1
+						amount = 300
+						producer = USA
+					}
+					add_manpower = 300
+				}
+				GRD = {
+					country_event = {
+					id = nf_brotherhood_communications.6 #make this event to tell the Guardians what's going on
+					days = 1
+					}
+				}
+				
+			}
+			ai_will_do = {
+				base = 1
+			}
+	}
+	
+	bos_help_moj = {
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 200
+			cost = 50
+			targets = {MOJ}
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				bos_has_scribe_teams = yes
+				custom_trigger_tooltip = {
+					tooltip = bos_2_paladins
+					if = {
+						BOS = {
+							check_variable = {BOS_paladins_ready > 1}
+						}
+					}
+				}
+				MOJ = {has_war_with = MOT
+				is_ai = yes}
+				MOT = {is_ai = yes}
+			}
+			visible = {
+				MOT = {is_ai = yes}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -2
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+					tooltip = scribe_math_tooltip
+				}
+				MOJ = {
+					add_to_variable = { MOJ.preperation = 15 }
+					calculate_preparation = yes
+				}
+			}
+
+			cancel_trigger = {
+			NOT = {country_exists = MOJ}
+			}
+			cancel_effect = {
+				random_list = {
+					75 = {
+						add_to_variable = {
+							var = BOS_paladins_ready
+							value = +1
+							tooltip = paladin_math_tooltip
+						}
+					}
+					5 = {
+						add_to_variable = {
+							var = BOS_paladins_ready
+							value = +2
+							tooltip = paladin_math_tooltip
+						}
+					}
+					20 = {
+						add_to_variable = {
+							var = BOS_paladins_ready
+							value = +0
+							tooltip = paladin_math_tooltip
+						}
+					}
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			ai_will_do = {
+				base = 1000
+			}
+		}
+		bos_help_mxc = {
+			icon = GFX_decision_backpack
+			fire_only_once = no
+			days_remove = 200
+			cost = 50
+			targets = {MXC}
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				bos_has_scribe_teams = yes
+				custom_trigger_tooltip = {
+					tooltip = bos_1_paladins
+					if = {
+						BOS = {
+							check_variable = {BOS_paladins_ready > 1}
+						}
+					}
+				}
+				OR = {
+					AND  = {				
+						MXC = {has_war_with = HAN
+						is_ai = yes}
+						HAN = {is_ai = yes}
+					}
+					AND = {
+						MXC = {has_war_with = ROB
+						is_ai = yes}
+						ROB = {is_ai = yes}
+					}
+				}
+			}
+			visible = {
+				MXC = {is_ai = yes}
+				OR = {
+					country_exists = ROB
+					country_exists = HAN
+				}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+					tooltip = scribe_math_tooltip
+				}
+				MXC = {
+					add_timed_idea = {
+						idea = bos_mxc_advice
+						days = 200
+					}
+				}
+			}
+
+			cancel_trigger = {
+			NOT = {country_exists = MXC}
+			}
+			cancel_effect = {
+				random_list = {
+					70 = {
+						add_to_variable = {
+							var = BOS_paladins_ready
+							value = +1
+							tooltip = paladin_math_tooltip
+						}
+					}
+					30 = {
+						add_to_variable = {
+							var = BOS_paladins_ready
+							value = +0
+							tooltip = paladin_math_tooltip
+						}
+					}
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			ai_will_do = {
+				base = 1000
+			}
+		}
+	}
+	##Scribes
+	stronger_lost_hills_scribe_council = {
+		bos_begin_rd = {
+			fire_only_once = yes
+			days_remove = 45
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			has_army_experience > 20 #army XP is more valuable, this is worth 62.5 air xp imho
+			}
+			custom_cost_text = army_xp_more_than_20
+			available = {	
+				bos_has_scribe_teams = yes
+			}
+			visible = {
+				always = yes
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				hidden_effect = {
+				army_experience = -20
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_brotherhood_r_n_d}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				hidden_effect = {
+				army_experience = 20 ##give back the xp we took when the decision started, since the focus will take another 20.
+				}
+				complete_national_focus = bos_nf_brotherhood_r_n_d
+			}
+			ai_will_do = {
+			base = 100
+			}
+		}
+		bos_begin_air_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			visible = {
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_air_research}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_air_research
+			}
+			ai_will_do = {
+			base = 20
+			}
+		}
+		bos_continue_air_research = {
+			fire_only_once = yes
+			days_remove = 120
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_air_research
+			}
+			visible = {
+				has_completed_focus = bos_nf_air_research
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {
+					AND = {
+					has_completed_focus = bos_nf_lockreed
+					has_completed_focus = bos_nf_ball_aerospace
+					}
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_lockreed
+				complete_national_focus = bos_nf_ball_aerospace
+			}
+			ai_will_do = {
+			base = 30
+			}
+		}
+		bos_finish_air_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_lockreed
+				has_completed_focus = bos_nf_ball_aerospace
+			}
+			visible = {
+				has_completed_focus = bos_nf_lockreed
+				has_completed_focus = bos_nf_ball_aerospace
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_repconn
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_repconn
+			}
+			ai_will_do = {
+			base = 50	
+			}
+		}
+		bos_begin_industry_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			visible = {
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_industry_research
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_industry_research
+			}
+			ai_will_do = {
+			base = 20
+			}
+		}
+		bos_continue_industry_research = {
+			fire_only_once = yes
+			days_remove = 120
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_industry_research
+			}
+			visible = {
+				has_completed_focus = bos_nf_industry_research
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					AND = {
+					has_completed_focus = bos_nf_dunwich_borers
+					has_completed_focus = bos_nf_hornwright_industrial_mining_company
+					}
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_dunwich_borers
+				complete_national_focus = bos_nf_hornwright_industrial_mining_company
+			}
+			ai_will_do = {
+			base = 30
+			}
+		}
+		bos_finish_industry_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_dunwich_borers
+				has_completed_focus = bos_nf_hornwright_industrial_mining_company
+			}
+			visible = {
+				has_completed_focus = bos_nf_dunwich_borers
+				has_completed_focus = bos_nf_hornwright_industrial_mining_company
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_red_rocket
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_red_rocket
+			}
+			ai_will_do = {
+			base = 50	
+			}
+		}
+		bos_begin_robotics_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			visible = {
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_robotics_research
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_robotics_research
+			}
+			ai_will_do = {
+			base = 20
+			}
+		}
+		bos_continue_robotics_research = {
+			fire_only_once = yes
+			days_remove = 120
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_robotics_research
+			}
+			visible = {
+				has_completed_focus = bos_nf_robotics_research
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					AND = {
+					has_completed_focus = bos_nf_cerulean_robotics
+					has_completed_focus = bos_nf_robco
+					}
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_cerulean_robotics
+				complete_national_focus = bos_nf_robco
+			}
+			ai_will_do = {
+			base = 30
+			}
+		}
+		bos_finish_robotics_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_cerulean_robotics
+				has_completed_focus = bos_nf_robco
+			}
+			visible = {
+				has_completed_focus = bos_nf_cerulean_robotics
+				has_completed_focus = bos_nf_robco
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_acme
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_acme
+			}
+			ai_will_do = {
+			base = 50	
+			}
+		}
+		bos_begin_theoretical_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			visible = {
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_theoretical_research
+				}
+				
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_theoretical_research
+			}
+			ai_will_do = {
+			base = 20
+			}
+		}
+		bos_continue_theoretical_research = {
+			fire_only_once = yes
+			days_remove = 120
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_theoretical_research
+			}
+			visible = {
+				has_completed_focus = bos_nf_theoretical_research
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					AND = {
+					has_completed_focus = bos_nf_future_tec
+					has_completed_focus = bos_nf_greenway_hydroponics
+					}
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_future_tec
+				complete_national_focus = bos_nf_greenway_hydroponics
+			}
+			ai_will_do = {
+			base = 30
+			}
+		}
+		bos_finish_theoretical_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_future_tec
+				has_completed_focus = bos_nf_greenway_hydroponics
+			}
+			visible = {
+				has_completed_focus = bos_nf_future_tec
+				has_completed_focus = bos_nf_greenway_hydroponics
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_virtual_strategic_solutions
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_virtual_strategic_solutions
+			}
+			ai_will_do = {
+			base = 50	
+			}
+		}
+		bos_begin_vehicle_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			visible = {
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_vehicle_research
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_vehicle_research
+			}
+			ai_will_do = {
+			base = 20
+			}
+		}
+		bos_continue_vehicle_research = {
+			fire_only_once = yes
+			days_remove = 120
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_vehicle_research
+			}
+			visible = {
+				has_completed_focus = bos_nf_vehicle_research
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					AND = {
+					has_completed_focus = bos_nf_takoma_motors
+					has_completed_focus = bos_nf_n_h_and_m_vehicles
+					}
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_takoma_motors
+				complete_national_focus = bos_nf_n_h_and_m_vehicles
+			}
+			ai_will_do = {
+			base = 30
+			}
+		}
+		bos_finish_vehicle_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_takoma_motors
+				has_completed_focus = bos_nf_n_h_and_m_vehicles
+			}
+			visible = {
+				has_completed_focus = bos_nf_takoma_motors
+				has_completed_focus = bos_nf_n_h_and_m_vehicles
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_chryslus_vehicles
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_chryslus_vehicles
+			}
+			ai_will_do = {
+			base = 50	
+			}
+		}
+		bos_begin_weaponry_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			visible = {
+				has_completed_focus = bos_nf_brotherhood_r_n_d
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_weaponry_research
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_weaponry_research
+			}
+			ai_will_do = {
+			base = 20
+			}
+		}
+		bos_continue_weaponry_research = {
+			fire_only_once = yes
+			days_remove = 120
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_weaponry_research
+			}
+			visible = {
+				has_completed_focus = bos_nf_weaponry_research
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					AND = {
+					has_completed_focus = bos_nf_SIG_sauer_weaponry
+					has_completed_focus = bos_nf_heckler_and_koch_weaponry
+					}
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_SIG_sauer_weaponry
+				complete_national_focus = bos_nf_heckler_and_koch_weaponry
+			}
+			ai_will_do = {
+			base = 30
+			}
+		}
+		bos_finish_weaponry_research = {
+			fire_only_once = yes
+			days_remove = 60
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				bos_has_scribe_teams = yes
+				set_temp_variable = {
+					BOS_need_knowledge_num = 1
+				}
+				bos_has_x_knowledge = yes
+				has_completed_focus = bos_nf_SIG_sauer_weaponry
+				has_completed_focus = bos_nf_heckler_and_koch_weaponry
+			}
+			visible = {
+				has_completed_focus = bos_nf_SIG_sauer_weaponry
+				has_completed_focus = bos_nf_heckler_and_koch_weaponry
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = -1
+				}
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = -1
+				}
+			}
+			cancel_trigger = {
+				BOS = {
+					has_completed_focus = bos_nf_wattz_weaponry
+				}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+				complete_national_focus = bos_nf_wattz_weaponry
+			}
+			ai_will_do = {
+			base = 50	
+			}
+		}
+		bos_knowledge_cheat = {
+			fire_only_once = no
+			days_remove = 1
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				always = yes
+			}
+			visible = {
+				is_debug = yes
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_knowledge
+					value = +1
+				}
+			}
+			cancel_trigger = {
+			}
+			cancel_effect = {
+			}
+			remove_effect = {
+			}
+			ai_will_do = {
+			base = 1
+			}
+		}
+		bos_scribes_cheat = {
+			fire_only_once = no
+			days_remove = 1
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			custom_cost_trigger = {
+			}
+			available = {	
+				always = yes
+			}
+			visible = {
+				is_debug = yes
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+			cancel_trigger = {
+			}
+			cancel_effect = {
+			}
+			remove_effect = {
+			}
+			ai_will_do = {
+			base = 1
+			}
+		}
+		##cheat becoming SRG
+		bos_srg_cheat = {
+			icon = GFX_decision_papers
+			fire_only_once = no
+			cost = 0
+			allowed = {
+				original_tag = BOS
+			}
+			ai_will_do = {
+				base = 0			#Saves on performance a bit
+			}
+			visible = {
+				country_exists = NCR
+				is_debug = yes
+			}
+			available = {
+				always = yes
+			}
+			complete_effect = {
+				custom_effect_tooltip = people_seek_cooperation_with_the_ncr_tt
+				NCR = {
+					country_event = nf_brotherhood_steel_rangers.1
+				}
+			}
+		}
+	}
+	##Diplomacy menu - overrwrite?
+bos_lost_hills_diplomacy = {
+	bos_lost_hills_consider_chapter_support = {
+		icon = GFX_decision_box_open
+		allowed = {
+			tag = BOS
+		}
+		target_array = global.bos_ledger_members
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+		}
+		visible = {
+			OR ={	
+					has_completed_focus = bos_nf_long_range_radio_towers
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+				}
+			NOT = {
+				FROM = {
+					has_country_flag = bos_supported_us ##both of these checks exists so the choice event can have a "not right now" option.
+				}
+			}
+		}
+		days_remove = 1
+		available = {
+			FROM = {
+				has_war = yes
+				}
+			FROM = {
+				NOT = {
+					has_country_flag = bos_supported_us
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GRD
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_guardian_brotherhood
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MOJ
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_mojave_chapter
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = SHI
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_san_fran_chapter
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = TBH
+					}
+				}
+				FROM = {
+					has_completed_focus = tbh_nf_to_hell_with_texas
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+							original_tag = WBH
+							original_tag = TCA
+						}
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_washington_brotherhood
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MXC
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_maxson_chapter
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MNC
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_montana_chapter
+			}
+		}
+		remove_effect = {
+			set_variable = {bos_consider_target = FROM.id}
+			country_event = nf_brotherhood_communications.8
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	bos_lost_hills_diplomacy_establish_foreign_airbase = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			tag = BOS
+		}
+		target_array = global.bos_ledger_members
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+		}
+		visible = {
+			OR ={	
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
+					has_tech = vertibird_unlock_tech
+					has_completed_focus = bos_nf_lancers
+				}
+		}
+		days_remove = 180
+		available = {
+			bos_has_scribe_teams = yes
+			NOT = {
+				FROM = {
+					has_war = yes
+				}
+			}
+			if = {
+				OR ={	
+					BOS = {
+						has_completed_focus = bos_nf_shi_chapter_cooperation
+						has_completed_focus = bos_nf_shi_the_emperors_blessing
+					}
+					has_tech = vertibird_unlock_tech
+					BOS = {
+						has_completed_focus = bos_nf_lancers
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GRD
+					}
+				}
+				has_completed_focus = bos_nf_grd_reach_out_to_the_guardians
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MOJ
+					}
+				}
+				has_completed_focus = bos_nf_moj_victory_at_sunburst
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = TBH
+					}
+				}
+				FROM = {
+					has_completed_focus = tbh_nf_to_hell_with_texas
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = TCA
+					}
+				}
+				has_completed_focus = bos_nf_wbh_the_cause_succesful
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = WBH
+					}
+				}
+				has_completed_focus = bos_nf_wbh_the_immortals_coup_succesful
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MXC
+					}
+				}
+				has_completed_focus = bos_nf_maxson_victorious
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MNC
+					}
+				}
+				has_completed_focus = bos_nf_mch_conquest_of_yellowstone
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 100 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		fixed_random_seed = no
+		fire_only_once = yes
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -100 }
+			add_caps = yes
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_airbase_building_tt
+			FROM = {
+				country_event = nf_brotherhood_foreign_assistance.1
+			}
+			bos_upgrade_foreign_airbases = yes
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_offer_scribe_team = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			tag = BOS
+		}
+		target_array = global.bos_ledger_members
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+		}
+		visible = {
+			OR ={	
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
+					has_tech = vertibird_unlock_tech
+					has_completed_focus = bos_nf_lancers
+				}
+				has_completed_focus = bos_nf_frozen_politics_2
+		}
+		days_remove = 14
+		available = {
+			bos_has_scribe_teams = yes
+			NOT = {
+				FROM = {
+					has_war = yes
+				}
+			}
+			if = {
+				OR ={	
+					BOS = {
+						has_completed_focus = bos_nf_shi_chapter_cooperation
+						has_completed_focus = bos_nf_shi_the_emperors_blessing
+					}
+					has_tech = vertibird_unlock_tech
+					BOS = {
+						has_completed_focus = bos_nf_lancers
+					}
+				}
+				has_completed_focus = bos_nf_frozen_politics_2
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GRD
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_guardian_brotherhood
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MOJ
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_mojave_chapter
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = SHI
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_san_fran_chapter
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = TBH
+					}
+				}
+				FROM = {
+					has_completed_focus = tbh_nf_to_hell_with_texas
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+							original_tag = WBH
+							original_tag = TCA
+						}
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_washington_brotherhood
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MXC
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_maxson_chapter
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MNC
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_montana_chapter
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		fixed_random_seed = no
+		fire_only_once = no
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+			FROM = {
+				country_event = nf_brotherhood_foreign_assistance.3
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_building_factory = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			always = no
+		}
+		visible = {
+		}
+		days_mission_timeout = 0
+		days_remove = 100
+		available = {
+			always = no
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		timeout_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_factory_building_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_building_power = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			always = no
+		}
+		visible = {
+		}
+		days_mission_timeout = 0
+		days_remove = 50
+		available = {
+			always = no
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		timeout_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_power_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_building_logistics = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			always = no
+		}
+		visible = {
+		}
+		days_mission_timeout = 0
+		days_remove = 50
+		available = {
+			always = no
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		timeout_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_logistics_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_building_defenses = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			always = no
+		}
+		visible = {
+		}
+		days_mission_timeout = 0
+		days_remove = 90
+		available = {
+			always = no
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		timeout_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_factory_building_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_building_electronics_fab = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			always = no
+		}
+		visible = {
+		}
+		days_mission_timeout = 0
+		days_remove = 70
+		available = {
+			always = no
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		timeout_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_electronics_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_building_advising_research = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			always = no
+		}
+		visible = {
+		}
+		days_mission_timeout = 0
+		days_remove = 60
+		available = {
+			always = no
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		timeout_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_foreign_advising_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+}
+	##SCAVENGING STARTS HERE
+	stronger_lost_hills_paladin_scavenging = {
+	
+		bos_scavenge_weapons_1 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_weaponry}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_weaponry
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_weapons_2 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_weaponry}
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_weaponry}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_plasma}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_plasma
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_weapons_3 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_weaponry}
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_weaponry}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_laser_rifles}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_laser_rifles
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_weapons_4 = {
+			##capstone scavenge - requires 2 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 120
+			cost = 50
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_2_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_laser_rifles}
+				BOS = {has_completed_focus = bos_nf_scavenging_plasma}
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_laser_rifles}
+				BOS = {has_completed_focus = bos_nf_scavenging_plasma}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -2
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_heavy_energy_weapons}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_heavy_energy_weapons
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_support_1 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_support_equipment}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_support_equipment
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_support_2 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_support_equipment}
+			}
+			visible = {
+			BOS = {has_completed_focus = bos_nf_scavenging_support_equipment}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_piercing_weaponry}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_piercing_weaponry
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_support_3 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+			BOS = {has_completed_focus = bos_nf_scavenging_support_equipment}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_medical_equipment} 
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_medical_equipment
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_support_4 = {
+			##capstone scavenge - requires 2 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 120
+			cost = 50
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_2_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_medical_equipment}
+				BOS = {has_completed_focus = bos_nf_scavenging_piercing_weaponry}
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_medical_equipment}
+				BOS = {has_completed_focus = bos_nf_scavenging_piercing_weaponry}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -2
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_big_weaponry}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_big_weaponry!
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_armour_1 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_power_armor}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_power_armor
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_armour_2 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+			BOS = {has_completed_focus = bos_nf_scavenging_power_armor}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_t45}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_t45
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_armour_3 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_power_armor}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_power_armor_repair}!
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_power_armor_repair
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_armour_4 = {
+			##capstone scavenge - requires 2 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 120
+			cost = 50
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_2_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_t45}
+				BOS = {has_completed_focus = bos_nf_scavenging_power_armor_repair}
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_t45}
+				BOS = {has_completed_focus = bos_nf_scavenging_power_armor_repair}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -2
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus =  bos_nf_scavenging_t51b}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_t51b
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_vehicle_1 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = { #Template-- I should have requirements for 2-4!
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_vehicles}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_vehicles
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_vehicle_2 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = {
+			BOS = {has_completed_focus = bos_nf_scavenging_vehicles} 
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_mobile_vehicles}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_mobile_vehicles
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_vehicle_3 = {
+			##non-capstone scavenge - requires 1 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 60
+			cost = 30
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_1_available_paladins = yes
+			}
+			visible = { #Template-- I should have requirements for 2-4!
+			BOS = {has_completed_focus = bos_nf_scavenging_vehicles}
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -1
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_durable_vehicles}
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +1
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_durable_vehicles
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+		bos_scavenge_vehicle_4 = {
+			##capstone scavenge - requires 2 Paladin units.
+			icon = GFX_decision_backpack
+			fire_only_once = yes
+			days_remove = 120
+			cost = 50
+			# days_re_enable = 5
+			allowed = {
+				tag = BOS
+			}
+			available = {
+				BOS_has_2_available_paladins = yes
+				BOS = {has_completed_focus = bos_nf_scavenging_mobile_vehicles}
+				BOS = {has_completed_focus = bos_nf_scavenging_durable_vehicles}
+			}
+			visible = {
+				BOS = {has_completed_focus = bos_nf_scavenging_mobile_vehicles}
+				BOS = {has_completed_focus = bos_nf_scavenging_durable_vehicles}	
+			}
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -2
+				}
+			}
+
+			cancel_trigger = {
+				BOS = {has_completed_focus = bos_nf_scavenging_advanced_vehicles}!
+			}
+			cancel_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+			}
+			remove_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
+				complete_national_focus = bos_nf_scavenging_advanced_vehicles
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+bos_lost_hills_steel_plague = {
+	bos_lost_hills_troika_our_cruelty_elders = {
+		allowed = {
+			tag = BOS
+		}
+		target_array = global.bos_ledger_members
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+		}
+		visible = {
+			#AND ={	
+			#		has_completed_focus = bos_nf_our_cruelty
+			#		has_tech = implant_unlock_tech
+			#	}
+			always = yes
+		}
+		days_remove = 180
+		available = {
+			bos_has_scribe_teams = yes
+			bos_has_troika_crowns = yes
+			if = {
+				limit = {
+					FROM = {
+						is_in_faction_with = BOS
+					}
+				}
+			}
+			if = {
+				OR ={	
+					BOS = {
+						has_completed_focus = bos_nf_shi_chapter_cooperation
+						has_completed_focus = bos_nf_shi_the_emperors_blessing
+					}
+					has_tech = vertibird_unlock_tech
+					BOS = {
+						has_completed_focus = bos_nf_lancers
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GRD
+					}
+				}
+				has_completed_focus = bos_nf_grd_reach_out_to_the_guardians
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MOJ
+					}
+				}
+				has_completed_focus = bos_nf_moj_victory_at_sunburst
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = TBH
+					}
+				}
+				FROM = {
+					has_completed_focus = tbh_nf_to_hell_with_texas
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = TCA
+					}
+				}
+				has_completed_focus = bos_nf_wbh_the_cause_succesful
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = WBH
+					}
+				}
+				has_completed_focus = bos_nf_wbh_the_immortals_coup_succesful
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MXC
+					}
+				}
+				has_completed_focus = bos_nf_maxson_victorious
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MNC
+					}
+				}
+				has_completed_focus = bos_nf_mch_conquest_of_yellowstone
+			}
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+			add_to_variable = {
+				var = bos_troika_crowns
+				val = -1
+				tooltip = bos_crowns_math_tt
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			custom_effect_tooltip = bos_leader_enhancement_tt
+			FROM = {
+				country_event = nf_brotherhood_foreign_assistance.2
+			}
+		}
+		ai_will_do = {
+			base = 0 ##This is way too much for an AI to cause.
+		}
+	}
+	troika_cruelty_target = {
+		allowed = {
+			tag = BOS
+		}
+		state_target = yes
+		target_root_trigger = {
+			has_completed_focus = bos_nf_our_cruelty
+		}
+		target_array = BOS.owned_controlled_states
+		target_trigger = {
+			FROM = {
+				state_population_k > 10
+			}
+		}
+		days_remove = 70
+		available = {
+			bos_has_scribe_teams = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		on_map_mode = map_and_decisions_view
+		icon = GFX_decision_backpack
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			FROM = {
+				#state_population = {state_population * 0.95}
+				##set weightings for random list based on state population. The minimum chance is 24% given current numbers. 10k*2.4 = 24.
+				set_temp_variable = { bos_pop_k = FROM.state_population_k} ##get the population/1000 for probability calcs
+				set_temp_variable = { bos_pop_good = bos_pop_k} ##Weighting for the good result
+				multiply_temp_variable = { bos_pop_good = 2.4 } ##Multiply by 2.4 so a 100$ is achieved by 41-42k pop, instead of  100k pop.
+				clamp_temp_variable = { ##clamping just this number keeps them all sane.
+					var = bos_pop_good 
+					max = 100
+					min = 0
+				}
+				set_temp_variable = { bos_pop_bad = 100} ##this variable is set up in this way to do (100-bos_pop_good) so the probabilities are out of 100 total.
+				subtract_from_temp_variable = { bos_pop_bad = bos_pop_good} ## ^
+				set_temp_variable = { bos_pop_reduction = FROM.state_population} ##get the bad result- a 5% reduction in state population. Practically speaking, this really isn't much.
+				multiply_temp_variable = { bos_pop_reduction = -0.05}
+				##finally, round the numbers.
+				round_temp_variable = bos_pop_good
+				round_temp_variable = bos_pop_bad
+				random_list = {
+					bos_pop_good = {
+						add_tech_bonus = {
+							bonus = 0.25
+							uses = 1
+							category = implant_tech
+						}
+						add_to_variable = {
+							var = bos_troika_crowns
+							val = +1
+							tooltip = bos_crowns_math_tt
+						}
+						set_temp_variable = { ##Removing population from a single state like this doesn't appear to generate Manpower like Exodus does.
+						pop_add = bos_pop_reduction
+						}
+						add_state_population = yes
+					}
+					bos_pop_bad = {
+						set_temp_variable = { ##Removing population from a single state like this doesn't appear to generate Manpower like Exodus does.
+						pop_add = bos_pop_reduction
+						}
+						add_state_population = yes
+					}
+				}
+
+			}
+		}
+		ai_will_do = {
+			base = 0 ##This is way too much for an AI to cause.
+		}
+	}
+}
