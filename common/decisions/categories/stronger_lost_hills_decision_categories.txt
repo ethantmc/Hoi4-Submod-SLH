@@ -25,17 +25,20 @@ stronger_lost_hills_scribe_council = {
 	icon = GFX_decision_backpack
 	#picture = GFX_event_MOJ_contact_the_west
 }
-bos_new_tension_system = {
-	priority = 12
-	allowed = {
-		tag = BOS
-	}
-	visible = {
-		has_country_flag = bos_new_tension_system_enabled
-		has_dynamic_modifier = bos_tension_dynamic_modifier
-	}
-	icon = GFX_decision_t51_vb_armor
-}
+#bos_new_tension_system = {
+#	priority = 12
+#	allowed = {
+#		tag = BOS
+#	}
+#	visible = {
+#		has_country_flag = bos_new_tension_system_enabled
+#		has_dynamic_modifier = {
+#		modifier = bos_tension_dynamic_modifier
+#		scope = BOS
+#		}
+#	}
+#	icon = GFX_decision_t51_vb_armor
+#}
 bos_new_expeditions = {
 	priority = 8
 	allowed = {

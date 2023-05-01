@@ -667,7 +667,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_superioralloys
 		completion_reward = {
-			add_idea = scraprefinement
+			add_ideas = scraprefinement
 			add_timed_idea = {
 				idea = maintenanceroutines
 				days = 365
@@ -2676,7 +2676,7 @@ focus_tree = {
 			}
 		}
 	}
-
+	
 	focus = {
 		id = bos_nf_the_right_war_at_the_right_time
 		icon = GFX_goal_bos_generic_t60_1
@@ -3627,7 +3627,7 @@ focus_tree = {
 			navy_experience = -10
 			add_doctrine_cost_reduction = {
 				name = bos_nf_navallexicon
-				bonus = 0.75
+				cost_reduction = 0.75
 				uses = 2
 				category = cat_naval_doctrine
 			}
@@ -3742,6 +3742,7 @@ focus_tree = {
 				bonus = 0.25
 				uses = 1
 				category = air_tech_category
+			}
 		}
 	}
 
@@ -4167,7 +4168,6 @@ focus_tree = {
 			add_offsite_building = { type = arms_factory level = 1 }													 
 		}
 	}
-
 	focus = {
 		id = bos_nf_bunker_salinas
 		icon = GFX_goal_generic_creature_nightstalker
@@ -4510,9 +4510,9 @@ focus_tree = {
 				# category = spec_force_doctrine_category
 			add_political_power = -100
 			army_experience = 20
+			}
 		}
 	}
-
 	focus = {
 		id = bos_nf_long_history_of_reform
 		icon = GFX_KHA_focus_propose_plan
@@ -5608,7 +5608,7 @@ focus_tree = {
 			bos_add_underground_construction_slots = yes
 		}
 	}
-
+	
 	focus = {
 		id = bos_nf_scavenging_durable_vehicles
 		icon = GFX_icon_apc_desert
@@ -6149,7 +6149,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = bos_nf_election_on_demand
 		icon = GFX_goal_bos_generic_t45_3
@@ -6232,7 +6231,7 @@ focus_tree = {
 			focus = bos_nf_council_reforms
 		}
 		available = {
-			as_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
+			has_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		completion_reward = {
 			add_political_power = @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT
@@ -6450,7 +6449,7 @@ focus_tree = {
 						has_country_flag = bos_elites_allowed
 					}
 				}
-				add_political_power = 400 
+				add_political_power = 200 
 				activate_decision = BOS_allow_elites
 			}
 			if = {
@@ -6459,7 +6458,7 @@ focus_tree = {
 						has_country_flag = bos_people_allowed
 					}
 				}
-				add_political_power = 400 
+				add_political_power = 200 
 				activate_decision = BOS_allow_people
 			}
 			if = {
@@ -6468,7 +6467,7 @@ focus_tree = {
 						has_country_flag = bos_ruler_allowed
 					}
 				}
-				add_political_power = 400 
+				add_political_power = 200 
 				activate_decision = BOS_allow_ruler
 			}
 			if = {
@@ -6477,7 +6476,7 @@ focus_tree = {
 						has_country_flag = bos_intellectuals_allowed
 					}
 				}
-				add_political_power = 400 
+				add_political_power = 200 
 				activate_decision = BOS_allow_intellectuals
 			}
 		}
@@ -7373,6 +7372,7 @@ focus_tree = {
 				bonus = 0.3
 				uses = 1
 				category = scientific_tech_category
+			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
 		}

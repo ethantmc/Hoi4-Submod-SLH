@@ -369,56 +369,56 @@ stronger_lost_hills_decisions = {
 		}
 	}
 }
-	bos_new_tension_system = {
+	# bos_new_tension_system = {
 
-		BOS_forge_production_reports = { #Repeatable decision to reduce Paranoia
-			priority = 310
+		# BOS_forge_production_reports = { #Repeatable decision to reduce Paranoia
+			# priority = 310
 
-			#icon = GFX_decision_eng_trade_unions_support
+			##icon = GFX_decision_eng_trade_unions_support
 
-			ai_will_do = {
-				base = 0
-				modifier = {
-					add = 1
-					check_variable = { bos_tension > 35 }
-				}
-				modifier = {
-					add = 100
-					check_variable = { bos_tension > 75 }
-				}
-				modifier = {
-					factor = 2
+			# ai_will_do = {
+				# base = 0
+				# modifier = {
+					# add = 1
+					# check_variable = { bos_tension > 35 }
+				# }
+				# modifier = {
+					# add = 100
+					# check_variable = { bos_tension > 75 }
+				# }
+				# modifier = {
+					# factor = 2
 					#SOV_is_opposition = yes ##not sure what this did yet
-				}
-			}
+				# }
+			# }
 
-			allowed = {
-				original_tag = BOS
-			}
+			# allowed = {
+				# original_tag = BOS
+			# }
 
-			available = {
-			}
+			# available = {
+			# }
 
-			visible = {
-			}
+			# visible = {
+			# }
 
-			cost = bos_tension_decision_cost
+			# cost = bos_tension_decision_cost
 
-			days_re_enable = bos_calm_down_ncr_re_enable_days
+			# days_re_enable = bos_calm_down_ncr_re_enable_days
 
-			days_remove = 90
+			# days_remove = 90
 
-			modifier = {
-				political_power_factor = -0.2
-			}
+			# modifier = {
+				# political_power_factor = -0.2
+			# }
 
-			complete_effect = {
-				SOV_paranoia_medium_decrease_effect = yes
+			# complete_effect = {
+				# SOV_paranoia_medium_decrease_effect = yes
 
-				custom_effect_tooltip = SOV_paranoia_calm_down_stalin_cd_tt
-			}
-		}
-	}
+				# custom_effect_tooltip = SOV_paranoia_calm_down_stalin_cd_tt
+			# }
+		# }
+	# }
 	##Expeditions ##note that all mission-based Expeditions don't actually check you have Paladins on hand - The focus should ensure that.
 	bos_new_expeditions = {
 
@@ -1082,7 +1082,6 @@ stronger_lost_hills_decisions = {
 				base = 1
 			}
 	}
-	
 	bos_help_moj = {
 			icon = GFX_decision_backpack
 			fire_only_once = yes
