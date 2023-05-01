@@ -114,8 +114,9 @@ country_event = {
 		custom_effect_tooltip = add_4_underground_slots_tt
 		add_to_variable = {
 			var = BOS_underground_construction_slots
-			value = 4
+			value = 5
 		}
+		add_political_power = 10					  
 	}
 }
 

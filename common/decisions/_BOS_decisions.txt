@@ -1251,7 +1251,7 @@ bos_underground_construction_decisions = {
 		fire_only_once = yes
 		days_remove = 365
 		custom_cost_text = army_xp_more_than_100
-		cost = 250
+		cost = 200
 		# days_re_enable = 5
 		ai_will_do = {
 			base = 0
@@ -2081,7 +2081,7 @@ bos_lost_hills_politics = {
 		visible = {
 			has_country_flag = bos_elites_allowed
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2117,7 +2117,7 @@ bos_lost_hills_politics = {
 		visible = {
 			has_country_flag = bos_ruler_allowed
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2153,7 +2153,7 @@ bos_lost_hills_politics = {
 		visible = {
 			has_country_flag = bos_intellectuals_allowed
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2189,7 +2189,7 @@ bos_lost_hills_politics = {
 		visible = {
 			has_country_flag = bos_people_allowed
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2225,7 +2225,7 @@ bos_lost_hills_politics = {
 				has_country_flag = bos_elites_allowed
 			}
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2261,7 +2261,7 @@ bos_lost_hills_politics = {
 				has_country_flag = bos_ruler_allowed
 			}
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2297,7 +2297,7 @@ bos_lost_hills_politics = {
 				has_country_flag = bos_intellectuals_allowed
 			}
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2333,7 +2333,7 @@ bos_lost_hills_politics = {
 				has_country_flag = bos_people_allowed
 			}
 		}
-		cost = 400
+		cost = 200
 		fixed_random_seed = no
 		days_remove = 30
 		remove_effect = {
@@ -2469,9 +2469,9 @@ bos_lost_hills_politics = {
 				#NOT = { has_country_flag = bos_people_allowed }
 			}
 		}
-		cost = 400
+		cost = 250
 		fixed_random_seed = no
-		days_remove = 365
+		days_remove = 125
 		fire_only_once = yes
 		remove_effect = {
 			if = {
@@ -2628,7 +2628,7 @@ bos_lost_hills_diplomacy = {
 		icon = GFX_decision_blueprint_2
 		fire_only_once = no
 		days_remove = 60
-		cost = 100
+		cost = 75
 		allowed = {
 			OR = {
 				original_tag = BOS
@@ -2722,7 +2722,7 @@ bos_lost_hills_diplomacy = {
 		icon = GFX_decision_blueprint_2
 		fire_only_once = no
 		days_remove = 60
-		cost = 100
+		cost = 75
 		allowed = {
 			OR = {
 				original_tag = BOS
@@ -2816,7 +2816,7 @@ bos_lost_hills_diplomacy = {
 		icon = GFX_decision_t51_vb_armor
 		fire_only_once = no
 		days_remove = 100
-		cost = 400
+		cost = 300
 		allowed = {
 			original_tag = NCR
 		}
@@ -3248,7 +3248,7 @@ bos_lost_hills_diplomacy = {
 	people_seek_cooperation_with_the_ncr = {
 		icon = GFX_decision_papers
 		fire_only_once = no
-		cost = 500
+		cost = 400
 		allowed = {
 			original_tag = BOS
 		}

@@ -31,11 +31,12 @@
 #the chapters give the Lost Hills elders in most of the Fallout Games (Fallout: Brotherhood of Steel, Fallout Tactics, Fallout 4, Fallout NV)
 #Garnathor helped out a lot with extremely important systems work to help make the tree feel unique! He was the one that implemented the Paladins, and
 #the one that initialaly designed the core of the Underground Building system!
+#Credit to ZeroScale for contributing to balance patches														
 
 @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER = 50
 @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT = -50
-@BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER = 100
-@BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT = -100													 
+@BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER = 50
+@BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT = -50													 
 
 focus_tree = {
 	id = nf_brotherhood
@@ -316,6 +317,7 @@ focus_tree = {
 					can_send_volunteers = yes
 				}
 			}
+			add_political_power = 25				   
 		}
 		ai_will_do = {
 			base = 10
@@ -536,6 +538,10 @@ focus_tree = {
 				add_resource = { type = energy amount = 4 }
 				add_resource = { type = circuitry amount = 6 }
 			}
+			swap_ideas = {
+				remove_idea = laserfocusfoundry
+				add_idea = bossimpledesigns
+			}
 		}
 	}
 	focus = {
@@ -552,9 +558,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_techreallocation
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = laserfocusfoundry
+				add_idea = bosoldworldfocuses
+			}
 			capital_scope = {
 				add_resource = { type = energy amount = 4 }
 				add_resource = { type = advanced amount = 3 }
+			}
+			swap_ideas = {
+				remove_idea = laserfocusfoundry
+				add_idea = bosoldworldfocuses
 			}
 		}
 	}
@@ -589,7 +603,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_powerarmourdevelop
-				bonus = 0.25
+				bonus = 0.75
 				uses = 1
 				category = power_armor_tech_category
 			}
@@ -653,6 +667,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_superioralloys
 		completion_reward = {
+			add_idea = scraprefinement
 			add_timed_idea = {
 				idea = maintenanceroutines
 				days = 365
@@ -675,7 +690,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_surge
-				bonus = 0.5
+				bonus = 1.5
 				uses = 1
 				category = energy_weaponry_tech_category
 			}
@@ -1338,7 +1353,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_mininuke_preperation
-				bonus = 0.25
+				bonus = 0.3
 				uses = 1
 				category = support_tech_category
 			}
@@ -1358,7 +1373,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 10
 			capital_scope = {
-				add_resource = { type = energy amount = 4 }
+				add_resource = { type = energy amount = 6 }
 			}
 		}
 	}
@@ -1418,7 +1433,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_plasma_preperation
-				bonus = 0.25
+				bonus = 0.3
 				uses = 1
 				category = infantry_tech_category
 			}
@@ -1480,6 +1495,11 @@ focus_tree = {
 		completion_reward = {
 			army_experience = -150
 			set_technology = { plasma_unlock_tech = 1 }
+			add_equipment_to_stockpile = {
+				type = plasma_equipment_1
+				amount = 150
+				producer = USA
+			}
 		}
 	}
 	focus = {
@@ -2412,7 +2432,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { refugees_to_add = 6500 }
+			set_temp_variable = { refugees_to_add = 7500 }
 			exodus_add_refugees = yes
 			add_popularity = {
 				ideology = ruler
@@ -2737,7 +2757,7 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = ballistic_equipment_3
-				amount = 200
+				amount = 500
 				producer = USA
 			}
 			set_temp_variable = { BOS_tension_to_add = 20 }
@@ -3605,9 +3625,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			navy_experience = -10
-			add_tech_bonus = {
+			add_doctrine_cost_reduction = {
 				name = bos_nf_navallexicon
-				bonus = 0.5
+				bonus = 0.75
 				uses = 2
 				category = cat_naval_doctrine
 			}
@@ -3717,6 +3737,11 @@ focus_tree = {
 
 		completion_reward = {
 			remove_ideas = bos_underground_hangars
+			add_tech_bonus = {
+				name = bos_nf_the_airways_of_california
+				bonus = 0.25
+				uses = 1
+				category = air_tech_category
 		}
 	}
 
@@ -3795,9 +3820,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			air_experience = -10
-			add_tech_bonus = {
+			add_doctrine_cost_reduction = {
 				name = bos_nf_airlexicon
-				bonus = 0.5
+				cost_reduction = 0.75
 				uses = 2
 				category = cat_air_doctrine
 			}
@@ -3827,7 +3852,7 @@ focus_tree = {
 			air_experience = -15
 			add_tech_bonus = {
 				name = bos_nf_behemoths
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = blimp_tech_category
 			}
@@ -3858,7 +3883,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = bos_nf_bombers
 				bonus = 0.5
-				uses = 1
+				uses = 2
 				category = bomber_tech_category
 			}
 		}
@@ -3942,6 +3967,7 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 10
+			add_command_power = 50			 
 		}
 	}
 
@@ -4292,6 +4318,7 @@ focus_tree = {
 					expire="3000.01.01.01"
 				}
 			}
+			add_political_power = 50				   
 		}
 	}
 
@@ -4313,12 +4340,12 @@ focus_tree = {
 				character = BOS_jonathan_maxson
 				ruling_only = yes
 			}
-			has_political_power > 300
+			has_political_power > 150
 			has_tech = med_company_tech_3
 		}
 
 		completion_reward = {
-			add_political_power = -300
+			add_political_power = -150
 			remove_country_leader_trait = bos_shellshocked
 			add_corps_commander_role = {
 				character = BOS_jonathan_maxson
@@ -4399,6 +4426,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
+			swap_ruler_traits = {
+				remove = bos_maxson_heritage
+				add = bos_a_true_maxson
+			}				
 		}
 	}
 
@@ -4450,6 +4481,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
+			add_war_support = 0.05			 
 		}
 	}
 
@@ -4470,6 +4502,12 @@ focus_tree = {
 			has_political_power > 100
 		}
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_memories_of_the_fallen
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+				# category = spec_force_doctrine_category
 			add_political_power = -100
 			army_experience = 20
 		}
@@ -4489,6 +4527,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
+			add_stability = 0.025			
 		}
 	}
 
@@ -4537,7 +4576,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
-			army_experience = 5
+			army_experience = 15
 		}
 	}
 
@@ -5249,7 +5288,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				add = 1
-				date > 2279.01.01
+				date > 2278.01.01
 			}
 		}
 	}
@@ -5494,7 +5533,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = power_armor_equipment_3
+				type = power_armor_equipment_3_light
 				amount = 150
 				producer = USA
 			}
@@ -6172,10 +6211,10 @@ focus_tree = {
 			focus = bos_nf_political_blocs
 		}
 		available = {
-			has_political_power > 200
+			has_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		completion_reward = {
-			add_political_power = -200
+			add_political_power = @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT
 			unlock_decision_tooltip = BOS_ban_elites
 			unlock_decision_tooltip = BOS_ban_ruler
 			unlock_decision_tooltip = BOS_ban_intellectuals
@@ -6193,10 +6232,10 @@ focus_tree = {
 			focus = bos_nf_council_reforms
 		}
 		available = {
-			has_political_power > 200
+			as_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		completion_reward = {
-			add_political_power = -200
+			add_political_power = @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT
 			set_country_flag = bos_double_boost_decisions
 			custom_effect_tooltip = bos_political_schema_tt
 		}
@@ -6743,7 +6782,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_long_range_communications_alternative
-				bonus = 0.75
+				bonus = 1.5
 				uses = 1
 				category = electronics
 			}
@@ -6790,6 +6829,9 @@ focus_tree = {
 			#	}
 			#}
 		}
+		ai_will_do = {
+			base = 2
+		}			
 	}
 
 	focus = {
@@ -7104,7 +7146,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			army_experience = 15
+			army_experience = 20
 		}
 	}
 
@@ -7150,6 +7192,15 @@ focus_tree = {
 			}
 			add_political_power = 10
 		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+				MOJ = {
+					is_ai = no
+				}
+			}
+		}		
 	}
 	focus = {
 		id = bos_nf_moj_elijahs_downfall
@@ -7233,6 +7284,7 @@ focus_tree = {
 					set_nationality = BOS # target country
 				}
 			}
+			add_command_power = 25			 
 		}
 	}
 	focus = {
@@ -7317,6 +7369,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = scientific_tech_category
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
 		}
@@ -7758,6 +7814,16 @@ focus_tree = {
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
 		}
+		# For when BMW is implemented as a playable nation
+		# ai_will_do = {
+		# 	base = 3
+		# 	modifier = {
+		# 		factor = 3
+		# 		BMW = {
+		# 			is_ai = no
+		# 		}
+		# 	}
+		# }											
 	}
 	focus = {
 		id = bos_nf_bmw_midwest_enclave_tactical_experience
@@ -7779,6 +7845,9 @@ focus_tree = {
 		completion_reward = {
 			bos_upgrade_enclave_experience_law = yes
 		}
+		ai_will_do = {
+			base = 0.5
+		}		
 				
 			 
 	}
@@ -7805,7 +7874,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			add_tech_bonus = {
 				name = bos_nf_the_secrataries_secrets
-				bonus = 0.2
+				bonus = 0.3
 				uses = 1
 				category = industry
 			}
@@ -8246,7 +8315,7 @@ focus_tree = {
 				bos_exodus_manpower_modifier_small = yes
 			}
 			else = {
-				army_experience = 15
+				army_experience = 20
 			}
 		}
 	}
@@ -8446,7 +8515,7 @@ focus_tree = {
 		# For when BLS is implemented as a playable nation
 		# ai_will_do = {
 		# 	base = 3
-		#}
+		# }
 	}
 	focus = {
 		id = bos_nf_bls_eastern_mutant_tactical_experience

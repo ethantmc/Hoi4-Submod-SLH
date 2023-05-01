@@ -78,6 +78,7 @@ characters={
 			}
 			modifier = {
 				dig_in_speed_factor = 0.1
+				org_loss_at_low_org_factor = -0.1					 
 			}
 			cost = 100
 			ai_will_do = {
@@ -101,6 +102,7 @@ characters={
 			}
 			modifier = {
 				experience_loss_factor = -0.15
+				recon_factor = 0.1	  
 			}
 			cost = 100
 			ai_will_do = {
@@ -286,7 +288,7 @@ characters={
 				original_tag = SRG
 			}
 			modifier = {
-				army_morale_factor = 0.05
+				army_morale_factor = 0.075
 			}
 			cost = 100
 			ai_will_do = {
@@ -378,7 +380,7 @@ characters={
 				original_tag = SRG
 			}
 			modifier = {
-				production_lack_of_resource_penalty_factor = -0.1
+				production_lack_of_resource_penalty_factor = -0.15
 			}
 			cost = 100
 			ai_will_do = {
@@ -425,7 +427,7 @@ characters={
 				original_tag = SRG
 			}
 			modifier = {
-				max_fuel_factor = 0.1
+				max_fuel_factor = 0.25
 			}
 			cost = 100
 			ai_will_do = {
@@ -512,7 +514,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = high_command
+			slot = army_chief
 			idea_token = BOS_advisor_contest_advisor_22
 			ledger = army
 			allowed = {
@@ -536,7 +538,7 @@ characters={
 			# }
 		# }
 		# advisor = {
-			# slot = high_command
+			# slot = army_chief
 			# idea_token = BOS_advisor_contest_advisor_23
 			# ledger = army
 			# allowed = {
@@ -583,7 +585,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = high_command
+			slot = army_chief
 			idea_token = BOS_advisor_contest_advisor_25
 			ledger = army
 			allowed = {
@@ -591,7 +593,7 @@ characters={
 			}
 			modifier = {
 				army_attack_factor = 0.05
-				modifier_army_sub_unit_paladin_unit_attack_factor = -0.1											
+				modifier_army_sub_unit_paladin_unit_attack_factor = -0.05											
 			}
 			cost = 100
 			ai_will_do = {
@@ -643,7 +645,7 @@ characters={
 				experience_gain_army = 0.05
 			}
 			research_bonus = {
-				power_armor_tech_category = 0.05
+				power_armor_tech_category = 0.1
 			}
 			cost = 100
 			ai_will_do = {
@@ -667,7 +669,7 @@ characters={
 			}
 			modifier = {
 				experience_gain_army = 0.05
-				research_speed_factor = 0.02
+				research_speed_factor = 0.025
 			}
 			cost = 100
 			ai_will_do = {
