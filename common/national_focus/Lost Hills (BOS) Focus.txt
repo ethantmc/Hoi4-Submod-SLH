@@ -484,6 +484,214 @@ focus_tree = {
 		}
 	}
 
+	# focus = {
+		# id = bos_nf_blueprints
+		# icon = GFX_goal_BOS_generic_research
+		# cost = 30
+		# x = -40
+		# y = 1
+		# relative_position_id = bos_nf_back_to_business
+		# prerequisite = {
+			# focus = bos_nf_back_to_business
+		# }
+		# completion_reward = {
+			# add_timed_idea = {
+				# idea = losthillsdatabase
+				# days = 365
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_techreallocation
+		# icon = GFX_goal_generic_advanced_technology_focus
+		# cost = 30
+		# relative_position_id = bos_nf_blueprints
+		# prerequisite = {
+			# focus = bos_nf_blueprints
+		# }
+		# x = -2
+		# y = 1
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = bos_nf_techreallocation
+				# bonus = 0.25
+				# uses = 1
+				# category = infantry_tech_category
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_simplified
+		# icon = GFX_goal_generic_common_energy_weapons_focus
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_techreallocation
+		# }
+		# mutually_exclusive = {
+			# focus = bos_nf_oldworld
+		# }
+		# x = -1
+		# y = 1
+		# relative_position_id = bos_nf_techreallocation
+		# completion_reward = {
+			# capital_scope = {
+				# add_resource = { type = energy amount = 4 }
+				# add_resource = { type = circuitry amount = 6 }
+			# }
+			# swap_ideas = {
+				# remove_idea = laserfocusfoundry
+				# add_idea = bossimpledesigns
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_oldworld
+		# icon = GFX_goal_generic_laser_rifle_1
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_techreallocation
+		# }
+		# mutually_exclusive = {
+			# focus = bos_nf_simplified
+		# }
+		# x = 1
+		# y = 1
+		# relative_position_id = bos_nf_techreallocation
+		# completion_reward = {
+			# swap_ideas = {
+				# remove_idea = laserfocusfoundry
+				# add_idea = bosoldworldfocuses
+			# }
+			# capital_scope = {
+				# add_resource = { type = energy amount = 4 }
+				# add_resource = { type = advanced amount = 3 }
+			# }
+			# swap_ideas = {
+				# remove_idea = laserfocusfoundry
+				# add_idea = bosoldworldfocuses
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_reactionchambers
+		# icon = GFX_goal_generic_ruby_focus #GFX_goal_generic_occupy_start_war
+		# cost = 30
+		# x = 1
+		# y = 1
+		# relative_position_id = bos_nf_simplified
+		# prerequisite = {
+			# focus = bos_nf_blueprints
+		# }
+		# completion_reward = {
+			# add_ideas =  laserfocusfoundry
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_powerarmourdevelop
+		# icon = GFX_goal_BOS_power_armor_generic #GFX_goal_generic_construction
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_blueprints
+		# }
+		# x = 2
+		# y = 1
+		# relative_position_id = bos_nf_blueprints
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = bos_nf_powerarmourdevelop
+				# bonus = 0.75
+				# uses = 1
+				# category = power_armor_tech_category
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_superioralloys
+		# icon = GFX_icon_steel #GFX_goal_generic_build_tank
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_powerarmourdevelop
+		# }
+		# mutually_exclusive = {
+			# focus = bos_nf_scraprefinement
+		# }
+		# x = -1
+		# y = 1
+		# relative_position_id = bos_nf_powerarmourdevelop
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = bos_nf_superioralloys
+				# bonus = 0.3
+				# uses = 1
+				# ahead_reduction = 2
+				# category = industry
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_scraprefinement
+		# icon = GFX_goal_generic_metal_focus #GFX_goal_anti_comintern_pact
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_powerarmourdevelop
+		# }
+		# mutually_exclusive = {
+			# focus = bos_nf_superioralloys
+		# }
+		# x = 1
+		# y = 1
+		# relative_position_id = bos_nf_powerarmourdevelop
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = bos_nf_scraprefinement
+				# bonus = 0.2
+				# uses = 2
+				# ahead_reduction = 0.5
+				# category = industry
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_scribemaintenance
+		# icon = GFX_goal_generic_what_is_plasma_anyway #GFX_goal_generic_military_sphere
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_superioralloys
+			# focus = bos_nf_scraprefinement
+		# }
+		# x = 1
+		# y = 1
+		# relative_position_id = bos_nf_superioralloys
+		# completion_reward = {
+			# add_ideas = scraprefinement
+			# add_timed_idea = {
+				# idea = maintenanceroutines
+				# days = 365
+			# }
+		# }
+	# }
+	# focus = {
+		# id = bos_nf_surge
+		# icon = GFX_goal_generic_advanced_energy_weapons_focus
+		# cost = 30
+		# prerequisite = {
+			# focus = bos_nf_reactionchambers
+		# }
+		# prerequisite = {
+			# focus = bos_nf_scribemaintenance
+		# }
+		# x = 2
+		# y = 1
+		# relative_position_id = bos_nf_reactionchambers
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = bos_nf_surge
+				# bonus = 1.5
+				# uses = 1
+				# category = energy_weaponry_tech_category
+			# }
+		# }
+	# }
 	focus = {
 		id = bos_nf_blueprints
 		icon = GFX_goal_BOS_generic_research
@@ -501,38 +709,40 @@ focus_tree = {
 			}
 		}
 	}
+
 	focus = {
-		id = bos_nf_techreallocation
-		icon = GFX_goal_generic_advanced_technology_focus
+		id = bos_nf_reactionchambers
+		icon = GFX_goal_generic_ruby_focus #GFX_goal_generic_occupy_start_war
 		cost = 30
+		x = -2
+		y = 1
 		relative_position_id = bos_nf_blueprints
 		prerequisite = {
 			focus = bos_nf_blueprints
 		}
-		x = -2
-		y = 1
 		completion_reward = {
-			add_tech_bonus = {
-				name = bos_nf_techreallocation
-				bonus = 0.25
-				uses = 1
-				category = infantry_tech_category
+			add_ideas = laserfocusfoundry
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3
+				amount = 250
+				producer = USA
 			}
 		}
 	}
+
 	focus = {
 		id = bos_nf_simplified
 		icon = GFX_goal_generic_common_energy_weapons_focus
 		cost = 30
 		prerequisite = {
-			focus = bos_nf_techreallocation
+			focus = bos_nf_reactionchambers
 		}
 		mutually_exclusive = {
 			focus = bos_nf_oldworld
 		}
 		x = -1
 		y = 1
-		relative_position_id = bos_nf_techreallocation
+		relative_position_id = bos_nf_reactionchambers
 		completion_reward = {
 			capital_scope = {
 				add_resource = { type = energy amount = 4 }
@@ -549,19 +759,15 @@ focus_tree = {
 		icon = GFX_goal_generic_laser_rifle_1
 		cost = 30
 		prerequisite = {
-			focus = bos_nf_techreallocation
+			focus = bos_nf_reactionchambers
 		}
 		mutually_exclusive = {
 			focus = bos_nf_simplified
 		}
 		x = 1
 		y = 1
-		relative_position_id = bos_nf_techreallocation
+		relative_position_id = bos_nf_reactionchambers
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = laserfocusfoundry
-				add_idea = bosoldworldfocuses
-			}
 			capital_scope = {
 				add_resource = { type = energy amount = 4 }
 				add_resource = { type = advanced amount = 3 }
@@ -573,26 +779,29 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = bos_nf_reactionchambers
-		icon = GFX_goal_generic_ruby_focus #GFX_goal_generic_occupy_start_war
+		id = bos_nf_techreallocation
+		icon = GFX_goal_generic_advanced_technology_focus
 		cost = 30
-		x = 1
-		y = 1
-		relative_position_id = bos_nf_simplified
 		prerequisite = {
 			focus = bos_nf_oldworld
 			focus = bos_nf_simplified
 		}
+		x = 1
+		y = 1
+		relative_position_id = bos_nf_simplified
 		completion_reward = {
-			add_timed_idea = {
-				idea = laserfocusfoundry
-				days = 365
+			add_tech_bonus = {
+				name = bos_nf_techreallocation
+				bonus = 0.25
+				uses = 2
+				category = infantry_tech_category
 			}
 		}
 	}
+
 	focus = {
-		id = bos_nf_powerarmourdevelop
-		icon = GFX_goal_BOS_power_armor_generic #GFX_goal_generic_construction
+		id = bos_nf_scribemaintenance
+		icon = GFX_goal_generic_what_is_plasma_anyway #GFX_goal_generic_military_sphere
 		cost = 30
 		prerequisite = {
 			focus = bos_nf_blueprints
@@ -601,63 +810,59 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_blueprints
 		completion_reward = {
-			add_tech_bonus = {
-				name = bos_nf_powerarmourdevelop
-				bonus = 0.75
-				uses = 1
-				category = power_armor_tech_category
+			add_ideas =  maintenanceroutines
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_3
+				amount = 125
+				producer = USA
 			}
 		}
 	}
+
 	focus = {
 		id = bos_nf_superioralloys
 		icon = GFX_icon_steel #GFX_goal_generic_build_tank
 		cost = 30
 		prerequisite = {
-			focus = bos_nf_powerarmourdevelop
+			focus = bos_nf_scribemaintenance
 		}
 		mutually_exclusive = {
 			focus = bos_nf_scraprefinement
 		}
 		x = -1
 		y = 1
-		relative_position_id = bos_nf_powerarmourdevelop
+		relative_position_id = bos_nf_scribemaintenance
 		completion_reward = {
-			add_tech_bonus = {
-				name = bos_nf_superioralloys
-				bonus = 0.3
-				uses = 1
-				ahead_reduction = 2
-				category = industry
+			swap_ideas = {
+				remove_idea = maintenanceroutines
+				add_idea = superioralloys
 			}
 		}
 	}
+
 	focus = {
 		id = bos_nf_scraprefinement
 		icon = GFX_goal_generic_metal_focus #GFX_goal_anti_comintern_pact
 		cost = 30
 		prerequisite = {
-			focus = bos_nf_powerarmourdevelop
+			focus = bos_nf_scribemaintenance
 		}
 		mutually_exclusive = {
 			focus = bos_nf_superioralloys
 		}
 		x = 1
 		y = 1
-		relative_position_id = bos_nf_powerarmourdevelop
+		relative_position_id = bos_nf_scribemaintenance
 		completion_reward = {
-			add_tech_bonus = {
-				name = bos_nf_scraprefinement
-				bonus = 0.2
-				uses = 2
-				ahead_reduction = 0.5
-				category = industry
+			swap_ideas = {
+				remove_idea = maintenanceroutines
+				add_idea = scraprefinement
 			}
 		}
 	}
 	focus = {
-		id = bos_nf_scribemaintenance
-		icon = GFX_goal_generic_what_is_plasma_anyway #GFX_goal_generic_military_sphere
+		id = bos_nf_powerarmourdevelop
+		icon = GFX_goal_BOS_power_armor_generic #GFX_goal_generic_construction
 		cost = 30
 		prerequisite = {
 			focus = bos_nf_superioralloys
@@ -667,26 +872,28 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_superioralloys
 		completion_reward = {
-			add_ideas = scraprefinement
-			add_timed_idea = {
-				idea = maintenanceroutines
-				days = 365
+			add_tech_bonus = {
+				name = bos_nf_powerarmourdevelop
+				bonus = 0.75
+				uses = 1
+				category = power_armor_tech_category
 			}
 		}
 	}
+
 	focus = {
 		id = bos_nf_surge
 		icon = GFX_goal_generic_advanced_energy_weapons_focus
 		cost = 30
 		prerequisite = {
-			focus = bos_nf_reactionchambers
+			focus = bos_nf_techreallocation
 		}
 		prerequisite = {
-			focus = bos_nf_scribemaintenance
+			focus = bos_nf_powerarmourdevelop
 		}
 		x = 2
 		y = 1
-		relative_position_id = bos_nf_reactionchambers
+		relative_position_id = bos_nf_techreallocation
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_surge
@@ -696,7 +903,6 @@ focus_tree = {
 			}
 		}
 	}
-
 
 	focus = {
 		id = bos_nf_brotherhood_r_n_d
