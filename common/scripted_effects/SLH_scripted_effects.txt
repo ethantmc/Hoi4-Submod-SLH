@@ -358,3 +358,87 @@ bos_liberate_all_bos_members = {
 	# }
 #BOS BSF MOJ GRD WBH TCA MXC MNC TBH BMW BAP BGF BLS 
 }
+bos_troikan_loyalist_buff_effect = {
+	BOS = {
+		set_country_flag = troika_loyalist_chapter ##This could be bypassed with a manual effect, but it is a convenient canary for the effect breaking.
+	}
+	every_country = { 
+		limit = {
+			has_country_flag = troika_loyalist_chapter
+		}
+		every_army_leader = {
+			add_trait = { trait = strong_trait }
+			add_trait = { trait = perceptive_trait }
+			add_trait = { trait = enduring_trait }
+			add_trait = { trait = charismatic_trait }
+			add_trait = { trait = intelligent_trait }
+			add_trait = { trait = agile_trait }
+			add_trait = { trait = lucky_trait }
+		}
+	}
+	BOS = {
+		clr_country_flag = troika_loyalist_chapter
+	}
+}
+bos_troikan_loyalist_self_only_buff_effect = {
+
+	BOS = {
+		every_army_leader = {
+			add_trait = { trait = strong_trait }
+			add_trait = { trait = perceptive_trait }
+			add_trait = { trait = enduring_trait }
+			add_trait = { trait = charismatic_trait }
+			add_trait = { trait = intelligent_trait }
+			add_trait = { trait = agile_trait }
+			add_trait = { trait = lucky_trait }
+		}
+	}
+}
+bos_troikan_only_troika_buff_effect = {
+	BOS_manawyddan = {
+		add_trait = { trait = urban_assault_specialist }
+		add_trait = { trait = fortress_buster }
+		if = {
+			limit = {
+				NOT = {
+					has_trait = junk_rounds_trait
+				}
+				NOT = {
+					has_trait = melee_hacker_trait
+				}
+			}
+			add_trait = { trait = melee_hacker_trait }
+		}
+		
+	}
+	BOS_rhiannon = {
+		add_trait = { trait = expert_improviser }
+		add_trait = { trait = logistics_wizard }
+		if = {
+			limit = {
+				NOT = {
+					has_trait = flexible_trait
+				}
+				NOT = {
+					has_trait = negotiator_trait
+				}
+			}
+			add_trait = { trait = negotiator_trait }
+		}
+	}
+	BOS_pryderi = {
+		add_trait = { trait = hill_fighter }
+		add_trait = { trait = trait_mountaineer }
+		if = {
+			limit = {
+				NOT = {
+					has_trait = fight_the_power_trait
+				}
+				NOT = {
+					has_trait = sneering_imperialist_trait
+				}
+			}
+			add_trait = { trait = sneering_imperialist_trait }
+		}
+	}
+}

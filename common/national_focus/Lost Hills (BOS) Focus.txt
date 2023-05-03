@@ -6316,8 +6316,10 @@ focus_tree = {
 			focus = bos_nf_council_reforms
 		}
 		available = {
+			has_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		completion_reward = {
+			add_political_power = @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT
 			unlock_decision_tooltip = BOS_adjust_high_elder_duration
 		}
 		ai_will_do = {
@@ -6366,8 +6368,10 @@ focus_tree = {
 			focus = bos_nf_council_reforms
 		}
 		available = {
+			has_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		completion_reward = {
+			add_political_power = @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT
 			unlock_decision_tooltip = BOS_emergency_promotion
 		}
 		ai_will_do = {
@@ -6390,10 +6394,10 @@ focus_tree = {
 			focus = bos_nf_council_reforms
 		}
 		available = {
-			has_political_power > 100
+			has_political_power > @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		completion_reward = {
-			add_political_power = -100
+			add_political_power = @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT
 			add_ideas = bos_nf_paladins_given_some_sway
 		}
 		ai_will_do = {
@@ -6609,7 +6613,7 @@ focus_tree = {
 			focus = bos_nf_freeing_up_the_council_table
 		}
 		completion_reward = {
-			add_political_power = 200
+			add_political_power = 150
 		}
 	}
 	focus = {
@@ -6924,8 +6928,10 @@ focus_tree = {
 			focus = bos_nf_our_cruelty
 		}
 		available = {
-			always = no
 			has_country_flag = bos_intellectuals_allowed
+			BOS_rhiannon = {
+				has_trait = bos_absolute_brotherhood_high_elder
+			}
 			NOT = {
 				has_country_flag = bos_ruler_allowed
 				has_country_flag = bos_people_allowed
@@ -6933,7 +6939,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
+			#custom_effect_tooltip = coming_in_a_later_update_bos
+			country_event = nf_brotherhood_elh_events.7
 		}
 	}
 

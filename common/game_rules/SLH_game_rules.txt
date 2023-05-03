@@ -24,19 +24,19 @@
 #################################
 # I have no idea what i'm doing #
 #################################
-slh_multiplayer = {
-	name = "RULE_SLH_MULTIPLAYER"
-	group = "RULE_SLH"
-	default = {
-		name = "DISALLOW"
-		text = "RULE_SLH_MULTIPLAYER_DEFAULT"
-		desc = "RULE_SLH_MULTIPLAYER_DEFAULT_DESC"
-		allow_achievements = yes
-	}
-	option = {
-		name = "ALLOW"
-		text = "RULE_SLH_MULTIPLAYER_YES"
-		desc = "RULE_SLH_MULTIPLAYER_YES_DESC"
-		allow_achievements = yes
-	}
-}
+# slh_multiplayer = {
+	# name = "RULE_SLH_MULTIPLAYER"
+	# group = "RULE_SLH"
+	# default = {
+		# name = "DISALLOW"
+		# text = "RULE_SLH_MULTIPLAYER_DEFAULT"
+		# desc = "RULE_SLH_MULTIPLAYER_DEFAULT_DESC"
+		# allow_achievements = yes
+	# }
+	# option = {
+		# name = "ALLOW"
+		# text = "RULE_SLH_MULTIPLAYER_YES"
+		# desc = "RULE_SLH_MULTIPLAYER_YES_DESC"
+		# allow_achievements = yes
+	# }
+# }

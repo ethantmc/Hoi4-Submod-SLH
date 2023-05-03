@@ -776,7 +776,7 @@
   nf_brotherhood_foreign_assistance.101.a: "We will defend them."
   
   nf_brotherhood_foreign_assistance.2.t: "Treasures for a New Elder"
-  nf_brotherhood_foreign_assistance.2.d: "The Troika have finally come knocking, having found their 'pascalbytes'. They speak of this planet as a 'Lie-World', an ephermeral hell where we live and die for the amusement of some creature with untold power over us.\n\n They say many things, some of which, once spoken, will never again leave the tongues of our people. But most importantly, they speak of implants, 'Treasures of the Kiln', as they call them, that can give power to [THIS.getLeader], which will better them, and possibly the nation as a whole.\n\n All they ask is [THIS.getLeader] pay at least lip service to their holy book, the Troika Apocrypha, and attend some sort of ritual when the time comes. They seem confident the implants will convince [THIS.getLeader] of the truth of their religion."
+  nf_brotherhood_foreign_assistance.2.d: "The Troika have finally come knocking, having found their 'pascalbytes'. We knew the day would come, and have learned from exiles and runaways of their Chapter that they are a fringe cult who've ended the longstanding paralysis of Lost Hills. Their efficacy doesn't end there, with reports of brutal crackdowns and technology raids in their territories and successful, wide-ranging deployment of combat implants in their army. Such achievement demanded we at least hear them out.\n\nThe hooded, red-robed speaker for the [BOS.getName] delegation spoke of this planet as a 'Lie-World', an ephermeral hell where we live and die for the amusement of some creature with untold power over us.\n\nIt's obvious to [THIS.getLeader] that they've practiced this introduction to reach vulnerable ears in the most hostile of halls, with the delegate spending most of their time spent speaking to the regular people observing this meeting. Eventually they reveal their reason for visiting, offering an exceedingly rare implant they've given to their leadership, a 'Treasure of the Kiln', as they call it, to [THIS.getLeader] which will 'better them and possibly the nation as a whole'.\n\nAll they ask is [THIS.getLeader] pay at least lip service to their holy book, the Troika Apocrypha, and attend some sort of ritual when the time comes. They seem confident the implants will convince [THIS.getLeader] of the truth of their religion."
   nf_brotherhood_foreign_assistance.2.a: "We'll treasure such an advantage."
   nf_brotherhood_foreign_assistance.2.mid: "This insanity cannot stand."
   nf_brotherhood_foreign_assistance.2.b: "No. Expel the Troika."
@@ -794,7 +794,7 @@
   nf_brotherhood_foreign_assistance.203.a: ""
   
   nf_brotherhood_foreign_assistance.204.t: "An Offer Rejected"
-  nf_brotherhood_foreign_assistance.204.d: "[FROM.getName] has rejected the truth of the Troika Apocrypha, and severed all ties with us! Does the Chain That Binds mean nothing to them?! How could they fail to see the truth of our world? Our brothers and sister can't be left to wilt under the tyranny of [FROM.getName]. We must act, [BOS.getName]! It is our duty!"
+  nf_brotherhood_foreign_assistance.204.d: "[FROM.getName] has rejected the truth of the Troika Apocrypha, and severed all ties with us! Does the Chain That Binds mean nothing to them?! How could they fail to see the truth of our world? Our brothers and sisters can't be left to wilt under the tyranny of [FROM.getName]. We must act, [BOS.getName]! It is our duty!"
   nf_brotherhood_foreign_assistance.204.a: "We will."
   
   nf_brotherhood_foreign_assistance.3.t: "[BOS.getName] sends a Scribe Team"
@@ -888,6 +888,12 @@
   nf_brotherhood_elh_events.6.rhombians: "§gSome criminals can join the force to suspend their sentence.§!"
   nf_brotherhood_elh_events.6.reformers: "§CCrime is a failure of the state. Pardon all petty offenders.§!"
   nf_brotherhood_elh_events.6.troika: "§RThere are other uses for so many prisoners...§!"
+  
+  nf_brotherhood_elh_events.7.t: "The Great Storm at Last!"
+  nf_brotherhood_elh_events.7.d: "We brought no shortage of witnesses. Every commander of Knights, Paladins, or Initiates have trekked with the Troika to the Glow. Our loyal chapter-leaders have done the same, mirroring our journey.\n\nAll gathered will bear witness as the Troika dip themselves again in the Cauldron of Rebirth, but who else will they invitte?\n\nWho else will cast away flesh, and become Apocryphal?"
+  nf_brotherhood_elh_events.7.a: "§ROnly our most loyal commanders.§!"
+  nf_brotherhood_elh_events.7.b: "§RAll who made the journey will participate in full.§!"
+  nf_brotherhood_elh_events.7.c: "§RThe TROIKA is MANAWYDDAN-RHIANNON-PRYDERI!§!"
   
   nf_brotherhood_bunkered_divisions.1.t: "End of the Ceasefire"
   nf_brotherhood_bunkered_divisions.1.desc: "All elders are in agreement - there is no hope for California except us. There is no worthy successor for us to guide, and the stumbling of [NCR.getLeader] has failed to impress.\n\nOur preparations are complete, with every bunker in the state of Maxson restored and filled once again with personnel. We've warned the people of Maxson of the coming conflict, and many citizens have seen the thousand ways the NCR is bound to break. Only we can safeguard Mankind."
@@ -1425,7 +1431,7 @@
   ##Troika decisions
   bos_lost_hills_troika_our_cruelty_elders: "An Offer to §R[FROM.GetLeader]§!"
   bos_lost_hills_troika_our_cruelty_elders_desc: "We offer §YRevelation§!, the truths of the §YLie-World§! laid bare. With our §OTreasure§!, §R[FROM.GetLeader]§! can be set free to reject their §Ypascalbytes§! and rewrite them. Afterward, they will assist Man in making the §Ygreat storm.§! "
-  bos_leader_enhancement_tt: "An §Paugment§! will be selected for the chapter's Elder, should they accept our offer."
+  bos_leader_enhancement_tt: "An §Paugment§! will be selected for the chapter's Elder, should they accept our offer. §gIf we have not yet completed §OThe Great Storm§!, their chapter may gain additional benefits when we do.§!"
   bos_crowns_math_tt: "§OTreasures: $RIGHT|+=1$§!\n§gTreasures are special implants crafted and refined from the deaths of hundreds or thousands of people, and gifted to other Chapter Leaders so they may easily grasp the truth within the Troika Apocrypha. You'll need to complete §YRivers Run Red§! to make use of them.§!"
   bos_crowns: "Has §Y1§! Available §OTreasures§!. §g(Currently [?bos_troika_crowns])§!"
   troika_cruelty_target: "§RExperimenting in [FROM.getName]§!"
