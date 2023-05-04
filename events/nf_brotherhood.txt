@@ -4258,7 +4258,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_elh_events.7.a #Only the truly loyal are permitted.
 		add_political_power = 100
-		bos_troikan_loyalist_self_only_buff_effect
+		bos_troikan_loyalist_self_only_buff_effect = yes
 		ai_chance = {
 			base = 13
 			modifier = {
@@ -4270,7 +4270,8 @@ country_event = {
 	option = {
 		name = nf_brotherhood_elh_events.7.b #All the loyal chapters join us!
 		##country event to all in scope telling them what happened
-		bos_troikan_loyalist_buff_effect
+		set_faction_name  = bos_nf_the_great_storm
+		bos_troikan_loyalist_buff_effect = yes
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -4283,12 +4284,107 @@ country_event = {
 		name = nf_brotherhood_elh_events.7.c #Only MANAWYDDAN-RHIANNON-PRYDERI!
 		add_political_power = 300
 		add_stability = 0.05
-		bos_troikan_only_troika_buff_effect
+		bos_troikan_only_troika_buff_effect = yes
 		ai_chance = {
 			base = 13
 			modifier = {
 				num_faction_members < 2
 				factor = 10
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.701" }
+	id = nf_brotherhood_elh_events.701
+	title = nf_brotherhood_elh_events.701.t #Rewarded at the Ritual
+	desc = nf_brotherhood_elh_events.701.d
+	picture = GFX_event_sub_generic_wasteland_5 ##make sure I match the previous event!
+	is_triggered_only = yes
+	fire_only_once = yes
+	##immediate - news evenet to all neighbhouring countries?
+	option = {
+		name = nf_brotherhood_elh_events.701.a #We are transformed.
+		custom_effect_tooltip = bos_all_are_special_tt
+		effect_tooltip = {
+			BOS = {
+				set_faction_name  = bos_nf_the_great_storm
+			}
+		}
+		bos_troikan_loyalist_diplomacy_buff_effect = yes
+		ai_chance = {
+			base = 13
+			modifier = {
+				num_faction_members < 3
+				add = 74
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.702" }
+	id = nf_brotherhood_elh_events.702
+	title = nf_brotherhood_elh_events.702.t #Spurned at the Ritual
+	desc = nf_brotherhood_elh_events.702.d
+	picture = GFX_event_sub_generic_wasteland_5 ##make sure I match the previous event!
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.702.a #It was still a gathering of peers.
+		add_war_support = 0.05
+		bos_troikan_loyalist_diplomacy_buff_effect = yes 		##diplomacy effect with other loyalists
+		custom_effect_tooltip = {
+			BOS = {
+				bos_troikan_loyalist_self_only_buff_effect ##reused for tooltip, already applied
+			}
+		}
+		ai_chance = {
+			base = 13
+			modifier = {
+				num_faction_members > 3
+				add = 74
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.702.b #All of the chapters, insulted.
+		add_political_power = 100
+		##diplomacy effect (reduction) with Troika
+		add_opinion_modifier = {
+			target = BOS
+			modifier = unstable_alliance
+		}
+		custom_effect_tooltip = {
+			BOS = {
+				bos_troikan_loyalist_self_only_buff_effect ##reused for tooltip, already applied
+			}
+		}
+		ai_chance = {
+			base = 13
+			modifier = {
+				num_faction_members < 4
+				add = 74
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.703" }
+	id = nf_brotherhood_elh_events.703
+	title = nf_brotherhood_elh_events.703.t #Rewarded at the Ritual
+	desc = nf_brotherhood_elh_events.703.d
+	picture = GFX_event_sub_generic_wasteland_5 ##make sure I match the previous event!
+	is_triggered_only = yes
+	fire_only_once = yes
+	##immediate - news evenet to all neighbhouring countries?
+	option = {
+		name = nf_brotherhood_elh_events.703.a #together we are the great storm!
+		bos_troikan_loyalist_diplomacy_buff_effect = yes
+		ai_chance = {
+			base = 13
+			modifier = {
+				num_faction_members < 3
+				add = 74
 			}
 		}
 	}

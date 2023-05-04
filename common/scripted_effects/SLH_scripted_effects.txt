@@ -366,6 +366,15 @@ bos_troikan_loyalist_buff_effect = {
 		limit = {
 			has_country_flag = troika_loyalist_chapter
 		}
+		if = {
+			limit = {
+				THIS.id = BOS
+			}
+			country_event = nf_brotherhood_elh_events.703
+		}
+		else {
+			country_event = nf_brotherhood_elh_events.701
+		}
 		every_army_leader = {
 			add_trait = { trait = strong_trait }
 			add_trait = { trait = perceptive_trait }
@@ -380,9 +389,19 @@ bos_troikan_loyalist_buff_effect = {
 		clr_country_flag = troika_loyalist_chapter
 	}
 }
+bos_troikan_loyalist_diplomacy_buff_effect = {
+	every_country = { 
+		limit = {
+			has_country_flag = troika_loyalist_chapter
+		}
+		add_opinion_modifier = {
+			target = THIS
+			modifier = tca_shared_value
+		}
+	}
+}
 bos_troikan_loyalist_self_only_buff_effect = {
-
-	BOS = {
+	THIS = {
 		every_army_leader = {
 			add_trait = { trait = strong_trait }
 			add_trait = { trait = perceptive_trait }
