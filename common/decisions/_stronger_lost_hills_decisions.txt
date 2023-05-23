@@ -3967,3 +3967,376 @@ bos_lost_hills_steel_plague = {
 		}
 	}
 }
+followers_interaction = {
+	followers_request_industry_assistance = {
+		cost = 20
+		days_remove = 90
+		days_re_enable = 240
+
+		visible = {
+			BOS = {
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+			}
+		}
+
+		available = {	# Shows the player why they got this
+			BOS = {
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = {
+					var = followers_influence
+					value = 50
+					compare = greater_than_or_equals
+				}
+			}
+		}
+
+		complete_effect = {
+			increase_followers_influence_10 = yes
+		}
+
+		remove_effect = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.3
+				category = industry_specialisation_category
+				category = tool_tech
+			}
+		}
+	}
+	followers_electrification_help = {
+		cost = 30
+		days_remove = 75
+		days_re_enable = 210
+
+		visible = {
+			BOS = {
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+			}
+		}
+
+		available = {	# Shows the player why they got this
+			BOS = {
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = {
+					var = followers_influence
+					value = 50
+					compare = greater_than_or_equals
+				}
+			}
+		}
+
+		complete_effect = {
+			increase_followers_influence_5 = yes
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = energy
+					amount = 4
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+} ##attempt to replicate the NCR-specific foci unlocking additional Follower interactions.
+stronger_lost_hills_ncr_occupation = {
+	bos_ncr_incoming_famine = {
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 21
+		complete_effect = {
+			add_ideas = bos_ncr_looming_famine
+		}
+		timeout_effect = {
+			add_ideas = bos_ncr_famine
+		}
+	}
+	bos_ncr_famine = {
+		activation = {
+			tag = bos
+			has_idea = bos_ncr_famine
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		available = {
+			count_triggers = {
+			amount > 4
+				has_country_flag = reformers_reconstruction
+				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
+				has_country_flag = barons_dealt_with 
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+				has_completed_focus = bos_nf_high_elder_llwyd_old_management
+				has_tech = agriculture_industry_tech_5
+				has_tech = agriculture_industry_tech_6
+				has_tech = agriculture_industry_tech_7
+			}
+		}
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 720
+		complete_effect = {
+			remove_ideas = bos_ncr_famine
+		}
+		timeout_effect = {
+			swap_ideas = {
+				remove_idea = bos_ncr_famine
+				add_idea = bos_ncr_terrible_famine
+			}
+		}
+	}
+	bos_ncr_terrible_famine = {
+		activation = {
+			tag = bos
+			has_idea = bos_ncr_terrible_famine
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		available = {
+			count_triggers = {
+			amount > 6
+				has_country_flag = reformers_reconstruction
+				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
+				has_country_flag = barons_dealt_with 
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+				has_completed_focus = bos_nf_high_elder_llwyd_old_management
+				has_country_flag = famine_mission_advanced_tech_1_completed
+				has_country_flag = famine_mission_advanced_tech_2_completed
+				has_country_flag = famine_mission_advanced_tech_3_completed
+			}
+		}
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 720
+		complete_effect = {
+			remove_ideas = bos_ncr_terrible_famine
+		}
+		timeout_effect = {
+			remove_ideas = bos_ncr_terrible_famine
+			add_stability = -0.35
+			add_war_support = -0.4
+		}
+	}
+	bos_ncr_famine_delay = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {}
+		remove_effect = {
+			set_temp_variable = { bos_famine_time = 60 }
+			bos_adjust_famine_time = yes
+		}
+	}
+	bos_ncr_famine_evaluate_food_reserves = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		}
+		remove_effect = {
+			random_list = {
+				10 = {
+					set_temp_variable = { bos_famine_time = 90 }
+					bos_adjust_famine_time = yes
+				}
+				60 = {
+					set_temp_variable = { bos_famine_time = 60 }
+					bos_adjust_famine_time = yes
+				}
+				20 = {
+					set_temp_variable = { bos_famine_time = 30 }
+					bos_adjust_famine_time = yes
+				}
+				10 = {
+					set_temp_variable = { bos_famine_time = -30 }
+					bos_adjust_famine_time = yes
+				}
+			}
+		}
+	}
+	bos_ncr_famine_abatement = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			set_temp_variable = { bos_famine_time = 30 }
+			bos_adjust_famine_time = yes
+			set_country_flag = famine_mission_desc_completed
+		}
+
+	}
+	bos_ncr_famine_distibute_advanced_tech_1 = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			has_tech = agriculture_industry_tech_5
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_advanced_tech_1_completed
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+		}
+
+	}
+	bos_ncr_famine_distibute_advanced_tech_2 = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			has_tech = agriculture_industry_tech_6
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_advanced_tech_2_completed
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+		}
+
+	}
+	bos_ncr_famine_distibute_advanced_tech_3 = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			has_tech = agriculture_industry_tech_7
+			
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_advanced_tech_3_completed
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+		}
+
+	}
+	bos_ncr_famine_ask_the_followers = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_followers_help_completed
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			complete_effect = {
+				increase_followers_influence_10 = yes
+			}
+		}
+
+	}
+}

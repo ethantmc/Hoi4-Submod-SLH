@@ -554,7 +554,7 @@ bos_underground_construction_decisions = {
 				BOS_off_map_civs = -5
 			}
 			set_temp_variable = {
-				BOS_available_space_to_change = -4
+				BOS_available_space_to_change = -5
 			}
 			bos_change_available_space = yes
 		}
@@ -1248,9 +1248,9 @@ bos_underground_construction_decisions = {
 	}
 	bos_underground_dig_deeper_decision = {
 		icon = GFX_decision_welding
-		fire_only_once = yes
-		days_remove = 365
-		custom_cost_text = army_xp_more_than_100
+		#fire_only_once = yes
+		days_remove = 240
+		#custom_cost_text = army_xp_more_than_100
 		cost = 200
 		# days_re_enable = 5
 		ai_will_do = {
@@ -2469,9 +2469,9 @@ bos_lost_hills_politics = {
 				#NOT = { has_country_flag = bos_people_allowed }
 			}
 		}
-		cost = 250
+		cost = 400
 		fixed_random_seed = no
-		days_remove = 125
+		days_remove = 365
 		fire_only_once = yes
 		remove_effect = {
 			if = {

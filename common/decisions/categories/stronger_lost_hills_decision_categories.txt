@@ -74,3 +74,13 @@ stronger_lost_hills_troika_cruelty_missions = {
 	icon = GFX_decision_backpack
 	#picture = GFX_event_MOJ_contact_the_west
 }
+stronger_lost_hills_ncr_occupation = {
+	priority = 12
+		allowed = {
+		tag = BOS
+	}
+	visible = {
+		has_completed_focus = bos_nf_dominion_over_the_wasteland
+	}
+	icon = GFX_decision_backpack
+}

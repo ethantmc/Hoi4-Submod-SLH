@@ -1155,6 +1155,70 @@ ideas = {
 				operative_slot = 1
 			}
 		}
+		bos_ncr_reconstruction_campaign = {
+			picture = ncr_trade_idea
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain_factor = -0.1
+				war_support_factor = -0.5
+				stability_factor = 0.1
+				stability_weekly = 0.0012
+				production_speed_buildings_factor = -0.15
+				consumer_goods_factor = 0.1
+			}
+		}
+		# bos_ncr_power_brokers_the_hub = {
+			# picture = ncr_trade_idea #change me!
+			# allowed = {
+			# }
+			# removal_cost = -1
+			# modifier = {
+				# compliance_growth = 0.05
+				# caps_node_trade_modifier = -0.15
+				# caps_trade_node_route_limit = 2
+			# }
+		# }
+		# bos_ncr_power_brokers_outfoxed_the_hub = {
+			# picture = ncr_trade_idea #make me match above!
+			# allowed = {
+			# }
+			# removal_cost = -1
+			# modifier = {
+				# caps_node_trade_modifier = -0.05
+			# }
+		# }
+		bos_ncr_looming_famine = {
+			picture = ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = -0.2
+			}
+		}
+		bos_ncr_famine = {
+			picture = ncr_trade_idea #make me match above!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = -0.45
+				conscription_factor = -0.1
+			}
+		}
+		bos_ncr_terrible_famine = {
+			picture = ncr_trade_idea #make me match above!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = -0.75
+				conscription_factor = -0.2
+				non_core_manpower = -1
+			}
+		}
 		srg_california_tech_sharing_initiative = {
 			picture = ncr_trade_idea
 			allowed = {

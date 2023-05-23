@@ -36,7 +36,7 @@
 @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER = 50
 @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT = -50
 @BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_TRIGGER = 50
-@BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT = -50													 
+@BOS_COUNCIL_FOCUS_POLITICAL_POWER_COST_EFFECT = -50							 
 
 focus_tree = {
 	id = nf_brotherhood
@@ -3397,7 +3397,9 @@ focus_tree = {
 			focus = bos_nf_reorganizing_our_economy
 		}
 		available = {
-			has_completed_focus = bos_nf_absolute_high_elder_rhiannon
+			BOS_rhiannon = {
+				has_trait = bos_absolute_brotherhood_high_elder
+			}
 		}
 		completion_reward = {
 			add_ideas = closed_economy
@@ -3596,7 +3598,9 @@ focus_tree = {
 			focus = bos_nf_reorganizing_our_economy
 		}
 		available = {
-			has_completed_focus = bos_nf_reformer_ascension
+			BOS_llwyd = {
+				has_trait = bos_absolute_brotherhood_high_elder
+			}
 		}
 		completion_reward = {
 			country_event = nf_brotherhood_elh_events.5
@@ -3668,6 +3672,33 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+		icon = GFX_goal_enc_education_by_followers
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+		prerequisite = {
+			focus = bos_nf_high_elder_llwyd_economic_plan
+			focus = bos_nf_high_elder_torni_economic_plan
+		}
+		available = {
+			count_triggers = {
+				amount = 2
+				has_government = people
+				people > 0.33
+				people > 0.4
+				AND = {
+					ruler > 0.4
+					people > 0.2
+				}
+			}
+		}
+		completion_reward = {
+			country_event = nf_brotherhood_elh_events.301
+		}
+	}
+	focus = {
 		id = bos_nf_high_elder_llwyd_old_management
 		icon = GFX_goal_NCR_Caravan
 		cost = 30
@@ -3701,6 +3732,204 @@ focus_tree = {
 			has_political_power > 0
 		}
 		completion_reward = {
+			add_timed_idea = { 
+				idea = bos_ncr_reconstruction_campaign
+				days = 765
+			}
+			country_event = nf_brotherhood_elh_events.9
+			custom_effect_tooltip = bos_new_scars_mechanics_tt
+		}
+	}
+	focus = {
+		id = bos_nf_power_brokers
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = -5
+		y = 1
+		relative_position_id = bos_nf_further_reconstruction
+		prerequisite = {
+			focus = bos_nf_further_reconstruction
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_power_brokers_the_hub
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = bos_nf_power_brokers
+		prerequisite = {
+			focus = bos_nf_power_brokers
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			country_event = nf_brotherhood_elh_events.8
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_power_brokers_the_barons
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_power_brokers_the_arms_dealers
+		prerequisite = {
+			focus = bos_nf_power_brokers_the_arms_dealers
+			focus = bos_nf_power_brokers_the_hub
+			focus = bos_nf_power_brokers_the_legacy_government
+		}
+		available = {
+			has_political_power > 0
+			has_completed_focus = bos_nf_the_californian_food_crisis
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_power_brokers_the_arms_dealers
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_power_brokers
+		prerequisite = {
+			focus = bos_nf_power_brokers
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_power_brokers_the_legacy_government
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = bos_nf_power_brokers
+		prerequisite = {
+			focus = bos_nf_power_brokers
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_the_californian_food_crisis
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_further_reconstruction
+		prerequisite = {
+			focus = bos_nf_further_reconstruction
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_economic_projects
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 5
+		y = 1
+		relative_position_id = bos_nf_further_reconstruction
+		prerequisite = {
+			focus = bos_nf_further_reconstruction
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_economic_projects_electrification
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = bos_nf_economic_projects
+		prerequisite = {
+			focus = bos_nf_economic_projects
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_economic_projects_crater_cleanup
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_economic_projects
+		prerequisite = {
+			focus = bos_nf_economic_projects
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_economic_projects_real_memorials
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = bos_nf_economic_projects
+		prerequisite = {
+			focus = bos_nf_economic_projects
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+		}
+	}
+	focus = {
+		id = bos_nf_economic_projects_training_halls
+		icon = GFX_goal_generic_focus_solar_energy
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_economic_projects_crater_cleanup
+		prerequisite = {
+			focus = bos_nf_economic_projects_electrification
+			focus = bos_nf_economic_projects_crater_cleanup
+			focus = bos_nf_economic_projects_real_memorials
+		}
+		available = {
+			has_political_power > 0
+		}
+		completion_reward = {
 			custom_effect_tooltip = coming_in_a_later_update_bos
 		}
 	}
@@ -3709,7 +3938,7 @@ focus_tree = {
 		icon = GFX_goal_generic_pa_t51_fatman
 		cost = 30
 		x = 0
-		y = 8
+		y = 10
 		relative_position_id = bos_nf_the_brotherhood_triumphant
 		prerequisite = {
 		}
@@ -4134,7 +4363,7 @@ focus_tree = {
 		completion_reward = {
 			air_experience = -20
 			add_ideas = {maxson_airborne}
-			unlock_decision_tooltip = bos_lost_hills_diplomacy_establish_foreign_airbase
+			custom_effect_tooltip = bos_lost_hills_diplomacy_establish_foreign_airbases_unlock_tt
 		}
 	}
 	
