@@ -1659,7 +1659,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 10
 			capital_scope = {
-				add_resource = { type = advanced amount = 4 }
+				add_resource = { type = advanced amount = 6 }
 			}
 		}
 	}
@@ -2702,6 +2702,7 @@ focus_tree = {
 			set_temp_variable = { BOS_tension_to_add = 5 }
 			bos_change_tension = yes
 			unlock_decision_tooltip = increase_tension
+			add_command_power = 25			 
 		}
 	}
 	focus = {
@@ -2922,6 +2923,7 @@ focus_tree = {
 			}
 			set_temp_variable = { BOS_tension_to_add = 10 }
 			bos_change_tension = yes
+			add_war_support = 0.025			  
 		}
 	}
 
@@ -2945,6 +2947,7 @@ focus_tree = {
 			}
 			set_temp_variable = { BOS_tension_to_add = 20 }
 			bos_change_tension = yes
+			add_political_power = 50			   
 		}
 	}
 	focus = {
@@ -4284,8 +4287,15 @@ focus_tree = {
 				name = bos_nf_reclaiming_destroyed_bunkers
 				bonus = 0.25
 				uses = 1
-				category = industry
+				category = construction_category
 			}
+			add_tech_bonus = {
+				name = bos_nf_reclaiming_destroyed_bunkers
+				bonus = 0.25
+				uses = 1
+				category = habitation_category
+			}
+			add_political_power = 25			   
 		}
 	}
 
@@ -4841,8 +4851,14 @@ focus_tree = {
 		relative_position_id = bos_nf_our_right
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_salvaged_metal
+				bonus = 0.5
+				uses = 1
+				category = foundry_tech_category
+			}
 			capital_scope = {
-				add_resource = { type = metal amount = 6 }
+				add_resource = { type = metal amount = 4 }
 			}
 		}
 	}
@@ -4860,6 +4876,12 @@ focus_tree = {
 		relative_position_id = bos_nf_our_right
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_increase_power_production
+				bonus = 0.5
+				uses = 1
+				category = power_station_tech_category
+			}
 			capital_scope = {
 				add_resource = { type = energy amount = 4 }
 			}
@@ -4878,6 +4900,12 @@ focus_tree = {
 		relative_position_id = bos_nf_our_right
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_salvaged_electronics
+				bonus = 0.5
+				uses = 1
+				category = fabrication_laboratory_tech_category
+			}
 			capital_scope = {
 				add_resource = { type = circuitry amount = 4 }
 			}
@@ -4928,7 +4956,7 @@ focus_tree = {
 
 	focus = {
 		id = bos_nf_arm_foundries
-		text = shared_bos_arm_foundries
+		text = bos_nf_scavenging_program
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 30
 		prerequisite = {
@@ -4946,6 +4974,8 @@ focus_tree = {
 			bos_add_underground_construction_slots = yes
 			clr_country_flag = scavenging_disabled ##Don't like regular scavenging given my other changes.
 			unlock_decision_tooltip = begin_scavenging_program
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
 		}
 	}
 	focus = {
@@ -5483,10 +5513,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			army_experience = 15
+			army_experience = 20
 			add_popularity = {
 				ideology = elites
-				popularity = 0.03
+				popularity = 0.04
 			}
 			custom_effect_tooltip = bos_unlock_scavenging_decisions
 		}
@@ -5806,7 +5836,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = light_motorized_equipment_2
+				type = light_motorized_equipment_3
 				amount = 150
 				producer = USA
 			}
@@ -5904,7 +5934,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			set_temp_variable = { refugees_to_add = 500 }
+			set_temp_variable = { refugees_to_add = 1000 }
 			exodus_add_refugees = yes
 		}
 	}
@@ -6282,6 +6312,7 @@ focus_tree = {
 				}
 				create_map_node = yes
 			}
+			add_political_power = 100				
 		}
 	}
 
@@ -6429,6 +6460,13 @@ focus_tree = {
 			unlock_decision_tooltip = BOS_ban_intellectuals
 			unlock_decision_tooltip = BOS_ban_people
 		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				add = 0.5
+				date > 2280.01.01
+			}
+		}		
 	}
 	focus = {
 		id = bos_nf_advanced_political_schema
