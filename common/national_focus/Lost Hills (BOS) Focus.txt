@@ -167,6 +167,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_paladins
 		}
+		available = {
+			always = no
+		}
 		completion_reward = {
 			custom_effect_tooltip = knights_unlock_tt
 			hidden_effect = {
@@ -336,7 +339,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_paladins
 		}
-
+		available = {
+			always = no
+		}
 		completion_reward = {
 			custom_effect_tooltip = scribes_unlock_tt
 			hidden_effect = {
@@ -4715,7 +4720,6 @@ focus_tree = {
 			add_war_support = 0.05
 		}
 	}
-
 	focus = {
 		id = bos_nf_call_out_poor_military_strategy
 		icon = GFX_KHA_focus_planning
@@ -4739,6 +4743,7 @@ focus_tree = {
 				uses = 1
 				category = cat_land_doctrine
 				# category = spec_force_doctrine_category
+			}
 			add_political_power = -100
 			army_experience = 20
 			
