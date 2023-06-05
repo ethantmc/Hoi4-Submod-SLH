@@ -167,6 +167,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_paladins
 		}
+		available = {
+			always = no
+		}
 		completion_reward = {
 			custom_effect_tooltip = knights_unlock_tt
 			hidden_effect = {
@@ -336,7 +339,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_paladins
 		}
-
+		available = {
+			always = no
+		}
 		completion_reward = {
 			custom_effect_tooltip = scribes_unlock_tt
 			hidden_effect = {
@@ -793,7 +798,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = bos_nf_techreallocation
 				bonus = 0.25
-				uses = 2
+				uses = 3
 				category = infantry_tech_category
 			}
 		}
@@ -1543,6 +1548,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
+			add_political_power = 25			   
 		}
 	}
 	focus = {
@@ -1557,6 +1563,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			army_experience = 10		   
 			add_tech_bonus = {
 				name = bos_nf_mininuke_preperation
 				bonus = 0.3
@@ -1659,7 +1666,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 10
 			capital_scope = {
-				add_resource = { type = advanced amount = 4 }
+				add_resource = { type = advanced amount = 6 }
 			}
 		}
 	}
@@ -1677,7 +1684,7 @@ focus_tree = {
 		# completion_reward = {
 			# army_experience = 10
 			# capital_scope = {
-				# add_resource = { type = composites amount = 4 }
+				# add_resource = { type = composites amount = 6 }
 			# }
 		# }
 	# }
@@ -2485,6 +2492,7 @@ focus_tree = {
 				}
 				bos_add_to_bunker_array = yes
 			}
+			add_command_power = 20			 
 		}
 	}
 
@@ -2510,6 +2518,7 @@ focus_tree = {
 				}
 				bos_add_to_bunker_array = yes
 			}
+			add_command_power = 20			 
 		}
 	}
 	focus = {
@@ -2534,6 +2543,7 @@ focus_tree = {
 				}
 				bos_add_to_bunker_array = yes
 			}
+			add_command_power = 20			 
 		}
 	}
 	focus = {
@@ -2564,6 +2574,7 @@ focus_tree = {
 				}
 				bos_add_to_bunker_array = yes
 			}
+			add_command_power = 20			 
 		}
 	}
 	focus = {
@@ -2594,6 +2605,7 @@ focus_tree = {
 				}
 				bos_add_to_bunker_array = yes
 			}
+			add_command_power = 20			 
 		}
 	}
 	focus = {
@@ -2612,10 +2624,15 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = ballistic_equipment_2
+				type = ballistic_equipment_3
 				amount = 750
 				producer = USA
 			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 75
+				producer = USA
+			}						 							  			   				 	
 		}
 	}
 	focus = {
@@ -2668,6 +2685,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { caps_to_add = 75 }
 			add_caps = yes
+			add_political_power = 75			   
 		}
 	}
 
@@ -2702,6 +2720,8 @@ focus_tree = {
 			set_temp_variable = { BOS_tension_to_add = 5 }
 			bos_change_tension = yes
 			unlock_decision_tooltip = increase_tension
+			set_temp_variable = { BOS_maximum_admin_centers_allowed_to_add = 1 }
+			bos_add_administration_center_max = yes								  
 		}
 	}
 	focus = {
@@ -2922,6 +2942,8 @@ focus_tree = {
 			}
 			set_temp_variable = { BOS_tension_to_add = 10 }
 			bos_change_tension = yes
+			add_war_support = 0.025			  
+			add_command_power = 25			 
 		}
 	}
 
@@ -2945,6 +2967,7 @@ focus_tree = {
 			}
 			set_temp_variable = { BOS_tension_to_add = 20 }
 			bos_change_tension = yes
+			add_political_power = 100			   
 		}
 	}
 	focus = {
@@ -2963,7 +2986,7 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = ballistic_equipment_3
-				amount = 500
+				amount = 1000
 				producer = USA
 			}
 			set_temp_variable = { BOS_tension_to_add = 20 }
@@ -4403,7 +4426,7 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 10
-			add_command_power = 50			 
+			add_command_power = 50
 		}
 	}
 
@@ -4441,13 +4464,13 @@ focus_tree = {
 			}
 			
 			357 = {
-				add_core_of = BOS	 
+				add_core_of = BOS
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
 				bos_add_to_bunker_array = yes
 			}
-			add_offsite_building = { type = industrial_complex level = 1 }													 
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -4484,13 +4507,13 @@ focus_tree = {
 			}
 			add_manpower = -250
 			602 = {
-				add_core_of = BOS	 
+				add_core_of = BOS
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
 				bos_add_to_bunker_array = yes
 			}
-			add_offsite_building = { type = industrial_complex level = 1 }													 
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -4513,8 +4536,15 @@ focus_tree = {
 				name = bos_nf_reclaiming_destroyed_bunkers
 				bonus = 0.25
 				uses = 1
-				category = industry
+				category = construction_category
 			}
+			add_tech_bonus = {
+				name = bos_nf_reclaiming_destroyed_bunkers
+				bonus = 0.25
+				uses = 1
+				category = habitation_category
+			}
+			add_political_power = 25
 		}
 	}
 
@@ -4551,13 +4581,13 @@ focus_tree = {
 				}
 			}
 			606 = {
-				add_core_of = BOS	 
+				add_core_of = BOS
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
 				bos_add_to_bunker_array = yes
 			}
-			add_offsite_building = { type = arms_factory level = 1 }													 
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
@@ -4594,13 +4624,13 @@ focus_tree = {
 			}
 			add_manpower = -250
 			558 = {
-				add_core_of = BOS	 
+				add_core_of = BOS
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
 				bos_add_to_bunker_array = yes
 			}
-			add_offsite_building = { type = arms_factory level = 1 }													 
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 	focus = {
@@ -4636,13 +4666,13 @@ focus_tree = {
 			}
 			add_manpower = -250
 			312 = {
-				add_core_of = BOS	 
+				add_core_of = BOS
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
 				bos_add_to_bunker_array = yes
 			}
-			add_offsite_building = { type = arms_factory level = 1 }													 
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 
@@ -4679,13 +4709,13 @@ focus_tree = {
 				}
 			}
 			433 = {
-				add_core_of = BOS	 
+				add_core_of = BOS
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
 				bos_add_to_bunker_array = yes
 			}
-			add_offsite_building = { type = arms_factory level = 1 }													 
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
 	# focus = {
@@ -4753,7 +4783,7 @@ focus_tree = {
 					expire="3000.01.01.01"
 				}
 			}
-			add_political_power = 50				   
+			add_political_power = 50
 		}
 	}
 
@@ -4864,7 +4894,7 @@ focus_tree = {
 			swap_ruler_traits = {
 				remove = bos_maxson_heritage
 				add = bos_a_true_maxson
-			}				
+			}
 		}
 	}
 
@@ -4916,10 +4946,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
-			add_war_support = 0.05			 
+			add_war_support = 0.05
 		}
 	}
-
 	focus = {
 		id = bos_nf_call_out_poor_military_strategy
 		icon = GFX_KHA_focus_planning
@@ -4939,13 +4968,14 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_memories_of_the_fallen
-				bonus = 0.5
+				bonus = 1.5
 				uses = 1
 				category = cat_land_doctrine
 				# category = spec_force_doctrine_category
+			}
 			add_political_power = -100
 			army_experience = 20
-			}
+			
 		}
 	}
 	focus = {
@@ -4962,7 +4992,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
-			add_stability = 0.025			
+			add_stability = 0.025
 		}
 	}
 
@@ -5011,7 +5041,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
-			army_experience = 15
+			army_experience = 20
 		}
 	}
 
@@ -5070,8 +5100,14 @@ focus_tree = {
 		relative_position_id = bos_nf_our_right
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_salvaged_metal
+				bonus = 0.75
+				uses = 1
+				category = foundry_tech_category
+			}
 			capital_scope = {
-				add_resource = { type = metal amount = 6 }
+				add_resource = { type = metal amount = 4 }
 			}
 		}
 	}
@@ -5089,6 +5125,12 @@ focus_tree = {
 		relative_position_id = bos_nf_our_right
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_increase_power_production
+				bonus = 0.75
+				uses = 1
+				category = power_station_tech_category
+			}
 			capital_scope = {
 				add_resource = { type = energy amount = 4 }
 			}
@@ -5107,6 +5149,12 @@ focus_tree = {
 		relative_position_id = bos_nf_our_right
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = bos_nf_salvaged_electronics
+				bonus = 0.75
+				uses = 1
+				category = fabrication_laboratory_tech_category
+			}
 			capital_scope = {
 				add_resource = { type = circuitry amount = 4 }
 			}
@@ -5157,7 +5205,7 @@ focus_tree = {
 
 	focus = {
 		id = bos_nf_arm_foundries
-		text = shared_bos_arm_foundries
+		text = bos_nf_scavenging_program
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 30
 		prerequisite = {
@@ -5175,6 +5223,8 @@ focus_tree = {
 			bos_add_underground_construction_slots = yes
 			clr_country_flag = scavenging_disabled ##Don't like regular scavenging given my other changes.
 			unlock_decision_tooltip = begin_scavenging_program
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
 		}
 	}
 	focus = {
@@ -5681,7 +5731,7 @@ focus_tree = {
 
 		completion_reward = {
 			157 = {
-					add_building_construction = {
+				add_building_construction = {
 						type = industrial_complex
 						level = 2
 						instant_build = yes
@@ -5712,10 +5762,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			army_experience = 15
+			army_experience = 20
 			add_popularity = {
 				ideology = elites
-				popularity = 0.03
+				popularity = 0.04
 			}
 			custom_effect_tooltip = bos_unlock_scavenging_decisions
 		}
@@ -5768,7 +5818,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = energy_equipment_1
+				type = energy_equipment_2
 				amount = 150
 				producer = USA
 			}
@@ -5790,7 +5840,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = energy_equipment_2
+				type = energy_equipment_3
 				amount = 150
 				producer = USA
 			}
@@ -5815,7 +5865,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = energy_fireteam_equipment_3
+				type = energy_fireteam_equipment_4
 				amount = 100
 				producer = USA
 			}
@@ -6035,7 +6085,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = light_motorized_equipment_2
+				type = light_motorized_equipment_3
 				amount = 150
 				producer = USA
 			}
@@ -6133,8 +6183,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			set_temp_variable = { refugees_to_add = 500 }
+			set_temp_variable = { refugees_to_add = 1000 }
 			exodus_add_refugees = yes
+			add_political_power = 50			   
 		}
 	}
 
@@ -6511,6 +6562,7 @@ focus_tree = {
 				}
 				create_map_node = yes
 			}
+			add_political_power = 100
 		}
 	}
 
@@ -6528,6 +6580,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 200
+			set_temp_variable = { BOS_maximum_admin_centers_allowed_to_add = 1 }
+			bos_add_administration_center_max = yes															   
 		}
 		ai_will_do = {
 			base = 8
@@ -6658,6 +6712,13 @@ focus_tree = {
 			unlock_decision_tooltip = BOS_ban_intellectuals
 			unlock_decision_tooltip = BOS_ban_people
 		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				add = 0.5
+				date > 2280.01.01
+			}
+		}		
 	}
 	focus = {
 		id = bos_nf_advanced_political_schema
@@ -7335,7 +7396,7 @@ focus_tree = {
 					country_event = nf_brotherhood_communications.1
 				}
 			}
-			add_political_power = 10			   
+			add_political_power = 10
 		}
 		ai_will_do = {
 			base = 5
@@ -7494,7 +7555,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			base = 0.5
-		}			
+		}
 	}
 
 	focus = {
@@ -7641,7 +7702,7 @@ focus_tree = {
 					is_ai = no
 				}
 			}
-		}		
+		}
 	}
 	focus = {
 		id = bos_nf_moj_elijahs_downfall
@@ -7725,7 +7786,7 @@ focus_tree = {
 					set_nationality = BOS # target country
 				}
 			}
-			add_command_power = 25			 
+			add_command_power = 25
 		}
 	}
 	focus = {
@@ -7947,7 +8008,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			base = 3
-		}				   
+		}
 	}
 	focus = {
 		id = bos_nf_eastern_legionary_tactical_data
@@ -8098,7 +8159,7 @@ focus_tree = {
 					}
 				}
 			}
-		}																																	  
+		}
 	}
 	focus = {
 		id = bos_nf_victory_over_machines
@@ -8191,7 +8252,7 @@ focus_tree = {
 			}
 			BMW = {
 				country_event = nf_brotherhood_communications.1
-			}						   
+			}
 			add_political_power = 10
 		}
 		# For when BMW is implemented as a playable nation
@@ -8265,7 +8326,7 @@ focus_tree = {
 		# 			is_ai = no
 		# 		}
 		# 	}
-		# }											
+		# }
 	}
 	focus = {
 		id = bos_nf_bmw_midwest_enclave_tactical_experience
@@ -8289,7 +8350,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			base = 0.5
-		}		
+		}
 				
 			 
 	}

@@ -911,7 +911,7 @@ bos_underground_construction_decisions = {
 	bos_underground_construction_boost_decision = {
 		icon = GFX_decision_wrench
 		fire_only_once = no
-		days_remove = 100
+		days_remove = 120
 		custom_cost_trigger = {
 			command_power > 24
 		}
@@ -953,7 +953,7 @@ bos_underground_construction_decisions = {
 	bos_underground_production_boost_decision = {
 		icon = GFX_decision_hammer
 		fire_only_once = no
-		days_remove = 100
+		days_remove = 120
 		custom_cost_trigger = {
 			command_power > 24
 		}
@@ -995,7 +995,7 @@ bos_underground_construction_decisions = {
 	bos_underground_research_boost_decision = {
 		icon = GFX_decision_category_research
 		fire_only_once = no
-		days_remove = 100
+		days_remove = 120
 		custom_cost_trigger = {
 			command_power > 24
 		}
@@ -1037,7 +1037,7 @@ bos_underground_construction_decisions = {
 	bos_underground_pp_boost_decision = {
 		icon = GFX_decision_intercom
 		fire_only_once = no
-		days_remove = 100
+		days_remove = 120
 		custom_cost_trigger = {
 			command_power > 24
 		}
@@ -1079,7 +1079,7 @@ bos_underground_construction_decisions = {
 	bos_underground_infantry_boost_decision = {
 		icon = GFX_decision_armor
 		fire_only_once = yes
-		days_remove = 90
+		days_remove = 120
 		custom_cost_trigger = {
 			has_army_experience > 9
 		}
@@ -1134,7 +1134,7 @@ bos_underground_construction_decisions = {
 	bos_underground_power_armour_boost_decision = {
 		icon = GFX_decision_t51_vb_armor
 		fire_only_once = yes
-		days_remove = 90
+		days_remove = 120
 		custom_cost_trigger = {
 			has_army_experience > 9
 		}
@@ -3248,7 +3248,7 @@ bos_lost_hills_diplomacy = {
 	people_seek_cooperation_with_the_ncr = {
 		icon = GFX_decision_papers
 		fire_only_once = no
-		cost = 400
+		cost = 300
 		allowed = {
 			original_tag = BOS
 		}

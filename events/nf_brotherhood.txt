@@ -8,6 +8,7 @@ add_namespace = nf_brotherhood_off_map_chapter_logic
 add_namespace = nf_brotherhood_council_politics
 add_namespace = nf_brotherhood_steel_rangers
 add_namespace = nf_brotherhood_integrate_guardians
+add_namespace = nf_brotherhood_hidden
 add_namespace = nf_brotherhood_bunkered_divisions
 add_namespace = nf_brotherhood_expeditions
 add_namespace = nf_brotherhood_elh_events
@@ -133,7 +134,15 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_history.7.a
-
+		effect_tooltip = {
+			country_event = nf_brotherhood_history.9
+		}
+		hidden_effect = {
+			country_event = {
+				id = nf_brotherhood_hidden.1
+				days = 7
+			}
+		}
 	}
 }
 
@@ -148,7 +157,10 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_history.8.a
-		add_ideas = scribecouncil
+		swap_ideas = {
+			remove_idea = scribecouncil
+			add_idea = scribecouncil_2
+		}
 		set_technology = { knights_unlock_tech = 1 }
 	}
 }
@@ -164,10 +176,19 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_history.9.a
+		add_ideas = scribecouncil
 		set_technology = { scribes_unlock_tech = 1 }
+		effect_tooltip = {
+			country_event = nf_brotherhood_history.8
+		}
+		hidden_effect = {
+			country_event = {
+				id = nf_brotherhood_hidden.2
+				days = 7
+			}
+		}
 	}
 }
-
 country_event = {
 	id = nf_brotherhood_off_map_chapter_logic.1
 	title = nf_brotherhood_off_map_chapter_logic.1.t
@@ -2736,7 +2757,18 @@ country_event = {
 				remove_core_of = BOS		
 			}
 		}
-		create_or_join_new_california = yes							 
+		if = {
+			limit = {
+				new_california_exists = yes
+			}
+			create_or_join_new_california = yes
+		}
+		else_if = {
+			limit = {
+				dharma_way_exists = yes		
+			}
+			create_or_join_dharma_way = yes
+		}					 
 		news_event = nf_brotherhood_steel_rangers.4
 		hidden_effect = { ##it's overidden from the history file sadly, so secretly fixed here.
 			set_technology = {
@@ -2937,6 +2969,7 @@ country_event = {
 				set_cosmetic_tag = GRD_brotherhood
 			}
 		}
+		add_political_power = 25					  
 	}
 }
 
@@ -2956,6 +2989,23 @@ country_event = {
 				bos_remove_from_ledger = yes
 			}
 		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_hidden.1
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		complete_national_focus = bos_nf_the_scribes
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_hidden.2
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		complete_national_focus = bos_nf_the_knights
 	}
 }
 #Deploy Bunkered Divisions
