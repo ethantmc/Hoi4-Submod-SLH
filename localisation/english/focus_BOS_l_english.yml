@@ -305,10 +305,40 @@
   bos_nf_power_brokers_the_hub_desc: "California was transforming. Our war interrupted industrialization efforts of the NCR, and the Hub's merchants particularly made out like bandits. Conflict quickly shuttered the factories of the Hub, leading to the merchants turning their government funds to criminal activity."
   bos_nf_power_brokers_the_barons: "The Barons"
   bos_nf_power_brokers_the_barons_desc: "President Kimball is responsible for the Barons, a agricultural and livestock capitalists who've conglomerated much of the NCR's food supply. Kimball abolished limits on cattleheads per rancher, and every year since the Barons have become more politically influential."
-  bos_nf_power_brokers: "The Power Brokers"
-  bos_nf_power_brokers_desc: "The NCR had many strong factions that distorted their ability to govern. Many worked against us during the resistance campaigns, and were thought to be broken. Their prominence demands action, but perhaps they could speed up reconstruction?"
-  bos_nf_power_brokers: "The Power Brokers"
-  bos_nf_power_brokers_desc: "The NCR had many strong factions that distorted their ability to govern. Many worked against us during the resistance campaigns, and were thought to be broken. Their prominence demands action, but perhaps they could speed up reconstruction?"  
+  bos_nf_power_brokers_the_arms_dealers: "The Arms Dealers"
+  bos_nf_power_brokers_the_arms_dealers_desc: "The NCR was laden down by interest groups like the Gun Runners and Van Graffs, inexorably destroying the federal government. They collected power we now have to deal with. Breaking them is doable, but with the enemies we face, can we afford to?"
+  bos_nf_power_brokers_the_legacy_government: "The Legacy Government"
+  bos_nf_power_brokers_the_legacy_government_desc: "Overnight, we've replaced the NCR's democracy with our own system. That leaves thousands of disgruntled individuals with reason to sow division and sabotage our government. We must address this thoroughly."  
+  
+  bos_nf_the_californian_food_crisis: "The Californian Food Crisis"
+  bos_nf_the_californian_food_crisis_desc: "War never changes. The steel and fire we rained down across California poisoned more than the soil - it poisoned the minds of a nation we're here to save from the mistakes of the Old World. With the resistance of the NCR's power brokers, there won't be enough food this winter."
+  ####CALIFORNIA FOOD CRISIS DECISIONS
+  stronger_lost_hills_ncr_occupation_famine: "Californian Food Crisis"
+  stronger_lost_hills_ncr_occupation_famine_desc: "With every step we took into Baron lands, we found burned crops and slaughtered breeding stock. The Barons saw defeat on the horizon, and engineered a delayed famine - one that would rear its head only as we ascended the steps of Shady Sands. The Barons are content to rule over the embers of the NCR, and if not for Southern California's independent agriculture, we'd have no choice but to watch it burn. \n\nInstead, with the independent farmers of Southern California, we're cracking open their grain silos and stockpiles. With careful rationing, we can end this famine before it's too late. \n\nFamine Status: [?slh_famine_progress]"
+  
+  bos_ncr_famine_delay: "Extra Hands for the Farms"
+  bos_ncr_famine_delay_desc: "Now that we control California, there's no shortage of people or work to be done. By redirecting the unemployed to independent farms across California, we can make them just a little more productive. It won't solve the crisis, but it'll buy us more time. §YWe can only do this once.§!"
+  
+  bos_ncr_famine_evaluate_food_reserves: "Evaluate Food Reserves"
+  bos_ncr_famine_evaluate_food_reserves_desc: "Performing an audit of our food reserves requires the skills of our scribes. It is almost certain that food reserves are being under-reported out of fear, corruption, or negligence. §YWe can only do this once.§!"
+  
+  bos_ncr_famine_abatement: "Bribe a Baron"
+  bos_ncr_famine_abatement_desc: "The Barons are not above bribery. If we're truly desperate for time, we can bribe them to reveal hiddren breeding stock or grain stores, one at a time. Working to erode their unity like this won't end the famine, but it's a §Yreliable and repeatable§! way to get more time."
+
+  bos_ncr_famine_distribute_advanced_tech_1: "Introduce Industrial Fertilizers"
+  bos_ncr_famine_distribute_advanced_tech_1_desc: "To end the ongoing famine, we need our productive lands to reliably produce greater harvests. Thanks to the work of our Scribes, we have developed Old-World style industrial fertilizers that are effective in our new climate. By prioritizing the introduction of this fertilizer to Southern California, we can get meaningfully closer to ending the famine."
+  bos_ncr_famine_distribute_advanced_tech_2: "Give Away Automated Harvesters"
+  bos_ncr_famine_distribute_advanced_tech_2_desc: "Our scribes have developed automated harvesting robotics seen in distant places by our Paladins. These robotics maximize the health and yield of crops by providing high quality precipitation, soil remediation, and protection from wasteland creatures from the tiny locust to the radroach. While all of California will benefit from this, we'll be focusing on the underpopulated frontiers - the greatest impact is made by delivering there, where land waiting for more hands will now be put to use without them."
+  bos_ncr_famine_distribute_advanced_tech_3: "Distribute Genetically Modified Seeds"
+  bos_ncr_famine_distribute_advanced_tech_3_desc: "Genetically modified seeds are the pinnacle of agricultural science. While some of our urban centers balk at the idea, modified crops can feed more people, with higher quality food. Most farming areas in California have a 'margin', an area around their farmland that is too poor to be farmed reliably, that they work to improve each year. Due to the cost of a failed crop, these lands are almost never planted. By focusing on producing seeds that thrive in the margin, we could see double digit increases in agricultural productivity."
+  
+  bos_ncr_famine_ask_the_followers: "Ask the Followers of the Apocalypse for Help"
+  bos_ncr_famine_ask_the_followers_desc: "The Followers have an integrated community presence all across California. We've already invited them back into their community centres, and doubtlessly they work to abate the famine without an order from us. However, by partnering with them, we could get a much better idea of where aid is needed most, as many Californians first stop is not a Brotherhood Elder, but a Follower. \n\nIn addition, there's simply far more demand on our knowledgeable Scribes than we can handle, and ferrying Follower experts across California will prevent the failure of many crops this year. Relying on them in this way however will give them a §Ygreat deal of influence§!, and will strengthen them politically."
+  
+  bos_ncr_famine_raid_the_followers: "Raid Follower Community Centers"
+  bos_ncr_famine_raid_the_followers_desc: "The Followers have gone to ground with our conquest of the NCR. Many hide in follower 'forts' and buildings across California, with stockpiles of aid - industrial materials, medical supplies, food, and seeds. If we don't want to legitimize these pacifists, we can seize these materials for our own efforts. This won't win us any friends amongst their supporters, but making their lands productive community farms will limit the damage, and combined with the careful deployment of these new supplies, will step us toward ending the famine. Raiding them like this will, however, §Rprevent us from working with them in the future.§!"
+  famine_mission_followers_raided_completed: "Has raided follower forts across California to quell a famine."
+  ####END CALIFORNIA FOOD CRISIS DECISIONS
   bos_nf_preparing_for_expansion: "Future, Attained"
   bos_nf_preparing_for_expansion_desc: "The Brotherhood's future is now in our hands, the elders will have to come together to discuss how exactly we proceed. Do we try to integrate more of our bordering territory, with the end goal of trying to reach other chapters fully — or do we try to bunker up and hold California in the hopes that other chapters will eventually reach us in time?"
   bos_nf_utilizing_californias_industry: "Utilizing California's Industry"
@@ -969,7 +999,7 @@
   bos_delayed_scribes_large: "Scribes Very Delayed"
   
   nf_brotherhood_expeditions.1.t: "The Village"
-  nf_brotherhood_expeditions.1.d: "On the outskirts of Vault City is what the Vaulters refer to as "The Village", independant by irrelevance more than anything else. On our original visit many years ago we eliminated the local molerat population — which we learned was their only deterrent against Vault City. Back then, the settlement's mayor pleaded with us to give them a fighting chance, prompting the expedition leader to leave them surplus weaponry. \n\nNow, the settlement has grown, sprouting walls and a meaningful population. The mayor was happy to let us rest here, and we learned that the molerats had mysteriously returned and are now a thorn in the side of The Village's residents. We suspect some technology is to blame, though perhaps they're just particularly unlucky. "
+  nf_brotherhood_expeditions.1.d: "On the outskirts of Vault City is what the Vaulters refer to as "The Village", independent by irrelevance more than anything else. On our original visit many years ago we eliminated the local molerat population — which we learned was their only deterrent against Vault City. Back then, the settlement's mayor pleaded with us to give them a fighting chance, prompting the expedition leader to leave them surplus weaponry. \n\nNow, the settlement has grown, sprouting walls and a meaningful population. The mayor was happy to let us rest here, and we learned that the molerats had mysteriously returned and are now a thorn in the side of The Village's residents. We suspect some technology is to blame, though perhaps they're just particularly unlucky. "
   nf_brotherhood_expeditions.1.a: "Eliminate all the molerats. Again."
   nf_brotherhood_expeditions.1.b: "These molerats demand further investigation!"
   nf_brotherhood_expeditions.1.c: "Found an outpost here - it'll benefit us both."

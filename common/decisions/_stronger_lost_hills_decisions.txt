@@ -4059,6 +4059,9 @@ followers_interaction = {
 	}
 } ##attempt to replicate the NCR-specific foci unlocking additional Follower interactions.
 stronger_lost_hills_ncr_occupation = {
+
+}
+stronger_lost_hills_ncr_occupation_famine = {
 	bos_ncr_incoming_famine = {
 		available = {
 			always = no
@@ -4215,7 +4218,7 @@ stronger_lost_hills_ncr_occupation = {
 			has_completed_focus = bos_nf_the_californian_food_crisis
 		}
 		fixed_random_seed = no
-		fire_only_once = yes
+		fire_only_once = no
 		days_remove = 60
 		cost = 30
 		cancel_trigger = {
@@ -4225,19 +4228,22 @@ stronger_lost_hills_ncr_occupation = {
 		
 		}
 		remove_effect = {
+			set_temp_variable = { caps_to_add = -45 }
+			add_caps = yes
 			set_temp_variable = { bos_famine_time = 30 }
 			bos_adjust_famine_time = yes
-			set_country_flag = famine_mission_desc_completed
+			#set_country_flag = famine_mission_desc_completed
 		}
 
 	}
-	bos_ncr_famine_distibute_advanced_tech_1 = {
+	bos_ncr_famine_distribute_advanced_tech_1 = {
 		available = {
 			OR = { 
 				has_idea = bos_ncr_terrible_famine
 				has_idea = bos_ncr_famine
 				has_idea = bos_ncr_looming_famine
 			}
+			bos_has_scribe_teams = yes
 			has_completed_focus = bos_nf_the_californian_food_crisis
 			has_tech = agriculture_industry_tech_5
 		}
@@ -4245,25 +4251,33 @@ stronger_lost_hills_ncr_occupation = {
 		fire_only_once = yes
 		days_remove = 60
 		cost = 30
-		cancel_trigger = {
-		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
-		
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
 		}
 		remove_effect = {
 			set_country_flag = famine_mission_advanced_tech_1_completed
+			bos_reduce_famine = yes
 			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
 		}
 
 	}
-	bos_ncr_famine_distibute_advanced_tech_2 = {
+	bos_ncr_famine_distribute_advanced_tech_2 = {
 		available = {
 			OR = { 
 				has_idea = bos_ncr_terrible_famine
 				has_idea = bos_ncr_famine
 				has_idea = bos_ncr_looming_famine
 			}
+			bos_has_scribe_teams = yes
 			has_completed_focus = bos_nf_the_californian_food_crisis
 			has_tech = agriculture_industry_tech_6
 		}
@@ -4275,21 +4289,31 @@ stronger_lost_hills_ncr_occupation = {
 		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
-		
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
 		}
 		remove_effect = {
 			set_country_flag = famine_mission_advanced_tech_2_completed
+			bos_reduce_famine = yes
 			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
 		}
 
 	}
-	bos_ncr_famine_distibute_advanced_tech_3 = {
+	bos_ncr_famine_distribute_advanced_tech_3 = {
 		available = {
 			OR = { 
 				has_idea = bos_ncr_terrible_famine
 				has_idea = bos_ncr_famine
 				has_idea = bos_ncr_looming_famine
 			}
+			bos_has_scribe_teams = yes
 			has_completed_focus = bos_nf_the_californian_food_crisis
 			has_tech = agriculture_industry_tech_7
 			
@@ -4302,11 +4326,20 @@ stronger_lost_hills_ncr_occupation = {
 		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
-		
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
 		}
 		remove_effect = {
 			set_country_flag = famine_mission_advanced_tech_3_completed
+			bos_reduce_famine = yes
 			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
 		}
 
 	}
@@ -4318,7 +4351,7 @@ stronger_lost_hills_ncr_occupation = {
 				has_idea = bos_ncr_looming_famine
 			}
 			has_completed_focus = bos_nf_the_californian_food_crisis
-			
+			has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
 		}
 		fixed_random_seed = no
 		fire_only_once = yes
@@ -4332,9 +4365,53 @@ stronger_lost_hills_ncr_occupation = {
 		}
 		remove_effect = {
 			set_country_flag = famine_mission_followers_help_completed
+			bos_reduce_famine = yes
 			custom_effect_tooltip = bos_this_fixes_famine_tt
 			complete_effect = {
 				increase_followers_influence_10 = yes
+			}
+		}
+
+	}
+	bos_ncr_famine_raid_the_followers = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			NOT = {
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+			}
+			BOS_has_2_available_paladins = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = -2
+					tooltip = paladin_math_tooltip
+				}
+			}
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_followers_raided_completed
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			bos_reduce_famine = yes
+			complete_effect = {
+				add_to_variable = {
+					var = BOS_paladins_ready
+					value = +2
+					tooltip = paladin_math_tooltip
+				}
 			}
 		}
 

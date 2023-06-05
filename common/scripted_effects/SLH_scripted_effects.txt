@@ -490,3 +490,9 @@ bos_adjust_famine_time = {
 		}
 	}
 }
+bos_reduce_famine = {
+	add_to_variable = {
+		var = slh_famine_progress
+		value = +1
+	}
+}

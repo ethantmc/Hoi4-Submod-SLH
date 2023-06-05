@@ -3345,6 +3345,7 @@ focus_tree = {
 				}
 				remove_ideas = {bos_troikan_occupation}
 			}
+			set_variable = { slh_famine_progress = 0 }
 		}
 	}
 
@@ -3685,6 +3686,9 @@ focus_tree = {
 					ruler > 0.4
 					people > 0.2
 				}
+			}
+			NOT = {
+				has_country_flag = famine_mission_followers_raided_completed
 			}
 		}
 		completion_reward = {
