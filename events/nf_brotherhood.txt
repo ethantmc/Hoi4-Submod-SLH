@@ -4866,6 +4866,23 @@ country_event = {
 	}
 
 }
+country_event = { ##TODO - EFFECTS
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.11" }
+	id = nf_brotherhood_elh_events.12
+	title = nf_brotherhood_elh_events.12.t #Prestige Project
+	desc = nf_brotherhood_elh_events.12.d #Barons all across California burn grain and slaughter livestock.
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_elh_events.12.a #This is not good.
+		ai_chance = {
+			base = 20
+		}
+	}
+
+}
 
 ##EXPEDITIONS ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event, so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
 #The Village

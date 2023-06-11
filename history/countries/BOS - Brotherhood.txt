@@ -55,6 +55,9 @@ set_variable = {
 set_variable = {
 	bos_slh_volunterr_func_positive = 1
 }
+set_variable = {
+	bos_slh_supply_node_range = 0 ##Used to modify by a focus in Economic Projects.
+}
 capital = 157
 oob = "BOS_2275"
 

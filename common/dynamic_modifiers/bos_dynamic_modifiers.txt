@@ -31,7 +31,8 @@ bos_lost_hills_logistics = {
 	out_of_supply_factor = bos_slh_volunterr_func_negative
 	supply_consumption_factor = bos_slh_volunterr_func_negative
 	supply_factor = bos_slh_volunteer_func_positive
-	unit_upkeep_attrition_factor = bos_slh_volunterr_func_negative				  
+	unit_upkeep_attrition_factor = bos_slh_volunterr_func_negative
+	supply_node_range = bos_slh_supply_node_range
 	#Nerfs the -air damage they get, in relation to other chapters.
 	industry_air_damage_factor = -0.25
 	foreign_subversive_activites = -0.25

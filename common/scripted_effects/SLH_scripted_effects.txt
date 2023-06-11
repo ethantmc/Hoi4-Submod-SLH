@@ -464,28 +464,28 @@ bos_troikan_only_troika_buff_effect = {
 bos_adjust_famine_time = {
 	if = {
 		limit = {
-			has_active_mission = bos_ncr_looming_famine
+			has_active_mission = bos_ncr_incoming_famine
 		}
 		add_days_mission_timeout = {
-			mission = bos_ncr_looming_famine
+			mission = bos_ncr_incoming_famine
 			days = bos_famine_time
 		}
 	}
 	else_if = {
 		limit = {
-			has_active_mission = bos_ncr_famine
+			has_active_mission = bos_ncr_famine_active
 		}
 		add_days_mission_timeout = {
-			mission = bos_ncr_looming_famine
+			mission = bos_ncr_famine_active
 			days = bos_famine_time
 		}
 	}
 	else_if = {
 		limit = {
-			has_active_mission = bos_ncr_terrible_famine
+			has_active_mission = bos_ncr_terrible_famine_active
 		}
 		add_days_mission_timeout = {
-			mission = bos_ncr_looming_famine
+			mission = bos_ncr_terrible_famine_active
 			days = bos_famine_time
 		}
 	}
