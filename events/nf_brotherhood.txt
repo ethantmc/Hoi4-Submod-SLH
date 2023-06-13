@@ -6077,7 +6077,7 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_expeditions.1103.b #with time, we could soften their evil.
-		unlock_national_focus = bos_nf_integrating_wbh
+		complete_national_focus = bos_nf_integrating_wbh
 		add_political_power = -50
 		country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
 		activate_mission = bos_delayed_expedition2_large
@@ -6096,7 +6096,7 @@ country_event = {
 		WBH = {
 			country_event = nf_brotherhood_expeditions.11010
 		}
-		unlock_national_focus = bos_nf_integrating_wbh
+		complete_national_focus = bos_nf_integrating_wbh
 		country_event = {
 			id = nf_brotherhood_expeditions.1105 
 			days = 60 ##75 days in after this.
@@ -6123,7 +6123,7 @@ country_event = {
 		effect_tooltip = { ##Note that there's some kind of bug in this option that prevents others after it from being read. It's not a bracket. 
 			random_list = {
 				40 = {
-					unlock_national_focus = bos_nf_integrating_wbh
+					complete_national_focus = bos_nf_integrating_wbh
 					country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
 					activate_mission = bos_delayed_expedition2_large
 					activate_mission = bos_delayed_scribes_large
@@ -6152,7 +6152,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.1104.a
 		country_event = {id = nf_brotherhood_expeditions.1105 days = 60}
-		unlock_national_focus = bos_nf_integrating_wbh
+		complete_national_focus = bos_nf_integrating_wbh
 		activate_mission = bos_delayed_expedition2_large
 		activate_mission = bos_delayed_scribes_large
 	}
@@ -6269,7 +6269,7 @@ country_event = {
 		name = nf_brotherhood_expeditions.1109.a #We will make some token gestures.
 		add_ideas = bos_wbh_token_reforms
 		BOS = {
-			unlock_national_focus = bos_nf_integrating_wbh
+			complete_national_focus = bos_nf_integrating_wbh
 			country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
 			activate_mission = bos_delayed_expedition2_large
 			activate_mission = bos_delayed_scribes_large
