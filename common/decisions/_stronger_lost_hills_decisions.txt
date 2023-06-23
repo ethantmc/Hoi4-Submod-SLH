@@ -4059,25 +4059,118 @@ followers_interaction = {
 	}
 } ##attempt to replicate the NCR-specific foci unlocking additional Follower interactions.
 stronger_lost_hills_ncr_occupation = {
-
+	bos_ncr_hayes_plan = {
+		visible = {
+			has_country_flag = hayes_cooperation
+			is_debug = yes
+		}
+		available = {
+			has_country_flag = hayes_cooperation
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		cost = 100
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_3_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_ideas = militindustrial_good
+			63 = {
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.5
+					}
+				}
+			}
+		}
+	}
+	bos_ncr_allgood_environment_plan = {
+		visible = {
+			has_country_flag = allgood_cooperation
+			is_debug = yes
+		}
+		available = {
+			has_country_flag = allgood_cooperation
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		cost = 50
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			effect_tooltip = {
+				add_ideas = NCR_ERA
+			}
+			news_event = nf_brotherhood_elh_events.14
+		}
+	}
 }
 stronger_lost_hills_ncr_occupation_famine = {
 	bos_ncr_incoming_famine = {
-		available = {
-			always = no
+		activation = {
+			tag = bos
+			always = no ##done by event
 		}
 		fire_only_once = yes
-		is_triggered_only = yes
+		available = {
+			count_triggers = {
+			amount > 4
+				has_country_flag = reformers_reconstruction
+				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
+				has_country_flag = barons_dealt_with 
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+				has_completed_focus = bos_nf_high_elder_llwyd_old_management
+				has_tech = agriculture_industry_tech_5
+				has_tech = agriculture_industry_tech_6
+				has_tech = agriculture_industry_tech_7
+			}
+		}
+		#is_triggered_only = yes
 		cancel_trigger = {
 		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		is_good = no
 		days_mission_timeout = 120
 		complete_effect = {
-			add_ideas = bos_ncr_looming_famine
+			remove_ideas = bos_ncr_looming_famine
 		}
 		timeout_effect = {
 			add_ideas = bos_ncr_famine
+			##TODO: Reduce compliance in all non-cored NCR states by 25%.
+			every_owned_state = {
+				limit = {
+					is_core_of = NCR
+					NOT = { is_core_of = BOS }
+				}
+				if = {
+					limit = { has_country_flag = allgood_famine_protection}
+					add_compliance = -0.15
+				}
+				else_if = {
+					limit = { has_country_flag = kimball_famine_protection}
+					add_compliance = -0.10
+				}
+				else_if = {
+					limit = { has_country_flag = hayes_famine_protection} ##Hayes and Allgood provide the same protection at the moment.
+					add_compliance = -0.15
+				}
+				else = {
+					add_compliance = -0.25
+				}
+			}
+			set_country_flag = bos_proper_famine_occured
 		}
 	}
 	bos_ncr_famine_active = {
@@ -4124,7 +4217,7 @@ stronger_lost_hills_ncr_occupation_famine = {
 		fire_only_once = yes
 		available = {
 			count_triggers = {
-			amount > 6
+			amount > 4
 				has_country_flag = reformers_reconstruction
 				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
 				has_country_flag = barons_dealt_with 
@@ -4324,12 +4417,10 @@ stronger_lost_hills_ncr_occupation_famine = {
 		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
-			complete_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = -2
-					tooltip = paladin_math_tooltip
-				}
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -2
+				tooltip = paladin_math_tooltip
 			}
 		}
 		remove_effect = {
@@ -4459,7 +4550,10 @@ stronger_lost_hills_ncr_occupation_famine = {
 				has_idea = bos_ncr_looming_famine
 			}
 			has_completed_focus = bos_nf_the_californian_food_crisis
+			OR = {
 			has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+			has_country_flag = allgood_cooperation
+			}
 		}
 		fixed_random_seed = no
 		fire_only_once = yes
@@ -4475,9 +4569,7 @@ stronger_lost_hills_ncr_occupation_famine = {
 			set_country_flag = famine_mission_followers_help_completed
 			bos_reduce_famine = yes
 			custom_effect_tooltip = bos_this_fixes_famine_tt
-			complete_effect = {
-				increase_followers_influence_10 = yes
-			}
+			increase_followers_influence_10 = yes
 		}
 
 	}
@@ -4491,6 +4583,7 @@ stronger_lost_hills_ncr_occupation_famine = {
 			has_completed_focus = bos_nf_the_californian_food_crisis
 			NOT = {
 				has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+				has_country_flag = allgood_cooperation
 			}
 			BOS_has_2_available_paladins = yes
 		}
@@ -4502,24 +4595,20 @@ stronger_lost_hills_ncr_occupation_famine = {
 		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
-			complete_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = -2
-					tooltip = paladin_math_tooltip
-				}
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -2
+				tooltip = paladin_math_tooltip
 			}
 		}
 		remove_effect = {
 			set_country_flag = famine_mission_followers_raided_completed
 			custom_effect_tooltip = bos_this_fixes_famine_tt
 			bos_reduce_famine = yes
-			complete_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = +2
-					tooltip = paladin_math_tooltip
-				}
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
 			}
 		}
 

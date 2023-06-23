@@ -358,6 +358,11 @@ recruit_character = BOS_advisor_contest_26
 recruit_character = BOS_advisor_contest_27
 recruit_character = BOS_advisor_contest_28
 
+recruit_character = BOS_allgood
+recruit_character = BOS_aaron_kimball
+recruit_character = BOS_hayes
+recruit_character = BOS_ignacio
+
 # BOS lacks the necessary factories to assign one to every equipment their divisions will need at first. This helps give a slight buffer to them.
 add_equipment_to_stockpile = {
 	type = energy_equipment_1

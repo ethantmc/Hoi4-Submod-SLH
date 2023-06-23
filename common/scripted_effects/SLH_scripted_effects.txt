@@ -368,11 +368,11 @@ bos_troikan_loyalist_buff_effect = {
 		}
 		if = {
 			limit = {
-				THIS.id = BOS
+				tag = BOS
 			}
 			country_event = nf_brotherhood_elh_events.703
 		}
-		else {
+		else = {
 			country_event = nf_brotherhood_elh_events.701
 		}
 		every_army_leader = {

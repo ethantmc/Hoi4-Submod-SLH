@@ -1462,6 +1462,19 @@ ideas = {
 				production_speed_air_base_factor = -0.8
 			}
 		}
+		bos_lyons_model = {
+
+			picture = FRA_fortification_focus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+			}
+		}
 
 		bos_bound_by_code_idea = {
 			picture = generic_infantry_bonus

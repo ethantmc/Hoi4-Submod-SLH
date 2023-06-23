@@ -3508,7 +3508,7 @@ country_event = {
 						NOT = {has_country_flag = no_more_notifications_foreign_301}
 					}
 					BOS = {
-						country_event = nf_brotherhood_foreign_assiatnce.301
+						country_event = nf_brotherhood_foreign_assistance.301
 					}
 				}
 			}
@@ -4147,6 +4147,22 @@ country_event = {
 	}
 }
 country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.301" }
+	id = nf_brotherhood_elh_events.301 
+	title = nf_brotherhood_elh_events.301.t
+	desc = nf_brotherhood_elh_events.301.d
+	picture = GFX_event_followers_medicine
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.301.a #TODO, SET FLAGS FOR NCR'S EXTRA FOLLOWER STUFF FOR BOS
+		set_country_flag = ignacio_cooperation
+		ai_chance = {
+			base = 13
+		}
+	}
+}
+country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.4" }
 	id = nf_brotherhood_elh_events.4 
 	title = nf_brotherhood_elh_events.4.t #Reorganizing Our Economy
@@ -4664,7 +4680,7 @@ country_event = {
 country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10" }
 	id = nf_brotherhood_elh_events.10
-	title = nf_brotherhood_elh_events.10.t #The Barons
+	title = nf_brotherhood_elh_events.10.t #The Hub: Rich and Powerful
 	desc = nf_brotherhood_elh_events.10.d #Merchants turned criminal have made the Hub even more problematic than in the NCR's time.
 	picture = GFX_event_sub_generic_war_room
 	is_triggered_only = yes
@@ -4672,7 +4688,7 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_elh_events.10.a #Broker a deal to minimize violence.
-		trigger = { NOT = { has_government = intellectuals}} # Not Available Under This Condition
+		trigger = { NOT = { has_government = intellectuals}} # Not Available to the Troika (They have a strictly better option)
 		set_temp_variable = { caps_to_add = 50 }
 		add_caps = yes
 		1 = { 
@@ -4777,12 +4793,13 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_elh_events.10.reformers #Get a better deal
-		# trigger = {
-			# OR = {
-				# has_government = people
-				# has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
-			# }
-		# }
+		trigger = {
+			OR = {
+				has_government = people
+				has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+				is_debug = yes
+			}
+		}
 		set_temp_variable = { caps_to_add = -150 }
 		add_caps = yes
 		1 = { ##literally just a slightly modified Hub Redevelopment Act focus, shh.
@@ -4810,13 +4827,14 @@ country_event = {
 		}
 	}
 	option = {
-		name = nf_brotherhood_elh_events.10.troika #Pilgrimage!
-		# trigger = {
-			# OR = {
-				# has_government = intellectuals
-				# has_completed_focus = bos_nf_high_elder_rhiannon_economic_plan
-			# }
-		# }
+		name = nf_brotherhood_elh_events.10.troika #Espionage!
+		trigger = {
+			OR = {
+				has_government = intellectuals
+				has_completed_focus = bos_nf_high_elder_rhiannon_economic_plan
+				is_debug = yes
+			}
+		}
 		1 = { ##literally just a slightly modified Hub Redevelopment Act focus, shh.
 			add_state_modifier = {
 				modifier = {
@@ -4829,7 +4847,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			base = 100 #It's their only option anyways, so this is redundant.
+			base = 100 #It's probably their only option anyways, but if it isn't this'll give them at least an equal chance to the next best option.
 		}
 	}
 }
@@ -4883,7 +4901,155 @@ country_event = { ##TODO - EFFECTS
 	}
 
 }
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.13" }
+	id = nf_brotherhood_elh_events.13
+	title = nf_brotherhood_elh_events.13.t #The Legacy Government
+	desc = nf_brotherhood_elh_events.13.d #Siding with a key figure from the legacy government could help with unrest.
+	picture = GFX_event_sub_generic_war_room
+	is_triggered_only = yes
+	fire_only_once = yes
+	##Total Probabilities for this are complex, but just counting ruling party: a: 20T,10Rh,0Re,30M allgood: 0T,60Rh,40Re,20M 
+	option = {
+		name = nf_brotherhood_elh_events.13.a #Ignore Them
+		add_political_power = 250
+		set_country_flag = ignored_legacy_government
+		modify_timed_idea = { 
+			idea = bos_ncr_reconstruction_campaign
+			days = -120
+		}
+		ai_chance = {
+			base = 20
+			modifier = { has_government = ruler factor = 0.5}
+			modifier = { has_government = people factor = 0}
+			modifier = { has_government = elites factor = 1.5}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.13.allgood #Work with Allgood
+		custom_effect_tooltip = nf_brotherhood_no_baron_deal_tt
+		set_country_flag = allgood_cooperation
+		custom_effect_tooltip = allgood_expects_environmental_act_tt
+		add_political_power = 50
+		trigger = {
+			OR = { #Available to non-Troika, or Troika with a different economic plan.
+				is_debug = yes
+				NOT = {has_government = intellectuals}
+				has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+				has_completed_focus = bos_nf_high_elder_maxson_economic_plan
+				has_completed_focus = bos_nf_high_elder_torni_economic_plan
+			}
+			NOT = { has_country_flag = famine_mission_followers_raided_completed}
+		}
+		if = {
+			limit = {
+				has_country_flag = bos_proper_famine_occured
+			}
+			every_owned_state = {
+				limit = {
+					is_owned_by = BOS
+					NOT = { is_core_of = BOS }
+					is_core_of = NCR
+				}
+				add_compliance = 10
+			}
+		}
+		else = {
+			set_country_flag = allgood_famine_protection
+		}
+		ai_chance = {
+			base = 40
+			modifier = { has_government = elites factor = 0.5}
+			modifier = { has_government = ruler factor = 1.5}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.13.kimball #Kimball
+		trigger = {
+			OR = {
+				is_debug = yes
+				has_government = elites
+				has_government = ruler
+				has_completed_focus = bos_nf_high_elder_maxson_economic_plan
+				has_completed_focus = bos_nf_high_elder_torni_economic_plan
+			}
+		}
+		custom_effect_tooltip = nf_brotherhood_allows_baron_deal_tt
+		set_country_flag = kimball_cooperation
+		add_ideas = speartip
+		if = {
+			limit = {
+				has_country_flag = bos_proper_famine_occured
+			}
+			every_owned_state = {
+				limit = {
+					is_owned_by = BOS
+					NOT = { is_core_of = BOS }
+					is_core_of = NCR
+				}
+				add_compliance = 15
+				add_resistance = -20
+			}
+		}
+		else = {
+			set_country_flag = kimball_famine_protection
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.13.hayes #Work with hayes... you traitor.
+		trigger = {
+			OR = {
+				is_debug = yes
+				has_government = intellectuals
+				has_government = people
+				has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+				has_completed_focus = bos_nf_high_elder_rhiannon_economic_plan
+			}
+		}
+		custom_effect_tooltip = nf_brotherhood_hayes_way_baron_deal_tt
+		custom_effect_tooltip = nf_brotherhood_hayes_expects_investment_tt
+		set_country_flag = hayes_cooperation
+		activate_advisor = BOS_hayes ##TODO get some tooltip working for all three advisors so ppl know they get them.
+		add_political_power = -150
+		add_stability = -0.1
+		if = {
+			limit = {
+				has_country_flag = bos_proper_famine_occured
+			}
+			every_owned_state = {
+				limit = {
+					is_owned_by = BOS
+					NOT = { is_core_of = BOS }
+					is_core_of = NCR
+				}
+				add_compliance = 10
+			}
+		}
+		else = {
+			set_country_flag = hayes_famine_protection
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+	news_event = {
+		id = nf_brotherhood_elh_events.14
+		title = nf_brotherhood_elh_events.14.t
+		desc = nf_brotherhood_elh_events.14.d
+		picture = GFX_event_nature_nice
 
+		is_triggered_only = yes
+
+		option = {
+			name = ncr_murphy.9.a
+			add_ideas = NCR_ERA
+		}
+	}
+}
 ##EXPEDITIONS ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event, so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
 #The Village
 country_event = {

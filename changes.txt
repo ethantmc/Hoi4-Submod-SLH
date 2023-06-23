@@ -1,5 +1,6 @@
 Adds major content like Expeditions to the brotherhood, as well as edits to make coop more enjoyable. This will not make Lost Hills OP, but it should make them significantly more enjoyable up through the NCR-Brotherhood war.
-
+##FUTURE PLANS - Caesar's Legion work & integration, giving foci specifically for fighting them. Reformers ceasefire deal with NCR for concessions & unified front against legion
+## Decisions to affect off-map chapter random outcomes
 
 LOST HILLS FOCUS TREE CHANGES:
 
@@ -114,4 +115,6 @@ Many other aspects of the vanilla tree are retouched - such as industry, trade, 
 
 
 PATCHNOTES:
--Fix for tiny error introduced into The Village event.
+-Fix for Troika Great Storm event not firing a sub-event for chapters rewarded at the ritual, buffing their relations with the Troika. This really isn't important (yet), but it part of the groundwork for Chapters who don't agree with the Troika forming their own faction (which won't be coming properly before the Midwest is added)
+-Fix for the Foreign Assistance feedback event (unlocked by the decisions in A Foreign Council) not firing to Lost Hills. That event does allow you to quash the feedback after the first time, but basically just says "Hey! You can see what they picked now!"
+-Addition of all the Foci for the Healing New Scars update, dealing with the internal realities of a group as small as the Brotherhood expanding to manage all of California. It turns out that lots of powerful people are upset at the brotherhood, who knew?
