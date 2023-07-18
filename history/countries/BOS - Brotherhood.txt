@@ -48,16 +48,6 @@
 #Free Starting Manpower
 @BOS_FREE_MANPOWER_AT_GAMESTART = 200
 
-#Bonuses to make Volunteers work. Later, when the BoS actually has a war, these bonuses are removed.
-set_variable = {
-	bos_slh_volunterr_func_negative = -1
-}
-set_variable = {
-	bos_slh_volunterr_func_positive = 1
-}
-set_variable = {
-	bos_slh_supply_node_range = 0 ##Used to modify by a focus in Economic Projects.
-}
 capital = 157
 oob = "BOS_2275"
 
@@ -236,6 +226,19 @@ set_variable = { bos_tension = @BOS_STARTING_TENSION }
 
 set_variable = {
 	bos_lost_hills_self_destruct_device = 1
+}
+#Bonuses to make Volunteers work. Later, when the BoS actually has a war, these bonuses are removed.
+set_variable = {
+	bos_slh_volunterr_func_negative = -1
+}
+set_variable = {
+	bos_slh_volunterr_func_positive = 1
+}
+set_variable = {
+	bos_slh_supply_node_range = 0 ##Used to modify by a focus in Economic Projects.
+}
+set_variable = {
+	bos_slh_gunrunners_opinion_mod = 0
 }
 
 add_manpower = @BOS_FREE_MANPOWER_AT_GAMESTART

@@ -51,7 +51,7 @@ bos_lost_hills_logistics = {
 	intellectuals_drift = BOS_drift_intellectuals
 	elites_drift = BOS_drift_elites
 	cant_leave_faction = 1
-
+	organization_floor_modifier_3 = bos_slh_gunrunners_opinion_mod
 	BOS_underground_administrative_capacity = BOS_underground_building_administration_centers_mod
 	modifier_army_sub_unit_paladin_unit_attack_factor = BOS_underground_building_training_bonus
 	modifier_army_sub_unit_paladin_unit_defence_factor = BOS_underground_building_training_bonus
@@ -117,7 +117,12 @@ bos_lost_hills_logistics_state = {
 	recruitable_population = 0.03						  
 	state_production_speed_buildings_factor = BOS_condensed_civilian_workshop_modifier
 }
-
+bos_training_hall = {
+	enable = { always = yes }
+	icon = GFX_idea_generic_BOS_idea_bunker_thought
+	recruitable_population_factor = 0.3
+	recruitable_population = 0.03						  
+}
 bos_balanced_council = {
 	icon = scribe_council
 	enable = { always = yes }

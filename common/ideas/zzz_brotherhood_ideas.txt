@@ -1161,11 +1161,10 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				political_power_gain_factor = -0.1
-				war_support_factor = -0.5
+				political_power_factor = 0.14
+				war_support_factor = -0.2
 				stability_factor = 0.1
 				stability_weekly = 0.0012
-				core_creation_cost_factor = -0.1
 				production_speed_buildings_factor = -0.15
 				consumer_goods_factor = 0.1
 			}
@@ -1190,6 +1189,63 @@ ideas = {
 				# caps_node_trade_modifier = -0.05
 			# }
 		# }
+		bos_generic_prestiege = {
+			picture = ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.2
+				political_power_factor = 0.05
+				justify_war_goal_time = 0.3
+				annex_cost_factor = 0.1
+				puppet_cost_factor = 0.1
+			}
+		}
+		bos_reformer_prestiege = {
+			picture = ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_sharing_per_country_bonus_factor = 0.4
+				conscription_factor = -0.05
+				army_leader_start_level = 1
+				starting_compliance = 0.05
+			}
+		}
+		bos_maxsonian_prestiege = {
+			picture = ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.10
+			}
+		}
+		bos_rhombian_prestiege = {
+			picture = ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				##training halls decisions instead
+			}
+		}
+		bos_troika_prestiege = {
+			picture = ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.3
+				intellectuals_drift = 0.2
+				local_resources_factor = 0.1
+				production_factory_start_efficiency_factor = 0.25
+				production_speed_buildings_factor = 0.1
+				
+			}
+		}
 		bos_ncr_looming_famine = {
 			picture = ncr_trade_idea #change me!
 			allowed = {
@@ -1197,6 +1253,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				monthly_population = -0.2
+				war_support_factor = -0.1
 			}
 		}
 		bos_ncr_famine = {
@@ -1206,6 +1263,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				monthly_population = -0.45
+				war_support_factor = -0.2
 				conscription_factor = -0.1
 			}
 		}
@@ -1216,8 +1274,29 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				monthly_population = -0.75
+				war_support_factor = -0.4
 				conscription_factor = -0.2
 				non_core_manpower = -1
+			}
+		}
+		bos_ncr_field_scribes_farming = {
+			picture = scribe_council
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = -0.0075
+			}
+		}
+		bos_ncr_field_scribes_farming_light = {
+			picture = scribe_council
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = -0.004
 			}
 		}
 		srg_california_tech_sharing_initiative = {

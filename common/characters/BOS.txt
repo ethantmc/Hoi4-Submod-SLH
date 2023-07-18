@@ -792,7 +792,7 @@ characters={
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_NCR_kimball
-				small = GFX_idea_aaron_kimball
+				small = GFX_idea_NCR_kimball
 			}
 		}
 		advisor = {

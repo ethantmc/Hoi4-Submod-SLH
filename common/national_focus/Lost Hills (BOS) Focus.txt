@@ -2487,6 +2487,7 @@ focus_tree = {
 			add_political_power = -100
 			70 = {
 				add_claim_by = BOS	  
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -2513,6 +2514,7 @@ focus_tree = {
 			add_political_power = -100
 			360 = {
 				add_claim_by = BOS	  
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -2538,6 +2540,7 @@ focus_tree = {
 			add_political_power = -100
 			64 = {
 				add_claim_by = BOS	  
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -2569,6 +2572,7 @@ focus_tree = {
 			add_political_power = -100
 			258 = {
 				add_claim_by = BOS	  
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -2600,6 +2604,7 @@ focus_tree = {
 			add_political_power = -100
 			245 = {
 				add_claim_by = BOS	  
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -3722,6 +3727,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = bos_boneyard_sun_tt
 			country_event = nf_brotherhood_elh_events.301
 		}
 	}
@@ -3758,10 +3764,25 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-			add_timed_idea = { 
-				idea = bos_ncr_reconstruction_campaign
-				days = 765
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = bos_civil_engineers_primacy
+					}
+				}
+				add_timed_idea = { 
+					idea = bos_ncr_reconstruction_campaign
+					days = 765
+				}
 			}
+			else = {
+				add_timed_idea = { 
+					idea = bos_ncr_reconstruction_campaign
+					days = 600
+				}
+				custom_effect_tooltip = bos_shortened_reconstruction_campaign
+			}
+			custom_effect_tooltip = bos_reconstruction_campaign_reductions_tt
 			country_event = nf_brotherhood_elh_events.9
 			custom_effect_tooltip = bos_new_scars_mechanics_tt
 			##set a bunch of state flags to prevent duplicate infrastructure construction during later economic foci
@@ -3827,7 +3848,7 @@ focus_tree = {
 		id = bos_nf_power_brokers
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
-		x = -5
+		x = -4
 		y = 1
 		relative_position_id = bos_nf_further_reconstruction
 		prerequisite = {
@@ -3837,14 +3858,14 @@ focus_tree = {
 			has_political_power > 0
 		}
 		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
+			country_event = nf_brotherhood_elh_events.15
 		}
 	}
 	focus = {
 		id = bos_nf_power_brokers_the_hub
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = bos_nf_power_brokers
 		prerequisite = {
@@ -3859,27 +3880,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = bos_nf_power_brokers_the_arms_dealers
-		icon = GFX_goal_generic_focus_solar_energy
-		cost = 30
-		x = 0
-		y = 1
-		relative_position_id = bos_nf_power_brokers
-		prerequisite = {
-			focus = bos_nf_power_brokers
-		}
-		available = {
-			has_political_power > 0
-		}
-		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
-		}
-	}
-	focus = {
 		id = bos_nf_power_brokers_the_legacy_government
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = bos_nf_power_brokers
 		prerequisite = {
@@ -3897,10 +3901,9 @@ focus_tree = {
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
 		x = 0
-		y = 1
-		relative_position_id = bos_nf_power_brokers_the_arms_dealers
+		y = 2
+		relative_position_id = bos_nf_power_brokers
 		prerequisite = {
-			focus = bos_nf_power_brokers_the_arms_dealers
 			focus = bos_nf_power_brokers_the_hub
 			focus = bos_nf_power_brokers_the_legacy_government
 		}
@@ -3912,7 +3915,28 @@ focus_tree = {
 			has_country_flag = barons_dealt_with
 		}
 		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
+			if = {
+				limit = {
+					has_country_flag = hayes_cooperation
+				}
+				country_event = nf_brotherhood_elh_events.1602 ##Hayes version of the event.
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = allgood_cooperation ##working with Allgood precludes working with the Barons.
+					}
+					OR = {
+						has_country_flag = kimball_cooperation
+						has_government = intellectuals
+						has_government = people
+						has_completed_focus = bos_nf_high_elder_rhiannon_economic_plan
+						has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
+					}
+					country_event = nf_brotherhood_elh_events.1601 ##Peaceful version of the Barons event
+				}
+			}
+			country_event = nf_brotherhood_elh_events.16
 		}
 	}
 	focus = {
@@ -3937,7 +3961,7 @@ focus_tree = {
 		id = bos_nf_economic_projects
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
-		x = 5
+		x = 4
 		y = 1
 		relative_position_id = bos_nf_further_reconstruction
 		prerequisite = {
@@ -3947,14 +3971,51 @@ focus_tree = {
 			has_political_power > 0
 		}
 		completion_reward = {
-			country_event = nf_brotherhood_elh_events.12
+			modify_timed_idea = { 
+				idea = bos_ncr_reconstruction_campaign
+				days = -60
+			}
+			# every_owned_state = {
+				# limit = {
+					# OR = {
+						# infrastructure > 6
+					# }
+				# }
+				# every_neighbor_state  = {
+					# limit = {
+						# is_owned_by = BOS
+						# infrastructure < 6
+					# }
+					# add_building_construction = {
+						# type = infrastructure
+						# level = 1
+						# instant_build = yes
+					# }
+				# }
+			# }
+			every_owned_state = {
+				limit = {
+					has_state_flag = bos_ncr_reconstruction_build_infra_here
+					is_owned_by = BOS
+					infrastructure < 6
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_to_variable = {
+				var = bos_slh_supply_node_range
+				value = 0.05
+			}
 		}
 	}
 	focus = {
 		id = bos_nf_economic_projects_electrification
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = bos_nf_economic_projects
 		prerequisite = {
@@ -4002,64 +4063,10 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = bos_nf_economic_projects_crater_cleanup
-		icon = GFX_goal_generic_focus_solar_energy
-		cost = 30
-		x = 0
-		y = 1
-		relative_position_id = bos_nf_economic_projects
-		prerequisite = {
-			focus = bos_nf_economic_projects
-		}
-		available = {
-			has_political_power > 0
-		}
-		completion_reward = {
-			modify_timed_idea = { 
-				idea = bos_ncr_reconstruction_campaign
-				days = -60
-			}
-			# every_owned_state = {
-				# limit = {
-					# OR = {
-						# infrastructure > 6
-					# }
-				# }
-				# every_neighbor_state  = {
-					# limit = {
-						# is_owned_by = BOS
-						# infrastructure < 6
-					# }
-					# add_building_construction = {
-						# type = infrastructure
-						# level = 1
-						# instant_build = yes
-					# }
-				# }
-			# }
-			every_owned_state = {
-				limit = {
-					has_state_flag = bos_ncr_reconstruction_build_infra_here
-					is_owned_by = BOS
-					infrastructure < 6
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_to_variable = {
-				var = bos_slh_supply_node_range
-				value = 0.05
-			}
-		}
-	}
-	focus = {
 		id = bos_nf_economic_projects_real_memorials
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = bos_nf_economic_projects
 		prerequisite = {
@@ -4095,11 +4102,10 @@ focus_tree = {
 		icon = GFX_goal_generic_focus_solar_energy
 		cost = 30
 		x = 0
-		y = 1
-		relative_position_id = bos_nf_economic_projects_crater_cleanup
+		y = 2
+		relative_position_id = bos_nf_economic_projects
 		prerequisite = {
 			focus = bos_nf_economic_projects_electrification
-			focus = bos_nf_economic_projects_crater_cleanup
 			focus = bos_nf_economic_projects_real_memorials
 		}
 		available = {
@@ -4111,7 +4117,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
+			country_event = nf_brotherhood_elh_events.12
 		}
 	}
 	focus = {
@@ -4541,6 +4547,7 @@ focus_tree = {
 			has_deployed_air_force_size = {
 				size > 99
 			}
+			has_air_experience > 20
 		}
 		completion_reward = {
 			air_experience = -20
@@ -4624,6 +4631,7 @@ focus_tree = {
 			
 			357 = {
 				add_core_of = BOS
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -4667,6 +4675,7 @@ focus_tree = {
 			add_manpower = -250
 			602 = {
 				add_core_of = BOS
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -4741,6 +4750,7 @@ focus_tree = {
 			}
 			606 = {
 				add_core_of = BOS
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -4784,6 +4794,7 @@ focus_tree = {
 			add_manpower = -250
 			558 = {
 				add_core_of = BOS
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -4826,6 +4837,7 @@ focus_tree = {
 			add_manpower = -250
 			312 = {
 				add_core_of = BOS
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -4869,6 +4881,7 @@ focus_tree = {
 			}
 			433 = {
 				add_core_of = BOS
+				set_demilitarized_zone = yes
 				add_dynamic_modifier = {
 					modifier = bos_state_influence
 				}
@@ -7062,9 +7075,26 @@ focus_tree = {
 			focus = bos_nf_reformer_ascension
 		}
 		available = {
+			country_exists = NCR
+			NOT = {
+				BOS = {
+					has_war_with = NCR
+				}
+			}
+			OR = {
+				has_global_flag = fbhd_legion_overall_vic
+				has_global_flag = fbhd_boulder_city_miracle
+				AND = {
+					OR = {
+                    252 = { OWNER = { is_caesars_legion_member = yes } }
+					252 = { is_owned_by = MOJ}
+					}
+                    date > 2279.01.01
+                }
+			}
 		}
 		completion_reward = {
-
+			custom_effect_tooltip = coming_in_a_later_update_bos
 		}
 	}
 	focus = {
@@ -7075,11 +7105,28 @@ focus_tree = {
 		y = 2
 		relative_position_id = bos_nf_reformer_ascension
 		prerequisite = {
-			focus = bos_nf_reformer_ascension
+			focus = bos_nf_bigger_threats
 		}
 		available = {
+			NOT = {
+				has_global_flag = bos_ncr_accepted_deal_for_maxson
+			}
+			NCR = {
+				at_war_with = CES
+				surrender_progress > 0.01
+			}
 		}
 		completion_reward = {
+			custom_effect_tooltip = coming_in_a_later_update_bos
+			NCR = {
+				every_owned_state = {
+					limit = {
+						region = 51
+					}
+					add_core_of = BOS
+					BOS = { transfer_state = PREV }
+				}
+			}
 		}
 	}
 	focus = {
