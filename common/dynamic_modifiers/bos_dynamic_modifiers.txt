@@ -123,6 +123,16 @@ bos_training_hall = {
 	recruitable_population_factor = 0.3
 	recruitable_population = 0.03						  
 }
+bos_worker_coops = {
+	enable = {always = yes}
+	icon = GFX_idea_aztlan_land_distribution
+	resistance_target = -0.05
+}
+bos_worker_discontent = {
+	enable = {always = yes}
+	icon = GFX_idea_aztlan_land_distribution
+	resistance_target = 0.07
+}
 bos_balanced_council = {
 	icon = scribe_council
 	enable = { always = yes }

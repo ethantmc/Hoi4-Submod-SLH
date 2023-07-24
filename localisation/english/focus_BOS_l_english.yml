@@ -1083,36 +1083,41 @@
   nf_brotherhood_elh_events.16.b: "§OConvincing the locals to work by publicizing the arrest of Anton Flynn."
   nf_brotherhood_elh_events.16.maxsonians: "§PForcing employees to continue §!§Rwork til the famine ends.§!"
   nf_brotherhood_elh_events.16.rhombians: "§gGiving the employees split ownership where they worked.§!"
-  nf_brotherhood_elh_events.16.reformers: "§CMixing our own personnel and southern farmers to work the North.§!"
+  nf_brotherhood_elh_events.16.reformers: "§CGive northern agriculture to the Southern Farmers, and send personnel for the transition.§!"
   bos_ncr_field_scribes_farming: "Initiates in the Muck"
   bos_ncr_field_scribes_farming_desc: "We've sent our Initiates to work farmlands across Northern California, under the supervision of Scribes or Knights. They're not happy about it, but it's temporary."
   bos_ncr_field_scribes_farming_light: "The Agricultural Chain of Command"
   bos_ncr_field_scribes_farming_light_desc: "We've sent some of our Initiates to work in farmlands across Northern California, as temps. Seasoned farmers and ranchers who've been waiting to run their own farms, or sons and daughters ready to expand the family business, have been selected to run these places long term. It'll take months for them hire reliable employees, so our initiates, for the first time, are taking orders from civilians."
-  #Small followup news event that shifts resistance in this region?
+  bos_worker_coops: "Agricultural Worker Cooperatives"
+  bos_worker_coops_desc: "The Rhombians decided the best way to ensure the end of issues in the North, was to give the farmhands and ranchhands there direct ownership of the land they worked. It's been a great success for local compliance."
+  bos_worker_discontent: "Angry Labour"
+  bos_worker_discontent: "For one reason or another, the workers here are furious with the government. They're working-to-rule, leading to increased losses of equipment and inefficient production."
+  #Small followup news event is #1603.
   
+  #Peaceful version of 16.
+  nf_brotherhood_elh_events.1601.t: "The Barons: A Meeting Over Dinner"
+  nf_brotherhood_elh_events.1601.d: "On the outskirts of Redding, [BOS.getLeader] as well as the three other leaders attend a diplomatic dinner at Anton Flynn's estate. The hall itself is warm and inviting, and many key Barons have come to discuss their grievances. Beyond the opulence of the hall, however, is the truth - Anton's estate swarms with guards from both sides. A paladin paired with some merc is hardly an even fight, but we are outnumbered deep within enemy territory. Our nearest bases also remain on high alert, ready to put boots on the ground here within half an hour of our call. Finally, insisted upon by [BOS.getLeader], the voluntary use of Stealthboys was approved, and more Paladins remain hidden on the grounds, just in case.\n\nBack at the dinner, Anton makes his speech - "[BOS.getLeader], I stand before you today not as an adversary, but as a voice of reason and advocate for our shared vision of prosperity. I understand the skepticism you may hold towards the Barons and our actions, but I implore you to hear us out with an open mind. The incorrigible famine that plagues our great nation was not our intention, but an unforeseen consequence of our efforts to secure our interests. However, this challenge also presents an opportunity for redemption.\n\nOur agricultural might, though immense, has caused hardships amongst the people of California. Our discord has been poisonous to the people, but I -we- assure you, there is still time to rectify this situation.\n\nOur farms can once again flourish and feed the hungry masses, but we cannot do it alone. What is incorrigible for either one of us alone is correctable together. We recognize the expertise and strength of the Brotherhood, and its only with your guidance and assistance that we can bring an end to this crisis. We propose a collaboration, a partnership if you will, where our resources and expertise are fully utilized across California for the greater good. Let us combine our efforts, and begin healing the new scars of our great nation.\n\nBrothers, and Sisters, the fate of California rests in our hands, and together we can make a difference that will be remembered for generations to come."\n\nMore details of exactly what the Barons were asking for came throughout the night... but, ultimately it was quite simple - amnesty for most Barons, including Anton Flynn, the return of Kimball-era rules for business in the agricultural sector, and a chance to repair their image in central and southern California. We could do this without destroying ourselves politically, but what's to prevent the Barons from trying again once we're depleted by some future war?"
+  nf_brotherhood_elh_events.1601.a: "Accept the deal."
+  nf_brotherhood_elh_events.1601.b: "Go through the motions, but proceed with dismantling the Barons."
+  nf_brotherhood_elh_events.1601.maxsonians: "§PAccept, but no amnesty for the worst criminals.§!"
+  nf_brotherhood_elh_events.1601.rhombians: "§gAccept, but draft new protections for independent farmers.§!"
+  nf_brotherhood_elh_events.1601.reformers: "§CAccept, the Southern Farmers have an association of their own now.§!"
+  nf_brotherhood_elh_events.1601.troika: "§RUse this opportunity to make multiple deals and fracture the Barons.§!"
+  
+  #Hayes version of 16
+  nf_brotherhood_elh_events.1602.t: "The Barons: Hayes"
+  nf_brotherhood_elh_events.1602.d: "Grant C. Hayes has finally completed their plan to end the Barons. Carefully, they've coordinated a smear campaign against Anton Flynn and the Barons - radio broadcasts and news programs featured all the evidence we could muster of the Baron's leaving californians out to dry. Hayes gave a speech, saying "The truth of the matter, having been hidden from you by the men of Redding, is that there is no shortage of food. There was no disease amongst the cattle, and no fungus in the granaries. I have been to farms seized by the Brotherhood, and I promise all Californians that they speak the truth. \n\nBut it is true that too much food lies in the hands of Anton Flynn and his cronies. These barons would see you, the hard-working farmhands, burn your own meals for the promise of future riches. But I have a better offer - My tax plan will see the Barons destitute, and their property passed on to employees. Their wealth will be used to bring down food prices once again, and give each and every one of you a house, with a white picket fence. Your bosses will order you to work tonight with knife or flame in hand. But all you must do is go home. Walk off your ranches, abandon your barns. The Brotherhood is coming, and by the morning there will be new management." \n\nHaving already chipped away at the support The Hub, The Arms Dealers, and the Legacy Government provided, we've completely isolated Redding. With Hayes' speech as a signal, many dozens of squads walk synchronously onto the grounds of Baron lands. Some encounter resistance - mostly from unarmoured loyalists with laser pistols and hunting rifles - but most find employees willing, if not eager, to help them put an end to this madness."
+  nf_brotherhood_elh_events.1602.a: "And so fall the Barons." 
+
+  ##Followup event to 16
   nf_brotherhood_elh_events.1603.t: "The Barons: Reaction of the People"
   nf_brotherhood_elh_events.1603.d: "Following our efforts to bring the Barons to heel, all of Northern California has reacted to the changes in Redding. Let's hope we haven't pushed things too far..."
   nf_brotherhood_elh_events.1603.a: "...Or not far enough."
   
-  #Peaceful version of 16. ##TODO
-  nf_brotherhood_elh_events.1601.t: "The Barons: A Meeting Over Dinner"
-  nf_brotherhood_elh_events.1601.d: ""
-  nf_brotherhood_elh_events.1601.a: "Broker a deal."
-  nf_brotherhood_elh_events.1601.b: "§OSend our best police units to the Hub."
-  nf_brotherhood_elh_events.1601.maxsonians: "§PUse capital punishment. The companies will have to send replacements.§!"
-  nf_brotherhood_elh_events.1601.rhombians: "§gHire mercenaries for a crackdown on crime.§!"
-  nf_brotherhood_elh_events.1601.reformers: "§CLlwyd can negotiate a favorable deal.§!"
-  nf_brotherhood_elh_events.1601.troika: "§RBlackmail the merchants to work for us.§!"
-  
-  #Hayes version
-  nf_brotherhood_elh_events.1602.t: "The Barons: Hayes"
-  nf_brotherhood_elh_events.1602.d: "Grant C. Hayes has finally completed their plan to end the Barons. Carefully, they've coordinated a smear campaign against Anton Flynn and the Barons - radio broadcasts and news programs featured all the evidence we could muster of the Baron's leaving californians out to dry. Hayes gave a speech, saying "The truth of the matter, having been hidden from you by the men of Redding, is that there is no shortage of food. There was no disease amongst the cattle, and no fungus in the granaries. I have been to farms seized by the Brotherhood, and I promise all californians that they speak the truth. \n\nBut it is true that too much food lies in the hands of Anton Flynn and his cronies. These barons would see you, the farmhands, burn your own meals for the promise of riches. But I have a better offer - My tax plan will see the Barons destitute, and their property passed on to employees. Their wealth will be used to bring down food prices once again, and give each and every one of you a house, with a white picket fence. Your bosses will order you to work tonight, with knife or flame in hand. But all you must do is go home. Walk off your ranches, abandon your barns. The Brotherhood is coming, and by the morning there will be new management." \n\nHaving already chipped away at the support The Hub, The Arms Dealers, and the Legacy Government provided, we've completely isolated Redding. With Hayes' speech as a signal, many dozens of squads walk synchronously onto the grounds of Baron lands. Some encounter resistance - mostly from unarmoured loyalists with laser pistols and hunting rifles - but most find employees willing, if not eager, to help them put an end to this madness."
-  nf_brotherhood_elh_events.1602.a: "And so fall the Barons."
-  
   #Flynn arrest event
   nf_brotherhood_elh_events.1604.t: "The Barons: Anton Flynn Arrested Publicly"
-  nf_brotherhood_elh_events.1604.d: "Anton Flynn is in handcuffs. We've publicized this event as widely as possible - from newspapers to radio to television, every leading story everywhere is about the man who starved California. His last public photo is smug - the grin of a man who still believes his cachet with the legacy government will protect him."
-  nf_brotherhood_elh_events.1604.a: "What a fool."##TODO
+  nf_brotherhood_elh_events.1604.d: "Anton Flynn is in handcuffs. We've publicized this event as widely as possible - from newspapers to radio to television, every leading story everywhere is about the man who starved California. His last public photo is smug - the grin of a man who still believes his cachet with the legacy government will protect him. His future months of disavowing the Barons, the Stockmen's Association as a whole, and preaching the evils of rampant cronyism will disabuse him of that notion, soon enough."
+  nf_brotherhood_elh_events.1604.a: "Justice, of a kind."
   
   nf_brotherhood_bunkered_divisions.1.t: "End of the Ceasefire"
   nf_brotherhood_bunkered_divisions.1.desc: "All elders are in agreement - there is no hope for California except us. There is no worthy successor for us to guide, and the stumbling of [NCR.getLeader] has failed to impress.\n\nOur preparations are complete, with every bunker in the state of Maxson restored and filled once again with personnel. We've warned the people of Maxson of the coming conflict, and many citizens have seen the thousand ways the NCR is bound to break. Only we can safeguard Mankind."
