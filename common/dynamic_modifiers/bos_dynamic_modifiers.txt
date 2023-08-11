@@ -133,6 +133,11 @@ bos_worker_discontent = {
 	icon = GFX_idea_aztlan_land_distribution
 	resistance_target = 0.07
 }
+bos_misguided_resistance = {
+	enable = {always = yes}
+	icon = GFX_idea_aztlan_land_distribution
+	resistance_target = 0.12
+}
 bos_balanced_council = {
 	icon = scribe_council
 	enable = { always = yes }

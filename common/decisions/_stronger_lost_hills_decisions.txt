@@ -102,7 +102,7 @@ stronger_lost_hills_decisions = {
 				division_template = {
 					name = "Brotherhood Paladins"					#CW Tools - False positive? Wiki says that "name" is correct here and not "division name"
 					is_locked = yes
-					division_names_group = BOS_DIV_1
+					division_names_group = BOS_INF_03
 					priority = 2
 					template_counter = 0
 					regiments = {
@@ -2438,6 +2438,66 @@ stronger_lost_hills_decisions = {
 	}
 	##Diplomacy menu - overrwrite?
 bos_lost_hills_diplomacy = {
+	bos_legion_defence_pact_call = {
+		icon = GFX_decision_t51_vb_armor
+		fire_only_once = no
+		days_remove = 10
+		cost = 100
+		allowed = {
+			#has_country_flag = legion_defence_pact_member
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		visible = {
+			has_global_flag = bos_ncr_accepted_deal_for_maxson
+			has_country_flag = legion_defence_pact_member
+		}
+		available = {
+			country_exists = BOS
+			has_war_with = CES
+			OR = {
+				NOT = {
+					BOS = {
+						has_war_with = CES
+					}
+					NCR = {
+						has_war_with = CES
+					}
+				}
+			}
+			OR = {
+				NOT = {
+					AND = {
+						country_exists = MOT
+						country_exists = MOJ
+					}
+				}
+				NOT = {
+					MOJ = {has_country_flag = legion_defence_pact_member}
+					MOT = {has_country_flag = legion_defence_pact_member}
+				}
+				NOT = {
+					MOJ = {has_war_with = MOT}
+				}
+			}
+		}
+		modifier = {
+
+		}
+		remove_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = legion_defence_pact_member
+				}
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = CES
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+	}
 	bos_lost_hills_consider_chapter_support = {
 		icon = GFX_decision_box_open
 		allowed = {
@@ -2455,7 +2515,7 @@ bos_lost_hills_diplomacy = {
 			}
 		}
 		visible = {
-			OR ={	
+			OR = {	
 					has_completed_focus = bos_nf_long_range_radio_towers
 					has_completed_focus = bos_nf_shi_chapter_cooperation
 				}
@@ -4173,14 +4233,12 @@ stronger_lost_hills_ncr_occupation = {
 			}
 			FROM = {
 				add_dynamic_modifier = {
-					modifier = {
-						bos_training_hall
-					}
+					modifier = bos_training_hall
 				}
 			}
 		}
 		ai_will_do = {
-			base = 50 ##This is way too much for an AI to cause.
+			base = 50
 		}
 	}
 }
@@ -4225,15 +4283,15 @@ stronger_lost_hills_ncr_occupation_famine = {
 					NOT = { is_core_of = BOS }
 				}
 				if = {
-					limit = { has_country_flag = allgood_famine_protection}
+					limit = { BOS = {has_country_flag = allgood_famine_protection}}
 					add_compliance = -0.15
 				}
 				else_if = {
-					limit = { has_country_flag = kimball_famine_protection}
+					limit = { BOS = {has_country_flag = kimball_famine_protection}}
 					add_compliance = -0.10
 				}
 				else_if = {
-					limit = { has_country_flag = hayes_famine_protection} ##Hayes and Allgood provide the same protection at the moment.
+					limit = { BOS = {has_country_flag = hayes_famine_protection}} ##Hayes and Allgood provide the same protection at the moment.
 					add_compliance = -0.15
 				}
 				else = {

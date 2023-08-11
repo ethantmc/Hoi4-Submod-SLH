@@ -116,9 +116,10 @@ Many other aspects of the vanilla tree are retouched - such as industry, trade, 
 
 
 PATCHNOTES:
--Fix for Troika Great Storm event not firing a sub-event for chapters rewarded at the ritual, buffing their relations with the Troika. This really isn't important (yet), but it part of the groundwork for Chapters who don't agree with the Troika forming their own faction (which won't be coming properly before the Midwest is added)
--Fix for the Foreign Assistance feedback event (unlocked by the decisions in A Foreign Council) not firing to Lost Hills. That event does allow you to quash the feedback after the first time, but basically just says "Hey! You can see what they picked now!"
--Addition of all the Foci for the Healing New Scars update, dealing with the internal realities of a group as small as the Brotherhood expanding to manage all of California. It turns out that lots of powerful people are upset at the brotherhood, who knew?
--Addition of the "Endorse Follower Ambitions" focus. Thank you to the devs of OWB for responding to my request for information on the cut follower decisions - I certainly wasn't expecting for you to do the work of implementing them! They're unlocked with this focus, as well as Ignacio Rivas as an advisor.
--Addition of the "Lancers" national spirit to "The East's Lancers" focus. It was kind of weird that the brotherhood got worse at generating aces after removing a national spirit, and the focus was a bit weird, giving only air XP.
--As a bonus to the previous note, the fact you could complete "Hot Deployments" without the requisite air experience has been patched. You weren't spending that 20 Air XP somewhere else - were you?
+The update is focused on the societal changes any of the groups would make to California, and organized pushback from the entrenched powers in California.
+-Massive addition of the "Healing New Scars" update, totaling 14 new foci, and over two dozen events, closing content additions through the post-NCR game, up to the end of war with the Legion.
+-Particularly, see changes like mass cybernetics use by civillians under the Troika, or regional training halls under the Rhombians. Rename yourself to represent all of California as the Californian Brotherhood, or pass the EPA with Allgood. Even cut a deal with the rebellious Anton Flynn to see caps kickbacks from Big Business!
+-The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Kimball, and Allgood Murphy. You'll have to earn their support first, in Healing New Scars.
+-The addition of the Reformers final focuses, imagining what a non-Steel Rangers Brotherhood looks like under them. (Sign the Legion Defence Pact with the NCR for Maxson, or stab them in the back to prep against said Legion if they turn you down!)
+-New decisions relating to the new content, retouches of several Expeditions to account for changes to vanilla, and art for the mutually-exclusive Council focuses.
+-Only one notable bugfix, the option in Sailing the Yangtze that may see a Paladin unit killed, now properly displays that information. Other fixed bugs were invisible (AI-only) or harmless log errors that have been fixed.

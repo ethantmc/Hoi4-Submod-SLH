@@ -323,7 +323,9 @@
   barons_cooperating: "The Barons are cooperating to rebuild northern agriculture."
   barons_dealt_with: "The Barons no longer oppose us."
   ##End Flags
-  
+  bos_nf_the_weakened_brotherhood: "Prey for the Lion"
+  bos_nf_the_weakened_brotherhood_desc: "The great devastation of the war, coupled with post-war unrest and our transformation of California has left us exceptionally weakened. We need time to reap the benefits of our changes, and to end the famine. If we offer the Legion the Mojave, we can buy ourselves more time."
+  bos_legion_truce_effects_explanation_tt: "The Brotherhood has signed the following deal with the Legion: "
   
   bos_ncr_looming_famine: "Looming Famine"
   bos_ncr_looming_famine_desc: "Preparations are being made across California as the Barons and other NCR power brokers prepare to starve us out. The barons are content to rule over California's embers - we're content to rule over their bones."
@@ -372,9 +374,12 @@
   bos_nf_economic_projects_real_memorials_desc: "Some villages and towns were flattened during our war, and others emptied of all fighting-age men. They may have been the enemy, but now their children and widowers are our citizens. We need to undertake a lengthy campaign acknowledging their bravery in the face of a superior force, as well as honoring the NCR's commitments in terms of pay."
   bos_nf_economic_projects_real_memorials: "Mending Rifts and Making Monuments"
   bos_nf_economic_projects_training_halls: "Our Prestige Project"
-  bos_nf_economic_projects_desc: "Finally it's time to execute on our planned project. Let it's completion be the first step into the future for [BOS.getName].
+  bos_nf_economic_projects_training_halls_desc: "Finally it's time to execute on our planned project. Let its completion be the first step into the future for [BOS.getName]."
+  
   bos_nf_preparing_for_expansion: "Future, Attained"
   bos_nf_preparing_for_expansion_desc: "The Brotherhood's future is now in our hands, the elders will have to come together to discuss how exactly we proceed. Do we try to integrate more of our bordering territory, with the end goal of trying to reach other chapters fully — or do we try to bunker up and hold California in the hopes that other chapters will eventually reach us in time?"
+  bos_skip_brotherhood_states_tt: "§CStates currently owned by a Chapter will not generate claims, to avoid insurmountable diplomatic penalties.§!"
+  
   bos_nf_utilizing_californias_industry: "Utilizing California's Industry"
   bos_nf_utilizing_californias_industry_desc: "California has a massive, powerful industrial base we can utilize if we make the correct decisions and avoid disturbing too many of the complex pieces holding NCR's mechanisms together."
   bos_nf_the_coast_of_california: "The Coast of California"
@@ -1016,7 +1021,7 @@
   nf_brotherhood_elh_events.703.a: "Together, we are the Great Storm."
   
   nf_brotherhood_elh_events.8.t: "The Hub: Rich and Powerful"
-  nf_brotherhood_elh_events.8.d: "As California emerged from the ashes of the war, the Hub became a beacon of hope for many. The trade city was bustling with activity, as merchants from all over the wasteland converged there to trade their wares. However, as the city grew once again in prominence, so too did the violence between the gangs of competing smugglers who vied for control of the lucrative trade routes. The Caravan Companies who operated in the Hub, like the Crimson Caravan and Water Merchants, bought up the street gangs during the war for security, leading to a return of the Great Merchant Wars that plagued the Hub in 2126.\n\nAs we look upon the Hub, we see a city that was both a vital center of commerce and a den of lawlessness. Some argue that the government should broker a deal with the merchant-gangs, offering them protection from prosecution and legitimacy in exchange for their cooperation in keeping the peace. Others believe that the only way to restore order was to eliminate the gangs entirely, using force as necessary.\n\nThose who favor brokering a deal point out that the merchants were the lifeblood of the Hub's economy, with their criminal activities being a necessary evil in order to maintain stability as the NCR collapsed. If we legitimize the gangs, we could ensure that they operate within the bounds of the law, likely dropping inner city violence substantially.\n\nThose who favor eliminating the gangs, on the other hand, argue that the government had a duty to uphold the law, even if it meant disrupting the city's economy. They point out that the gangs were responsible for countless murders, robberies, and other crimes, and that the government's failure to act would only embolden them further.\n\nUltimately, we are faced with a difficult decision. Either broker a deal with the merchant-gangs, legitimizing their criminal activities in exchange for their cooperation in keeping the peace, or take a hardline approach and try to eliminate the gangs entirely."
+  nf_brotherhood_elh_events.8.d: "As California emerged from the ashes of the war, the Hub became a beacon of hope for many. The trade city was bustling with activity, as merchants from all over the wasteland converged there to trade their wares. However, as the city grew once again in prominence, so too did the violence between the gangs of competing smugglers who vied for control of the lucrative trade routes. The Caravan Companies who operated in the Hub, like the Crimson Caravan and Water Merchants, bought up the street gangs during the war for security, leading to a return of the Great Merchant Wars that plagued the Hub in 2126.\n\n The Hub is a city that was both a vital center of commerce and a den of lawlessness. As such, the Elders bicker based on what they see- some argue that the government should broker a deal with the merchant-gangs, offering them protection from prosecution and legitimacy in exchange for their cooperation in keeping the peace. Others believe that the only way to restore order is to eliminate the gangs entirely, using force as necessary.\n\nThose who favor brokering a deal point out that the merchants were the lifeblood of the Hub's economy, with their criminal activities being a necessary evil in order to maintain stability as the NCR collapsed. If we legitimize the gangs, we could ensure that they operate within most bounds of the law, likely dropping inner city violence substantially.\n\nThose who favor eliminating the gangs, on the other hand, argue that the government had a duty to uphold the law, even if it meant disrupting the city's economy. They point out that the gangs were responsible for countless murders, robberies, and other crimes, and that the government's failure to act would only embolden them further."
   nf_brotherhood_elh_events.8.a: "Broker a deal."
   nf_brotherhood_elh_events.8.b: "§OSend our best police units to the Hub."
   nf_brotherhood_elh_events.8.maxsonians: "§PUse capital punishment. The companies will have to send replacements.§!"
@@ -1026,21 +1031,65 @@
   nf_brotherhood_orange_option_tt: "§gOrange text signals an option available due to choices you've made previously.§!"
   
   nf_brotherhood_elh_events.9.t: "Our Name"
-  nf_brotherhood_elh_events.9.d: "For years, we've been known as Lost Hills, named after our original base of operations in California. However, as resistance has faded and the demands of governance encroached, we must consider the implications of renaming ourselves to the Californian Brotherhood.\n\nThe Rhombian Elders, and some Reformers, argue that the name change would reflect our new reality. California is dotted with new impromptu war memorials: burned-out buildings, downed power lines, new craters collecting radioactive rainwater, and communities wiped out or cleared out and never to return. The citizens of California suffered greatly during the war, and it's vital for the Brotherhood to show that we are now a part of the rebuilding effort - not as foreign despots, but as long-term residents.\n\nOthers, however, are wary of the change. They argue that the government bunkers of Lost Hills are our home, and that even if we rename ourselves and send Elders to Shady Sands, the real power would always remain here, in these bunkers.\n\nThey argue we must keep the name Lost Hills as a reminder of our past, and to continue to honor the traditions and values that have guided us for so long. To do anything else would be to erode the legacy of Maxson without having seen through his goals.\n\nFinally, the rest of the reformers argue the road ahead will be long and arduous, but if we're committed to doing everything in our power to help the people of California rebuild, then a new name will show that we consider all Californians now to be our siblings, and that we're ready to welcome them into our ranks."
+  nf_brotherhood_elh_events.9.d: "For years, we've been known as Lost Hills, named after our original base of operations in California. However, as resistance has faded and the demands of governance encroached, we must consider the implications of renaming ourselves to the Californian Brotherhood.\n\nThe Rhombian Elders, and some Reformers, argue that the name change would reflect our new reality. California is dotted with new impromptu war memorials: burned-out buildings, downed power lines, new craters collecting radioactive rainwater, and communities wiped out or cleared out and never to return. The citizens of California suffered greatly during the war, and it's vital for the Brotherhood to show that we are now a part of the rebuilding effort - not as foreign despots, but as long-term residents.\n\nSome, though, are wary of the change. It's undeniable that the government bunkers of Lost Hills are our home, and some feel that even if we rename ourselves and send Elders to Shady Sands, the real power would always remain here, in these bunkers.\n\nThey argue we must keep the name Lost Hills as a reminder of our past, and to continue to honor the traditions and values that have guided us for so long. To do anything else would be to erode the legacy of Maxson without having seen through his goals.\n\nFinally, the rest of the reformers argue the road ahead will be long and arduous, but if we're committed to doing everything in our power to help the people of California rebuild, then a new name will show that we consider all Californians now to be our siblings, and that we're ready to welcome them into our ranks."
   nf_brotherhood_elh_events.9.a: "Camaraderie and Partnership"
   nf_brotherhood_elh_events.9.b: "History and Tradition"
+
+  nf_brotherhood_elh_events.10.t: "The Legion Defence Pact?" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10.d: "[BOS.getName]'s Reformers faction has offered a defence pact against the coming threat of Caesar's Legion, in exchange for administrative control over the full state of Maxson. They would not enforce the Codex upon citizens, and will respect our constitution. Unlike other faction in [BOS.getName], they hold the Republic in high regard. Our spies report that their faction is split between calls for war against us or request for Statehood, and denying them is certain to settle their debate.\n\n While their help, and that of their surviving Chapters would be most helpful, we could refuse them. If we do so, we should attack them before the Legion crosses the Long 15, or we'll almost certainly find ourselves attacked from within. \n\n§B Accepting will allow the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist.\n\n Declining will allow [BOS.getName] to send an ultimatum for the state of Maxson, should the [NCR.getName] gain surrender progress during their war against the Legion."
+  nf_brotherhood_elh_events.10.a: "Accept"
+  nf_brotherhood_elh_events.10.b: "Decline"
+  
+  bos_legion_defence_pact_call: "Call members of the Legion Defence Pact to war"
+  bos_legion_defence_pact_call_desc: "All surviving Legion Defence Pact members will answer the call to war."
+  legion_defence_pact_member: "A Member of the Legion Defence Pact"
+  nf_brotherhood_elh_events.10001.t: "The Legion Defence Pact: Invitation" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10001.d: "[BOS.getName]'s Reformers faction has offered a defence pact against the coming threat of Caesar's Legion, which has been ratified by the [NCR.getName]. Unlike other faction in [BOS.getName], they hold the Republic in high regard. Our spies report that their faction is split between calls for war against us or request for Statehood. \n\n§B Accepting will allow the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist.\n\n Declining will keep us out of the agreement."
+  nf_brotherhood_elh_events.10001.a: "Accept"
+  nf_brotherhood_elh_events.10001.b: "Decline"
+  
+  nf_brotherhood_elh_events.10002.t: "The Legion Defence Pact Formed" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10002.d: "[BOS.getName]'s Reformers faction has offered a defence pact to [NCR.getName] against us. We can't stop them, but we should prepare anti-armor equipment to deal with the threat of multiple Brotherhood chapters. \n\n§B The deal allows the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist."
+  nf_brotherhood_elh_events.10002.a: "We will make special preparations."
+  
+  nf_brotherhood_elh_events.10003.t: "The Legion Defence Pact: NCR Accepted"
+  nf_brotherhood_elh_events.10003.d: "The [NCR.getName] has accepted our offer for a Defence Pact. We will respect the NCR's constitution and civil rights, in return for administrative control over the state of Maxson. The NCR hopes this is a prelude to our request for statehood, but we will keep battle plans ready against them, regardless."
+  nf_brotherhood_elh_events.10003.a: "Excellent."
+  
+  nf_brotherhood_elh_events.10004.t: "The Legion Defence Pact: NCR Declined" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10004.d: "The [NCR.getName] has declined our offer of a Defence Pact. Perhaps they simply see no need for it, or perhaps they're suspicious we would still pursue a war, only after they're weakened by the Legion."
+  nf_brotherhood_elh_events.10004.a: "The Legion has the advantage. Let's prepare."
+  
+  nf_brotherhood_elh_events.10005.t: "The Legion Defence Pact: War!" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10005.d: "[PREV.getName] has called us to war under the terms of the Legion Defence Pact! Our troops make ready."
+  nf_brotherhood_elh_events.10005.a: "We march on the Legion!"
+  
+  nf_brotherhood_elh_events.10006.t: "[BOS.getName] demands Maxson!"
+  nf_brotherhood_elh_events.10006.d: "[BOS.getName], after our rejection of their pact, is seizing upon the opportunity provided by our war with the Legion. They demand the previously requested territories of maxson to be transferred to them immediately, or we'll face them on the battlefield. If we agree, they'll sign a non-aggression pact with us, but won't aid us against the Legion."
+  nf_brotherhood_elh_events.10006.a: "The Steel Menace ends today!"
+  nf_brotherhood_elh_events.10006.b: "We have to agree..."
+  bos_ncr_war_or_land_tt: "§CThe NCR is more likely to accept if their faction is evenly matched or losing.§! If the NCR §Rrejects§! our demands, §Rwe will immediately declare war§!, but if they §Gaccept§!:"
 
   nf_brotherhood_elh_events.11.t: "California Burning"
   nf_brotherhood_elh_events.11.d: "[BOS.getLeader],\n\nThe situation in California has grown dire. Our occupation of the NCR has been met with a ruthless response from the Barons, who have tightened their grip on the food supply to devastating effect.\n\nFood prices have climbed quickly, with the result that people across California are struggling to put food on the table, with the worst off going hungry as a result.\n\nWhen we attempted to investigate the cause of this in the Barons' lands, we were met with violence - granaries were burned, and male livestock were slaughtered.\n\nIt's clear that the Barons are willing to go to any lengths to maintain their power, even if it means starving the people of California. We've backed off our presence in Baron lands to avoid an unstoppable famine, but the Barons remain influential in deciding if, when, and how severe this famine might be.\n\nThere is some good news - Southern California is still producing and selling food. But with the Barons controlling such a great share of the farms and livestock in the NCR, we must take swift action to ensure the people of California have sufficient access to the food they need to survive.\n\nWe urge you to consider next steps carefully. If we do not act soon, the consequences could be catastrophic.\n\n—Senior Knights Sean and Daniel Diaz, Agricultural Inspectors"
   nf_brotherhood_elh_events.11.a: "This is going to be a problem."
   
   nf_brotherhood_elh_events.12.t: "[BOS.getLeader]'s Prestige Project"
-  nf_brotherhood_elh_events.12.d: "While much of the reconstruction campaign is simply mandatory for [BOS.getName] to be a well-functioning government, every power bloc in Lost Hills has it's own ideas for a grand capstone project. It's up to [BOS.getLeader] to decide which project is worth pursuing. \n\nWe can choose to invest in creating an efficient bureaucracy, to simply make getting things done as quick as possible without lacking oversight, or we can choose from pet projects belonging to influential Elders.\n\n"
+  nf_brotherhood_elh_events.12.d: "While much of the reconstruction campaign is simply mandatory for [BOS.getName] to be a well-functioning government, every power bloc in Lost Hills has it's own ideas for a grand capstone project. It's up to [BOS.getLeader] to decide which project is worth pursuing. \n\nWe can choose to invest in creating an efficient bureaucracy, to simply make getting things done as quick as possible without lacking oversight, or we can choose from pet projects belonging to influential Elders."
   nf_brotherhood_elh_events.12.a: "The NCR was held back by a paralyzed bureacracy. Ours will be different." ##%pp gain?
   nf_brotherhood_elh_events.12.maxsonians: "§PIt's time to recognize our new veterans.§!" ##Extra paladins? Perhaps.
   nf_brotherhood_elh_events.12.rhombians: "§gWe must pursue long-term integration with our citizens.§!" ##Training Halls?
   nf_brotherhood_elh_events.12.reformers: "§COur civilization must stand the test of time.§!" ##Grand education reforms? 
   nf_brotherhood_elh_events.12.troika: "§RWe can awaken the masses.§!" ##Cyborging citizens: general small buffs? intellectual drift?
+  bos_generic_prestige: "Well-Managed Bureacracy"
+  bos_generic_prestige_desc:"We have made a focused effort to effectively govern. Even low-level bureaucrats who've not joined the Brotherhood have been put through condensed scribe training, with impressive results."
+  bos_maxsonian_prestige: "Recognizing New Veterans"
+  bos_maxsonian_prestige_desc: "We have fought many wars, and it's beyond time new Paladins are promoted. However, some have shown different talents - we need to take advantage of great commanders and unit leaders, great drill instructors, and everything in between. Our greatest effort is being put to finding these individuals of merit, and getting them more powerful positions they'd excel in."
+  bos_rhombian_training_halls: "Establish Regional Training Halls"
+  bos_reformer_prestige: "Standing the Test of Time"
+  bos_reformer_prestige_desc: "We've made general improvements in education, justice, and healthcare. We've focused on building strong foundations for our civilization - a successor to the United States, and maybe more."
+  bos_troika_prestige: "Widespread Cybernetics Usage"
+  bos_troika_prestige_desc: "We've subsidized the costs of cybernetics and implants, and even made some free for critical workers. As they've become more widespread, we're seeing national-level benefits - and finding more individuals capable of seeing beyond the falsehoods of this world. "
 
   nf_brotherhood_elh_events.13.t: "The Legacy Government"
   nf_brotherhood_elh_events.13.d: "[BOS.getLeader], our implementation of a new government has largely succeeded. All federal elected positions have been eliminated and replaced. NCR Congresspeople have been replaced with our own Elders, with each elder representing local interests somewhere in our territories. This means, however, that powerful political elements have been cast down to the local level, becoming influential mayors in cities and settlements across California, and keeping in contact with like-minded individuals.\n\nKimball, Allgood, and Hayes represent most of the legacy government. Kimball is weak despite his previous presidency, and would be a good candidate if we simply want the legacy government to fade from relevancy. Kimball is a close ally of the Barons and could allow for a diplomatic end to this crisis. Working with Allgood or Hayes to implement some of the policies they originally campaigned on could keep the unrest from the famine undoing a lot of our work across the nation.\n\nIn the case of Allgood, their focus on good relations with us and eliminating corruption in the NCR would provide an experienced hand in our already ongoing efforts. No elder would find much to complain about in such a move, except for Allgood's close relationship with the Followers.\n\nGrant C. Hayes is known for their dim view of the Brotherhood criticising our safekeeping of technology and the cold shoulder we've given to foreign aid. The Troika or Reformers may be able to bring the industrial expertise of Hayes and Dayglow to the national level, along with their agenda against the Barons, considering their support of Hayes' points.\n\nWe could also just ignore all of them – the unrest from the famine will remain a problem, but we won’t tie our hands when it comes time to deal with the Barons directly.\n\n§BAll advisors take the place of a Cultural Advisor.§!"
@@ -1091,7 +1140,7 @@
   bos_worker_coops: "Agricultural Worker Cooperatives"
   bos_worker_coops_desc: "The Rhombians decided the best way to ensure the end of issues in the North, was to give the farmhands and ranchhands there direct ownership of the land they worked. It's been a great success for local compliance."
   bos_worker_discontent: "Angry Labour"
-  bos_worker_discontent: "For one reason or another, the workers here are furious with the government. They're working-to-rule, leading to increased losses of equipment and inefficient production."
+  bos_worker_discontent_desc: "For one reason or another, the workers here are furious with the government. They're working-to-rule, leading to increased losses of equipment and inefficient production."
   #Small followup news event is #1603.
   
   #Peaceful version of 16.
@@ -1103,6 +1152,8 @@
   nf_brotherhood_elh_events.1601.rhombians: "§gAccept, but draft new protections for independent farmers.§!"
   nf_brotherhood_elh_events.1601.reformers: "§CAccept, the Southern Farmers have an association of their own now.§!"
   nf_brotherhood_elh_events.1601.troika: "§RUse this opportunity to make multiple deals and fracture the Barons.§!"
+  nf_brotherhood_anton_as_advisor_tt: "§YAnton Flynn§! will be recruited as a §Ycultural advisor§!."
+  anton_flynn_disempowered: "Anton Flynn has retired from political life."
   
   #Hayes version of 16
   nf_brotherhood_elh_events.1602.t: "The Barons: Hayes"
@@ -1118,6 +1169,17 @@
   nf_brotherhood_elh_events.1604.t: "The Barons: Anton Flynn Arrested Publicly"
   nf_brotherhood_elh_events.1604.d: "Anton Flynn is in handcuffs. We've publicized this event as widely as possible - from newspapers to radio to television, every leading story everywhere is about the man who starved California. His last public photo is smug - the grin of a man who still believes his cachet with the legacy government will protect him. His future months of disavowing the Barons, the Stockmen's Association as a whole, and preaching the evils of rampant cronyism will disabuse him of that notion, soon enough."
   nf_brotherhood_elh_events.1604.a: "Justice, of a kind."
+  
+  #CES ceasefire with BoS
+  nf_brotherhood_elh_events.17.t: "The Wounded Brotherhood Cries Foul"
+  nf_brotherhood_elh_events.17.d: "[CES.getLeader], the Steel Rats cry foul. They simper for mercy against the might of the Legion. They recognize our claims to the Mojave, and Hoover Dam, and offer territories in Southeastern California if we'll agree to a truce."
+  nf_brotherhood_elh_events.17.a: "Yes, let's focus on the Tribes for a while."
+  nf_brotherhood_elh_events.17.b: "They will not get their mercy. We march to the West Coast."
+  bos_ncr_famine_offer_legion_concessions_for_peace: "We will offer the Legion all §YCalifornian§! and §YMojave§! territories §Yeast§! of the §YRandsburg-Palm Springs§! caravan routes, and §Ynorth§! of §YSalton City§! in exchange for a 1-year §Gceasefire.§!"
+  
+  nf_brotherhood_elh_events.1701.t: "[FROM.getName] signs the BoS-Legion Armistice"
+  nf_brotherhood_elh_events.1701.d: "[FROM.getLeader] has signed the BoS-Legion Armistice on behalf of our faction. The Brotherhood has given up numerous territories along the Colorado River, in exchange for a 1-year armistice. This virtually guarantees that the frontline of the war will not be the Dam, but the Boneyard and Shady Sands, themselves."
+  nf_brotherhood_elh_events.1701.a: "This will be a bloody one."
   
   nf_brotherhood_bunkered_divisions.1.t: "End of the Ceasefire"
   nf_brotherhood_bunkered_divisions.1.desc: "All elders are in agreement - there is no hope for California except us. There is no worthy successor for us to guide, and the stumbling of [NCR.getLeader] has failed to impress.\n\nOur preparations are complete, with every bunker in the state of Maxson restored and filled once again with personnel. We've warned the people of Maxson of the coming conflict, and many citizens have seen the thousand ways the NCR is bound to break. Only we can safeguard Mankind."

@@ -2703,7 +2703,7 @@ focus_tree = {
 		relative_position_id = bos_nf_back_to_business
 		available = {
 			has_completed_focus = bos_nf_back_to_business
-			NOT = {is_in_faction_with = NCR}
+			NOT = {is_ally_with = NCR}
 			OR = {
 				has_government = intellectuals
 				AND = {
@@ -3040,7 +3040,7 @@ focus_tree = {
 			focus = bos_nf_a_chance_opportunity
 		}
 		available = {
-			NOT = {is_in_faction_with = NCR}
+			NOT = {is_ally_with = NCR}
 			if = {
 				limit = {
 					has_dynamic_modifier = {
@@ -3750,7 +3750,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_further_reconstruction
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_enc_poison_bear
 		cost = 30
 		x = 0
 		y = 3
@@ -3846,7 +3846,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_power_brokers
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_generic_laser_muskets_focus
 		cost = 30
 		x = -4
 		y = 1
@@ -3863,7 +3863,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_power_brokers_the_hub
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_NCR_Barons_Piggy_Bank
 		cost = 30
 		x = -1
 		y = 1
@@ -3881,7 +3881,7 @@ focus_tree = {
 
 	focus = {
 		id = bos_nf_power_brokers_the_legacy_government
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_NCR_kimball
 		cost = 30
 		x = 1
 		y = 1
@@ -3898,7 +3898,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_power_brokers_the_barons
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_NCR_anton_flynn
 		cost = 30
 		x = 0
 		y = 2
@@ -3933,15 +3933,15 @@ focus_tree = {
 						has_completed_focus = bos_nf_high_elder_rhiannon_economic_plan
 						has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
 					}
-					country_event = nf_brotherhood_elh_events.1601 ##Peaceful version of the Barons event
 				}
+				country_event = nf_brotherhood_elh_events.1601 ##Peaceful version of the Barons event
 			}
 			country_event = nf_brotherhood_elh_events.16
 		}
 	}
 	focus = {
 		id = bos_nf_the_californian_food_crisis
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_generic_food_focus
 		cost = 7
 		x = 0
 		y = 1
@@ -3958,8 +3958,40 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = bos_nf_the_weakened_brotherhood
+		icon = GFX_goal_flag_burn_BOS
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = bos_nf_the_californian_food_crisis
+		prerequisite = {
+			focus = bos_nf_the_californian_food_crisis
+		}
+		available = {
+			OR = {
+				any_allied_country = {
+					is_neighbor_of = CES
+				}
+				is_neighbor_of = CES
+				has_war_with = CES
+			}
+			OR = {
+				has_idea = bos_ncr_looming_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_terrible_famine
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = bos_ncr_famine_offer_legion_concessions_for_peace
+			add_political_power = -100
+			CES = {
+				country_event = nf_brotherhood_elh_events.17
+			}
+		}
+	}
+	focus = {
 		id = bos_nf_economic_projects
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_generic_bridge
 		cost = 30
 		x = 4
 		y = 1
@@ -4064,7 +4096,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_economic_projects_real_memorials
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_11_capital
 		cost = 30
 		x = 1
 		y = 1
@@ -4099,7 +4131,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_economic_projects_training_halls
-		icon = GFX_goal_generic_focus_solar_energy
+		icon = GFX_goal_CAF_plant
 		cost = 30
 		x = 0
 		y = 2
@@ -4133,6 +4165,7 @@ focus_tree = {
 			has_completed_focus = bos_nf_reorganizing_our_economy
 		}
 		completion_reward = {
+			custom_effect_tooltip = bos_skip_brotherhood_states_tt
 			every_state = {
 				tooltip = EFFECT_EVERY_STATE_STARTS
 				limit = {
@@ -4141,6 +4174,29 @@ focus_tree = {
 						var = core_countries
 						value = 1
 						compare = greater_than_or_equals
+					}
+					NOT = {
+						#currently offmap
+						is_owned_by = BMW #Midwest
+						is_owned_by = BGF #Gulf
+						is_owned_by = BLS #Lyons
+						is_owned_by = BAP #Appalachian
+						is_owned_by = BSF #San Francisco
+
+						#In order of distance from lost hills
+						is_owned_by = BOS #Lost Hills
+						is_owned_by = BSF #San Francisco
+						is_owned_by = MOJ #Mojave
+						is_owned_by = GRD #Guardians
+						is_owned_by = WBH #Washington
+						is_owned_by = TCA #The Cause
+						is_owned_by = MXC #Maxson
+						is_owned_by = MNC #Montana
+						is_owned_by = TBH #Texan
+						is_owned_by = BMW #Midwest
+						is_owned_by = BAP #Appalachian Expedition
+						is_owned_by = BGF #Gulf
+						is_owned_by = BLS #Lyons'
 					}
 				}
 				add_claim_by = BOS
@@ -4623,10 +4679,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {	
 			    type = infantry_equipment
 				amount = -250
-				OR = {
-				producer = BOS
-				producer = USA 
-				}
 			}
 			
 			357 = {
@@ -4667,10 +4719,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {	
 			    type = infantry_equipment
 				amount = -250
-				OR = {
-				producer = BOS
-				producer = USA 
-				}
 			}
 			add_manpower = -250
 			602 = {
@@ -4743,10 +4791,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {	
 			    type = infantry_equipment
 				amount = -250
-				OR = {
-				producer = BOS
-				producer = USA 
-				}
 			}
 			606 = {
 				add_core_of = BOS
@@ -4786,10 +4830,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {	
 			    type = infantry_equipment
 				amount = -250
-				OR = {
-				producer = BOS
-				producer = USA 
-				}
 			}
 			add_manpower = -250
 			558 = {
@@ -4829,10 +4869,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {	
 			    type = infantry_equipment
 				amount = -250
-				OR = {
-				producer = BOS
-				producer = USA 
-				}
 			}
 			add_manpower = -250
 			312 = {
@@ -4874,10 +4910,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {	
 			    type = infantry_equipment
 				amount = -250
-				OR = {
-				producer = BOS
-				producer = USA 
-				}
 			}
 			433 = {
 				add_core_of = BOS
@@ -7007,7 +7039,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_a_better_brotherhood
-		icon = GFX_goal_MOJ_wastelander_recruitment
+		icon = GFX_goal_bos_generic_usa
 		cost = 30
 		x = 1
 		y = 1
@@ -7048,7 +7080,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_opening_our_vaults
-		icon = GFX_goal_MOJ_wastelander_recruitment
+		icon = GFX_goal_bos_generic_locker
 		cost = 30
 		x = 2
 		y = 2
@@ -7066,7 +7098,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_bigger_threats
-		icon = GFX_goal_MOJ_wastelander_recruitment
+		icon = GFX_goal_BOS_steel_crusade
 		cost = 30
 		x = 0
 		y =1
@@ -7076,9 +7108,16 @@ focus_tree = {
 		}
 		available = {
 			country_exists = NCR
+			country_exists = CES
 			NOT = {
 				BOS = {
 					has_war_with = NCR
+				}
+			}
+			NOT = {
+				AND = {
+					country_exists = MOT
+					country_exists = MOJ
 				}
 			}
 			OR = {
@@ -7086,20 +7125,29 @@ focus_tree = {
 				has_global_flag = fbhd_boulder_city_miracle
 				AND = {
 					OR = {
-                    252 = { OWNER = { is_caesars_legion_member = yes } }
-					252 = { is_owned_by = MOJ}
+						252 = { OWNER = { is_caesars_legion_member = yes } }
+						252 = { is_owned_by = MOJ}
 					}
                     date > 2279.01.01
                 }
 			}
 		}
+		bypass = {
+			NOT = {
+				country_exists = NCR
+				country_exists = CES
+			}
+		}
 		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
+			NCR = {
+				country_event = nf_brotherhood_elh_events.10
+			}
+			
 		}
 	}
 	focus = {
 		id = bos_nf_force_the_issue
-		icon = GFX_goal_MOJ_wastelander_recruitment
+		icon = GFX_goal_NCR_Steeldeal
 		cost = 30
 		x = 0
 		y = 2
@@ -7107,24 +7155,44 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_bigger_threats
 		}
+		will_lead_to_war_with = NCR
 		available = {
 			NOT = {
 				has_global_flag = bos_ncr_accepted_deal_for_maxson
 			}
 			NCR = {
-				at_war_with = CES
+				has_war_with = CES
 				surrender_progress > 0.01
 			}
 		}
+		select_effect = {
+		add_ai_strategy = {
+				type = prepare_for_war
+				id = NCR
+				value = 200
+		}
+		}
 		completion_reward = {
-			custom_effect_tooltip = coming_in_a_later_update_bos
 			NCR = {
-				every_owned_state = {
-					limit = {
-						region = 51
+				country_event = nf_brotherhood_elh_events.10006
+			}
+			custom_effect_tooltip = bos_ncr_war_or_land_tt
+			effect_tooltip = {
+				NCR = {
+					every_owned_state = {
+						limit = {
+							region = 51
+						}
+						add_core_of = BOS
+						BOS = { transfer_state = PREV }
 					}
-					add_core_of = BOS
-					BOS = { transfer_state = PREV }
+				}
+				BOS = {
+					diplomatic_relation = {
+						country = NCR
+						relation = non_aggression_pact
+						active = yes
+					}
 				}
 			}
 		}
@@ -7145,7 +7213,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_frozen_politics_1
-		icon = GFX_goal_BOS_generic
+		icon = GFX_goal_generic_confidential_file
 		cost = 30
 		x = -2
 		y = 1
@@ -7170,7 +7238,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_frozen_politics_1_1
-		icon = GFX_goal_BOS_generic
+		icon = GFX_goal_generic_backroom_planning
 		cost = 30
 		x = 0
 		y = 1
@@ -7220,7 +7288,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_frozen_politics_2
-		icon = GFX_goal_BOS_generic
+		icon = GFX_goal_MOJ_contact_the_west
 		cost = 30
 		x = 0
 		y = 1
@@ -7244,7 +7312,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_frozen_politics_3
-		icon = GFX_goal_BOS_generic
+		icon = GFX_goal_generic_automatron_splash
 		cost = 30
 		x = 2
 		y = 1
@@ -10088,7 +10156,7 @@ focus_tree = {
 		available = {
 			OR = {
 				SHI = {
-					is_in_faction_with = BOS
+					is_ally_with = BOS
 					has_completed_focus = shi_vertibirds
 				}
 				AND = {
@@ -10127,7 +10195,7 @@ focus_tree = {
 		}
 		available = {
 			SHI = {
-				NOT = {is_in_faction_with = BOS}
+				NOT = {is_ally_with = BOS}
 			}
 			country_exists = SHI
 		}

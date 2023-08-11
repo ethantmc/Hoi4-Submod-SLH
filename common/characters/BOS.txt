@@ -897,4 +897,64 @@ characters={
 			}
 		}
 	}
+	BOS_anton_flynn = {
+		name = NCR_ANTON_FLYNN_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_flynn
+				small = GFX_idea_anton_flynn
+			}
+			army = {
+				large = GFX_Portrait_NCR_flynn
+				small = GFX_idea_anton_flynn
+			}
+		}
+		country_leader = {
+			desc = NCR_ANTON_FLYNN_DESC
+			ideology = conspiratory_oligarchy
+			expire = "3000.01.01.01"
+			traits = {
+				baron_connections
+            }
+			id = -1
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_allgood_murphy_economic_advisor
+			slot = cultural_advisor
+			idea_token = NCR_anton_flynn_cultural_advisor
+			allowed = {
+				OR = {
+					tag = BOS
+					original_tag = BOS
+				}
+			}
+			available = {
+				AND = {
+					has_country_flag = barons_cooperating
+					NOT = {
+						has_country_flag = anton_flynn_disempowered
+					}
+				}
+			}
+			traits = {
+				power_broker
+				baron_connections
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+				modifier = {
+					factor = 2
+					OR = {
+						has_stability > 0.5
+						AND = {
+							has_stability > 0.25
+							has_war = yes
+						}
+					}
+				}
+			}
+		}
+	}
 }
