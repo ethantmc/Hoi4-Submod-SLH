@@ -122,4 +122,6 @@ The update is focused on the societal changes any of the groups would make to Ca
 -The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Kimball, and Allgood Murphy. You'll have to earn their support first, in Healing New Scars.
 -The addition of the Reformers final focuses, imagining what a non-Steel Rangers Brotherhood looks like under them. (Sign the Legion Defence Pact with the NCR for Maxson, or stab them in the back to prep against said Legion if they turn you down!)
 -New decisions relating to the new content, retouches of several Expeditions to account for changes to vanilla, and art for the mutually-exclusive Council focuses.
--Only one notable bugfix, the option in Sailing the Yangtze that may see a Paladin unit killed, now properly displays that information. Other fixed bugs were invisible (AI-only) or harmless log errors that have been fixed.
+-The option in Sailing the Yangtze that may see a Paladin unit killed, now properly displays that information. 
+-A bug with the "Supply Debates" event where Lost Hills would also get the mercenaries has been fixed. Additonally, a typo preventing the targeted chapter's name from being in the event text has been fixed.
+-Other fixed bugs were invisible (AI-only) or harmless log errors.

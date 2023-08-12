@@ -2598,7 +2598,9 @@ bos_lost_hills_diplomacy = {
 			}
 		}
 		remove_effect = {
-			set_variable = {bos_consider_target = FROM.id}
+			FROM = {
+			save_global_event_target_as = bos_consider_target
+			}
 			country_event = nf_brotherhood_communications.8
 		}
 		ai_will_do = {
