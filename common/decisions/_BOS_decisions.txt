@@ -2657,7 +2657,7 @@ bos_lost_hills_diplomacy = {
 			}
 		}
 		modifier = {
-			political_power_factor = -0.5
+			political_power_factor = -0.2
 		}
 		remove_effect = {
 			if = {
@@ -2751,7 +2751,7 @@ bos_lost_hills_diplomacy = {
 			}
 		}
 		modifier = {
-			political_power_factor = -0.5
+			political_power_factor = -0.2
 		}
 		remove_effect = {
 			if = {
@@ -2821,7 +2821,33 @@ bos_lost_hills_diplomacy = {
 			original_tag = NCR
 		}
 		ai_will_do = {
-			base = 0
+			base = bos_tension
+			##Modifiers are used so that 0 tension is completely safe. Maximum result is 100*1.5*2 = 250 ai_will_do.
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio > 2.1
+				}
+				factor = 2
+			}
+			modifier = { ###The calculation is simple, just (NCR divs/ BoS divs) but generally the BoS should be winning on quality in this calc, and the NCR win on allies (usually) so between that and manpower, it washes out overall and doesn't need consideration.
+				strength_ratio = {
+					tag = BOS
+					ratio > 1.2
+				}
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 0.8
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_war_with = CES
+				factor = 0
+			}
 		}
 		visible = {
 			country_exists = BOS
@@ -2884,7 +2910,33 @@ bos_lost_hills_diplomacy = {
 			original_tag = NCR
 		}
 		ai_will_do = {
-			base = 0
+			base = bos_tension
+			##Modifiers are used so that 0 tension is completely safe. Maximum result is 100*1.5*2 = 250 ai_will_do.
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio > 2.1
+				}
+				factor = 2
+			}
+			modifier = { ###The calculation is simple, just (NCR divs/ BoS divs) but generally the BoS should be winning on quality in this calc, and the NCR win on allies (usually) so between that and manpower, it washes out overall and doesn't need consideration.
+				strength_ratio = {
+					tag = BOS
+					ratio > 1.2
+				}
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 0.8
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_war_with = CES
+				factor = 0
+			}
 		}
 		visible = {
 			country_exists = BOS
@@ -2972,7 +3024,33 @@ bos_lost_hills_diplomacy = {
 			original_tag = NCR
 		}
 		ai_will_do = {
-			base = 0			#AI wont do this one!
+			base = bos_tension
+			##Modifiers are used so that 0 tension is completely safe. Maximum result is 100*1.5*2 = 250 ai_will_do.
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio > 2.1
+				}
+				factor = 2
+			}
+			modifier = { ###The calculation is simple, just (NCR divs/ BoS divs) but generally the BoS should be winning on quality in this calc, and the NCR win on allies (usually) so between that and manpower, it washes out overall and doesn't need consideration.
+				strength_ratio = {
+					tag = BOS
+					ratio > 1.2
+				}
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 0.8
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_war_with = CES
+				factor = 0
+			}
 		}
 		visible = {
 			country_exists = BOS
@@ -3066,7 +3144,33 @@ bos_lost_hills_diplomacy = {
 			original_tag = NCR
 		}
 		ai_will_do = {
-			base = 1			#AI can do this one!
+			base = bos_tension
+			##Modifiers are used so that 0 tension is completely safe. Maximum result is 100*1.5*2 = 250 ai_will_do.
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio > 2.1
+				}
+				factor = 2
+			}
+			modifier = { ###The calculation is simple, just (NCR divs/ BoS divs) but generally the BoS should be winning on quality in this calc, and the NCR win on allies (usually) so between that and manpower, it washes out overall and doesn't need consideration.
+				strength_ratio = {
+					tag = BOS
+					ratio > 1.2
+				}
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 0.8
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_war_with = CES
+				factor = 0
+			}
 		}
 		visible = {
 			country_exists = BOS
@@ -3118,6 +3222,7 @@ bos_lost_hills_diplomacy = {
 		allowed = {
 			NOT = {
 				original_tag = NCR
+				is_ally_with = NCR
 			}
 		}
 		ai_will_do = {
@@ -3253,7 +3358,7 @@ bos_lost_hills_diplomacy = {
 			original_tag = BOS
 		}
 		ai_will_do = {
-			base = 0			#Saves on performance a bit
+			base = 25
 		}
 		visible = {
 			country_exists = NCR

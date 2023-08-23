@@ -19,8 +19,7 @@ stronger_lost_hills_scribe_council = {
 		tag = BOS
 	}
 	visible = {
-		AND = {has_country_flag = bos_paladin_decisions_enabled
-		has_completed_focus = bos_nf_the_scribes}
+		has_completed_focus = bos_nf_the_scribes
 	}
 	icon = GFX_decision_backpack
 	#picture = GFX_event_MOJ_contact_the_west

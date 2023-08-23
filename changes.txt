@@ -114,6 +114,9 @@ Explore the world! Manage your paladins carefully as you interact with sprawling
 
 Many other aspects of the vanilla tree are retouched - such as industry, trade, politics, and the NCR-Brotherhood War, which is now easier to start and resilient to multiplayer shenanigans among a plethora of other changes.
 
+BEFORE RELEASE CHECK THESE:
+-moj-mot war works
+-localized famine progress using scripted loc
 
 PATCHNOTES:
 The update is focused on the societal changes any of the groups would make to California, and organized pushback from the entrenched powers in California.
@@ -122,6 +125,14 @@ The update is focused on the societal changes any of the groups would make to Ca
 -The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Kimball, and Allgood Murphy. You'll have to earn their support first, in Healing New Scars.
 -The addition of the Reformers final focuses, imagining what a non-Steel Rangers Brotherhood looks like under them. (Sign the Legion Defence Pact with the NCR for Maxson, or stab them in the back to prep against said Legion if they turn you down!)
 -New decisions relating to the new content, retouches of several Expeditions to account for changes to vanilla, and art for the mutually-exclusive Council focuses.
+
+Changes:
+-The NCR AI is now allowed to and much more likely to end the ceasefire, based on tension and how badly they overmatch the BoS. Unless Moore is elected, you still won't be under threat unless Caesar's Legion has been defeated.
+-Focuses that give "Brotherhood Presence" in a state now add a DMZ.
+-Changed a possible multiplayer exploit that allowed the Shi State to "easily" start the 2nd NCR-BoS War on behalf of the NCR. The cheap decision to start the war is now only available if you're not in a faction with the NCR.
+-Rebalanced the Change Tension decisions for BoS-NCR tension, reducing the pp gain penalty from 50% -> 20%.
+-Allowed the AI to form the Steel Rangers, though it's quite unlikely for now.
+Fixes:
 -The option in Sailing the Yangtze that may see a Paladin unit killed, now properly displays that information. 
 -A bug with the "Supply Debates" event where Lost Hills would also get the mercenaries has been fixed. Additonally, a typo preventing the targeted chapter's name from being in the event text has been fixed.
 -Other fixed bugs were invisible (AI-only) or harmless log errors.

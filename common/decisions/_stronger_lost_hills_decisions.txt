@@ -1107,7 +1107,12 @@ stronger_lost_hills_decisions = {
 				MOT = {is_ai = yes}
 			}
 			visible = {
-				MOT = {is_ai = yes}
+				MOT = {
+				is_ai = yes
+				}
+				hidden_trigger = {
+					country_exists = MOT
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1205,12 +1210,18 @@ stronger_lost_hills_decisions = {
 						is_ai = yes}
 						ROB = {is_ai = yes}
 					}
+					AND = {
+						MXC = {has_war_with = SCO
+						is_ai = yes}
+						SCO = {is_ai = yes}
+					}
 				}
 			}
 			visible = {
 				MXC = {is_ai = yes}
 				OR = {
 					country_exists = ROB
+					country_exists = SCO
 					country_exists = HAN
 				}
 			}
@@ -1292,7 +1303,9 @@ stronger_lost_hills_decisions = {
 				bos_has_scribe_teams = yes
 			}
 			visible = {
-				always = yes
+				NOT = {
+					has_completed_focus = bos_nf_brotherhood_r_n_d
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1348,6 +1361,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_air_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1401,6 +1417,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_air_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_lockreed
+					has_completed_focus = bos_nf_ball_aerospace
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1463,6 +1485,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_lockreed
 				has_completed_focus = bos_nf_ball_aerospace
+				NOT = {
+					has_completed_focus = bos_nf_repconn
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1519,6 +1544,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_industry_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1574,6 +1602,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_industry_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_dunwich_borers
+					has_completed_focus = bos_nf_hornwright_industrial_mining_company
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1635,6 +1669,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_dunwich_borers
 				has_completed_focus = bos_nf_hornwright_industrial_mining_company
+				NOT = {
+					has_completed_focus = bos_nf_red_rocket
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1690,6 +1727,11 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					AND = {
+						has_completed_focus = bos_nf_robotics_research
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1745,6 +1787,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_robotics_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_cerulean_robotics
+					has_completed_focus = bos_nf_robco
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1806,6 +1854,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_cerulean_robotics
 				has_completed_focus = bos_nf_robco
+				NOT = {
+					has_completed_focus = bos_nf_acme
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1861,6 +1912,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_theoretical_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1916,6 +1970,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_theoretical_research
+				NOT = {
+					AND = {
+						has_completed_focus = bos_nf_future_tec
+						has_completed_focus = bos_nf_greenway_hydroponics
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1976,6 +2036,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_future_tec
 				has_completed_focus = bos_nf_greenway_hydroponics
+				NOT = {
+					has_completed_focus = bos_nf_virtual_strategic_solutions
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2030,6 +2093,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_vehicle_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2084,6 +2150,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_vehicle_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_takoma_motors
+					has_completed_focus = bos_nf_n_h_and_m_vehicles
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2144,6 +2216,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_takoma_motors
 				has_completed_focus = bos_nf_n_h_and_m_vehicles
+				NOT = {
+					has_completed_focus = bos_nf_chryslus_vehicles
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2198,6 +2273,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_weaponry_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2252,6 +2330,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_weaponry_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_SIG_sauer_weaponry
+					has_completed_focus = bos_nf_heckler_and_koch_weaponry
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2312,6 +2396,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_SIG_sauer_weaponry
 				has_completed_focus = bos_nf_heckler_and_koch_weaponry
+				NOT = {
+					has_completed_focus = bos_nf_wattz_weaponry
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2432,6 +2519,35 @@ stronger_lost_hills_decisions = {
 				custom_effect_tooltip = people_seek_cooperation_with_the_ncr_tt
 				NCR = {
 					country_event = nf_brotherhood_steel_rangers.1
+				}
+			}
+		}
+		bos_dmz_test = {
+			icon = GFX_decision_papers
+			fire_only_once = no
+			cost = 0
+			allowed = {
+				original_tag = BOS
+			}
+			ai_will_do = {
+				base = 0			#Saves on performance a bit
+			}
+			visible = {
+				country_exists = NCR
+				is_debug = yes
+			}
+			available = {
+				always = yes
+			}
+			complete_effect = {
+				for_each_scope_loop = {
+					array = bos_bunker_array
+					if = {
+						limit = {
+							always = yes
+						}
+						set_demilitarized_zone = yes
+					}
 				}
 			}
 		}

@@ -1,0 +1,30 @@
+﻿l_english:
+  #Leaders
+  BOS_jonathan_maxson_name: "Jonathan Maxson"
+  BOS_mari_torni_name:0 "Mari Branwen Törni"
+  BOS_arthur_name: "Arthur Maxson"
+  BOS_angharad_name: "Elder Angharad"
+  BOS_manawyddan_name: "Elder Manawyddan"
+  BOS_rhiannon_name: "Elder Rhiannon"
+  BOS_pryderi_name: "Elder Pryderi"
+  BOS_rhiannon_troika_name: "Troika Rhiannon"
+  BOS_manawyddan_troika_name: "Troika Manawyddan"
+  BOS_pryderi_troika_name: "Troika Pryderi"
+  BOS_llwyd_name: "Elder Llwyd"
+  BOS_councilor_llwyd_name: "Councillor Llwyd"
+  BOS_arthur_maxson_name: "Arthur Maxson"
+  #Leader Descriptions
+  SLH_MARI_TORNI_DESC: "Expanded Lost Hills: Mari Branwen Törni is a Navarro Veteran and mother of the Alamo Chapter's own Kathrine Törni. She is recognized as both a Paladin and Scribe, and serves as the Rhombian candidate for High Elder. She is widely believed to be the best suited elder for reforming Lost Hills, and has significant respect from Paladins, Knights, and Scribes within Lost Hills. Rumours in the Brotherhood suggest that, without a Maxson, even the Circle of Steel prefers her." 
+  #Other
+  BOS_paladin_cannon_name:0 "Paladin Cannon"
+  BOS_paladin_miller:0 "Paladin Miller"
+  BOS_paladin_richardson:0 "Paladin Richardson"
+  BOS_paladin_myers:0 "Paladin Myers"
+  BOS_scribe_perez:0 "Scribe Perez"
+  BOS_paladin_moore:0 "Paladin Moore"
+  BOS_paladin_robert_stone_name:0 "Knight Robert Stone"
+  BOS_scout_davies:0 "Scout Davies"
+  BOS_knight_simmons:0 "Knight Simmons"
+  BOS_scribe_dyson:0 "Scribe Dyson"
+  BOS_journeyman_fritz:0 "Journeyman Fritz"
+

@@ -1,6 +1,6 @@
 on_actions = {
 
-	on_weekly = {
+	on_weekly_BOS = {
 		effect = {
 			set_variable = {
 				bos_ruler_pop = BOS.party_popularity_100@ruler

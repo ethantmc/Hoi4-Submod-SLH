@@ -4997,10 +4997,10 @@ country_event = {
 		}
 	}
 }
-news_event = {
+country_event = { ##Description too long to be a news event - the button is cut off.
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.11" }
 	id = nf_brotherhood_elh_events.11
-	title = nf_brotherhood_elh_events.11.t #Famine Looms
+	title = nf_brotherhood_elh_events.11.t #California Burning
 	desc = nf_brotherhood_elh_events.11.d #Barons all across California burn grain and slaughter livestock.
 	picture = GFX_event_sub_generic_war_room
 	is_triggered_only = no
@@ -5018,6 +5018,7 @@ news_event = {
 					owns_state = 63
 			}
 			tag = BOS
+			has_completed_focus = bos_nf_the_brotherhood_triumphant
 		}
 	}
 
@@ -5031,10 +5032,10 @@ news_event = {
 
 }
 country_event = { ##TODO - LOCALIZATION
-	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.11" }
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.12" }
 	id = nf_brotherhood_elh_events.12
 	title = nf_brotherhood_elh_events.12.t #Prestige Project
-	desc = nf_brotherhood_elh_events.12.d #Barons all across California burn grain and slaughter livestock.
+	desc = nf_brotherhood_elh_events.12.d #Choose the project to complete, everyone has ideas
 	picture = GFX_event_brotherhood_training
 	is_triggered_only = yes
 	fire_only_once = yes

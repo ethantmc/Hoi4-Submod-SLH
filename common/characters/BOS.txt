@@ -7,7 +7,7 @@ characters={
 			}
 		}
 		country_leader={
-			desc="MARI_TORNI_DESC"
+			desc="SLH_MARI_TORNI_DESC"
 			ideology=military_government
 			traits={ isolationist decorated_hero brotherhood_scribe}
 			expire="3000.01.01.01"

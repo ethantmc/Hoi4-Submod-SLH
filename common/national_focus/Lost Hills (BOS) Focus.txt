@@ -981,7 +981,7 @@ focus_tree = {
 	}
 	focus = {
 		id = bos_nf_heckler_and_koch_weaponry
-		icon = GFX_goal_generic_smg_12.7
+		icon = GFX_goal_generic_smg_12
 		cost = 30
 		x = 1
 		y = 1
@@ -2878,6 +2878,19 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { BOS_tension_to_add = 100 }
 			bos_change_tension = yes
+			hidden_effect = {
+				BOS = {
+					for_each_scope_loop = {
+						array = bos_bunker_array
+						if = {
+							limit = {
+								always = yes
+							}
+							set_demilitarized_zone = yes
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -3026,6 +3039,19 @@ focus_tree = {
 			}
 			custom_effect_tooltip = bos_nf_preparing_contingency_plans_tt
 			custom_effect_tooltip = bos_nf_impact_downfall_tt
+			hidden_effect = {
+				BOS = {
+					for_each_scope_loop = {
+						array = bos_bunker_array
+						if = {
+							limit = {
+								always = yes
+							}
+							set_demilitarized_zone = yes
+						}
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -3151,6 +3177,19 @@ focus_tree = {
 					}
 				}
 				
+			}
+			hidden_effect = {
+				BOS = {
+					for_each_scope_loop = {
+						array = bos_bunker_array
+						if = {
+							limit = {
+								always = yes
+							}
+							set_demilitarized_zone = yes
+						}
+					}
+				}
 			}
 		}
 	}
