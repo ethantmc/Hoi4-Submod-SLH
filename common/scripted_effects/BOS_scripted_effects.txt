@@ -491,9 +491,18 @@ bos_upgrade_legion_experience_law = {
 	if = {
 		limit = {
 			OR = {
-				has_idea = bos_legion_fighting_experience_1
 				has_idea = bos_legion_fighting_experience_2
+				has_idea = bos_legion_fighting_experience_3
 			}
+		}
+		swap_ideas = {
+			remove_idea = bos_legion_fighting_experience_2
+			add_idea = bos_legion_fighting_experience_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_legion_fighting_experience_1
 		}
 		swap_ideas = {
 			remove_idea = bos_legion_fighting_experience_1
@@ -504,7 +513,6 @@ bos_upgrade_legion_experience_law = {
 		add_ideas = bos_legion_fighting_experience_1
 	}
 }
-
 bos_upgrade_mutant_experience_law = {
 	if = {
 		limit = {

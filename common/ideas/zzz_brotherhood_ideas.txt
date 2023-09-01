@@ -1057,6 +1057,19 @@ ideas = {
 			targeted_modifier = { tag = NAV attack_bonus_against = 0.05 }
 			#More later
 		}
+		bos_legion_fighting_experience_3 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = CES attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = WHT attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = LAC attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = TWO attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = NAV attack_bonus_against = 0.075 }
+			#More later
+		}
 		#Modifier for lots of stuff
 		bos_mutant_fighting_experience_1 = {
 			picture = warband_without_a_home

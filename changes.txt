@@ -147,5 +147,6 @@ Fixes:
 -Fixed the BSF's expeditionary technology being unobtainable. Should the devs ever let the BSF research Monstrous Plants, I will re-add the requirement that they have done so.
 -Fixed the "Lost Hills Politics" decision category disappearing if you pursue "A Balanced Council" and then select an Absolute High Elder. The section will still disappear if you do not have "A Balanced Council", but should re-appear if you take the focus.
 -Fixed the market decisions (Allow Select Traders, Open the Markets) no longer functioning due to a change in how vanilla hoi4 handles no-length decisions.
+-Fixed the extra Mutant Experience national spirit upgrade not increasing maximum past 5%, also applies to Legion. New maximums for both a 7.5% as there is an event offering an upgrade for each, with the legion event being new.
 -A bug with the "Supply Debates" event where Lost Hills would also get the mercenaries has been fixed. Additonally, a typo preventing the targeted chapter's name from being in the event text has been fixed.
 -Other fixed bugs were invisible (AI-only) or harmless log errors.

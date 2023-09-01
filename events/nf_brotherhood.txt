@@ -5951,6 +5951,9 @@ country_event = {
 		trigger = {
 		
 		}
+		BOS = {
+			country_event = nf_brotherhood_elh_events.1702
+		}
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -5977,7 +5980,7 @@ news_event = {
 		
 		}
 		custom_effect_tooltip = bos_legion_truce_effects_explanation_tt
-		effect_tooltip = {
+		effect_tooltip = { ##This just explains what happened
 			BOS = {
 				every_owned_state = {
 					limit = {
@@ -6019,6 +6022,18 @@ news_event = {
 				days = 365
 			}
 		}
+	}
+}
+news_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.1702" }
+	id = nf_brotherhood_elh_events.1702
+	title = nf_brotherhood_elh_events.1702.t #A Wounded Brotherhood
+	desc = nf_brotherhood_elh_events.1702.d #They've come begging
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_brotherhood_elh_events.1702.a #War till the end, then.
+		bos_upgrade_legion_experience_law = yes
 	}
 }
 ##EXPEDITIONS ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event, so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y

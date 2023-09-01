@@ -1196,8 +1196,12 @@
   bos_ncr_famine_offer_legion_concessions_for_peace: "We will offer the Legion all §YCalifornian§! and §YMojave§! territories §Yeast§! of the §YRandsburg-Palm Springs§! caravan routes, and §Ynorth§! of §YSalton City§! in exchange for a 1-year §Gceasefire.§!"
   
   nf_brotherhood_elh_events.1701.t: "[FROM.getName] signs the BoS-Legion Armistice"
-  nf_brotherhood_elh_events.1701.d: "[FROM.getLeader] has signed the BoS-Legion Armistice on behalf of our faction. The Brotherhood has given up numerous territories along the Colorado River, in exchange for a 1-year armistice. This virtually guarantees that the frontline of the war will not be the Dam, but the Boneyard and Shady Sands, themselves."
+  nf_brotherhood_elh_events.1701.d: "[FROM.getLeader] has signed the BoS-Legion Armistice. The Brotherhood has given up numerous territories along the Colorado River, in exchange for a 1-year armistice. This virtually guarantees that the frontline of the war will not be the Dam, but the Boneyard and Shady Sands, themselves."
   nf_brotherhood_elh_events.1701.a: "This will be a bloody one."
+
+  nf_brotherhood_elh_events.1702.t: "[FROM.getName] rejects the BoS-Legion Armistice"
+  nf_brotherhood_elh_events.1702.d: "[FROM.getLeader] has refused to sign the BoS-Legion Armistice. There will be no peace with the Legion."
+  nf_brotherhood_elh_events.1702.a: "We fight until the end."
   
   nf_brotherhood_bunkered_divisions.1.t: "End of the Ceasefire"
   nf_brotherhood_bunkered_divisions.1.desc: "All elders are in agreement - there is no hope for California except us. There is no worthy successor for us to guide, and the stumbling of [NCR.getLeader] has failed to impress.\n\nOur preparations are complete, with every bunker in the state of Maxson restored and filled once again with personnel. We've warned the people of Maxson of the coming conflict, and many citizens have seen the thousand ways the NCR is bound to break. Only we can safeguard Mankind."
