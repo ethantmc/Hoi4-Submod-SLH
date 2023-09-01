@@ -4136,6 +4136,25 @@ focus_tree = {
 				has_idea = bos_ncr_famine
 				has_idea = bos_ncr_terrible_famine
 			}
+			custom_trigger_tooltip = {
+				tooltip = bos_ncr_has_treaty_territory_tt
+				any_state = {
+					OR = {
+						region = 3
+						region = 32
+						state = 469 ##The three states to connect across the Rapids, just in case MOJ is alive, making this an exclave otherwise.
+						state = 147
+						state = 99
+					}
+					NOT = {
+						state = 236
+						state = 347
+						state = 941
+						state = 293
+					}
+					is_owned_by = BOS
+				}
+			}
 		}
 		completion_reward = {
 			custom_effect_tooltip = bos_ncr_famine_offer_legion_concessions_for_peace

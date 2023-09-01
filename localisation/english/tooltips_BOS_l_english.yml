@@ -179,5 +179,6 @@
   bos_target_got: "Your chosen target received the following, plus any minor effects: "
   bos_reminder_about_caps: "You spent these caps earlier: "
   bos_ncr_coring_warning_tt: "§YWarning!§! This reduction only applies to core states of the NCR you own! If you've split the NCR with an enemy, you may want to wait."
+  bos_ncr_has_treaty_territory_tt: "Has owned territory to offer the Legion"
   bos_coring_disabled: "§YCoring§! states is §Rdisabled§!. Once this famine is over, it will be available once again."
   bos_coring_reenabled: "§YCoring§! states will be available once again."
