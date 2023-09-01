@@ -1,0 +1,607 @@
+bos_offmap_chapter_logic = {
+	#BLS
+	random_list = {
+		#Shephard or BoS
+		15 = {
+			country_event = {
+				id = nf_brotherhood_off_map_chapter_logic.1 #Shephard win
+				days = 365
+			}
+		}
+		85 = {
+			#Enclave or BoS
+			random_list = {
+				25 = {
+					country_event = {
+						id = nf_brotherhood_off_map_chapter_logic.2 #Enclave win
+						days = 1095
+					}
+				}
+				75 = {
+					country_event = {
+						id = nf_brotherhood_off_map_chapter_logic.3 #Project Purity
+						days = 1095
+					}
+					#Outcasts, Arthur or Sarah
+					random_list = {
+						50 = {
+							country_event = {
+								id = nf_brotherhood_off_map_chapter_logic.4 # #Sarah or Arthur
+								days = 1825
+							}
+							random_list = {
+								50 = {
+									country_event = {
+										id = nf_brotherhood_off_map_chapter_logic.5 #Boston
+										days = 2920
+									}
+								}
+								50 = {
+									country_event = {
+										id = nf_brotherhood_off_map_chapter_logic.6 #Institute
+										days = 2920
+									}
+								}
+							}
+						}
+						50 = {
+							country_event = {
+								id = nf_brotherhood_off_map_chapter_logic.7 #Outcasts
+								days = 1825
+							}
+							random_list = {
+								50 = {
+									country_event = {
+										id = nf_brotherhood_off_map_chapter_logic.5 #Boston
+										days = 2920
+									}
+								}
+								50 = {
+									country_event = {
+										id = nf_brotherhood_off_map_chapter_logic.6 #Institute
+										days = 2920
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#BMW
+	random_list = {
+		50 = {
+			country_event = {
+				id = nf_brotherhood_off_map_chapter_logic.8 #bmw lost
+				days = 1095
+			}
+		}
+		50 = {
+			country_event = {
+				id = nf_brotherhood_off_map_chapter_logic.9 #bmw won
+				days = 1095
+			}
+		}
+	}
+	#BGF
+	random_list = {
+		25 = {
+			country_event = {
+				id = nf_brotherhood_off_map_chapter_logic.10 #bgf won
+				days = 547
+			}
+		}
+		75 = {
+			country_event = {
+				id = nf_brotherhood_off_map_chapter_logic.11 #bgf lost
+				days = 547
+			}
+		}
+	}
+}
+
+bos_add_to_bunker_array = {
+	BOS = {
+		add_to_array = {
+			array = bos_bunker_array
+			value = PREV.id
+		}
+	}
+	BOS = {
+		for_each_scope_loop = {
+			array = bos_bunker_array
+			if = {
+				limit = {
+					always = yes
+				}
+				set_demilitarized_zone = yes
+			}
+		}
+	}
+}
+
+bos_on_declare_war_bunker_array = {
+	for_each_scope_loop = {
+		array = bos_bunker_array
+		if = {
+			limit = {
+				controller = {
+					has_war_with = BOS
+				}
+				always = yes
+			}
+			set_state_controller_to = BOS
+			remove_dynamic_modifier = {
+				modifier = bos_state_influence
+			}
+			BOS = {
+				add_to_temp_array = { bos_bunker_remove_array = PREV.id }
+			}
+		}
+	}
+	for_each_scope_loop = {
+		array = bos_bunker_remove_array
+		BOS = {
+			remove_from_array = { bos_bunker_array = PREV.id }
+		}
+	}
+}
+
+bos_add_underground_construction_slots = {
+	custom_effect_tooltip = bos_add_underground_construction_slots_tt
+	add_to_variable = { BOS_underground_construction_slots = BOS_underground_construction_slots_to_add }
+}
+
+bos_add_administration_center_max = {
+	custom_effect_tooltip = bos_add_administration_center_max_tt
+	add_to_variable = { BOS_maximum_admin_centers_allowed = BOS_maximum_admin_centers_allowed_to_add }
+}
+
+bos_minus_one_construction_slots_simple = {
+	custom_effect_tooltip = bos_underground_construction_slot_used_tt
+	subtract_from_variable = {
+		var = BOS_underground_construction_slots
+		value = 1
+	}
+}
+
+bos_change_tension = {
+	custom_effect_tooltip = bos_change_tension_tt
+	add_to_variable = { bos_tension = BOS_tension_to_add }
+	if = {
+		limit = {
+			check_variable = { bos_tension > 100 }
+		}
+		set_variable = { bos_tension = 100 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { bos_tension < 0 }
+		}
+		set_variable = { bos_tension = 0 }
+	}
+	set_variable = { bos_tension_mod = bos_tension }
+	divide_variable = { bos_tension_mod = -300 }
+	set_variable = { bos_tension_mod_inverse = bos_tension_mod }
+	multiply_variable = { bos_tension_mod_inverse = -1 }
+	if = {
+		limit = {
+			NOT = { has_country_flag = ncr_hayes_provoked_brotherhood_tension_modifiers }
+		}
+		set_variable = { bos_tension_mod_political_power = bos_tension_mod }
+	}
+	else = {
+		set_variable = { bos_tension_mod_political_power = bos_tension_mod_inverse }
+		set_variable = { bos_tension_mod_factory_output = bos_tension_mod_inverse }
+		set_variable = { bos_tension_mod_caps_income = bos_tension_mod }
+		set_variable = { bos_tension_mod_stability = bos_tension_mod }
+	}
+}
+
+bos_change_available_space = {
+	custom_effect_tooltip = bos_change_available_space_tt
+	add_to_variable = { BOS_space_usage = BOS_available_space_to_change }
+}
+
+bos_change_maximum_space = {
+	custom_effect_tooltip = bos_change_maximum_space_tt
+	add_to_variable = { BOS_space = BOS_maximum_space_to_change }
+}
+
+bos_train_paladins = {
+	custom_effect_tooltip = bos_train_paladins_tt
+	add_to_variable = { BOS_paladins_ready = BOS_train_paladins_num }
+	add_to_variable = { BOS_maximum_expeditionary_departments_allowed = BOS_train_paladins_num }
+}
+
+bos_create_safety_department = {
+	custom_effect_tooltip = bos_create_safety_department_tt
+	set_variable = { BOS_underground_building_safety_department = 1 }
+}
+
+bos_create_condensed_civilian_workshop = {
+	custom_effect_tooltip = bos_create_condensed_civilian_workshop_tt
+	add_to_variable = { BOS_condensed_civilian_workshop = 1 }
+	157 = {
+		add_to_variable = { BOS_condensed_civilian_workshop_modifier = 0.15 }
+		force_update_dynamic_modifier = yes
+	}
+}
+
+bos_create_administration_center = {
+	custom_effect_tooltip = bos_create_administration_center_tt
+	add_to_variable = { BOS_underground_building_administration_centers = 1 }
+	set_variable = { BOS_underground_building_administration_centers_mod = BOS_underground_building_administration_centers }
+	add_to_variable = { BOS_underground_building_administration_centers_mod = 1 }
+	force_update_dynamic_modifier = yes
+}
+
+bos_create_expeditionary_department = {
+	custom_effect_tooltip = bos_create_expeditionary_department_tt
+	add_to_variable = { BOS_expeditionary_departments = 1 }
+	force_update_dynamic_modifier = yes
+}
+
+bos_create_laboratories = {
+	custom_effect_tooltip = bos_create_laboratories_tt
+	add_to_variable = { BOS_underground_building_lab = 1 }
+	add_to_variable = { BOS_underground_building_lab_mod = 0.02 }
+	force_update_dynamic_modifier = yes
+}
+
+bos_create_training_facilities = {
+	custom_effect_tooltip = bos_create_training_facility_tt
+	add_to_variable = { BOS_underground_building_training = 1 }
+	add_to_variable = { BOS_underground_building_training_bonus = 0.02 }
+	force_update_dynamic_modifier = yes
+}
+
+bos_boost_elites_drift = {
+	custom_effect_tooltip = bos_boost_elites_drift_tt
+	add_to_variable = { BOS_drift_elites = temp_BOS_drift_add }
+
+	set_temp_variable = { temp_boost_inverse = temp_BOS_drift_add }
+	multiply_temp_variable = { temp_boost_inverse = -1 }
+
+	if = {
+		limit = {
+			has_country_flag = bos_ruler_allowed
+		}
+		add_to_variable = { BOS_drift_ruler = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_intellectuals_allowed
+		}
+		add_to_variable = { BOS_drift_intellectuals = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_people_allowed
+		}
+		add_to_variable = { BOS_drift_people = temp_boost_inverse }
+	}
+
+	force_update_dynamic_modifier = yes
+}
+
+bos_set_elites_drift = {
+	custom_effect_tooltip = bos_set_elites_drift_tt
+	set_variable = { BOS_drift_elites = temp_BOS_drift_add }
+	force_update_dynamic_modifier = yes
+}
+
+bos_boost_ruler_drift = {
+	custom_effect_tooltip = bos_boost_ruler_drift_tt
+	add_to_variable = { BOS_drift_ruler = temp_BOS_drift_add }
+
+	set_temp_variable = { temp_boost_inverse = temp_BOS_drift_add }
+	multiply_temp_variable = { temp_boost_inverse = -1 }
+
+	if = {
+		limit = {
+			has_country_flag = bos_elites_allowed
+		}
+		add_to_variable = { BOS_drift_elites = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_intellectuals_allowed
+		}
+		add_to_variable = { BOS_drift_intellectuals = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_people_allowed
+		}
+		add_to_variable = { BOS_drift_people = temp_boost_inverse }
+	}
+
+	force_update_dynamic_modifier = yes
+}
+
+bos_set_ruler_drift = {
+	custom_effect_tooltip = bos_set_ruler_drift_tt
+	set_variable = { BOS_drift_ruler = temp_BOS_drift_add }
+	force_update_dynamic_modifier = yes
+}
+
+bos_boost_intellectuals_drift = {
+	custom_effect_tooltip = bos_boost_intellectuals_drift_tt
+	add_to_variable = { BOS_drift_intellectuals = temp_BOS_drift_add }
+
+	set_temp_variable = { temp_boost_inverse = temp_BOS_drift_add }
+	multiply_temp_variable = { temp_boost_inverse = -1 }
+
+	if = {
+		limit = {
+			has_country_flag = bos_elites_allowed
+		}
+		add_to_variable = { BOS_drift_elites = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_ruler_allowed
+		}
+		add_to_variable = { BOS_drift_ruler = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_people_allowed
+		}
+		add_to_variable = { BOS_drift_people = temp_boost_inverse }
+	}
+
+	force_update_dynamic_modifier = yes
+}
+
+bos_set_intellectuals_drift = {
+	custom_effect_tooltip = bos_set_intellectuals_drift_tt
+	set_variable = { BOS_drift_intellectuals = temp_BOS_drift_add }
+	force_update_dynamic_modifier = yes
+}
+
+bos_boost_people_drift = {
+	custom_effect_tooltip = bos_boost_people_drift_tt
+	add_to_variable = { BOS_drift_people = temp_BOS_drift_add }
+
+	set_temp_variable = { temp_boost_inverse = temp_BOS_drift_add }
+	multiply_temp_variable = { temp_boost_inverse = -1 }
+
+	if = {
+		limit = {
+			has_country_flag = bos_elites_allowed
+		}
+		add_to_variable = { BOS_drift_elites = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_ruler_allowed
+		}
+		add_to_variable = { BOS_drift_ruler = temp_boost_inverse }
+	}
+	if = {
+		limit = {
+			has_country_flag = bos_intellectuals_allowed
+		}
+		add_to_variable = { BOS_drift_intellectuals = temp_boost_inverse }
+	}
+
+	force_update_dynamic_modifier = yes
+}
+
+bos_set_people_drift = {
+	custom_effect_tooltip = bos_set_people_drift_tt
+	set_variable = { BOS_drift_people = temp_BOS_drift_add }
+	force_update_dynamic_modifier = yes
+}
+
+bos_add_to_ledger = {
+	custom_effect_tooltip = bos_add_this_to_bos_ledger_tt
+	add_to_array = { global.bos_ledger_members = THIS.id }
+}
+
+bos_remove_from_ledger = {
+	custom_effect_tooltip = bos_remove_this_from_bos_ledger_tt
+	remove_from_array = { global.bos_ledger_members = THIS.id }
+}
+
+bos_exodus_manpower_modifier_micro = {
+	if = {
+		limit = {
+			has_idea = bos_brotherhood_exodus
+		}
+		modify_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 40
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 40
+		}
+	}
+	set_temp_variable = { refugees_to_add = 750 }
+	exodus_add_refugees = yes
+}
+
+bos_exodus_manpower_modifier_small = {
+	if = {
+		limit = {
+			has_idea = bos_brotherhood_exodus
+		}
+		modify_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 80
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 80
+		}
+	}
+	set_temp_variable = { refugees_to_add = 1500 }
+	exodus_add_refugees = yes
+}
+
+bos_exodus_manpower_modifier_medium = {
+	if = {
+		limit = {
+			has_idea = bos_brotherhood_exodus
+		}
+		modify_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 160
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 160
+		}
+	}
+	set_temp_variable = { refugees_to_add = 3000 }
+	exodus_add_refugees = yes
+}
+
+bos_exodus_manpower_modifier_large = {
+	if = {
+		limit = {
+			has_idea = bos_brotherhood_exodus
+		}
+		modify_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 300
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = bos_brotherhood_exodus
+			days = 300
+		}
+	}
+	set_temp_variable = { refugees_to_add = 9000 }
+	exodus_add_refugees = yes
+}
+
+bos_upgrade_legion_experience_law = {
+	if = {
+		limit = {
+			OR = {
+				has_idea = bos_legion_fighting_experience_1
+				has_idea = bos_legion_fighting_experience_2
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_legion_fighting_experience_1
+			add_idea = bos_legion_fighting_experience_2
+		}
+	}
+	else = {
+		add_ideas = bos_legion_fighting_experience_1
+	}
+}
+
+bos_upgrade_mutant_experience_law = {
+	if = {
+		limit = {
+			OR = {
+				has_idea = bos_mutant_fighting_experience_2
+				has_idea = bos_mutant_fighting_experience_3
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_mutant_fighting_experience_2
+			add_idea = bos_mutant_fighting_experience_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_mutant_fighting_experience_1
+		}
+		swap_ideas = {
+			remove_idea = bos_mutant_fighting_experience_1
+			add_idea = bos_mutant_fighting_experience_2
+		}
+	}
+	else = {
+		add_ideas = bos_mutant_fighting_experience_1
+	}
+}
+
+bos_upgrade_enclave_experience_law = {
+	if = {
+		limit = {
+			OR = {
+				has_idea = bos_enclave_tactical_experience_2
+				has_idea = bos_enclave_tactical_experience_3
+			}
+		}
+		swap_ideas = {
+			remove_idea = bos_enclave_tactical_experience_2
+			add_idea = bos_enclave_tactical_experience_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_enclave_tactical_experience_1
+		}
+		swap_ideas = {
+			remove_idea = bos_enclave_tactical_experience_1
+			add_idea = bos_enclave_tactical_experience_2
+		}
+	}
+	else = {
+		add_ideas = bos_enclave_tactical_experience_1
+	}
+}
+
+bos_decrease_knightly_confusion = {
+	if = {
+		limit = {
+			AND = {
+				NOT = { has_idea = bos_army_confusion_4 }
+				NOT = { has_idea = bos_army_confusion_3 }
+				NOT = { has_idea = bos_army_confusion_2 }
+				NOT = { has_idea = bos_army_confusion_1 }
+			}
+		}
+		# pass
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_army_confusion_1
+		}
+		remove_ideas = bos_army_confusion_1
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_army_confusion_2
+		}
+		swap_ideas = {
+			remove_idea = bos_army_confusion_2
+			add_idea = bos_army_confusion_1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_army_confusion_3
+		}
+		swap_ideas = {
+			remove_idea = bos_army_confusion_3
+			add_idea = bos_army_confusion_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = bos_army_confusion_4
+		}
+		swap_ideas = {
+			remove_idea = bos_army_confusion_4
+			add_idea = bos_army_confusion_3
+		}
+	}
+}
