@@ -611,6 +611,16 @@ ideas = {
 			research_bonus = {
 				robotics_tech_category = 0.1
 			}
+			equipment_bonus = {
+				support_robot_equipment = {
+					reliability = 0.07
+					instant = yes
+				}
+				combat_robot_equipment = {
+					reliability = 0.05
+					instant = yes
+				}
+			}
 		}
 		bos_china_payments = {
 			picture = generic_welding_goggles
@@ -1972,7 +1982,7 @@ ideas = {
 
 			removal_cost = -1
 
-			equipment_bonus = {
+			equipment_bonus = { ##Note: Recycled as an expedition reward
 				support_robot_equipment = {
 					reliability = 0.10
 					instant = yes

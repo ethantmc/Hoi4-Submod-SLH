@@ -89,7 +89,10 @@ stronger_lost_hills_ncr_occupation_famine = {
 		tag = BOS
 	}
 	visible = {
-		has_completed_focus = bos_nf_dominion_over_the_wasteland
+		has_completed_focus = bos_nf_the_brotherhood_triumphant
+		NOT = {
+			has_country_flag = bos_famine_over
+		}
 	}
 	icon = GFX_decision_backpack
 }

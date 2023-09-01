@@ -1,0 +1,46 @@
+defined_text = {
+	name = slh_famine_progress_text
+	text = {
+		localization_key = slh_famine_progress_text_none
+		trigger = {
+			check_variable = { slh_famine_progress < 1 }
+		}
+	}
+	text = {
+		localization_key = slh_famine_progress_text_low
+		trigger = {
+			check_variable = { slh_famine_progress = 1 }
+		}
+	}
+	text = {
+		localization_key = slh_famine_progress_text_medium
+		trigger = {
+			if = {
+				limit = {
+					has_idea = bos_ncr_terrible_famine
+				}
+				check_variable = { slh_famine_progress > 1 }
+				check_variable = { slh_famine_progress < 4 }
+			}
+			else = {
+			check_variable = { slh_famine_progress > 1 }
+			check_variable = { slh_famine_progress < 3 }
+			}
+
+		}
+	}
+	text = {
+		localization_key = slh_famine_progress_text_high
+		trigger = {
+			if = {
+				limit = {
+					has_idea = bos_ncr_terrible_famine
+				}
+			check_variable = { slh_famine_progress > 3 }
+			}
+			else = {
+				check_variable = { slh_famine_progress > 2 }
+			}
+		}
+	}
+}

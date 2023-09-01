@@ -797,8 +797,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bos_nf_techreallocation
-				bonus = 0.25
-				uses = 3
+				bonus = 0.35
+				uses = 2
 				category = infantry_tech_category
 			}
 		}
@@ -1865,7 +1865,7 @@ focus_tree = {
 		}
 		available = {
 			SHI = {
-				has_tech = plant_support_tech
+				#has_tech = plant_support_tech ##SHI has no access to this tech.
 				if = {
 					limit = {
 						exists = yes
@@ -3345,10 +3345,12 @@ focus_tree = {
 		available = {
 			AND = {
 				count_triggers = {
-				amount > 4
+				amount > 5
 					owns_state = 253
 					owns_state = 489
 					owns_state = 1
+					owns_state = 141
+					owns_state = 135
 					owns_state = 70
 					owns_state = 245
 					owns_state = 350
@@ -3389,7 +3391,6 @@ focus_tree = {
 				}
 				remove_ideas = {bos_troikan_occupation}
 			}
-			set_variable = { slh_famine_progress = 0 }
 		}
 	}
 
@@ -3428,11 +3429,15 @@ focus_tree = {
 				habitation_tech_level_scientific = 1
 				tools_tech_level_scientific = 1
 			}		 
+			custom_effect_tooltip = bos_nf_utilizing_californias_industry_tt
 			add_state_core = 253
 			add_state_core = 350
 			add_state_core = 63
 			add_state_core = 1
 			add_state_core = 245
+		}
+		ai_will_do = {
+			base = 1000 #This is basically the best non-situational focus in the entire tree.
 		}
 	}
 	focus = {
@@ -3447,6 +3452,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = nf_brotherhood_elh_events.4
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
 		}
 	}
 	focus = {
@@ -3467,6 +3483,17 @@ focus_tree = {
 		available = {
 			BOS_rhiannon = {
 				has_trait = bos_absolute_brotherhood_high_elder
+			}
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
 			}
 		}
 		completion_reward = {
@@ -3517,6 +3544,17 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = bos_nf_reorganizing_our_economy
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
 		}
 		available = {
 			count_triggers = {
@@ -3584,6 +3622,17 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = bos_nf_reorganizing_our_economy
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
 		}
 		available = {
 			count_triggers = {
@@ -3664,6 +3713,17 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = bos_nf_reorganizing_our_economy
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
 		}
 		available = {
 			BOS_llwyd = {
@@ -3802,6 +3862,17 @@ focus_tree = {
 		}
 		available = {
 		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = {
@@ -3896,6 +3967,17 @@ focus_tree = {
 		available = {
 			has_political_power > 0
 		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
+		}
 		completion_reward = {
 			country_event = nf_brotherhood_elh_events.15
 		}
@@ -3909,6 +3991,17 @@ focus_tree = {
 		relative_position_id = bos_nf_power_brokers
 		prerequisite = {
 			focus = bos_nf_power_brokers
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
 		}
 		available = {
 			has_political_power > 0
@@ -3928,6 +4021,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_power_brokers
 		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
+		}
 		available = {
 			has_political_power > 0
 		}
@@ -3945,6 +4049,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_power_brokers_the_hub
 			focus = bos_nf_power_brokers_the_legacy_government
+		}
+		ai_will_do = {
+			base = 100 ##This is a good focus, which should be done very fast.
+			modifier = {
+				OR = { #If the famine is active, this focus is on the beeline to ending it.
+					has_idea = bos_ncr_terrible_famine
+					has_idea = bos_ncr_famine
+					has_idea = bos_ncr_looming_famine
+				}
+				add=1000
+			}
 		}
 		available = {
 			has_political_power > 0
@@ -3975,7 +4090,9 @@ focus_tree = {
 				}
 				country_event = nf_brotherhood_elh_events.1601 ##Peaceful version of the Barons event
 			}
+			else = {
 			country_event = nf_brotherhood_elh_events.16
+			}
 		}
 	}
 	focus = {
@@ -4155,6 +4272,7 @@ focus_tree = {
 			}
 			set_temp_variable = { caps_to_add = -150 }
 			add_caps = yes
+			custom_effect_tooltip = bos_ncr_coring_warning_tt
 			every_owned_state = {
 				limit = {
 					is_core_of = NCR
@@ -4221,7 +4339,7 @@ focus_tree = {
 						is_owned_by = BLS #Lyons
 						is_owned_by = BAP #Appalachian
 						is_owned_by = BSF #San Francisco
-
+						is_owned_by = SHI #San Francisco, BSF Doesn't Work >:(
 						#In order of distance from lost hills
 						is_owned_by = BOS #Lost Hills
 						is_owned_by = BSF #San Francisco
@@ -4254,8 +4372,9 @@ focus_tree = {
 			focus = bos_nf_taking_back_california
 		}
 		available = {
-			any_owned_state = {
+			any_controlled_state = {
 				is_coastal = yes
+				is_core_of = BOS
 			}
 		}
 		completion_reward = {
@@ -5312,9 +5431,14 @@ focus_tree = {
 		id = bos_nf_our_right
 		text = shared_bos_our_right
 		icon = GFX_goal_BOS_generic_industrial
-		cost = 30
+		cost = 14
 		prerequisite = {
 			focus = bos_nf_back_to_business
+		}
+		bypass = {
+			157 = {
+				infrastructure > 9
+			}
 		}
 		x = 39
 		y = 1

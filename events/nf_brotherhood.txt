@@ -3336,6 +3336,7 @@ country_event = {
 		name = nf_brotherhood_foreign_assistance.101.a ##Disparate no longer.
 
 		effect_tooltip = {
+			custom_effect_tooltip = bos_reminder_about_caps
 			BOS = {
 				set_temp_variable = { caps_to_add = -100 }
 				add_caps = yes
@@ -3345,6 +3346,31 @@ country_event = {
 				var = bos_scribes_ready
 				value = +1
 				tooltip = scribe_math_tooltip
+				}
+			}
+			custom_effect_tooltip = bos_target_got
+			FROM = {
+				capital_scope = {
+					set_building_level = { # ~2.5K IC
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					set_building_level = { # ~10k IC
+						type = radar_station
+						level = 3
+						instant_build = yes
+					}
+					set_building_level = { # ~5k IC
+						type = anti_air_building
+						level = 2
+						instant_build = yes
+					}
+					set_building_level = { #failsafe for terrible AI
+						type = infrastructure
+						level = 4
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -4011,6 +4037,7 @@ country_event = {
 		days = 720
 		}
 		set_country_flag = reformers_reconstruction
+		bos_reduce_famine = yes
 		ai_chance = {
 			base = 40
 			modifier = {
@@ -5021,17 +5048,26 @@ country_event = { ##Description too long to be a news event - the button is cut 
 			has_completed_focus = bos_nf_the_brotherhood_triumphant
 		}
 	}
-
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 2       # Give the AI a little more time.
+			is_ai = yes
+		}
+	}
 	option = {
 		name = nf_brotherhood_elh_events.11.a #This is not good.
 		activate_mission = bos_ncr_incoming_famine
+		add_ideas = {bos_ncr_looming_famine}
+		set_country_flag = not_allowed_to_core_flag
+		custom_effect_tooltip = bos_coring_disabled
 		ai_chance = {
 			base = 20
 		}
 	}
 
 }
-country_event = { ##TODO - LOCALIZATION
+country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.12" }
 	id = nf_brotherhood_elh_events.12
 	title = nf_brotherhood_elh_events.12.t #Prestige Project
@@ -5428,6 +5464,7 @@ country_event = {
 	immediate = { 
 		log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.16" 
 		set_country_flag = barons_dealt_with
+		bos_reduce_famine = yes
 	}
 	id = nf_brotherhood_elh_events.16
 	title = nf_brotherhood_elh_events.16.t #The Barons: We Don't Negotiate with Terrorists
@@ -5494,7 +5531,6 @@ country_event = {
 			days = -15
 		}
 		add_stability = -0.05
-		##TODO state modifiers/province modifiers shifting compliance and resistance targets
 		every_owned_state = {
 			limit = {
 				OR = {
@@ -5588,6 +5624,7 @@ country_event = {
 		
 		}
 		set_country_flag = barons_cooperating
+		bos_reduce_famine = yes
 		add_political_power = -100
 		custom_effect_tooltip = nf_brotherhood_anton_as_advisor_tt
 		add_ideas = {bos_ncr_baron_cooperation_unified}
@@ -5626,6 +5663,7 @@ country_event = {
 			}
 		}
 		set_country_flag = barons_cooperating
+		bos_reduce_famine = yes
 		set_country_flag = anton_flynn_disempowered
 		add_political_power = -150
 		add_country_leader_trait = baron_connections
@@ -5644,6 +5682,7 @@ country_event = {
 			}
 		}
 		set_country_flag = barons_cooperating
+		bos_reduce_famine = yes
 		add_political_power = -100
 		custom_effect_tooltip = nf_brotherhood_anton_as_advisor_tt
 		add_ideas = {bos_ncr_baron_cooperation_unified}
@@ -5663,6 +5702,7 @@ country_event = {
 			}
 		}
 		set_country_flag = barons_cooperating
+		bos_reduce_famine = yes
 		add_political_power = -50
 		custom_effect_tooltip = nf_brotherhood_anton_as_advisor_tt
 		add_ideas = {bos_ncr_baron_cooperation_unified}
@@ -5681,6 +5721,7 @@ country_event = {
 			}
 		}
 		set_country_flag = barons_cooperating
+		bos_reduce_famine = yes
 		add_political_power = -75
 		custom_effect_tooltip = nf_brotherhood_anton_as_advisor_tt
 		add_ideas = {bos_ncr_baron_cooperation_unified}
@@ -5710,6 +5751,8 @@ country_event = {
 		trigger = {
 		
 		}
+		set_country_flag = barons_dealt_with
+		bos_reduce_famine = yes
 		every_owned_state = {
 			limit = {
 				OR = {
@@ -5732,19 +5775,23 @@ country_event = {
 	picture = GFX_event_sub_generic_war_room
 	is_triggered_only = yes
 	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_country_flag = barons_cooperating
+			has_country_flag = barons_dealt_with
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
 	##Should there be sweeping changes in the province/region of redding in terms of resistance and compliance?
 	option = {
 		name = nf_brotherhood_elh_events.1603.a#...or not enough
-		trigger = {
-			OR = {
-				has_country_flag = barons_cooperating
-				has_country_flag = barons_dealt_with
-			}
-		}
 		if = {
 			limit = {
 				has_country_flag = hayes_cooperation
 			}
+			custom_effect_tooltip = bos_hayes_reduced_effects
 			every_owned_state = {
 				limit = {
 					OR = {
@@ -5760,6 +5807,7 @@ country_event = {
 			limit = {
 				has_country_flag = barons_cooperating
 			}
+			custom_effect_tooltip = bos_barons_reduced_effects
 			every_owned_state = {
 				limit = {
 					OR = {
@@ -5797,6 +5845,13 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	##Should there be sweeping changes in the province/region of redding in terms of resistance and compliance?
+	trigger = {
+		AND = {
+		has_country_flag = barons_dealt_with
+		NOT = {has_country_flag = barons_cooperating
+		}
+		}
+	}
 	option = {
 		name = nf_brotherhood_elh_events.1604.a#Justice, of a kind.
 		trigger = {
@@ -7129,7 +7184,7 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_expeditions.802.c #Compensate them.
-		KLA = {country_event = nf_brotherhood_expeditions.805}
+		country_event = nf_brotherhood_expeditions.805
 		set_temp_variable = { caps_to_add = -55 }
 		add_caps = yes
 		KLA = {
@@ -7153,24 +7208,35 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_expeditions.803.a #Chase them out.
+		BOS = {
 		country_event = nf_brotherhood_expeditions.806 #oopsie, wrote these in the wrong order
+		}
+		add_manpower = -150
 		ai_chance = {
-			base = 35
+			base = 15
+			modifier = {
+				has_manpower < 1000
+				factor = 0
+			}
 		}
 	}
 	option = {
 		name = nf_brotherhood_expeditions.803.b #Demand what they found. 
+		BOS = {
 		country_event = nf_brotherhood_expeditions.807
+		}
 		ai_chance = {
-			base = 60
+			base = 70
 		}
 	}
 	option = {
 		name = nf_brotherhood_expeditions.803.c #Let them stay.
+		BOS = {
 		country_event = nf_brotherhood_expeditions.805
+		}
 		KLA = {add_war_support = -0.03}
 		ai_chance = {
-			base = 5
+			base = 15
 		}
 	}
 }
@@ -7311,6 +7377,73 @@ country_event = {
 				amount = 200
 				producer = USA
 			}	
+	}
+}
+#Toxic Caves - Klamath: Chase Them Out
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.808" }
+	id = nf_brotherhood_expeditions.808
+	title = nf_brotherhood_expeditions.808.t
+	desc = nf_brotherhood_expeditions.808.d
+	picture = GFX_event_BOS_settler_defense
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_brotherhood_expeditions.808.a #Nothing to be done
+		add_manpower = -40
+		add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = -280
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = -200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = -200
+				producer = USA
+			}
+		add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = -200
+				producer = USA
+			}	
+			ai_chance = {
+				base = 10
+			}
+	}
+	option = {
+		name = nf_brotherhood_expeditions.808.b #We tried to be reasonable...
+		KLA = { country_event = nf_brotherhood_expeditions.804}
+		activate_mission = bos_delayed_expedition_medium
+		add_manpower = -50
+		add_equipment_to_stockpile = {
+			type = energy_equipment_1
+			amount = -120
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = ballistic_fireteam_equipment_2
+			amount = -100
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = energy_equipment_2
+			amount = -100
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = ballistic_equipment_1
+			amount = -200
+			producer = USA
+		}
+		ai_chance = {
+			base = 66
+		}
 	}
 }
 #Vault 11
