@@ -3066,7 +3066,7 @@ focus_tree = {
 			focus = bos_nf_a_chance_opportunity
 		}
 		available = {
-			NOT = {is_ally_with = NCR}
+			NOT = {is_in_faction_with= NCR}
 			if = {
 				limit = {
 					has_dynamic_modifier = {

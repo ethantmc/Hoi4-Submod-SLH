@@ -4324,6 +4324,7 @@ stronger_lost_hills_ncr_occupation = {
 		visible = {
 
 		}
+		cost = 50
 		allowed = {
 			tag = BOS
 		}
@@ -4334,7 +4335,10 @@ stronger_lost_hills_ncr_occupation = {
 		target_array = BOS.core_states
 		target_trigger = {
 			FROM = {
-				state_population_k > 18
+				state_population_k > 25
+				NOT = {
+					state = 157
+				}
 			}
 		}
 		days_remove = 60
@@ -4364,7 +4368,7 @@ stronger_lost_hills_ncr_occupation = {
 			}
 		}
 		ai_will_do = {
-			base = 50
+			base = 100
 		}
 	}
 }

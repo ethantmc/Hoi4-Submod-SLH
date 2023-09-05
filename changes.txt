@@ -128,21 +128,28 @@ The update is focused on the societal changes any of the groups would make to Ca
 -The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Kimball, and Allgood Murphy. You'll have to earn their support first, in Healing New Scars.
 -The addition of the Reformers final focuses, imagining what a non-Steel Rangers Brotherhood looks like under them. (Sign the Legion Defence Pact with the NCR for Maxson, or stab them in the back to prep against said Legion if they turn you down!)
 -New decisions relating to the new content, retouches of several Expeditions to account for changes to vanilla, and art for the mutually-exclusive Council focuses.
+-A host of additional balance changes for under-utilized options, and a number of fixes or design changes to older content.
 
 Changes:
 -States owned by any Chapter will not be claimed by the BOS in the "Future, Attained" focus, and it tells you as much. This avoids massive diplomatic penalties.
 -The NCR AI is now allowed to and much more likely to end the ceasefire, based on tension and how badly they overmatch the BoS. Unless Moore is elected, you still won't be under threat unless Caesar's Legion has been defeated.
 -Focuses that give "Brotherhood Presence" in a state now add a DMZ.
--Changed a possible multiplayer exploit that allowed the Shi State to "easily" start the 2nd NCR-BoS War on behalf of the NCR. The cheap decision to start the war is now only available if you're not in a faction with the NCR.
 -Rebalanced the Change Tension decisions for BoS-NCR tension, reducing the pp gain penalty from 50% -> 20%.
 -Rebalanced the Establish Foreign Airbases decision by reducing execution time from 180 -> 120 days, plus giving you a rough idea of it's benefits in the followup event.
--Rebalanced the time to complete "Our Right" from 30 -> 14 days, and added a bypass condition.
 -Allowed the AI to form the Steel Rangers, though it's quite unlikely for now.
--Allowed the research of the "Coast of California" branch during the BoS-NCR war, so long as you control(rather than own) a core coastal state. The major utility here is in going to Anchorage on a Commitment to Duty run, significantly increasing the value of robots to Duty players.
+-Allowed the research of the "Coast of California" branch during the BoS-NCR war, so long as you control(rather than own) a core coastal state. The major utility here is in going to Anchorage or Japan on a Commitment to Duty run, significantly increasing the value of robots to Duty players, though you can also get the WBH involved in the BoS-NCR war this way.
 -Added Redding and Sac-City as possible states to complete "The Brotherhood Triumphant"
 -Increased the states required to complete "The Brotherhood Triumphant" from 4 to 5, which should require approximately the same minimum warscore, while with the last change making a BoS-CES peace conference over the NCR easier.
+
+Minor Changes:
+-Changed a possible multiplayer exploit that allowed the Shi State to "easily" start the 2nd NCR-BoS War on behalf of the NCR. The cheap decision to start the war is now only available if you're not in a faction with the NCR.
+-Rebalanced the time to complete "Our Right" from 30 -> 14 days, and added a bypass condition.
+-Increased the "Token Reforms" spirit for the Washington Brotherhood from 60 Daily Energy Cells -> 100. This is equivelant to about 16 energy without research.
+-Many Expedition national spirits now have unique icons.
+
 Fixes:
 -Fixed the Toxic Caves event chain terminating early due to an incorrect scope, when choosing an option other than compensating Klamath.
+-Fixed the major (and longstanding) bug that erroneously unlocked, rather than completed, the focus to invite the WBH to your faction in the Anchorage Expedition. ()
 -The option in Sailing the Yangtze that may see a Paladin unit killed, now properly displays that information. 
 -Fixed the BSF's expeditionary technology being unobtainable. Should the devs ever let the BSF research Monstrous Plants, I will re-add the requirement that they have done so.
 -Fixed the "Lost Hills Politics" decision category disappearing if you pursue "A Balanced Council" and then select an Absolute High Elder. The section will still disappear if you do not have "A Balanced Council", but should re-appear if you take the focus.

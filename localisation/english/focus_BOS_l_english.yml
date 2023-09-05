@@ -1101,6 +1101,8 @@
   bos_maxsonian_prestige: "Recognizing New Veterans"
   bos_maxsonian_prestige_desc: "We have fought many wars, and it's beyond time new Paladins are promoted. However, some have shown different talents - we need to take advantage of great commanders and unit leaders, great drill instructors, and everything in between. Our greatest effort is being put to finding these individuals of merit, and getting them more powerful positions they'd excel in."
   bos_rhombian_training_halls: "Establish Regional Training Halls"
+  bos_training_hall: "Hall of Initiates"
+  bos_training_hall_desc: "The Rhombians have rolled out their project in this state. A large regional training center brings together dozens, if not hundreds, of new initiates and inducts them with sensitivity to the culture they leave behind. They train here, until we are desperate enough to call them to service or til they become a full-fledged member of the Brotherhood. Most will become Knights or Scribes, but a cherished few will be Paladins, Lancers, or even serve as Sailors. The latter's moniker of Dragoon remains unofficial."
   bos_reformer_prestige: "Standing the Test of Time"
   bos_reformer_prestige_desc: "We've made general improvements in education, justice, and healthcare. We've focused on building strong foundations for our civilization - a successor to the United States, and maybe more."
   bos_troika_prestige: "Widespread Cybernetics Usage"
@@ -1505,7 +1507,9 @@
   nf_brotherhood_expeditions.1109.b: "They hold too tightly to the morality of today."
   bos_wbh_token_reforms: "Token Reforms"
   bos_wbh_token_reforms_desc: "We reunited with the Brotherhood in their hour of need. Even still, they demanded we reform some of our practices. The demands were much less outrageous than ever before, and the Immortal accepted them."
-  
+  bos_support_for_washington: "Support for Washington"
+  bos_support_for_washington_desc: ""  
+
   nf_brotherhood_expeditions.11010.t: "Audience With The Immortal: Steel Plague"
   nf_brotherhood_expeditions.11010.d: "Today, the founding Chapter of the Brotherhood, forever changed by a fringe group called the Troika, has come to meet with The Immortal. A small detachment left their fleet in Eastern Portland, traveled to Seattle and listened to The Immortal justify the morality of the Northern League. The brothers and sisters requested knowledge and guidance from us for an expedition to Anchorage, Alaska and it's clear our help §Rwill be critical if they are to survive§!.\n\nThe Immortal thought to end this farce of understanding for mutants and morality by demanding formal acceptance and integration of everything they rule into the Brotherhood, without condition or reform.\n\nTo the shock of many, the Brotherhood agreed, and even insisted the Elders had already realized the goal of breaking past reality, and the confines of logic and reason. They have found the Ultimate Truth, and they told the Immortal that they, at least, have the potential to understand if they are willing to listen. The Immortal accepted, and was cloistered for a month before having sucessfully rewritten some of their pascalbytes... whatever those are."
   nf_brotherhood_expeditions.11010.a: "The Immortal changed."
@@ -1611,7 +1615,7 @@
   bos_china_guarding_tomorrow: "Guardians of Tomorrow"
   bos_china_guarding_tomorrow_desc: "We've paid the ultimate price to keep dangerous knowledge out of the hands of the Emperor of China. We found the City of Tomorrow, the most complete and unblemished Pre-War complex ever. We took all the knowledge we could, and activated the City's self destruct to keep the knowledge for rebuilding society out of the hands of a vengeful relic of the past. No Elder can doubt our commitment now to the principles of Maxson."
   bos_chinese_old_world_construction: "Old World Mega-Engineering"
-  bos_chinese_old_world_construction_desc: "While in China, we discovered a massive underground city, full of knowledge from the old world. We marveled at how it was constructed, spent time studying it's construction searching for related texts in the City of Tomorrow's library. We now use that knowledge at home in California, and have even been able to safely expand the Lost Hills Bunker."
+  bos_chinese_old_world_construction_desc: "While in China, we discovered a massive underground city, full of knowledge from the old world. We marveled at how it was constructed, and spent our time searching for related texts in the City of Tomorrow's library. We now use that knowledge at home in California, and have even been able to safely expand the Lost Hills Bunker."
   
   nf_brotherhood_expeditions.1307.t: "Sailing the Yangtze: Prepared for Occupation"
   nf_brotherhood_expeditions.1307.d: "The base was relatively unclaimed, and we know why — The area is heavily roboticized, much like the Protectron Security Hub near the Guardians. A huge swarm of still-operational Mr Gutsy robots combined with Mk1 Sentry Robots protects the site in an intimidating display of force. We are fortunate to be the Brotherhood of Steel, and thus be holders of ancient authorization codes. We were able to parley with the robots, and we used our codes to order the release of..."
