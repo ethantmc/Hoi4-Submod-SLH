@@ -139,8 +139,8 @@ bos_misguided_resistance = {
 	resistance_target = 0.12
 }
 bos_balanced_council = {
-	icon = scribe_council
 	enable = { always = yes }
+	icon = GFX_idea_generic_technical_doc
 	intel_network_gain  = bos_ruler_pop
 	command_power_gain = bos_elites_pop
 	weekly_manpower = bos_people_pop

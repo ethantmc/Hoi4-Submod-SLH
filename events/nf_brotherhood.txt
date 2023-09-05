@@ -5025,7 +5025,10 @@ country_event = {
 	}
 }
 country_event = { ##Description too long to be a news event - the button is cut off.
-	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.11" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.11" 
+		set_country_flag = not_allowed_to_core_flag
+	}
 	id = nf_brotherhood_elh_events.11
 	title = nf_brotherhood_elh_events.11.t #California Burning
 	desc = nf_brotherhood_elh_events.11.d #Barons all across California burn grain and slaughter livestock.
@@ -5058,9 +5061,8 @@ country_event = { ##Description too long to be a news event - the button is cut 
 	option = {
 		name = nf_brotherhood_elh_events.11.a #This is not good.
 		activate_mission = bos_ncr_incoming_famine
-		add_ideas = {bos_ncr_looming_famine}
-		set_country_flag = not_allowed_to_core_flag
 		custom_effect_tooltip = bos_coring_disabled
+		add_ideas = {bos_ncr_looming_famine}
 		ai_chance = {
 			base = 20
 		}
