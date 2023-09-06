@@ -92,43 +92,31 @@ Other Changes:
 DRAFT 3 DESCRIPTION:
 This intends to make the Brotherhood more enjoyable, especially in coop with many additional ways to invest and defend other chapters, and a dozen smaller touches to smooth over rough edges.
 
-The goal of the mod is to add content, increase interactivity, and make multiplayer interesting. 
+The goal of the mod is to add content, especially narratively, increase interactivity, and make multiplayer more interesting. 
 
-TROIKA AND RECONSTRUCTION UPDATE:
--The troika finally have their own path in Lost Hills! Flirt with their power for a quicker way to be rid of your rivals... or embrace it and rewrite every chapter leader's pascalbytes.
--New foci deal with what kind of Brotherhood you are. Will the other chapters be annexed? Or will you build them up to fight alongside you?
--Reconstruction is in full swing! Finally put the inefficiencies of a Chapter's economy behind you, and wrestle with the inefficiencies of the Bear! Maybe give them a free press while you're at it? And the followers back... please?
--Circle of Steel: New focuses expand the role of the Circle of Steel, giving your intelligence agency a leg up against the NCR, and more information on what your Chapters are getting up to.
-
-First thing - The special forces capacity oversight is patched. No longer will you have the least Special Forces of any chapter.
 
 Major highlights include: 
 A massively expanded focus tree for the Steel Rangers, 
-A heavy focus on more interactions with other chapters, including investing in overseas airbases, intervening in their conflicts at great risk, or the overhaul to BoS-Shi relations. 
+A focus on more interactions with other chapters, including investing in overseas airbases, intervening in their conflicts at great risk, or the overhaul to BoS-Shi relations. 
 After-War content by shaping California post-NCR and enacting the vision of your High Elder, with reforms such as changing economy and trade laws, accepting mutants, or inviting the Followers to reopen their bases! Llwyd may want a market economy, but Rhiannon would much prefer to never see a trader again!
+
 The NCR wasn't formed in a day, and its instituions won't be reformed in one either! Battle the Barons and other interest groups in the NCR as the hearts of California turn to your side - the people, as it turns out, are quite happy to see the Oligarchy end, but the Barons would rather see California burn. Success will bring new national spirits, key figures from the NCR into your government, and powerful foci affecting California, but failure could make you an easy meal for the Legion.
 
 The mod also adds a huge number of new decisions, using the limited resources of Paladins and Scribes to turn boring filler foci into interesting choices, or put them to work building in foreign lands.
 
-Explore the world! Manage your paladins carefully as you interact with sprawling event trees and their leader-specific options to bring home rare artifacts, caches of equipment, or knowledge for Brotherhood R&D.
+Expeditions ready, Elder! Manage your paladins carefully as you interact with sprawling event trees and their leader-specific options to bring home rare artifacts, caches of equipment, or knowledge for Brotherhood R&D.
 
 Many other aspects of the vanilla tree are retouched - such as industry, trade, politics, and the NCR-Brotherhood War, which is now easier to start and resilient to multiplayer shenanigans among a plethora of other changes.
 
-BEFORE RELEASE CHECK THESE:
--moj-mot war works (yes)
--localized famine progress using scripted loc (yes)
--Trade decisions function again (yes)
--Airbase decision followup event not broken by tooltip (foreign assistance)
--Deal with Legion Ceasefire if Legion already has all territories
-
-PATCHNOTES:
-The update is focused on the societal changes any of the groups would make to California, and organized pushback from the entrenched powers in California.
+HEALING NEW SCARS UPDATE:
+Societal change must be made to California, and you'll have the foil the organized pushback from the entrenched oligarchy of the Brahmin Barons and the bit players of corruption in the NCR - Like the Van Graffs and Gun Runners or Hub merchants.
 -Massive addition of the "Healing New Scars" update, totaling 14 new foci, and over two dozen events, closing content additions through the post-NCR game, up to the end of war with the Legion.
 -Particularly, see changes like mass cybernetics use by civillians under the Troika, or regional training halls under the Rhombians. Rename yourself to represent all of California as the Californian Brotherhood, or pass the EPA with Allgood. Even cut a deal with the rebellious Anton Flynn to see caps kickbacks from Big Business!
--The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Kimball, and Allgood Murphy. You'll have to earn their support first, in Healing New Scars.
+-The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Aaron Kimball, and Allgood Murphy. You'll have to earn their support first, while Healing New Scars.
 -The addition of the Reformers final focuses, imagining what a non-Steel Rangers Brotherhood looks like under them. (Sign the Legion Defence Pact with the NCR for Maxson, or stab them in the back to prep against said Legion if they turn you down!)
 -New decisions relating to the new content, retouches of several Expeditions to account for changes to vanilla, and art for the mutually-exclusive Council focuses.
--A host of additional balance changes for under-utilized options, and a number of fixes or design changes to older content.
+-Balance changes to the NCR-BoS War, including the ability to do tier 3 and 4 Expeditions, establish a DMZ as you expand the Brotherhood Presence near Maxson, and the new ability for the NCR AI to start the war first, if the Legion is dead or Moore is in power.
+-A host of additional balance changes for under-utilized options, and a number of fixes or design changes to older content. See the patch notes for details about balance changes or minor additions.
 
 Changes:
 -States owned by any Chapter will not be claimed by the BOS in the "Future, Attained" focus, and it tells you as much. This avoids massive diplomatic penalties.
