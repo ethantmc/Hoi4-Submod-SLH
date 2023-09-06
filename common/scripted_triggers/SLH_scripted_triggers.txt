@@ -47,4 +47,3 @@ bos_has_x_knowledge = {
 		}
 	}
 }
-bos_ch

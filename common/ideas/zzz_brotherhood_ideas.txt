@@ -441,7 +441,7 @@ ideas = {
 			}
 		}
 		bos_robotic_occupation = {
-			picture = GFX_goal_generic_assaultron
+			picture = robot_salvaging_expertise
 			allowed = {
 			}
 
@@ -477,7 +477,7 @@ ideas = {
 			}
 		}
 		bos_trade_with_hawaii = {
-			picture = generic_welding_goggles			
+			picture = generic_boat			
 			allowed = {
 			}
 			removal_cost = -1
@@ -496,7 +496,7 @@ ideas = {
 			}
 		}
 		bos_hawaii_protectorate = { 				##Literally just a weaker version of Trade With Hawaii. 
-			picture = generic_welding_goggles			
+			picture = generic_boat		
 			allowed = {
 			}
 			removal_cost = -1
@@ -515,7 +515,7 @@ ideas = {
 			}
 		}
 		bos_alaskan_winterization = {
-			picture = generic_welding_goggles			
+			picture = generic_vehicle_winterized_army_truck			
 			allowed = {
 			}
 			removal_cost = -1
@@ -525,7 +525,7 @@ ideas = {
 			}
 		}
 		bos_support_for_washington = { ##for Lost Hills costs. They also lost 50pp.
-			picture = generic_welding_goggles
+			picture = WBH_idea_enslave_the_weak
 			
 			allowed = {
 			}
@@ -537,13 +537,13 @@ ideas = {
 			}
 		}
 		bos_wbh_token_reforms = { ##Kind of unhappy with this whole spirit, but it's very hard to represent the benefits of Rhombian support. In case reworking this is ever desired: Considering replacing fuel with Energy (add the amount to the Costs spirit as well), scrapping all the garrison stuff, and adding some kind of technology sharing. If slaves were enabled, I would've done something radically different.
-			picture = generic_welding_goggles			
+			picture = WBH_idea_expand_our_dominion		
 			allowed = {
 			}
 			removal_cost = -1
 			modifier = {
 				war_support_factor = 0.05
-				base_fuel_gain = 60
+				base_fuel_gain = 100
 				compliance_growth = 0.1
 				required_garrison_factor = -0.1
 				conscription = -0.005
@@ -595,14 +595,14 @@ ideas = {
 			}
 		}
 		bos_japanese_power_grid = {
-			picture = generic_welding_goggles			
+			picture = han_refurbished_generators		
 			allowed = {
 			}
 			removal_cost = -1
 			##+1 Energy from all generators, applied during the event.
 		}
 		bos_japanese_robotics = {
-			picture = generic_welding_goggles		
+			picture = robot_salvaging_expertise
 			allowed = {
 			}
 			removal_cost = -1
@@ -611,9 +611,19 @@ ideas = {
 			research_bonus = {
 				robotics_tech_category = 0.1
 			}
+			equipment_bonus = {
+				support_robot_equipment = {
+					reliability = 0.07
+					instant = yes
+				}
+				combat_robot_equipment = {
+					reliability = 0.05
+					instant = yes
+				}
+			}
 		}
 		bos_china_payments = {
-			picture = generic_welding_goggles
+			picture = propaganda_chinese_communist
 			
 			allowed = {
 			}
@@ -623,7 +633,7 @@ ideas = {
 			}
 		}
 		bos_chinese_stealth_suits = {
-			picture = generic_welding_goggles			
+			picture = officer_chinese_stealth			
 			allowed = {
 			}
 			removal_cost = -1
@@ -632,7 +642,7 @@ ideas = {
 			}
 		}
 		bos_chinese_old_world_construction = {
-			picture = generic_welding_goggles		
+			picture = generic_chinese_hat	
 			allowed = {
 			}
 			removal_cost = -1
@@ -644,7 +654,7 @@ ideas = {
 			}
 		}
 		bos_china_guarding_tomorrow = {
-			picture = generic_welding_goggles	
+			picture = generic_chinese_yangtze_hat	
 			allowed = {
 			}
 			removal_cost = -1
@@ -746,7 +756,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 5
+				air_volunteer_cap = 15
 				send_volunteer_size = 1
 			}
 			#Scaling National Spirit
@@ -757,7 +767,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 10
+				air_volunteer_cap = 25
 				send_volunteer_size = 1
 			}
 			#Scaling National Spirit
@@ -769,7 +779,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 15
+				air_volunteer_cap = 35
 				send_volunteer_size = 2
 			}
 			#Scaling National Spirit
@@ -780,7 +790,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 20
+				air_volunteer_cap = 45
 				send_volunteer_size = 2
 			}
 			#Scaling National Spirit
@@ -791,7 +801,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 25
+				air_volunteer_cap = 50
 				send_volunteer_size = 3
 			}
 			#Scaling National Spirit
@@ -802,7 +812,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 30
+				air_volunteer_cap = 60
 				send_volunteer_size = 3
 			}
 			#Scaling National Spirit
@@ -813,7 +823,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 35
+				air_volunteer_cap = 75
 				send_volunteer_size = 4
 			}
 			#Scaling National Spirit
@@ -824,7 +834,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 40
+				air_volunteer_cap = 80
 				send_volunteer_size = 4
 			}
 			#Scaling National Spirit
@@ -835,7 +845,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 45
+				air_volunteer_cap = 95
 				send_volunteer_size = 5
 			}
 			#Scaling National Spirit
@@ -846,7 +856,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				air_volunteer_cap = 50
+				air_volunteer_cap = 100
 				send_volunteer_size = 5
 			}
 			#Scaling National Spirit
@@ -1047,6 +1057,19 @@ ideas = {
 			targeted_modifier = { tag = NAV attack_bonus_against = 0.05 }
 			#More later
 		}
+		bos_legion_fighting_experience_3 = {
+			picture = warband_without_a_home
+
+			allowed = {
+			}
+			removal_cost = -1
+			targeted_modifier = { tag = CES attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = WHT attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = LAC attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = TWO attack_bonus_against = 0.075 }
+			targeted_modifier = { tag = NAV attack_bonus_against = 0.075 }
+			#More later
+		}
 		#Modifier for lots of stuff
 		bos_mutant_fighting_experience_1 = {
 			picture = warband_without_a_home
@@ -1153,6 +1176,183 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				operative_slot = 1
+			}
+		}
+		bos_ncr_reconstruction_campaign = {
+			picture = unique_ncr_trade_idea
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.14
+				war_support_factor = -0.2
+				stability_factor = 0.1
+				stability_weekly = 0.0012
+				production_speed_buildings_factor = -0.15
+				consumer_goods_factor = 0.1
+			}
+		}
+		# bos_ncr_power_brokers_the_hub = {
+			# picture = ncr_trade_idea #change me!
+			# allowed = {
+			# }
+			# removal_cost = -1
+			# modifier = {
+				# compliance_growth = 0.05
+				# caps_node_trade_modifier = -0.15
+				# caps_trade_node_route_limit = 2
+			# }
+		# }
+		# bos_ncr_power_brokers_outfoxed_the_hub = {
+			# picture = ncr_trade_idea #make me match above!
+			# allowed = {
+			# }
+			# removal_cost = -1
+			# modifier = {
+				# caps_node_trade_modifier = -0.05
+			# }
+		# }
+		bos_generic_prestige = {
+			picture = unique_ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.2
+				political_power_factor = 0.05
+				justify_war_goal_time = -0.3
+				annex_cost_factor = -0.1
+				puppet_cost_factor = -0.1
+			}
+		}
+		bos_reformer_prestige = {
+			picture = generic_research_boost
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_sharing_per_country_bonus_factor = 0.4
+				conscription_factor = -0.05
+				army_leader_start_level = 2
+				starting_compliance = 0.05
+			}
+		}
+		bos_maxsonian_prestige = {
+			picture = generic_BOS_idea_paladins
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.12
+				army_leader_start_level = 1
+			}
+		}
+		bos_rhombian_prestige = {
+			picture = unique_ncr_trade_idea #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				##training halls decisions instead
+			}
+		}
+		bos_troika_prestige = {
+			picture = tnk_scientific_industry #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.3
+				intellectuals_drift = 0.2
+				local_resources_factor = 0.2
+				production_factory_start_efficiency_factor = 0.20
+				production_speed_buildings_factor = 0.15
+				
+			}
+		}
+		bos_ncr_looming_famine = {
+			picture = generic_food_neutral #change me!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = -0.2
+				war_support_factor = -0.1
+			}
+		}
+		bos_ncr_famine = {
+			picture = generic_food_bad #make me match above!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = -0.45
+				war_support_factor = -0.2
+				conscription_factor = -0.1
+			}
+		}
+		bos_ncr_terrible_famine = {
+			picture = generic_food_bad #make me match above!
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = -0.75
+				war_support_factor = -0.4
+				conscription_factor = -0.2
+				non_core_manpower = -1
+			}
+		}
+		bos_ncr_field_scribes_farming = {
+			picture = scribe_council
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = -0.0075
+			}
+		}
+		bos_ncr_field_scribes_farming_light = {
+			picture = scribe_council
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = -0.004
+			}
+		}
+		bos_ncr_baron_cooperation_unified = {
+			picture = brahmin_baron #Change me!
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				caps_income_modifier = 0.15
+				
+			}
+			research_bonus = {
+				industry = 0.15
+				agriculture_tech = 0.5
+			}
+		}
+		bos_ncr_baron_cooperation_fractured = {
+			picture = brahmin_baron #I should match above!
+
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				caps_income_modifier = 0.10
+				political_power_factor = 0.10
+			}
+			research_bonus = {
+				industry = 0.10
+				agriculture_tech = 0.4
 			}
 		}
 		srg_california_tech_sharing_initiative = {
@@ -1363,6 +1563,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				river_crossing_factor = -0.5
+				terrain_penalty_reduction = 0.3
 			}
 		}
 		bosdigin = {
@@ -1395,6 +1596,19 @@ ideas = {
 			modifier = {
 				air_ace_generation_chance_factor = 0.05
 				production_speed_air_base_factor = -0.8
+			}
+		}
+		bos_lyons_model = {
+
+			picture = FRA_fortification_focus
+
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
 			}
 		}
 
@@ -1781,7 +1995,7 @@ ideas = {
 
 			removal_cost = -1
 
-			equipment_bonus = {
+			equipment_bonus = { ##Note: Recycled as an expedition reward
 				support_robot_equipment = {
 					reliability = 0.10
 					instant = yes

@@ -368,11 +368,11 @@ bos_troikan_loyalist_buff_effect = {
 		}
 		if = {
 			limit = {
-				THIS.id = BOS
+				tag = BOS
 			}
 			country_event = nf_brotherhood_elh_events.703
 		}
-		else {
+		else = {
 			country_event = nf_brotherhood_elh_events.701
 		}
 		every_army_leader = {
@@ -459,5 +459,40 @@ bos_troikan_only_troika_buff_effect = {
 			}
 			add_trait = { trait = sneering_imperialist_trait }
 		}
+	}
+}
+bos_adjust_famine_time = {
+	if = {
+		limit = {
+			has_active_mission = bos_ncr_incoming_famine
+		}
+		add_days_mission_timeout = {
+			mission = bos_ncr_incoming_famine
+			days = bos_famine_time
+		}
+	}
+	else_if = {
+		limit = {
+			has_active_mission = bos_ncr_famine_active
+		}
+		add_days_mission_timeout = {
+			mission = bos_ncr_famine_active
+			days = bos_famine_time
+		}
+	}
+	else_if = {
+		limit = {
+			has_active_mission = bos_ncr_terrible_famine_active
+		}
+		add_days_mission_timeout = {
+			mission = bos_ncr_terrible_famine_active
+			days = bos_famine_time
+		}
+	}
+}
+bos_reduce_famine = {
+	add_to_variable = {
+		var = slh_famine_progress
+		value = +1
 	}
 }

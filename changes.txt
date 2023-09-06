@@ -1,5 +1,6 @@
 Adds major content like Expeditions to the brotherhood, as well as edits to make coop more enjoyable. This will not make Lost Hills OP, but it should make them significantly more enjoyable up through the NCR-Brotherhood war.
-
+##FUTURE PLANS - Caesar's Legion work & integration, giving foci specifically for fighting them. Reformers ceasefire deal with NCR for concessions & unified front against legion
+## Decisions to affect off-map chapter random outcomes
 
 LOST HILLS FOCUS TREE CHANGES:
 
@@ -91,27 +92,56 @@ Other Changes:
 DRAFT 3 DESCRIPTION:
 This intends to make the Brotherhood more enjoyable, especially in coop with many additional ways to invest and defend other chapters, and a dozen smaller touches to smooth over rough edges.
 
-The goal of the mod is to add content, increase interactivity, and make multiplayer interesting. 
+The goal of the mod is to add content, especially narratively, increase interactivity, and make multiplayer more interesting. 
 
-TROIKA AND RECONSTRUCTION UPDATE:
--The troika finally have their own path in Lost Hills! Flirt with their power for a quicker way to be rid of your rivals... or embrace it and rewrite every chapter leader's pascalbytes.
--New foci deal with what kind of Brotherhood you are. Will the other chapters be annexed? Or will you build them up to fight alongside you?
--Reconstruction is in full swing! Finally put the inefficiencies of a Chapter's economy behind you, and wrestle with the inefficiencies of the Bear! Maybe give them a free press while you're at it? And the followers back... please?
--Circle of Steel: New focuses expand the role of the Circle of Steel, giving your intelligence agency a leg up against the NCR, and more information on what your Chapters are getting up to.
-
-First thing - The special forces capacity oversight is patched. No longer will you have the least Special Forces of any chapter.
 
 Major highlights include: 
 A massively expanded focus tree for the Steel Rangers, 
-A heavy focus on more interactions with other chapters, including investing in overseas airbases, intervening in their conflicts at great risk, or the overhaul to BoS-Shi relations. 
+A focus on more interactions with other chapters, including investing in overseas airbases, intervening in their conflicts at great risk, or the overhaul to BoS-Shi relations. 
 After-War content by shaping California post-NCR and enacting the vision of your High Elder, with reforms such as changing economy and trade laws, accepting mutants, or inviting the Followers to reopen their bases! Llwyd may want a market economy, but Rhiannon would much prefer to never see a trader again!
+
+The NCR wasn't formed in a day, and its instituions won't be reformed in one either! Battle the Barons and other interest groups in the NCR as the hearts of California turn to your side - the people, as it turns out, are quite happy to see the Oligarchy end, but the Barons would rather see California burn. Success will bring new national spirits, key figures from the NCR into your government, and powerful foci affecting California, but failure could make you an easy meal for the Legion.
 
 The mod also adds a huge number of new decisions, using the limited resources of Paladins and Scribes to turn boring filler foci into interesting choices, or put them to work building in foreign lands.
 
-Explore the world! Manage your paladins carefully as you interact with sprawling event trees and their leader-specific options to bring home rare artifacts, caches of equipment, or knowledge for Brotherhood R&D.
+Expeditions ready, Elder! Manage your paladins carefully as you interact with sprawling event trees and their leader-specific options to bring home rare artifacts, caches of equipment, or knowledge for Brotherhood R&D.
 
 Many other aspects of the vanilla tree are retouched - such as industry, trade, politics, and the NCR-Brotherhood War, which is now easier to start and resilient to multiplayer shenanigans among a plethora of other changes.
 
+HEALING NEW SCARS UPDATE:
+Societal change must be made to California, and you'll have the foil the organized pushback from the entrenched oligarchy of the Brahmin Barons and the bit players of corruption in the NCR - Like the Van Graffs and Gun Runners or Hub merchants.
+-Massive addition of the "Healing New Scars" update, totaling 14 new foci, and over two dozen events, closing content additions through the post-NCR game, up to the end of war with the Legion.
+-Particularly, see changes like mass cybernetics use by civillians under the Troika, or regional training halls under the Rhombians. Rename yourself to represent all of California as the Californian Brotherhood, or pass the EPA with Allgood. Even cut a deal with the rebellious Anton Flynn to see caps kickbacks from Big Business!
+-The addition of five prominent NCR figures as Cultural Advisors - Anton Flynn, Ignacio Rivas, Grant C. Hayes, Aaron Kimball, and Allgood Murphy. You'll have to earn their support first, while Healing New Scars.
+-The addition of the Reformers final focuses, imagining what a non-Steel Rangers Brotherhood looks like under them. (Sign the Legion Defence Pact with the NCR for Maxson, or stab them in the back to prep against said Legion if they turn you down!)
+-New decisions relating to the new content, retouches of several Expeditions to account for changes to vanilla, and art for the mutually-exclusive Council focuses.
+-Balance changes to the NCR-BoS War, including the ability to do tier 3 and 4 Expeditions, establish a DMZ as you expand the Brotherhood Presence near Maxson, and the new ability for the NCR AI to start the war first, if the Legion is dead or Moore is in power.
+-A host of additional balance changes for under-utilized options, and a number of fixes or design changes to older content. See the patch notes for details about balance changes or minor additions.
 
-PATCHNOTES:
--Fix for tiny error introduced into The Village event.
+Changes:
+-States owned by any Chapter will not be claimed by the BOS in the "Future, Attained" focus, and it tells you as much. This avoids massive diplomatic penalties.
+-The NCR AI is now allowed to and much more likely to end the ceasefire, based on tension and how badly they overmatch the BoS. Unless Moore is elected, you still won't be under threat unless Caesar's Legion has been defeated.
+-Focuses that give "Brotherhood Presence" in a state now add a DMZ.
+-Rebalanced the Change Tension decisions for BoS-NCR tension, reducing the pp gain penalty from 50% -> 20%.
+-Rebalanced the Establish Foreign Airbases decision by reducing execution time from 180 -> 120 days, plus giving you a rough idea of it's benefits in the followup event.
+-Allowed the AI to form the Steel Rangers, though it's quite unlikely for now.
+-Allowed the research of the "Coast of California" branch during the BoS-NCR war, so long as you control(rather than own) a core coastal state. The major utility here is in going to Anchorage or Japan on a Commitment to Duty run, significantly increasing the value of robots to Duty players, though you can also get the WBH involved in the BoS-NCR war this way.
+-Added Redding and Sac-City as possible states to complete "The Brotherhood Triumphant"
+-Increased the states required to complete "The Brotherhood Triumphant" from 4 to 5, which should require approximately the same minimum warscore, while with the last change making a BoS-CES peace conference over the NCR easier.
+
+Minor Changes:
+-Changed a possible multiplayer exploit that allowed the Shi State to "easily" start the 2nd NCR-BoS War on behalf of the NCR. The cheap decision to start the war is now only available if you're not in a faction with the NCR.
+-Rebalanced the time to complete "Our Right" from 30 -> 14 days, and added a bypass condition.
+-Increased the "Token Reforms" spirit for the Washington Brotherhood from 60 Daily Energy Cells -> 100. This is equivelant to about 16 energy without research.
+-Many Expedition national spirits now have unique icons.
+
+Fixes:
+-Fixed the Toxic Caves event chain terminating early due to an incorrect scope, when choosing an option other than compensating Klamath.
+-Fixed the major (and longstanding) bug that erroneously unlocked, rather than completed, the focus to invite the WBH to your faction in the Anchorage Expedition. ()
+-The option in Sailing the Yangtze that may see a Paladin unit killed, now properly displays that information. 
+-Fixed the BSF's expeditionary technology being unobtainable. Should the devs ever let the BSF research Monstrous Plants, I will re-add the requirement that they have done so.
+-Fixed the "Lost Hills Politics" decision category disappearing if you pursue "A Balanced Council" and then select an Absolute High Elder. The section will still disappear if you do not have "A Balanced Council", but should re-appear if you take the focus.
+-Fixed the market decisions (Allow Select Traders, Open the Markets) no longer functioning due to a change in how vanilla hoi4 handles no-length decisions.
+-Fixed the extra Mutant Experience national spirit upgrade not increasing maximum past 5%, also applies to Legion. New maximums for both a 7.5% as there is an event offering an upgrade for each, with the legion event being new.
+-A bug with the "Supply Debates" event where Lost Hills would also get the mercenaries has been fixed. Additonally, a typo preventing the targeted chapter's name from being in the event text has been fixed.
+-Other fixed bugs were invisible (AI-only) or harmless log errors.

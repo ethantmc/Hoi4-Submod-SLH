@@ -31,7 +31,8 @@ bos_lost_hills_logistics = {
 	out_of_supply_factor = bos_slh_volunterr_func_negative
 	supply_consumption_factor = bos_slh_volunterr_func_negative
 	supply_factor = bos_slh_volunteer_func_positive
-	unit_upkeep_attrition_factor = bos_slh_volunterr_func_negative				  
+	unit_upkeep_attrition_factor = bos_slh_volunterr_func_negative
+	supply_node_range = bos_slh_supply_node_range
 	#Nerfs the -air damage they get, in relation to other chapters.
 	industry_air_damage_factor = -0.25
 	foreign_subversive_activites = -0.25
@@ -50,7 +51,7 @@ bos_lost_hills_logistics = {
 	intellectuals_drift = BOS_drift_intellectuals
 	elites_drift = BOS_drift_elites
 	cant_leave_faction = 1
-
+	organization_floor_modifier_3 = bos_slh_gunrunners_opinion_mod
 	BOS_underground_administrative_capacity = BOS_underground_building_administration_centers_mod
 	modifier_army_sub_unit_paladin_unit_attack_factor = BOS_underground_building_training_bonus
 	modifier_army_sub_unit_paladin_unit_defence_factor = BOS_underground_building_training_bonus
@@ -116,10 +117,30 @@ bos_lost_hills_logistics_state = {
 	recruitable_population = 0.03						  
 	state_production_speed_buildings_factor = BOS_condensed_civilian_workshop_modifier
 }
-
-bos_balanced_council = {
-	icon = scribe_council
+bos_training_hall = {
 	enable = { always = yes }
+	icon = GFX_idea_brotherhood_drill_sergeants
+	#recruitable_population_factor = 0.3
+	recruitable_population = 0.02						  
+}
+bos_worker_coops = {
+	enable = {always = yes}
+	icon = GFX_idea_aztlan_land_distribution
+	resistance_target = -0.05
+}
+bos_worker_discontent = {
+	enable = {always = yes}
+	icon = GFX_idea_aztlan_land_distribution
+	resistance_target = 0.07
+}
+bos_misguided_resistance = {
+	enable = {always = yes}
+	icon = GFX_idea_aztlan_land_distribution
+	resistance_target = 0.12
+}
+bos_balanced_council = {
+	enable = { always = yes }
+	icon = GFX_idea_generic_technical_doc
 	intel_network_gain  = bos_ruler_pop
 	command_power_gain = bos_elites_pop
 	weekly_manpower = bos_people_pop

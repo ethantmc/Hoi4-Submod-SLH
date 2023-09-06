@@ -216,7 +216,7 @@
   bos_our_advantage: "The Sacred Connection"
   bos_robotic_occupation: "Robotic Enforcers"
   bos_nf_what_were_they_for: "Familial Bonds"
-  bos_nf_what_were_they_for_desc: "There's another path. We can prepare flights to every chapter we're in contact with, collecting a truly staggering number of volunteer divisions just before the war. No matter how careful we are about sending the flights out, their return will be unmistakeable. We'll time for the end of the ceasefire."
+  bos_nf_what_were_they_for_desc: "There's another path. We can prepare flights to every chapter we're in contact with, collecting a truly staggering number of volunteer divisions just before the war. No matter how careful we are about sending the flights out, their return will be unmistakable. We'll time for the end of the ceasefire."
   bos_all_to_war_tt: "Any Brotherhood Chapter in the Ledger will get a §Ytemporary bonus§! for 2 years once you complete §YEnd the Ceasefire§!, which is:"
   bos_lost_hills_volunteers: "NCR War Volunteers"
   bos_lost_hills_volunteers_desc: "Lost Hills airlifted out a great number of volunteers for their war against the NCR. They won't be back for a while, and our logistics are tied up in keeping them supplied and equipped."
@@ -242,7 +242,7 @@
   bos_nf_propaganda_campaigns: "Propaganda Campaigns"
   bos_nf_propaganda_campaigns_desc: "Shady Sands has put quite a bit of effort into demonizing us as terrorists to the citizens here. We will need to make an active effort to correct the record on these false and manipulative beliefs if we wish to undo Californian's brainwashing."
   bos_nf_creating_civil_administration_sectors: "Adapting Civil Administration Sectors"
-  bos_nf_creating_civil_administration_sectors_desc: "Admittedly, quite a good deal of the simple infrastructure apparatus of the NCR we can re-utilize to our own ends. A few elected roles through the old NCR democracy can be replaced with appointed ones by the high elders, but otherwise most of the smaller machinations of government such as civilian police, the news media and civil engineer corps will require little modification."
+  bos_nf_creating_civil_administration_sectors_desc: "Admittedly, quite a good deal of the political appartus of the NCR can be re-tooled to our own ends. A few elected roles through the old NCR democracy can be replaced with appointed ones by the high elders, but otherwise most of the smaller machinations of government such as civilian police, the news media and civil engineer corps will require little modification."
   bos_nf_rounding_up_criminals: "Rounding Up Criminals"
   bos_nf_rounding_up_criminals_desc: "Quite a few Raiders, hoping to take advantage of our conflict with the NCR, hoped to use this chance to sneak into the country and bring terror to the civilian population. It might win over the hearts of some of those more against us if we were to make an active effort to help improve the lives of citizens across our occupied territories."
   bos_nf_the_brotherhood_triumphant: "The Brotherhood Triumphant"
@@ -276,17 +276,127 @@
   bos_nf_high_elder_llwyd_economic_plan_desc: "Absolute High Elder Llwyd plans to abandon most elements of Brotherhood administration. Other than keeping enough economic control to stamp down on the remnants of the Barons, Van Graffs, Gun Runners, and Water Merchants, California will be open for business!"  
   bos_nf_high_elder_llwyd_torni_embrace_the_followers: "Embrace the Followers"
   bos_nf_high_elder_llwyd_torni_embrace_the_followers_desc: "The Followers of the Apocalypse have made the Boneyard one of the best places in the Wasteland. They even ran a non-profit University there before the war destroyed it, and they profess an ideology of non-violence while being full of skilled doctors, scientists, agricultural techs, and other learned people. We'd be foolish not to entice them to reopen their aid camps and bases all across California."  
+  bos_nf_high_elder_llwyd_torni_followers_unfinished_programs: "Endorse Follower Ambitions"
+  bos_nf_high_elder_llwyd_torni_followers_unfinished_programs_desc: "Even more than simply returning the Followers to their status quo under the NCR, we could actively support their expansion. They were undertaking pilot programs in the Boneyard to give electrification and industrial assistance in poor regions. While our industrial technology is certainly beyond reproach, such a program may still be of use to our Chapters, and their work in electrification will ease the logistical burden of our energy-hungry armaments."
+  bos_boneyard_sun_tt: "Ignacio Rivas will be invited to government as an advisor, and Followers across the Wasteland will be able to offer electrification and industrial research assistance."
   bos_nf_high_elder_llwyd_economic_mobilization: "Loyalty Earned"
   bos_nf_high_elder_llwyd_economic_mobilization_desc: "Time and time again, Llwyd has shown painful levels of commitment to helping the people of California and everyone in the wastes. Our longstanding policies have built a trust in our governance and business confidence. The people of California were almost happy to work for us, and our anti-corruption campaigns have done wonders for small and medium business. California roars once again!"  
   bos_nf_high_elder_llwyd_old_management: "Old Faces, New Products"
   bos_nf_high_elder_llwyd_old_management_desc: "Llwyd's made it a priority to restore the level of choice and plenty seen under the NCR, and to bring trade back to pre-war levels. Any allies of ours will be very happy to see desperately needed materials flowing again."  
   bos_nf_further_reconstruction: "Healing New Scars"
   bos_nf_further_reconstruction_desc: "With all our work, the economy is back in motion, and the risk of our state collapsing is virtually zero. However, impromptu war memorials dot California in the form of newly burned-out buildings, downed power lines, and craters collecting radioactive rainwater. A true clean-up effort will be years in the making."
+  bos_reconstruction_campaign_reductions_tt: "§gThe length of the reconstruction campaign will be significantly reduced should we complete the focuses that follow this one. Reductions of a year or more are achievable.§!"
+  bos_new_scars_mechanics_tt: "§COur choice in economic plan, and our current ruling party, will unlock an additional choice each in reconstruction events. A further choice may sometimes be unlocked depending on other choices we've made.§!"
+  ##California Brotherhood Cosmetic Tag
+  CALBOS_cosmetic_elites_ADJ:0 "Brotherhood"
+  CALBOS_cosmetic_elites_DEF:0 "the Californian Brotherhood of Steel"
+  CALBOS_cosmetic_elites:0 "Californian Brotherhood"
+  CALBOS_cosmetic_intellectuals_ADJ:0 "Brotherhood"
+  CALBOS_cosmetic_intellectuals_DEF:0 "the Californian Brotherhood of Steel"
+  CALBOS_cosmetic_intellectuals:0 "Californian Brotherhood"
+  CALBOS_cosmetic_people_ADJ:0 "Brotherhood"
+  CALBOS_cosmetic_people_DEF:0 "the Californian Brotherhood of Steel"
+  CALBOS_cosmetic_people:0 "Californian Brotherhood"
+  CALBOS_cosmetic_ruler_ADJ:0 "Brotherhood"
+  CALBOS_cosmetic_ruler_DEF:0 "the Californian Brotherhood of Steel"
+  CALBOS_cosmetic_ruler:0 "Californian Brotherhood"
+  
+  bos_ncr_reconstruction_campaign: "Mending California"
+  bos_ncr_reconstruction_campaign_desc: "We're currently working to restore California after years of war and resistance."
+  bos_nf_power_brokers: "The Power Brokers"
+  bos_nf_power_brokers_desc: "The NCR had many strong factions that distorted their ability to govern. Many worked against us during the resistance campaigns, and were thought to be broken. Their prominence demands action, but perhaps they could speed up reconstruction?"
+  bos_nf_power_brokers_the_hub: "The Hub's Criminal Capitalists"
+  bos_nf_power_brokers_the_hub_desc: "California was transforming. Our war interrupted industrialization efforts of the NCR, and the Hub's merchants particularly made out like bandits. Conflict quickly shuttered the factories of the Hub, leading to the merchants turning their government funds to criminal activity."
+  bos_nf_power_brokers_the_barons: "The Barons"
+  bos_nf_power_brokers_the_barons_desc: "President Kimball is responsible for the Barons, a agricultural and livestock capitalists who've conglomerated much of the NCR's food supply. Kimball abolished limits on cattleheads per rancher, and every year since the Barons have become more politically influential."
+  bos_nf_power_brokers_the_arms_dealers: "The Arms Dealers"
+  bos_nf_power_brokers_the_arms_dealers_desc: "The NCR was laden down by interest groups like the Gun Runners and Van Graffs, inexorably destroying the federal government. They collected power we now have to deal with. Breaking them is doable, but with the enemies we face, can we afford to?"
+  bos_nf_power_brokers_the_legacy_government: "The Legacy Government"
+  bos_nf_power_brokers_the_legacy_government_desc: "Overnight, we've replaced the NCR's democracy with our own system. That leaves thousands of disgruntled individuals with reason to sow division and sabotage our government. We must address this thoroughly."  
+  
+  ####CALIFORNIA FOOD CRISIS
+  bos_nf_the_californian_food_crisis: "The Californian Food Crisis"
+  bos_nf_the_californian_food_crisis_desc: "War never changes. The steel and fire we rained down across California poisoned more than the soil - it poisoned the minds of a nation we're here to save from the mistakes of the Old World. With the resistance of the NCR's power brokers, there won't be enough food this winter."
+  bos_ncr_famine_crisis_unlock_tt: "§CUnlocks the execution of a number of initiatives designed to end the food crisis.§!"
+  ##Flags
+  reformers_reconstruction: "Reformers led a gentle occupation campaign."
+  barons_cooperating: "The Barons are cooperating to rebuild northern agriculture."
+  barons_dealt_with: "The Barons no longer oppose us."
+  famine_mission_advanced_tech_1_completed: "We have introduced industrial fertilizers to improve farm productivity."
+  famine_mission_advanced_tech_2_completed: "Automated harvesters fill vacancies on the frontier."
+  famine_mission_advanced_tech_3_completed: "We have distributed GMO seeds that survive on the margins of farmland."
+  slh_famine_progress_text_none: "§RDesperate§!"
+  slh_famine_progress_text_low: "§RPoor§!"
+  slh_famine_progress_text_medium: "§YReduced§!"
+  slh_famine_progress_text_high: "§GEnding§!"
+  ##End Flags
+  bos_nf_the_weakened_brotherhood: "Prey for the Lion"
+  bos_nf_the_weakened_brotherhood_desc: "The great devastation of the war, coupled with post-war unrest and our transformation of California has left us exceptionally weakened. We need time to reap the benefits of our changes, and to end the famine. If we offer the Legion the Mojave, we can buy ourselves more time."
+  bos_legion_truce_effects_explanation_tt: "The Brotherhood has signed the following deal with the Legion: "
+  
+  bos_ncr_looming_famine: "Looming Famine"
+  bos_ncr_looming_famine_desc: "Preparations are being made across California as the Barons and other NCR power brokers prepare to starve us out. The barons are content to rule over California's embers - we're content to rule over their bones."
+  bos_ncr_incoming_famine: "Looming Famine"
+  bos_ncr_incoming_famine_desc: "Soon, the famine will worsen. Right now, it's not severe, with deaths belonging to the old, infirm, or sickly. We've switched to a system of central distribution, but most people get what they need."
+  bos_ncr_famine: "The Californian Famine"
+  bos_ncr_famine_desc: "Rationing has been maximized. We've gone to increasingly authoritarian measures to stretch out existing food supplies. Deaths are minimal - for a famine. If not for the very public actions of the Barons, we'd be facing significant unrest."
+  bos_ncr_famine_active: "The Californian Famine"
+  bos_ncr_famine_active_desc: "Rationing has been maximized. We've gone to increasingly authoritarian measures to stretch out existing food supplies. Deaths are minimal - for a famine. If not for the very public actions of the Barons, we'd be facing significant unrest.\n\nIf we take too long to address this crisis, the effects will become extremely severe. We may not be able to persecute a war of any size."
+  bos_ncr_terrible_famine: "The Great Famine of California"
+  bos_ncr_terrible_famine_desc: "Death walks the streets of California. Our control has broken down - even with food productivity increasing, hoarding by increasingly disloyal settlements threatens the dissolution of our government."
+  stronger_lost_hills_ncr_occupation_famine: "Californian Food Crisis"
+  stronger_lost_hills_ncr_occupation_famine_desc: "With every step we took into Baron lands, we found burned crops and slaughtered breeding stock. The Barons saw defeat on the horizon, and engineered a delayed famine - one that would rear its head only as we ascended the steps of Shady Sands. The Barons are content to rule over the embers of the NCR, and if not for Southern California's independent agriculture, we'd have no choice but to watch it burn. \n\nInstead, with the independent farmers of Southern California, we're cracking open their grain silos and stockpiles. With careful rationing, we can end this famine before it's too late. \n\nFamine Status: [slh_famine_progress_text]"
+  
+  bos_ncr_famine_delay: "Extra Hands for the Farms"
+  bos_ncr_famine_delay_desc: "Now that we control California, there's no shortage of people or work to be done. By redirecting the unemployed to independent farms across California, we can make them just a little more productive. It won't solve the crisis, but it'll buy us more time. §YWe can only do this once.§!"
+  
+  bos_ncr_famine_evaluate_food_reserves: "Evaluate Food Reserves"
+  bos_ncr_famine_evaluate_food_reserves_desc: "Performing an audit of our food reserves requires the skills of our scribes. It is almost certain that food reserves are being under-reported out of fear, corruption, or negligence. §YWe can only do this once.§!"
+  
+  bos_ncr_famine_curb_baron_influence: "Curb Baron Influence"
+  bos_ncr_famine_curb_baron_influence_desc: "While Baron holdings are concentrated in Northern California, they own significant private land as far south as The Hub and Necropolis. We can execute this plan to launch a campaign of influence reduction in central California, before culminating with a confrontation with Anton Flynn and his elites. With the free hand our ideology provides, it's not nessecary for us to apart their support base first - we can still do it later."
+
+  bos_ncr_famine_food_convoy_escorts: "Escort Caravans"
+  bos_ncr_famine_food_convoy_escorts_desc: "Traders from all over are flocking to California to make a few caps off our misfortune. Unluckily for them and us, desperate people tend to raid. If foods going to make it our stockpiles, and not be wasted in a town with enough, or destroyed by mercenaries working for the Barons, we'd best escort them. Our paladins will only ensure caravans make it through the most dangerous territories, lower ranks will take over duties in the quiet interior."
+
+  bos_ncr_famine_abatement: "Bribe a Baron"
+  bos_ncr_famine_abatement_desc: "The Barons are not above bribery. If we're truly desperate for time, we can bribe them to reveal hiddren breeding stock or grain stores, one at a time. Working to erode their unity like this won't end the famine, but it's a §Yreliable and repeatable§! way to get more time."
+
+  bos_ncr_famine_distribute_advanced_tech_1: "Introduce Industrial Fertilizers"
+  bos_ncr_famine_distribute_advanced_tech_1_desc: "To end the ongoing famine, we need our productive lands to reliably produce greater harvests. Thanks to the work of our Scribes, we have developed Old-World style industrial fertilizers that are effective in our new climate. By prioritizing the introduction of this fertilizer to Southern California, we can get meaningfully closer to ending the famine."
+  bos_ncr_famine_distribute_advanced_tech_2: "Give Away Automated Harvesters"
+  bos_ncr_famine_distribute_advanced_tech_2_desc: "Our scribes have developed automated harvesting robotics seen in distant places by our Paladins. These robotics maximize the health and yield of crops by providing high quality precipitation, soil remediation, and protection from wasteland creatures from the tiny locust to the radroach. While all of California will benefit from this, we'll be focusing on the underpopulated frontiers - the greatest impact is made by delivering there, where land waiting for more hands will now be put to use without them."
+  bos_ncr_famine_distribute_advanced_tech_3: "Distribute Genetically Modified Seeds"
+  bos_ncr_famine_distribute_advanced_tech_3_desc: "Genetically modified seeds are the pinnacle of agricultural science. While some of our urban centers balk at the idea, modified crops can feed more people, with higher quality food. Most farming areas in California have a 'margin', an area around their farmland that is too poor to be farmed reliably, that they work to improve each year. Due to the cost of a failed crop, these lands are almost never planted. By focusing on producing seeds that thrive in the margin, we could see double digit increases in agricultural productivity, in addition to them improving the soil."
+  
+  bos_ncr_famine_ask_the_followers: "Ask the Followers of the Apocalypse for Help"
+  bos_ncr_famine_ask_the_followers_desc: "The Followers have an integrated community presence all across California. We've already invited them back into their community centres, and doubtlessly they work to abate the famine without an order from us. However, by partnering with them, we could get a much better idea of where aid is needed most, as many Californians first stop is not a Brotherhood Elder, but a Follower. \n\nIn addition, there's simply far more demand on our knowledgeable Scribes than we can handle, and ferrying Follower experts across California will prevent the failure of many crops this year. Relying on them in this way however will give them a §Ygreat deal of influence§!, and will strengthen them politically."
+  famine_mission_followers_help_completed: "We have mobilized the Followers across California to quell a famine."  
+
+  bos_ncr_famine_raid_the_followers: "Raid Follower Community Centers"
+  bos_ncr_famine_raid_the_followers_desc: "The Followers have gone to ground with our conquest of the NCR. Many hide in follower 'forts' and buildings across California, with stockpiles of aid - industrial materials, medical supplies, food, and seeds. If we don't want to legitimize these pacifists, we can seize these materials for our own efforts. This won't win us any friends amongst their supporters, but making their lands productive community farms will limit the damage, and combined with the careful deployment of these new supplies, will step us toward ending the famine. Raiding them like this will, however, §Rprevent us from working with them in the future.§!"
+  famine_mission_followers_raided_completed: "Has raided follower forts across California to quell a famine."
+  ####END CALIFORNIA FOOD CRISIS 
+  
+  bos_nf_economic_projects: "Economic Projects"
+  bos_nf_economic_projects_desc: "There's much to do in order to bring the NCR back its disastrous state. The first order of business, though, is planning out our capstone project. Not only will this show our citizens we're planning for the future, but it will allow the elders to cease their politicking for their pet projects."
+  bos_nf_economic_projects_electrification: "Electrifying The Wastes"
+  bos_nf_economic_projects_electrification_desc: "While our main cities already enjoy their own power grids, California is home to many settlements reliant on inefficient generators using valuable fusion cores, fuel, or battery cells. Connecting them will bind these settlements much more tightly to us, and make protecting them a far easier task.\n\nDoing this is as simple as investing in additional power generation in key cities, and infrastructure in their neighbouring states."
+  #bos_ncr_electrification_tt: "Connect the cities of 
+  bos_nf_economic_projects: "Crater Cleanup"
+  bos_nf_economic_projects_desc: "It's not exactly the most glamorous mission, but our war has made old routes through California unusable, with major thoroughfares now facing lengthy detours to avoid unexploded munitions or destroyed bridges and roads."
+  bos_nf_economic_projects_real_memorials_desc: "Some villages and towns were flattened during our war, and others emptied of all fighting-age men. They may have been the enemy, but now their children and widowers are our citizens. We need to undertake a lengthy campaign acknowledging their bravery in the face of a superior force, as well as honoring the NCR's commitments in terms of pay."
+  bos_nf_economic_projects_real_memorials: "Mending Rifts and Making Monuments"
+  bos_nf_economic_projects_training_halls: "Our Prestige Project"
+  bos_nf_economic_projects_training_halls_desc: "Finally it's time to execute on our planned project. Let its completion be the first step into the future for [BOS.getName]."
   
   bos_nf_preparing_for_expansion: "Future, Attained"
   bos_nf_preparing_for_expansion_desc: "The Brotherhood's future is now in our hands, the elders will have to come together to discuss how exactly we proceed. Do we try to integrate more of our bordering territory, with the end goal of trying to reach other chapters fully — or do we try to bunker up and hold California in the hopes that other chapters will eventually reach us in time?"
+  bos_skip_brotherhood_states_tt: "§CStates currently owned by a Chapter will not generate claims, to avoid insurmountable diplomatic penalties.§!"
+  
   bos_nf_utilizing_californias_industry: "Utilizing California's Industry"
   bos_nf_utilizing_californias_industry_desc: "California has a massive, powerful industrial base we can utilize if we make the correct decisions and avoid disturbing too many of the complex pieces holding NCR's mechanisms together."
+  bos_nf_utilizing_californias_industry_tt: "Unlocking §CSophisticated§! Industrial Technology also unlocks three §YUnique Technologies§! in the §YIndustrial§! research category."
   bos_nf_the_coast_of_california: "The Coast of California"
   bos_nf_the_coast_of_california_desc: "The Brotherhood has never deployed to the sea, but that must change. Not only might there be secrets beneath the waves; there are threats across them."
   bos_nf_seatrials: "Sea Trials"
@@ -301,8 +411,12 @@
   bos_nf_seabehemoths_desc: "The Brotherhood can deploy the largest warships on the sea now!"
   bos_nf_steelcage: "Steel Cage"
   bos_nf_steelcage_desc: "The Steel Cage, lovingly called the nest by some, has become the pinnacle flagship for our fleets. A pre-war cargo vessel outfitted with artillery heavy laser cannons and a new nuclear reactor. Its armour is nigh invulnerable, and many feel that it is this fleet that confirms our dominance at sea."
+  
   bos_nf_the_airways_of_california: "The Airways of California"
   bos_nf_the_airways_of_california_desc: "We tried to learn the secrets of Vertibirds in the 2240's, and although it didn't work, it piqued our interest. It is time for the Chapter that sent armadas of airships east to show why the Bear Force is a farce."
+  bos_lyons_model: "Lancers"
+  bos_lyons_model_desc: "Lyon's expedition added the Lancer designation, a path from Initiate with as much respect as both the Scribe and Knight. We've adopted their model, to resounding success."
+  
   bos_nf_fighters: "Fighters"
   bos_nf_fighters_desc: "Airships, it turns out, are vulnerable to machine gun fire and missiles. By deploying fighters we'll ensure control over the air!"
   bos_nf_support: "Ground Support"
@@ -492,6 +606,11 @@
   bos_nf_a_better_brotherhood_desc: "The NCR is not the inheritor of America's Legacy. No nation stands in the Wasteland capable of surviving the Millenia - except us."
   bos_nf_opening_our_vaults: "Our Saved Technology"
   bos_nf_opening_our_vaults_desc: "There's some technologies and records we've left to gather dust for decades. The time has come to dust them off and prepare, for our future."
+  bos_nf_bigger_threats: "Offer The Legion Defense Pact"
+  bos_nf_bigger_threats_desc: "The reality is, the NCR is not prepared to battle us and the Legion simultaneously. The track record of our faction in the Brotherhood is palatable to enough of the NCR's people in Maxson State, that it's not out of the question we could administer it without violence.\n\nThis is very similar to a deal some have floated for us to join the NCR as a state, but with a key difference - Maxson will be seceding to us, so long as we promise to create a state constitution applicable to citizens that is similar to the NCR's. A two-tier system for those in the brotherhood, versus those simply administered by it."
+  bos_nf_force_the_issue: "Maxson for a Truce"
+  bos_nf_force_the_issue_desc: "While the NCR rejected our original proposal, now that the Legion has begun to push them back, we're in a much stronger position. We don't even need to declare formal war against the Legion, the simple promise not to march on Shady Sands ourselves is all the NCR can demand."
+  bos_ncr_accepted_deal_for_maxson: "BoS-NCR Legion Defense Pact Created"
   
   bos_nf_frozen_politics_0: "Our New Normal"
   bos_nf_frozen_politics_0_desc: "This time has seen much upheaval in America. The council of elders needs to adapt, based on the current political climate. Families influential for decades may find themselves fall from grace... or rise even higher."
@@ -822,17 +941,21 @@
   nf_brotherhood_foreign_assistance.301.b: "Don't bother me with this again."
   
   nf_brotherhood_elh_events.1.t: "The Price of Victory"
-  nf_brotherhood_elh_events.1.d: "The people of the NCR have not forgotten us. Not too far from Necropolis, a patrol full of promising young Knights and their apprentices were pelted with tin cans, rocks, and rotten food while pacifying a town. Patrol leader Sanders, a Reformer and Senior Knight, withheld permission to disperse the townsfolk. Sanders was killed by a ranger while negotiating with the town's mayor. \n\n The Rhombian patrol that visited next brought a portable generator and a Scribe to establish peaceful relations with the townsfolk. The next day, the town over was massacred by a Maxsonian-led squad for refusal to surrender their militia's Wattz laser pistols, which would've left them defenseless against creatures of the wasteland. \n\n The Council must elect one Elder to direct the occupation of the NCR, or we risk the breakdown of trust and cohesion in our lower ranks."  
+  nf_brotherhood_elh_events.1.d: "The people of the NCR have not forgotten us. Not too far from Necropolis, a patrol full of promising young Knights and their apprentices were pelted with tin cans, rocks, and rotten food while pacifying a town. Patrol leader Sanders, a Reformer and Senior Knight, withheld permission to disperse the townsfolk. Sanders was killed by a ranger while negotiating with the town's mayor. \n\nThe Rhombian patrol that visited next brought a portable generator and a Scribe to establish peaceful relations with the townsfolk. The next day, the town over was massacred by a Maxsonian-led squad for refusal to surrender their militia's Wattz laser pistols, which would've left them defenseless against creatures of the wasteland. \n\nThe Council must elect one Elder to direct the occupation of the NCR, or we risk the breakdown of trust and cohesion in our lower ranks."  
   nf_brotherhood_elh_events.1.a: "Debate drags on in the Council."
   nf_brotherhood_elh_events.1.maxsonians: "§PFear will keep the towns in line.§!"
   nf_brotherhood_elh_events.1.rhombians: "§g Generators, medical supplies, and rations for every town. §!"
   nf_brotherhood_elh_events.1.reformers: "§CBegin full reconstruction efforts immediately - they'll learn we mean well.§!"
-  nf_brotherhood_elh_events.1.troika: "§R They are DUST in our §OGREAT STORM!§!§!"
+  nf_brotherhood_elh_events.1.troika: "§R Some of them will have the awareness we need. We can make more bodies, to keep them cowed.§!"
   chances_popularity_tt: "Chances are based on current Party Popularity for each faction. This occupation law will be §Rremoved§! once the brotherhood is triumphant."
   bos_rhombian_occupation: "A Measured Approach"
-  bos_troikan_occupation: "A Great Storm!"
+  bos_rhombian_occupation: "Unlike the Maxsonian alternative, the Rhombian occupation pays attention to the reality that every settlement is different. Occupying patrols hardly outstretch their hand to save doomed communities, but those who simply need basic supplies, a black-box generator, a life-saving surgery, or new seeds to replace destroyed crops find the Rhombians to be providers. In addition, the Rhombians are using more patrols than needed to simply maintain control - security threats brought by the war, like raiders or wasteland critters, are being pushed to comfortable distances from even somewhat minor settlements."
+  bos_troikan_occupation: "Awareness from Death, Subjugation By Violence"
+  bos_troikan_occupation_desc: "The Troika's search for individuals with some kind of gift - a particular predisposition towards the Troikan way of thinking - is being utilized by them to create a technology capable of inducing that state in others. This particular fact, of course, is not known except to their members.\n\n Their campaign of violence and brutality however, is an excellent cover-up for this process, and appears to be endorsed by a plurality in the government of [BOS.getName] due to political paralysis or its effectiveness."
   bos_maxsonian_occupation: "The Iron Fist"
+  bos_maxsonian_occupation_desc: "The Maxsonian-led occupation of the NCR is a legalistic but callous affair. Occupying forces have little respect for context or nuance - If a patrol needs new weapons, more supplies, or information, the occupied are expected to surrender it. Consequences are doled out only for resistance, but may not be proportional. Failure to surrender fresh water may see a raid taking twice what is needed."
   bos_reformer_occupation: "The Velvet Glove"
+  bos_reformer_occupation_desc: "The Reformer-led occupation prioritizes long-term trust at the expense of today. A truly staggering portion of the Brotherhood is oriented around assuaging the distrust of the NCR's citizens. Patrols are slow and vulnerable, laden down with aid supplies for distribution.\n\nSignificantly more personnel thus need to be devoted to the task - but there will likely be long-term benefits to the work being done now, and less deaths in the present overall, so long as the Brotherhood isn't forced to whole states to the mercies of the Wasteland."
   
   nf_brotherhood_elh_events.102.t: "The Will of Rhiannon"
   nf_brotherhood_elh_events.102.d: "Elder Rhiannon, leader of a minority bloc on the Council, has spent the past two months ravaging the NCR in a truly unfathomable fashion. She wasn't running a regular campaign of oppression. Once loyalists from other blocs returned from their leave in the occupied territories,  the full scale was made clear. What follows is the testimony of former Apprentice Knight Jacobs, now honorably discharged by the Chief Scribe of Medicine. \n\n"The first day didn't have no signs. The people left in the town were scared, with a long stare when you looked at 'em straight on. They were few, it's true. But that's happening all over. Not all the towns have the good sense to welcome us. What got me all suspicious-like was the basement in the town's bar, which was set up for surgery by the resident scribes. I saw the high ceiling was caked in blood. I use a blade my father won from an officer in Navarro, so I know what it takes to get blood to go that high. It ain't the kind of thing you walk away from."\n\n"I got my captain right quick, and she got me to do some digging. Turns out that the scribes had started asking for volunteers from the locals who wanted to become special, rewrite their destinites by getting an implant. Most died during the operation, but some survived and started speaking nonsense about fire and lies. Turns out, they've left as apprentices to squads loyal to Rhiannon, and that this town had peacefully surrendered. All the missing people are because of the surgeries."\n\nAfter that report, we received several others citing similar circumstances in the territories. Reports of citizens having limbs removed to test mechanical alternatives, experimented upon with implants capable of erasing their memories, and dozens of other modifications paint a gruesome picture - Rhiannon isn't moving to guard the future, but to bring forth new horrors not imagined even in the Great War."
@@ -850,7 +973,7 @@
   bos_propaganda_2_desc: "We're overpromising to the people of the NCR, but we're doing enough."
   
   nf_brotherhood_elh_events.202.t: "Fear in California"
-  nf_brotherhood_elh_events.202.d: ""People of the NCR, your leaders have proven they can't be trusted with the technology of the Old World. [NCR.GetLeader] has squanderd the potential of California by clinging to the power structures of a fallen world. Every day your great leader delays surrender is another day the citizens of California die pointlessly for a corrupt and inept government. Our Knights will remove NCR Collaborators wherever they may hide." \n\n"But, take heart in my promise - no town or village who pledges themselves to the Brotherhood will be harmed, and none who remain loyal to the NCR will be spared." \n\n"I'm [Root.GetLeader], your new High Elder.""
+  nf_brotherhood_elh_events.202.d: ""People of the NCR, your leaders have proven they can't be trusted with the technology of the Old World. [NCR.GetLeader] has squanderd the potential of California by clinging to the power structures of a fallen world. Every day your great leader delays surrender is another day the citizens of California die pointlessly for a corrupt and inept government. Our Knights will remove NCR Collaborators wherever they may hide." \n\n"But, take heart in my promise - no town or village who pledges themselves to the Brotherhood will be harmed, and none who remain loyal to the NCR will be spared." \n\n"This is [Root.GetLeader], your new High Elder.""
   nf_brotherhood_elh_events.202.a: "We'll purge those who resist. As promised."
   nf_brotherhood_elh_events.202.b: "Fear will motivate their capitulation."
   bos_propaganda_3: "Brutal Campaign"
@@ -859,7 +982,7 @@
   bos_propaganda_4_desc: "We need their compliance, not their rebellion."
   
   nf_brotherhood_elh_events.203.t: "The New Paradigm"
-  nf_brotherhood_elh_events.203.d: "The people of the NCR don't welcome our rule. We've fired their elected officials and made most positions worth keeping appointed going forward, but the rest of the NCR's political appartus will be turned to our own ends.\n\nBefore our occupation, the press enjoyed great freedoms, their civil engineering corps grew fat, and their police deeply trusted by many citizens. All will be ours in time, but while the people still resist us, we must focus our efforts on bringing only one of these organizations to heel. "  
+  nf_brotherhood_elh_events.203.d: "The people of the NCR don't welcome our rule. We've fired their elected officials and made most positions worth keeping appointed going forward, but the rest of the NCR's political appartus will be turned to our own ends.\n\nBefore our occupation, the press enjoyed great freedoms, their civil engineering corps grew fat, and their police deeply trusted by many citizens. All will be ours in time, but while the people still resist us, we must focus our efforts on bringing only one of these organizations to heel.\n\n§BYour choice here will also unlock an additional option in at least one event during the reconstruction of the NCR.§!"  
   nf_brotherhood_elh_events.203.a: "The news media is a great threat unchecked."
   nf_brotherhood_elh_events.203.b: "Reconstruction is costly, it must be the corps."
   nf_brotherhood_elh_events.203.c: "The police could protect the lives of our Initiates."
@@ -870,9 +993,13 @@
   nf_brotherhood_elh_events.3.d: "The Followers of the Apocalypse, or simply the Followers, are a humanitarian organization originating in New California. Followers focus on providing education and medical services to those in need, as well as furthering research in non-military areas. One-time allies of the New California Republic, they parted ways due to disagreements over NCR foreign policy.\nWhen we took over, the Followers went into hiding, as much as they could. Our occupation methods were as varied as our Council, and their anti-war agitation was untenable. Now, if we are to govern California, we can't afford their absence. We need their doctors, their networks, their bases, and their loyalty, just to bear the strain of all the sundered families, fallowed fields, war orphans and amputees we've created."  #https://fallout.fandom.com/wiki/Followers_of_the_Apocalypse
   nf_brotherhood_elh_events.3.a: "A great tension is released."
   
+  nf_brotherhood_elh_events.301.t: "The Followers - Raising the Torch"
+  nf_brotherhood_elh_events.301.d: "Ignacio Rivas has been chosen to ascend as a liasion with the Followers and an advisor to [BOS.getLeader] and the Council as a whole. Ignacio is not only deeply familiar with the bureaucracy of the NCR and thus a great fit for our continued efforts in the area, but a supporter of the Brotherhood of Steel. Ignacio and the Followers as a whole do agree on our core tenet to prevent dangerous technology from falling into the wrong hands, and Ignacio himself worked to prevent the ARCHIMEDES system from falling into the incompetent hands of the Mojave Territories.\n\nSuffice it to say, Ignacio is very welcome in the Brotherhood, and their advocation for the citizens of California will not fall on deaf ears here."  #https://fallout.fandom.com/wiki/Followers_of_the_Apocalypse
+  nf_brotherhood_elh_events.301.a: "We're happy to have them."
+  
   nf_brotherhood_elh_events.4.t: "A Reorganized Economy"
-  nf_brotherhood_elh_events.4.d: "The economy of California, up until now, was essentially paralyzed. The Scribes in different states struggled to coordinate, and Elders overseeing occupations let their personal politics influence the administration of trade and production.\nNow, with unrest quieting down, we're putting into place a working federal government, which will be able bring the Californian economy back to a shadow of it's former self, at least."
-  nf_brotherhood_elh_events.4.a: "There's still much to be done."
+  nf_brotherhood_elh_events.4.d: "The economy of California since our occupation has essentially been paralyzed. The Scribes and Elders in different states have struggled to coordinate in war-torn California, with limited radio communications and a reduced ability for states to send and receive couriers amongst the madness of raiders and resistance. On top of our issues with communication, some newly-recognized Elders took the opportunity to experiment in accordance with their faction's politics, completely ignoring the municipal governments in critical industrial centers. \nNow, with the unrest quieting down, we're putting into place a working federal government, which will bring the Californian economy back to at least a shadow of its former self as we enact a set of unified economic and political reforms.\n\n We should also consider the impact of the rising Barons, who would certainly be most receptive to a Rhombian or Reformer plan that preserves more of the free market, if we want to work with them. Similarly, certain legacy figures may be attracted to our government depending on our reforms."
+  nf_brotherhood_elh_events.4.a: "Our choice is critical."
 
   nf_brotherhood_elh_events.5.t: "The Mutant Question"
   nf_brotherhood_elh_events.5.d: "While we've considered opening recruitment to particular groups of Mutants in that past, like the Ghouls of Necropolis, our reforms are uncomfortably vague about that status of these groups in California. We're not going to chase them out, that much is clear, but are we really willing to recruit them into our newly reorganized army?"
@@ -881,7 +1008,7 @@
   nf_brotherhood_elh_events.5.c: "They may join on a case by case basis."
   
   nf_brotherhood_elh_events.6.t: "Rounding Up Criminals"
-  nf_brotherhood_elh_events.6.d: "Our war with the NCR caused no shortage of devastation. Thousands were displaced from their homes, while other towns were hemmed in by raiders. Some even turned to raiding themselves, when it became clear the water merchants weren't coming back to their town any time soon.\n\nWe've not been idle about this, with different factions exercising different occupation methods in the past, but many areas weren't under our control at all before the NCR's formal surrender.\n\nIt's in these areas that we've faced a glut of criminals. County Jails are full, sheriff's offices are overworked, and NCR prisons not ruined or filled are housing the displaced citizens we've failed to provide for.\n\n[BOS.getLeader], we need a solution to this crisis, or local Elders will be forced to turn criminals back out into the streets."
+  nf_brotherhood_elh_events.6.d: "Our war with the NCR has caused no shortage of devastation. Thousands have been displaced from their homes, while other towns are hemmed in by raiders. Some even turned to raiding themselves, when it became clear the water merchants weren't coming back to their towns any time soon.\n\nWe've not been idle about this, with different factions exercising different occupation methods in the past, but as new areas fall under our administration, the problem is worsening.\n\nIt's in these areas that we've faced a glut of criminals. County Jails are full, sheriff's offices are overworked, and NCR prisons not ruined or filled are housing the displaced citizens we've failed to provide for.\n\n[BOS.getLeader], we need a solution to this crisis, or local Elders will be forced to turn criminals back out into the streets."
   nf_brotherhood_elh_events.6.a: "Let our Elders take care of this."
   nf_brotherhood_elh_events.6.b: "Rehouse citizens to restore some prisons."
   nf_brotherhood_elh_events.6.maxsonians: "§PExecute the worst offenders.§!"
@@ -890,7 +1017,7 @@
   nf_brotherhood_elh_events.6.troika: "§RThere are other uses for so many prisoners...§!"
   
   nf_brotherhood_elh_events.7.t: "The Great Storm at Last!"
-  nf_brotherhood_elh_events.7.d: "We brought no shortage of witnesses. Every commander of Knights, Paladins, or Initiates have trekked with the Troika to the Glow. Our loyal chapter-leaders have done the same, mirroring our journey.\n\nAll gathered will bear witness as the Troika dip themselves again in the Cauldron of Rebirth, but who else will they invitte?\n\nWho else will cast away flesh, and become Apocryphal?"
+  nf_brotherhood_elh_events.7.d: "We brought no shortage of witnesses. Every commander of Knights, Paladins, or Initiates have trekked with the Troika to the Glow. Our loyal chapter-leaders have done the same, mirroring our journey.\n\nAll gathered will bear witness as the Troika dip themselves again in the Cauldron of Rebirth, but who else will they invite?\n\nWho else will cast away flesh, and become Apocryphal?"
   nf_brotherhood_elh_events.7.a: "§ROnly our most loyal commanders.§!"
   nf_brotherhood_elh_events.7.b: "§RAll who made the journey will participate in full.§!"
   nf_brotherhood_elh_events.7.c: "§RThe TROIKA is MANAWYDDAN-RHIANNON-PRYDERI!§!"
@@ -908,6 +1035,176 @@
   nf_brotherhood_elh_events.703.d: "We invited chapter after chapter to repeat our achievement, and with each step we recited key passages of the Troika Apocrypha, letting the dilapidated walls of this Great War facility carry the truth.\n\nBy the time we emerged again from the Cauldron, all of us had changed.\n\nNow, we end the fire."
   nf_brotherhood_elh_events.703.a: "Together, we are the Great Storm."
   
+  nf_brotherhood_elh_events.8.t: "The Hub: Rich and Powerful"
+  nf_brotherhood_elh_events.8.d: "As California emerged from the ashes of the war, the Hub became a beacon of hope for many. The trade city was bustling with activity, as merchants from all over the wasteland converged there to trade their wares. However, as the city grew once again in prominence, so did the violence between gangs of competing smugglers who vied for control of the lucrative trade routes. The Caravan Companies operating in the Hub, like the Crimson Caravan and Water Merchants, bought up the street gangs during the war for security, leading to a return of the Great Merchant Wars that plagued the Hub in 2126.\n\n The Hub is a city that was both a vital center of commerce and a den of lawlessness. As such, the Elders bicker based on what they see- some argue that the government should broker a deal with the merchant-gangs, offering them amnesty and legitimacy in exchange for their cooperation in keeping the peace. Others believe that the only way to restore order is to eliminate the gangs entirely, using force as necessary.\n\nThose who favor brokering a deal point out that the merchants were the lifeblood of the Hub's economy, with their criminal activities being a necessary evil in order to maintain stability as the NCR collapsed. If we legitimize the gangs, we could ensure that they operate within the bounds of the law by recognizing them as security companies, likely dropping inner city violence substantially.\n\nThose who favor eliminating the gangs, on the other hand, argue that the government had a duty to uphold the law, even if it means disrupting the city's economy. They point out that the gangs were responsible for countless murders, robberies, and other crimes, and that the government's failure to act would only embolden them further."
+  nf_brotherhood_elh_events.8.a: "Broker a deal."
+  nf_brotherhood_elh_events.8.b: "§OSend our best police units to the Hub."
+  nf_brotherhood_elh_events.8.maxsonians: "§PUse capital punishment. The companies will have to send replacements.§!"
+  nf_brotherhood_elh_events.8.rhombians: "§gHire mercenaries for a crackdown on crime.§!"
+  nf_brotherhood_elh_events.8.reformers: "§CLlwyd can negotiate a favorable deal.§!"
+  nf_brotherhood_elh_events.8.troika: "§RBlackmail the merchants to work for us.§!"
+  nf_brotherhood_orange_option_tt: "§gOrange text signals an option available due to choices you've made previously.§!"
+  
+  nf_brotherhood_elh_events.9.t: "Our Name"
+  nf_brotherhood_elh_events.9.d: "For years, we've been known as Lost Hills, named after our original base of operations in California. However, as resistance has faded and the demands of governance encroached, we must consider the implications of renaming ourselves to the Californian Brotherhood.\n\nThe Rhombian Elders, and some Reformers, argue that the name change would reflect our new reality. California is dotted with new impromptu war memorials: burned-out buildings, downed power lines, new craters collecting radioactive rainwater, and communities wiped out or cleared out and never to return. The citizens of California suffered greatly during the war, and it's vital for the Brotherhood to show that we are now a part of the rebuilding effort - not as foreign despots, but as long-term residents.\n\nSome, though, are wary of the change. It's undeniable that the government bunkers of Lost Hills are our home, and some feel that even if we rename ourselves and send Elders to Shady Sands, the real power would always remain here, in these bunkers.\n\nThey argue we must keep the name Lost Hills as a reminder of our past, and to continue to honor the traditions and values that have guided us for so long. To do anything else would be to erode the legacy of Maxson without having seen through his goals.\n\nFinally, the rest of the reformers argue the road ahead will be long and arduous, but if we're committed to doing everything in our power to help the people of California rebuild, then a new name will show that we consider all Californians now to be our siblings, and that we're ready to welcome them into our ranks."
+  nf_brotherhood_elh_events.9.a: "Camaraderie and Partnership"
+  nf_brotherhood_elh_events.9.b: "History and Tradition"
+
+  nf_brotherhood_elh_events.10.t: "The Legion Defence Pact?" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10.d: "[BOS.getName]'s Reformers faction has offered a defence pact against the coming threat of Caesar's Legion, in exchange for administrative control over the full state of Maxson. They would not enforce the Codex upon citizens, and will respect our constitution. Unlike other faction in [BOS.getName], they hold the Republic in high regard. Our spies report that their faction is split between calls for war against us or request for Statehood, and denying them is certain to settle their debate.\n\n While their help, and that of their surviving Chapters would be most helpful, we could refuse them. If we do so, we should attack them before the Legion crosses the Long 15, or we'll almost certainly find ourselves attacked from within. \n\n§B Accepting will allow the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist.\n\n Declining will allow [BOS.getName] to send an ultimatum for the state of Maxson, should the [NCR.getName] gain surrender progress during their war against the Legion."
+  nf_brotherhood_elh_events.10.a: "Accept"
+  nf_brotherhood_elh_events.10.b: "Decline"
+  
+  bos_legion_defence_pact_call: "Call members of the Legion Defence Pact to war"
+  bos_legion_defence_pact_call_desc: "All surviving Legion Defence Pact members will answer the call to war."
+  legion_defence_pact_member: "A Member of the Legion Defence Pact"
+  nf_brotherhood_elh_events.10001.t: "The Legion Defence Pact: Invitation" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10001.d: "[BOS.getName]'s Reformers faction has offered a defence pact against the coming threat of Caesar's Legion, which has been ratified by the [NCR.getName]. Unlike other faction in [BOS.getName], they hold the Republic in high regard. Our spies report that their faction is split between calls for war against us or request for Statehood. \n\n§B Accepting will allow the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist.\n\n Declining will keep us out of the agreement."
+  nf_brotherhood_elh_events.10001.a: "Accept"
+  nf_brotherhood_elh_events.10001.b: "Decline"
+  
+  nf_brotherhood_elh_events.10002.t: "The Legion Defence Pact Formed" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10002.d: "[BOS.getName]'s Reformers faction has offered a defence pact to [NCR.getName] against us. We can't stop them, but we should prepare anti-armor equipment to deal with the threat of multiple Brotherhood chapters. \n\n§B The deal allows the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist."
+  nf_brotherhood_elh_events.10002.a: "We will make special preparations."
+  
+  nf_brotherhood_elh_events.10003.t: "The Legion Defence Pact: NCR Accepted"
+  nf_brotherhood_elh_events.10003.d: "The [NCR.getName] has accepted our offer for a Defence Pact. We will respect the NCR's constitution and civil rights, in return for administrative control over the state of Maxson. The NCR hopes this is a prelude to our request for statehood, but we will keep battle plans ready against them, regardless."
+  nf_brotherhood_elh_events.10003.a: "Excellent."
+  
+  nf_brotherhood_elh_events.10004.t: "The Legion Defence Pact: NCR Declined" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10004.d: "The [NCR.getName] has declined our offer of a Defence Pact. Perhaps they simply see no need for it, or perhaps they're suspicious we would still pursue a war, only after they're weakened by the Legion."
+  nf_brotherhood_elh_events.10004.a: "The Legion has the advantage. Let's prepare."
+  
+  nf_brotherhood_elh_events.10005.t: "The Legion Defence Pact: War!" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10005.d: "[PREV.getName] has called us to war under the terms of the Legion Defence Pact! Our troops make ready."
+  nf_brotherhood_elh_events.10005.a: "We march on the Legion!"
+  
+  nf_brotherhood_elh_events.10006.t: "[BOS.getName] demands Maxson!"
+  nf_brotherhood_elh_events.10006.d: "[BOS.getName], after our rejection of their pact, is seizing upon the opportunity provided by our war with the Legion. They demand the previously requested territories of maxson to be transferred to them immediately, or we'll face them on the battlefield. If we agree, they'll sign a non-aggression pact with us, but won't aid us against the Legion."
+  nf_brotherhood_elh_events.10006.a: "The Steel Menace ends today!"
+  nf_brotherhood_elh_events.10006.b: "We have to agree..."
+  bos_ncr_war_or_land_tt: "§CThe NCR is more likely to accept if their faction is evenly matched or losing.§! If the NCR §Rrejects§! our demands, §Rwe will immediately declare war§!, but if they §Gaccept§!:"
+
+  nf_brotherhood_elh_events.11.t: "California Burning"
+  nf_brotherhood_elh_events.11.d: "[BOS.getLeader],\n\nThe situation in California has grown dire. Our occupation of the NCR has been met with a ruthless response from the Barons, lead by Anton Flynn, have tightened their grip on the food supply to devastating effect.\n\nFood prices have climbed quickly, with the result that people across California are struggling to put food on the table and the worst off are already going hungry.\n\nWhen traveld to the Barons' land to investigate the cause of this, we were met with violence - granaries were burned, and male livestock were slaughtered.\n\nIt's clear that the Barons are willing to go to any lengths to maintain their power, even if it means starving the people of California. We've backed off our presence in Baron lands to avoid an unstoppable famine, but the Barons remain influential in deciding if, when, and how severe this famine might be.\n\nThere is some good news - Southern California is still producing and selling food. But with the Barons controlling such a great share of the farms and livestock in the NCR, we must take swift action to ensure the people of California have sufficient access to the food they need to survive.\n\nWe urge you to consider next steps carefully. If we do not act soon, the consequences could be catastrophic.\n\n—Senior Knights Sean and Daniel Diaz, Agricultural Inspectors"
+  nf_brotherhood_elh_events.11.a: "This is going to be a problem."
+  
+  nf_brotherhood_elh_events.12.t: "[BOS.getLeader]'s Prestige Project"
+  nf_brotherhood_elh_events.12.d: "While much of the reconstruction campaign is simply mandatory for [BOS.getName] to be a well-functioning government, every power bloc in Lost Hills has it's own ideas for a grand capstone project. It's up to [BOS.getLeader] to decide which project is worth pursuing. \n\nWe can choose to invest in creating an efficient bureaucracy, to simply make getting things done as quick as possible without lacking oversight, or we can choose from pet projects belonging to influential Elders."
+  nf_brotherhood_elh_events.12.a: "The NCR was held back by a paralyzed bureacracy. Ours will be different." ##%pp gain?
+  nf_brotherhood_elh_events.12.maxsonians: "§PIt's time to recognize our new veterans.§!" ##Extra paladins? Perhaps.
+  nf_brotherhood_elh_events.12.rhombians: "§gWe must pursue long-term integration with our citizens.§!" ##Training Halls? ##Obviously switching these would be better gameplay for Maxsonians, but breaks the lore.
+  nf_brotherhood_elh_events.12.reformers: "§COur civilization must stand the test of time.§!" ##Grand education reforms? 
+  nf_brotherhood_elh_events.12.troika: "§RWe can awaken the masses.§!" ##Cyborging citizens: general small buffs? intellectual drift?
+  bos_generic_prestige: "Well-Managed Bureacracy"
+  bos_generic_prestige_desc:"We have made a focused effort to effectively govern. Even low-level bureaucrats who've not joined the Brotherhood have been put through condensed scribe training, with impressive results."
+  bos_maxsonian_prestige: "Recognizing New Veterans"
+  bos_maxsonian_prestige_desc: "We have fought many wars, and it's beyond time new Paladins are promoted. However, some have shown different talents - we need to take advantage of great commanders and unit leaders, great drill instructors, and everything in between. Our greatest effort is being put to finding these individuals of merit, and getting them more powerful positions they'd excel in."
+  bos_rhombian_training_halls: "Establish Regional Training Halls"
+  bos_training_hall: "Hall of Initiates"
+  bos_training_hall_desc: "The Rhombians have rolled out their project in this state. A large regional training center brings together dozens, if not hundreds, of new initiates and inducts them with sensitivity to the culture they leave behind. They train here, until we are desperate enough to call them to service or til they become a full-fledged member of the Brotherhood. Most will become Knights or Scribes, but a cherished few will be Paladins, Lancers, or even serve as Sailors. The latter's moniker of Dragoon remains unofficial."
+  bos_reformer_prestige: "Standing the Test of Time"
+  bos_reformer_prestige_desc: "We've made general improvements in education, justice, and healthcare. We've focused on building strong foundations for our civilization - a successor to the United States, and maybe more."
+  bos_troika_prestige: "Widespread Cybernetics Usage"
+  bos_troika_prestige_desc: "We've subsidized the costs of cybernetics and implants, and even made some free for critical workers. As they've become more widespread, we're seeing national-level benefits - and finding more individuals capable of seeing beyond the falsehoods of this world. "
+
+  nf_brotherhood_elh_events.13.t: "The Legacy Government"
+  nf_brotherhood_elh_events.13.d: "[BOS.getLeader], our implementation of a new government has largely succeeded. NCR Congresspeople have been replaced with our own appointed Elders, with each Elder usually representing the interests of  whole regions like Necropolis, Blackwells, or Alpaugh. While the NCR's Congress was not suited to a single representative for places of such varying importance, our process relies on Elder autonomy and not majority vote. Our congress decides what problems to address, but you decide the degree to which the solutions must match. Except a few elders who've lost their positions for misconduct or ineffectiveness, these Elders are largely retaining their wartime appointments, and will continue to do so unless you dismiss them, they step down, or their subordinates force a change in leadership through Codex law.\n\n This does mean, however, that powerful political elements have been cast down to the local level, becoming influential mayors in settlements across California, and keeping in contact with like-minded individuals.\n\nKimball, Allgood, and Hayes represent most of the legacy government. Kimball is weaj despite his previous presidency, and would be a good candidate if we simply want the legacy government to fade from relevancy. Kimball is also close ally of the Barons and could allow for a diplomatic end to this crisis, and shares our pro-war footing in some respects. Working with Allgood or Hayes to implement some of the policies they originally campaigned on could keep the unrest from the famine undoing a lot of our work across the nation should it worsen.\n\nIn the case of Allgood, their focus on good relations with us and eliminating corruption and crime in California would provide an experienced hand in our already ongoing efforts. No elder would find much to complain about in such a move, except for Allgood's close relationship with the Followers.\n\nGrant C. Hayes is known for their dim view of the Brotherhood criticising our safekeeping of technology and the cold shoulder we've given to foreign aid. The Troika or Reformers may be able to bring the industrial expertise of Hayes and Dayglow to the national level, along with their agenda against the Barons, considering their support of Hayes' points.\n\nWe could also just ignore all of them – the unrest from the famine will remain a problem, but we won’t tie our hands when it comes time to deal with the Barons directly.\n\n§BAll advisors take the place of a Cultural Advisor.§!"
+  nf_brotherhood_elh_events.13.a: "Ignore them."
+  nf_brotherhood_elh_events.13.allgood: "§PAllgood§! §Cunderstands§! §gus.§!"
+  nf_brotherhood_elh_events.13.kimball: "§PKimball won't§! §gdemand much.§!"
+  nf_brotherhood_elh_events.13.hayes: "§CWork wi§!§Rth Hayes.§!"
+  
+  ##flags for this event
+  kimball_cooperation: "Ex-President §YAaron Kimball§! Supports the Brotherhood"
+  hayes_cooperation: "Mayor §YHayes§! Supports the Brotherhood"
+  allgood_cooperation: "Ex-Senator §YAllgood Murphy§! Supports the Brotherhood"
+  ignacio_cooperation: "§YIgnacio Rivas§! Invited to Government"
+  nf_brotherhood_no_baron_deal_tt: "\nWorking with Allgood §Rprevents§! us from cutting a deal with the §YBarons.§!"
+  allgood_expects_environmental_act_tt: "\nAllgood's pet legislation, §YThe Environmental Restoration Act,§! will be available for implementation as a §Ydecision.§! Which grants:\n\n"
+  nf_brotherhood_allows_baron_deal_tt: "\nWorking with Kimball will §Gallow§! governments without the §YTroika§! or §YReformers§! present to §Ycut a deal with the Barons.§!"
+  nf_brotherhood_hayes_way_baron_deal_tt: "\nWorking with Hayes will §Rrequire§! us to follow their plan for dealing with the §YBarons.§!"
+  nf_brotherhood_hayes_expects_investment_tt: "\nHayes will devise a plan for §Yprivate military manufacturing§!, which will be available for us to implement as a §Ydecision.§!Which grants:\n\n"
+  nf_brotherhood_hayes_allgood_protection_tt: "\nTheir support will reduce the compliance drop should the famine worsen from §R-25%§! §YCompliance§! to §R-15%.§!"
+  nf_brotherhood_kimball_protection_tt: "Their support will reduce the compliance drop should the famine worsen from §R-25%§! §YCompliance§! to §R-10%.§!"
+  stronger_lost_hills_ncr_occupation: "NCR Occupation Decisions"
+  
+  bos_ncr_hayes_plan: "Enact Hayes Industrial Plan"
+  bos_ncr_allgood_environment_plan: "Enact Allgood's Environmental Restoration Act"
+  nf_brotherhood_elh_events.14.t: "The Environmental Restoration Act"
+  nf_brotherhood_elh_events.14.d: "Allgood Murphy broke the news over the radio. "For too long, California has risked walking down the road America walked. We felled the mighty Redwoods, We exhausted the soil, and drained lakes for our crops. We poisoned the ocean with our waste so entirely that our shores were home to naught by skeletons and scales.\n\nNow it stops. Today, some of the finest scientists in California have chosen to devote their lives to restoring the Wastes. This is the work of generations! Though the world may tend towards destruction, we must try to make a difference. Today, with [BOS.getName], that work begins.""
+  nf_brotherhood_elh_events.14.a: "Allgood gives a good speech."
+
+  nf_brotherhood_elh_events.15.t: "Arms Dealers: Friend or Foe?"
+  nf_brotherhood_elh_events.15.d: "The Van Graffs and Gun Runners are not happy about losing their largest client - the Army of the New California Republic. We've not yet moved against them, despite their historical corruption. Being out of government has hit them hard, and we appreciate their work to arm Californians against raiders, mutants, and critters of all kinds.\n\nClearly, the Arms Dealers are unhappy with this status quo - the two groups appear to have coordinated a new program, making armor-piercing weaponry they used to produce for the NCR widely available in stores across the Wasteland.\n\nAt the very least, this is blatant extortion of the Brotherhood. At worst, it's active arming of Anton Flynn and his Barons. We must take action against the Gun Runners and Van Graffs, before it's too late."
+  nf_brotherhood_elh_events.15.a: "They are not a credible threat."
+  nf_brotherhood_elh_events.15.maxsonians: "§RIssue a ban on such weaponry §!§Pand seize it from store shelves.§!"
+  nf_brotherhood_elh_events.15.rhombians: "§gBuy their existing stockpiles and subsidize changing their production.§!"
+  nf_brotherhood_elh_events.15.reformers: "§COffer a new contract with the Brotherhood... but keep an eye on them.§!"
+  
+  ##Make sure the Hayes event is separate, and that there's a version of the event for when negotiation is not possible(No Kimball, Troika, or Reformers, OR if working with allgood), vs when it is (Kimball, Troika, or Reformers options open)
+
+  nf_brotherhood_elh_events.16.t: "The Barons: We Don't Negotiate with Terrorists"
+  nf_brotherhood_elh_events.16.d: "Airfields across California are buzzing with activity. Paladins, Knights, and Scribes all work through the night to load transport aircraft with packed-down supplies and munitions. Before first light, these aircraft will drop our best soldiers directly onto the estates of the Barons, including Anton Flynn.\n\n[BOS.getLeader], having finally isolated the Barons from any other dissidents, has approved the operation to seize as much control over foodstuffs as possible, and it is expected most assaults will see an immediate surrender from local hands. Following the arrest of Anton Flynn, the plan to keep the lands producing will be executed, which involves..."
+  nf_brotherhood_elh_events.16.a: "A massive deployment of personnel to farm the land."
+  nf_brotherhood_elh_events.16.b: "§OConvincing the locals to work by publicizing the arrest of Anton Flynn."
+  nf_brotherhood_elh_events.16.maxsonians: "§PForcing employees to continue §!§Rwork til the famine ends.§!"
+  nf_brotherhood_elh_events.16.rhombians: "§gGiving the employees split ownership where they worked.§!"
+  nf_brotherhood_elh_events.16.reformers: "§CGive northern agriculture to the Southern Farmers, and send personnel for the transition.§!"
+  bos_ncr_field_scribes_farming: "Initiates in the Muck"
+  bos_ncr_field_scribes_farming_desc: "We've sent our Initiates to work farmlands across Northern California, under the supervision of Scribes or Knights. They're not happy about it, but it's temporary."
+  bos_ncr_field_scribes_farming_light: "The Agricultural Chain of Command"
+  bos_ncr_field_scribes_farming_light_desc: "We've sent some of our Initiates to work in farmlands across Northern California, as temps. Seasoned farmers and ranchers who've been waiting to run their own farms, or sons and daughters ready to expand the family business, have been selected to run these places long term. It'll take months for them hire reliable employees, so our initiates, for the first time, are taking orders from civilians."
+  bos_worker_coops: "Agricultural Worker Cooperatives"
+  bos_worker_coops_desc: "The Rhombians decided the best way to ensure the end of issues in the North, was to give the farmhands and ranchhands there direct ownership of the land they worked. It's been a great success for local compliance."
+  bos_worker_discontent: "Angry Labour"
+  bos_worker_discontent_desc: "For one reason or another, the workers here are furious with the government. They're working-to-rule, leading to increased losses of equipment and inefficient production."
+  #Small followup news event is #1603.
+  
+  #Peaceful version of 16.
+  nf_brotherhood_elh_events.1601.t: "The Barons: A Meeting Over Dinner"
+  nf_brotherhood_elh_events.1601.d: "On the outskirts of Redding, [BOS.getLeader] as well as the three other leaders attend a diplomatic dinner at Anton Flynn's estate. The hall itself is warm and inviting, and many key Barons have come to discuss their grievances. Beyond the opulence of the hall, however, is the truth - Anton's estate swarms with guards from both sides. A paladin paired with some merc is hardly an even fight, but we are outnumbered deep within enemy territory. Our nearest bases also remain on high alert, ready to put boots on the ground here within half an hour of our call. Finally, insisted upon by [BOS.getLeader], the voluntary use of Stealthboys was approved, and more Paladins remain hidden on the grounds, just in case.\n\nBack at the dinner, Anton makes his speech - "[BOS.getLeader], I stand before you today not as an adversary, but as a voice of reason and advocate for our shared vision of prosperity. I understand the skepticism you may hold towards the Barons and our actions, but I implore you to hear us out with an open mind. The incorrigible famine that plagues our great nation was not our intention, but an unforeseen consequence of our efforts to secure our interests. However, this challenge also presents an opportunity for redemption.\n\nOur agricultural might, though immense, has caused hardships amongst the people of California. Our discord has been poisonous to the people, but I -we- assure you, there is still time to rectify this situation.\n\nOur farms can once again flourish and feed the hungry masses, but we cannot do it alone. What is incorrigible for either one of us alone is correctable together. We recognize the expertise and strength of the Brotherhood, and its only with your guidance and assistance that we can bring an end to this crisis. We propose a collaboration, a partnership if you will, where our resources and expertise are fully utilized across California for the greater good. Let us combine our efforts, and begin healing the new scars of our great nation.\n\nBrothers, and Sisters, the fate of California rests in our hands, and together we can make a difference that will be remembered for generations to come."\n\nMore details of exactly what the Barons were asking for came throughout the night... but, ultimately it was quite simple - amnesty for most Barons, including Anton Flynn, the return of Kimball-era rules for business in the agricultural sector, and a chance to repair their image in central and southern California. We could do this without destroying ourselves politically, but what's to prevent the Barons from trying again once we're depleted by some future war?"
+  nf_brotherhood_elh_events.1601.a: "Accept the deal."
+  nf_brotherhood_elh_events.1601.b: "Go through the motions, but proceed with dismantling the Barons."
+  nf_brotherhood_elh_events.1601.maxsonians: "§PAccept, but no amnesty for the worst criminals.§!"
+  nf_brotherhood_elh_events.1601.rhombians: "§gAccept, but draft new protections for independent farmers.§!"
+  nf_brotherhood_elh_events.1601.reformers: "§CAccept, the Southern Farmers have an association of their own now.§!"
+  nf_brotherhood_elh_events.1601.troika: "§RUse this opportunity to make multiple deals and fracture the Barons.§!"
+  nf_brotherhood_anton_as_advisor_tt: "§YAnton Flynn§! will be recruited as a §Ycultural advisor§!."
+  anton_flynn_disempowered: "Anton Flynn has retired from political life."
+  bos_ncr_baron_cooperation_unified: "BoS-Baron Collaborative Partnership"
+  bos_ncr_baron_cooperation_unified_desc: "We have made the decision to work with the Barons, ignoring, minimizing, or otherwise avoiding delivering justice politically and socially, at least in most cases. In return, the Barons have devoted their resources to undoing the damage of northern unrest, and their businesses are investing, paying most of their taxes, and otherwise acting to stimulate the economy. They remain corrupt, but not seditious, as we've reverted to the Kimball Era rules in their primary business - agriculture."
+
+  #Hayes version of 16
+  nf_brotherhood_elh_events.1602.t: "The Barons: Hayes"
+  nf_brotherhood_elh_events.1602.d: "Grant C. Hayes has finally completed their plan to end the Barons. Carefully, they've coordinated a smear campaign against Anton Flynn and the Barons - radio broadcasts and news programs featured all the evidence we could muster of the Baron's leaving californians out to dry. Hayes gave a speech, saying "The truth of the matter, having been hidden from you by the men of Redding, is that there is no shortage of food. There was no disease amongst the cattle, and no fungus in the granaries. I have been to farms seized by the Brotherhood, and I promise all Californians that they speak the truth. \n\nBut it is true that too much food lies in the hands of Anton Flynn and his cronies. These barons would see you, the hard-working farmhands, burn your own meals for the promise of future riches. But I have a better offer - My tax plan will see the Barons destitute, and their property passed on to employees. Their wealth will be used to bring down food prices once again, and give each and every one of you a house, with a white picket fence. Your bosses will order you to work tonight with knife or flame in hand. But all you must do is go home. Walk off your ranches, abandon your barns. The Brotherhood is coming, and by the morning there will be new management." \n\nHaving already chipped away at the support The Hub, The Arms Dealers, and the Legacy Government provided, we've completely isolated Redding. With Hayes' speech as a signal, many dozens of squads walk synchronously onto the grounds of Baron lands. Some encounter resistance - mostly from unarmoured loyalists with laser pistols and hunting rifles - but most find employees willing, if not eager, to help them put an end to this madness."
+  nf_brotherhood_elh_events.1602.a: "And so fall the Barons." 
+
+  ##Followup event to 16
+  nf_brotherhood_elh_events.1603.t: "The Barons: Reaction of the People"
+  nf_brotherhood_elh_events.1603.d: "Following our efforts to bring the Barons to heel, all of Northern California has reacted to the changes in Redding. Let's hope we haven't pushed things too far..."
+  nf_brotherhood_elh_events.1603.a: "...Or not far enough."
+  
+  #Flynn arrest event
+  nf_brotherhood_elh_events.1604.t: "The Barons: Anton Flynn Arrested Publicly"
+  nf_brotherhood_elh_events.1604.d: "Anton Flynn is in handcuffs. We've publicized this event as widely as possible - from newspapers to radio to television, every leading story everywhere is about the man who starved California. His last public photo is smug - the grin of a man who still believes his cachet with the legacy government will protect him. His future months of disavowing the Barons, the Stockmen's Association as a whole, and preaching the evils of rampant cronyism will disabuse him of that notion, soon enough."
+  nf_brotherhood_elh_events.1604.a: "Justice, of a kind."
+  
+  #CES ceasefire with BoS
+  nf_brotherhood_elh_events.17.t: "The Wounded Brotherhood Cries Foul"
+  nf_brotherhood_elh_events.17.d: "[CES.getLeader], the Steel Rats cry foul. They simper for mercy against the might of the Legion. They recognize our claims to the Mojave, and Hoover Dam, and offer territories in Southeastern California if we'll agree to a truce."
+  nf_brotherhood_elh_events.17.a: "Yes, let's focus on the Tribes for a while."
+  nf_brotherhood_elh_events.17.b: "They will not get their mercy. We march to the West Coast."
+  bos_ncr_famine_offer_legion_concessions_for_peace: "We will offer the Legion all §YCalifornian§! and §YMojave§! territories §Yeast§! of the §YRandsburg-Palm Springs§! caravan routes, and §Ynorth§! of §YSalton City§! in exchange for a 1-year §Gceasefire.§!"
+  
+  nf_brotherhood_elh_events.1701.t: "[FROM.getName] signs the BoS-Legion Armistice"
+  nf_brotherhood_elh_events.1701.d: "[FROM.getLeader] has signed the BoS-Legion Armistice. The Brotherhood has given up numerous territories along the Colorado River, in exchange for a 1-year armistice. This virtually guarantees that the frontline of the war will not be the Dam, but the Boneyard and Shady Sands, themselves."
+  nf_brotherhood_elh_events.1701.a: "This will be a bloody one."
+
+  nf_brotherhood_elh_events.1702.t: "[FROM.getName] rejects the BoS-Legion Armistice"
+  nf_brotherhood_elh_events.1702.d: "[FROM.getLeader] has refused to sign the BoS-Legion Armistice. There will be no peace with the Legion."
+  nf_brotherhood_elh_events.1702.a: "We fight until the end."
+  
   nf_brotherhood_bunkered_divisions.1.t: "End of the Ceasefire"
   nf_brotherhood_bunkered_divisions.1.desc: "All elders are in agreement - there is no hope for California except us. There is no worthy successor for us to guide, and the stumbling of [NCR.getLeader] has failed to impress.\n\nOur preparations are complete, with every bunker in the state of Maxson restored and filled once again with personnel. We've warned the people of Maxson of the coming conflict, and many citizens have seen the thousand ways the NCR is bound to break. Only we can safeguard Mankind."
   nf_brotherhood_bunkered_divisions.1.a: "In just days, we go to war."
@@ -924,7 +1221,7 @@
   bos_delayed_scribes_large: "Scribes Very Delayed"
   
   nf_brotherhood_expeditions.1.t: "The Village"
-  nf_brotherhood_expeditions.1.d: "On the outskirts of Vault City is what the Vaulters refer to as "The Village", independant by irrelevance more than anything else. On our original visit many years ago we eliminated the local molerat population — which we learned was their only deterrent against Vault City. Back then, the settlement's mayor pleaded with us to give them a fighting chance, prompting the expedition leader to leave them surplus weaponry. \n\nNow, the settlement has grown, sprouting walls and a meaningful population. The mayor was happy to let us rest here, and we learned that the molerats had mysteriously returned and are now a thorn in the side of The Village's residents. We suspect some technology is to blame, though perhaps they're just particularly unlucky. "
+  nf_brotherhood_expeditions.1.d: "On the outskirts of Vault City is what the Vaulters refer to as "The Village", independent by irrelevance more than anything else. On our original visit many years ago we eliminated the local molerat population — which we learned was their only deterrent against Vault City. Back then, the settlement's mayor pleaded with us to give them a fighting chance, prompting the expedition leader to leave them surplus weaponry. \n\nNow, the settlement has grown, sprouting walls and a meaningful population. The mayor was happy to let us rest here, and we learned that the molerats had mysteriously returned and are now a thorn in the side of The Village's residents. We suspect some technology is to blame, though perhaps they're just particularly unlucky. "
   nf_brotherhood_expeditions.1.a: "Eliminate all the molerats. Again."
   nf_brotherhood_expeditions.1.b: "These molerats demand further investigation!"
   nf_brotherhood_expeditions.1.c: "Found an outpost here - it'll benefit us both."
@@ -1105,6 +1402,11 @@
   nf_brotherhood_expeditions.807.t: "Klamath: Let Them Stay"
   nf_brotherhood_expeditions.807.d: "The Brotherhood accepted our demands. They turned over a significant cache of weapons and ammunition from the Toxic Caves, though they demanded certain resource rights in the surrounding area. We accepted—what's there was never tapped by us to begin with."
   nf_brotherhood_expeditions.807.a: "Now, we'll be ready."
+
+  nf_brotherhood_expeditions.808.t: "Klamath: Assault On the Toxic Caves Facility"
+  nf_brotherhood_expeditions.808.d: "The entirety of Trapper Town came to chase us out of the Toxic Caves. Our forces were split - some trapped in the facility, but most in the mountains. We skirmished with the locals for three days to free our trapped bretheren, before [KLA.getLeader] gave us an ultimatum - surrender the supplies, or they'll use explosives to collapse the Toxic Caves."
+  nf_brotherhood_expeditions.808.a: "Our unit survived, but the supplies were lost."
+  nf_brotherhood_expeditions.808.b: "Our unit survived, and we raided their town to recover supplies."
   
   nf_brotherhood_expeditions.9.t: "Vault 11" ##If this one was to be expanded, I would want to break lore and give it a G.E.C.K.
   nf_brotherhood_expeditions.9.d: "The entire Vault has been plastered with propaganda for the election of a new overseer, with each candidate expressing outrage and incredulity at having been nominated and why the other candidates deserve to be overseer instead. \n\nIt became clear to us halfway through our operation—thanks to some recorded audio and working terminals—that the residents had been forced to sacrifice someone each year to the vault computer as part of an experiment by Vault-Tec, and that the vault dwellers had made it the final duty of every Overseer. By the time the experiment ended, almost everyone was dead.  \n\nMuch of the vault's technology was salvagable, but flooded sections, the vault's damaged reactor and damaged water purification systems lead to high-radioactivity water significantly complicating the mission."
@@ -1167,7 +1469,7 @@
   bos_alaskan_winterization: "Winterization Protocols"
   
   nf_brotherhood_expeditions.1103.t: "Anchorage: Audience with The Immortal"
-  nf_brotherhood_expeditions.1103.d: "Our fleet of ships has docked in East Portland, and a diplomatic detachment has traveled to Seattle to meet with The Immortal. When they arrive, the city is at the heart of a blizzard, and our power armour, despite our preparations for Alaska, struggles to remain operational. We dread what could've happened had we discovered how much more we had to learn in the Alaskan interior. \n\nThe Immortal, when we meet them, talks at length. They spend a lot of their time justifying the evil adorning every facet of seattle — from the wails of slaves to the "Black Paladins" responsible for enforcing discipline and feeding the dead to their dark foundries. More than once we hear that the evil of today is the good of tommorrow, but the Immortal is happy to support our expedition to Alaska, if we're happy to welcome them in the Brotherhood without conditions."
+  nf_brotherhood_expeditions.1103.d: "Our fleet of ships has docked in East Portland, and a diplomatic detachment has traveled to Seattle to meet with The Immortal. When they arrive, the city is at the heart of a blizzard, and our power armour, despite our preparations for Alaska, struggles to remain operational. We dread what could've happened had we discovered how much more we had to learn in the Alaskan interior. \n\nThe Immortal, when we meet them, talks at length. They spend a lot of their time justifying the evil adorning every facet of seattle — from the wails of slaves to the "Black Paladins" responsible for enforcing discipline and feeding the dead to their dark foundries. More than once we hear that the evil of today is the good of tomorrow, but the Immortal is happy to support our expedition to Alaska, if we're happy to welcome them in the Brotherhood without conditions."
   nf_brotherhood_expeditions.1103.a: "This is abhorrent. We will have no part in this."
   nf_brotherhood_expeditions.1103.b: "With time, we could soften their evil."
   #maxsonians can't work with the Immortal, but if that should change:   nf_brotherhood_expeditions.1103.maxsonians: "§PThey do what must be done to survive.§!"
@@ -1205,7 +1507,9 @@
   nf_brotherhood_expeditions.1109.b: "They hold too tightly to the morality of today."
   bos_wbh_token_reforms: "Token Reforms"
   bos_wbh_token_reforms_desc: "We reunited with the Brotherhood in their hour of need. Even still, they demanded we reform some of our practices. The demands were much less outrageous than ever before, and the Immortal accepted them."
-  
+  bos_support_for_washington: "Support for Washington"
+  bos_support_for_washington_desc: ""  
+
   nf_brotherhood_expeditions.11010.t: "Audience With The Immortal: Steel Plague"
   nf_brotherhood_expeditions.11010.d: "Today, the founding Chapter of the Brotherhood, forever changed by a fringe group called the Troika, has come to meet with The Immortal. A small detachment left their fleet in Eastern Portland, traveled to Seattle and listened to The Immortal justify the morality of the Northern League. The brothers and sisters requested knowledge and guidance from us for an expedition to Anchorage, Alaska and it's clear our help §Rwill be critical if they are to survive§!.\n\nThe Immortal thought to end this farce of understanding for mutants and morality by demanding formal acceptance and integration of everything they rule into the Brotherhood, without condition or reform.\n\nTo the shock of many, the Brotherhood agreed, and even insisted the Elders had already realized the goal of breaking past reality, and the confines of logic and reason. They have found the Ultimate Truth, and they told the Immortal that they, at least, have the potential to understand if they are willing to listen. The Immortal accepted, and was cloistered for a month before having sucessfully rewritten some of their pascalbytes... whatever those are."
   nf_brotherhood_expeditions.11010.a: "The Immortal changed."
@@ -1213,11 +1517,11 @@
 
   ##this event is blatant, but fun, filler. I don't seriously expect to keep it over whatever OWB devs do here.
   nf_brotherhood_expeditions.12.t: "Land of the Rising Sun"
-  nf_brotherhood_expeditions.12.d: "So far we've had an easy trip to the islands of Japan. However, information on the land is scarce and our expedition has almost no idea what they might be in for. If it wasn't for the japanese remnants in New Reno, plus some surviving japanese weaponry and media, we wouldn't even be able to recognize their language. \n\nBefore even sighting the land, the Scribes reported elevated levels of radiation in its coastal waters and as night approached, we finally came in sight of Japan. The night sky was awash in light like the skies of New Reno or even Vegas. Tomorrow, we would investigate."
-  nf_brotherhood_expeditions.12.a: "We await tommorrow's findings."
+  nf_brotherhood_expeditions.12.d: "So far we've had an easy trip to the islands of Japan. Information on the land is scarce though, and our expedition has almost no idea what they might be in for. If it wasn't for the japanese remnants in New Reno, plus some surviving japanese weaponry and media, we wouldn't even be able to recognize their language.\n\nThis prompted much story-telling amongst our crew, with Scribes, Knights, and Paladins positing everything from a society closed to the world like in history, to another little America, or perhaps a society like in their stories, with wondrous technologies emulating Liberty Prime, Chinese Shock-Swords, and personal flight! \n\n These hopes were soon deflated, as even before sighting land, the Scribes reported elevated levels of radiation in its coastal waters. As night approached, we finally came in sight of Japan, whose night sky was awash in light like the skies of New Reno or even Vegas. Perhaps, the fancy of the Paladins would be proven right. Tomorrow, we would investigate."
+  nf_brotherhood_expeditions.12.a: "We await tomorrow's findings."
   
   nf_brotherhood_expeditions.1201.t: "Land of the Rising Sun: The Struggle"
-  nf_brotherhood_expeditions.1201.d: "We weren't able to approach the city as expected as the waters of its port are filled with powerful sea mines. Our only warning was a mutant Giant Squid being blown into thick chunks, and the decision was made to make a beach landing up the coast from the city. \n\nLater we were able to determine we'd landed in Toyohashi, a ruined but not remarkable metro area. After further travel northwest, we encountered a unit of infantry that was cleary ambushed by mutant animals, a menagerie of bipedal bears, dogs, birds, and even humanlike ogres much larger (and weaker) than Super Mutants. The infantry unit had a collection of obviously salvaged weaponry, including many laser muskets and some chinese assault rifles. Most interestingly though, was a small detachment of power armoured individuals wielding powered katanas holding the line as their unit moved to more favorable ground."
+  nf_brotherhood_expeditions.1201.d: "We weren't able to approach the city as expected as the waters of its port are filled with powerful sea mines.\n\nOur only warning was a mutant Giant Squid being blown into thick chunks, making the seawaters a soupy mess that'd threaten damage to our engines - even if we could pick our way through the mines - and the decision was made to make a beach landing up the coast from the city. \n\nLater we were able to determine we'd landed in Toyohashi, a ruined but not remarkable metro area. After further travel northwest, we encountered a unit of infantry that was cleary ambushed by mutant animals, a menagerie of bipedal bears, dogs, birds, and even humanlike ogres much larger (and weaker) than Super Mutants.\n\nThe infantry unit had a collection of obviously salvaged weaponry, including many laser muskets and some chinese assault rifles. Most interestingly though, was a small detachment of power armoured individuals wielding similarly powered katanas conducting a fighting retreat as their unit moved to more favorable ground."
   nf_brotherhood_expeditions.1201.a: "We approached after the battle ended."
   nf_brotherhood_expeditions.1201.b: "We assisted them."
   nf_brotherhood_expeditions.1201.c: "We wiped out both forces."
@@ -1246,7 +1550,7 @@
   nf_brotherhood_expeditions.1205.rhombians: "§gDistant threats. Where can we find ruins worth exploring?§!"
   nf_brotherhood_expeditions.1205.reformers: "§CThose creatures are intelligent — offer to broker peace.§!"
   bos_japanese_resistance_pact: "Chinese Resistance Pact"
-  bos_japanese_resistance_pact_desc: "In the course of our expeditions across the Pacific, we learned the Chinese Emperor, ascending after invading from Taiwan, does not believe the Great War is over. They pose a long-term existential threat to our existence, and we've built an outpost designed to encourage gradual growth in their capabilities while monitoring the situation inside China.
+  bos_japanese_resistance_pact_desc: "In the course of our expeditions across the Pacific, we learned the Chinese Emperor, ascending after invading from Taiwan, does not believe the Great War is over. They pose a long-term existential threat to our existence, and we've built an outpost designed to encourage gradual growth in their capabilities while monitoring the situation inside China."
   bos_japanese_distant_battles: "Overseas Training"
   bos_japanese_distant_battles_desc: "In the course of our expeditions across the Pacific, we encountered a long-term war between the Japanese people and several species of intelligent mutant... animals? We now send Knights and Initiates there regularly to receive training against enemies unfamiliar with high-quality power armour. Some losses are sustained from battles against the Ogres, though. "
   bos_japanese_brokering_peace: "Brokering Peace Overseas"
@@ -1311,7 +1615,7 @@
   bos_china_guarding_tomorrow: "Guardians of Tomorrow"
   bos_china_guarding_tomorrow_desc: "We've paid the ultimate price to keep dangerous knowledge out of the hands of the Emperor of China. We found the City of Tomorrow, the most complete and unblemished Pre-War complex ever. We took all the knowledge we could, and activated the City's self destruct to keep the knowledge for rebuilding society out of the hands of a vengeful relic of the past. No Elder can doubt our commitment now to the principles of Maxson."
   bos_chinese_old_world_construction: "Old World Mega-Engineering"
-  bos_chinese_old_world_construction_desc: "While in China, we discovered a massive underground city, full of knowledge from the old world. We marveled at how it was constructed, spent time studying it's construction searching for related texts in the City of Tommorrow's library. We now use that knowledge at home in California, and have even been able to safely expand the Lost Hills Bunker."
+  bos_chinese_old_world_construction_desc: "While in China, we discovered a massive underground city, full of knowledge from the old world. We marveled at how it was constructed, and spent our time searching for related texts in the City of Tomorrow's library. We now use that knowledge at home in California, and have even been able to safely expand the Lost Hills Bunker."
   
   nf_brotherhood_expeditions.1307.t: "Sailing the Yangtze: Prepared for Occupation"
   nf_brotherhood_expeditions.1307.d: "The base was relatively unclaimed, and we know why — The area is heavily roboticized, much like the Protectron Security Hub near the Guardians. A huge swarm of still-operational Mr Gutsy robots combined with Mk1 Sentry Robots protects the site in an intimidating display of force. We are fortunate to be the Brotherhood of Steel, and thus be holders of ancient authorization codes. We were able to parley with the robots, and we used our codes to order the release of..."
@@ -1340,7 +1644,8 @@
   bos_lost_hills_diplomacy_offer_scribe_team: "Offer Scribe Team to [FROM.getName]"
   bos_lost_hills_diplomacy_offer_scribe_team_desc: "The time our scribe team will be gone is variable, but a new mission will appear by the time this decision expires, telling us what [FROM.getName] chose and how long our scribes will be gone."
   
-  bos_lost_hills_diplomacy_establish_foreign_airbase: "Establish a flight route to §Y[FROM.Capital.GetName]§!."
+  bos_lost_hills_diplomacy_establish_foreign_airbases_unlock_tt:"§CUnlock decisions to build Brotherhood airbases in each chapter's territory, increasing volunteer limits and improving the impact of our airforce in chapters abroad, if not already available to us.§!"
+  bos_lost_hills_diplomacy_establish_foreign_airbase: "Establish a Brotherhood airbase at §Y[FROM.Capital.GetName]§!."
   bos_lost_hills_diplomacy_establish_foreign_airbase_desc: "We work with the §Y[FROM.GetName]§! to build a long-term presence for the Brotherhood in §Y[FROM.Capital.GetName]§!, including a guarded transit corridor to and from §Y[ROOT.Capital.GetName]§!. Our scribes and apprentices will be stationed abroad, and regularly scheduled flights will facilitate trade, mail, and passenger services. We will be closer together than ever before."
   bos_foreign_airbase_building_tt: "We'll reach out to the §Y[FROM.GetName]§! to build an airbase for our joint operations in §Y[FROM.Capital.GetName]§!."
   
@@ -1650,3 +1955,7 @@
   consolidate_bos_starting_ideas_tt: "The §Yideas§! relating to our history are combined into one."
   hoi4_devs_broke_this_tt: "The first three bonuses below this text are required for the nation to work as designed, as volunteer supply mechanics for landlocked countries were changed. These changes were done by the OWB devs, but this tooltip was added by the Lost Hills Expanded submodder :) Once you fight the NCR these bonuses will be removed permanently, which is also my doing."
   bos_all_are_special_tt: "All §YArmy Leaders§! we had at the time of the ritual have gained all §YS.P.E.C.I.A.L.§! traits."
+  bos_this_fixes_famine_tt: "Moves us closer to §Yending the ongoing famine.§!"
+  bos_shortened_reconstruction_campaign: "The reconstruction campaign has been shortened from §Y765§! to §Y600§! days, due to your decision to prioritize the engineering corps during occupation.\n\n"
+  bos_gunrunners_opinion_mod_medium_tt: "Increases floor opinion with the §YGun Runners§! by 25."
+  bos_gunrunners_opinion_mod_large_tt: "Increases floor opinion with the §YGun Runners§! by 50."

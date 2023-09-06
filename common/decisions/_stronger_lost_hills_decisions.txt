@@ -102,7 +102,7 @@ stronger_lost_hills_decisions = {
 				division_template = {
 					name = "Brotherhood Paladins"					#CW Tools - False positive? Wiki says that "name" is correct here and not "division name"
 					is_locked = yes
-					division_names_group = BOS_DIV_1
+					division_names_group = BOS_INF_03
 					priority = 2
 					template_counter = 0
 					regiments = {
@@ -258,7 +258,8 @@ stronger_lost_hills_decisions = {
 	bos_open_the_market = {
 			icon = GFX_decision_single_cap
 			fire_only_once = no
-			# days_re_enable = 5
+			days_remove = 2000
+			#days_re_enable = 5
 			allowed = {
 				tag = BOS
 			}
@@ -301,7 +302,8 @@ stronger_lost_hills_decisions = {
 	bos_open_the_market_2 = {
 			icon = GFX_decision_caf_trade_profits
 			fire_only_once = no
-			# days_re_enable = 5
+			days_remove = 2000
+			#days_re_enable = 5
 			allowed = {
 				tag = BOS
 			}
@@ -1107,7 +1109,12 @@ stronger_lost_hills_decisions = {
 				MOT = {is_ai = yes}
 			}
 			visible = {
-				MOT = {is_ai = yes}
+				MOT = {
+				is_ai = yes
+				}
+				hidden_trigger = {
+					country_exists = MOT
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1205,12 +1212,18 @@ stronger_lost_hills_decisions = {
 						is_ai = yes}
 						ROB = {is_ai = yes}
 					}
+					AND = {
+						MXC = {has_war_with = SCO
+						is_ai = yes}
+						SCO = {is_ai = yes}
+					}
 				}
 			}
 			visible = {
 				MXC = {is_ai = yes}
 				OR = {
 					country_exists = ROB
+					country_exists = SCO
 					country_exists = HAN
 				}
 			}
@@ -1292,7 +1305,9 @@ stronger_lost_hills_decisions = {
 				bos_has_scribe_teams = yes
 			}
 			visible = {
-				always = yes
+				NOT = {
+					has_completed_focus = bos_nf_brotherhood_r_n_d
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1348,6 +1363,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_air_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1401,6 +1419,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_air_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_lockreed
+					has_completed_focus = bos_nf_ball_aerospace
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1463,6 +1487,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_lockreed
 				has_completed_focus = bos_nf_ball_aerospace
+				NOT = {
+					has_completed_focus = bos_nf_repconn
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1519,6 +1546,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_industry_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1574,6 +1604,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_industry_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_dunwich_borers
+					has_completed_focus = bos_nf_hornwright_industrial_mining_company
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1635,6 +1671,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_dunwich_borers
 				has_completed_focus = bos_nf_hornwright_industrial_mining_company
+				NOT = {
+					has_completed_focus = bos_nf_red_rocket
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1690,6 +1729,11 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					AND = {
+						has_completed_focus = bos_nf_robotics_research
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1745,6 +1789,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_robotics_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_cerulean_robotics
+					has_completed_focus = bos_nf_robco
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1806,6 +1856,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_cerulean_robotics
 				has_completed_focus = bos_nf_robco
+				NOT = {
+					has_completed_focus = bos_nf_acme
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1861,6 +1914,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_theoretical_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1916,6 +1972,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_theoretical_research
+				NOT = {
+					AND = {
+						has_completed_focus = bos_nf_future_tec
+						has_completed_focus = bos_nf_greenway_hydroponics
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -1976,6 +2038,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_future_tec
 				has_completed_focus = bos_nf_greenway_hydroponics
+				NOT = {
+					has_completed_focus = bos_nf_virtual_strategic_solutions
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2030,6 +2095,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_vehicle_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2084,6 +2152,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_vehicle_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_takoma_motors
+					has_completed_focus = bos_nf_n_h_and_m_vehicles
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2144,6 +2218,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_takoma_motors
 				has_completed_focus = bos_nf_n_h_and_m_vehicles
+				NOT = {
+					has_completed_focus = bos_nf_chryslus_vehicles
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2198,6 +2275,9 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_brotherhood_r_n_d
+				NOT = {
+					has_completed_focus = bos_nf_weaponry_research
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2252,6 +2332,12 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				has_completed_focus = bos_nf_weaponry_research
+				NOT = {
+					AND = {
+					has_completed_focus = bos_nf_SIG_sauer_weaponry
+					has_completed_focus = bos_nf_heckler_and_koch_weaponry
+					}
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2312,6 +2398,9 @@ stronger_lost_hills_decisions = {
 			visible = {
 				has_completed_focus = bos_nf_SIG_sauer_weaponry
 				has_completed_focus = bos_nf_heckler_and_koch_weaponry
+				NOT = {
+					has_completed_focus = bos_nf_wattz_weaponry
+				}
 			}
 			complete_effect = {
 				add_to_variable = {
@@ -2435,9 +2524,98 @@ stronger_lost_hills_decisions = {
 				}
 			}
 		}
+		bos_dmz_test = {
+			icon = GFX_decision_papers
+			fire_only_once = no
+			cost = 0
+			allowed = {
+				original_tag = BOS
+			}
+			ai_will_do = {
+				base = 0			#Saves on performance a bit
+			}
+			visible = {
+				country_exists = NCR
+				is_debug = yes
+			}
+			available = {
+				always = yes
+			}
+			complete_effect = {
+				for_each_scope_loop = {
+					array = bos_bunker_array
+					if = {
+						limit = {
+							always = yes
+						}
+						set_demilitarized_zone = yes
+					}
+				}
+			}
+		}
 	}
 	##Diplomacy menu - overrwrite?
 bos_lost_hills_diplomacy = {
+	bos_legion_defence_pact_call = {
+		icon = GFX_decision_t51_vb_armor
+		fire_only_once = no
+		days_remove = 10
+		cost = 100
+		allowed = {
+			#has_country_flag = legion_defence_pact_member
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		visible = {
+			has_global_flag = bos_ncr_accepted_deal_for_maxson
+			has_country_flag = legion_defence_pact_member
+		}
+		available = {
+			country_exists = BOS
+			has_war_with = CES
+			OR = {
+				NOT = {
+					BOS = {
+						has_war_with = CES
+					}
+					NCR = {
+						has_war_with = CES
+					}
+				}
+			}
+			OR = {
+				NOT = {
+					AND = {
+						country_exists = MOT
+						country_exists = MOJ
+					}
+				}
+				NOT = {
+					MOJ = {has_country_flag = legion_defence_pact_member}
+					MOT = {has_country_flag = legion_defence_pact_member}
+				}
+				NOT = {
+					MOJ = {has_war_with = MOT}
+				}
+			}
+		}
+		modifier = {
+
+		}
+		remove_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = legion_defence_pact_member
+				}
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = CES
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+	}
 	bos_lost_hills_consider_chapter_support = {
 		icon = GFX_decision_box_open
 		allowed = {
@@ -2455,7 +2633,7 @@ bos_lost_hills_diplomacy = {
 			}
 		}
 		visible = {
-			OR ={	
+			OR = {	
 					has_completed_focus = bos_nf_long_range_radio_towers
 					has_completed_focus = bos_nf_shi_chapter_cooperation
 				}
@@ -2538,7 +2716,9 @@ bos_lost_hills_diplomacy = {
 			}
 		}
 		remove_effect = {
-			set_variable = {bos_consider_target = FROM.id}
+			FROM = {
+			save_global_event_target_as = bos_consider_target
+			}
 			country_event = nf_brotherhood_communications.8
 		}
 		ai_will_do = {
@@ -2569,7 +2749,7 @@ bos_lost_hills_diplomacy = {
 					has_completed_focus = bos_nf_lancers
 				}
 		}
-		days_remove = 180
+		days_remove = 120
 		available = {
 			bos_has_scribe_teams = yes
 			NOT = {
@@ -3965,5 +4145,777 @@ bos_lost_hills_steel_plague = {
 		ai_will_do = {
 			base = 0 ##This is way too much for an AI to cause.
 		}
+	}
+}
+followers_interaction = {
+	followers_request_industry_assistance = {
+		cost = 20
+		days_remove = 90
+		days_re_enable = 240
+
+		visible = {
+			OR = {
+				BOS = {
+					has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+				}
+				NCR = {
+					has_completed_focus = boneyard_support_schools
+				}
+			}
+		}
+
+		available = {	# Shows the player why they got this
+			OR = {
+				BOS = {
+					has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+				}
+				NCR = {
+					has_completed_focus = boneyard_support_schools
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = {
+					var = followers_influence
+					value = 50
+					compare = greater_than_or_equals
+				}
+			}
+		}
+
+		complete_effect = {
+			increase_followers_influence_10 = yes
+		}
+
+		remove_effect = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.3
+				category = industry_specialisation_category
+				category = tool_tech
+			}
+		}
+	}
+	followers_electrification_help = {
+		cost = 30
+		days_remove = 75
+		days_re_enable = 210
+
+		visible = {
+			OR = {
+				BOS = {
+					has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+				}
+				NCR = {
+					has_completed_focus = boneyard_sun
+				}
+			}
+		}
+
+		available = {	# Shows the player why they got this
+			OR = {
+				BOS = {
+					has_completed_focus = bos_nf_high_elder_llwyd_torni_followers_unfinished_programs
+				}
+				NCR = {
+					has_completed_focus = boneyard_sun
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = {
+					var = followers_influence
+					value = 50
+					compare = greater_than_or_equals
+				}
+			}
+		}
+
+		complete_effect = {
+			increase_followers_influence_5 = yes
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = energy
+					amount = 4
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+} ##attempt to replicate the NCR-specific foci unlocking additional Follower interactions.
+stronger_lost_hills_ncr_occupation = {
+	bos_ncr_hayes_plan = {
+		visible = {
+			OR = {
+			has_country_flag = hayes_cooperation
+			is_debug = yes
+			}
+		}
+		available = {
+			has_country_flag = hayes_cooperation
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		cost = 100
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_3_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_ideas = militindustrial_good
+			63 = {
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.5
+					}
+				}
+			}
+		}
+	}
+	bos_ncr_allgood_environment_plan = {
+		visible = {
+			OR = {
+			has_country_flag = allgood_cooperation
+			is_debug = yes
+			}
+		}
+		available = {
+			has_country_flag = allgood_cooperation
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		cost = 50
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			effect_tooltip = {
+				add_ideas = NCR_ERA
+			}
+			news_event = nf_brotherhood_elh_events.14
+		}
+	}
+	bos_rhombian_training_halls = {
+		visible = {
+
+		}
+		cost = 50
+		allowed = {
+			tag = BOS
+		}
+		state_target = yes
+		target_root_trigger = {
+			has_country_flag = bos_rhombian_training_halls_flag
+		}
+		target_array = BOS.core_states
+		target_trigger = {
+			FROM = {
+				state_population_k > 25
+				NOT = {
+					state = 157
+				}
+			}
+		}
+		days_remove = 60
+		available = {
+			bos_has_scribe_teams = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		on_map_mode = map_and_decisions_view
+		icon = GFX_decision_backpack
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = bos_training_hall
+				}
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+stronger_lost_hills_ncr_occupation_famine = {
+	bos_ncr_incoming_famine = {
+		activation = {
+			tag = bos
+			always = no ##done by event
+		}
+		fire_only_once = yes
+		available = {
+			AND = {
+			count_triggers = {
+			amount > 3
+				has_country_flag = reformers_reconstruction
+				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
+				has_country_flag = barons_dealt_with 
+				OR = {
+					has_country_flag = famine_mission_followers_raided_completed
+					has_country_flag = famine_mission_followers_help_completed
+					}
+				has_completed_focus = bos_nf_high_elder_llwyd_old_management
+				has_country_flag = famine_mission_advanced_tech_1_completed
+				has_country_flag = famine_mission_advanced_tech_2_completed
+				has_country_flag = famine_mission_advanced_tech_3_completed
+			}
+			has_completed_focus = bos_nf_power_brokers_the_barons
+			}
+		}
+		#is_triggered_only = yes
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 120
+		complete_effect = {
+			remove_ideas = bos_ncr_looming_famine
+			set_country_flag = bos_famine_over
+			clr_country_flag = not_allowed_to_core_flag
+			custom_effect_tooltip = bos_coring_reenabled
+		}
+		timeout_effect = {
+			swap_ideas = {
+				remove_idea = bos_ncr_looming_famine
+				add_idea = bos_ncr_famine
+			}
+			##Reduce compliance in all NCR states by 25%.
+			add_stability = -0.1
+			add_war_support = -0.1
+			every_owned_state = {
+				limit = {
+					is_core_of = NCR
+					NOT = { is_core_of = BOS }
+				}
+				if = {
+					limit = { BOS = {has_country_flag = allgood_famine_protection}}
+					add_compliance = -15
+				}
+				else_if = {
+					limit = { BOS = {has_country_flag = kimball_famine_protection}}
+					add_compliance = -10
+				}
+				else_if = {
+					limit = { BOS = {has_country_flag = hayes_famine_protection}} ##Hayes and Allgood provide the same protection at the moment.
+					add_compliance = -15
+				}
+				else = {
+					add_compliance = -25
+				}
+			}
+			set_country_flag = bos_proper_famine_occured
+		}
+	}
+	bos_ncr_famine_active = {
+		activation = {
+			tag = bos
+			has_idea = bos_ncr_famine
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		available = {
+			AND = {
+			count_triggers = {
+			amount > 3
+				has_country_flag = reformers_reconstruction
+				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
+				has_country_flag = barons_dealt_with 
+				OR = {
+					has_country_flag = famine_mission_followers_raided_completed
+					has_country_flag = famine_mission_followers_help_completed
+					}
+				has_completed_focus = bos_nf_high_elder_llwyd_old_management
+				has_country_flag = famine_mission_advanced_tech_1_completed
+				has_country_flag = famine_mission_advanced_tech_2_completed
+				has_country_flag = famine_mission_advanced_tech_3_completed
+			}
+			has_completed_focus = bos_nf_power_brokers_the_barons
+			}
+		}
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 420
+		complete_effect = {
+			remove_ideas = bos_ncr_famine
+			set_country_flag = bos_famine_over
+			clr_country_flag = not_allowed_to_core_flag
+			custom_effect_tooltip = bos_coring_reenabled
+		}
+		timeout_effect = {
+			swap_ideas = {
+				remove_idea = bos_ncr_famine
+				add_idea = bos_ncr_terrible_famine
+			}
+		}
+	}
+	bos_ncr_terrible_famine_active = {
+		activation = {
+			tag = bos
+			has_idea = bos_ncr_terrible_famine
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		available = {
+			AND = {
+			count_triggers = {
+			amount > 4
+				has_country_flag = reformers_reconstruction
+				has_country_flag = barons_cooperating ##also gets barons_dealt_with so twice the effect
+				has_country_flag = barons_dealt_with 
+				OR = {
+					has_country_flag = famine_mission_followers_raided_completed
+					has_country_flag = famine_mission_followers_help_completed
+					}
+				has_completed_focus = bos_nf_high_elder_llwyd_old_management
+				has_country_flag = famine_mission_advanced_tech_1_completed
+				has_country_flag = famine_mission_advanced_tech_2_completed
+				has_country_flag = famine_mission_advanced_tech_3_completed
+			}
+			has_completed_focus = bos_nf_power_brokers_the_barons
+			}
+		}
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 365
+		complete_effect = {
+			remove_ideas = bos_ncr_terrible_famine
+			set_country_flag = bos_famine_over
+			clr_country_flag = not_allowed_to_core_flag
+			custom_effect_tooltip = bos_coring_reenabled
+		}
+		timeout_effect = {
+			remove_ideas = bos_ncr_terrible_famine
+			set_country_flag = bos_famine_over
+			add_stability = -0.25
+			add_war_support = -0.3
+		}
+	}
+	bos_ncr_famine_delay = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			#has_completed_focus = bos_nf_the_californian_food_crisis
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {}
+		remove_effect = {
+			set_temp_variable = { bos_famine_time = 60 }
+			bos_adjust_famine_time = yes
+		}
+	}
+	bos_ncr_famine_evaluate_food_reserves = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			#has_completed_focus = bos_nf_the_californian_food_crisis
+			bos_has_scribe_teams = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			random_list = {
+				10 = {
+					set_temp_variable = { bos_famine_time = 90 }
+					bos_adjust_famine_time = yes
+				}
+				60 = {
+					set_temp_variable = { bos_famine_time = 60 }
+					bos_adjust_famine_time = yes
+				}
+				20 = {
+					set_temp_variable = { bos_famine_time = 30 }
+					bos_adjust_famine_time = yes
+				}
+				10 = {
+					set_temp_variable = { bos_famine_time = -30 }
+					bos_adjust_famine_time = yes
+				}
+			}
+		}
+	}
+	bos_ncr_famine_abatement = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			#has_completed_focus = bos_nf_the_californian_food_crisis
+		}
+		fixed_random_seed = no
+		fire_only_once = no
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			set_temp_variable = { caps_to_add = -45 }
+			add_caps = yes
+			set_temp_variable = { bos_famine_time = 30 }
+			bos_adjust_famine_time = yes
+			#set_country_flag = famine_mission_desc_completed
+		}
+
+	}
+	bos_ncr_famine_food_convoy_escorts = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			#has_completed_focus = bos_nf_the_californian_food_crisis
+			BOS_has_2_available_paladins = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 90
+		cost = 15
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -2
+				tooltip = paladin_math_tooltip
+			}
+		}
+		remove_effect = {
+			set_temp_variable = { bos_famine_time = 70 }
+			bos_adjust_famine_time = yes
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+		}
+	}
+	bos_ncr_famine_curb_baron_influence = { ##TODO: Change flag? This currently skips "The Barons" event if you do it.
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			OR = {
+				has_completed_focus = bos_nf_high_elder_rhiannon_economic_plan
+				has_completed_focus = bos_nf_high_elder_maxson_economic_plan
+			}
+			NOT = {has_completed_focus = bos_nf_power_brokers_the_barons}
+			BOS_has_2_available_paladins = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 90
+		cost = 250
+		cancel_trigger = {
+			NOT = {
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_power_brokers_the_barons
+		}
+		cancel_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+			add_political_power = 250
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -2
+				tooltip = paladin_math_tooltip
+			}
+		}
+		remove_effect = {
+			set_temp_variable = { bos_famine_time = 70 }
+			bos_adjust_famine_time = yes
+			complete_national_focus = bos_nf_power_brokers_the_barons
+			#bos_reduce_famine = yes ##The event from completing the national focus will do it.
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+		}
+	}
+	bos_ncr_famine_distribute_advanced_tech_1 = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			bos_has_scribe_teams = yes
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			has_tech = agriculture_industry_tech_5
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		icon = mission_icon     # For GFX_decision_mission_icon
+		modifier = {
+			civilian_factory_use = 3
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		ai_will_do = {
+			base = 10000
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_advanced_tech_1_completed
+			bos_reduce_famine = yes
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+
+	}
+	bos_ncr_famine_distribute_advanced_tech_2 = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			bos_has_scribe_teams = yes
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			has_tech = agriculture_industry_tech_6
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		modifier = {
+			civilian_factory_use = 5
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		ai_will_do = {
+			base = 10000
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_advanced_tech_2_completed
+			bos_reduce_famine = yes
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+
+	}
+	bos_ncr_famine_distribute_advanced_tech_3 = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			bos_has_scribe_teams = yes
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			has_tech = agriculture_industry_tech_7
+			
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		modifier = {
+			civilian_factory_use = 6
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+			}
+		}
+		ai_will_do = {
+			base = 10000
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_advanced_tech_3_completed
+			bos_reduce_famine = yes
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+
+	}
+	bos_ncr_famine_ask_the_followers = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			OR = {
+			has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+			has_country_flag = allgood_cooperation
+			}
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+		
+		}
+		ai_will_do = {
+			base = 10000
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_followers_help_completed
+			bos_reduce_famine = yes
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			increase_followers_influence_10 = yes
+		}
+
+	}
+	bos_ncr_famine_raid_the_followers = {
+		available = {
+			OR = { 
+				has_idea = bos_ncr_terrible_famine
+				has_idea = bos_ncr_famine
+				has_idea = bos_ncr_looming_famine
+			}
+			has_completed_focus = bos_nf_the_californian_food_crisis
+			NOT = {
+				has_completed_focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
+				has_country_flag = allgood_cooperation
+			}
+			BOS_has_2_available_paladins = yes
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		days_remove = 60
+		cost = 30
+		cancel_trigger = {
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		complete_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -2
+				tooltip = paladin_math_tooltip
+			}
+		}
+		remove_effect = {
+			set_country_flag = famine_mission_followers_raided_completed
+			custom_effect_tooltip = bos_this_fixes_famine_tt
+			bos_reduce_famine = yes
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+		}
+
 	}
 }
