@@ -15,9 +15,7 @@ bos_has_troika_crowns = {
 		tooltip = bos_crowns
 		BOS = {
 			check_variable = {
-				var = bos_troika_crowns
-				val = 1
-				compare = greater_than_or_equals
+				bos_troika_crowns > 0
 			}
 		}
 	}

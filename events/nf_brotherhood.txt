@@ -3404,6 +3404,44 @@ country_event = {
 		BOS = {
 			country_event = nf_brotherhood_foreign_assistance.202
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				AND = { ##if this country is an AI (it better be) and the BOS is not, AND the Midwest doesn't exist or is an AI, make it a little easier on the BOS.
+					is_ai = yes
+					BOS = {
+						is_ai = no
+					}
+					OR = {
+						BMW = {
+						is_ai = yes
+						}
+						NOT = {
+							country_exists = BMW
+						}
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				is_in_faction_with = BOS
+				add = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = BOS
+					value > 20
+				}
+				add = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = BOS
+					value > 99
+				}
+				add = 3
+			}
+		}
 	}
 	# option = {
 		# name = nf_brotherhood_foreign_assistance.2.mid ##Reject this insanity. Stand against this, with the Midwest.
@@ -3434,6 +3472,16 @@ country_event = {
 			country_event = nf_brotherhood_foreign_assistance.204
 		}
 		bos_troika_upgrade_bos_experience_law = yes
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_opinion = {
+					target = BOS
+					value < -20
+				}
+				add = 2
+			}
+		}
 	}
 }
 country_event = {	
@@ -3467,8 +3515,15 @@ country_event = {
 		name = nf_brotherhood_foreign_assistance.202.a ##An offer accepted.
 		add_political_power = 100
 		add_stability = 0.01
-		add_war_support = 0.01
-		add_manpower = 1000
+		add_war_support = 0.02
+		add_manpower = 350
+		effect_tooltip = {
+			FROM = {
+				custom_effect_tooltip = troika_unlock_augment_system_tt
+				custom_effect_tooltip = fallout_add_augment
+				bos_troika_install_augment_in_elder = yes
+			}
+		}
 	}
 }
 ##203 for the midwest will go here.
@@ -3476,7 +3531,7 @@ country_event = {
 	id = nf_brotherhood_foreign_assistance.204
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.204" }
 	title = nf_brotherhood_foreign_assistance.204.t  ##Treasures for the New Elder. - Lost Hills view, Offer Rejected.
-	desc = nf_brotherhood_foreign_assistance.204.d ##They accepted, let's get on with our great ritual soon!
+	desc = nf_brotherhood_foreign_assistance.204.d ##They rejected
 	picture = GFX_event_sub_generic_airport_interior 
 	is_triggered_only = yes
 	fire_only_once = no
@@ -3484,7 +3539,12 @@ country_event = {
 
 	}
 	option = {
-		name = nf_brotherhood_foreign_assistance.204.a ##An offer accepted.
+		name = nf_brotherhood_foreign_assistance.204.a ##An offer rejected
+		add_to_variable = {
+			var = bos_troika_crowns
+			value = 1
+			tooltip = bos_crowns_math_tt
+		}
 		effect_tooltip = {
 			FROM = {
 				if = {
@@ -3500,12 +3560,17 @@ country_event = {
 				add_political_power = 200
 				add_war_support = 0.05
 				add_stability = 0.1
-				bos_exodus_manpower_modifier_micro = yes
+				add_timed_idea = {
+					idea = bos_brotherhood_exodus
+					days = 40
+				}
+				set_temp_variable = { refugees_to_add = 750 }
+				exodus_add_refugees = yes
 				add_opinion_modifier = { target = BOS modifier = tca_twisted_legacy }
 				BOS = {
 					add_opinion_modifier = { target = FROM modifier = tca_pathetic_exiles }
 				}
-				bos_troika_upgrade_bos_experience_law = yes
+				add_ideas = bos_bos_fighting_experience_1
 			}
 		}
 	}
@@ -3816,7 +3881,7 @@ country_event = {
 	set_variable = { popularity_intellectuals = party_popularity_100@intellectuals}
 	subtract_from_variable = {
 		var = popularity_intellectuals
-		val = 20
+		value = 20
 	}
 	clamp_variable = {
 		var = popularity_intellectuals
@@ -3912,7 +3977,7 @@ country_event = {
 	id = nf_brotherhood_elh_events.102
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.102" }
 	title = nf_brotherhood_elh_events.102.t #Will of Rhiannon
-	desc = nf_brotherhood_elh_events.102.d #event describing the callous process of bending the NCR to their bloody business.
+	desc = nf_brotherhood_elh_events.102.d #basically the same event as 102 with slightly different loc to explain How We Got Here
 	picture = GFX_event_sub_generic_war_room #Probably replace this
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3964,7 +4029,7 @@ country_event = {
 country_event = {
 	id = nf_brotherhood_elh_events.103
 	title = nf_brotherhood_elh_events.103.t #Will of Rhiannon
-	desc = nf_brotherhood_elh_events.103.d #basically the same event as 102 with slightly different loc to explain How We Got Here
+	desc = nf_brotherhood_elh_events.103.d #event describing the callous process of bending the NCR to their bloody business.
 	picture = GFX_event_sub_generic_war_room #Probably replace this
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3974,14 +4039,41 @@ country_event = {
 	set_variable = { popularity_elites = party_popularity_100@elites }
 	set_variable = { popularity_people = party_popularity_100@people }
 	log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.103"
+	hidden_effect = {
+		add_popularity = {
+			ideology = elites
+			popularity = 0.01
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.01
+		}
+	}
 	##party_popularity_100@[group] is a game-calculated read only dynamic variable. It's being used here as a weight for the random list
 	}
 	option = {
-		name = nf_brotherhood_elh_events.103.a #Absolutely unacceptable! Rhiannon must be stopped, NOW!
-		add_political_power = -200
-		every_controlled_state = { ##Continued inconsistency has repercussions
-			add_resistance = 25
+		name = nf_brotherhood_elh_events.103.a #By blood and gristle
+		set_politics = {
+			ruling_party = intellectuals
+			}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.3
 		}
+		ai_chance = {
+			base = 33
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.103.b	
+		trigger = {
+			NOT = {
+				BOS = {
+				has_country_leader_with_trait = bos_absolute_brotherhood_high_elder
+				}
+			}
+		}
+		add_political_power = -200
 		custom_effect_tooltip=chances_popularity_tt
 		random_list = { 
 			popularity_ruler  = {
@@ -3996,22 +4088,6 @@ country_event = {
 		}
 		remove_ideas = bos_troikan_occupation
 		activate_decision = BOS_ban_intellectuals
-		ai_chance = {
-			base = 33
-		}
-	}
-	option = {
-		name = nf_brotherhood_elh_events.103.b #There is no other way.
-		set_politics = {
-			ruling_party = intellectuals
-			}
-		add_popularity = {
-			ideology = intellectuals
-			popularity = 0.3
-		}
-		ai_chance = {
-			base = 64
-		}
 	}
 }
 country_event = {
@@ -4360,7 +4436,7 @@ country_event = {
 		}
 		add_to_variable = {
 			var = bos_troika_crowns
-			val = +1
+			value = +1
 			tooltip = bos_crowns_math_tt
 		}
 		ai_chance = {

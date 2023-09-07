@@ -3974,6 +3974,7 @@ bos_lost_hills_steel_plague = {
 					BOS = {
 						has_completed_focus = bos_nf_lancers
 					}
+					is_neighbor_of = BOS
 				}
 			}
 			if = {
@@ -4044,7 +4045,7 @@ bos_lost_hills_steel_plague = {
 			}
 			add_to_variable = {
 				var = bos_troika_crowns
-				val = -1
+				value = -1
 				tooltip = bos_crowns_math_tt
 			}
 		}
@@ -4115,32 +4116,29 @@ bos_lost_hills_steel_plague = {
 				##finally, round the numbers.
 				round_temp_variable = bos_pop_good
 				round_temp_variable = bos_pop_bad
+				set_temp_variable = { ##Removing population from a single state like this doesn't appear to generate Manpower like Exodus does.
+				pop_add = bos_pop_reduction
+				}
+				add_state_population = yes
+			}
 				random_list = {
 					bos_pop_good = {
-						add_tech_bonus = {
-							bonus = 0.25
-							uses = 1
-							category = implant_tech
+						BOS = {
+							add_tech_bonus = {
+								bonus = 0.25
+								uses = 1
+								category = implant_tech
+							}						
+							add_to_variable = {
+								var = bos_troika_crowns
+								value = +1
+								tooltip = bos_crowns_math_tt
+							}
 						}
-						add_to_variable = {
-							var = bos_troika_crowns
-							val = +1
-							tooltip = bos_crowns_math_tt
-						}
-						set_temp_variable = { ##Removing population from a single state like this doesn't appear to generate Manpower like Exodus does.
-						pop_add = bos_pop_reduction
-						}
-						add_state_population = yes
 					}
 					bos_pop_bad = {
-						set_temp_variable = { ##Removing population from a single state like this doesn't appear to generate Manpower like Exodus does.
-						pop_add = bos_pop_reduction
-						}
-						add_state_population = yes
 					}
 				}
-
-			}
 		}
 		ai_will_do = {
 			base = 0 ##This is way too much for an AI to cause.
