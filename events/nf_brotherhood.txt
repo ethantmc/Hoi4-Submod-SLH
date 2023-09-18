@@ -529,6 +529,12 @@ country_event = {
 			every_navy_leader = {
 				set_nationality = BOS
 			}
+			every_owned_state = {
+				limit = {
+					is_core_of = PREV
+				}
+				add_core_of = BOS
+			}
 		}
 		ai_chance = {
 			base = 100
@@ -565,6 +571,12 @@ country_event = {
 			}
 			every_navy_leader = {
 				set_nationality = PREV.PREV
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_core_of = PREV.PREV
 			}
 		}
 		add_country_leader_trait = bos_absolute_brotherhood_high_elder
@@ -6124,6 +6136,29 @@ news_event = {
 		bos_upgrade_legion_experience_law = yes
 	}
 }
+## news_event = {
+## 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.18" }
+## 	id = nf_brotherhood_elh_events.18
+## 	title = nf_brotherhood_elh_events.18.t #TODO:  ##Currently event is commented out as Exodus system still broken.
+## 	desc = nf_brotherhood_elh_events.18.d #They've come begging
+## 	picture = GFX_event_CES_camp_2
+## 	is_triggered_only = yes
+## 	fire_only_once = yes
+## 	trigger = {
+## 		NOT = {
+## 			OR = {
+## 			has_game_rule = { rule = RULE_PROJECT_EXODUS_TOGGLE option = DEFAULT }
+## 			has_game_rule = { rule = RULE_PROJECT_EXODUS_TOGGLE option = LIMITED }	
+## 			}
+## 		}
+## 	}
+## 	option = {
+## 		name = nf_brotherhood_elh_events.18.a #War till the end, then.
+## 		capital_scope = {
+## 			add_state_population_k = 2
+## 		}
+## 	}
+## }
 ##EXPEDITIONS ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event, so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
 #The Village
 country_event = {
@@ -6144,7 +6179,7 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_expeditions.1.b #Investigate Further
-		activate_mission = bos_delayed_expedition_small	#delay effect- add 30 days to the return time of the Expedition.
+		bos_smart_delayed_expedition_small = yes	#delay effect- add 30 days to the return time of the Expedition.
 		country_event = {
 		id=nf_brotherhood_expeditions.101
 		days = 30 #small delay time
@@ -6176,7 +6211,7 @@ country_event = {
 		name = nf_brotherhood_expeditions.101.a #Seize the device ##+1 Knowledge?
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		set_temp_variable = { temp_BOS_drift_add = -0.05 }
+		set_temp_variable = { temp_BOS_drift_add = -0.25 }
 		bos_boost_elites_drift = yes
 		ai_chance = {
 			base = 20
@@ -6187,9 +6222,9 @@ country_event = {
 		name = nf_brotherhood_expeditions.101.b #Integrate the ghoul into the town
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		add_war_support = -0.02
-		add_stability = -0.01
-		set_temp_variable = { temp_BOS_drift_add = +0.1 }
+		add_war_support = -0.03
+		add_stability = -0.02
+		set_temp_variable = { temp_BOS_drift_add = +0.25 }
 		bos_boost_ruler_drift = yes
 		bos_upgrade_expeditionary_outposts = yes
 		ai_chance = {
@@ -6206,7 +6241,7 @@ country_event = {
 		add_war_support = 0.02
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		set_temp_variable = { temp_BOS_drift_add = +0.1 }
+		set_temp_variable = { temp_BOS_drift_add = +0.25 }
 		bos_boost_elites_drift = yes
 		ai_chance = {
 			base = 20
@@ -6638,7 +6673,7 @@ country_event = {
 		}
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		SLA = {
 			country_event = nf_brotherhood_expeditions.401
 		}
@@ -6769,7 +6804,7 @@ country_event = {
 			add_resource = { type = circuitry amount = 2 }
 			add_resource = { type = advanced amount = 1 }
 		}
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		add_political_power = 25
 		ai_chance = {
 			base = 40
@@ -6781,7 +6816,7 @@ country_event = {
 		bos_upgrade_expeditionary_outposts = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		ai_chance = {
 			base = 100
 		}
@@ -6791,7 +6826,7 @@ country_event = {
 		trigger = {has_government = people}
 		set_temp_variable = {BOS_knowledge_gain = 2}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_medium
+		bos_smart_delayed_expedition_small = yes
 		ai_chance = {
 			base = 90 
 
@@ -6811,8 +6846,8 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.6.a #What happened here?
 		country_event = { id = nf_brotherhood_expeditions.601 days=30}
-		activate_mission = bos_delayed_expedition2_small
-		activate_mission = bos_delayed_scribes_small
+		bos_smart_delayed_expedition2_small = yes
+		bos_smart_delayed_scribes_small = yes
 		if = {
 			limit = {
 				has_country_flag = bos_ruler_allowed
@@ -6891,8 +6926,8 @@ country_event = {
 			amount = 800
 			producer = USA
 		}
-		activate_mission = bos_delayed_expedition_small #intentionally allows one unit of paladins to return.
-		activate_mission = bos_delayed_scribes_small
+		bos_smart_delayed_expedition_small = yes #intentionally allows one unit of paladins to return.
+		bos_smart_delayed_scribes_small = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
 		ai_chance = {
@@ -7001,7 +7036,7 @@ country_event = {
 				add_caps = yes
 			}
 		}
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		ai_chance = {
 		base = 1
 		modifier = {has_government = ruler factor = 0}
@@ -7080,7 +7115,7 @@ country_event = {
 		set_temp_variable = { caps_to_add = 10 }
 		add_caps = yes
 		add_ideas = bos_golgotha_mirroredshades
-		activate_mission = bos_delayed_expedition_medium
+		bos_smart_delayed_expedition_medium = yes
 		ai_chance = {
 		base = 100
 		}
@@ -7118,7 +7153,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.8.b #Buy some spare parts in Klamath.
 		country_event = nf_brotherhood_expeditions.801
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		set_temp_variable = { caps_to_add = -30 }
 		add_caps = yes
 		ai_chance = {
@@ -7172,7 +7207,7 @@ country_event = {
 		bos_upgrade_expeditionary_outposts = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		country_event = { id = nf_brotherhood_expeditions.802 days = 30}
 		add_equipment_to_stockpile = {
 				type = energy_equipment_1
@@ -7201,7 +7236,7 @@ country_event = {
 		bos_upgrade_expeditionary_outposts = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		add_equipment_to_stockpile = {
 			type = energy_equipment_2
 			amount = 200
@@ -7231,7 +7266,7 @@ country_event = {
 		bos_upgrade_expeditionary_outposts = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_medium
+		bos_smart_delayed_expedition_medium = yes
 		add_equipment_to_stockpile = {
 				type = energy_equipment_1
 				amount = 280
@@ -7280,7 +7315,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.802.b #Strike first. Dead men tell no tales.
 		KLA = {country_event = nf_brotherhood_expeditions.804}
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		ai_chance = {
 			base = 57
 		}
@@ -7442,7 +7477,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.806.b #We tried to be reasonable...
 		KLA = { country_event = nf_brotherhood_expeditions.804}
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 		ai_chance = {
 			base = 66
 		}
@@ -7522,7 +7557,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.808.b #We tried to be reasonable...
 		KLA = { country_event = nf_brotherhood_expeditions.804}
-		activate_mission = bos_delayed_expedition_medium
+		bos_smart_delayed_expedition_medium = yes
 		add_manpower = -50
 		add_equipment_to_stockpile = {
 			type = energy_equipment_1
@@ -7563,7 +7598,7 @@ country_event = {
 		name = nf_brotherhood_expeditions.9.a
 		set_temp_variable = {BOS_knowledge_gain = 2}
 		bos_add_knowledge = yes
-		activate_mission = bos_delayed_expedition_small
+		bos_smart_delayed_expedition_small = yes
 	}
 
 }
@@ -7758,8 +7793,8 @@ country_event = {
 			}
 		}##Maxsonians and Reformers each have reasons to never rely on the WBH
 		country_event = {id = nf_brotherhood_expeditions.1103 days = 15}
-		activate_mission = bos_delayed_scribes_small
-		activate_mission = bos_delayed_expedition2_small
+		bos_smart_delayed_scribes_small = yes
+		bos_smart_delayed_expedition2_small = yes
 		ai_chance = {
 		base = 94
 		}
@@ -7768,8 +7803,8 @@ country_event = {
 		name = nf_brotherhood_expeditions.11.c #Audience with TCA
 		trigger = {country_exists = TCA} ##Anyone would work with TCA.
 		country_event = {id = nf_brotherhood_expeditions.1104 days = 15}
-		activate_mission = bos_delayed_scribes_small
-		activate_mission = bos_delayed_expedition2_small
+		bos_smart_delayed_scribes_small = yes
+		bos_smart_delayed_expedition2_small = yes
 		ai_chance = {
 		base = 94
 		}
@@ -7843,8 +7878,8 @@ country_event = {
 		complete_national_focus = bos_nf_integrating_wbh
 		add_political_power = -50
 		country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
-		activate_mission = bos_delayed_expedition2_large
-		activate_mission = bos_delayed_scribes_large
+		bos_smart_delayed_expedition2_large = yes
+		bos_smart_delayed_scribes_large = yes
 		ai_chance = {
 			base = 100 #AI Troika talking to AI WBH.
 			modifier = { WBH = { is_ai = no } factor = 0}
@@ -7864,8 +7899,8 @@ country_event = {
 			id = nf_brotherhood_expeditions.1105 
 			days = 60 ##75 days in after this.
 		} 
-		activate_mission = bos_delayed_expedition2_large
-		activate_mission = bos_delayed_scribes_large
+		bos_smart_delayed_expedition2_large = yes
+		bos_smart_delayed_scribes_large = yes
 		ai_chance = {
 			base = 100 #only done if WBH is not an AI.
 			modifier = { WBH = { is_ai = no } factor = 1}
@@ -7888,8 +7923,8 @@ country_event = {
 				40 = {
 					complete_national_focus = bos_nf_integrating_wbh
 					country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
-					activate_mission = bos_delayed_expedition2_large
-					activate_mission = bos_delayed_scribes_large
+					bos_smart_delayed_expedition2_large = yes
+					bos_smart_delayed_scribes_large = yes
 					add_political_power = 25
 				}
 				
@@ -7916,8 +7951,8 @@ country_event = {
 		name = nf_brotherhood_expeditions.1104.a
 		country_event = {id = nf_brotherhood_expeditions.1105 days = 60}
 		complete_national_focus = bos_nf_integrating_wbh
-		activate_mission = bos_delayed_expedition2_large
-		activate_mission = bos_delayed_scribes_large
+		bos_smart_delayed_expedition2_large = yes
+		bos_smart_delayed_scribes_large = yes
 	}
 }
 #Anchorage: We Made It
@@ -7991,12 +8026,12 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.1107.b #Strike this deed from the Scribe's own Scrolls. They've failed us.
 		add_political_power = 55
-		activate_mission = bos_delayed_scribes_small
+		bos_smart_delayed_scribes_small = yes
 	}
 	option = {
 		name = nf_brotherhood_expeditions.1107.c #Search everywhere for worthy Knights!
 		add_political_power = -250 #2.5x regular paladin price.
-		activate_mission = bos_delayed_scribes_large #180 days delay
+		bos_smart_delayed_scribes_large = yes #180 days delay
 		bos_train_paladins = yes #You may ask, reader, why I let them get back either all they lost or half of what they lost going to Alaska. The answer is because it's possible TCA and WBH are dead. This is an expensive out, but might allow them to continue doing Expeditions.
 		ai_chance = {
 			base = 100
@@ -8034,8 +8069,8 @@ country_event = {
 		BOS = {
 			complete_national_focus = bos_nf_integrating_wbh
 			country_event = {id = nf_brotherhood_expeditions.1105 days = 60} ##75 days in after this.
-			activate_mission = bos_delayed_expedition2_large
-			activate_mission = bos_delayed_scribes_large
+			bos_smart_delayed_expedition2_large = yes
+			bos_smart_delayed_scribes_large = yes
 			add_political_power = 25
 		}
 		ai_chance = {
@@ -8139,8 +8174,8 @@ country_event = {
 		ai_chance = {
 			base = 20
 		}
-		activate_mission = bos_delayed_expedition2_small
-		activate_mission = bos_delayed_scribes_small
+		bos_smart_delayed_expedition2_small = yes
+		bos_smart_delayed_scribes_small = yes
 	}
 	option = {
 		name = nf_brotherhood_expeditions.1202.b #Learn about China
@@ -8151,8 +8186,8 @@ country_event = {
 		ai_chance = {
 			base = 20
 		}
-		activate_mission = bos_delayed_expedition2_small
-		activate_mission = bos_delayed_scribes_small
+		bos_smart_delayed_expedition2_small = yes
+		bos_smart_delayed_scribes_small = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
 	}
@@ -8171,8 +8206,8 @@ country_event = {
 		ai_chance = {
 			base = 60
 		}
-		activate_mission = bos_delayed_expedition2_medium
-		activate_mission = bos_delayed_scribes_medium
+		bos_smart_delayed_expedition2_medium = yes
+		bos_smart_delayed_scribes_medium = yes
 	}
 }
 #Land of The Rising Sun: A Friendly Drink
@@ -8191,8 +8226,8 @@ country_event = {
 			id = nf_brotherhood_expeditions.1205
 			days = 30
 		}
-		activate_mission = bos_delayed_expedition2_medium
-		activate_mission = bos_delayed_scribes_medium
+		bos_smart_delayed_expedition2_medium = yes
+		bos_smart_delayed_scribes_medium = yes
 	}
 }
 #Land of The Rising Sun: A Quick End
@@ -8207,8 +8242,8 @@ country_event = {
 	##AI cannot take this event path.
 	option = {
 		name = nf_brotherhood_expeditions.1204.a #End the expedition. Study them
-		activate_mission = bos_delayed_expedition2_small
-		activate_mission = bos_delayed_scribes_small
+		bos_smart_delayed_expedition2_small = yes
+		bos_smart_delayed_scribes_small = yes
 		set_temp_variable = {BOS_knowledge_gain = 2}
 		bos_add_knowledge = yes
 	}
@@ -8218,8 +8253,8 @@ country_event = {
 			id = nf_brotherhood_expeditions.1208
 			days = 30 
 		}
-		activate_mission = bos_delayed_expedition2_medium
-		activate_mission = bos_delayed_scribes_medium
+		bos_smart_delayed_expedition2_medium = yes
+		bos_smart_delayed_scribes_medium = yes
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
 	}
@@ -8377,8 +8412,8 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_expeditions.13.a #don't pay
-		activate_mission = bos_delayed_expedition2_large
-		activate_mission = bos_delayed_scribes_large
+		bos_smart_delayed_expedition2_large = yes
+		bos_smart_delayed_scribes_large = yes
 		country_event = {
 			id = nf_brotherhood_expeditions.1301
 			days = 30
@@ -8391,8 +8426,8 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_expeditions.13.b #pay
-		activate_mission = bos_delayed_expedition2_large
-		activate_mission = bos_delayed_scribes_large
+		bos_smart_delayed_expedition2_large = yes
+		bos_smart_delayed_scribes_large = yes
 		add_ideas = bos_china_payments
 		country_event = {
 			id = nf_brotherhood_expeditions.1303

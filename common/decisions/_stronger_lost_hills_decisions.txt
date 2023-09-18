@@ -426,8 +426,8 @@ stronger_lost_hills_decisions = {
 
 		bos_delayed_expedition_small = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 30
+			days_mission_timeout = 30
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -439,13 +439,14 @@ stronger_lost_hills_decisions = {
 			visible = {
 			
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
-					value = -1
+					value = +1
+					tooltip = paladin_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
 					value = +1
@@ -455,8 +456,8 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_expedition_medium = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 90
+			days_mission_timeout = 90
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -467,13 +468,14 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
-					value = -1
+					value = +1
+					tooltip = paladin_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
 					value = +1
@@ -483,8 +485,8 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_expedition_large = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 180
+			days_mission_timeout = 180
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -495,13 +497,14 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
-					value = -1
+					value = +1
+					tooltip = paladin_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
 					value = +1
@@ -511,8 +514,8 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_expedition2_small = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 30
+			days_mission_timeout = 30
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -524,13 +527,14 @@ stronger_lost_hills_decisions = {
 			visible = {
 			
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
-					value = -2
+					value = +2
+					tooltip = paladin_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
 					value = +2
@@ -540,8 +544,8 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_expedition2_medium = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 90
+			days_mission_timeout = 90
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -552,13 +556,14 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
-					value = -2
+					value = +2
+					tooltip = paladin_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
 					value = +2
@@ -568,8 +573,8 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_expedition2_large = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 180
+			days_mission_timeout = 180
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -580,13 +585,14 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
-					value = -2
+					value = +2
+					tooltip = paladin_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_paladins_ready
 					value = +2
@@ -596,37 +602,38 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_scribes_small = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 30
+			days_mission_timeout = 30
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
 			}
-
 			available = {		
 				always = no
 			}
 			visible = {
 			
 			}
-			timeout_effect = {
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = -1
-				}
-			}
-			remove_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_scribes_ready
 					value = +1
 					tooltip = scribe_math_tooltip
 				}
 			}
+			timeout_effect = {
+				add_to_variable = {
+					var = bos_scribes_ready
+					value = +1
+					tooltip = scribe_math_tooltip
+				}
+			}
+
 		}
 		bos_delayed_scribes_medium = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 90
+			days_mission_timeout = 90
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -637,13 +644,14 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_scribes_ready
-					value = -1
+					value = +1
+					tooltip = scribe_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_scribes_ready
 					value = +1
@@ -653,8 +661,8 @@ stronger_lost_hills_decisions = {
 		}
 		bos_delayed_scribes_large = {
 			fire_only_once = no
-			days_mission_timeout = 0 ##immediately transition to timed out
-			days_remove = 180
+			days_mission_timeout = 180 ##immediately transition to timed out
+			is_good = yes
 			# days_re_enable = 5
 			allowed = {
 				always = no #performance for this, is triggered by focus only.
@@ -665,13 +673,14 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 			}
-			timeout_effect = {
+			cancel_effect = {
 				add_to_variable = {
 					var = bos_scribes_ready
-					value = -1
+					value = +1
+					tooltip = scribe_math_tooltip
 				}
 			}
-			remove_effect = {
+			timeout_effect = {
 				add_to_variable = {
 					var = bos_scribes_ready
 					value = +1

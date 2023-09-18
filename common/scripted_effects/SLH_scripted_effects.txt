@@ -4,6 +4,189 @@ bos_add_knowledge = {
 			bos_scribes_knowledge = BOS_knowledge_gain
 		}
 }
+##Hoi4 doesn't allow duplicate activations of the same mission. What will happen is the time for a mission is reset, effectively "eating" the paladin.
+##To get around this, just return to paladin early. Two other solutions were considered: Each focus having a unique set of missions (huge bloat) or having"fallback" missions scripted in this way so there's a second mission that different under the hood.
+##Two would still not guarantee it as impossible for something to get eaten, and three has the same bloat problem....
+bos_smart_delayed_expedition_small = {
+	add_to_variable = {
+		var = bos_paladins_ready
+		value = -1
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_expedition_small
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +1
+				tooltip = paladin_math_tooltip
+			}
+			remove_mission = bos_delayed_expedition_small
+		}
+	}
+	activate_mission = bos_delayed_expedition_small
+}
+bos_smart_delayed_expedition_medium = {
+	add_to_variable = {
+		var = bos_paladins_ready
+		value = -1
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_expedition_medium
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +1
+				tooltip = paladin_math_tooltip
+			}
+			remove_mission = bos_delayed_expedition_medium
+		}
+	}
+	activate_mission = bos_delayed_expedition_medium
+}
+bos_smart_delayed_expedition_large = { ##Currently not used
+	add_to_variable = {
+		var = bos_paladins_ready
+		value = -1
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_expedition_large
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +1
+				tooltip = paladin_math_tooltip
+			}
+			remove_mission = bos_delayed_expedition_large
+		}
+	}
+	activate_mission = bos_delayed_expedition_large
+}
+bos_smart_delayed_expedition2_small = {
+	add_to_variable = {
+		var = bos_paladins_ready
+		value = -2
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_expedition2_small
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+			remove_mission = bos_delayed_expedition2_small
+		}
+	}
+	activate_mission = bos_delayed_expedition2_small
+}
+bos_smart_delayed_expedition2_medium = {
+	add_to_variable = {
+		var = bos_paladins_ready
+		value = -2
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_expedition2_medium
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+			remove_mission = bos_delayed_expedition2_medium
+		}
+	}
+	activate_mission = bos_delayed_expedition2_medium
+}
+bos_smart_delayed_expedition2_large = { ##Currently not used
+	add_to_variable = {
+		var = bos_paladins_ready
+		value = -2
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_expedition2_large
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+			remove_mission = bos_delayed_expedition2_large
+		}
+	}
+	activate_mission = bos_delayed_expedition2_large
+}
+bos_smart_delayed_scribes_small = {
+	add_to_variable = {
+		var = bos_scribes_ready
+		value = -1
+	}
+	if = {
+		limit = {
+			has_active_mission = bos_delayed_scribes_small
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			remove_mission = bos_delayed_scribes_small
+		}
+	}
+	activate_mission = bos_delayed_scribes_small
+}
+bos_smart_delayed_scribes_medium = {
+	add_to_variable = {
+		var = bos_scribes_ready
+		value = -1
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_scribes_medium
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			remove_mission = bos_delayed_scribes_medium
+		}
+	}
+	activate_mission = bos_delayed_scribes_medium
+}
+bos_smart_delayed_scribes_large = {
+	add_to_variable = {
+		var = bos_scribes_ready
+		value = -1
+	}
+	if = {
+		limit={
+			has_active_mission = bos_delayed_scribes_large
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+			remove_mission = bos_delayed_scribes_large
+		}
+	}
+activate_mission = bos_delayed_scribes_large
+}
 bos_upgrade_expeditionary_outposts = {
 	if = {
 		limit = {

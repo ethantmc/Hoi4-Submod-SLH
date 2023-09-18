@@ -3222,6 +3222,10 @@ bos_lost_hills_diplomacy = {
 		allowed = {
 			NOT = {
 				original_tag = NCR
+			}
+		}
+		available = {
+			NOT = {
 				is_in_faction_with = NCR #is_ally_with doesn't work here for some reason.
 			}
 		}
