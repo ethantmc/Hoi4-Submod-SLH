@@ -353,3 +353,13 @@
   nf_brotherhood.41.title:0 "The Chain that Binds"
   nf_brotherhood.41.desc:0 "[BOS.GetLeader] calls for our aid, for the Brotherhood faces its darkest hour. More implacable than the Master's armies - more massive than the Enclave's war machine - the NCR now threatens all we hold dear and seeks to crush the Brotherhood. Unless we help Lost HIlls, California will fall to the same darkness that led to the great war. \n\nSo let us follow the Codex and prepare for battle. We will keep the Wasteland safe, as we have always done."
   nf_brotherhood.41.a:0 "Ad Victoriam!"
+
+
+##SRG
+  nf_brotherhood_steel_rangers.10.t: "The Bear Force Goes Nuclear"
+  nf_brotherhood_steel_rangers.10.d: "[NCR.getLeader] has brought the Bear Force to a level of sophistication rivaling America. While it's impossible to field them in the numbers or with the kind of support America once gave the Air Force, there is no longer any benefit to us trying to reintroduce these technologies more slowly - [NCR.getLeader]'s administration is already pressuring us to begin production of these new airframes, given the threats our civilization faces.\n\n[SRG.getLeader], this is a concerning development, but if we'd tried to stop this, we'd find Californians less receptive to our ideology, not more."
+  nf_brotherhood_steel_rangers.10.a: "Have our scribes retrieve our data stores from subterranean storage."
+
+  nf_brotherhood_steel_rangers.11.t: "The Bear Force Gets Vertibirds"
+  nf_brotherhood_steel_rangers.11.d: "[NCR.getLeader] has managed to acquire productions schematics for Vertibirds. As previously indicated by OSI, we have received these schematics as well, and are expected to begin production."
+  nf_brotherhood_steel_rangers.11.a: "Have we made a mistake?"

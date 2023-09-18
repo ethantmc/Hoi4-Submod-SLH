@@ -183,3 +183,7 @@
   bos_ncr_has_treaty_territory_tt: "Has owned territory to offer the Legion"
   bos_coring_disabled: "§YCoring§! states is §Rdisabled§!. Once this famine is over, it will be available once again."
   bos_coring_reenabled: "§YCoring§! states will be available once again."
+
+##SRG
+  paladin_stone_returns_tt: "§YPaladin Stone§! will join the §Y[SRG.getName]§!"
+  srg_vertibirds_but_no_schematics_tt: "The NCR has sent us some Vertibirds they recovered from San Francisco, but they could not acquire schematics. §YIf they do, we will acquire the schematics as well.§!"

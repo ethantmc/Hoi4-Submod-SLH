@@ -11012,7 +11012,6 @@ focus_tree = {
 					}
 				}
 			}
-			157 = {add_core_of = SRG}
 		}
 	}
 	focus = {
@@ -11928,13 +11927,25 @@ focus_tree = {
 		available = {
 			country_exists = NCR
 		}
+		bypass = {
+			is_in_faction_with = NCR
+		}
 		relative_position_id = srg_nuclear_weapons_studies
 		x = -1
 		y = 1
 		completion_reward = {
-			NCR = {
-				add_to_faction = SRG
+			if = {
+				limit = {
+					new_california_exists = yes
+				}
+				create_or_join_new_california = yes
 			}
+			else_if = {
+				limit = {
+					dharma_way_exists = yes		
+				}
+				create_or_join_dharma_way = yes
+			}				
 		}
 	}
 	focus = {

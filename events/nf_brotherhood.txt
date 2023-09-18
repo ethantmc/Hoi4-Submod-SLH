@@ -2725,7 +2725,11 @@ country_event = {
 					region = 51
 				}
 				add_core_of = SRG
-				SRG = { transfer_state = PREV }
+				SRG = { set_state_owner = PREV }
+				if = {
+					limit = { is_controlled_by = NCR }
+					SRG = { set_state_controller = PREV }
+				}
 			}
 		}
 		SRG = {
@@ -2748,6 +2752,26 @@ country_event = {
 		SRG = {
 			change_tag_from = BOS
 		}
+		remove_opinion_modifier = {
+			target = NCR
+			modifier = ncr_bos_war
+		}
+		remove_opinion_modifier = {
+			target = MOT
+			modifier = ncr_bos_war
+		}
+		NCR = {
+			remove_opinion_modifier = {
+				target = BOS
+				modifier = ncr_bos_war
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = BOS
+				modifier = ncr_bos_war
+			}
+		}
 	}
 }
 
@@ -2768,19 +2792,7 @@ country_event = {
 				SRG = { transfer_state = PREV }
 				remove_core_of = BOS		
 			}
-		}
-		if = {
-			limit = {
-				new_california_exists = yes
-			}
-			create_or_join_new_california = yes
-		}
-		else_if = {
-			limit = {
-				dharma_way_exists = yes		
-			}
-			create_or_join_dharma_way = yes
-		}					 
+		}	 
 		news_event = nf_brotherhood_steel_rangers.4
 		hidden_effect = { ##it's overidden from the history file sadly, so secretly fixed here.
 			set_technology = {
@@ -2880,14 +2892,21 @@ country_event = {
 	option = {
 		name = nf_brotherhood_steel_rangers.6.1
 		set_technology = { military_heritage_unlock_tech = 1 }
-		custom_effect_tooltip = military_heritage_unlock_tech_tt												  
+		custom_effect_tooltip = military_heritage_unlock_tech_tt	
+		effect_tooltip = {
+			SRG = {
+				set_technology = { military_heritage_unlock_tech = 1 }
+				add_to_tech_sharing_group = osi_research_pact
+			}
+		}										
+		add_to_tech_sharing_group = osi_research_pact	  
 	}
 }
 
 #Steel Rangers - California Tech Sharing Initiative ( SRG Pov )
 country_event = {
 	id = nf_brotherhood_steel_rangers.7
-	title = nf_brotherhood_steel_rangers.6.t
+	title = nf_brotherhood_steel_rangers.6.t#not a mistake
 	desc = nf_brotherhood_steel_rangers.7.d
 	picture = GFX_event_ncr_bos_relations
 
@@ -2896,6 +2915,14 @@ country_event = {
 	option = {
 		name = nf_brotherhood_steel_rangers.7.1
 		set_technology = { military_heritage_unlock_tech = 1 }
+		custom_effect_tooltip = military_heritage_unlock_tech_tt	
+		effect_tooltip = {
+			NCR = {
+				set_technology = { military_heritage_unlock_tech = 1 }
+				add_to_tech_sharing_group = osi_research_pact
+			}
+		}
+		add_to_tech_sharing_group = osi_research_pact
 	}
 }
 #Steel Rangers - The Field Scribe
@@ -2934,6 +2961,64 @@ country_event = {
 		effect_tooltip = {
 			add_research_slot = 1
 			set_province_name = { id = 3418 name = "Maxson State University" }
+		}
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_steel_rangers.10
+	title = nf_brotherhood_steel_rangers.10.t
+	desc = nf_brotherhood_steel_rangers.10.d
+	picture = GFX_event_vertibird_opening
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NCR = {
+			has_tech = air_tech_level_scientific
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = {
+		name = nf_brotherhood_steel_rangers.10.a
+		set_technology = {
+			air_tech_level_scientific = 1
+		}
+		custom_effect_tooltip = srg_vertibirds_but_no_schematics_tt
+		add_equipment_to_stockpile = {
+			type = vb_transport_plane_equipment
+			amount = 20
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = vb_gunship_equipment
+			amount = 20
+			producer = USA
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_steel_rangers.11
+	title = nf_brotherhood_steel_rangers.11.t
+	desc = nf_brotherhood_steel_rangers.11.d
+	picture = GFX_event_vertibird_opening
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NCR = {
+			has_tech = vertibird_unlock_tech
+		}
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = {
+		name = nf_brotherhood_steel_rangers.11.a
+		set_technology = {
+			vertibird_unlock_tech = 1
 		}
 	}
 }
