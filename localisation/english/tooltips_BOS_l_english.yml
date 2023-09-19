@@ -186,4 +186,5 @@
 
 ##SRG
   paladin_stone_returns_tt: "§YPaladin Stone§! will join the §Y[SRG.getName]§!"
+  srg_advisers_return_tt: "Brotherhood Advisors are now available in addition to advisors from across California."
   srg_vertibirds_but_no_schematics_tt: "The NCR has sent us some Vertibirds they recovered from San Francisco, but they could not acquire schematics. §YIf they do, we will acquire the schematics as well.§!"
