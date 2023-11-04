@@ -10915,7 +10915,6 @@ focus_tree = {
 		y = 0
 		completion_reward = {
 			country_event = nf_brotherhood_steel_rangers.5
-			add_ideas = ncr_puppet_idea_settler
 		}
 	}
 	focus = {
