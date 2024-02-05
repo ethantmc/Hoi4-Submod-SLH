@@ -8,6 +8,7 @@
 #Original Tree by AntoniusMagnus & Oleg
 #Upkeep work by MrBlazzar
 #4.0 Tree by Zusk & Garnathor
+#Tree expansion, rebalance, etc done by ParadoxSong - if you're reading this, you're reading the file from the Lost Hills Expanded Submod!
 #
 #Primer Written by Zusk!
 #
@@ -5195,6 +5196,7 @@ focus_tree = {
 			remove_country_leader_trait = bos_shellshocked
 			add_corps_commander_role = {
 				character = BOS_jonathan_maxson
+				traits = {brotherhood_commander_trait}
 				skill = 4
 				attack_skill = 2
 				defense_skill = 3
@@ -5632,7 +5634,7 @@ focus_tree = {
 		id = bos_nf_circle_of_steel_brotherhood_spies
 		text = bos_nf_circle_of_steel_brotherhood_spies
 		icon = GFX_goal_bos_generic_infantry_1
-		cost = 15
+		cost = 30
 		prerequisite = {
 			focus = bos_nf_circle_of_steel
 		}
@@ -5659,6 +5661,11 @@ focus_tree = {
 					tag = BSF
 					token = token_civilian
 				}
+				BSF = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
+				
 			}
 			if = { 
 				limit = {
@@ -5677,6 +5684,10 @@ focus_tree = {
 					tag = MOJ
 					token = token_civilian
 				}
+				MOJ = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5695,6 +5706,10 @@ focus_tree = {
 					tag = GRD
 					token = token_civilian
 				}
+				GRD = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5714,6 +5729,10 @@ focus_tree = {
 					tag = WBH
 					token = token_civilian
 				}
+				WBH = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5733,6 +5752,10 @@ focus_tree = {
 					tag = TCA
 					token = token_civilian
 				}
+				TCA = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5751,6 +5774,10 @@ focus_tree = {
 					tag = MXC
 					token = token_civilian
 				}
+				MXC = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5769,6 +5796,10 @@ focus_tree = {
 					tag = MNC
 					token = token_civilian
 				}
+				MNC = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5789,6 +5820,10 @@ focus_tree = {
 					tag = TBH
 					token = token_civilian
 				}
+				TBH = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5809,6 +5844,10 @@ focus_tree = {
 					tag = BMW
 					token = token_civilian
 				}
+				BMW = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5829,6 +5868,10 @@ focus_tree = {
 					tag = BAP
 					token = token_civilian
 				}
+				BAP = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5849,6 +5892,10 @@ focus_tree = {
 					tag = BGF
 					token = token_civilian
 				}
+				BGF = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5869,6 +5916,10 @@ focus_tree = {
 					tag = BLS
 					token = token_civilian
 				}
+				BLS = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
 				limit = {
@@ -5889,6 +5940,10 @@ focus_tree = {
 					tag = ACH
 					token = token_civilian
 				}
+				ACH = {
+					set_country_flag = bos_cell
+				}
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 		}
 	}
@@ -5904,11 +5959,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_circle_of_steel
 		completion_reward = { ##Give small intelligence bonus on the NCR and MOT. 
-			set_temp_variable = { BOS_tension_to_add = 10 }
+			set_temp_variable = { BOS_tension_to_add = 15 }
 			bos_change_tension = yes
 			NCR = {
-				set_temp_variable = { BOS_tension_to_add = 10 }
+				set_temp_variable = { BOS_tension_to_add = 15 }
 				bos_change_tension = yes
+				set_country_flag = bos_cell
+				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			# add_intel = { ##decays anyways
 				# target = NCR
@@ -5932,6 +5989,10 @@ focus_tree = {
 				tag = NCR
 				token = token_civilian
 			}
+			MOT = {
+				set_country_flag = bos_cell
+				custom_effect_tooltip = bos_cell_infiltration_tt
+			}
 			add_operation_token = {
 				tag = MOT
 				token = token_civilian
@@ -5945,8 +6006,6 @@ focus_tree = {
 		cost = 30
 		prerequisite = {
 			focus = bos_nf_circle_of_steel_brotherhood_spies
-		}
-		prerequisite = {
 			focus = bos_nf_circle_of_steel_ncr_spies
 		}
 		x = 1
@@ -6054,6 +6113,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			bos_improve_bunker_construction = yes
 			set_temp_variable = { BOS_underground_construction_slots_to_add = 1 }
 			bos_add_underground_construction_slots = yes
 		}
@@ -6073,6 +6133,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_stability = 0.02
+			bos_improve_bunker_construction = yes
 			set_temp_variable = { BOS_underground_construction_slots_to_add = 1 }
 			bos_add_underground_construction_slots = yes
 		}
@@ -6096,6 +6157,7 @@ focus_tree = {
 				uses = 1
 				category = industry
 			}
+			bos_improve_bunker_construction = yes
 			set_temp_variable = { BOS_underground_construction_slots_to_add = 1 }
 			bos_add_underground_construction_slots = yes
 		}
@@ -6123,6 +6185,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+			bos_improve_bunker_construction = yes
 			set_temp_variable = { BOS_underground_construction_slots_to_add = 2 }
 			bos_add_underground_construction_slots = yes
 			
@@ -7257,6 +7320,7 @@ focus_tree = {
 			has_completed_focus = bos_nf_advanced_political_schema
 		}
 		completion_reward = {
+			custom_effect_tooltip = BOS_high_elder_activation_tt
 			activate_decision = BOS_solidify_head_elder_position
 		}
 	}
@@ -7349,9 +7413,9 @@ focus_tree = {
 		}
 		select_effect = {
 		add_ai_strategy = {
-				type = prepare_for_war
-				id = NCR
-				value = 200
+			type = prepare_for_war
+			id = NCR
+			value = 200
 		}
 		}
 		completion_reward = {
@@ -7639,6 +7703,7 @@ focus_tree = {
 			has_completed_focus = bos_nf_advanced_political_schema
 		}
 		completion_reward = {
+			custom_effect_tooltip = BOS_high_elder_activation_tt
 			activate_decision = BOS_solidify_head_elder_position
 		}
 	}

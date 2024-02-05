@@ -49,6 +49,11 @@
   lost_hills_wages: "Quartermaster Wages"
   lost_hills_cant_change_this_law: "As Lost Hills, we change this law through national focuses."
   bos_trade_modifier_to_lost_hills: "Lost Hills Trade Network"
+
+  #modded LHE but airbases is right up there
+  bos_political_agitation: "Agitated Brotherhood Sympathizers"
+  bos_political_agitation_desc: "The intellectuals have been agitated into political activity by an outside force. They aren't being subtle at all."
+  #end
   
   bos_bos_fighting_experience_1: "Insider Knowledge"
   bos_bos_fighting_experience_1_desc: "The day has come where the Brotherhood no longer stands as one. Our deep knowledge of one anothers equipment and tactics will make conflict bloody in a way previously thought unthinkable. Let's hope we can simply live apart."

@@ -13,6 +13,7 @@ add_namespace = nf_brotherhood_bunkered_divisions
 add_namespace = nf_brotherhood_expeditions
 add_namespace = nf_brotherhood_elh_events
 add_namespace = nf_brotherhood_foreign_assistance
+add_namespace = nf_brotherhood_operations
 # Delivering Justice
 country_event = {
 	id = nf_brotherhood_history.1
@@ -493,7 +494,7 @@ country_event = {
 		name = nf_brotherhood_arthur_maxson.3.a
 		BOS_arthur_maxson = {
 			add_corps_commander_role = {
-				traits={ perceptive_trait intelligent_trait }
+				traits={ perceptive_trait intelligent_trait brotherhood_commander_trait}
 				skill = 4
 				attack_skill = 2
 				defense_skill = 3
@@ -3147,8 +3148,8 @@ country_event = {
 	}
 }
 ## Foreign Assistance Events start here. This is an umbrella for "interact with others" whereas ELH events is internal.
- ##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event,
-					## so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
+##Naming Convention: followup events are named XXXYY, where X is the root event + 0 and Y is the current followup event,
+## so event 1's followup events would be 10Y, then 10YY past 9. Event 10's followup would be 100Y
 country_event = {
 	id = nf_brotherhood_foreign_assistance.1
 	title = nf_brotherhood_foreign_assistance.1.t  ##Lost Hills Expands Operations.
@@ -3164,7 +3165,7 @@ country_event = {
 		set_temp_variable = { caps_to_add = -100 }
 		add_caps = yes
 		random_owned_state  = {
-			# prioritize = {THIS.capital}##try to do this in the capital
+			#prioritize = {THIS.capital}##try to do this in the capital
 			##this probably doesn't work.
 			if = {
 				limit = {
@@ -3431,8 +3432,8 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_foreign_assistance.101.a ##Disparate no longer.
-
 		effect_tooltip = {
+			
 			custom_effect_tooltip = bos_reminder_about_caps
 			BOS = {
 				set_temp_variable = { caps_to_add = -100 }
@@ -3960,6 +3961,107 @@ country_event = {
 		name = nf_brotherhood_foreign_assistance.301.b ##Don't bother me with this again.
 		BOS = {
 			set_country_flag = no_more_notifications_foreign_301
+		}
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: hidden event nf_brotherhood_foreign_assistance.4 which sets notification flag" }
+	title = nf_brotherhood_foreign_assistance.4.t  ##Hidden event in Brotherhood nation that sends a notification event to Lost Hills.
+	desc = nf_brotherhood_foreign_assistance.4.d ##
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = no
+	fire_only_once = no
+	hidden = yes
+	mean_time_to_happen = {
+		days = 2 ##log complains but the trigger controls it.
+	}
+	trigger = {
+		is_brotherhood_nation = yes
+		is_in_array = {
+			array = global.bos_ledger_members
+			value = THIS
+		}
+		has_war = yes
+		NOT = {
+			is_in_faction_with = BOS
+			has_war_with = BOS
+			has_country_flag = sent_lost_hills_volunteer_notification
+			check_variable = {
+				var = modifier@cant_sent_volunteers_to_this_country
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.4.a ##Send notification event
+		if = {
+			limit = { 
+				NOT = {
+					has_country_flag = volunteer_notifications_ignored_by_lost_hills
+				}
+				BOS = {
+					NOT = {
+						has_country_flag = no_more_notifications_foreign_401
+					}
+				}
+			}
+		BOS = {
+			country_event = nf_brotherhood_foreign_assistance.402
+			log = "[GetDateText]: [Root.GetName]: Brotherhood sent volunteers notification" 
+		}
+		}
+		set_country_flag = sent_lost_hills_volunteer_notification
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.401
+	immediate = { log = "[GetDateText]: [Root.GetName]: hidden event nf_brotherhood_foreign_assistance.401 which clears notification flag" }
+	title = nf_brotherhood_foreign_assistance.4.t  ##Hidden event in Brotherhood nation that clears the notification flag for foreign_assistance.4, when they exit their active wars.
+	desc = nf_brotherhood_foreign_assistance.4.d ##
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = no
+	fire_only_once = no
+	minor_flavor = yes ##turning off minor popups will hide this event.
+	hidden = yes
+	mean_time_to_happen = {
+		days = 7
+	}
+	trigger = {
+		has_war = no
+		has_country_flag = sent_lost_hills_volunteer_notification
+		NOT = {
+			has_country_flag = volunteer_notifications_ignored_by_lost_hills
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.301.a
+		clr_country_flag = sent_lost_hills_volunteer_notification
+	}
+}
+country_event = {
+	id = nf_brotherhood_foreign_assistance.402
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_foreign_assistance.402 lost hills can send volunteers notification." }
+	title = nf_brotherhood_foreign_assistance.402.t  ## event in Brotherhood nation that clears the notification flag for foreign_assistance.4, when they exit their active wars.
+	desc = nf_brotherhood_foreign_assistance.402.d ##
+	picture = GFX_event_sub_generic_airport_interior 
+	is_triggered_only = yes
+	fire_only_once = no
+	minor_flavor = no ##turning off minor popups will hide this event.
+	option = {
+		name = nf_brotherhood_foreign_assistance.402.a ##Good to know.
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.402.b ##We have no interest in the plight of this Chapter.
+		FROM = {
+			set_country_flag = volunteer_notifications_ignored_by_lost_hills
+		}
+	}
+	option = {
+		name = nf_brotherhood_foreign_assistance.402.c ##Ignore Notifications From All Chapters
+		BOS = {
+			set_country_flag = no_more_notifications_foreign_401
 		}
 	}
 }
@@ -4930,10 +5032,10 @@ country_event = {
 			set_country_flag = legion_defence_pact_member
 		}
 		BOS = {
-			country_event = nf_brotherhood_elh_events.10003
+			news_event = nf_brotherhood_elh_events.10003
 		}
 		CES = {
-			country_event = nf_brotherhood_elh_events.10002
+			news_event = nf_brotherhood_elh_events.10002
 		}
 		hidden_effect = { ##Invite events for GRD,MOJ, and BSF.
 			GRD = {
@@ -5011,7 +5113,7 @@ country_event = {
 			bos_change_tension = yes
 		}
 		BOS = {
-			country_event = nf_brotherhood_elh_events.10004
+			news_event = nf_brotherhood_elh_events.10004
 		}
 		ai_chance = {
 			base = 1
@@ -5026,7 +5128,7 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10001" }
 	id = nf_brotherhood_elh_events.10001
 	title = nf_brotherhood_elh_events.10001.t 
-	desc = nf_brotherhood_elh_events.10001.d 
+	desc = nf_brotherhood_elh_events.10001.d  ##Explain the LDP to Chain That Binds chapters (BSF,MOJ,GRD)
 	picture = GFX_event_ncr_drummond_and_bos
 	is_triggered_only = yes
 	fire_only_once = no
@@ -5051,10 +5153,11 @@ news_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10002" }
 	id = nf_brotherhood_elh_events.10002
 	title = nf_brotherhood_elh_events.10002.t 
-	desc = nf_brotherhood_elh_events.10002.d  ##Explain the Legion Defence Pact
+	desc = nf_brotherhood_elh_events.10002.d  ##Explain the Legion Defence Pact to CES
 	picture = GFX_event_ncr_drummond_and_bos
 	is_triggered_only = yes
 	fire_only_once = yes
+	major = no
 	option = {
 		name = nf_brotherhood_elh_events.10002.a #Accept
 		add_war_support = 0.05
@@ -5069,10 +5172,11 @@ news_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10003" }
 	id = nf_brotherhood_elh_events.10003
 	title = nf_brotherhood_elh_events.10003.t 
-	desc = nf_brotherhood_elh_events.10003.d  ##NCR accepted
+	desc = nf_brotherhood_elh_events.10003.d  ##NCR accepted - BOS event
 	picture = GFX_event_ncr_drummond_and_bos
 	is_triggered_only = yes
 	fire_only_once = yes
+	major = no
 	option = {
 		name = nf_brotherhood_elh_events.10003.a #Great
 	}
@@ -5081,12 +5185,13 @@ news_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10004" }
 	id = nf_brotherhood_elh_events.10004
 	title = nf_brotherhood_elh_events.10004.t 
-	desc = nf_brotherhood_elh_events.10004.d  ##NCR declined
+	desc = nf_brotherhood_elh_events.10004.d  ##NCR declined - BOS event
 	picture = GFX_event_ncr_drummond_and_bos
 	is_triggered_only = yes
 	fire_only_once = yes
+	major = no
 	option = {
-		name = nf_brotherhood_elh_events.10004.b #The legion has the advantage.
+		name = nf_brotherhood_elh_events.10004.a #The legion has the advantage.
 	}
 }
 news_event = {
@@ -5096,9 +5201,22 @@ news_event = {
 	desc = nf_brotherhood_elh_events.10005.d  ##War!
 	picture = GFX_event_ncr_drummond_and_bos
 	is_triggered_only = yes
-	fire_only_once = no
+	fire_only_once = yes
+	major = no
 	option = {
-		name = nf_brotherhood_elh_events.10005.a #We could've been steadfast allies
+		name = nf_brotherhood_elh_events.10005.a #We March on the Legion!
+		if = {
+			limit = {
+				tag = BOS
+			}
+			country_event = nf_brotherhood_elh_events.100013
+			hidden_effect = {
+				country_event = {
+					id = nf_brotherhood_elh_events.100013 ##get the other branch a year later.
+					days = 365
+				}
+			}
+		}
 	}
 }
 country_event = {
@@ -5194,6 +5312,391 @@ country_event = {
 				has_manpower < 100
 				add = 5
 			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10007" }
+	id = nf_brotherhood_elh_events.10007
+	title = nf_brotherhood_elh_events.10007.t 
+	desc = nf_brotherhood_elh_events.10007.d  ##Demand reinstatement of MOJ
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_brotherhood_elh_events.10007.a #Decline, the BoS will have the opportunity to leave the Pact
+		BOS = {
+			country_event = {
+				id = nf_brotherhood_elh_events.10008 ##BoS Considers Leaving
+			}
+		}
+		log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10007 NCR Chose To Decline"
+		set_temp_variable = { BOS_tension_to_add = 20 }
+		bos_change_tension = yes
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = 20 }
+			bos_change_tension = yes
+		}
+		ai_chance = {
+			base = 1
+			##TODO Allgood should be more hesitant to decline
+			modifier = {
+				NCR = {
+					has_country_leader = NCR_allgood_murphy				
+				}
+				add = -1
+			}
+			modifier = { ##Is the BoS a significant contributor to the war compared to the NCR? They don't need to be anywhere near equal for them leaving to be a huge problem.
+				strength_ratio = {
+					tag = BOS
+					ratio > 9
+				}
+				add = 15
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio > 7 ##if the NCR is fielding 7 divisions for every 1 BoS division
+				}
+				add = 5
+			}
+			modifier = {
+				NCR = {
+					has_country_leader = NCR_grant_c_hayes				
+				}
+				factor = 2
+			}
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.10007.b #Restore MOJ
+		log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10007 NCR Chose To Restore MOJ"
+		news_event = { id = nf_brotherhood_elh_events.100010 }
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = -10 }
+			bos_change_tension = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					country_exists = MOJ
+				}
+			}
+			if = {
+				limit = {
+					country_exists = MOT
+				}
+				MOT = {
+					release_on_controlled = MOJ
+					set_autonomy = {
+						target = MOJ
+						autonomous_state = autonomy_free
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+			NCR = {
+				release_on_controlled = MOJ
+				set_autonomy = {
+					target = MOJ
+					autonomous_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+		}
+		NCR = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MOJ
+				}
+				MOJ = { transfer_state = PREV }
+			}
+		}
+		MOT = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MOJ
+				}
+				MOJ = { transfer_state = PREV }
+			}
+		}
+		MOJ = {
+			diplomatic_relation = {
+				country = NCR
+				relation = non_aggression_pact
+				active = yes
+			} 
+		}
+		BOS = {
+			add_to_faction = MOJ
+			puppet = MOJ ##They won't get puppet tree.
+			add_to_war = {
+				targeted_alliance = BOS
+				enemy = CES
+				hostility_reason = bos_LDP_join
+			}
+		}
+		hidden_effect = {
+			MOJ = {
+				add_manpower = 1500
+				add_equipment_to_stockpile = {
+					type = supply_equipment_1
+					amount = 500
+				}
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_3
+					amount = 1000
+				}
+				if = {
+					limit = {
+						has_country_flag = bos_supported_us
+					}
+					country_event = nf_brotherhood_communications.9 ##give them BoS mercs if Consider Aid was already used.
+				}
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_government = elites
+				add = -1
+			}
+			modifier = { ##Is the BoS a significant contributor to the war compared to the NCR? They don't need to be anywhere near equal for them leaving to be a huge problem.
+				strength_ratio = {
+					tag = BOS
+					ratio < 5
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 3
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 2
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = BOS
+					ratio < 1.5
+				}
+				add = 15
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10008" }
+	id = nf_brotherhood_elh_events.10008
+	title = nf_brotherhood_elh_events.10008.t 
+	desc = nf_brotherhood_elh_events.10008.d  ##Explain that the NCR has rejected restoring MOJ
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = nf_brotherhood_elh_events.10008.a #They knew the risks.
+		##send event to brotherhood nations with LDP status to white peace with CES
+		BOS = {
+			country_event = {
+				id = nf_brotherhood_elh_events.10009
+			}
+		}
+		every_country = {
+			if = {
+				limit = {
+					has_country_flag = is_brotherhood_nation
+					has_country_flag = legion_defence_pact_member
+				}
+				country_event = {
+					id = nf_brotherhood_elh_events.10009
+				}
+			}
+			else = {
+				news_event = nf_brotherhood_elh_events.100011
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.10008.b #The Legion must be stopped
+		NCR = {
+			country_event = {
+				id = nf_brotherhood_elh_events.100012 ##TODO
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_government = elites
+				add = -1
+			}
+			modifier = { ##Is the BoS a significant contributor to the war compared to the NCR? They don't need to be anywhere near equal for them leaving to be a huge problem.
+				strength_ratio = {
+					tag = NCR
+					ratio > 0.2
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = NCR
+					ratio > 0.33
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = NCR
+					ratio > 0.5
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = NCR
+					ratio > 1.0
+				}
+				add = 15
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.10009" }
+	id = nf_brotherhood_elh_events.10009
+	title = nf_brotherhood_elh_events.10009.t 
+	desc = nf_brotherhood_elh_events.10009.d  ##Explain that the NCR has rejected restoring MOJ, and so the BOS has annulled the LDP.
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = nf_brotherhood_elh_events.10009.a #We respect The Chain That Binds.
+		white_peace = CES
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+news_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.100010" }
+	id = nf_brotherhood_elh_events.100010
+	title = nf_brotherhood_elh_events.100010.t #The Mojave Brotherhood Resurgent
+	desc = nf_brotherhood_elh_events.100010.d  ##After intense negotiations at Shady Sands, the Brotherhood has seen the Mojave returned to the control of the Mojave Brotherhood, under a supervisory government.
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = no
+	major = yes
+	option = {
+		name = nf_brotherhood_elh_events.100010.a #Ad Victoriam!
+		trigger = {
+			has_country_flag = is_brotherhood_nation
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.100010.b #This war is too costly.
+		trigger = {
+			is_in_faction_with = NCR
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.100010.c #The Knight and The Bear may maul eachother, still.
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				has_country_flag = is_brotherhood_nation
+			}
+		}
+	}
+}
+news_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.100011" }
+	id = nf_brotherhood_elh_events.100011
+	title = nf_brotherhood_elh_events.100011.t #The Brotherhood Annuls the Legion Defense Pact
+	desc = nf_brotherhood_elh_events.100011.d  ##After intense negotiations at Shady Sands, the Brotherhood has failed to see the Mojave returned to the control of the Mojave Brotherhood, and has followed through on it's threats to NCR.getLeader to annul the pact entirely.
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = no
+	major = no
+	option = {
+		name = nf_brotherhood_elh_events.100011.a #They won't survive without us.
+		trigger = {
+			has_country_flag = is_brotherhood_nation
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.100011.b #We will win without them.
+		trigger = {
+			is_in_faction_with = NCR
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.100011.c #The Knight prepares to betray The Bear.
+		trigger = {
+			NOT = {
+				is_in_faction_with = NCR
+				has_country_flag = is_brotherhood_nation
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.100012" }
+	id = nf_brotherhood_elh_events.100012
+	title = nf_brotherhood_elh_events.100012.t 
+	desc = nf_brotherhood_elh_events.100012.d  ##The Brotherhood was Bluffing
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = nf_brotherhood_elh_events.100012.a #We knew as much. 
+		add_political_power = 250
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_elh_events.100013" }
+	id = nf_brotherhood_elh_events.100013
+	title = nf_brotherhood_elh_events.100013.t ##Expanding Operations: Air and Sea
+	desc = nf_brotherhood_elh_events.100013.d  ##Do air for Foreign Airbases, or do Sea for Expeditions?
+	picture = GFX_event_ncr_drummond_and_bos
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = nf_brotherhood_elh_events.100013.a #Just take this opportunity to regenerate our forces.
+		add_political_power = 150
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.100013.b
+		complete_national_focus = bos_nf_the_coast_of_california
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_brotherhood_elh_events.100013.c
+		complete_national_focus = bos_nf_the_airways_of_california
+		ai_chance = {
+			base = 1
 		}
 	}
 }
@@ -6102,7 +6605,7 @@ country_event = {
 					NOT = { tag = CES }
 				}
 			}
-			country_event = nf_brotherhood_elh_events.1701
+			news_event = nf_brotherhood_elh_events.1701
 		}
 		BOS = {
 			every_country = {
@@ -6111,7 +6614,7 @@ country_event = {
 					NOT = { tag = BOS }
 				}
 			}
-			country_event = nf_brotherhood_elh_events.1701
+			news_event = nf_brotherhood_elh_events.1701
 		}
 		ai_chance = {
 			base = 100
@@ -6137,7 +6640,7 @@ country_event = {
 		
 		}
 		BOS = {
-			country_event = nf_brotherhood_elh_events.1702
+			news_event = nf_brotherhood_elh_events.1702
 		}
 		ai_chance = {
 			base = 10
@@ -6158,7 +6661,7 @@ news_event = {
 	desc = nf_brotherhood_elh_events.1701.d #They've come begging
 	picture = GFX_event_CES_camp_2
 	is_triggered_only = yes
-	fire_only_once = no
+	fire_only_once = yes
 	option = {
 		name = nf_brotherhood_elh_events.1701.a#Accept
 		trigger = {
@@ -6359,8 +6862,9 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood_expeditions.2.b #the risk is too great
-		add_political_power = 20
+		add_political_power = 35
 		add_stability = 0.03
+		bos_improve_bunker_construction = yes
 		trigger = { NOT = { has_government = intellectuals}}
 		ai_chance = {
 			base = 10
@@ -6426,7 +6930,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.201.a #Learn about Mutants
 		bos_upgrade_mutant_experience_law = yes
-		army_experience = 10
+		army_experience = 15
 		ai_chance = {
 			base = 0
 		}
@@ -6442,7 +6946,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.201.c #Bring home the prototypes
 		add_tech_bonus = {
-		bonus = 0.2
+		bonus = 0.25
 		ahead_reduction = 3.0
 		uses = 2
 		category = plasma_weaponry_tech_category
@@ -6520,7 +7024,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.201.a #Learn about Mutants
 		bos_upgrade_mutant_experience_law = yes
-		army_experience = 10
+		army_experience = 15
 		ai_chance = {
 			base = 0
 		}
@@ -6536,7 +7040,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.201.c #Bring home the prototypes
 		add_tech_bonus = {
-		bonus = 0.2
+		bonus = 0.25
 		ahead_reduction = 3.0
 		uses = 2
 		category = plasma_weaponry_tech_category
@@ -6572,7 +7076,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.204.b
 		add_tech_bonus = {
-		bonus = 0.2
+		bonus = 0.25
 		ahead_reduction = 3.0
 		uses = 2
 		category = plasma_weaponry_tech_category
@@ -6595,7 +7099,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.201.a #Learn about Mutants
 		bos_upgrade_mutant_experience_law = yes
-		army_experience = 10
+		army_experience = 15
 		ai_chance = {
 			base = 0
 		}
@@ -6611,7 +7115,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.201.c #Bring home the prototypes
 		add_tech_bonus = {
-		bonus = 0.2
+		bonus = 0.25
 		ahead_reduction = 3.0
 		uses = 2
 		category = plasma_weaponry_tech_category
@@ -6698,7 +7202,7 @@ country_event = {
 		name = nf_brotherhood_expeditions.4.a #exchanged ideas
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
-		add_stability = 0.01
+		bos_improve_bunker_construction = yes
 		SLA = {
 			country_event = nf_brotherhood_expeditions.402
 		}
@@ -6724,7 +7228,7 @@ country_event = {
 		trigger = {has_government = elites}
 		add_timed_idea = {
 			idea = bos_brotherhood_looting
-			days = 180
+			days = 225
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment_1
@@ -6819,7 +7323,7 @@ country_event = {
 	}
 
 }
-#The Ghost Farm - Long Term Support -For Slags, Rhombians.
+#The Ghost Farm - Long Term Support -For Slags, Maxsonians.
 country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood_expeditions.403" }
 	id = nf_brotherhood_expeditions.403
@@ -6953,7 +7457,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = nf_brotherhood_expeditions.6.b #We should study the city, not it's history.
+		name = nf_brotherhood_expeditions.6.b #We should study the ruins, not the records.
 		add_tech_bonus = {
 			bonus = 0.2
 			uses = 1
@@ -7069,6 +7573,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.7.b #We didn't go
 		add_stability = 0.02
+		bos_improve_bunker_construction = yes
 		trigger = {NOT = {has_government = people}}
 		ai_chance = {
 		base = 10
@@ -7232,7 +7737,7 @@ country_event = {
 			days = 270
 		}
 		ai_chance = {
-		base = 100
+		base = 50
 		}
 	}
 	option = {
@@ -7242,7 +7747,7 @@ country_event = {
 		set_temp_variable = { caps_to_add = -30 }
 		add_caps = yes
 		ai_chance = {
-			base = 0
+			base = 50
 		}
 	}
 
@@ -7700,6 +8205,8 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.10.a #Peaceful Explorers
 		country_event = nf_brotherhood_expeditions.1004
+		bos_smart_delayed_expedition2_small = yes
+		bos_smart_delayed_scribes_small  = yes
 		ai_chance = {
 			base = 50
 		}
@@ -7707,6 +8214,8 @@ country_event = {
 	option = {
 		name = nf_brotherhood_expeditions.10.b #Warlike
 		country_event = nf_brotherhood_expeditions.1002
+		bos_smart_delayed_expedition2_small = yes
+		bos_smart_delayed_scribes_small  = yes
 		ai_chance = {
 			base = 50
 		}
@@ -7726,9 +8235,18 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_expeditions.1002.a #Study their tech, not if they were pirates.
-		country_event = nf_brotherhood_expeditions.1006
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = naval_light_hull_tech_category
+		}
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 2
+			category = cat_naval_doctrine
+		}
 		ai_chance = {
 			base = 0
 		}
@@ -7772,6 +8290,10 @@ country_event = {
 
 	option = {
 		name = nf_brotherhood_expeditions.1003.a #"Interesting. We could grow plenty of food in California."
+		country_event = {
+			id = nf_brotherhood_expeditions.1006
+			days = 15
+		}
 	}
 }
 #The Port of Honolulu: Mission of Peace
@@ -7807,7 +8329,7 @@ country_event = {
 		bos_upgrade_expeditionary_outposts = yes
 		add_ideas = bos_trade_with_hawaii
 		ai_chance = {
-			base = 40
+			base = 60
 		}
 	}
 	option = {
@@ -7819,7 +8341,7 @@ country_event = {
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
 		ai_chance = {
-			base = 60
+			base = 40
 		}
 	}
 	
@@ -7898,6 +8420,7 @@ country_event = {
 		name = nf_brotherhood_expeditions.11.e #Cancel the expedition. There is work to do.
 		set_temp_variable = {BOS_knowledge_gain = 1}
 		bos_add_knowledge = yes
+		bos_improve_bunker_construction = yes
 		ai_chance = {
 		base = 5 ##under most circumstances should be quite unlikely. If both TCA and WBH are dead, it's 16% chance to go and 83% chance to stay, roughly.
 		}
@@ -8810,12 +9333,20 @@ country_event = {
 		set_technology = { agriculture_industry_tech_7 = 1}
 		ai_chance = {
 			base = 10
+			modifier = {
+				factor = 0
+				AND = {		has_tech = underground_hydroponics_tech 
+				has_tech = underground_ventilation_tech
+				has_tech = underground_security_tech
+				has_tech = agriculture_industry_tech_6
+				has_tech = agriculture_industry_tech_7}
+			}
 			modifier = {has_government = elites factor = 0}
 		}
 	}
 	option = {
 		name = nf_brotherhood_expeditions.1306.b ##We took as many books as we could.
-		set_temp_variable = {BOS_knowledge_gain = 3}
+		set_temp_variable = {BOS_knowledge_gain = 4}
 		bos_add_knowledge = yes
 		ai_chance = {
 			base = 20
@@ -8825,9 +9356,11 @@ country_event = {
 		name = nf_brotherhood_expeditions.1306.c ##We focused on how it was built.
 		add_ideas = {bos_chinese_old_world_construction}
 		set_temp_variable = {
-			BOS_maximum_space_to_change = 15
+			BOS_maximum_space_to_change = 30
 		}
 		bos_change_maximum_space = yes
+		bos_improve_bunker_construction = yes
+		bos_improve_bunker_construction = yes
 		ai_chance = {
 			base = 10
 			modifier = {has_government = elites factor = 0}
@@ -8872,16 +9405,22 @@ country_event = {
 			amount = 25
 			producer = USA
 		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment_5
+			amount = 25
+			producer = USA
+		}
+		
 		ai_chance = {
 			base = 33
 		}
-		##Total IC = 240*25, 125*200 = 31k IC
+		##Total IC = 240*25, 125*200 +65*2*25 = ~34k IC
 	}
 	option = { #the supplies for policing
 		name = nf_brotherhood_expeditions.1307.b
 		add_equipment_to_stockpile = {
 			type = heavy_infantry_equipment_2
-			amount = 5000
+			amount = 5500
 			producer = USA
 		}
 		##Total IC = 32.5K
@@ -8907,15 +9446,242 @@ country_event = {
 			producer = USA
 		}
 		add_equipment_to_stockpile = {
-			type = power_armor_equipment_4 #11.9K IC
-			amount = 700
+			type = power_armor_equipment_4 #15K IC
+			amount = 850
 			producer = USA
 		}
 		ai_chance = {
 			base = 33
 		}
-		##27.3K IC not including tanks (assumption: Not all of these will be used by everyone.)
-		##40.0K IC including tanks.
+		##31.3K IC not including tanks (assumption: Not all of these will be used by everyone.)
+		##44.0K IC including tanks.
+	}
+}
+##copied from SHI's cool stuff by KD.
+country_event = {
+	id = nf_brotherhood_operations.1
+	title = nf_shi.1.t
+	desc = nf_shi.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.1.a
+		set_temp_variable = { caps_to_add = -15 }
+		add_caps = yes
+		hidden_effect = {
+			country_event = {
+				id = nf_brotherhood_operations.2
+				days = 10
+			}
+		}
+		ai_chance= {
+			base = 4
+		}
+	}
+	option = {
+		name = nf_shi.1.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_operations.2
+	title = nf_shi.2.t
+	desc = nf_shi.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.2.a
+		set_temp_variable = { caps_to_add = -45 }
+		add_caps = yes
+		hidden_effect = {
+			BOS = {
+				country_event = {
+					id = nf_brotherhood_operations.3
+				}
+			}
+			random_list = {
+				75 = {
+					country_event = {
+						id = nf_brotherhood_operations.5
+						days = 25
+					}
+				}
+				25 = {
+					country_event = {
+						id = nf_brotherhood_operations.4
+						days = 25
+					}
+				}
+			}
+			random_list = {
+				75 = {
+					country_event = {
+						id = nf_brotherhood_operations.5
+						days = 50
+					}
+				}
+				25 = {
+					country_event = {
+						id = nf_brotherhood_operations.4
+						days = 50
+					}
+				}
+			}
+			random_list = {
+				75 = {
+					country_event = {
+						id = nf_brotherhood_operations.5
+						days = 75
+					}
+				}
+				25 = {
+					country_event = {
+						id = nf_brotherhood_operations.4
+						days = 75
+					}
+				}
+			}
+			country_event = {
+				id = nf_brotherhood_operations.6
+				days = 100
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_shi.2.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_operations.3
+	title = nf_shi.3.t
+	desc = nf_shi.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.3.a
+		add_political_power = -75
+		FROM = {
+			clr_country_flag = bos_cell
+		}
+		custom_effect_tooltip = shi_cell_abandon_tt
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_shi.3.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_operations.4
+	title = nf_shi.4.t
+	desc = nf_shi.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.4.a
+		set_temp_variable = { caps_to_add = -15 }
+		add_caps = yes
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_shi.4.b
+		set_country_flag = bos_investigation_failed
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_operations.5
+	title = nf_shi.5.t
+	desc = nf_shi.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.5.a
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_operations.6
+	title = nf_shi.6.t
+	desc = {
+		trigger = {
+			NOT = {
+				has_country_flag = bos_investigation_failed
+			}
+		}
+		text = nf_shi.6.da
+	}
+	desc = {
+		trigger = {
+			has_country_flag = bos_investigation_failed
+		}
+		text = nf_shi.6.db
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			NOT = {
+				has_country_flag = bos_investigation_failed
+			}
+		}
+		name = nf_shi.6.a
+		clr_country_flag = bos_cell
+		set_country_flag = bos_expelled
+		BOS = {
+			country_event = {
+				id = nf_brotherhood_operations.7
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_country_flag = bos_investigation_failed
+		}
+		name = nf_shi.6.b
+		clr_country_flag = bos_investigation_failed
+	}
+}
+
+country_event = {
+	id = nf_brotherhood_operations.7
+	title = nf_shi.7.t
+	desc = nf_shi.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.7.a
+		add_political_power = -100
+		set_temp_variable = { caps_to_add = -35 }
+		add_caps = yes
 	}
 }
 # vim: set ft=pdx tw=79 :6

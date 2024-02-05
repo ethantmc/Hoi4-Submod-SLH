@@ -679,3 +679,39 @@ bos_reduce_famine = {
 		value = +1
 	}
 }
+bos_improve_bunker_construction = {
+	if = {
+		limit = {
+			NOT = {
+				has_variable = BOS_underground_construction_speed_up
+			}
+		}
+		set_variable = {
+			BOS_underground_construction_speed_up = 0
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = BOS_underground_construction_speed_up
+				value = 100
+				compare = less_than
+			}
+		}
+		add_to_variable = {
+			var = BOS_underground_construction_speed_up
+			value = 10
+			tooltip = bos_construction_speed_up_math
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = BOS_underground_construction_speed_up
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		set_country_flag = bos_faster_underground_construction
+	}
+}

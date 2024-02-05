@@ -213,6 +213,10 @@ set_variable = { BOS_space_usage = 0 }
 
 set_variable = { BOS_underground_construction_slots = @BOS_LOST_HILLS_STARTING_CONSTRUCTION_SLOTS }
 
+#LHE
+set_variable = { BOS_underground_construction_speed_up = 0 }
+#End
+
 set_variable = { BOS_maximum_condensed_workshops_allowed = @BOS_LOST_HILLS_MAX_CONDENSED_WORKSHOPS }
 set_variable = { BOS_maximum_admin_centers_allowed = @BOS_LOST_HILLS_MAX_ADMIN_CENTERS }
 set_variable = { BOS_maximum_safety_departments_allowed = 1 } #Hardcoded, its not a scaling one

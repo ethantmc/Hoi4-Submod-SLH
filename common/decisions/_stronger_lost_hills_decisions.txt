@@ -255,6 +255,99 @@ stronger_lost_hills_decisions = {
 				factor = 0
 			}
 		}
+	bos_mercenary_work = {
+		days_remove = 90
+		# days_re_enable = 5
+		allowed = {
+		}
+		available = {		
+			BOS={
+				ruler > 0.25
+			}
+			BOS_has_1_available_paladins = yes	
+			country_exists = NCR
+			NOT = {
+				BOS = {
+					has_war_with = NCR
+				}
+				BOS = {
+					has_completed_focus = bos_nf_preparing_for_the_ceasefires_end
+				}
+				check_variable = {
+					bos_tension > 90
+				}
+			}
+		}
+		visible = {
+			NOT = {
+				has_completed_focus = bos_nf_preparing_for_the_ceasefires_end
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				BOS = {
+					ruler < 0.25
+				}
+				BOS = {
+					has_war_with = NCR
+				}
+				BOS = {
+					has_completed_focus = bos_nf_preparing_for_the_ceasefires_end
+				}
+				check_variable = {
+					bos_tension > 90
+				}
+			}
+		}
+		cancel_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +1
+				tooltip = paladin_math_tooltip
+			}
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = -1
+			}
+			
+		}
+		remove_effect = {
+			set_variable = { pre_caps_to_add = 35}
+			set_variable = { mercenary_work_multiplier = 100}
+			subtract_from_variable = {
+				mercenary_work_multiplier = bos_tension
+			}
+			divide_variable = {
+				var = mercenary_work_multiplier
+				value = 100
+			}
+			multiply_variable = {
+				var = pre_caps_to_add
+				value = mercenary_work_multiplier
+			}
+
+			add_to_variable = {
+				var = bos_paladins_ready
+				value = +1
+				tooltip = paladin_math_tooltip
+			}
+			set_temp_variable = {caps_to_add = pre_caps_to_add}
+			log = "Current value of pre_caps_to_add in [THIS.GetName]: [?pre_caps_to_add]"
+			add_caps = yes
+			set_temp_variable = {
+				BOS_tension_to_add = 4
+			}
+			bos_change_tension = yes
+			NCR = {
+				set_temp_variable = {
+					BOS_tension_to_add = 4
+				}
+				bos_change_tension = yes
+			}
+		}
+	}
 	bos_open_the_market = {
 			icon = GFX_decision_single_cap
 			fire_only_once = no
@@ -806,10 +899,17 @@ stronger_lost_hills_decisions = {
 			}
 			custom_cost_text = naval_xp_more_than_50
 			available = {	
+				OR = {
 				has_idea = bos_trade_with_hawaii
+				is_debug = yes
+				}
 			}
 			visible = {
+				OR = {
 				has_idea = bos_trade_with_hawaii
+				is_debug = yes
+				}
+
 			}
 			complete_effect = {
 				hidden_effect = {
@@ -820,57 +920,13 @@ stronger_lost_hills_decisions = {
 			}
 			remove_effect = {
 				custom_effect_tooltip = bos_12_ships_hawaii_tt
-				hidden_effect = {
+				#hidden_effect = {
 				BOS = {
 					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
+						type = ship_hull_light_4
+						equipment_variant = ship_hull_light_4
 					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-					create_ship = {
-						type = ship_hull_light_3
-						creator = USA
-					}
-				}
+				#}
 				}
 			}
 		}
@@ -1094,208 +1150,204 @@ stronger_lost_hills_decisions = {
 			}
 	}
 	bos_help_moj = {
-			icon = GFX_decision_backpack
-			fire_only_once = yes
-			days_remove = 200
-			cost = 50
-			targets = {MOJ}
-			# days_re_enable = 5
-			allowed = {
-				tag = BOS
-			}
-			available = {
-				bos_has_scribe_teams = yes
-				custom_trigger_tooltip = {
-					tooltip = bos_2_paladins
-					if = {
-						BOS = {
-							check_variable = {BOS_paladins_ready > 1}
-						}
+		icon = GFX_decision_backpack
+		fire_only_once = yes
+		days_remove = 200
+		cost = 50
+		targets = {MOJ}
+		# days_re_enable = 5
+		allowed = {
+			tag = BOS
+		}
+		available = {
+			bos_has_scribe_teams = yes
+			custom_trigger_tooltip = {
+				tooltip = bos_2_paladins
+					BOS = {
+						check_variable = {BOS_paladins_ready > 1}
 					}
-				}
-				MOJ = {has_war_with = MOT
-				is_ai = yes}
-				MOT = {is_ai = yes}
 			}
-			visible = {
-				MOT = {
-				is_ai = yes
-				}
-				hidden_trigger = {
-					country_exists = MOT
-				}
+			MOJ = {has_war_with = MOT
+			is_ai = yes}
+			MOT = {is_ai = yes}
+		}
+		visible = {
+			MOT = {
+			is_ai = yes
 			}
-			complete_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = -2
-				}
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = -1
-					tooltip = scribe_math_tooltip
-				}
-				MOJ = {
-					add_to_variable = { MOJ.preperation = 15 }
-					calculate_preparation = yes
-				}
-			}
-
-			cancel_trigger = {
-			NOT = {country_exists = MOJ}
-			}
-			cancel_effect = {
-				random_list = {
-					75 = {
-						add_to_variable = {
-							var = BOS_paladins_ready
-							value = +1
-							tooltip = paladin_math_tooltip
-						}
-					}
-					5 = {
-						add_to_variable = {
-							var = BOS_paladins_ready
-							value = +2
-							tooltip = paladin_math_tooltip
-						}
-					}
-					20 = {
-						add_to_variable = {
-							var = BOS_paladins_ready
-							value = +0
-							tooltip = paladin_math_tooltip
-						}
-					}
-				}
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = +1
-					tooltip = scribe_math_tooltip
-				}
-			}
-			remove_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = +2
-					tooltip = paladin_math_tooltip
-				}
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = +1
-					tooltip = scribe_math_tooltip
-				}
-			}
-			ai_will_do = {
-				base = 1000
+			hidden_trigger = {
+				country_exists = MOT
 			}
 		}
-		bos_help_mxc = {
-			icon = GFX_decision_backpack
-			fire_only_once = no
-			days_remove = 200
-			cost = 50
-			targets = {MXC}
-			# days_re_enable = 5
-			allowed = {
-				tag = BOS
+		complete_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -2
 			}
-			available = {
-				bos_has_scribe_teams = yes
-				custom_trigger_tooltip = {
-					tooltip = bos_1_paladins
-					if = {
-						BOS = {
-							check_variable = {BOS_paladins_ready > 1}
-						}
-					}
-				}
-				OR = {
-					AND  = {				
-						MXC = {has_war_with = HAN
-						is_ai = yes}
-						HAN = {is_ai = yes}
-					}
-					AND = {
-						MXC = {has_war_with = ROB
-						is_ai = yes}
-						ROB = {is_ai = yes}
-					}
-					AND = {
-						MXC = {has_war_with = SCO
-						is_ai = yes}
-						SCO = {is_ai = yes}
-					}
-				}
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+				tooltip = scribe_math_tooltip
 			}
-			visible = {
-				MXC = {is_ai = yes}
-				OR = {
-					country_exists = ROB
-					country_exists = SCO
-					country_exists = HAN
-				}
-			}
-			complete_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = -1
-				}
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = -1
-					tooltip = scribe_math_tooltip
-				}
-				MXC = {
-					add_timed_idea = {
-						idea = bos_mxc_advice
-						days = 200
-					}
-				}
-			}
-
-			cancel_trigger = {
-			NOT = {country_exists = MXC}
-			}
-			cancel_effect = {
-				random_list = {
-					70 = {
-						add_to_variable = {
-							var = BOS_paladins_ready
-							value = +1
-							tooltip = paladin_math_tooltip
-						}
-					}
-					30 = {
-						add_to_variable = {
-							var = BOS_paladins_ready
-							value = +0
-							tooltip = paladin_math_tooltip
-						}
-					}
-				}
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = +1
-					tooltip = scribe_math_tooltip
-				}
-			}
-			remove_effect = {
-				add_to_variable = {
-					var = BOS_paladins_ready
-					value = +1
-					tooltip = paladin_math_tooltip
-				}
-				add_to_variable = {
-					var = bos_scribes_ready
-					value = +1
-					tooltip = scribe_math_tooltip
-				}
-			}
-			ai_will_do = {
-				base = 1000
+			MOJ = {
+				add_to_variable = { MOJ.preperation = 15 }
+				calculate_preparation = yes
 			}
 		}
+
+		cancel_trigger = {
+		NOT = {country_exists = MOJ}
+		}
+		cancel_effect = {
+			random_list = {
+				75 = {
+					add_to_variable = {
+						var = BOS_paladins_ready
+						value = +1
+						tooltip = paladin_math_tooltip
+					}
+				}
+				5 = {
+					add_to_variable = {
+						var = BOS_paladins_ready
+						value = +2
+						tooltip = paladin_math_tooltip
+					}
+				}
+				20 = {
+					add_to_variable = {
+						var = BOS_paladins_ready
+						value = +0
+						tooltip = paladin_math_tooltip
+					}
+				}
+			}
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +2
+				tooltip = paladin_math_tooltip
+			}
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	bos_help_mxc = {
+		icon = GFX_decision_backpack
+		fire_only_once = no
+		days_remove = 200
+		cost = 50
+		targets = {MXC}
+		# days_re_enable = 5
+		allowed = {
+			tag = BOS
+		}
+		available = {
+			bos_has_scribe_teams = yes
+			custom_trigger_tooltip = {
+				tooltip = bos_1_paladins
+					BOS = {
+						check_variable = {BOS_paladins_ready > 1}
+					}
+			}
+			OR = {
+				AND  = {				
+					MXC = {has_war_with = HAN
+					is_ai = yes}
+					HAN = {is_ai = yes}
+				}
+				AND = {
+					MXC = {has_war_with = ROB
+					is_ai = yes}
+					ROB = {is_ai = yes}
+				}
+				AND = {
+					MXC = {has_war_with = SCO
+					is_ai = yes}
+					SCO = {is_ai = yes}
+				}
+			}
+		}
+		visible = {
+			MXC = {is_ai = yes}
+			OR = {
+				country_exists = ROB
+				country_exists = SCO
+				country_exists = HAN
+			}
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = -1
+			}
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = -1
+				tooltip = scribe_math_tooltip
+			}
+			MXC = {
+				add_timed_idea = {
+					idea = bos_mxc_advice
+					days = 200
+				}
+			}
+		}
+
+		cancel_trigger = {
+		NOT = {country_exists = MXC}
+		}
+		cancel_effect = {
+			random_list = {
+				70 = {
+					add_to_variable = {
+						var = BOS_paladins_ready
+						value = +1
+						tooltip = paladin_math_tooltip
+					}
+				}
+				30 = {
+					add_to_variable = {
+						var = BOS_paladins_ready
+						value = +0
+						tooltip = paladin_math_tooltip
+					}
+				}
+			}
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = BOS_paladins_ready
+				value = +1
+				tooltip = paladin_math_tooltip
+			}
+			add_to_variable = {
+				var = bos_scribes_ready
+				value = +1
+				tooltip = scribe_math_tooltip
+			}
+		}
+		ai_will_do = {
+			base = 1000
+		}
+	}
 	}
 	##Scribes
 	stronger_lost_hills_scribe_council = {
@@ -2569,7 +2621,7 @@ bos_lost_hills_diplomacy = {
 		icon = GFX_decision_t51_vb_armor
 		fire_only_once = no
 		days_remove = 10
-		cost = 100
+		cost = 55
 		allowed = {
 			#has_country_flag = legion_defence_pact_member
 		}
@@ -2577,8 +2629,10 @@ bos_lost_hills_diplomacy = {
 			base = 1000
 		}
 		visible = {
+			AND = {
 			has_global_flag = bos_ncr_accepted_deal_for_maxson
 			has_country_flag = legion_defence_pact_member
+			}
 		}
 		available = {
 			country_exists = BOS
@@ -2588,6 +2642,8 @@ bos_lost_hills_diplomacy = {
 					BOS = {
 						has_war_with = CES
 					}
+				}
+				NOT = {
 					NCR = {
 						has_war_with = CES
 					}
@@ -2620,7 +2676,62 @@ bos_lost_hills_diplomacy = {
 				add_to_war = {
 					targeted_alliance = ROOT
 					enemy = CES
-					hostility_reason = asked_to_join
+					hostility_reason = bos_LDP_join
+				}
+				news_event = nf_brotherhood_elh_events.10005
+			}
+		}
+	}
+	bos_legion_defence_pact_demand_moj_reinstatement = {
+		icon = GFX_decision_t51_vb_armor
+		fire_only_once = yes
+		days_remove = 5
+		cost = 250
+		allowed = {
+			#has_country_flag = legion_defence_pact_member
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		visible = {
+			has_global_flag = bos_ncr_accepted_deal_for_maxson
+			has_country_flag = legion_defence_pact_member
+			NOT = {country_exists = MOJ}
+			tag = BOS
+		}
+		available = {
+			country_exists = BOS
+			has_war_with = CES
+			NOT = {country_exists = MOJ}
+			if = {
+				limit = {
+					MOJ = {
+						OR = {
+							any_core_state = {
+								is_controlled_by = NCR
+							}
+							any_core_state = {
+								is_controlled_by = MOT
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+
+		}
+		remove_effect = {
+			custom_effect_tooltip = bos_moj_reinstatement_ai_tt
+			BOS = {
+				set_temp_variable = { BOS_tension_to_add = 20 }
+				bos_change_tension = yes
+			}
+			NCR = {
+				set_temp_variable = { BOS_tension_to_add = 20 }
+				bos_change_tension = yes
+				country_event = {
+					id = nf_brotherhood_elh_events.10007
 				}
 			}
 		}
@@ -2766,16 +2877,14 @@ bos_lost_hills_diplomacy = {
 					has_war = yes
 				}
 			}
-			if = {
-				OR ={	
-					BOS = {
-						has_completed_focus = bos_nf_shi_chapter_cooperation
-						has_completed_focus = bos_nf_shi_the_emperors_blessing
-					}
-					has_tech = vertibird_unlock_tech
-					BOS = {
-						has_completed_focus = bos_nf_lancers
-					}
+			OR ={	
+				BOS = {
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
+				}
+				has_tech = vertibird_unlock_tech
+				BOS = {
+					has_completed_focus = bos_nf_lancers
 				}
 			}
 			if = {
@@ -2863,7 +2972,14 @@ bos_lost_hills_diplomacy = {
 			custom_effect_tooltip = bos_foreign_airbase_building_tt
 			FROM = {
 				country_event = nf_brotherhood_foreign_assistance.1
+				#add_relation_rule_override = {
+				#	target = BOS
+				#	usage_desc = BOS_equipment_trading
+				#	can_access_market = yes
+				#}
+				#give_market_access = BOS ##doesn't work, sadly.
 			}
+
 			bos_upgrade_foreign_airbases = yes
 		}
 		ai_will_do = {
@@ -2904,14 +3020,16 @@ bos_lost_hills_diplomacy = {
 				}
 			}
 			if = {
-				OR ={	
-					BOS = {
-						has_completed_focus = bos_nf_shi_chapter_cooperation
-						has_completed_focus = bos_nf_shi_the_emperors_blessing
-					}
-					has_tech = vertibird_unlock_tech
-					BOS = {
-						has_completed_focus = bos_nf_lancers
+				limit = {
+					OR ={	
+						BOS = {
+							has_completed_focus = bos_nf_shi_chapter_cooperation
+							has_completed_focus = bos_nf_shi_the_emperors_blessing
+						}
+						has_tech = vertibird_unlock_tech
+						BOS = {
+							has_completed_focus = bos_nf_lancers
+						}
 					}
 				}
 				has_completed_focus = bos_nf_frozen_politics_2
@@ -3687,7 +3805,7 @@ bos_lost_hills_diplomacy = {
 			}
 
 			cancel_trigger = {
-				BOS = {has_completed_focus = bos_nf_scavenging_power_armor_repair}!
+				BOS = {has_completed_focus = bos_nf_scavenging_power_armor_repair}
 			}
 			cancel_effect = {
 				add_to_variable = {
@@ -3917,7 +4035,7 @@ bos_lost_hills_diplomacy = {
 			}
 
 			cancel_trigger = {
-				BOS = {has_completed_focus = bos_nf_scavenging_advanced_vehicles}!
+				BOS = {has_completed_focus = bos_nf_scavenging_advanced_vehicles}
 			}
 			cancel_effect = {
 				add_to_variable = {
@@ -3973,18 +4091,16 @@ bos_lost_hills_steel_plague = {
 					}
 				}
 			}
-			if = {
-				OR ={	
-					BOS = {
-						has_completed_focus = bos_nf_shi_chapter_cooperation
-						has_completed_focus = bos_nf_shi_the_emperors_blessing
-					}
-					has_tech = vertibird_unlock_tech
-					BOS = {
-						has_completed_focus = bos_nf_lancers
-					}
-					is_neighbor_of = BOS
+			OR ={	
+				BOS = {
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
 				}
+				has_tech = vertibird_unlock_tech
+				BOS = {
+					has_completed_focus = bos_nf_lancers
+				}
+				is_neighbor_of = BOS
 			}
 			if = {
 				limit = {
@@ -4279,8 +4395,6 @@ stronger_lost_hills_ncr_occupation = {
 		fixed_random_seed = no
 		fire_only_once = yes
 		cost = 100
-		cancel_trigger = {
-		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
 			random_owned_state = {
@@ -4317,8 +4431,6 @@ stronger_lost_hills_ncr_occupation = {
 		fixed_random_seed = no
 		fire_only_once = yes
 		cost = 50
-		cancel_trigger = {
-		}
 		icon = mission_icon     # For GFX_decision_mission_icon
 		complete_effect = {
 			effect_tooltip = {

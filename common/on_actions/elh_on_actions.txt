@@ -39,6 +39,45 @@ on_actions = {
 			divide_variable = {bos_ruler_pop = 100}
 			divide_variable = {bos_people_pop = 2}	##33 weekly manpower is too much	
 		}
+		effect = {
+			set_variable = {
+				bos_inverse_tension = 100
+			}
+			subtract_from_variable = {
+				bos_inverse_tension = BOS.bos_tension
+			}
+		}
+	}
+	 	
+
+	on_state_control_changed = {
+		effect = { ##basically a "Swap Ideas" equivelant for these two modifiers.
+			if = {
+				limit = { 
+					FROM.FROM = { 
+						OR = {
+						has_dynamic_modifier = { modifier = bos_state_influence }
+						has_dynamic_modifier = { modifier = bos_state_influence_bos_controlled }
+						}
+					}
+				}
+				if =  {
+					limit = {
+						tag = BOS ##this is ROOT implicitly, the new controller
+					}
+					FROM.FROM = { ##the state in question
+						remove_dynamic_modifier = { modifier = bos_state_influence }
+						add_dynamic_modifier = { modifier = bos_state_influence_bos_controlled }
+					}
+				}
+				else = { 
+					FROM.FROM = {
+						add_dynamic_modifier = { modifier = bos_state_influence }
+						remove_dynamic_modifier = { modifier = bos_state_influence_bos_controlled }
+					}
+				}
+			}
+		}
 	}
 
 }

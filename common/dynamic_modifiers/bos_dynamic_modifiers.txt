@@ -106,7 +106,39 @@ bos_state_influence = {
 	resistance_target = -0.1
 	resistance_decay = 0.1
 	state_resources_factor = -0.15
+	local_manpower = -0.2
 	custom_modifier_tooltip = bos_state_influence_effect_tt
+	remove_trigger = {
+		AND = {
+			NOT = {
+				country_exists = BOS
+			}
+			NOT = {
+				country_exists = SRG
+			}
+	}
+	}
+}
+bos_state_influence_bos_controlled = {
+	enable = { always = yes }
+	icon = GFX_idea_generic_BOS_crate
+	attacker_modifier = yes ##If I'm understanding this right - the equipment capture boost will apply if attacking into the state from outside it, while controlling said state, and not to the NCR attacking the BoS.
+	resistance_growth = -0.03
+	resistance_target = -0.1
+	resistance_decay = 0.1
+	state_resources_factor = -0.15
+	equipment_capture_for_controller = 0.1
+	custom_modifier_tooltip = bos_state_influence_effect_tt
+	remove_trigger = {
+		AND = {
+			NOT = {
+				country_exists = BOS
+			}
+			NOT = {
+				country_exists = SRG
+			}
+	}
+	}
 }
 
 bos_lost_hills_logistics_state = {
@@ -116,6 +148,16 @@ bos_lost_hills_logistics_state = {
 	recruitable_population_factor = 0.3
 	recruitable_population = 0.03						  
 	state_production_speed_buildings_factor = BOS_condensed_civilian_workshop_modifier
+	remove_trigger = {
+		AND = {
+			NOT = {
+				country_exists = BOS
+			}
+			NOT = {
+				country_exists = SRG
+			}
+	}
+}
 }
 bos_training_hall = {
 	enable = { always = yes }

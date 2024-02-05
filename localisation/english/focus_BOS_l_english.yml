@@ -607,10 +607,11 @@
   bos_nf_opening_our_vaults: "Our Saved Technology"
   bos_nf_opening_our_vaults_desc: "There's some technologies and records we've left to gather dust for decades. The time has come to dust them off and prepare, for our future."
   bos_nf_bigger_threats: "Offer The Legion Defense Pact"
-  bos_nf_bigger_threats_desc: "The reality is, the NCR is not prepared to battle us and the Legion simultaneously. The track record of our faction in the Brotherhood is palatable to enough of the NCR's people in Maxson State, that it's not out of the question we could administer it without violence.\n\nThis is very similar to a deal some have floated for us to join the NCR as a state, but with a key difference - Maxson will be seceding to us, so long as we promise to create a state constitution applicable to citizens that is similar to the NCR's. A two-tier system for those in the brotherhood, versus those simply administered by it."
+  bos_nf_bigger_threats_desc: "The reality is, the NCR is not prepared to battle us and the Legion simultaneously, and we have no love for Caesar. The track record of our faction in the Brotherhood is palatable to enough of the NCR's people in Maxson State that it's not out of the question we could administer it without violence.\n\nThis is very similar to a deal some have floated for us to join the NCR as a state, but with a key difference - Maxson will be seceding to us, so long as we promise to create a state constitution applicable to its citizens that is similar to the NCR's. A two-tier system for those in the brotherhood, versus those simply administered by it."
   bos_nf_force_the_issue: "Maxson for a Truce"
   bos_nf_force_the_issue_desc: "While the NCR rejected our original proposal, now that the Legion has begun to push them back, we're in a much stronger position. We don't even need to declare formal war against the Legion, the simple promise not to march on Shady Sands ourselves is all the NCR can demand."
   bos_ncr_accepted_deal_for_maxson: "BoS-NCR Legion Defense Pact Created"
+  bos_LDP_join: "Legion Defense Pact Invoked"
   
   bos_nf_frozen_politics_0: "Our New Normal"
   bos_nf_frozen_politics_0_desc: "This time has seen much upheaval in America. The council of elders needs to adapt, based on the current political climate. Families influential for decades may find themselves fall from grace... or rise even higher."
@@ -940,6 +941,12 @@
   nf_brotherhood_foreign_assistance.301.a: "Let's see here..."
   nf_brotherhood_foreign_assistance.301.b: "Don't bother me with this again."
   
+  nf_brotherhood_foreign_assistance.402.t: "[FROM.getName] could receive our volunteers"
+  nf_brotherhood_foreign_assistance.402.d: "[FROM.getName] is at war, and the logistics are in place for the arrival of our volunteers, if we wish to send them. §BYou may ignore notifications from a specific chapter or all chapters with the buttons below.§!"
+  nf_brotherhood_foreign_assistance.402.a: "Interesting."
+  nf_brotherhood_foreign_assistance.402.b: "We have no interest in [FROM.getName]'s plight."
+  nf_brotherhood_foreign_assistance.402.c: "We don't want to hear about this for any Chapter."
+
   nf_brotherhood_elh_events.1.t: "The Price of Victory"
   nf_brotherhood_elh_events.1.d: "The people of the NCR have not forgotten us. Not too far from Necropolis, a patrol full of promising young Knights and their apprentices were pelted with tin cans, rocks, and rotten food while pacifying a town. Patrol leader Sanders, a Reformer and Senior Knight, withheld permission to disperse the townsfolk. Sanders was killed by a ranger while negotiating with the town's mayor. \n\nThe Rhombian patrol that visited next brought a portable generator and a Scribe to establish peaceful relations with the townsfolk. The next day, the town over was massacred by a Maxsonian-led squad for refusal to surrender their militia's Wattz laser pistols, which would've left them defenseless against creatures of the wasteland. \n\nThe Council must elect one Elder to direct the occupation of the NCR, or we risk the breakdown of trust and cohesion in our lower ranks."  
   nf_brotherhood_elh_events.1.a: "Debate drags on in the Council."
@@ -1060,7 +1067,7 @@
   nf_brotherhood_elh_events.10.a: "Accept"
   nf_brotherhood_elh_events.10.b: "Decline"
   
-  bos_legion_defence_pact_call: "Call members of the Legion Defence Pact to war"
+  bos_legion_defence_pact_call: "Call members of the Legion Defence Pact to War"
   bos_legion_defence_pact_call_desc: "All surviving Legion Defence Pact members will answer the call to war."
   legion_defence_pact_member: "A Member of the Legion Defence Pact"
   nf_brotherhood_elh_events.10001.t: "The Legion Defence Pact: Invitation" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
@@ -1072,23 +1079,61 @@
   nf_brotherhood_elh_events.10002.d: "[BOS.getName]'s Reformers faction has offered a defence pact to [NCR.getName] against us. We can't stop them, but we should prepare anti-armor equipment to deal with the threat of multiple Brotherhood chapters. \n\n§B The deal allows the NCR, BOS, Mojave Territories or Mojave Chapter to call each other to war with the Legion, should any end up at war. [BOS.GetName] will also be able to invite the Mojave, Guardian, and San Francisco Chapters to the Brotherhood, should they exist."
   nf_brotherhood_elh_events.10002.a: "We will make special preparations."
   
-  nf_brotherhood_elh_events.10003.t: "The Legion Defence Pact: NCR Accepted"
-  nf_brotherhood_elh_events.10003.d: "The [NCR.getName] has accepted our offer for a Defence Pact. We will respect the NCR's constitution and civil rights, in return for administrative control over the state of Maxson. The NCR hopes this is a prelude to our request for statehood, but we will keep battle plans ready against them, regardless."
+  nf_brotherhood_elh_events.10003.t: "The Legion Defence Pact"
+  nf_brotherhood_elh_events.10003.d: "The [NCR.getName] has accepted our offer for a Defence Pact. We will respect the NCR's constitution and civil rights, in return for administrative control over the state of Maxson. The NCR hopes this is a prelude to our request for statehood, but we will keep battle plans ready against them, regardless. Whenever a pact member is ready, they can call us to war against the Legion."
   nf_brotherhood_elh_events.10003.a: "Excellent."
   
-  nf_brotherhood_elh_events.10004.t: "The Legion Defence Pact: NCR Declined" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
+  nf_brotherhood_elh_events.10004.t: "The Legion Defence Pact: NCR Declined" 
   nf_brotherhood_elh_events.10004.d: "The [NCR.getName] has declined our offer of a Defence Pact. Perhaps they simply see no need for it, or perhaps they're suspicious we would still pursue a war, only after they're weakened by the Legion."
   nf_brotherhood_elh_events.10004.a: "The Legion has the advantage. Let's prepare."
   
-  nf_brotherhood_elh_events.10005.t: "The Legion Defence Pact: War!" ##TODO: DESCRIPTION MAY OMIT IMPORTANT EFFECTS( GIVING UP MAXSON??)
-  nf_brotherhood_elh_events.10005.d: "[PREV.getName] has called us to war under the terms of the Legion Defence Pact! Our troops make ready."
+  nf_brotherhood_elh_events.10005.t: "The Legion Defence Pact: War!"
+  nf_brotherhood_elh_events.10005.d: "[FROM.getName] has called us to war under the terms of the Legion Defence Pact! Our troops make ready."
   nf_brotherhood_elh_events.10005.a: "We march on the Legion!"
   
   nf_brotherhood_elh_events.10006.t: "[BOS.getName] demands Maxson!"
-  nf_brotherhood_elh_events.10006.d: "[BOS.getName], after our rejection of their pact, is seizing upon the opportunity provided by our war with the Legion. They demand the previously requested territories of maxson to be transferred to them immediately, or we'll face them on the battlefield. If we agree, they'll sign a non-aggression pact with us, but won't aid us against the Legion."
+  nf_brotherhood_elh_events.10006.d: "[BOS.getName], after our rejection of their pact, is seizing upon the opportunity provided by our war with the Legion. They demand the previously requested territories of Maxson to be transferred to them immediately, or we'll face them on the battlefield. If we agree, they'll sign a non-aggression pact with us, but won't aid us against the Legion."
   nf_brotherhood_elh_events.10006.a: "The Steel Menace ends today!"
   nf_brotherhood_elh_events.10006.b: "We have to agree..."
   bos_ncr_war_or_land_tt: "§CThe NCR is more likely to accept if their faction is evenly matched or losing.§! If the NCR §Rrejects§! our demands, §Rwe will immediately declare war§!, but if they §Gaccept§!:"
+
+  bos_legion_defence_pact_demand_moj_reinstatement: "Demand Restoration of the Mojave Chapter"
+  bos_moj_reinstatement_ai_tt: "§CThe NCR is more likely to accept your demands the closer your army strength it to theirs, ignoring all allies. Once your army is even a fifth of their size it begins to favor acceptance to account for the expected quality of your divisions.§!"
+  nf_brotherhood_elh_events.10007.t: "[BOS.getName] demands the Mojave!"
+  nf_brotherhood_elh_events.10007.d: "[BOS.getName], after our re-occupation of the Mojave Desert, is demanding we turn over control to the Mojave Brotherhood under threat of annulment the pact. They plan to re-establish the chapter under supervisory leadership, and promise there will be no further demands on us to maintain the Pact. Our spies have informed us there is no guarantee they follow through on their threat, but §Bthe closer [BOS.getName]'s' armed forces are to parity with us, the more likely it is.§! If they've managed to outnumber us, their annulment is virtually guaranteed, and we should expect them to declare war as soon as our treaties expire."
+  nf_brotherhood_elh_events.10007.a: "Decline, we don't need them."
+  nf_brotherhood_elh_events.10007.b: "[BOS.getLeader] has made an enemy today, but we accept."
+
+  nf_brotherhood_elh_events.10008.t: "[NCR.getName] rejects our demands!"
+  nf_brotherhood_elh_events.10008.d: "[BOS.getLeader], [NCR.getLeader] has rejected our demands to restore [MOJ.getName] to the Mojave. They believe the war has swung so far in their favor that they will hold the Legion back without us."
+  nf_brotherhood_elh_events.10008.a: "Then we annul our Pact and prepare for total war."
+  nf_brotherhood_elh_events.10008.b: "[NCR.getLeader] has made an enemy today, but the Legion must be stopped."
+
+  nf_brotherhood_elh_events.10009.t: "[NCR.getName] rejects the restoration of the Mojave Chapter!"
+  nf_brotherhood_elh_events.10009.d: "[NCR.getLeader] has rejected [BOS.getLeader]'s demands to restore [MOJ.getName] to the Mojave. The war has changed enough that they are confident that they will hold the Legion back without us, and [BOS.getLeader] has ordered the immediate cessation of hostilities with [CES.getName]. We will no doubt see war with the winner in order to bring California into steady hands, and as such the Elders have ordered us to continue our war footing."
+  nf_brotherhood_elh_events.10009.a: "[NCR.getLeader] is a fool."
+
+  nf_brotherhood_elh_events.100010.t: "[MOJ.getName] Resurgent"
+  nf_brotherhood_elh_events.100010.d: "[NCR.getLeader] has accepted [BOS.getLeader]'s demands to restore [MOJ.getName] to the Mojave. At this very moment, survivors, exiles, and volunteer colonists make their way back to the Mojave to restore Brotherhood operations in the region. It will be some time before [MOJ.getName] has its own Elder again, but it seems re-armamanet is being prioritized to fight [CES.getName]. A struggle for power in California between [NCR.getName] and [BOS.getName] it almost assured, as the NCR's Congress swallows this bitter pill."
+  nf_brotherhood_elh_events.100010.a: "Ad Victoriam!"
+  nf_brotherhood_elh_events.100010.b: "This war is too costly."
+  nf_brotherhood_elh_events.100010.c: "The Knight and Bear will surely fight again when [CES.getName] is defeated."
+
+  nf_brotherhood_elh_events.100011.t: "[BOS.getName] Annuls the Legion Defense Pact"
+  nf_brotherhood_elh_events.100011.d: "[NCR.getLeader] has declined [BOS.getLeader]'s demands to restore the Mojave Chapter as sole controller of the Mojave. At this very moment, the Brotherhood signatories to the Pact withdraw their forces from the fight against the Legion, having made it clear to [NCR.getLeader] that this would be the consequence for rejection. A struggle for power in California between The [NCR.getName] and [BOS.getName] it almost assured, as [NCR.getLeader] minimizes the situation, despite demanding Congress passes a new round of emergency funding for the Armed Forces."
+  nf_brotherhood_elh_events.100011.a: "They will never survive without us."
+  nf_brotherhood_elh_events.100011.b: "We will win without them."
+  nf_brotherhood_elh_events.100011.c: "The Knight has betrayed the Bear."
+
+  nf_brotherhood_elh_events.100012.t: "[BOS.getName] Does Not Annul the Legion Defense Pact"
+  nf_brotherhood_elh_events.100012.d: "[NCR.getLeader], despite declining [BOS.getName]'s demands, they have not annulled the Pact. It seems you've called their bluff! Congress is overjoyed at the news, and we be able to pass some legislation off this good news."
+  nf_brotherhood_elh_events.100012.a: "Leaving would've doomed them, and they know it."
+
+  nf_brotherhood_elh_events.100013.t: "Expanding Operations: Air and Sea"
+  nf_brotherhood_elh_events.100013.d: "[NCR.getLeader] has reduced the pressures applied to us in a further easing of tensions. We have the opportunity to bring Naval or Aerial technological blueprints off our holodisks and into the hands of manufactuers across Maxson. If we choose Air, we'll have the opportunity to continue focusing in the field and prepare §BForeign chapter airbases§! and §BPractice paradrop tactics§!, as well as researching nuclear aircraft. Pursuing a Navy will let us §BConduct expeditions across the Pacific§! and begin constituting a navy from scratch.  It'll be many months before Congress calms down enough for us to do this again, §B so we should choose wisely.§!"
+  nf_brotherhood_elh_events.100013.a: "Let's just regenerate our forces."
+  nf_brotherhood_elh_events.100013.b: "Anchorage is too promising too ignore."
+  nf_brotherhood_elh_events.100013.c: "The East has had great success with their Airforce."
 
   nf_brotherhood_elh_events.11.t: "California Burning"
   nf_brotherhood_elh_events.11.d: "[BOS.getLeader],\n\nThe situation in California has grown dire. Our occupation of the NCR has been met with a ruthless response from the Barons, lead by Anton Flynn, have tightened their grip on the food supply to devastating effect.\n\nFood prices have climbed quickly, with the result that people across California are struggling to put food on the table and the worst off are already going hungry.\n\nWhen traveld to the Barons' land to investigate the cause of this, we were met with violence - granaries were burned, and male livestock were slaughtered.\n\nIt's clear that the Barons are willing to go to any lengths to maintain their power, even if it means starving the people of California. We've backed off our presence in Baron lands to avoid an unstoppable famine, but the Barons remain influential in deciding if, when, and how severe this famine might be.\n\nThere is some good news - Southern California is still producing and selling food. But with the Barons controlling such a great share of the farms and livestock in the NCR, we must take swift action to ensure the people of California have sufficient access to the food they need to survive.\n\nWe urge you to consider next steps carefully. If we do not act soon, the consequences could be catastrophic.\n\n—Senior Knights Sean and Daniel Diaz, Agricultural Inspectors"
@@ -1337,7 +1382,7 @@
   nf_brotherhood_expeditions.6.t: "Irvine"
   nf_brotherhood_expeditions.6.d: "Utopia was once tall glass buildings and palm trees, with no crime nor poverty. Perhaps that's the reason it was no longer called Irvine, but the massive walls of Utopia have crumbled, and now it is Irvine once again. \n\nThe streets are covered with the remains of people and robots of the Irvine Land Corporation, and the only living souls in the city are those of our expedition."
   nf_brotherhood_expeditions.6.a: "What happened here?"
-  nf_brotherhood_expeditions.6.b: "We should study the city, not it's history."
+  nf_brotherhood_expeditions.6.b: "We should study the ruins, not the records."
   
   nf_brotherhood_expeditions.601.t: "The records of Utopia"
   nf_brotherhood_expeditions.601.d: "The scribes have investigated surviving records in Utopia, and it's clear the corporation controlled every level of society in Irvine, enforcing its pristine perception with an iron fist. The robots, controlled by a super computer in the middle of the city, were ostensibly the "helpers" that take care of the population's needs, but were in reality their overlords, controlling every aspect of their lives."
@@ -1353,11 +1398,11 @@
   nf_brotherhood_expeditions.7.reformers: "§CGruesome and pointless. We worked on the soft sciences instead.§!"
   
   nf_brotherhood_expeditions.701.t: "Golgotha Expedition"
-  nf_brotherhood_expeditions.701.d: "Golgotha isn't a conventional graveyard by any stretch of the imagination. We'd learned as much on our way to New Reno, hearing it was an infamous punishment more than some honored resting place. The individuals found there wouldn't be Vault Dwellers from the east, mad scientists, or even Van Graff gun runners. They'd probably be debtors, rabble-rousers, or the periphery of New Reno's crime families, the kind of people they'd not waste the effort to protect from one another.\n\nThe expedition had been without incidient, so Apprentice-Knight Roddy was told to take point for Golgotha, as their final test before being recognized as a full Knight. That was a mistake, as the poor kid was the first to smell it, the cloying stench of every stage of decay, mixing and churning in the blistering heat. Roddy's vomit sizzled on the ancient asphalt leading to the graveyard, and according to the Scribes, the helmet had to be torn down to get out the smell.\n\nWe quickly donned our own helmets, and Roddy was the first to spot that Golgotha was home to fresh victims strung up on posts, some still coherent enough for conversation. It seems these victims knew no mercy, with many were intentionally placed to see at least two others  — One a day or two ahead of them, and another who'd be sloughing off their post by the time the former had died.\n\nDespite everything we'd seen, the mission was still to recover materials from Golgotha, the scale of which would take weeks to search exhaustively. We tried to come up with a better option, and settled on..."
-  nf_brotherhood_expeditions.701.a: "Check at random."
-  nf_brotherhood_expeditions.701.b: "This is a bad idea. Let's gamble in Reno."
-  nf_brotherhood_expeditions.701.maxsonians: "§PCheck every grave and post.§!"
-  nf_brotherhood_expeditions.701.rhombians: "§gWe inquried about famous graves.§!"
+  nf_brotherhood_expeditions.701.d: "Golgotha isn't a conventional graveyard by any stretch of the imagination. We'd learned as much on our way to New Reno, hearing it was an infamous punishment more than some honored resting place. The individuals found there wouldn't be Vault Dwellers from the east, mad scientists, or even Van Graff gun runners. They'd probably be debtors, rabble-rousers, or the periphery of New Reno's crime families, the kind of people they'd not waste the effort to protect from one another.\n\nThe expedition had been without incidient, so Apprentice-Knight Roddy was told to take point for Golgotha, as their final test before being recognized as a full Knight. That was a mistake, as the poor kid was the first to smell it, the cloying stench of every stage of decay, mixing and churning in the blistering heat. Roddy's vomit sizzled on the ancient asphalt leading to the graveyard, and according to the Scribes, the helmet had to be torn down to get out the smell.\n\nWe quickly donned our own helmets, and Roddy was the first to spot that Golgotha was home to fresh victims strung up on posts, some still coherent enough for conversation. It seems these victims knew no mercy, with many intentionally placed to see at least two others  — One a day or two ahead of them, and another who'd be sloughing off their post by the time the former had died.\n\nDespite everything we'd seen, the mission was still to recover materials from Golgotha, the scale of which would take weeks to search exhaustively. We tried to come up with a better option, and settled on..."
+  nf_brotherhood_expeditions.701.a: "Checking at random."
+  nf_brotherhood_expeditions.701.b: "This being a bad idea. Let's gamble in Reno."
+  nf_brotherhood_expeditions.701.maxsonians: "§PChecking every grave and post.§!"
+  nf_brotherhood_expeditions.701.rhombians: "§gInquiring about famous graves.§!"
   bos_golgotha_mirroredshades: "Mirrored Shades"
   bos_golgotha_mirroredshades_desc: "Mirrored Shades looted from the Golgotha Graveyard in New Reno. People find the wearer quite charismatic."
   
@@ -1428,18 +1473,18 @@
   nf_brotherhood_expeditions.1001.b: ""
   
   nf_brotherhood_expeditions.1002.t: "The Port of Honolulu: Battle?"
-  nf_brotherhood_expeditions.1002.d: "Far from the fair shores of California, our fleet came upon an armada of Hawai'ian pirates. Their ships were inferior piles of scrap loaded with guns meant for shore, not sea. We crushed them easily, and resisted their lies about a 'mission of peace.' It was great combat experience."
-  nf_brotherhood_expeditions.1002.a: "They're technology differs from ours."
+  nf_brotherhood_expeditions.1002.d: "Far from the fair shores of California, our fleet came upon an armada of Hawai'ian pirates. Their ships were inferior piles of scrap compared to ours, loaded with guns meant for shore, not sea. We routed them easily, and resisted their lies about being simple fisherman on a "mission of peace". The surviving ships have scattered too widely to be contained, and no doubt the whole of Hawai'i will know we're coming.  While it was great combat experience, if their pirates are capable of getting their hands on this many metal-bottom boats, we're likely to be overwhelmed if we continue the Expedition."
+  nf_brotherhood_expeditions.1002.a: "We can't afford an invasion, but we can salvage their ships."
   nf_brotherhood_expeditions.1002.maxsonians: "§PTake and interrogate prisoners.§!"
   nf_brotherhood_expeditions.1002.rhombians: "§gDid we just kill fishermen?§!"
-  nf_brotherhood_expeditions.1002.reformers: "§CThey surrendered quickly.§!"
+  nf_brotherhood_expeditions.1002.reformers: "§CThey surrendered quickly, at least.§!"
   
   nf_brotherhood_expeditions.1003.t: "The Port of Honolulu: Pirates?"
   nf_brotherhood_expeditions.1003.d: "Interrogating the survivors of the battle at length, it's obvious we've made a mistake. The "armada" is a large group of migratory fishing vessels. They travel in such numbers and with such armaments because some of the predators of the sea have been known to immobilize or even sink small numbers of ships. Apparently, Hawai'i can't feed its population without fishing. There's a great opportunity here..."
   nf_brotherhood_expeditions.1003.a: "Interesting. We could grow plenty of food in California."
   
   nf_brotherhood_expeditions.1004.t: "The Port of Honolulu: Mission of Peace"
-  nf_brotherhood_expeditions.1004.d: "On our way to Hawai'i, our expedition encountered a numerous, heavily armed armada of small vessels in a combat formation. If it wasn't for our explicit orders to be peaceful, the platitudes and assertions from the Armada that they were on a "Mission of peace" would be nothing. Instead, we gave them a chance and the "armada" is clearly a large group of migratory fishing vessels. They travel in such numbers and with such armaments because some of the predators of the sea have been known to immobilize or even sink small numbers of ships, but they gladly shoulder this risk to feed the population of Hawai'i. There's a great opportunity here..."
+  nf_brotherhood_expeditions.1004.d: "On our way to Hawai'i, our expedition encountered a numerous, heavily armed armada of small vessels in a combat formation. If it wasn't for our explicit orders to be peaceful, the platitudes and assertions from the Armada that they were on a "Mission of peace" would be nothing. Instead, we gave them a chance, and the "armada" is actually a large group of migratory fishing vessels. They travel in such numbers and with such armaments because the predators in the sea here have been known to immobilize or even sink small numbers of light ships like theirs, but they gladly shoulder this risk to feed the population of Hawai'i. There's a great opportunity here..."
   nf_brotherhood_expeditions.1004.a: "Tell them we wish to establish trade, let us go to Hawai'i together."
   
   nf_brotherhood_expeditions.1005.t: "The Port of Honolulu: The Peaceful Islands of Hawai'i."
@@ -1526,10 +1571,10 @@
   nf_brotherhood_expeditions.12.a: "We await tomorrow's findings."
   
   nf_brotherhood_expeditions.1201.t: "Land of the Rising Sun: The Struggle"
-  nf_brotherhood_expeditions.1201.d: "We weren't able to approach the city as expected as the waters of its port are filled with powerful sea mines.\n\nOur only warning was a mutant Giant Squid being blown into thick chunks, making the seawaters a soupy mess that'd threaten damage to our engines - even if we could pick our way through the mines - and the decision was made to make a beach landing up the coast from the city. \n\nLater we were able to determine we'd landed in Toyohashi, a ruined but not remarkable metro area. After further travel northwest, we encountered a unit of infantry that was cleary ambushed by mutant animals, a menagerie of bipedal bears, dogs, birds, and even humanlike ogres much larger (and weaker) than Super Mutants.\n\nThe infantry unit had a collection of obviously salvaged weaponry, including many laser muskets and some chinese assault rifles. Most interestingly though, was a small detachment of power armoured individuals wielding similarly powered katanas conducting a fighting retreat as their unit moved to more favorable ground."
+  nf_brotherhood_expeditions.1201.d: "We weren't able to approach the city as expected as the waters of its port are filled with powerful sea mines.\n\nOur only warning was a mutant Giant Squid being blown into thick chunks, making the seawaters a soupy mess that'd threaten damage to our engines - even if we could pick our way through the mines - and the decision was made to make a beach landing up the coast from the city. \n\nLater we were able to determine we'd landed in Toyohashi, a ruined but not remarkable metro area. After further travel northwest, we encountered a unit of infantry that was being ambushed by mutant animals, a menagerie of bipedal bears, dogs, birds, and even humanlike ogres much larger (and weaker) than Super Mutants.\n\nThe infantry unit had a collection of obviously salvaged weaponry, including many laser muskets and some chinese assault rifles. Most interestingly though was the small detachment of power armoured individuals wielding similarly powered katanas conducting a fighting retreat as their unit moved to more favorable ground."
   nf_brotherhood_expeditions.1201.a: "We approached after the battle ended."
   nf_brotherhood_expeditions.1201.b: "We assisted them."
-  nf_brotherhood_expeditions.1201.c: "We wiped out both forces."
+  nf_brotherhood_expeditions.1201.c: "We must remain hidden - we wiped out both forces."
   
   nf_brotherhood_expeditions.1202.t: "Land of the Rising Sun: A Shaky Meeting"
   nf_brotherhood_expeditions.1202.d: "Only one member of the Japanese unit spoke any language we could understand, but the clear superiority of our equipment kept the peace long enough for us to communicate our intentions."
@@ -1543,7 +1588,7 @@
   nf_brotherhood_expeditions.1203.b: "We are here to find ruins, not solve problems."
   
   nf_brotherhood_expeditions.1204.t: "Land of the Rising Sun: A Quick End"
-  nf_brotherhood_expeditions.1204.d: "This land is clearly at war. We made the decision to attack both forces simultaneously in order to keep our presence here a secret, and our equipment gave us a massive advantage. Most losses came from our battles with the Ogres and the Japanese powered armour despite it clear inferiority to even t-45d\n\n In the aftermath, we had plenty of interesting things to study. The powered armour, the weaponry and the data they were carrying is all very valuable according to the Scribes."
+  nf_brotherhood_expeditions.1204.d: "This land is clearly at war. We made the decision to attack both forces simultaneously in order to keep our presence here a secret, and our equipment gave us a massive advantage. Most losses came from our battles with the Ogres and the Japanese powered armour despite it clear inferiority to even T-45d.\n\n In the aftermath, we had plenty of interesting things to study. The powered armour, the weaponry and the data they were carrying is all very valuable according to the Scribes."
   nf_brotherhood_expeditions.1204.a: "End the expedition. Study what we've found."
   nf_brotherhood_expeditions.1204.b: "There are plenty of ruins, we can find something more."
   
@@ -1603,7 +1648,7 @@
   nf_brotherhood_expeditions.1303.a: "That went well."
   
   nf_brotherhood_expeditions.1304.t: "Sailing the Yangtze: Upriver"
-  nf_brotherhood_expeditions.1304.d: "We've traveled the length of the Yangtze, and as we've traveled the control and force displayed by the Chinese Emperor has dwindled. By the time we'd reached the final river port and only a small office with a single official reminds you that you're still in the Emperor's territory. In addition, this leg of our journey had unsalvaged wreckage from the American Invasion of China present — Tanks, less degradable parts of American Combat Armour, and even microfusion cells stuck in the banks of the river. \n\nThe people here are quite free, and while they don't trade in Caps, we had enough precious goods to barter for the locations of valuable Pre-War ruins. We learned of two worthwhile locales — A large unmarked steel door in the mountains, and an American base in the plains that was stocked for occupation. The mountains... could it be some kind of Vault?"
+  nf_brotherhood_expeditions.1304.d: "We've traveled the length of the Yangtze, and as we've traveled the control and force displayed by the Chinese Emperor has dwindled. By the time we'd reached the final river port, only a small office with a single official reminds you that you're still in the Emperor's territory. This leg of our journey also had unsalvaged wreckage from the American Invasion of China — Tanks, less degradable parts of American Combat Armour, and even microfusion cells stuck in the banks of the river. \n\nThe people here are quite free, and while they don't trade in Caps, we had enough precious goods to barter for the locations of valuable Pre-War ruins. We learned of two worthwhile locales — A large unmarked steel door in the mountains that has foiled generations of scavengers, and an American base in the plains that was stocked for occupation. The mountains... could it be some kind of Vault?"
   nf_brotherhood_expeditions.1304.a: "Into the mountains, then."
   nf_brotherhood_expeditions.1304.b: "We can bring more back from the plains."
   
@@ -1642,6 +1687,7 @@
   bos_scribes_x_knowledge: "Has §Y[?BOS_need_knowledge_num]§! Available §YKnowledge§!. §g(Currently [?bos_scribes_knowledge])§!"
   bos_scribes_x_knowledge_gained: "Gain §Y[?BOS_knowledge_gain]§! §YKnowledge§!. §g(Currently you have [?bos_scribes_knowledge])§!"
   scribe_math_tooltip: "Scribe Teams ready: $RIGHT|+=1$"
+  bos_construction_speed_up_math: "Improved Underground Construction Research Progress: $RIGHT|+=2%%$"
   stronger_lost_hills_scribe_council: "Scribe Council"
   stronger_lost_hills_scribe_council_desc: "Direct the Scribe Council in their efforts to research and develop new technologies. They need us to go on §YExpeditions§! to recover old-world technology, or there will be nothing for them to study."
   bos_begin_rd: "Begin R&D"
@@ -1882,7 +1928,7 @@
   srg_preparing_against_bos_desc: "We've tried to convince the other Chapters to join with us, but some will need to be brought into the Rangers by force. We'd best prepare thoroughly for such a conflict."
   # Decisions
   bos_underground_construction_decisions:0 "Lost Hills Underground Management"
-  bos_underground_construction_decisions_desc:0 "Maximum Available Space: [?BOS_space_usage]/[?BOS_space]\nAvailable Construction Slots: [?BOS_underground_construction_slots] \nAdministrative Capacity: [?modifier@bos_administration_capacity_usage]/[?modifier@BOS_underground_administrative_capacity]\nUnderground Condensed Workshop: [?BOS_condensed_civilian_workshop]/[?BOS_maximum_condensed_workshops_allowed]\nUnderground Administration Centers: [?BOS_underground_building_administration_centers]/[?BOS_maximum_admin_centers_allowed]\nUnderground Safety Departments: [?BOS_underground_building_safety_department]/[?BOS_maximum_safety_departments_allowed]\nUnderground Laboratories: [?BOS_underground_building_lab]/[?BOS_maximum_labs_allowed] \nUnderground Training Facilities: [?BOS_underground_building_training]/[?BOS_maximum_training_facilities_allowed]\nUnderground Expeditionary Departments: [?BOS.BOS_expeditionary_departments]/[?BOS.BOS_maximum_expeditionary_departments_allowed]"
+  bos_underground_construction_decisions_desc:0 "Maximum Available Space: [?BOS_space_usage]/[?BOS_space]\nAvailable Construction Slots: [?BOS_underground_construction_slots] \nAdministrative Capacity: [?modifier@bos_administration_capacity_usage]/[?modifier@BOS_underground_administrative_capacity]\nImproved Underground Construction Research: [?BOS.BOS_underground_construction_speed_up]%\nUnderground Condensed Workshop: [?BOS_condensed_civilian_workshop]/[?BOS_maximum_condensed_workshops_allowed]\nUnderground Administration Centers: [?BOS_underground_building_administration_centers]/[?BOS_maximum_admin_centers_allowed]\nUnderground Safety Departments: [?BOS_underground_building_safety_department]/[?BOS_maximum_safety_departments_allowed]\nUnderground Laboratories: [?BOS_underground_building_lab]/[?BOS_maximum_labs_allowed] \nUnderground Training Facilities: [?BOS_underground_building_training]/[?BOS_maximum_training_facilities_allowed]\nUnderground Expeditionary Departments: [?BOS.BOS_expeditionary_departments]/[?BOS.BOS_maximum_expeditionary_departments_allowed]"
   bos_paladin_soldiers_decisions:0 "Lost Hills Paladins"
   bos_paladin_soldiers_decisions_desc:0 ""
   #bos_paladin_soldiers_decisions_desc:0 "Paladins Deployed: [?BOS_paladins_deployed] \nPaladins in Reserve: [?BOS_paladins_ready] \nPaladins KIA: [?BOS_paladins_casulties]"
@@ -1911,7 +1957,27 @@
   bos_underground_build_circuitry_generator_decision:0 "Construct Underground Circuitry Plants"
   bos_underground_build_expeditionary_department_decision: "Construct Underground Expeditionary Department"
   bos_underground_build_expeditionary_department_decision_desc: ""
-  bos_underground_build_circuitry_generator_decision_desc:0 ""
+  bos_underground_expansion_decision_2:0 "§GUnderground Expansion§!"
+  bos_underground_expansion_decision_2_desc:0 ""
+  bos_underground_expansion_decision_speed_up:0 "Research Bunker Construction Techniques"
+  bos_underground_expansion_decision_speed_up_desc:0 "Our Scribes will focus their efforts on researching more efficient bunker construction techniques. Eventually, this will lead to building §Yuncapped buildings§! faster while §Yimproving the speed we can conduct underground expansions.§!"
+  bos_underground_build_civilian_workshop_decision_2:0 "§GConstruct Underground Construction Facilities§!"
+  bos_underground_build_civilian_workshop_decision_2_desc:0 ""
+  bos_underground_condense_civilian_workshop_decision_2:0 "§GCondense Underground Construction Facilities§!"
+  bos_underground_condense_civilian_workshop_decision_2_desc:0 ""
+  bos_underground_build_military_workshop_decision_2:0 "§GConstruct Underground Arms Facilities§!"
+  bos_underground_build_military_workshop_decision_2_desc:0 ""
+  bos_underground_build_power_generator_decision_2:0 "§GConstruct Underground Power Facilities§!"
+  bos_underground_build_power_generator_decision_2_desc:0 ""
+  bos_underground_build_metal_generator_decision_2:0 "§GConstruct Underground Smelters§!"
+  bos_underground_build_metal_generator_decision_2_desc:0 ""
+  bos_underground_build_water_generator_decision_2:0 "§GConstruct Underground Water Purifiers§!"
+  bos_underground_build_water_generator_decision_2_desc:0 ""
+  bos_underground_build_circuitry_generator_decision_2:0 "§GConstruct Underground Circuitry Plants§!"
+  bos_underground_build_circuitry_generator_decision_desc_2:0 ""
+  bos_underground_build_expeditionary_department_decision_2: "§GConstruct Underground Expeditionary Department§!"
+  bos_underground_build_expeditionary_department_decision_desc_2: ""
+
   bos_underground_build_laboratory_decision:0 "Construct Underground Laboratories"
   bos_underground_build_laboratory_decision_desc:0 ""
   bos_underground_build_paladin_training_decision:0 "Construct Underground Training Facilities"
@@ -1951,6 +2017,12 @@
   bos_forge_new_paladins_desc:0 ""
   bos_recall_paladins:0 ""
   bos_recall_paladins_desc:0 ""
+  ##modded start
+  bos_mercenary_work: "Favors for Local Settlers"
+  bos_mercenary_work_desc: "Doing favors for locals can see us rewarded with caps, as we clear raiders, giant ant nests, and mirelurks from a towns surrounding territory. §YAs tensions rise, caps rewarded will decrease as NCR mayors are forced to toe the line.§! Still, it could be a significant boost to our trade with outsiders.\n §YThis will make us 35.00k caps, reduced by tension. 25 Tension will see us make 26.25k caps, and so on.§! "
+  BOS_high_elder_activation_tt: "§CTaking this focus does not save you any political power. However, you do not need to have the PP for the decision available, and may go into debt. You will also be able to take the next focus immediately if you otherwise meet its requirements.§!"
+
+##modded end
   # Tooltips
   paladins_unlock_tt:0 "Learn about the §GPaladins§!."
   add_4_paladins_tt:0 "Add §G4§! §YPaladin Units§! for §Ydeployment§!"

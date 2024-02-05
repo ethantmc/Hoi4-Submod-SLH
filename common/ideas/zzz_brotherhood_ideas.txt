@@ -463,6 +463,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				modifier_army_sub_unit_paladin_unit_speed_factor = -0.20
+				org_loss_when_moving = 0.20
 			}
 		}
 		bos_golgotha_mirroredshades = {
@@ -638,7 +639,9 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				land_night_attack = 0.15 ##This was going to be 10% but then I realized the BoS can't get Thermal Vision Devices. 	
+				land_night_attack = 0.12 ##This was going to be 10% but then I realized the BoS can't get Thermal Vision Devices. 	
+				operative_slot = 1
+				own_operative_detection_chance_factor = -0.1
 			}
 		}
 		bos_chinese_old_world_construction = {
@@ -1176,8 +1179,26 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				operative_slot = 1
+				operation_steal_enemy_supplies_outcome = 0.25
 			}
 		}
+		bos_political_agitation = {
+            picture = itz_idea_icdeb
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+				intellectuals_drift = 0.2
+            }
+        }
 		bos_ncr_reconstruction_campaign = {
 			picture = unique_ncr_trade_idea
 			allowed = {

@@ -1,0 +1,897 @@
+#   BOS OPERATIONS  #
+#      Originals(SHI) by KD, any differences by ParadoxSong (Lost Hills Expanded Author)     #
+
+bos_operation_construct_cell = {
+	icon = GFX_operations_coordinated_strike
+	map_icon = GFX_operations_coordinated_strike_map
+	name = bos_operation_construct_cell
+	desc = operation_construct_cell_desc
+
+	priority = 10
+	days = 160
+	network_strength = 60
+	operatives = 1
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			NOT = {
+				has_country_flag = bos_cell
+				has_country_flag = bos_expelled
+			}
+			OR = {
+				any_neighbor_country = {
+					has_country_flag = bos_cell
+				}
+				is_neighbor_of = BOS
+			}
+		}
+		ROOT = {
+			tag = BOS
+		}
+	}
+
+	available = {
+		tag = BOS
+	}
+
+	equipment = {
+		spec_ops_equipment = 25
+	}
+
+	risk_chance = 0.1
+	outcome_extra_chance = 0
+	outcome_modifiers = { target_sabotage_factor operation_outcome }
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		# shi gets a cell inside their target
+		FROM = {
+			set_country_flag = bos_cell
+		}
+	}
+	outcome_extra_execute = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_civilian
+			}
+		}
+	}
+	outcome_potential = {
+		# shi gets a cell inside their target
+		FROM = {
+			set_country_flag = bos_cell
+		}
+		custom_effect_tooltip = bos_cell_infiltration_tt
+	}
+
+	experience = 2.5
+	ai_will_do = {
+		base = 10
+		modifier = {
+			has_war_with = FROM
+			add = 10
+		}
+		modifier = {
+			is_neighbor_of = FROM
+			add = 10
+		}
+
+	}
+	phases = { #temp
+		infiltration_border = { base = 100 }
+	}
+	phases = { #infiltrate
+		infiltrate_military_ideological_supporter = { base = 100 }
+	}
+	phases = { #temp
+		exfiltration_go_to_ground = { base = 100 }
+	}
+}
+
+bos_operation_steal_weapons = {
+	icon = GFX_operations_infiltrate_armed_forces
+	map_icon = GFX_operations_infiltrate_armed_forces_map
+	name = bos_operation_steal_weapons
+	desc = operation_steal_weapons_desc
+
+	priority = 8
+	days = 80
+	network_strength = 40
+	operatives = 2
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			has_country_flag = bos_cell
+		}
+		ROOT = {
+			tag = BOS
+		}
+	}
+ 	required_tokens = {
+ 		token_army
+ 	}
+	available = {
+		tag = BOS
+		FROM = {
+			OR = {
+				has_equipment = {
+					power_armor_equipment > 200
+				}
+				has_equipment = {
+					energy_equipment_2 > 400
+				}
+				has_equipment = {
+					energy_equipment_3 > 400
+				}
+				has_equipment = {
+					energy_equipment_4 > 400
+				}
+			}
+		}
+	}
+
+	equipment = {
+		spec_ops_equipment = 25
+	}
+
+	risk_chance = 0.2
+	outcome_extra_chance = 0.35
+	outcome_modifiers = { operation_steal_enemy_supplies_outcome}
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		# shi gets guns
+		if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					power_armor_equipment > 200
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -100
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = 100
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_4 > 400
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_4
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_4
+					amount = 200
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_3 > 200
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = 200
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_2 > 200
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 200
+				}
+			}
+		}
+		else = {
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 200
+				}
+			}
+		}
+		remove_operation_token = {
+ 			tag = FROM
+ 			token = token_army
+ 		}
+		add_manpower = -50
+	}
+
+	outcome_extra_execute = {
+		if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					power_armor_equipment > 200
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = 200
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_4 > 400
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_4
+					amount = -400
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_4
+					amount = 400
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_3 > 400
+				}
+				}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = -400
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = 400
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					has_equipment = {
+						energy_equipment_2 > 400
+					}
+				}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = -400
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 400
+				}
+			}
+		}
+		else = {
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -400
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 400
+				}
+			}
+		}
+		FROM = {
+			hidden_effect = {
+				country_event = { id = nf_brotherhood_operations.1 }
+			}
+		}
+		ROOT = {
+		add_manpower = -25
+		}
+	}
+
+	outcome_potential = {
+		if = {
+			limit = {
+				FROM = {
+					has_equipment = {
+						power_armor_equipment > 200
+					}
+				}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = -100
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = 100
+				}
+			}
+		}
+		else_if = {
+			
+			limit = {
+				FROM = {
+					has_equipment = {
+						energy_equipment_4 > 400
+					}
+				}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_4
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_4
+					amount = 200
+				}
+			}
+		}
+		else_if = {
+			
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_3 > 200
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_3
+					amount = 200
+				}
+			}
+		}
+		else_if = {
+			
+			limit = {
+				FROM = {
+				has_equipment = {
+					energy_equipment_2 > 200
+				}
+			}
+			}
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 200
+				}
+			}
+		}
+		else = {
+			FROM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -200
+				}
+			}
+			ROOT = {
+				add_equipment_to_stockpile = {
+					type = energy_equipment_2
+					amount = 200
+				}
+			}
+		}
+		ROOT = {
+		add_manpower = -50
+		}
+		custom_effect_tooltip = shi_cell_investigate_tt
+	}
+
+	experience = 4.5
+	ai_will_do = {
+		base = 5
+	}
+	phases = { #temp
+		resistance_support_coordinate_groups = { base = 100 }
+	}
+	phases = { #infiltrate
+		buy_from_officers = { base = 100 }
+	}
+	phases = { #temp
+		leave_country = { base = 100 }
+	}
+}
+## operation_steal_enemy_supplies = {
+## 	icon = GFX_operations_infiltrate_armed_forces
+## 	map_icon = GFX_operations_infiltrate_armed_forces_map
+## 	name = operation_steal_enemy_supplies
+## 	desc = operation_steal_enemy_supplies_desc
+## 	priority = 1
+
+## 	days = 40
+## 	network_strength = 50
+## 	operatives = 2
+
+## 	visible = {
+## 		hidden_trigger = {
+## 			use_generic_operations = yes
+## 		}
+## 		network_national_coverage = {
+## 			target = FROM
+## 			value > 0
+## 		}
+## 		has_operation_token = {
+## 			tag = FROM
+## 			token = token_army
+## 		}
+## 	}
+
+## 	equipment = { }
+
+## 	available = {
+## 		hidden_trigger = {
+## 			use_generic_operations = yes
+## 		}
+## 	}
+
+## 	required_tokens = {
+## 		token_army
+## 	}
+
+## 	risk_chance = 0.2
+## 	risk_modifiers = { operation_steal_tech_risk operation_risk }
+## 	outcome_extra_chance = 0.25
+## 	outcome_modifiers = { operation_infiltrate_outcome operation_outcome }
+## 	cost_modifiers = { operation_infiltrate_cost operation_cost }
+## 	outcome_execute = {
+## 		FROM = {
+## 			add_equipment_to_stockpile = {
+## 				type = infantry_equipment
+## 				amount = -300
+## 			}
+
+## 			remove_operation_token = {
+## 				tag = FROM
+## 				token = token_army
+## 			}
+## 		}
+## 		ROOT = {
+## 			add_equipment_to_stockpile = {
+## 				type = infantry_equipment
+## 				amount = 300
+## 			}
+## 		}
+## 	}
+## 	outcome_extra_execute = { # SCOPE_OPERATION
+## 		random_list = {
+## 			33 = {
+## 				FROM = {
+## 					add_equipment_to_stockpile = {
+## 						type = infantry_equipment
+## 						amount = -700
+## 					}
+## 					add_equipment_to_stockpile = {
+## 						type = support_equipment
+## 						amount = -100
+## 					}
+## 					country_event = { id = spy_events.1 days = 1 }
+## 				}
+## 				ROOT = {
+## 					add_equipment_to_stockpile = {
+## 						type = infantry_equipment
+## 						amount = 700
+## 					}
+## 					add_equipment_to_stockpile = {
+## 						type = support_equipment
+## 						amount = 100
+## 					}
+## 				}
+## 			}
+## 			67 = {
+## 				FROM = {
+## 					add_equipment_to_stockpile = {
+## 						type = infantry_equipment
+## 						amount = -300
+## 					}
+## 					country_event = { id = spy_events.1 days = 1 }
+## 				}
+## 				ROOT = {
+## 					add_equipment_to_stockpile = {
+## 						type = infantry_equipment
+## 						amount = 300
+## 					}
+## 				}
+## 			}
+## 		}
+## 	}
+## 	outcome_potential = {
+## 		FROM = {
+## 			add_equipment_to_stockpile = {
+## 				type = infantry_equipment
+## 				amount = -200
+## 			}
+## 		}
+## 		ROOT = {
+## 			add_equipment_to_stockpile = {
+## 				type = infantry_equipment
+## 				amount = 200
+## 			}
+## 		}
+## 		custom_effect_tooltip = operation_outcome_consumes_token_tt
+## 	}
+## 	phases = { #infiltration
+## 		infiltration_border = { base = 100 }
+## 	}
+## 	phases = { #infiltrate military
+## 		steal_blueprints_bribe = { base = 50 }
+## 		steal_blueprints_seduction = { base = 50 }
+## 	}
+## 	phases = { #exfiltration
+## 		exfiltration_border = { base = 50 }
+## 		exfiltration_go_to_ground = { base = 50 }
+## 	}
+## }
+
+bos_operation_shi_weaken_leadership = {
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = bos_operation_shi_weaken_leadership
+	desc = operation_shi_weaken_leadership_desc
+
+	priority = 8
+	days = 80
+	network_strength = 20
+	operatives = 1
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			has_country_flag = bos_cell
+			tag = SHI
+		}
+		ROOT = {
+			tag = BOS
+		}
+	}
+
+	available = {
+		tag = BOS
+	}
+
+	equipment = {
+		support_equipment = 50
+	}
+
+	risk_chance = 0.15
+	outcome_extra_chance = 0.35
+	outcome_modifiers = { }
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		# shi gets guns
+		FROM = {	#NOTE# used to be ROOT, giving shi the debuff
+			add_timed_idea = {
+				idea = bos_political_agitation
+				days = 120
+			}
+		}
+		FROM = {
+			country_event = { id = nf_brotherhood_operations.1 }
+		}
+	}
+
+	outcome_extra_execute = {
+		FROM = {
+			add_timed_idea = {
+				idea = bos_political_agitation
+				days = 240
+			}
+		}
+		FROM = {
+				country_event = { id = nf_brotherhood_operations.1 }
+			}
+	}
+
+	outcome_potential = {
+		FROM = {
+			add_timed_idea = {
+				idea = bos_political_agitation
+				days = 120
+			}
+		}
+		FROM = {
+			country_event = { id = nf_brotherhood_operations.1 }
+		}
+	}
+
+	experience = 8
+	ai_will_do = {
+		base = 0
+		modifier = {
+			tag = SHI ##BoS AI should REALLY try and force Brotherhood Sympathizers. Should be interesting for players.
+			add = 100
+		}
+
+	}
+	phases = { #temp
+		resistance_support_coordinate_groups = { base = 100 }
+	}
+	phases = { #infiltrate
+		infiltrate_military_bribe = { base = 100 }
+	}
+	phases = { #temp
+		leave_country = { base = 100 }
+	}
+}
+
+bos_operation_shi_target_supplies = {
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = bos_operation_shi_target_supplies
+	desc = operation_shi_target_supplies_desc
+
+	priority = 8
+	days = 80
+	network_strength = 20
+	operatives = 1
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			has_country_flag = bos_cell
+		}
+		ROOT = {
+			tag = BOS
+		}
+	}
+
+	available = {
+		tag = BOS
+	}
+
+	equipment = {
+		spec_ops_equipment = 25
+	}
+
+	risk_chance = 0.15
+	outcome_extra_chance = 0.35
+	outcome_modifiers = { }
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		# shi gets guns
+		FROM = {	#NOTE# again, this should not be ROOT
+			add_timed_idea = {
+				idea = shi_supply_consumption
+				days = 90
+			}
+		}
+	}
+
+	outcome_extra_execute = {
+		FROM = {
+			add_timed_idea = {
+				idea = shi_supply_consumption
+				days = 90
+			}
+		}
+		FROM = {
+			hidden_effect = {
+				country_event = { id = nf_brotherhood_operations.1 }
+			}
+		}
+	}
+
+	outcome_potential = {
+		FROM = {
+			add_timed_idea = {
+				idea = shi_supply_consumption
+				days = 90
+			}
+		}
+		custom_effect_tooltip = shi_cell_investigate_tt
+	}
+
+	experience = 4.5
+	ai_will_do = {
+		base = 0
+		modifier = {
+			AND = {
+				has_war_with = FROM
+				is_neighbor_of = FROM
+			}
+			add = 25
+		}
+
+	}
+	phases = { #temp
+		resistance_support_coordinate_groups = { base = 100 }
+	}
+	phases = { #infiltrate
+		targeted_sabotage_destroy_bridge = { base = 100 }
+	}
+	phases = { #temp
+		leave_country = { base = 100 }
+	}
+}
+
+bos_operation_shi_gather_intelligence = {
+	icon = GFX_operations_infiltrate_civilian_govt
+	map_icon = GFX_operations_infiltrate_civilian_govt_map
+	name = bos_operation_shi_gather_intelligence
+	desc = operation_shi_gather_intelligence_desc
+
+	priority = 8
+	days = 80
+	network_strength = 20
+	operatives = 1
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			has_country_flag = bos_cell
+		}
+		ROOT = {
+			tag = BOS
+		}
+	}
+
+	available = {
+		tag = BOS
+	}
+
+	equipment = {
+		spec_ops_equipment = 25
+	}
+
+	risk_chance = 0.15
+	outcome_extra_chance = 0.35
+	outcome_modifiers = { }
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		ROOT = {	#NOTE# This be ROOT
+			add_intel = {
+				target = FROM
+				civilian_intel = 10
+				army_intel = 10
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+	}
+
+	outcome_extra_execute = {
+		ROOT = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 10
+				army_intel = 10
+				navy_intel = 10
+				airforce_intel = 10
+			}
+			hidden_effect = {
+				country_event = { id = nf_brotherhood_operations.1 }
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 10
+				army_intel = 10
+				navy_intel = 10
+				airforce_intel = 10
+			}
+		}
+		custom_effect_tooltip = shi_cell_investigate_tt
+	}
+
+	experience = 4.5
+
+	phases = { #temp
+		resistance_support_coordinate_groups = { base = 100 }
+	}
+	phases = { #infiltrate
+		capture_cyphers_smuggle = { base = 100 }
+	}
+	phases = { #temp
+		leave_country = { base = 100 }
+	}
+}

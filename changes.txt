@@ -144,3 +144,47 @@ Fixes:
 -Fixed the market decisions (Allow Select Traders, Open the Markets) no longer functioning due to a change in how vanilla hoi4 handles no-length decisions.
 -Fixed the extra Mutant Experience national spirit upgrade not increasing maximum past 5%, also applies to Legion. New maximums for both a 7.5% as there is an event offering an upgrade for each, with the legion event being new.
 -A bug with the "Supply Debates" event where Lost Hills would also get the mercenaries has been fixed. Additonally, a typo preventing the targeted chapter's name from being in the event text has been fixed.
+
+MINOR UPDATE:
+-Added the "Local Favours" Paladin mission. This is an early-game mission that generates Caps by doing favors for local border settlers, raising tensions with the NCR and keeping a Paladin unit busy. The opportunity cost of this is presumed to be pretty high, so it's mostly expected to be used in the very opening days of the game.
+
+-Added bonus outcome chance to the "Steal Enemy Supplies" mission by completing the Circle of Steel foci.
+-Adapted the Shi spying system for the Brotherhood of Steel as part of a broader rework of the Circle of Steel. Thank you KD for making something so cool in the first place!
+	-The Circle of Steel mini-tree has been further changed to support this. Notably, this gives you a strong opportunity against the NCR to steal equipment, or can be saved to sabotage them during the war.
+
+-Added notification events when you can send volunteers to a chapter, which can be muted.
+Made a number to how the Reformers mini-tree feels, to also support Reformers as an intended "Fallback Path" when RNG ruins your day and SHI,MOJ, and GRD all die:
+-Added the ability for Lost Hills to demand the restoration of the Mojave Chapter when fighting the legion together as part of the LDP.
+	-Please complain to Paradox Interactive that we can't check war participation directly...
+-Added an event if actually called into the NCR-CES war that allows you to unlock the Coast of California and Airways of California mini-trees (since you have maxson), though you may choose not to unlock one or both for extra PP.
+-Adjusted the "Brotherhood Presence" modifier for Maxson to reduce the available manpower when held by others. This should slightly reduce the difficulty of late wars against the NCR or helping using the LDP, as Maxson should retain more manpower for the BoS.
+
+
+-Added Underground Construction Research, which eventually allows you to do underground construction decisions (including expansion) faster. Well, most of them.
+-Also added some Underground Construction Research research progress to the Bunker Living mini-tree, as a small incentive to do it.
+
+Minor Changes:
+-Adjusted condensed workshops to require one less factory for the same bonus since nobody used them and they are even worse with the accelerated timeline for Reformers and Rhombians. 
+-Adjusted the Dig Deeper decision to grant two additional Underground Construction Slots when it completes, as a little bonus for the true mole-people in the Brotherhood of Steel.
+-Lost Hills AI will use the Increase Tension decision if "The Right War At The Right Time" has been completed, reducing the frequency of a stalled BoS-NCR due to tension math.
+-Lost Hills AI will do a better job at underground construction by stockpiling up to three Underground Construction Slots, rather than one.
+
+-Increased the Army XP for taking Mutant Tactical Experience in the Glow from 10 to 15.
+-Increased the PP gained for not entering the Glow from 20 to 35.
+-Not entering the Glow also grants 10% research progress on Improved Bunker Construction Research.
+
+-Reworked the Battle path of Port of Honolulu, fixing the unintended dead-end and other event flow issues.
+
+-Adjusted Maxsonian looting of The Ghost Farm from a 180 days bonus to 225 days.
+-Adjusted the Exchange of Ideas option in The Ghost Farm to reward 10% research progress on Improved Bunker Construction Research, instead of 1% stability.
+-Adjusted the Two Extra Toes debuff from the Toxic Caves to account for the tech rebalance from fast powered armour to slow powered armour. (Now you lose more org when moving)
+-Adjusted the Sailing the Yangtze: Space for A Million event options, increasing the Knowledge-only option from 3 to 4 knowledge, and the Mega-Engineering option to grant 20% Research Progress on Improved Bunker Construction.
+-Adjusted the Chinese Stealth Suits national spirit from Sailing the Yangtze from 15% Land Night Attack to 12% to match changes to the Thermal Vision Devices tech.
+-Also added +1 Operative Slots and -10% Detection Chance Factor for Own Operatives to Chinese Stealth Suits. Given how late it'll be before you get that, it's actual value is much worse than it first appears.
+-Adjusted the Sailing the Yangtze: Preparing For Occupation event options, adding 25 Nuclear Jetfighters to the Airforce option, and increasing the Riot Gear offered by the Suppression option to compensate for the IC difference.
+Fixes:
+-Adjusted the text of some expedition events to improve their grammar. Event text is harder to write than books.
+-Fixed bug with the NCR never calling the BOS to war against the Legion under certain circumstances after signing the Legion Defense Pact.
+-Fixed missing localization for the declined Legion Defense Pact.
+-Fixed news event not firing for LDP members when called to war. 
+
