@@ -113,11 +113,10 @@ country_event = {
 	option = {
 		name = nf_brotherhood_history.6.a
 		#set_country_flag = bos_administrative_decisions_enabled
-		custom_effect_tooltip = add_4_underground_slots_tt
-		add_to_variable = {
-			var = BOS_underground_construction_slots
-			value = 5
+		set_temp_variable = {
+			BOS_underground_construction_slots_to_add = 5
 		}
+		bos_add_underground_construction_slots = yes
 		add_political_power = 10					  
 	}
 }
@@ -9476,7 +9475,7 @@ country_event = {
 			}
 		}
 		ai_chance= {
-			base = 4
+			base = 1
 		}
 	}
 	option = {
@@ -9486,7 +9485,27 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = nf_brotherhood_operations.1001
+	title = nf_brotherhood_operations.1001.t
+	desc = nf_brotherhood_operations.1001.d
 
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 90
+	}
+	option = {
+		name = nf_shi.1001.a
+		FROM = {
+			set_country_flag = bos_cell
+		}
+		custom_effect_tooltip = bos_cell_infiltration_tt
+		ai_chance = {
+			base = 1
+		}
+	}
+}
 country_event = {
 	id = nf_brotherhood_operations.2
 	title = nf_shi.2.t
@@ -9558,7 +9577,7 @@ country_event = {
 	option = {
 		name = nf_shi.2.b
 		ai_chance = {
-			base = 0
+			base = 1
 		}
 	}
 }
@@ -9608,7 +9627,7 @@ country_event = {
 		name = nf_shi.4.b
 		set_country_flag = bos_investigation_failed
 		ai_chance = {
-			base = 0
+			base = 1
 		}
 	}
 }

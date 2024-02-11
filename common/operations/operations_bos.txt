@@ -662,9 +662,27 @@ bos_operation_shi_weaken_leadership = {
 				idea = bos_political_agitation
 				days = 120
 			}
-		}
-		FROM = {
-			country_event = { id = nf_brotherhood_operations.1 }
+			add_popularity = {
+				ideology = intellectuals
+				popularity = +0.05
+			}
+			if = {
+				limit = { 
+					NOT = {
+						SHI_has_ai_behavior_bos = yes
+					}
+					intellectuals > party_popularity@ruler
+					intellectuals > party_popularity@people
+					intellectuals > party_popularity@elites
+				}
+				clr_country_flag = SHI_ai_behavior_ncr
+				clr_country_flag = SHI_ai_behavior_independent
+				clr_global_flag = SHI_ai_behavior_ncr_global_flag
+				clr_global_flag = SHI_ai_behavior_independent_global_flag
+				clr_global_flag = SHI_ai_behavior_default_global_flag
+				set_country_flag = SHI_ai_behavior_bos
+				set_global_flag = SHI_ai_behavior_bos_global_flag
+			}
 		}
 	}
 
@@ -673,6 +691,10 @@ bos_operation_shi_weaken_leadership = {
 			add_timed_idea = {
 				idea = bos_political_agitation
 				days = 240
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = +0.1
 			}
 		}
 		FROM = {
@@ -686,10 +708,12 @@ bos_operation_shi_weaken_leadership = {
 				idea = bos_political_agitation
 				days = 120
 			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = +0.05
+			}
 		}
-		FROM = {
-			country_event = { id = nf_brotherhood_operations.1 }
-		}
+		custom_effect_tooltip = shi_cell_investigate_tt
 	}
 
 	experience = 8

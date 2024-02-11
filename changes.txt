@@ -166,6 +166,7 @@ Made a number to how the Reformers mini-tree feels, to also support Reformers as
 Minor Changes:
 -Adjusted condensed workshops to require one less factory for the same bonus since nobody used them and they are even worse with the accelerated timeline for Reformers and Rhombians. 
 -Adjusted the Dig Deeper decision to grant two additional Underground Construction Slots when it completes, as a little bonus for the true mole-people in the Brotherhood of Steel.
+-Finally added text to "Build Our Future Underground", even though if you're playing LHE it's probably not your first time.
 -Lost Hills AI will use the Increase Tension decision if "The Right War At The Right Time" has been completed, reducing the frequency of a stalled BoS-NCR due to tension math.
 -Lost Hills AI will do a better job at underground construction by stockpiling up to three Underground Construction Slots, rather than one.
 
@@ -182,6 +183,7 @@ Minor Changes:
 -Adjusted the Chinese Stealth Suits national spirit from Sailing the Yangtze from 15% Land Night Attack to 12% to match changes to the Thermal Vision Devices tech.
 -Also added +1 Operative Slots and -10% Detection Chance Factor for Own Operatives to Chinese Stealth Suits. Given how late it'll be before you get that, it's actual value is much worse than it first appears.
 -Adjusted the Sailing the Yangtze: Preparing For Occupation event options, adding 25 Nuclear Jetfighters to the Airforce option, and increasing the Riot Gear offered by the Suppression option to compensate for the IC difference.
+-Adjusted the starting commanders to have the trait boosting Heavy Special Forces, now that it no longer boosts Paladins only.
 Fixes:
 -Adjusted the text of some expedition events to improve their grammar. Event text is harder to write than books.
 -Fixed bug with the NCR never calling the BOS to war against the Legion under certain circumstances after signing the Legion Defense Pact.
