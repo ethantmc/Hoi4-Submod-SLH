@@ -484,6 +484,12 @@ focus_tree = {
 
 		completion_reward = {
 			add_research_slot = 1
+			hidden_effect = {
+				country_event = {
+					id = nf_brotherhood_operations.1001
+					days = 90
+				}
+			}
 		}
 		ai_will_do = {
 			base = 10
@@ -3811,8 +3817,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = bos_nf_high_elder_llwyd_torni_embrace_the_followers
 		prerequisite = {
-			focus = bos_nf_high_elder_llwyd_economic_plan
-			focus = bos_nf_high_elder_torni_economic_plan
+			focus = bos_nf_high_elder_llwyd_torni_embrace_the_followers
 		}
 		available = {
 			count_triggers = {
@@ -8259,7 +8264,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_moj_elijahs_downfall
 		icon = GFX_KHA_focus_ncr_tactics
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		relative_position_id = bos_nf_long_range_communications_mojave_chapter
@@ -8284,7 +8289,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_moj_recruiting_mcnamara
 		icon = GFX_goal_MOJ_mcnamara
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		relative_position_id = bos_nf_moj_elijahs_downfall
@@ -8642,7 +8647,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_tbh_an_unexpected_end
 		icon = GFX_goal_focus_arm_alamo
-		cost = 30
+		cost = 45
 		x = -1
 		y = 1
 
@@ -8820,7 +8825,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_ending_the_dream
 		icon = GFX_goal_bos_generic_usa
-		cost = 30
+		cost = 45
 		x = -1
 		y = 1
 

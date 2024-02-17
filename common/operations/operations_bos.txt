@@ -621,7 +621,7 @@ bos_operation_shi_weaken_leadership = {
 	icon = GFX_operations_boost_resistance
 	map_icon = GFX_operations_boost_resistance_map
 	name = bos_operation_shi_weaken_leadership
-	desc = operation_shi_weaken_leadership_desc
+	desc = bos_operation_shi_weaken_leadership_desc
 
 	priority = 8
 	days = 80
@@ -660,11 +660,11 @@ bos_operation_shi_weaken_leadership = {
 		FROM = {	#NOTE# used to be ROOT, giving shi the debuff
 			add_timed_idea = {
 				idea = bos_political_agitation
-				days = 120
+				days = 90
 			}
 			add_popularity = {
 				ideology = intellectuals
-				popularity = +0.05
+				popularity = +0.075
 			}
 			if = {
 				limit = { 
@@ -690,11 +690,28 @@ bos_operation_shi_weaken_leadership = {
 		FROM = {
 			add_timed_idea = {
 				idea = bos_political_agitation
-				days = 240
+				days = 180
 			}
 			add_popularity = {
 				ideology = intellectuals
-				popularity = +0.1
+				popularity = +0.15
+			}
+			if = {
+				limit = { 
+					NOT = {
+						SHI_has_ai_behavior_bos = yes
+					}
+					intellectuals > party_popularity@ruler
+					intellectuals > party_popularity@people
+					intellectuals > party_popularity@elites
+				}
+				clr_country_flag = SHI_ai_behavior_ncr
+				clr_country_flag = SHI_ai_behavior_independent
+				clr_global_flag = SHI_ai_behavior_ncr_global_flag
+				clr_global_flag = SHI_ai_behavior_independent_global_flag
+				clr_global_flag = SHI_ai_behavior_default_global_flag
+				set_country_flag = SHI_ai_behavior_bos
+				set_global_flag = SHI_ai_behavior_bos_global_flag
 			}
 		}
 		FROM = {

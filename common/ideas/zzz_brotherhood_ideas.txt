@@ -1196,7 +1196,7 @@ ideas = {
             removal_cost = -1
 
             modifier = {
-				intellectuals_drift = 0.2
+				intellectuals_drift = 0.3
             }
         }
 		bos_ncr_reconstruction_campaign = {

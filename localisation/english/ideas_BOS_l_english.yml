@@ -51,6 +51,7 @@
   bos_trade_modifier_to_lost_hills: "Lost Hills Trade Network"
 
   #modded LHE but airbases is right up there
+  bos_operation_shi_weaken_leadership_desc: "While the Crane School may be favored in San Francisco, our Delegation may be able to prevent Lo Pan from making a mistake, by showing the awesome power of powered-armour martial arts. If we can attract a school of learners."
   bos_political_agitation: "Agitated Brotherhood Sympathizers"
   bos_political_agitation_desc: "The intellectuals have been agitated into political activity by an outside force. They aren't being subtle at all."
   #end

@@ -809,7 +809,7 @@ country_event = {
 				limit = {
 					original_tag = SHI
 				}
-				NOT = { has_country_flag = san_francisco_chapter_established }
+				has_country_flag = san_francisco_chapter_established
 			}
 		}
 	}
@@ -9461,7 +9461,7 @@ country_event = {
 	id = nf_brotherhood_operations.1
 	title = nf_shi.1.t
 	desc = nf_shi.1.d
-
+	picture = GFX_event_generic_caravan_game
 	is_triggered_only = yes
 
 	option = {
@@ -9489,18 +9489,16 @@ country_event = {
 	id = nf_brotherhood_operations.1001
 	title = nf_brotherhood_operations.1001.t
 	desc = nf_brotherhood_operations.1001.d
-
-	is_triggered_only = no
+	picture = GFX_event_generic_caravan_game
+	is_triggered_only = yes
 	fire_only_once = yes
-	mean_time_to_happen = {
-		days = 90
-	}
 	option = {
-		name = nf_shi.1001.a
-		FROM = {
+		name = nf_brotherhood_operations.1001.a
+		SHI = {
 			set_country_flag = bos_cell
+			custom_effect_tooltip = bos_cell_infiltration_tt
 		}
-		custom_effect_tooltip = bos_cell_infiltration_tt
+
 		ai_chance = {
 			base = 1
 		}
@@ -9510,7 +9508,7 @@ country_event = {
 	id = nf_brotherhood_operations.2
 	title = nf_shi.2.t
 	desc = nf_shi.2.d
-
+	picture = GFX_event_generic_caravan_game
 	is_triggered_only = yes
 
 	option = {
@@ -9586,7 +9584,7 @@ country_event = {
 	id = nf_brotherhood_operations.3
 	title = nf_shi.3.t
 	desc = nf_shi.3.d
-
+	picture = GFX_event_generic_caravan_game
 	is_triggered_only = yes
 
 	option = {
@@ -9612,7 +9610,7 @@ country_event = {
 	id = nf_brotherhood_operations.4
 	title = nf_shi.4.t
 	desc = nf_shi.4.d
-
+	picture = GFX_event_generic_caravan_game
 	is_triggered_only = yes
 
 	option = {
@@ -9636,7 +9634,7 @@ country_event = {
 	id = nf_brotherhood_operations.5
 	title = nf_shi.5.t
 	desc = nf_shi.5.d
-
+	picture = GFX_event_generic_caravan_game
 	is_triggered_only = yes
 
 	option = {
@@ -9647,6 +9645,7 @@ country_event = {
 country_event = {
 	id = nf_brotherhood_operations.6
 	title = nf_shi.6.t
+	picture = GFX_event_generic_caravan_game
 	desc = {
 		trigger = {
 			NOT = {
@@ -9693,7 +9692,7 @@ country_event = {
 	id = nf_brotherhood_operations.7
 	title = nf_shi.7.t
 	desc = nf_shi.7.d
-
+	picture = GFX_event_generic_caravan_game
 	is_triggered_only = yes
 
 	option = {

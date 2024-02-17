@@ -164,6 +164,7 @@ Made a number to how the Reformers mini-tree feels, to also support Reformers as
 -Also added some Underground Construction Research research progress to the Bunker Living mini-tree, as a small incentive to do it.
 
 Minor Changes:
+-Adjusted the Mojave Chapter defeated foci to take 15 days instead of 30. Those days have been split up on "American Heartland" and "An Unexpected End", raising each from 30 to 45 days.
 -Adjusted condensed workshops to require one less factory for the same bonus since nobody used them and they are even worse with the accelerated timeline for Reformers and Rhombians. 
 -Adjusted the Dig Deeper decision to grant two additional Underground Construction Slots when it completes, as a little bonus for the true mole-people in the Brotherhood of Steel.
 -Finally added text to "Build Our Future Underground", even though if you're playing LHE it's probably not your first time.
