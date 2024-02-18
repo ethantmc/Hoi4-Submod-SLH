@@ -906,7 +906,7 @@ stronger_lost_hills_decisions = {
 			}
 			visible = {
 				OR = {
-				has_idea = bos_trade_with_hawaii
+				#has_idea = bos_trade_with_hawaii
 				is_debug = yes
 				}
 

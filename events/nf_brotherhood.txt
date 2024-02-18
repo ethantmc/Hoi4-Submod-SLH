@@ -2971,7 +2971,7 @@ country_event = {
 	desc = nf_brotherhood_steel_rangers.10.d
 	picture = GFX_event_vertibird_opening
 
-	is_triggered_only = yes
+	is_triggered_only = no
 	fire_only_once = yes
 	trigger = {
 		NCR = {
@@ -3005,7 +3005,7 @@ country_event = {
 	desc = nf_brotherhood_steel_rangers.11.d
 	picture = GFX_event_vertibird_opening
 
-	is_triggered_only = yes
+	is_triggered_only = no
 	fire_only_once = yes
 	trigger = {
 		NCR = {
@@ -5341,7 +5341,7 @@ country_event = {
 			##TODO Allgood should be more hesitant to decline
 			modifier = {
 				NCR = {
-					has_country_leader = NCR_allgood_murphy				
+					has_country_leader =  {character = NCR_allgood_murphy}	
 				}
 				add = -1
 			}
@@ -5361,7 +5361,7 @@ country_event = {
 			}
 			modifier = {
 				NCR = {
-					has_country_leader = NCR_grant_c_hayes				
+					has_country_leader = {character = NCR_grant_c_hayes}				
 				}
 				factor = 2
 			}
@@ -6460,7 +6460,7 @@ country_event = {
 	title = nf_brotherhood_elh_events.1603.t #The Barons: Reaction of the People
 	desc = nf_brotherhood_elh_events.1603.d #Did we do enough? 
 	picture = GFX_event_sub_generic_war_room
-	is_triggered_only = yes
+	is_triggered_only = no
 	fire_only_once = yes
 	trigger = {
 		OR = {
@@ -6529,7 +6529,7 @@ country_event = {
 	title = nf_brotherhood_elh_events.1604.t #The Barons: Anton Flynn Arrested Publicly
 	desc = nf_brotherhood_elh_events.1604.d #Anton's arrest
 	picture = GFX_event_sub_generic_war_room
-	is_triggered_only = yes
+	is_triggered_only = no
 	fire_only_once = yes
 	##Should there be sweeping changes in the province/region of redding in terms of resistance and compliance?
 	trigger = {

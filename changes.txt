@@ -153,7 +153,7 @@ MINOR UPDATE:
 	-The Circle of Steel mini-tree has been further changed to support this. Notably, this gives you a strong opportunity against the NCR to steal equipment, or can be saved to sabotage them during the war.
 
 -Added notification events when you can send volunteers to a chapter, which can be muted.
-Made a number to how the Reformers mini-tree feels, to also support Reformers as an intended "Fallback Path" when RNG ruins your day and SHI,MOJ, and GRD all die:
+Made a number to how the Reformers mini-tree feels, to also support Reformers as an intended "Fallback Path" when RNG ruins your day and SHI, MOJ, and GRD all die:
 -Added the ability for Lost Hills to demand the restoration of the Mojave Chapter when fighting the legion together as part of the LDP.
 	-Please complain to Paradox Interactive that we can't check war participation directly...
 -Added an event if actually called into the NCR-CES war that allows you to unlock the Coast of California and Airways of California mini-trees (since you have maxson), though you may choose not to unlock one or both for extra PP.
@@ -164,10 +164,14 @@ Made a number to how the Reformers mini-tree feels, to also support Reformers as
 -Also added some Underground Construction Research research progress to the Bunker Living mini-tree, as a small incentive to do it.
 
 Minor Changes:
+-Adjusted the starting commanders to have the trait boosting Heavy Special Forces, now that it no longer boosts Paladins only.
+
 -Adjusted the Mojave Chapter defeated foci to take 15 days instead of 30. Those days have been split up on "American Heartland" and "An Unexpected End", raising each from 30 to 45 days.
+
 -Adjusted condensed workshops to require one less factory for the same bonus since nobody used them and they are even worse with the accelerated timeline for Reformers and Rhombians. 
 -Adjusted the Dig Deeper decision to grant two additional Underground Construction Slots when it completes, as a little bonus for the true mole-people in the Brotherhood of Steel.
 -Finally added text to "Build Our Future Underground", even though if you're playing LHE it's probably not your first time.
+
 -Lost Hills AI will use the Increase Tension decision if "The Right War At The Right Time" has been completed, reducing the frequency of a stalled BoS-NCR due to tension math.
 -Lost Hills AI will do a better job at underground construction by stockpiling up to three Underground Construction Slots, rather than one.
 
@@ -180,14 +184,18 @@ Minor Changes:
 -Adjusted Maxsonian looting of The Ghost Farm from a 180 days bonus to 225 days.
 -Adjusted the Exchange of Ideas option in The Ghost Farm to reward 10% research progress on Improved Bunker Construction Research, instead of 1% stability.
 -Adjusted the Two Extra Toes debuff from the Toxic Caves to account for the tech rebalance from fast powered armour to slow powered armour. (Now you lose more org when moving)
+
 -Adjusted the Sailing the Yangtze: Space for A Million event options, increasing the Knowledge-only option from 3 to 4 knowledge, and the Mega-Engineering option to grant 20% Research Progress on Improved Bunker Construction.
 -Adjusted the Chinese Stealth Suits national spirit from Sailing the Yangtze from 15% Land Night Attack to 12% to match changes to the Thermal Vision Devices tech.
 -Also added +1 Operative Slots and -10% Detection Chance Factor for Own Operatives to Chinese Stealth Suits. Given how late it'll be before you get that, it's actual value is much worse than it first appears.
 -Adjusted the Sailing the Yangtze: Preparing For Occupation event options, adding 25 Nuclear Jetfighters to the Airforce option, and increasing the Riot Gear offered by the Suppression option to compensate for the IC difference.
--Adjusted the starting commanders to have the trait boosting Heavy Special Forces, now that it no longer boosts Paladins only.
+
+
 Fixes:
 -Adjusted the text of some expedition events to improve their grammar. Event text is harder to write than books.
 -Fixed bug with the NCR never calling the BOS to war against the Legion under certain circumstances after signing the Legion Defense Pact.
 -Fixed missing localization for the declined Legion Defense Pact.
 -Fixed news event not firing for LDP members when called to war. 
+-Fixed certain Steel Rangers events not firing if the NCR goes Hayes (unlocking sophisticated air tech and vertibirds for you as well)
+-Fixed the Californian Food Crisis conclusion events from not firing - you should now get the epilogue for how you dealt with Anton Flynn.
 
