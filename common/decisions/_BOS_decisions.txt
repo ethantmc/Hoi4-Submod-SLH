@@ -2298,6 +2298,7 @@ bos_paladin_soldiers_decisions = {
 						}
 					}
 				}
+
 			}
 			random_owned_controlled_state = {
 				create_unit = {

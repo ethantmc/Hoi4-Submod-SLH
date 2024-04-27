@@ -3265,7 +3265,7 @@ focus_tree = {
 						}
 					}
 					else = {
-						add_ideas = bos_civilian_distrust
+						#do nothing
 					}
 		}
 	}
@@ -3328,7 +3328,7 @@ focus_tree = {
 						}
 					}
 					else = {
-						add_ideas = bos_civilian_distrust
+						#do nothing
 					}
 		}
 	}
