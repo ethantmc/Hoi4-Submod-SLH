@@ -1732,7 +1732,7 @@
   bos_sent_volunteers_check: "§WHasn't sent any volunteers§!"
   
   bos_return_paladins:0 "Recall All Paladins"
-  bos_return_paladins_desc:0 "§WReturn our brothers from the field for work elsewhere.§! §RDue to technical limitations only all paladins can be recalled. This will reset their experience!§!"
+  bos_return_paladins_desc:0 "§WReturn our brothers from the field for work elsewhere.§! §RDue to technical limitations only all paladins can be recalled.§! §WThis will reset their experience, and§! §Grefund the equipment and manpower§! §Wused to raise them. §!"
   
   bos_create_paladins:0 "Deploy Paladins"
   bos_create_paladins_desc:0 "§WPaladins are §Gpowerful§!, if §Rlimited§!, §YPower Armour§! units available to [BOS.GetName]. They don't suffer from the normal §Yterrain maluses§! as normal Power Armour divisions, and don't affect our §YSpecial Forces capacity§!. We can gain more Paladins to deploy through §Yfocus rewards§!!§! §WThis version of the decision is §Rused by the AI§! and also §Gdeducts the correct amount of manpower.§!§!"
