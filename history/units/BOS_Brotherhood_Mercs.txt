@@ -12,33 +12,33 @@ division_template = {
 	is_locked = no
 }
 
-units = {
-	division = {
-		name = "Armored Mercenaries"
-		division_template = "Armored Mercenaries"
-		location = 6668
-		start_experience_factor = 0.55
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "Armored Mercenaries"
-		division_template = "Armored Mercenaries"
-		location = 6668
-		start_experience_factor = 0.55
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "Armored Mercenaries"
-		division_template = "Armored Mercenaries"
-		location = 6668
-		start_experience_factor = 0.55
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "Armored Mercenaries"
-		division_template = "Armored Mercenaries"
-		location = 6668
-		start_experience_factor = 0.55
-		start_equipment_factor = 1.0
-	}
-}
+## units = { ##unit creation moved to create_unit to spawn in capitals - exiled division behavior not consistently allowing walking to Chapter.
+## 	division = {
+## 		name = "Armored Mercenaries"
+## 		division_template = "Armored Mercenaries"
+## 		location = 6668
+## 		start_experience_factor = 0.55
+## 		start_equipment_factor = 1.0
+## 	}
+## 	division = {
+## 		name = "Armored Mercenaries"
+## 		division_template = "Armored Mercenaries"
+## 		location = 6668
+## 		start_experience_factor = 0.55
+## 		start_equipment_factor = 1.0
+## 	}
+## 	division = {
+## 		name = "Armored Mercenaries"
+## 		division_template = "Armored Mercenaries"
+## 		location = 6668
+## 		start_experience_factor = 0.55
+## 		start_equipment_factor = 1.0
+## 	}
+## 	division = {
+## 		name = "Armored Mercenaries"
+## 		division_template = "Armored Mercenaries"
+## 		location = 6668
+## 		start_experience_factor = 0.55
+## 		start_equipment_factor = 1.0
+## 	}
+## }

@@ -1103,26 +1103,31 @@ country_event = {
 	option = {
 		name = nf_brotherhood_communications.8.b
 		event_target:bos_consider_target = {
-			country_event = nf_brotherhood_communications.9
+			country_event = {
+				id = nf_brotherhood_communications.9
+				days = 14
+				random_days = 7
+			}
+			set_country_flag = bos_supported_us
 		}
 		add_political_power = -60
 		add_stability = -0.02
 		set_temp_variable = { caps_to_add = -40 }
 		add_caps = yes
 		custom_effect_tooltip = bos_merc_details
-		effect_tooltip = {
-			if = {
-				limit = {
-				is_ai = yes
-				}
-				add_equipment_to_stockpile = {
-					type = energy_equipment_2
-					amount = 500
-					producer = USA
-					}		
-			}
-			set_country_flag = bos_supported_us
-		}
+		## effect_tooltip = {
+		## 	if = {
+		## 		limit = {
+		## 		is_ai = yes
+		## 		}
+		## 		add_equipment_to_stockpile = {
+		## 			type = energy_equipment_2
+		## 			amount = 500
+		## 			producer = USA
+		## 			}		
+		## 	}
+		## }
+		set_country_flag = bos_supported_us
 		custom_effect_tooltip = bos_brotherhood_investment_sent_tt
 		ai_chance = {
 			base = 1
@@ -1152,6 +1157,13 @@ country_event = {
 				heavy_infantry_tech_1 = 1
 			}
 			load_oob = BOS_Brotherhood_Mercs
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Armored Mercenaries\" division_template = \"Armored Mercenaries\" start_experience_factor = 0.55"
+					owner = ROOT
+					count = 4
+				}
+			}
 			custom_effect_tooltip = bos_merc_details
 			if = {
 				limit = {
@@ -1164,7 +1176,6 @@ country_event = {
 					}		
 			}
 			custom_effect_tooltip = bos_brotherhood_investment_received_tt
-			set_country_flag = bos_supported_us
 			ai_chance = {
 				base = 1
 			}
