@@ -76,11 +76,11 @@ stronger_lost_hills_decisions = {
 			}
 		}
 		available = {
-			has_manpower > 200
+			has_manpower > 220
 			BOS_has_1_available_paladins = yes
 		}
 		complete_effect = {
-			add_manpower = -200
+			add_manpower = -220
 		}
 		modifier = {
 		}
@@ -162,7 +162,7 @@ stronger_lost_hills_decisions = {
 			random_owned_controlled_state = {
 				create_unit = {
 					#CW Tools - False positive? "name = \"Infantry Division\" is the correct format given by the wiki.
-					division = "division_template = \"Brotherhood Paladins\" start_experience_factor = 0.75 start_equipment_factor = 0"
+					division = "division_template = \"Brotherhood Paladins\" start_experience_factor = 0.75 start_equipment_factor = 1" ## 0 doesn't work.
 					owner = BOS
 				}
 			}
@@ -220,9 +220,14 @@ stronger_lost_hills_decisions = {
 					var = BOS_paladins_ready
 					value = tempready
 				}
+				multiply_temp_variable = {
+					var = tempready
+					value = 220
+				}
+				add_manpower = tempready
 				delete_unit_template_and_units = {
 					division_template = "Brotherhood Paladins"
-					disband = yes				#will refund equipment and manpower. There is an exploit here to turn pipeguns into plasma rifles.
+					disband = no			#will refund equipment and manpower. There is an exploit here to turn pipeguns into plasma rifles.
 				}
 				set_temp_variable = {
 					tempdeplo = BOS_paladins_deployed

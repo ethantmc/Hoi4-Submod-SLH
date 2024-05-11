@@ -607,6 +607,45 @@ country_event = {
 		name = nf_brotherhood_foreign_elder.2.a
 		log = "[GetDateText]: [This.GetName] WARNING: ENTERING DANGEROUS CODE from 'nf_brotherhood_foreign_elder.2'"
 		#God I wish clauswitz would add switch statements I feel like yanderedev coding these
+		BOS = {
+			FROM = {
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+
+					#The dangerous part
+					#
+					# DANGER ZONE
+					#
+					#The dangerous part
+
+					set_nationality = ROOT
+
+					#The dangerous Part
+					#
+					# Leaving the DANGER ZONE
+					#
+					#The dangerous part
+
+					add_country_leader_trait = bos_absolute_brotherhood_high_elder
+				}
+			}
+		}
+		hidden_effect = {
+			BOS = {
+				FROM = {
+					PREV = {
+						copy_tech_from_prev = yes
+					}
+				}
+				FROM = {
+					PREV = {
+						copy_tech_exclusives_from_prev = yes
+					}
+				}
+			}
+		}
 		if = {
 			limit = {
 				FROM = { has_government = elites }
@@ -704,94 +743,29 @@ country_event = {
 			retire_country_leader = yes
 		}
 		BOS = {
-			FROM = {
-				random_character = {
-					limit = {
-						is_country_leader = yes
-					}
-
-					#The dangerous part
-					#
-					# DANGER ZONE
-					#
-					#The dangerous part
-
-					set_nationality = ROOT
-
-					#The dangerous Part
-					#
-					# Leaving the DANGER ZONE
-					#
-					#The dangerous part
-
-					if = {
-						limit = {
-							PREV = { has_government = elites }
-						}
-						add_country_leader_role = {
-							country_leader = {
-								ideology=militarist_technocracy
-								traits = {
-									bos_absolute_brotherhood_high_elder
-								}
-								expire="3000.01.01.01"
-							}
-							promote_leader = yes
-						}
-					}
-					else_if = {
-						limit = {
-							PREV = { has_government = ruler }
-						}
-						add_country_leader_role = {
-							country_leader = {
-								ideology=military_government
-								traits = {
-									bos_absolute_brotherhood_high_elder
-								}
-								expire="3000.01.01.01"
-							}
-							promote_leader = yes
-						}
-					}
-					else_if = {
-						limit = {
-							PREV = { has_government = intellectuals }
-						}
-						add_country_leader_role = {
-							country_leader = {
-								ideology=technocracy
-								traits = {
-									bos_absolute_brotherhood_high_elder
-								}
-								expire="3000.01.01.01"
-							}
-							promote_leader = yes
-						}
-					}
-					else_if = {
-						limit = {
-							PREV = { has_government = people }
-						}
-						add_country_leader_role = {
-							country_leader = {
-								ideology=commune
-								traits = {
-									bos_absolute_brotherhood_high_elder
-								}
-								expire="3000.01.01.01"
-							}
-							promote_leader = yes
-						}
-					}
-				}
-			}
-		}
-		BOS = {
 			annex_country = {
 				target = FROM
 				transfer_troops = yes
 			}
+		}
+		BOS = {
+			FROM = {
+				every_character = {
+					set_nationality = BOS
+				}
+				every_unit_leader = {
+					set_nationality = BOS
+				}
+				every_navy_leader = {
+					set_nationality = BOS
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			add_compliance = 50
 		}
 		log = "[GetDateText]: [This.GetName] 'nf_brotherhood_foreign_elder.2' Succesfully Resolved"
 	}
@@ -843,6 +817,16 @@ country_event = {
 				target = ROOT
 				modifier = bos_chapter_assisted
 			}
+			add_ai_strategy = {
+				type = befriend
+				id = ROOT
+				value = 25
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = BOS
+				value = 50
+			}
 		}
 	}
 }
@@ -881,6 +865,16 @@ country_event = {
 					producer = USA
 					}		
 			}
+			add_ai_strategy = {
+				type = befriend	# Stacks with bonus from nf_brotherhood_communications.1
+				id = BOS
+				value = 25
+			}
+			add_ai_strategy = {
+				type = support
+				id = BOS
+				value = 50
+			}
 			ai_chance = {
 				base = 1
 			}
@@ -898,6 +892,16 @@ country_event = {
 				bonus = 0.25
 				uses = 1
 				category = energy_weaponry_tech_category
+			}
+			add_ai_strategy = {
+				type = befriend	# Stacks with bonus from nf_brotherhood_communications.1
+				id = BOS
+				value = 25
+			}
+			add_ai_strategy = {
+				type = support
+				id = BOS
+				value = 50
 			}
 			ai_chance = {
 				base = 1
@@ -927,6 +931,11 @@ country_event = {
 			type = energy_equipment_3
 			amount = 75
 			producer = USA
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = BOS
+			value = 25
 		}
 	}
 }
