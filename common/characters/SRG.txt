@@ -609,7 +609,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = BOS_advisor_contest_advisor_26
 			ledger = army
 			allowed = {
@@ -635,7 +635,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = BOS_advisor_contest_advisor_27
 			ledger = army
 			allowed = {
@@ -661,7 +661,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = BOS_advisor_contest_advisor_28
 			ledger = army
 			allowed = {
