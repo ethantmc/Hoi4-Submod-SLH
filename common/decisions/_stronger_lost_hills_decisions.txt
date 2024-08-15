@@ -3324,6 +3324,77 @@ bos_lost_hills_diplomacy = {
 			base = 50
 		}
 	}
+	bos_lost_hills_diplomacy_add_others_to_ledger = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			tag = BOS
+		}
+		cost = 50
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+			FROM = {
+				AND = {
+					OR = {
+						has_country_flag = is_brotherhood_nation
+						has_country_flag = is_brotherhood_nation_proper
+						has_country_flag = lhe_easy_ledger_invite
+						AND = {
+							tag = NCR
+							is_debug = yes	
+						}
+					}
+					NOT = {has_country_flag = lhe_no_easy_ledger_invite} ##Use this flag on nations that get themselves added to BOS's ledger! (Or just shouldn't ever be in it!)
+				}
+			}
+			NOT = {
+				is_in_array = {
+					array = global.bos_ledger_members
+					value = FROM
+				}
+			}
+		}
+		visible = {
+			is_debug = yes
+		}
+		days_remove = 1
+		available = {
+			NOT = {
+				FROM = {
+					has_war = yes
+				}
+			}
+			OR ={	
+				BOS = {
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
+				}
+				has_tech = vertibird_unlock_tech
+				BOS = {
+					has_completed_focus = bos_nf_lancers
+				}
+			}
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		complete_effect = {
+
+		}
+		remove_effect = {
+			FROM = {
+			bos_add_to_ledger = yes
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
 }
 	##SCAVENGING STARTS HERE
 	stronger_lost_hills_paladin_scavenging = {

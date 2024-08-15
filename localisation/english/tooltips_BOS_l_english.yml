@@ -187,6 +187,8 @@
   bos_state_influence_bos_controlled: "Historical Brotherhood Patrols"
   bos_state_influence_bos_controlled_desc: "§g The legacy of Brotherhood patrols in this state continue to have an effect, and secret bunkers or bases make ambushes easier. Enemies are also more easily convinced to abandon their posts, leaving behind their equipment."
 
+  bos_lost_hills_diplomacy_add_others_to_ledger: "Recognize §Y[FROM.getName]§! as a member of the Brotherhood."
+  bos_lost_hills_diplomacy_add_others_to_ledger_desc: "§rBETA: §! Use this decision to add nations to the Brotherhood ledger, like from submods. If you find a vanilla nation shows up here that shouldn't, report it on the LHE workshop page! \n\nIf you find a submod nation shows up when it shouldn't, tell that submod they can add the country flag §glhe_no_easy_ledger_invite§! to fix it, or §glhe_easy_ledger_invite§! to add them.§! "
 ##operations
 bos_operation_construct_cell: "Establish Surveillance Bunker"
 bos_operation_steal_weapons: "Conduct Technology Raid"
