@@ -300,9 +300,32 @@ create_or_join_western_brotherhood_of_steel = yes
 add_opinion_modifier = { target = MLT modifier = boshatesmutants }
 add_opinion_modifier = { target = DIS modifier = boshatesmutants }
 
+if = { 
+	limit = {
+		NOT = {
+		country_exists = BMW
+		}
+	}
+	add_to_array = { global.bos_ledger_members = BMW.id }
+}
 add_to_array = { bos_offmap_country = BMW.id } #Midwest
-add_to_array = { bos_offmap_country = BGF.id } #Gulf
-add_to_array = { bos_offmap_country = BLS.id } #Lyons
+if = { 
+	limit = {
+		NOT = {
+		country_exists = BGF
+		}
+	}
+	add_to_array = { global.bos_ledger_members = BGF.id } #Gulf
+}
+if = { 
+	limit = {
+		NOT = {
+		country_exists = BLS
+		}
+	}
+	add_to_array = { bos_offmap_country = BLS.id } #Lyons
+}
+
 add_to_array = { bos_offmap_country = BAP.id } #Appalachian
 add_to_array = { bos_offmap_country = BSF.id } #San Francisco
 
@@ -320,7 +343,12 @@ add_to_array = { global.bos_ledger_members = BMW.id } #Midwest
 add_to_array = { global.bos_ledger_members = BAP.id } #Appalachian Expedition
 add_to_array = { global.bos_ledger_members = BGF.id } #Gulf
 add_to_array = { global.bos_ledger_members = BLS.id } #Lyons'
-
+if = { 
+	limit = {
+		country_exists = BLN
+	}
+	add_to_array = { global.bos_ledger_members = BLN.id }
+}
 
 
 #Characters

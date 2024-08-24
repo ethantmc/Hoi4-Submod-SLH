@@ -1983,14 +1983,13 @@ focus_tree = {
 
 		#When we add in the Gulf Brotherhood and Dreamwater, we can add in this effect.
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = bos_not_ready_tt
-				always = no
+			BGF = {
+			has_idea = bgf_brotherhood_dreamwater
 			}
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = bos_not_ready_effect_tt
+			add_ideas = bgf_brotherhood_dreamwater
 		}
 	}
 	focus = {
@@ -4361,7 +4360,7 @@ focus_tree = {
 						#currently offmap
 						is_owned_by = BMW #Midwest
 						is_owned_by = BGF #Gulf
-						is_owned_by = BLS #Lyons
+						is_owned_by = BLN #Lyons
 						is_owned_by = BAP #Appalachian
 						is_owned_by = BSF #San Francisco
 						is_owned_by = SHI #San Francisco, BSF Doesn't Work >:(
@@ -4378,7 +4377,7 @@ focus_tree = {
 						is_owned_by = BMW #Midwest
 						is_owned_by = BAP #Appalachian Expedition
 						is_owned_by = BGF #Gulf
-						is_owned_by = BLS #Lyons'
+						is_owned_by = BLN #Lyons'
 					}
 				}
 				add_claim_by = BOS
@@ -5904,24 +5903,24 @@ focus_tree = {
 			}
 			if = { 
 				limit = {
-				country_exists = BLS 
+				country_exists = BLN
 				}
 				# add_intel = {
-					# target = BLS
+					# target = BLN
 					# civilian_intel = 10
 					# army_intel = 10
 					# navy_intel = 5
 					# airforce_intel = 5
 				# }
 				add_operation_token = {
-					tag = BLS
+					tag = BLN
 					token = token_army
 				}
 				add_operation_token = {
-					tag = BLS
+					tag = BLN
 					token = token_civilian
 				}
-				BLS = {
+				BLN = {
 					set_country_flag = bos_cell
 				}
 				custom_effect_tooltip = bos_cell_infiltration_tt
@@ -8831,9 +8830,12 @@ focus_tree = {
 
 		relative_position_id = bos_nf_long_range_communications_midwest_expedition
 		available = {
+			OR = {
 			BMW = {
 				has_country_flag = bos_offmap_chapter_died
 			}
+			NOT = { country_exists = BMW }
+		}
 		}
 		bypass = {
 			NOT = { country_exists = BMW }
@@ -8857,9 +8859,14 @@ focus_tree = {
 
 		relative_position_id = bos_nf_long_range_communications_midwest_expedition
 		available = {
+			OR = {
 			BMW = {
 				has_country_flag = bmw_won
 			}
+			BMW = {
+				owns_state = 1616
+			}
+		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		prerequisite = {
@@ -8894,8 +8901,13 @@ focus_tree = {
 
 		relative_position_id = bos_nf_chicagos_reclaimation
 		available = {
-			BMW = {
-				has_country_flag = bmw_won
+			OR = {
+				BMW = {
+					has_country_flag = bmw_won
+				}
+				BMW = {
+					owns_state = 1616
+				}
 			}
 		}
 		prerequisite = {
@@ -8921,9 +8933,14 @@ focus_tree = {
 
 		relative_position_id = bos_nf_chicagos_reclaimation
 		available = {
+			OR = {
 			BMW = {
 				has_country_flag = bmw_won
 			}
+			BMW = {
+				owns_state = 1616
+			}
+		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		prerequisite = {
@@ -8996,9 +9013,12 @@ focus_tree = {
 			focus = bos_nf_long_range_communications_gulf_expedition
 		}
 		available = {
+			OR = {
 			BGF = {
 				has_country_flag = bos_offmap_chapter_died
 			}
+			NOT = { country_exists = BGF }
+		}
 		}
 		bypass = {
 			NOT = { country_exists = BGF }
@@ -9017,9 +9037,14 @@ focus_tree = {
 
 		relative_position_id = bos_nf_long_range_communications_gulf_expedition
 		available = {
+			OR ={
 			BGF = {
 				has_country_flag = bgf_won
 			}
+			BGF = {
+				owns_state = 1410
+			}
+		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 		prerequisite = {
@@ -9057,8 +9082,13 @@ focus_tree = {
 			focus = bos_nf_bgf_dominion_over_the_peninsula
 		}
 		available = {
-			BGF = {
-				has_country_flag = bgf_won
+			OR ={
+				BGF = {
+					has_country_flag = bgf_won
+				}
+				BGF = {
+					owns_state = 1410
+				}
 			}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -9082,8 +9112,13 @@ focus_tree = {
 
 		relative_position_id = bos_nf_bgf_dominion_over_the_peninsula
 		available = {
-			BGF = {
-				has_country_flag = bgf_won
+			OR ={
+				BGF = {
+					has_country_flag = bgf_won
+				}
+				BGF = {
+					owns_state = 1410
+				}
 			}
 		}
 		prerequisite = {
@@ -9533,8 +9568,21 @@ focus_tree = {
 			focus = bos_nf_long_range_communications_the_lyons_expedition
 		}
 		available = {
-			BLS = {
-				has_country_flag = bls_shephard
+			OR = {
+				BLS = {
+					has_country_flag = bls_shephard
+				}
+				AND = {
+					BLN = {
+						exists = no
+					}
+					OUT = {
+						exists = no
+					}
+					DCM = {
+						owns_state = 1524
+					}
+				}
 			}
 		}
 
@@ -9554,6 +9602,7 @@ focus_tree = {
 			focus = bos_nf_bls_edens_victory
 		}
 		available = {
+			OR = {
 			BLS = {
 				OR = {
 					has_country_flag = bls_shephard
@@ -9563,6 +9612,15 @@ focus_tree = {
 					has_country_flag = bos_offmap_chapter_died
 				}
 			}
+			AND = {			
+				BLN = {
+					exists = no
+				}
+				OUT = {
+					exists = no
+				}
+			}
+		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 
@@ -9588,10 +9646,20 @@ focus_tree = {
 			focus = bos_nf_bls_shephards_conquest
 		}
 		available = {
-			BLS = {
-				has_country_flag = bls_shephard
-				hidden_trigger = {
-					has_country_flag = bos_offmap_chapter_died
+			OR = {
+				BLS = {
+					has_country_flag = bls_shephard
+					hidden_trigger = {
+						has_country_flag = bos_offmap_chapter_died
+					}
+				}
+				AND = {
+					BLN = {
+						exists = no
+					}
+					OUT = {
+						exists = no
+					}
 				}
 			}
 		}
@@ -9617,12 +9685,25 @@ focus_tree = {
 			focus = bos_nf_long_range_communications_the_lyons_expedition
 		}
 		available = {
+			OR = {
 			BLS = {
 				has_country_flag = bls_enclave
 				hidden_trigger = {
 					has_country_flag = bos_offmap_chapter_died
 				}
 			}
+			AND = {
+				BLN = {
+					exists = no
+				}
+				OUT = {
+					exists = no
+				}
+				EEN = {
+					owns_state = 1524
+				}
+			}
+		}
 		}
 
 		completion_reward = {
@@ -9640,9 +9721,16 @@ focus_tree = {
 			focus = bos_nf_long_range_communications_the_lyons_expedition
 		}
 		available = {
+			OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
+			AND = {
+				BLN = {
+					has_completed_focus = BLN_nf_b038
+				}
+			}
+		}
 		}
 
 		completion_reward = {
@@ -9667,9 +9755,14 @@ focus_tree = {
 			focus = bos_nf_long_range_communications_the_lyons_expedition
 		}
 		available = {
+			OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
+			OUT = {
+				has_completed_focus = OUT_anchorage
+			}
+		}
 		}
 
 		completion_reward = {
@@ -9702,10 +9795,19 @@ focus_tree = {
 			focus = bos_nf_bls_lyons_libery_prime_archives
 			focus = bos_nf_bls_the_anchorage_simulation
 		}
-		available = {
+		available = { OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
+			OR = {
+				BLN = {
+					owns_state = 1521
+				}
+				OUT = {
+					owns_state = 1521
+				}
+			}
+		}
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -9732,9 +9834,14 @@ focus_tree = {
 			focus = bos_nf_bls_the_anchorage_simulation
 		}
 		available = {
+			OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
+			BLN = {
+				has_completed_focus = BLN_nf_c004
+			}
+		}
 		}
 
 		completion_reward = {
@@ -9755,9 +9862,20 @@ focus_tree = {
 			focus = bos_nf_long_range_communications_the_lyons_expedition
 		}
 		available = {
+			OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
+			OR = {
+				BLN = {
+					has_completed_focus = BLN_nf_e012
+					has_completed_focus = BLN_nf_c017
+				}
+				OUT = {
+				has_completed_focus = OUT_victory_in_DC
+				}
+			}
+		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 
@@ -9765,6 +9883,14 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			BLS = {
 				country_event = nf_brotherhood_communications.2
+			}
+			if = {
+				limit = {
+					country_exists = BLN
+				}
+				BLN = {
+					country_event = nf_brotherhood_communications.2
+				}
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
@@ -9795,10 +9921,15 @@ focus_tree = {
 			focus = bos_nf_bls_dominion_over_dc
 		}
 		available = {
+			OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 				has_country_flag = bls_outcasts
 			}
+			OUT = {
+				has_completed_focus = OUT_victory_in_DC
+				}
+		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
 
@@ -9833,10 +9964,16 @@ focus_tree = {
 			focus = bos_nf_bls_dominion_over_dc
 		}
 		available = {
-			BLS = {
-				has_country_flag = bls_project_purity
-				has_country_flag = bls_mended_outcasts
-				has_country_flag = bls_sarah_leader
+			OR = {
+				BLS = {
+					has_country_flag = bls_project_purity
+					has_country_flag = bls_mended_outcasts
+					has_country_flag = bls_sarah_leader
+				}
+				BLN = {
+					has_completed_focus = BLN_nf_d001
+					has_completed_focus = BLN_nf_e006
+				}
 			}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -10359,15 +10496,30 @@ focus_tree = {
 			focus = bos_nf_integrating_chapters
 		}
 		available = {
-			BLS = {
-				borders_western_brotherhood_of_steel = yes
-				has_war = no
+			OR = {
+				BLS = {
+					borders_western_brotherhood_of_steel = yes
+					has_war = no
+				}
+				BLN = {
+					borders_western_brotherhood_of_steel = yes
+					has_war = no
+				}
 			}
 		}
 		completion_reward = {
 			BLS = {
 				invite_to_western_brotherhood_of_steel = yes
 				add_to_tech_sharing_group = lost_hills_research
+			}
+			if = {
+				limit = {
+					country_exists = BLN
+				}
+				BLN = {
+					invite_to_western_brotherhood_of_steel = yes
+					add_to_tech_sharing_group = lost_hills_research
+				}
 			}
 		}
 	}
@@ -10901,6 +11053,7 @@ focus_tree = {
 				BMW = { all_core_land_owned_by_prev_sphere = yes }
 				BGF = { all_core_land_owned_by_prev_sphere = yes }
 				BAP = { all_core_land_owned_by_prev_sphere = yes }
+				BLN = { all_core_land_owned_by_prev_sphere = yes }
 				BLS = { all_core_land_owned_by_prev_sphere = yes }
 			}
 			custom_trigger_tooltip = {
@@ -10954,6 +11107,10 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = BLS_intellectuals
 				BLS = { all_core_land_owned_by_prev_sphere = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = BLN_intellectuals
+				BLN = { all_core_land_owned_by_prev_sphere = yes }
 			}
 		}
 		completion_reward = {

@@ -2837,6 +2837,33 @@ bos_lost_hills_diplomacy = {
 				}
 				has_completed_focus = bos_nf_long_range_communications_montana_chapter
 			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = BGF
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_gulf_expedition
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = BMW
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_midwest_expedition
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+							original_tag = OUT
+							original_tag = BLN
+						}
+					}
+				}
+				has_completed_focus = bos_nf_long_range_communications_the_lyons_expedition
+			}
 		}
 		remove_effect = {
 			FROM = {
@@ -3345,10 +3372,10 @@ bos_lost_hills_diplomacy = {
 						has_country_flag = is_brotherhood_nation
 						has_country_flag = is_brotherhood_nation_proper
 						has_country_flag = lhe_easy_ledger_invite
-						AND = {
-							tag = NCR
-							is_debug = yes	
-						}
+						## AND = {
+						## 	tag = NCR
+						## 	is_debug = yes	
+						## }
 					}
 					NOT = {has_country_flag = lhe_no_easy_ledger_invite} ##Use this flag on nations that get themselves added to BOS's ledger! (Or just shouldn't ever be in it!)
 				}

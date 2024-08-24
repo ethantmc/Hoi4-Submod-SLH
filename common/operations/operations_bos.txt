@@ -149,7 +149,14 @@ bos_operation_steal_weapons = {
 	cost_modifiers = { target_sabotage_cost operation_cost }
 
 	outcome_execute = {
-		# shi gets guns
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_army
+			}
+		add_manpower = -50
+		}
+		# bos gets guns
 		if = {
 			limit = {
 				FROM = {
@@ -248,11 +255,6 @@ bos_operation_steal_weapons = {
 				}
 			}
 		}
-		remove_operation_token = {
- 			tag = FROM
- 			token = token_army
- 		}
-		add_manpower = -50
 	}
 
 	outcome_extra_execute = {

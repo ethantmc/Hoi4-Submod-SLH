@@ -4206,6 +4206,41 @@ bos_lost_hills_diplomacy = {
 				}
 				has_completed_focus = bos_nf_mch_conquest_of_yellowstone
 			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = BGF
+					}
+				}
+				has_completed_focus = bos_nf_bgf_dominion_over_the_peninsula
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = BGF
+					}
+				}
+				has_completed_focus = bos_nf_bgf_the_fountain_of_dreams
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = BMW
+					}
+				}
+				BMW = {owns_state = 1616}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+						original_tag = BLN
+						original_tag = OUT
+						}
+					}
+				}
+				has_completed_focus = bos_nf_bls_dominion_over_dc
+			}
 		}
 		cost = 100
 		fixed_random_seed = no
