@@ -1983,9 +1983,16 @@ focus_tree = {
 
 		#When we add in the Gulf Brotherhood and Dreamwater, we can add in this effect.
 		available = {
-			BGF = {
-			has_idea = bgf_brotherhood_dreamwater
+			OR = {
+				AND = {
+					bos_fod_is_enabled = yes 
+					BGF = {
+					has_idea = bgf_brotherhood_dreamwater
+					}
+				}
+				bos_fod_is_enabled = no
 			}
+		
 		}
 
 		completion_reward = {
@@ -4360,7 +4367,7 @@ focus_tree = {
 						#currently offmap
 						is_owned_by = BMW #Midwest
 						is_owned_by = BGF #Gulf
-						is_owned_by = BLN #Lyons
+						is_owned_by = BLS #Lyons
 						is_owned_by = BAP #Appalachian
 						is_owned_by = BSF #San Francisco
 						is_owned_by = SHI #San Francisco, BSF Doesn't Work >:(
@@ -5902,8 +5909,11 @@ focus_tree = {
 				custom_effect_tooltip = bos_cell_infiltration_tt
 			}
 			if = { 
-				limit = {
-				country_exists = BLN
+				limit = { 
+					AND = {
+						country_exists = BLN
+						bos_ecr_is_enabled = yes
+					}
 				}
 				# add_intel = {
 					# target = BLN
@@ -8812,14 +8822,15 @@ focus_tree = {
 			add_political_power = 10
 		}
 		# For when BMW is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 5
-		# 	modifier = {
-		# 		factor = 3
-		# 		BMW = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		 ai_will_do = {
+		 	base = 5
+		 	modifier = {
+		 		factor = 3
+		 		BMW = {
+		 			is_ai = no
+				}
+		 	}
+		}
 	}
 	focus = {
 		id = bos_nf_ending_the_dream
@@ -8834,10 +8845,13 @@ focus_tree = {
 			BMW = {
 				has_country_flag = bos_offmap_chapter_died
 			}
-			NOT = { country_exists = BMW }
+			AND = {
+				bos_rr_is_enabled = yes 
+			NOT = { country_exists = BMW } 
 		}
 		}
-		bypass = {
+		}
+		bypass = {			
 			NOT = { country_exists = BMW }
 			any_owned_state = { is_core_of = BMW }
 		}
@@ -8848,6 +8862,15 @@ focus_tree = {
 		completion_reward = {
 			bos_exodus_manpower_modifier_large = yes
 		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+				BMW = {
+					is_ai = no
+			   }
+			}
+	   }
 	}
 
 	focus = {
@@ -8863,9 +8886,13 @@ focus_tree = {
 			BMW = {
 				has_country_flag = bmw_won
 			}
+			AND = {
+				bos_rr_is_enabled = yes 
+		
 			BMW = {
 				owns_state = 1616
 			}
+		}
 		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -8882,15 +8909,15 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BMW is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BMW = {
-		# 			is_ai = no
-		# 		}
-		# 	}
-		# }
+		ai_will_do = {
+			base = 3
+			modifier = {
+				factor = 3
+				BMW = {
+					is_ai = no
+				}
+			}
+		}
 	}
 	focus = {
 		id = bos_nf_bmw_midwest_enclave_tactical_experience
@@ -8905,8 +8932,11 @@ focus_tree = {
 				BMW = {
 					has_country_flag = bmw_won
 				}
+				AND = {
+					bos_rr_is_enabled = yes 
 				BMW = {
 					owns_state = 1616
+					}	
 				}
 			}
 		}
@@ -8937,9 +8967,12 @@ focus_tree = {
 			BMW = {
 				has_country_flag = bmw_won
 			}
+			AND = {
+				bos_rr_is_enabled = yes 
 			BMW = {
 				owns_state = 1616
 			}
+		}
 		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -8959,8 +8992,15 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BMW is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
+		ai_will_do = {
+			base = 3
+			modifier = {
+				factor = 3
+				BMW = {
+					is_ai = no
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -8990,14 +9030,15 @@ focus_tree = {
 			add_political_power = 10
 		}
 		# For when BGF is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 5
-		# 	modifier = {
-		# 		factor = 3
-		# 		BGF = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+				BGF = {
+					is_ai = no
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -9017,7 +9058,10 @@ focus_tree = {
 			BGF = {
 				has_country_flag = bos_offmap_chapter_died
 			}
+			AND = {
+				bos_fod_is_enabled = yes 
 			NOT = { country_exists = BGF }
+			}
 		}
 		}
 		bypass = {
@@ -9041,9 +9085,12 @@ focus_tree = {
 			BGF = {
 				has_country_flag = bgf_won
 			}
+			AND = {
+				bos_fod_is_enabled = yes 
 			BGF = {
 				owns_state = 1410
 			}
+		}
 		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -9060,14 +9107,15 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BGF is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BGF = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+				BGF = {
+					is_ai = no
+				}
+			}
+		}
 	}
 	focus = {
 		id = bos_nf_bgf_desoto_drug_trade
@@ -9086,9 +9134,12 @@ focus_tree = {
 				BGF = {
 					has_country_flag = bgf_won
 				}
+				AND = {
+					bos_fod_is_enabled = yes 
 				BGF = {
 					owns_state = 1410
 				}
+			}
 			}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -9100,8 +9151,15 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BGF is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
+		ai_will_do = {
+			base = 3
+			modifier = {
+				factor = 3
+				BGF = {
+					is_ai = no
+				}
+			}
+		}
 	}
 	focus = {
 		id = bos_nf_bgf_the_fountain_of_dreams
@@ -9116,9 +9174,12 @@ focus_tree = {
 				BGF = {
 					has_country_flag = bgf_won
 				}
+				AND = {
+					bos_fod_is_enabled = yes 
 				BGF = {
 					owns_state = 1410
 				}
+			}
 			}
 		}
 		prerequisite = {
@@ -9130,6 +9191,15 @@ focus_tree = {
 				type = support_equipment_1
 				amount = 1500
 				producer = USA
+			}
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+				BGF = {
+					is_ai = no
+				}
 			}
 		}
 	}
@@ -9197,7 +9267,7 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		ai_will_do = {
-			base = 3
+			base = 5 ##easy
 		}
 	}
 	focus = {
@@ -9538,20 +9608,39 @@ focus_tree = {
 				ideology = ruler
 				popularity = 0.03
 			}
-			BLS = {
-				country_event = nf_brotherhood_communications.1
+			if = {
+				limit = { 
+					AND = {
+						bos_ecr_is_enabled = yes
+						country_exists = BLN
+					}
+				}
+				BLN = {
+					country_event = nf_brotherhood_communications.1
+				}
+			}
+			else = {
+				BLS = {
+					country_event = nf_brotherhood_communications.1
+				}
 			}
 			add_political_power = 10
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 5
-		# 	modifier = {
-		# 		factor = 3
-		# 		BLS = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		ai_will_do = {
+		 	base = 5
+		 	modifier = {
+		 		factor = 3
+				OR = {
+					BLS = {
+						is_ai = no
+					}
+					BLN = { 
+						is_ai = no
+					}
+				}
+		 	}
+		}
 	}
 
 	focus = {
@@ -9572,15 +9661,18 @@ focus_tree = {
 				BLS = {
 					has_country_flag = bls_shephard
 				}
-				AND = {
-					BLN = {
-						exists = no
-					}
-					OUT = {
-						exists = no
-					}
-					DCM = {
-						owns_state = 1524
+				OR = {
+					bos_ecr_is_enabled = yes
+					AND = {
+						BLN = {
+							exists = no
+						}
+						OUT = {
+							exists = no
+						}
+						DCM = {
+							owns_state = 1524
+						}
 					}
 				}
 			}
@@ -9613,6 +9705,7 @@ focus_tree = {
 				}
 			}
 			AND = {			
+				bos_ecr_is_enabled = yes
 				BLN = {
 					exists = no
 				}
@@ -9631,9 +9724,24 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# }
+		# For when BLS is implemented as a playable nation
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+			   OR = {
+				   BLS = {
+					   is_ai = no
+				   }
+				   BLN = { 
+					   is_ai = no
+				   }
+				   OUT = {
+						is_ai = no
+				   }
+			   }
+			}
+	   }
 	}
 	focus = {
 		id = bos_nf_bls_eastern_mutant_tactical_experience
@@ -9654,6 +9762,7 @@ focus_tree = {
 					}
 				}
 				AND = {
+					bos_ecr_is_enabled = yes
 					BLN = {
 						exists = no
 					}
@@ -9693,6 +9802,7 @@ focus_tree = {
 				}
 			}
 			AND = {
+				bos_ecr_is_enabled = yes
 				BLN = {
 					exists = no
 				}
@@ -9726,6 +9836,7 @@ focus_tree = {
 				has_country_flag = bls_project_purity
 			}
 			AND = {
+				bos_ecr_is_enabled = yes
 				BLN = {
 					has_completed_focus = BLN_nf_b038
 				}
@@ -9759,9 +9870,13 @@ focus_tree = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
+
+			AND = {
+				bos_ecr_is_enabled = yes
 			OUT = {
 				has_completed_focus = OUT_anchorage
 			}
+		}
 		}
 		}
 
@@ -9783,6 +9898,7 @@ focus_tree = {
 				producer = USA
 			}
 		}
+		
 	}
 	focus = {
 		id = bos_nf_bls_lyons_project_purity
@@ -9795,16 +9911,15 @@ focus_tree = {
 			focus = bos_nf_bls_lyons_libery_prime_archives
 			focus = bos_nf_bls_the_anchorage_simulation
 		}
-		available = { OR = {
+		available = { 
+			OR = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
-			OR = {
-				BLN = {
-					owns_state = 1521
-				}
-				OUT = {
-					owns_state = 1521
+			AND = {
+				bos_ecr_is_enabled = yes
+				1107 = {
+					owner_is_brotherhood_nation = yes
 				}
 			}
 		}
@@ -9838,8 +9953,11 @@ focus_tree = {
 			BLS = {
 				has_country_flag = bls_project_purity
 			}
-			BLN = {
-				has_completed_focus = BLN_nf_c004
+			AND = {
+				bos_ecr_is_enabled = yes
+				BLN = {
+					has_completed_focus = BLN_nf_c004
+				}
 			}
 		}
 		}
@@ -9863,32 +9981,40 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-			BLS = {
-				has_country_flag = bls_project_purity
-			}
-			OR = {
-				BLN = {
-					has_completed_focus = BLN_nf_e012
-					has_completed_focus = BLN_nf_c017
+				BLS = {
+					has_country_flag = bls_project_purity
 				}
-				OUT = {
-				has_completed_focus = OUT_victory_in_DC
+				AND = {
+					bos_ecr_is_enabled = yes
+					OR = {
+						BLN = {
+							has_completed_focus = BLN_nf_e012
+							has_completed_focus = BLN_nf_c017
+						}
+						OUT = {
+							has_completed_focus = OUT_victory_in_DC
+						}				
+					}
 				}
 			}
-		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
-		}
-
+		
+	}
 		completion_reward = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
-			BLS = {
-				country_event = nf_brotherhood_communications.2
-			}
 			if = {
-				limit = {
-					country_exists = BLN
+				limit = { 
+					AND = {
+						bos_ecr_is_enabled = yes
+						country_exists = BLN
+					}
 				}
 				BLN = {
+					country_event = nf_brotherhood_communications.2
+				}
+			}
+			else = {
+				BLS = {
 					country_event = nf_brotherhood_communications.2
 				}
 			}
@@ -9896,14 +10022,21 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BLS = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		# For when BLS is implemented as a playable nation
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+			   OR = {
+				   BLS = {
+					   is_ai = no
+				   }
+				   BLN = { 
+					   is_ai = no
+				   }
+			   }
+			}
+	   }
 	}
 	focus = {
 		id = bos_nf_bls_outcasts_triumphant
@@ -9926,9 +10059,12 @@ focus_tree = {
 				has_country_flag = bls_project_purity
 				has_country_flag = bls_outcasts
 			}
-			OUT = {
-				has_completed_focus = OUT_victory_in_DC
+			AND = {
+				bos_ecr_is_enabled = yes
+				OUT = {
+					has_completed_focus = OUT_victory_in_DC
 				}
+			}
 		}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -9939,14 +10075,21 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BLS = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		# For when BLS is implemented as a playable nation
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+			   OR = {
+				   BLS = {
+					   is_ai = no
+				   }
+				   BLN = { 
+					   is_ai = no
+				   }
+			   }
+			}
+	   }
 	}
 	focus = {
 		id = bos_nf_bls_sarahs_rise
@@ -9970,10 +10113,13 @@ focus_tree = {
 					has_country_flag = bls_mended_outcasts
 					has_country_flag = bls_sarah_leader
 				}
+				AND = {
+					bos_ecr_is_enabled = yes
 				BLN = {
 					has_completed_focus = BLN_nf_d001
 					has_completed_focus = BLN_nf_e006
 				}
+			}
 			}
 			has_political_power > @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_TRIGGER
 		}
@@ -9984,14 +10130,21 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BLS = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		# For when BLS is implemented as a playable nation
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+			   OR = {
+				   BLS = {
+					   is_ai = no
+				   }
+				   BLN = { 
+					   is_ai = no
+				   }
+			   }
+			}
+	   }
 	}
 	focus = {
 		id = bos_nf_bls_the_hero_of_man
@@ -10024,14 +10177,21 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BLS = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		# For when BLS is implemented as a playable nation
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+			   OR = {
+				   BLS = {
+					   is_ai = no
+				   }
+				   BLN = { 
+					   is_ai = no
+				   }
+			   }
+			}
+	   }
 	}
 	focus = {
 		id = bos_nf_bls_victory_in_the_commonwealth
@@ -10057,9 +10217,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
-			BLS = {
-				country_event = nf_brotherhood_communications.2
-			}
 			capital_scope = {
 				add_resource = { type = advanced amount = 4 }
 			}
@@ -10067,14 +10224,21 @@ focus_tree = {
 			bos_train_paladins = yes
 		}
 		# For when BLS is implemented as a playable nation
-		# ai_will_do = {
-		# 	base = 3
-		# 	modifier = {
-		# 		factor = 3
-		# 		BLS = {
-		# 			is_ai = no
-		# 		}
-		# 	}
+		# For when BLS is implemented as a playable nation
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 3
+			   OR = {
+				   BLS = {
+					   is_ai = no
+				   }
+				   BLN = { 
+					   is_ai = no
+				   }
+			   }
+			}
+	   }
 	}
 	focus = {
 		id = bos_nf_bls_mankind_redefined
@@ -10501,10 +10665,12 @@ focus_tree = {
 					borders_western_brotherhood_of_steel = yes
 					has_war = no
 				}
+				AND = { bos_ecr_is_enabled = yes
 				BLN = {
 					borders_western_brotherhood_of_steel = yes
 					has_war = no
 				}
+			}
 			}
 		}
 		completion_reward = {
@@ -10513,8 +10679,11 @@ focus_tree = {
 				add_to_tech_sharing_group = lost_hills_research
 			}
 			if = {
-				limit = {
-					country_exists = BLN
+				limit = { 
+					AND = {
+						bos_ecr_is_enabled = yes
+						country_exists = BLN
+					}
 				}
 				BLN = {
 					invite_to_western_brotherhood_of_steel = yes

@@ -45,3 +45,22 @@ bos_has_x_knowledge = {
 		}
 	}
 }
+
+bos_fod_is_enabled = {
+	custom_trigger_tooltip = {
+		tooltip = bos_fod
+		has_global_flag = fod_is_active
+	}
+}
+bos_rr_is_enabled = {
+	custom_trigger_tooltip = {
+		tooltip = bos_rr
+		has_global_flag = rbr_active
+	}
+}
+bos_ecr_is_enabled = {
+	custom_trigger_tooltip = {
+		tooltip = bos_ecr
+		has_global_flag = ecr_is_active
+	}
+}

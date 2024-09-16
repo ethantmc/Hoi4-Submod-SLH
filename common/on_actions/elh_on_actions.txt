@@ -1,5 +1,9 @@
 on_actions = {
-
+	on_startup = {
+		effect = {
+			set_global_flag = lhe_is_active
+		}
+	}
 	on_weekly_BOS = {
 		effect = {
 			set_variable = {

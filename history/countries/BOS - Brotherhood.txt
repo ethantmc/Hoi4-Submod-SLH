@@ -1,5 +1,4 @@
 ﻿#File Constants
-
 #Starting Maximum Space
 @BOS_LOST_HILLS_MAX_SPACE = 100
 

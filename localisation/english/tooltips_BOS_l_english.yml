@@ -200,3 +200,10 @@ bos_cell_infiltration_tt: "Establish a §YCircle of Steel Cell§! in our target'
   paladin_stone_returns_tt: "§YPaladin Stone§! will join the §Y[SRG.getName]§!"
   srg_advisers_return_tt: "Brotherhood Advisors are now available in addition to advisors from across California."
   srg_vertibirds_but_no_schematics_tt: "The NCR has sent us some Vertibirds they recovered from San Francisco, but they could not acquire schematics. §YIf they do, we will acquire the schematics as well.§!"
+
+##Submod compatibility
+bos_rr: "Rustbelt Rising is active & the Midwest Brotherhood controls their original capital."
+
+bos_fod: "Fountain of Dreams is active & the Gulf Expedition controls their original capital."
+
+bos_ecr: "East Coast Rebirth is active & the Capital is controlled by the Lyons Chapter or Outcasts."
