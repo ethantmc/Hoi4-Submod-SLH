@@ -44,3 +44,14 @@ defined_text = {
 		}
 	}
 }
+defined_text = {
+	name = desoto_focus_desc
+	text = {
+		trigger = {bos_rr_is_enabled = no}
+		localization_key = bos_desoto_no_rr
+	}
+	text = {
+		trigger = {bos_rr_is_enabled = yes}
+		localization_key = bos_desoto_rr_enabled
+	}
+}
