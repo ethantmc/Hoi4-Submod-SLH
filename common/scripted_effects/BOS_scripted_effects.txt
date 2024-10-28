@@ -1,5 +1,10 @@
 bos_offmap_chapter_logic = {
 	#BLS
+	if = {
+		limit = {
+			NOT = {bos_ecr_is_enabled = yes}
+		}
+	
 	random_list = {
 		#Shephard or BoS
 		15 = {
@@ -69,6 +74,11 @@ bos_offmap_chapter_logic = {
 			}
 		}
 	}
+	}
+	if = {
+		limit = {
+			NOT = {bos_rr_is_enabled = yes}
+		}
 	#BMW
 	random_list = {
 		50 = {
@@ -83,6 +93,11 @@ bos_offmap_chapter_logic = {
 				days = 1095
 			}
 		}
+	}
+}
+if = {
+	limit = {
+		NOT = {bos_fod_is_enabled = yes}
 	}
 	#BGF
 	random_list = {
@@ -99,6 +114,7 @@ bos_offmap_chapter_logic = {
 			}
 		}
 	}
+}
 }
 
 bos_add_to_bunker_array = {

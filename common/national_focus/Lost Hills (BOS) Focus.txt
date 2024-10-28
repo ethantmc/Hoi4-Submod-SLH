@@ -9661,18 +9661,16 @@ focus_tree = {
 				BLS = {
 					has_country_flag = bls_shephard
 				}
-				OR = {
+				AND = {
 					bos_ecr_is_enabled = yes
-					AND = {
-						BLN = {
-							exists = no
-						}
-						OUT = {
-							exists = no
-						}
-						DCM = {
-							owns_state = 1524
-						}
+					BLN = {
+						exists = no
+					}
+					OUT = {
+						exists = no
+					}
+					DCM = {
+						owns_state = 1524
 					}
 				}
 			}
