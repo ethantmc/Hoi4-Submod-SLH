@@ -3493,6 +3493,7 @@ bos_lost_hills_diplomacy = {
 					}
 					NOT = {has_country_flag = lhe_no_easy_ledger_invite} ##Use this flag on nations that get themselves added to BOS's ledger! (Or just shouldn't ever be in it!)
 					has_country_flag = bos_added_to_ledger_by_decision
+					NOT = {is_in_tech_sharing_group = lost_hills_research}
 				}
 			}
 
@@ -3567,6 +3568,11 @@ bos_lost_hills_diplomacy = {
 			NOT = {
 				has_war_with = BOS
 			}
+			NOT = {
+				FROM = {
+					is_in_faction_with = BOS
+				}
+			}
 			FROM = {
 				AND = {
 					OR = {
@@ -3579,10 +3585,6 @@ bos_lost_hills_diplomacy = {
 						## }
 					}
 					NOT = {has_country_flag = lhe_no_easy_ledger_invite} ##Use this flag on nations that get themselves added to BOS's ledger! (Or just shouldn't ever be in it!)
-					AND = {
-						borders_western_brotherhood_of_steel = yes
-						has_war = no
-					}
 					has_country_flag = bos_added_to_ledger_by_decision
 				}
 			}
@@ -3591,12 +3593,13 @@ bos_lost_hills_diplomacy = {
 		available = {
 			bos_has_scribe_teams = yes
 			BOS_has_2_available_paladins = yes
-			NOT = {
-				FROM = {
-					has_war = yes
+			FROM = {
+				AND = {
+					borders_western_brotherhood_of_steel = yes
+					has_war = no
 				}
-			}
-			OR ={	
+			}	
+			OR = {	
 				BOS = {
 					has_completed_focus = bos_nf_shi_chapter_cooperation
 					has_completed_focus = bos_nf_shi_the_emperors_blessing
@@ -3606,7 +3609,7 @@ bos_lost_hills_diplomacy = {
 					has_completed_focus = bos_nf_lancers
 				}
 			}
-			NOT={
+			NOT = {
 				AND = {
 					has_active_mission = bos_delayed_scribes_medium
 					has_active_mission = bos_delayed_scribes_large
@@ -3638,7 +3641,7 @@ bos_lost_hills_diplomacy = {
 		}
 		remove_effect = {
 			FROM = {
-				add_to_tech_sharing_group = lost_hills_research
+				invite_to_western_brotherhood_of_steel = yes
 			}
 		}
 		ai_will_do = {
