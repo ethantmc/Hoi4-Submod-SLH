@@ -227,7 +227,7 @@ stronger_lost_hills_decisions = {
 				add_manpower = tempready
 				delete_unit_template_and_units = {
 					division_template = "Brotherhood Paladins"
-					disband = no			#will refund equipment and manpower. There is an exploit here to turn pipeguns into plasma rifles.
+					disband = no			#would refund equipment and manpower. There is an exploit here to turn pipeguns into plasma rifles.
 				}
 				set_temp_variable = {
 					tempdeplo = BOS_paladins_deployed
@@ -2873,6 +2873,12 @@ bos_lost_hills_diplomacy = {
 		}
 		ai_will_do = {
 			base = 100
+			modifier = {
+				factor = 3
+				FROM = {
+					is_ai = no
+				}
+			}
 		}
 	}
 	bos_lost_hills_diplomacy_establish_foreign_airbase = {
@@ -3014,6 +3020,12 @@ bos_lost_hills_diplomacy = {
 		}
 		ai_will_do = {
 			base = 50
+			modifier = {
+				factor = 3
+				FROM = {
+					is_ai = no
+				}
+			}
 		}
 	}
 	bos_lost_hills_diplomacy_offer_scribe_team = {
@@ -3157,6 +3169,12 @@ bos_lost_hills_diplomacy = {
 		}
 		ai_will_do = {
 			base = 50
+			modifier = {
+				factor = 1.5
+				FROM = {
+					is_ai = no
+				}
+			}
 		}
 	}
 	bos_lost_hills_diplomacy_building_factory = {
@@ -3387,10 +3405,7 @@ bos_lost_hills_diplomacy = {
 				}
 			}
 		}
-		visible = {
-			is_debug = yes
-		}
-		days_remove = 1
+		days_remove = 60
 		available = {
 			NOT = {
 				FROM = {
@@ -3407,19 +3422,232 @@ bos_lost_hills_diplomacy = {
 					has_completed_focus = bos_nf_lancers
 				}
 			}
+			NOT={
+				AND = {
+					has_active_mission = bos_delayed_scribes_medium
+					has_active_mission = bos_delayed_scribes_large
+				}
+			}
 		}
 		fixed_random_seed = no
 		fire_only_once = yes
 		complete_effect = {
-
+			if = {
+				limit={
+					NOT = {
+						has_active_mission = bos_delayed_scribes_medium
+					}
+				}
+				bos_smart_delayed_scribes_medium = yes
+			}
+			else_if = {
+				limit = { 					
+						NOT = {
+						has_active_mission = bos_delayed_scribes_large
+					}
+				}
+				bos_smart_delayed_scribes_large = yes
+			}
 		}
 		remove_effect = {
 			FROM = {
 			bos_add_to_ledger = yes
+			set_country_flag = bos_added_to_ledger_by_decision
 			}
 		}
 		ai_will_do = {
 			base = 50
+			modifier = {
+				factor = 3
+				FROM = {
+					is_ai = no
+				}
+			}
+		}
+	}
+	bos_lost_hills_diplomacy_add_others_to_scribe_council = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			tag = BOS
+		}
+		cost = 0
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+			FROM = {
+				AND = {
+					OR = {
+						has_country_flag = is_brotherhood_nation
+						has_country_flag = is_brotherhood_nation_proper
+						has_country_flag = lhe_easy_ledger_invite
+						## AND = {
+						## 	tag = NCR
+						## 	is_debug = yes	
+						## }
+					}
+					NOT = {has_country_flag = lhe_no_easy_ledger_invite} ##Use this flag on nations that get themselves added to BOS's ledger! (Or just shouldn't ever be in it!)
+					has_country_flag = bos_added_to_ledger_by_decision
+				}
+			}
+
+		}
+		days_remove = 60
+		available = {
+			bos_has_scribe_teams = yes
+			NOT = {
+				FROM = {
+					has_war = yes
+				}
+			}
+			OR ={	
+				BOS = {
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
+				}
+				has_tech = vertibird_unlock_tech
+				BOS = {
+					has_completed_focus = bos_nf_lancers
+				}
+			}
+			NOT={
+				AND = {
+					has_active_mission = bos_delayed_scribes_medium
+					has_active_mission = bos_delayed_scribes_large
+				}
+			}
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		complete_effect = {
+			if = {
+				limit={
+					NOT = {
+						has_active_mission = bos_delayed_scribes_medium
+					}
+				}
+				bos_smart_delayed_scribes_medium = yes
+			}
+			else_if = {
+				limit = { 					
+						NOT = {
+						has_active_mission = bos_delayed_scribes_large
+					}
+				}
+				bos_smart_delayed_scribes_large = yes
+			}
+			
+		}
+		remove_effect = {
+			FROM = {
+				add_to_tech_sharing_group = lost_hills_research
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+	bos_lost_hills_diplomacy_add_others_to_faction = {
+		icon = GFX_decision_vertibird
+		allowed = {
+			tag = BOS
+		}
+		cost = 0
+		target_trigger = {
+			NOT = {
+				FROM = {
+					original_tag = BOS
+				}
+			}
+			NOT = {
+				has_war_with = BOS
+			}
+			FROM = {
+				AND = {
+					OR = {
+						has_country_flag = is_brotherhood_nation
+						has_country_flag = is_brotherhood_nation_proper
+						has_country_flag = lhe_easy_ledger_invite
+						## AND = {
+						## 	tag = NCR
+						## 	is_debug = yes	
+						## }
+					}
+					NOT = {has_country_flag = lhe_no_easy_ledger_invite} ##Use this flag on nations that get themselves added to BOS's ledger! (Or just shouldn't ever be in it!)
+					AND = {
+						borders_western_brotherhood_of_steel = yes
+						has_war = no
+					}
+					has_country_flag = bos_added_to_ledger_by_decision
+				}
+			}
+		}
+		days_remove = 60
+		available = {
+			bos_has_scribe_teams = yes
+			BOS_has_2_available_paladins = yes
+			NOT = {
+				FROM = {
+					has_war = yes
+				}
+			}
+			OR ={	
+				BOS = {
+					has_completed_focus = bos_nf_shi_chapter_cooperation
+					has_completed_focus = bos_nf_shi_the_emperors_blessing
+				}
+				has_tech = vertibird_unlock_tech
+				BOS = {
+					has_completed_focus = bos_nf_lancers
+				}
+			}
+			NOT={
+				AND = {
+					has_active_mission = bos_delayed_scribes_medium
+					has_active_mission = bos_delayed_scribes_large
+				}
+			}
+		}
+		fixed_random_seed = no
+		fire_only_once = yes
+		complete_effect = {
+			if = {
+				limit={
+					NOT = {
+						has_active_mission = bos_delayed_scribes_medium
+					}
+				}
+				bos_smart_delayed_scribes_medium = yes
+				bos_smart_delayed_expedition2_medium = yes
+			}
+			else_if = {
+				limit = { 					
+						NOT = {
+						has_active_mission = bos_delayed_scribes_large
+					}
+				}
+				bos_smart_delayed_scribes_large = yes
+				bos_smart_delayed_expedition2_large = yes
+			}
+			
+		}
+		remove_effect = {
+			FROM = {
+				add_to_tech_sharing_group = lost_hills_research
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 3
+				FROM = {
+					is_ai = no
+				}
+			}
 		}
 	}
 }

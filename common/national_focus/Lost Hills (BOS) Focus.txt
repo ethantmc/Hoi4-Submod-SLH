@@ -495,7 +495,6 @@ focus_tree = {
 			base = 10
 		}
 	}
-
 	# focus = {
 		# id = bos_nf_blueprints
 		# icon = GFX_goal_BOS_generic_research
@@ -9838,6 +9837,7 @@ focus_tree = {
 				BLN = {
 					has_completed_focus = BLN_nf_b038
 				}
+				country_exists = BLN
 			}
 		}
 		}
@@ -9865,17 +9865,18 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-			BLS = {
-				has_country_flag = bls_project_purity
-			}
+				BLS = {
+					has_country_flag = bls_project_purity
+				}
 
-			AND = {
-				bos_ecr_is_enabled = yes
-			OUT = {
-				has_completed_focus = OUT_anchorage
+				AND = {
+					bos_ecr_is_enabled = yes
+					OUT = {
+						has_completed_focus = OUT_anchorage
+					}
+					country_exists = OUT
+				}
 			}
-		}
-		}
 		}
 
 		completion_reward = {
@@ -9992,6 +9993,10 @@ focus_tree = {
 						OUT = {
 							has_completed_focus = OUT_victory_in_DC
 						}				
+					}
+					OR = {
+						country_exists = BLN
+						country_exists = OUT
 					}
 				}
 			}
