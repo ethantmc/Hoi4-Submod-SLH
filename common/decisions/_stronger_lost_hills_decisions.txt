@@ -2644,36 +2644,10 @@ bos_lost_hills_diplomacy = {
 			always = yes
 		}
 		remove_effect = {
-			##TODO market access, rule setting?
 			FROM = {
-				#set_rule = {desc = bos_capitalism can_access_market = yes}
-				add_relation_rule_override = {
-					target = BOS
-					usage_desc = bos_market_access
-					can_access_market = yes
-				}
+				bos_invite_to_market = yes
 			}
-			## ROOT = {
-			## 	set_rule = {desc = bos_capitalism can_access_market = yes}
-			## 	add_relation_rule_override = {
-			## 		target = FROM
-			## 		usage_desc = bos_market_access
-			## 		can_access_market = yes
-			## 	}
-			## }
-			ROOT = { ##implicit
-			set_rule = {desc = bos_capitalism can_access_market = yes}
-			}
-			FROM = {
 
-				give_market_access = ROOT
-			}
-			ROOT = {
-				give_market_access = FROM
-			}
-			FROM = {
-				set_country_flag = should_use_international_market
-			}
 		}
 		ai_will_do = {
 			base = 100
@@ -3080,7 +3054,9 @@ bos_lost_hills_diplomacy = {
 				#}
 				#give_market_access = BOS ##doesn't work, sadly.
 			}
-
+			FROM = {
+				bos_invite_to_market = yes
+			}
 			bos_upgrade_foreign_airbases = yes
 		}
 		ai_will_do = {

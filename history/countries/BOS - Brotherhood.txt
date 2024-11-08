@@ -349,6 +349,8 @@ if = {
 	add_to_array = { global.bos_ledger_members = BLN.id }
 }
 
+#market access array
+add_to_array = {global.bos_market_members = BOS.id}
 
 #Characters
 

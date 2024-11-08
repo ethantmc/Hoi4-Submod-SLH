@@ -715,3 +715,52 @@ bos_improve_bunker_construction = {
 		set_country_flag = bos_faster_underground_construction
 	}
 }
+
+bos_invite_to_market = {
+	FROM = {
+		#set_rule = {desc = bos_capitalism can_access_market = yes}
+		add_relation_rule_override = {
+			target = BOS
+			usage_desc = bos_market_access
+			can_access_market = yes
+		}
+	}
+	ROOT = { ##implicit
+		set_rule = {desc = bos_capitalism can_access_market = yes}
+	}
+	FROM = {
+		give_market_access = ROOT
+	}
+	ROOT = {
+		give_market_access = FROM
+	}
+	FROM = {
+		set_country_flag = should_use_international_market
+	}
+	##Loop through and get market access between all current members.
+	for_each_scope_loop = {
+		array = global.bos_market_members
+		PREV = {
+			#set_rule = {desc = bos_capitalism can_access_market = yes}
+			add_relation_rule_override = {
+				target = FROM
+				usage_desc = bos_market_access
+				can_access_market = yes
+			}
+		}
+		FROM = { ##implicit
+			set_rule = {desc = bos_capitalism can_access_market = yes}
+		}
+		PREV = {
+			give_market_access = ROOT
+		}
+		FROM = {
+			give_market_access = PREV
+		}
+		PREV = {
+			set_country_flag = should_use_international_market
+		}
+	}
+	##After giving market access between all members, add this chapter to the array
+	add_to_array = { global.bos_market_members = FROM.id}
+}
