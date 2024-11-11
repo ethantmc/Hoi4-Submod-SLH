@@ -204,7 +204,17 @@ bos_cell_infiltration_tt: "Establish a §YCircle of Steel Cell§! in our target'
   paladin_stone_returns_tt: "§YPaladin Stone§! will join the §Y[SRG.getName]§!"
   srg_advisers_return_tt: "Brotherhood Advisors are now available in addition to advisors from across California."
   srg_vertibirds_but_no_schematics_tt: "The NCR has sent us some Vertibirds they recovered from San Francisco, but they could not acquire schematics. §YIf they do, we will acquire the schematics as well.§!"
-
+##mapmodes
+MAPMODE_BOS_CIRCLE_OF_STEEL_MAP_MODE: "Circle of Steel Cells"
+MAPMODE_BOS_CIRCLE_OF_STEEL_MAP_MODE_NAME: "Circle of Steel"
+MAPMODE_BOS_CIRCLE_OF_STEEL_MAP_MODE_DESCRIPTION: "Maps all Circle of Steel cells in the Wasteland and current expansion options.\n Green: Contains an active Cell. Yellow: Can establish a new Cell here. Red: Destroyed cell (can't return)."
+bos_circle_of_steel_map_mode_tooltip: "Circle of Steel Status"
+bos_circle_of_steel_map_mode_tooltip_delayed: "Green: Contains an active Cell. Yellow: Can establish a new Cell here. Red: Destroyed cell (can't return)."
+MAPMODE_BOS_CHAPTER_WARS_MAP_MODE: "Chapter Conflicts"
+MAPMODE_BOS_CHAPTER_WARS_MAP_MODE_NAME: "Chapter Conflicts"
+MAPMODE_BOS_CHAPTER_WARS_MAP_MODE_DESCRIPTION: "Shows the war status of all current Ledger members."
+bos_chapter_wars_map_mode_tooltip: "Ledger Chapter Status"
+bos_chapter_wars_map_mode_tooltip_delayed: "Green: At peace. Blue: At war but not accepting Volunteers. Red: At war and can send volunteers."
 ##Submod compatibility
 bos_rr: "Rustbelt Rising is active."
 bos_fod: "Fountain of Dreams is active."

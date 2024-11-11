@@ -3,6 +3,11 @@ on_actions = {
 		effect = {
 			set_global_flag = lhe_is_active
 		}
+		effect = {
+			ACH = {
+				add_country_flag = lhe_no_easy_ledger_invite}
+			}
+		}
 	}
 	on_weekly_BOS = {
 		effect = {
@@ -52,7 +57,14 @@ on_actions = {
 			}
 		}
 	}
-	 	
+	on_monthly_BOS = {
+		force_update_map_mode = {
+			limit = {
+				is_ai = no
+			}
+			mapmode = 
+		}
+	} 	
 
 	on_state_control_changed = {
 		effect = { ##basically a "Swap Ideas" equivelant for these two modifiers.

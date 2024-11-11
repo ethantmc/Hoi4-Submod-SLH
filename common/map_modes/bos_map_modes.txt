@@ -1,0 +1,144 @@
+scripted_map_modes = {
+
+	bos_circle_of_steel_map_mode = {
+		top = {
+			type = country
+
+			color = {
+				FROM = {
+					set_temp_variable = { alpha = 1.0 }
+					set_temp_variable = { thickness = 1.0 }
+					if = {
+						limit = {
+							has_country_flag = bos_cell
+						}
+						set_temp_variable = { red = 0.0 }
+						set_temp_variable = { green = 1.0 }
+						set_temp_variable = { blue = 0.0 }
+					}
+					else_if = {
+						limit = {
+							has_country_flag = bos_expelled
+						}
+						set_temp_variable = { red = 1.0 }
+						set_temp_variable = { green = 0.0 }
+						set_temp_variable = { blue = 0.0 }
+					}
+					else_if = {
+						limit = {
+							any_neighbor_country = {
+								OR = {
+								has_country_flag = bos_cell
+								tag = BOS
+								}
+							}
+						}
+						set_temp_variable = { red = 1.0 }
+						set_temp_variable = { green = 1.0 }
+						set_temp_variable = { blue = 0.0 }
+					}
+				}
+			}
+
+			thickness = yes
+		}
+
+		bottom = {
+			type = none
+		}
+
+		far_text = country
+		near_text = state
+
+		update_daily = no
+	}
+
+	bos_chapter_wars_map_mode = {
+		top = {
+			type = country
+
+			color = {
+				FROM = {
+					set_temp_variable = { alpha = 1.0 }
+					set_temp_variable = { thickness = 1.0 }
+					if = {
+						limit = { ##War you can send volunteers to
+							is_in_array = {
+								array = global.bos_ledger_members
+								value = THIS
+							}
+							has_war = yes
+							NOT = {
+								is_in_faction_with = BOS
+								has_war_with = BOS
+								check_variable = {
+									var = modifier@cant_sent_volunteers_to_this_country
+									value = 1
+									compare = greater_than_or_equals
+								}
+							}
+						}
+						set_temp_variable = { red = 1.0 }
+						set_temp_variable = { green = 0.0 }
+						set_temp_variable = { blue = 0.0 }
+					}
+					else_if = { #War you can NOT send volunteers to.
+						limit = {
+							is_in_array = {
+								array = global.bos_ledger_members
+								value = THIS
+							}
+							has_war = yes
+							check_variable = {
+								var = modifier@cant_sent_volunteers_to_this_country
+								value = 1
+								compare = greater_than_or_equals
+							}
+							NOT = {
+								is_in_faction_with = BOS
+								has_war_with = BOS
+
+							}
+						}
+						set_temp_variable = { red = 0.01 }
+						set_temp_variable = { green = 0.02 }
+						set_temp_variable = { blue = 1.00}
+					}
+					else_if = { # at peace.
+						limit = {
+							is_in_array = {
+								array = global.bos_ledger_members
+								value = THIS
+							}
+							has_war = yes
+							check_variable = {
+								var = modifier@cant_sent_volunteers_to_this_country
+								value = 1
+								compare = greater_than_or_equals
+							}
+							NOT = {
+								is_in_faction_with = BOS
+								has_war_with = BOS
+
+							}
+						}
+						set_temp_variable = { red = 0.01 }
+						set_temp_variable = { green = 1 }
+						set_temp_variable = { blue = 0.04 }
+					}
+				}
+			}
+
+			thickness = yes
+		}
+
+		bottom = {
+			type = none
+		}
+
+		far_text = country
+		near_text = state
+
+		update_daily = yes
+	}
+}

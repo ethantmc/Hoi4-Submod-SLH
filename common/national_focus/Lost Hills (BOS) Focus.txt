@@ -62,7 +62,9 @@ focus_tree = {
 				var = bos_troika_crowns ##set this up ASAP for the troika campaign.
 				value = 0
 				}
+				lhe_offmap_chapter_logic  = yes
 			}
+			
 		}
 	}
 	focus = {
@@ -5620,7 +5622,7 @@ focus_tree = {
 			set_temp_variable = { BOS_underground_construction_slots_to_add = 2 }
 			bos_add_underground_construction_slots = yes
 			clr_country_flag = scavenging_disabled ##Don't like regular scavenging given my other changes.
-			unlock_decision_tooltip = begin_scavenging_program
+			unlock_decision_tooltip = begin_scavenging_program_wtt
 			set_temp_variable = { caps_to_add = 50 }
 			add_caps = yes
 		}
