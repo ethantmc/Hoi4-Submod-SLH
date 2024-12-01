@@ -3592,9 +3592,12 @@ focus_tree = {
 		}
 		available = {
 			all_owned_state = {
-				AND = {
-					resistance < 15
-					compliance > 65
+				OR = {
+					is_core_of = BOS
+					AND = {
+						resistance < 15
+						compliance > 65
+					}
 				}
 			}
 		}
@@ -3673,9 +3676,12 @@ focus_tree = {
 		available = {
 			AND = {
 				all_owned_state = {
-					AND = {
-						resistance < 10
-						compliance > 70
+					OR = {
+						is_core_of = BOS
+						AND = {
+							resistance < 10
+							compliance > 70
+						}
 					}
 				}
 				AND = {
@@ -3761,9 +3767,12 @@ focus_tree = {
 		available = {
 			AND = {
 				all_owned_state = {
+					OR = {
+						is_core_of = BOS
 					AND = {
 						resistance < 5
 						compliance > 70
+					}
 					}
 				}
 				AND = {

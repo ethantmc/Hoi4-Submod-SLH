@@ -1,4 +1,4 @@
-version="2.2.1"
+version="2.2.2"
 tags={
 	"Balance"
 	"National Focuses"
@@ -8,5 +8,5 @@ name="OWB - Lost Hills Expanded"
 dependencies={
 	"Old World Blues"
 }
-supported_version="1.14.*"
+supported_version="1.15.*"
 remote_file_id="2816907222"
