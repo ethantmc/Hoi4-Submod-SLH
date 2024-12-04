@@ -2776,6 +2776,11 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			SRG = {
+				create_new_owb_country = yes ##alternatively just  caps_country_initialize = yes
+			}
+		}
 		SRG = {
 			change_tag_from = BOS
 		}
