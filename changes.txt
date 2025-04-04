@@ -199,3 +199,10 @@ Fixes:
 -Fixed certain Steel Rangers events not firing if the NCR goes Hayes (unlocking sophisticated air tech and vertibirds for you as well)
 -Fixed the Californian Food Crisis conclusion events from not firing - you should now get the epilogue for how you dealt with Anton Flynn.
 
+
+MINOR UPDATE:
+Balance:
+-Added AI strategies to force BOS chapters to send volunteers to Lost Hills when able. You must complete the first objective of a chapter before this AI strategy will be applied to them, and a tooltip in the foci clarify that this effect is taking place.
+-Reduced focus time of Taggerdy contact from 30 -> 7 days, Taggerdy conflict from 30 - > 21 days, and Taggerdy Super Mutant from 30 -> 21 days.
+-Reduced focus time of Texas contact from 30 -> 15 days to make it easier to react to the Alamo chapter needing help.
+-Increased the time of Texas/Alamo defeat focus (An Unexpected End) from 45->60 days, meaning it takes the same effective time to do as before.

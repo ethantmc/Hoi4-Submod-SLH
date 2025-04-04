@@ -715,3 +715,15 @@ bos_improve_bunker_construction = {
 		set_country_flag = bos_faster_underground_construction
 	}
 }
+
+bos_make_chapter_send_volunteers = {
+	custom_effect_tooltip = bos_chapter_sends_volunteers_tt
+	THIS = {
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = BOS
+			value = 900
+		}
+		add_manpower = 100
+	}
+}
