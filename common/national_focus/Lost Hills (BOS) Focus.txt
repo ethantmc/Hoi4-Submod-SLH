@@ -2769,7 +2769,6 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_manpower_problem
 		}
-		mutually_exclusive = { focus = bos_nf_what_were_they_for}
 		available = {
 			has_completed_focus = bos_nf_acme
 		}
@@ -2783,11 +2782,10 @@ focus_tree = {
 		cost = 30
 		x = -1
 		y = 1
-		relative_position_id = bos_nf_the_manpower_problem
+		relative_position_id = bos_nf_the_right_war_at_the_right_time
 		prerequisite = {
-			focus = bos_nf_the_manpower_problem
+			focus = bos_nf_the_right_war_at_the_right_time
 		}
-		mutually_exclusive = { focus = bos_nf_the_robot_solution}
 		available = {
 			OR = {
 				has_tech = vertibird_unlock_tech
@@ -2802,6 +2800,8 @@ focus_tree = {
 			effect_tooltip = {
 				add_ideas = {bos_lost_hills_volunteers}
 			}
+			set_temp_variable = { BOS_tension_to_add = 20 }
+			bos_change_tension = yes
 		}
 	}
 	focus = {
@@ -3006,13 +3006,14 @@ focus_tree = {
 		cost = 30
 		x = -1
 		y = 1
-		relative_position_id = bos_nf_the_right_war_at_the_right_time
+		relative_position_id = bos_nf_the_manpower_problem
 		prerequisite = {
-			focus = bos_nf_the_right_war_at_the_right_time
-		}
+			focus = bos_nf_the_manpower_problem
+		}	
 		bypass = {
 			NOT = { country_exists = NCR }
 		}
+
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = ballistic_equipment_3
@@ -3032,9 +3033,7 @@ focus_tree = {
 		relative_position_id = bos_nf_warning_maxsons_settlers
 		prerequisite = {
 			focus = bos_nf_warning_maxsons_settlers
-		}
-		prerequisite = {
-			focus = bos_nf_building_up_a_stockpile
+			focus = bos_nf_what_were_they_for
 		}
 		bypass = {
 			OR = {

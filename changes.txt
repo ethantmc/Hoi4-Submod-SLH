@@ -201,8 +201,14 @@ Fixes:
 
 
 MINOR UPDATE:
+Changes: 
+-Swapped "Building up a Stockpile" and "Familial Bonds" between the Finding our Advantage mini-tree and the Right War at The Right Time mini-tree. Now, all BoS runs can see Volunteers flood in from other chapters - so long as you kept them alive!
+-The focuses under "Find our Advantage" are no longer mutually exclusive. With the other change, you can get get the robot discount and the 1k advanced weapons.
+
 Balance:
 -Added AI strategies to force BOS chapters to send volunteers to Lost Hills when able. You must complete the first objective of a chapter before this AI strategy will be applied to them, and a tooltip in the foci clarify that this effect is taking place.
+-Added two decisions giving AI strategies to MOJ to hasten them doing the Legion Peace with CES or hasten training up against them. To take them, you must have sufficient volunteers sent the Mojave Chapter. 
 -Reduced focus time of Taggerdy contact from 30 -> 7 days, Taggerdy conflict from 30 - > 21 days, and Taggerdy Super Mutant from 30 -> 21 days.
 -Reduced focus time of Texas contact from 30 -> 15 days to make it easier to react to the Alamo chapter needing help.
 -Increased the time of Texas/Alamo defeat focus (An Unexpected End) from 45->60 days, meaning it takes the same effective time to do as before.
+	
