@@ -220,7 +220,7 @@
   bos_all_to_war_tt: "Any Brotherhood Chapter in the Ledger will get a §Ytemporary bonus§! for 2 years once you complete §YEnd the Ceasefire§!, which is:"
   bos_lost_hills_volunteers: "NCR War Volunteers"
   bos_lost_hills_volunteers_desc: "Lost Hills airlifted out a great number of volunteers for their war against the NCR. They won't be back for a while, and our logistics are tied up in keeping them supplied and equipped."
-  nf_brotherhood.410.t: "The Chain That Binds - Distant Call"
+  nf_brotherhood.410.title: "The Chain That Binds - Distant Call"
   nf_brotherhood.410.a: "For the Brotherhood!"
   nf_brotherhood.410.b: "They're on their own."
   nf_brotherhood.410.c: "We'll send command staff."
