@@ -216,7 +216,7 @@
   bos_our_advantage: "The Sacred Connection"
   bos_robotic_occupation: "Robotic Enforcers"
   bos_nf_what_were_they_for: "Familial Bonds"
-  bos_nf_what_were_they_for_desc: "There's another path. We can prepare flights to every chapter we're in contact with, collecting a truly staggering number of volunteer divisions just before the war. No matter how careful we are about sending the flights out, their return will be unmistakable. We'll time for the end of the ceasefire."
+  bos_nf_what_were_they_for_desc: "With our airforce, we can prepare flights to every chapter we're in contact with, collecting a truly staggering number of volunteer divisions just before the war. No matter how careful we are about sending the flights out, their return will be unmistakable. We'll time their return for the end of the ceasefire."
   bos_all_to_war_tt: "Any Brotherhood Chapter in the Ledger will get a §Ytemporary bonus§! for 2 years once you complete §YEnd the Ceasefire§!, which is:"
   bos_lost_hills_volunteers: "NCR War Volunteers"
   bos_lost_hills_volunteers_desc: "Lost Hills airlifted out a great number of volunteers for their war against the NCR. They won't be back for a while, and our logistics are tied up in keeping them supplied and equipped."
@@ -2025,8 +2025,11 @@
   bos_mercenary_work: "Favors for Local Settlers"
   bos_mercenary_work_desc: "Doing favors for locals can see us rewarded with caps, as we clear raiders, giant ant nests, and mirelurks from a towns surrounding territory. §YAs tensions rise, caps rewarded will decrease as NCR mayors are forced to toe the line.§! Still, it could be a significant boost to our trade with outsiders.\n §YThis will make us 35.00k caps, reduced by tension. 25 Tension will see us make 26.25k caps, and so on.§! "
   BOS_high_elder_activation_tt: "§CTaking this focus does not save you any political power. However, you do not need to have the PP for the decision available, and may go into debt. You will also be able to take the next focus immediately if you otherwise meet its requirements.§!"
+  bos_ask_moj_to_whitepeace_legion: "Encourage [MOJ.getName] to negotiate a ceasefire with [CES.getName]"
+  bos_ask_moj_to_whitepeace_legion_desc: "§WWe can ask [MOJ.getLeader] to prioritize negotiating a ceasefire with [CES.getLeader] §Yeven over training against legionary tactics§! while our volunteers demonstrate the folly of war with the Brotherhood.\n\nSo long as [MOJ.getName] has control of §Y[417.getName], [573.getName], [46.getName], [613.getName], [137.getName]§!, and §Y[67.getName]§! they will pursue peace. \n\nWhile they have control of §Y[438.getName]§! or §Y[553.getName]§! they will pursue war regardless.§!"
+  bos_ask_moj_to_war_with_legion: "Encourage [MOJ.getName] to bloody [CES.getName]"
+  bos_ask_moj_to_war_with_legion_desc: "§WWe can ask [MOJ.getLeader] to prioritize training against legionary tactics §Yeven over negotiating a ceasefire.§! Our strong force commitment to the Mojave will give them the breathing room to do so. \n\nWhile they have control of §Y[438.getName]§! or §Y[553.getName]§! they will freeze ceasefire negotiations.§!"
 
-##modded end
   # Tooltips
   paladins_unlock_tt:0 "Learn about the §GPaladins§!."
   add_4_paladins_tt:0 "Add §G4§! §YPaladin Units§! for §Ydeployment§!"

@@ -891,6 +891,6 @@ bos_make_chapter_send_volunteers = {
 			id = BOS
 			value = 900
 		}
-		add_manpower = 100
+		#add_manpower = 100 --just to check scope
 	}
 }
