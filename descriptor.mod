@@ -11,5 +11,5 @@ dependencies={
 	"OWB - Fountain of Dreams"
 	"Rustbelt Rising"
 }
-supported_version="1.15.*"
+supported_version="1.16.*"
 remote_file_id="2816907222"

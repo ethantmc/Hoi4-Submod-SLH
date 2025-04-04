@@ -2149,7 +2149,7 @@ country_event = {
 	picture = GFX_event_BOS_desert_patrol
 
 	is_triggered_only = yes
-
+##Neither of the desc and option A being 41's are typos.
 	option = {
 		name = nf_brotherhood.41.a
 		add_timed_idea = {
@@ -2159,6 +2159,7 @@ country_event = {
 	}
 	option = {
 		name = nf_brotherhood.410.b
+		ai_chance = { base = 0 }
 	}
 	# option = {
 		# name = nf_brotherhood.410.c
