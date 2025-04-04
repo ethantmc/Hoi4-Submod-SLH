@@ -7357,7 +7357,7 @@ focus_tree = {
 			bos_add_knowledge = yes
 		}
 	}
-	focus = {
+	focus = { #Legion Defence Pact
 		id = bos_nf_bigger_threats
 		icon = GFX_goal_BOS_steel_crusade
 		cost = 30
@@ -8008,6 +8008,7 @@ focus_tree = {
 		completion_reward = {
 			WBH = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			set_temp_variable = { BOS_train_paladins_num = 1 }
@@ -8048,6 +8049,7 @@ focus_tree = {
 		completion_reward = {
 			TCA = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			set_temp_variable = { BOS_train_paladins_num = 1 }
@@ -8166,7 +8168,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_long_range_communications_taggerdys_expedition
 		icon = GFX_goal_bos_flag_bap
-		cost = 30
+		cost = 7
 		x = 0
 		y = 1
 
@@ -8205,7 +8207,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_bap_conflict_in_the_chapter
 		icon = GFX_goal_bos_generic_crusader_pistol
-		cost = 30
+		cost = 21
 		x = 1
 		y = 1
 
@@ -8216,13 +8218,16 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 20
+			BAP = {
+				bos_make_chapter_send_volunteers = yes
+			}
 		}
 	}
 
 	focus = {
 		id = bos_nf_bap_an_early_super_mutant_threat
 		icon = GFX_goal_bos_generic_super_mutant
-		cost = 30
+		cost = 21
 		x = -1
 		y = 1
 
@@ -8378,6 +8383,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			MOJ = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
@@ -8533,6 +8539,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			MXC = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
@@ -8603,7 +8610,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_long_range_communications_texas_expedition
 		icon = GFX_goal_bos_flag_tbh
-		cost = 30
+		cost = 15
 		x = -5
 		y = 4
 
@@ -8657,7 +8664,7 @@ focus_tree = {
 	focus = {
 		id = bos_nf_tbh_an_unexpected_end
 		icon = GFX_goal_focus_arm_alamo
-		cost = 45
+		cost = 60
 		x = -1
 		y = 1
 
@@ -8751,6 +8758,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			ACH = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			capital_scope = {
 				add_resource = { type = circuitry amount = 8 }
@@ -8905,6 +8913,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			BMW = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
@@ -9103,6 +9112,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			BGF = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
@@ -9289,6 +9299,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			BSF = {bos_make_chapter_send_volunteers = yes}
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes
@@ -9505,6 +9516,7 @@ focus_tree = {
 		completion_reward = {
 			GRD = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			set_temp_variable = { BOS_train_paladins_num = 1 }
@@ -10016,11 +10028,13 @@ focus_tree = {
 				}
 				BLN = {
 					country_event = nf_brotherhood_communications.2
+					bos_make_chapter_send_volunteers = yes
 				}
 			}
 			else = {
 				BLS = {
 					country_event = nf_brotherhood_communications.2
+					bos_make_chapter_send_volunteers = yes
 				}
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }

@@ -882,3 +882,15 @@ bos_invite_to_market = {
 	##After giving market access between all members, add this chapter to the array
 	add_to_array = { global.bos_market_members = FROM.id}
 }
+
+bos_make_chapter_send_volunteers = {
+	custom_effect_tooltip = bos_chapter_sends_volunteers_tt
+	THIS = {
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = BOS
+			value = 900
+		}
+		add_manpower = 100
+	}
+}
