@@ -1,0 +1,29 @@
+BOS_support_brotherhood_countries = {
+	reversed = yes
+	allowed = {
+		original_tag = BOS
+	}
+	enable = {
+		always = yes
+	}
+
+	target_array = "global.bos_ledger_members"
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = BOS
+		value = 900
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = BOS
+		value = 900
+	}
+}
+BOS_run_circle_of_steel = { ##certain spirits buff Operations and Operatives, making the BOS a good spymaster candidate for the Brotherhood.
+	ai_strategy = {
+		type = become_spymaster
+		value = 75
+	}
+}
