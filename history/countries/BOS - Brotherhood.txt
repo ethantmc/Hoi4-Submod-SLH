@@ -326,7 +326,7 @@ if = {
 }
 
 add_to_array = { bos_offmap_country = BAP.id } #Appalachian
-add_to_array = { bos_offmap_country = BSF.id } #San Francisco
+#add_to_array = { bos_offmap_country = BSF.id } #San Francisco
 
 #In order of distance from lost hills
 add_to_array = { global.bos_ledger_members = BOS.id } #Lost Hills

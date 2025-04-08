@@ -844,7 +844,10 @@ bos_invite_to_market = {
 		}
 	}
 	ROOT = { ##implicit
-		set_rule = {desc = bos_capitalism can_access_market = yes}
+		set_rule = {
+			desc = bos_capitalism 
+			can_access_market = yes
+		}
 	}
 	FROM = {
 		give_market_access = ROOT
@@ -867,7 +870,10 @@ bos_invite_to_market = {
 			}
 		}
 		FROM = { ##implicit
-			set_rule = {desc = bos_capitalism can_access_market = yes}
+			set_rule = { 
+				desc = bos_capitalism 
+				can_access_market = yes
+			}
 		}
 		PREV = {
 			give_market_access = ROOT

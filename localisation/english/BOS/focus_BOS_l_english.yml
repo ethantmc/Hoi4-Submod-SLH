@@ -2028,7 +2028,7 @@
   bos_ask_moj_to_whitepeace_legion: "Encourage [MOJ.getName] to negotiate a ceasefire with [CES.getName]"
   bos_ask_moj_to_whitepeace_legion_desc: "§WWe can ask [MOJ.getLeader] to prioritize negotiating a ceasefire with [CES.getLeader] §Yeven over training against legionary tactics§! while our volunteers demonstrate the folly of war with the Brotherhood.\n\nSo long as [MOJ.getName] has control of §Y[417.getName], [573.getName], [46.getName], [613.getName], [137.getName]§!, and §Y[67.getName]§! they will pursue peace. \n\nWhile they have control of §Y[438.getName]§! or §Y[553.getName]§! they will pursue war regardless.§!"
   bos_ask_moj_to_war_with_legion: "Encourage [MOJ.getName] to bloody [CES.getName]"
-  bos_ask_moj_to_war_with_legion_desc: "§WWe can ask [MOJ.getLeader] to prioritize training against legionary tactics §Yeven over negotiating a ceasefire.§! Our strong force commitment to the Mojave will give them the breathing room to do so. \n\nWhile they have control of §Y[438.getName]§! or §Y[553.getName]§! they will freeze ceasefire negotiations.§!"
+  bos_ask_moj_to_war_with_legion_desc: "§WWe can ask [MOJ.getLeader] to prioritize training against legionary tactics §Yeven over negotiating a ceasefire.§! Our strong force commitment to the Mojave will give them the breathing room to do so. \n\nWhile they have control of §Y[438.getName]§! or §Y[553.getName]§! they will completely freeze ceasefire negotiations rather than just prioritizing their training.§!"
 
   # Tooltips
   paladins_unlock_tt:0 "Learn about the §GPaladins§!."

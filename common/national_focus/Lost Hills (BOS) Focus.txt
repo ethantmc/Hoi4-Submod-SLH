@@ -10362,6 +10362,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			MNC = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes

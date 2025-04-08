@@ -212,3 +212,13 @@ Balance:
 -Reduced focus time of Texas contact from 30 -> 15 days to make it easier to react to the Alamo chapter needing help.
 -Increased the time of Texas/Alamo defeat focus (An Unexpected End) from 45->60 days, meaning it takes the same effective time to do as before.
 	
+
+-MINOR UPDATE SECOND PATCH:
+	Features:
+
+	Changes:
+	
+	Fixes:
+		-Removed offmap copy of the San Francisco Chapter in the Ledger.
+		-Fixed the Montana Chapter not having any focus which would result in them pledging volunteers for the BoS-NCR war.
+		

@@ -3115,7 +3115,7 @@ bos_lost_hills_diplomacy = {
 		custom_cost_trigger = {
 			set_temp_variable = { temp_cap_cost = 100 }
 			check_variable = {
-				caps_number_display > temp_cap_cost
+				caps_number_display > temp_cap_cost ##TODO set this and remove_effect to be cheaper for neighbors
 			}
 		}
 		custom_cost_text = "caps_decisions_cost_text"
@@ -3138,12 +3138,6 @@ bos_lost_hills_diplomacy = {
 			custom_effect_tooltip = bos_foreign_airbase_building_tt
 			FROM = {
 				country_event = nf_brotherhood_foreign_assistance.1
-				#add_relation_rule_override = {
-				#	target = BOS
-				#	usage_desc = BOS_equipment_trading
-				#	can_access_market = yes
-				#}
-				#give_market_access = BOS ##doesn't work, sadly.
 			}
 			FROM = {
 				bos_invite_to_market = yes
