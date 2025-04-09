@@ -215,10 +215,15 @@ Balance:
 
 -MINOR UPDATE SECOND PATCH:
 	Features:
-
+		-Added the ability for Brotherhood nations (including AI) to use the International Market. To join it, you must complete the decision to Establish a Foreign Airbase with that chapter. 
+		Hopefully you find it interesting, but it's really only included so I could test the viability of a "faction market" like this in OWB. Submodders, if you are interested in this please let me know and I will see about getting this logic built into a future update of OWB.
+		-Added a map mode, "Chapter Conflicts", showing chapters at peace, at war, and at war but not accepting volunteers.
+		-Added a map mode, "Circle of Steel Cells", showing current Circle of Steel cells, territories you can expand the circle of steel to, and territories where the Circle of Steel has been rooted out permanently. 
 	Changes:
-	
+		-Improved the offmap chapter logic and its integration with the various submods. This should put to bed the events running in scenarios where the offmap chapters are, in fact, on map.
 	Fixes:
 		-Removed offmap copy of the San Francisco Chapter in the Ledger.
 		-Fixed the Montana Chapter not having any focus which would result in them pledging volunteers for the BoS-NCR war.
-		
+		-Added missing loc for the Scavenging Program national focus. 
+		-Updated loc for Improved Bunker Construction research, to make it a little more obvious.
+
