@@ -173,10 +173,12 @@
   form_steel_plague:0 "§RBring forth the Steel Plague§!"
   form_steel_plague_desc:0 "Man must turn itself into the wind itself - a §Ygreat storm§! to blow away the fire, end the Great War and all the fires it wrought forevermore.\nReject your §Ypascalbytes§! and rewrite them yourself, reject the sky and the earth, mother and son, time and luck. Define your own variables, write your own fate. §RBECOME SPECIAL§!.\n\nThis §YClicking-Clack Fire-Word Lie-World§! will be §YReMade Whole§!! Evil pulled from the crowns and cast out into the outer worlds.\nThe time has come for the world to know the return of the Troika, Mother of MAXEN, the Terrible Tower, the Smothering Storm, AVELON's folly, the cast-out back-ins, old-made-new.\n§YMANAWYDDAN-RHIANNON-PRYDERI§!\n§RTROIKA§!"
   bos_calling_chapters_tt:0 "§gWe'll call all available nearby chapters to help us in our crusade against the NCR!§!"
+##modded below here
   bos_chapter_sends_volunteers_tt: "This chapter will §Gsend us Volunteers§! whenever we go to war, as thanks for all our help. §CIf they wouldn't be able to send volunteers to us normally, they still won't be able to.§!" 
   bos_chapter_assisted:0 "Chapter Communication Established"
 
   bos_event_trigger_tt:0 "This focus will be §Ycompleted via event§!"
+  bos_disallow_all_but_troika_and_ruling_tt: "§CBan all but the ruling party and the Troika.§!"
 
   bos_target_got: "Your chosen target received the following, plus any minor effects: "
   bos_reminder_about_caps: "You spent these caps earlier: "

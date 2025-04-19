@@ -569,6 +569,7 @@ bos_troika_upgrade_bos_experience_law = {
 	}
 }
 bos_disallow_all_but_troika_and_ruling = {
+	custom_effect_tooltip = bos_disallow_all_but_troika_and_ruling_tt
 	if = {
 		limit = {
 			NOT = {
@@ -582,7 +583,7 @@ bos_disallow_all_but_troika_and_ruling = {
 	if = {
 		limit = {
 			AND = {
-			has_country_flag = bos_people_allowed
+				has_country_flag = bos_people_allowed
 				NOT = {
 					has_government = people
 				}
@@ -595,7 +596,7 @@ bos_disallow_all_but_troika_and_ruling = {
 	if = {
 		limit = {
 			AND = {
-			has_country_flag = bos_elites__allowed
+				has_country_flag = bos_elites_allowed
 				NOT = {
 					has_government = elites
 				}
@@ -608,7 +609,7 @@ bos_disallow_all_but_troika_and_ruling = {
 	if = {
 		limit = {
 			AND = {
-			has_country_flag = bos_ruler_allowed
+				has_country_flag = bos_ruler_allowed
 				NOT = {
 					has_government = ruler
 				}
