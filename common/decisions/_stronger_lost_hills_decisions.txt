@@ -2830,7 +2830,7 @@ bos_lost_hills_diplomacy = {
 			#has_country_flag = legion_defence_pact_member
 		}
 		ai_will_do = {
-			base = 1000
+			base = 0
 		}
 		visible = {
 			OR = {

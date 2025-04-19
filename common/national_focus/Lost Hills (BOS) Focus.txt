@@ -2779,34 +2779,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = bos_nf_what_were_they_for
-		icon = GFX_goal_BOS_victory_or_death
-		cost = 30
-		x = -1
-		y = 1
-		relative_position_id = bos_nf_the_right_war_at_the_right_time
-		prerequisite = {
-			focus = bos_nf_the_right_war_at_the_right_time
-		}
-		available = {
-			OR = {
-				has_tech = vertibird_unlock_tech
-				has_tech = cargo_plane_tech_2
-			}
-			has_deployed_air_force_size = {
-				size > 99
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = bos_all_to_war_tt
-			effect_tooltip = {
-				add_ideas = {bos_lost_hills_volunteers}
-			}
-			set_temp_variable = { BOS_tension_to_add = 20 }
-			bos_change_tension = yes
-		}
-	}
-	focus = {
 		id = bos_nf_a_chance_opportunity
 		icon = GFX_goal_bos_generic_t45_4
 		cost = 30
@@ -2978,7 +2950,34 @@ focus_tree = {
 			add_command_power = 25			 
 		}
 	}
-
+	focus = {
+		id = bos_nf_what_were_they_for
+		icon = GFX_goal_BOS_victory_or_death
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = bos_nf_the_right_war_at_the_right_time
+		prerequisite = {
+			focus = bos_nf_the_right_war_at_the_right_time
+		}
+		available = {
+			OR = {
+				has_tech = vertibird_unlock_tech
+				has_tech = cargo_plane_tech_2
+			}
+			has_deployed_air_force_size = {
+				size > 99
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = bos_all_to_war_tt
+			effect_tooltip = {
+				add_ideas = {bos_lost_hills_volunteers}
+			}
+			set_temp_variable = { BOS_tension_to_add = 20 }
+			bos_change_tension = yes
+		}
+	}
 	focus = {
 		id = bos_nf_warning_maxsons_settlers
 		icon = GFX_goal_bos_generic_apc_1

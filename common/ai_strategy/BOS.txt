@@ -22,6 +22,10 @@ BOS_support_brotherhood_countries = {
 	}
 }
 BOS_run_circle_of_steel = { ##certain spirits buff Operations and Operatives, making the BOS a good spymaster candidate for the Brotherhood.
+	enable = { 
+		always = yes 
+	}
+	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = become_spymaster
 		value = 75
