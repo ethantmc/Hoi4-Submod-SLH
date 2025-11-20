@@ -1,4 +1,4 @@
-version="2.2.3"
+version="2.2.4"
 tags={
 	"Balance"
 	"National Focuses"
@@ -11,5 +11,5 @@ dependencies={
 	"OWB - Fountain of Dreams"
 	"Rustbelt Rising"
 }
-supported_version="1.16.*"
+supported_version="1.17.*"
 remote_file_id="2816907222"

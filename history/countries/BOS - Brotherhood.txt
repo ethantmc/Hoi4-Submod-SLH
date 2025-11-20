@@ -283,7 +283,7 @@ add_ideas = {
 	gaben_economy_law
 	isolationist_trade_law
 	military_indoctrination_press
-	slavery_outlawed
+	#slavery_outlawed
 	#ncr_bos_idea_allgood_truce
 	bos_underground_hangars
 	bos_army_confusion_4
