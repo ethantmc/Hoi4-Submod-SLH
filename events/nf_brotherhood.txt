@@ -2167,7 +2167,300 @@ country_event = {
 		# send_attache = BOS ##not a real effect. You can only recall :(
 	# }
 }
+##vanilla buff events
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.101" }
+	id = nf_brotherhood.101
+	title = nf_brotherhood.101.title
+	desc = nf_brotherhood.101.desc
+	picture = GFX_event_BOS_desert_patrol
 
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.101.a
+		add_stability = 0.1
+		add_war_support = 0.1
+		add_political_power = 300
+		if = {
+			limit = {
+				NOT = { tag = TBH }
+			}
+			add_timed_idea = {
+			idea = BOS_buff_spirit
+			days = 730
+		}
+		}
+		if = {
+			limit = {
+				has_idea = brotherhood_chaotic_conflicts
+			}
+			remove_ideas = brotherhood_chaotic_conflicts
+		}
+		else_if = {
+			limit = {
+				has_idea = brotherhood_elder_conflicts
+			}
+			remove_ideas = brotherhood_elder_conflicts
+		}
+		if = {
+			limit = {
+				original_tag = GRD
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 750
+			}
+			add_manpower = 1500
+			load_oob = GRD_2275
+			add_offsite_building = {
+				type = industrial_complex
+				level = 5
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 5
+			}
+		}
+		else_if = {
+			limit = {
+				original_tag = SHI
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 500
+			}
+			add_manpower = 1000
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			set_popularities = {
+				intellectuals = 100
+			}
+			clr_country_flag = SHI_ai_behavior_independent
+			clr_country_flag = SHI_ai_behavior_ncr
+			set_country_flag = SHI_ai_behavior_bos
+		}
+		else_if = {
+			limit = {
+				original_tag = WBH
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1250
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 500
+			}
+			add_manpower = 1000
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			load_oob = WBH_2275
+		}
+		else_if = {
+			limit = {
+				original_tag = TCA
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 750
+			}
+			add_manpower = 2000
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			load_oob = TCA_2275
+		}
+		else_if = {
+			limit = {
+				original_tag = MOJ
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 1250
+			}
+			add_manpower = 2500
+			add_offsite_building = {
+				type = industrial_complex
+				level = 5
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 5
+			}
+			MOJ = {
+				set_temp_variable = {
+					change_preperation = 50
+				}
+			}
+			change_preperation = yes
+			clr_country_flag = moj_low_prep
+			set_country_flag = moj_high_prep
+			set_country_flag = moj_bos_buff_true
+			load_oob = MOJ_2275
+		}
+		else_if = {
+			limit = {
+				original_tag = MXC
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 750
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 250
+			}
+			add_manpower = 2500
+			add_offsite_building = {
+				type = industrial_complex
+				level = 6
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 6
+			}
+			load_oob = MXC_2275
+		}
+		else_if = {
+			limit = {
+				original_tag = TBH
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 125
+			}
+			add_manpower = 500
+		}
+		else_if = {
+			limit = {
+				original_tag = MNC
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1250
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 500
+			}
+			add_manpower = 1750
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			load_oob = MNC_2275
+		}
+		else_if = {
+			limit = {
+				original_tag = ACH
+			}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 2500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 1250
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 500
+				producer = USA
+			}
+			add_manpower = 2500
+			add_offsite_building = {
+				type = industrial_complex
+				level = 5
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 5
+			}
+			load_oob = ACH_startup
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_brotherhood.102" }
+	id = nf_brotherhood.102
+	title = nf_brotherhood.102.title
+	desc = nf_brotherhood.102.desc
+	picture = GFX_event_BOS_desert_patrol
+
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.102.a
+		add_stability = 0.1
+		add_war_support = 0.1
+		add_political_power = 250
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 750
+		}
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment
+			amount = 250
+		}
+		add_manpower = 750
+		add_offsite_building = {
+			type = industrial_complex
+			level = 2
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = 2
+		}
+	}
+}
 country_event = {
 	id = nf_brotherhood_council_politics.1
 	title = nf_brotherhood_council_politics.1.t

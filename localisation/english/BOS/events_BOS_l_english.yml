@@ -318,8 +318,8 @@
 
   nf_brotherhood_integrate_guardians.1.t:0 "MISSION; SPIRIT-KIND"
   nf_brotherhood_integrate_guardians.1.d:0 "CALLSIGN: §RRHIANNON§!\nMISSION REPORT: §RListen, Cardinal. You have done well to get us the world hole. To think what the fires could have done with such a thing.\nYour mission is accomplished and your purpose fulfilled. It is time to rejoin the flock - tell your faithful to let go of your heraldry and rejoin the flock.§!"
-  nf_brotherhood_integrate_guardians.1.1:0 ""Anything for you, Spiritkind.""
-  nf_brotherhood_integrate_guardians.1.2:0 ""It's not the right time!""
+  nf_brotherhood_integrate_guardians.1.1:0 "\"Anything for you, Spiritkind.\""
+  nf_brotherhood_integrate_guardians.1.2:0 "\"It's not the right time!\""
   nf_brotherhood_integrate_guardians.2.t:0 "The Guardian's Accept our Offer!"
   nf_brotherhood_integrate_guardians.2.d:0 "It seems letting Elder Rhiannon negotiation with the Guardians has paid off, they have finally agreed to begin the slow decommissioning of their own heraldry in favour of more strictly adhering to Codex protocol. This is a great day for the Brotherhood!"
   nf_brotherhood_integrate_guardians.2.1:0 "Stand together, brothers!"
@@ -359,7 +359,13 @@
   nf_brotherhood.41.desc:0 "[BOS.GetLeader] calls for our aid, for the Brotherhood faces its darkest hour. More implacable than the Master's armies - more massive than the Enclave's war machine - the NCR now threatens all we hold dear and seeks to crush the Brotherhood. Unless we help Lost HIlls, California will fall to the same darkness that led to the great war. \n\nSo let us follow the Codex and prepare for battle. We will keep the Wasteland safe, as we have always done."
   nf_brotherhood.41.a:0 "Ad Victoriam!"
 
+  nf_brotherhood.101.title:0 "Reinforcements from Lost Hills"
+  nf_brotherhood.101.desc:0 "The Council of Elders from Lost Hills have once again begun sending us much needed manpower and equipment."
+  nf_brotherhood.101.a:0 "Ad Victoriam!"
 
+  nf_brotherhood.102.title:0 "Reinforcements from our Expeditionary Chapters"
+  nf_brotherhood.102.desc:0 "Realising the sad state of affairs at Lost Hills, several chapters have sent us some support."
+  nf_brotherhood.102.a:0 "Ad Victoriam!"
 ##SRG
   nf_brotherhood_steel_rangers.10.t: "The Bear Force Goes Nuclear"
   nf_brotherhood_steel_rangers.10.d: "[NCR.getLeader] has brought the Bear Force to a level of sophistication rivaling America. While it's impossible to field them in the numbers or with the kind of support America once gave the Air Force, there is no longer any benefit to us trying to reintroduce these technologies more slowly - [NCR.getLeader]'s administration is already pressuring us to begin production of these new airframes, given the threats our civilization faces.\n\n[SRG.getLeader], this is a concerning development, but if we'd tried to stop this, we'd find Californians less receptive to our ideology, not more."
