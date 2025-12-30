@@ -380,10 +380,10 @@ stronger_lost_hills_decisions = {
 			complete_effect = {
 			}
 			cancel_trigger = {
-				BOS = {
-				has_decision = bos_close_the_market
-				}
 				OR = {
+					BOS = {
+					has_decision = bos_close_the_market
+					}
 					has_completed_focus = bos_nf_high_elder_torni_economic_plan
 					has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
 				}
@@ -424,10 +424,10 @@ stronger_lost_hills_decisions = {
 			complete_effect = {
 			}
 			cancel_trigger = {
-				BOS = {
-				has_decision = bos_close_the_market
-				}
 				OR = {
+					BOS = {
+					has_decision = bos_close_the_market
+					}
 					has_completed_focus = bos_nf_high_elder_torni_economic_plan
 					has_completed_focus = bos_nf_high_elder_llwyd_economic_plan
 				}

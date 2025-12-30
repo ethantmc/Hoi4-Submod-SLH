@@ -47,6 +47,13 @@ on_actions = {
 			divide_variable = {bos_elites_pop = 100} ##stability and war support need a decimal value
 			divide_variable = {bos_ruler_pop = 100}
 			divide_variable = {bos_people_pop = 2}	##33 weekly manpower is too much	
+			set_variable = {
+				bos_intellectuals_pop_negative = bos_intellectuals_pop
+			}
+			multiply_variable = {
+				var = bos_intellectuals_pop_negative
+				value = -1
+			}
 		}
 		effect = {
 			set_variable = {
