@@ -2960,6 +2960,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_right_war_at_the_right_time
 		}
+		bypass = {
+			has_completed_focus = bos_nf_taking_back_california
+		}
 		available = {
 			OR = {
 				has_tech = vertibird_unlock_tech
