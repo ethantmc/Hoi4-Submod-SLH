@@ -7516,7 +7516,9 @@ focus_tree = {
 						has_country_flag = bos_elites_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_elites
 			}
 			if = {
@@ -7525,7 +7527,9 @@ focus_tree = {
 						has_country_flag = bos_people_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_people
 			}
 			if = {
@@ -7534,7 +7538,9 @@ focus_tree = {
 						has_country_flag = bos_ruler_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_ruler
 			}
 			if = {
@@ -7543,7 +7549,9 @@ focus_tree = {
 						has_country_flag = bos_intellectuals_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_intellectuals
 			}
 		}
