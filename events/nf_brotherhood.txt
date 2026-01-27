@@ -2156,6 +2156,7 @@ country_event = {
 			idea = bos_lost_hills_volunteers
 			days = 720
 		}
+		set_rule = { can_send_volunteers = yes }
 	}
 	option = {
 		name = nf_brotherhood.410.b

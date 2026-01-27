@@ -1991,7 +1991,7 @@ focus_tree = {
 					has_idea = bgf_brotherhood_dreamwater
 					}
 				}
-				bos_fod_is_enabled = no
+				always = false  ##replace when gulf brotherhood exists in some form.
 			}
 		
 		}
@@ -3235,6 +3235,7 @@ focus_tree = {
 			focus = bos_nf_dominion_over_the_wasteland
 		}
 		completion_reward = {
+			custom_effect_tooltip = bos_propaganda_dynamic_tt
 			every_owned_state = {
 				add_compliance = 10
 			}
