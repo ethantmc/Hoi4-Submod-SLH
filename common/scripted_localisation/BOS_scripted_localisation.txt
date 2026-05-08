@@ -55,3 +55,22 @@ defined_text = {
 		localization_key = bos_desoto_rr_enabled
 	}
 }
+defined_text = {
+	name = hoi4_devs_broke_this_dynamic
+	text = {
+		trigger = {
+			if = { 
+				BOS = {
+				check_variable = {
+					bos_slh_volunterr_func_negative = 0
+				}
+				}
+			}
+		}
+		localization_key = hoi4_devs_broke_this_tt_war_completed
+	}
+	text = {
+		##War hasn't happend yet, display the information!
+		localization_key = hoi4_devs_broke_this_tt_war_not_completed
+	}
+}

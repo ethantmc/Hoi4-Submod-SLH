@@ -1,4 +1,4 @@
-#   BOS OPERATIONS  #
+#   BOS OPERATIONS  # ##LHE one
 #      Originals(SHI) by KD, any differences by ParadoxSong (Lost Hills Expanded Author)     #
 
 bos_operation_construct_cell = {

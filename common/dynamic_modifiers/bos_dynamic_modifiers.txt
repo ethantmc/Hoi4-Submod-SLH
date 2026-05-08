@@ -186,5 +186,5 @@ bos_balanced_council = {
 	intel_network_gain  = bos_ruler_pop
 	command_power_gain = bos_elites_pop
 	weekly_manpower = bos_people_pop
-	subjects_autonomy_gain = bos_intellectuals_pop
+	subjects_autonomy_gain = bos_intellectuals_pop_negative
 }

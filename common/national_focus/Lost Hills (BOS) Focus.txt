@@ -62,7 +62,9 @@ focus_tree = {
 				var = bos_troika_crowns ##set this up ASAP for the troika campaign.
 				value = 0
 				}
+				lhe_offmap_chapter_logic  = yes
 			}
+			
 		}
 	}
 	focus = {
@@ -1989,7 +1991,7 @@ focus_tree = {
 					has_idea = bgf_brotherhood_dreamwater
 					}
 				}
-				bos_fod_is_enabled = no
+				always = false  ##replace when gulf brotherhood exists in some form.
 			}
 		
 		}
@@ -2958,6 +2960,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_nf_the_right_war_at_the_right_time
 		}
+		bypass = {
+			has_completed_focus = bos_nf_taking_back_california
+		}
 		available = {
 			OR = {
 				has_tech = vertibird_unlock_tech
@@ -3230,6 +3235,7 @@ focus_tree = {
 			focus = bos_nf_dominion_over_the_wasteland
 		}
 		completion_reward = {
+			custom_effect_tooltip = bos_propaganda_dynamic_tt
 			every_owned_state = {
 				add_compliance = 10
 			}
@@ -3590,12 +3596,9 @@ focus_tree = {
 		}
 		available = {
 			all_owned_state = {
-				OR = {
-					is_core_of = BOS
-					AND = {
-						resistance < 15
-						compliance > 65
-					}
+				AND = {
+					resistance < 15
+					compliance > 65
 				}
 			}
 		}
@@ -3674,12 +3677,9 @@ focus_tree = {
 		available = {
 			AND = {
 				all_owned_state = {
-					OR = {
-						is_core_of = BOS
-						AND = {
-							resistance < 10
-							compliance > 70
-						}
+					AND = {
+						resistance < 10
+						compliance > 70
 					}
 				}
 				AND = {
@@ -3765,12 +3765,9 @@ focus_tree = {
 		available = {
 			AND = {
 				all_owned_state = {
-					OR = {
-						is_core_of = BOS
 					AND = {
 						resistance < 5
 						compliance > 70
-					}
 					}
 				}
 				AND = {
@@ -5627,7 +5624,7 @@ focus_tree = {
 			set_temp_variable = { BOS_underground_construction_slots_to_add = 2 }
 			bos_add_underground_construction_slots = yes
 			clr_country_flag = scavenging_disabled ##Don't like regular scavenging given my other changes.
-			unlock_decision_tooltip = begin_scavenging_program
+			unlock_decision_tooltip = begin_scavenging_program_wtt
 			set_temp_variable = { caps_to_add = 50 }
 			add_caps = yes
 		}
@@ -7520,7 +7517,9 @@ focus_tree = {
 						has_country_flag = bos_elites_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_elites
 			}
 			if = {
@@ -7529,7 +7528,9 @@ focus_tree = {
 						has_country_flag = bos_people_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_people
 			}
 			if = {
@@ -7538,7 +7539,9 @@ focus_tree = {
 						has_country_flag = bos_ruler_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_ruler
 			}
 			if = {
@@ -7547,7 +7550,9 @@ focus_tree = {
 						has_country_flag = bos_intellectuals_allowed
 					}
 				}
+				hidden_effect = {
 				add_political_power = 200 
+				}
 				activate_decision = BOS_allow_intellectuals
 			}
 		}
@@ -10368,6 +10373,7 @@ focus_tree = {
 			add_political_power = @BOS_PALADIN_FOCUS_POLITICAL_POWER_COST_EFFECT
 			MNC = {
 				country_event = nf_brotherhood_communications.2
+				bos_make_chapter_send_volunteers = yes
 			}
 			set_temp_variable = { BOS_train_paladins_num = 1 }
 			bos_train_paladins = yes

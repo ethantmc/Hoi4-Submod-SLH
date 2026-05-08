@@ -1347,6 +1347,10 @@ bos_underground_construction_decisions = {
 			bos_change_available_space = yes
 		}
 		remove_effect = {
+			set_temp_variable = {
+				BOS_underground_construction_slots_to_add = 1
+			}
+			bos_add_underground_construction_slots = yes
 			bos_create_condensed_civilian_workshop = yes
 			random_list = {
 				50 = {

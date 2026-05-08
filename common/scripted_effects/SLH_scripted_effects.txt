@@ -1,3 +1,121 @@
+lhe_offmap_chapter_logic = { ##can't touch the call to bos_offmap_chapter_logic, but I can gut it!
+	#BLS
+	if = {
+		limit = {
+			bos_ecr_is_enabled = no
+		}	
+		random_list = {
+			#Shephard or BoS
+			15 = {
+				country_event = {
+					id = nf_brotherhood_off_map_chapter_logic.1 #Shephard win
+					days = 365
+				}
+			}
+			85 = {
+				#Enclave or BoS
+				random_list = {
+					25 = {
+						country_event = {
+							id = nf_brotherhood_off_map_chapter_logic.2 #Enclave win
+							days = 1095
+						}
+					}
+					75 = {
+						country_event = {
+							id = nf_brotherhood_off_map_chapter_logic.3 #Project Purity
+							days = 1095
+						}
+						#Outcasts, Arthur or Sarah
+						random_list = {
+							50 = {
+								country_event = {
+									id = nf_brotherhood_off_map_chapter_logic.4 # #Sarah or Arthur
+									days = 1825
+								}
+								random_list = {
+									50 = {
+										country_event = {
+											id = nf_brotherhood_off_map_chapter_logic.5 #Boston
+											days = 2920
+										}
+									}
+									50 = {
+										country_event = {
+											id = nf_brotherhood_off_map_chapter_logic.6 #Institute
+											days = 2920
+										}
+									}
+								}
+							}
+							50 = {
+								country_event = {
+									id = nf_brotherhood_off_map_chapter_logic.7 #Outcasts
+									days = 1825
+								}
+								random_list = {
+									50 = {
+										country_event = {
+											id = nf_brotherhood_off_map_chapter_logic.5 #Boston
+											days = 2920
+										}
+									}
+									50 = {
+										country_event = {
+											id = nf_brotherhood_off_map_chapter_logic.6 #Institute
+											days = 2920
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+			limit = {
+				bos_rr_is_enabled = no
+			}
+		#BMW
+		random_list = {
+			50 = {
+				country_event = {
+					id = nf_brotherhood_off_map_chapter_logic.8 #bmw lost
+					days = 1095
+				}
+			}
+			50 = {
+				country_event = {
+					id = nf_brotherhood_off_map_chapter_logic.9 #bmw won
+					days = 1095
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			bos_fod_is_enabled = no
+		}
+		#BGF
+		random_list = {
+			25 = {
+				country_event = {
+					id = nf_brotherhood_off_map_chapter_logic.10 #bgf won
+					days = 547
+				}
+			}
+			75 = {
+				country_event = {
+					id = nf_brotherhood_off_map_chapter_logic.11 #bgf lost
+					days = 547
+				}
+			}
+		}
+	}
+}
+
 bos_add_knowledge = {
 		custom_effect_tooltip = bos_scribes_x_knowledge_gained
 		add_to_variable = {
@@ -451,6 +569,7 @@ bos_troika_upgrade_bos_experience_law = {
 	}
 }
 bos_disallow_all_but_troika_and_ruling = {
+	custom_effect_tooltip = bos_disallow_all_but_troika_and_ruling_tt
 	if = {
 		limit = {
 			NOT = {
@@ -464,7 +583,7 @@ bos_disallow_all_but_troika_and_ruling = {
 	if = {
 		limit = {
 			AND = {
-			has_country_flag = bos_people_allowed
+				has_country_flag = bos_people_allowed
 				NOT = {
 					has_government = people
 				}
@@ -477,7 +596,7 @@ bos_disallow_all_but_troika_and_ruling = {
 	if = {
 		limit = {
 			AND = {
-			has_country_flag = bos_elites__allowed
+				has_country_flag = bos_elites_allowed
 				NOT = {
 					has_government = elites
 				}
@@ -490,7 +609,7 @@ bos_disallow_all_but_troika_and_ruling = {
 	if = {
 		limit = {
 			AND = {
-			has_country_flag = bos_ruler_allowed
+				has_country_flag = bos_ruler_allowed
 				NOT = {
 					has_government = ruler
 				}
@@ -716,6 +835,61 @@ bos_improve_bunker_construction = {
 	}
 }
 
+bos_invite_to_market = {
+	FROM = {
+		#set_rule = {desc = bos_capitalism can_access_market = yes}
+		add_relation_rule_override = {
+			target = BOS
+			usage_desc = bos_market_access
+			can_access_market = yes
+		}
+	}
+	ROOT = { ##implicit
+		set_rule = {
+			desc = bos_capitalism 
+			can_access_market = yes
+		}
+	}
+	FROM = {
+		give_market_access = ROOT
+	}
+	ROOT = {
+		give_market_access = FROM
+	}
+	FROM = {
+		set_country_flag = should_use_international_market
+	}
+	##Loop through and get market access between all current members.
+	for_each_scope_loop = {
+		array = global.bos_market_members
+		PREV = {
+			#set_rule = {desc = bos_capitalism can_access_market = yes}
+			add_relation_rule_override = {
+				target = FROM
+				usage_desc = bos_market_access
+				can_access_market = yes
+			}
+		}
+		FROM = { ##implicit
+			set_rule = { 
+				desc = bos_capitalism 
+				can_access_market = yes
+			}
+		}
+		PREV = {
+			give_market_access = ROOT
+		}
+		FROM = {
+			give_market_access = PREV
+		}
+		PREV = {
+			set_country_flag = should_use_international_market
+		}
+	}
+	##After giving market access between all members, add this chapter to the array
+	add_to_array = { global.bos_market_members = FROM.id}
+}
+
 bos_make_chapter_send_volunteers = {
 	custom_effect_tooltip = bos_chapter_sends_volunteers_tt
 	THIS = {
@@ -724,6 +898,5 @@ bos_make_chapter_send_volunteers = {
 			id = BOS
 			value = 900
 		}
-		#add_manpower = 100 --just to check scope
 	}
 }

@@ -1,0 +1,54 @@
+no_equipment_to_market = {
+    enable = {
+		always = yes
+	}
+	abort = {
+		has_country_flag = should_use_international_market
+	}
+
+    ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = convoy
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = train
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = infantry
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = motorized
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = armor
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = air_transport
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = fighter
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = tactical_bomber
+		value = -999
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = interceptor
+		value = -999
+	}
+}

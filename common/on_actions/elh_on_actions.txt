@@ -3,6 +3,11 @@ on_actions = {
 		effect = {
 			set_global_flag = lhe_is_active
 		}
+		effect = {
+			ACH = {
+				set_country_flag = lhe_no_easy_ledger_invite
+			}
+		}
 	}
 	on_weekly_BOS = {
 		effect = {
@@ -42,6 +47,13 @@ on_actions = {
 			divide_variable = {bos_elites_pop = 100} ##stability and war support need a decimal value
 			divide_variable = {bos_ruler_pop = 100}
 			divide_variable = {bos_people_pop = 2}	##33 weekly manpower is too much	
+			set_variable = {
+				bos_intellectuals_pop_negative = bos_intellectuals_pop
+			}
+			multiply_variable = {
+				var = bos_intellectuals_pop_negative
+				value = -1
+			}
 		}
 		effect = {
 			set_variable = {
@@ -52,7 +64,14 @@ on_actions = {
 			}
 		}
 	}
-	 	
+	## on_monthly_BOS = {
+	## 	force_update_map_mode = {
+	## 		limit = {
+	## 			is_ai = no
+	## 		}
+	## 		mapmode = 
+	## 	}
+	## } 	
 
 	on_state_control_changed = {
 		effect = { ##basically a "Swap Ideas" equivelant for these two modifiers.
