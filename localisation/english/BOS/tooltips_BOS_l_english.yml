@@ -200,11 +200,11 @@
   bos_propaganda_dynamic_tt: "§CThe event listed here will change depending on your ruling party.§!"
   bos_this_choice_has_future_consequences_tt: "§CThis choice will have consequences in future events.§!"
 ##operations
-bos_operation_construct_cell: "Establish Surveillance Bunker"
+bos_operation_construct_cell: "Establish Circle of Steel Base"
 bos_operation_steal_weapons: "Conduct Technology Raid"
 bos_operation_shi_weaken_leadership: "Agitate Brotherhood Sympathizers"
 bos_operation_shi_target_supplies: "Attack Local Supply Centers"
-bos_operation_shi_gather_intelligence: "Activate Surveillance Bunker"
+bos_operation_shi_gather_intelligence: "Activate Circle of Steel Base"
 bos_cell_infiltration_tt: "Establish a §YCircle of Steel Cell§! in our target's territory. "
 ##SRG
   paladin_stone_returns_tt: "§YPaladin Stone§! will join the §Y[SRG.getName]§!"

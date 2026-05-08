@@ -2811,11 +2811,6 @@ bos_lost_hills_diplomacy = {
 		remove_effect = {
 			MOJ = {
 				custom_effect_tooltip = bos_ai_hint_tt
-				add_ai_strategy = {
-					type = pp_spend_amount
-					id = moj_peace_treaty_with_ces
-					value = 175
-				}
 			}
 			
 		}
@@ -2854,16 +2849,7 @@ bos_lost_hills_diplomacy = {
 		remove_effect = {
 			MOJ = {
 				custom_effect_tooltip = bos_ai_hint_tt
-				add_ai_strategy = {
-					type = pp_spend_priority
-					id = moj_legion_army_training
-					value = 100
-				}
-				add_ai_strategy = {
-					type = pp_spend_amount
-					id = moj_peace_treaty_with_ces
-					value = -175
-				}
+				##
 			}
 			
 		}

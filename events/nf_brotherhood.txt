@@ -6155,7 +6155,7 @@ country_event = {
 		add_ideas = bos_reformer_prestige
 		custom_effect_tooltip = bos_scribes_teams
 		hidden_effect = {
-			set_variable = {
+			add_to_variable = {
 			var = bos_scribes_ready
 			value = 1
 			}
@@ -6481,7 +6481,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
-		name = nf_brotherhood_elh_events.16.a#A massive deployment of personnel to farm the land
+		name = nf_brotherhood_elh_events.16.a #A massive deployment of personnel to farm the land
 		trigger = {
 		
 		}
@@ -6504,7 +6504,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = nf_brotherhood_elh_events.16.b#Orange Option - Convince them via News Media
+		name = nf_brotherhood_elh_events.16.b #Orange Option - Convince them via News Media
 		trigger = {
 			has_country_flag = bos_news_media_primacy 
 		}

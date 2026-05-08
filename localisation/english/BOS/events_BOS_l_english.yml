@@ -120,7 +120,7 @@
 
   ##operations
   nf_brotherhood_operations.1001.t: "Lost Hills Expanded: Circle of Steel Mechanics"
-  nf_brotherhood_operations.1001.d: "The Circle of Steel can establish Cells throughout the wastes by occupying small surveillance bunkers. These must be built adjacent to an existing cell (or your own country) but enable a number of special operations, sabotaging supplies nation-wide, gaining a burst of intelligence, or conducting a technology raid to seize Power Armour (or energy weapons, if they don't have any) for yourself. A special operation also exists for Shi, which allows you to agitate the Brotherhood Sympathizers there, potentially getting Shi to join you despite the odds.  "
+  nf_brotherhood_operations.1001.d: "The Circle of Steel can establish Cells throughout the wastes by occupying small surveillance bunkers. These must be built adjacent to an existing cell (or your own country) but enable a number of special operations, sabotaging supplies nation-wide, gaining a burst of intelligence, or conducting a technology raid to seize Power Armour (or energy weapons, if they don't have any) for yourself. A special operation also exists for Shi, which allows you to agitate the Brotherhood Sympathizers there, potentially getting Shi to join you despite the odds."
   nf_brotherhood_operations.1001.a: "Great."
   nf_brotherhood_council_reforms.1.a:0 "Longer terms!"
   nf_brotherhood_council_reforms.1.b:0 "Shorter terms!"
